@@ -6,7 +6,7 @@ mkdir data
 mkdir data/raw
 mkdir data/references 
 mkdir data/metadata
-mkdir data/process
+
 ```
 
 ## Raw data 
