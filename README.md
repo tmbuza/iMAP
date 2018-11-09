@@ -79,7 +79,7 @@ cd iMAP
 * Metadata, mothur-formatted mapping files (commonly with extension .design)
 * Install software
 * Download reference databases
-
+* wget download: https://ftp.gnu.org/gnu/wget/
 ```{}
 # Linux
 
