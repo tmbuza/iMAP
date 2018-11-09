@@ -1,6 +1,6 @@
 # iMAP: Pipeline for Microbiome Data Analysis and Exploratory Visualization
 
-<hr>
+<br>
 
 iMAP stands for **i**ntegrative **M**icrobiome **A**nalysis **P**ipeline. It is designed to run mostly on Command-Line-Interface (CLI) but can be run in batch mode on PC or clusters as described in the guideline.
 
