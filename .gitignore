@@ -65,4 +65,5 @@ code/bbmap
 code/seqkit
 
 # Hidden files
-.*
+.~*
+._*
