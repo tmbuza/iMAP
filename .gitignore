@@ -50,6 +50,8 @@ data/*/*
 !data/demo
 !README.md
 
+img/*/*
+
 reports/*/*
 results/*/*
 *.pptx
