@@ -1,2 +1,2 @@
 # iMAP
-Microbiome Data Analysis and Exploratory Visualization
+Pipeline for Microbiome Data Analysis and Exploratory Visualization
