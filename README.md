@@ -1,4 +1,4 @@
-g# iMAP: Pipeline for Microbiome Data Analysis and Exploratory Visualization
+# iMAP: Pipeline for Microbiome Data Analysis and Exploratory Visualization
 
 <br>
 
