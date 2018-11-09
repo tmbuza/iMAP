@@ -1,9 +1,12 @@
-# iMAP
-Pipeline for Microbiome Data Analysis and Exploratory Visualization
+# iMAP: Pipeline for Microbiome Data Analysis and Exploratory Visualization
+
+<hr>
+
+iMAP stands for **i**ntegrative **M**icrobiome **A**nalysis **P**ipeline. It is designed to run mostly on Command-Line-Interface (CLI) but can be run in batch mode on PC or clusters as described in the guideline.
+
 # Guidelines for implementing iMAP pipeline
 
-
-# <mark>Requirements</mark> {-}
+## Requirements
 
 The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table S1). 
 
@@ -43,7 +46,7 @@ Table: Table S1: List of required materials for running iMAP pipeline
               
 <br>
 
-## Download iMAP repository  {-}
+## Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
 cd iMAP
@@ -76,18 +79,18 @@ cd iMAP
 * Download reference databases
 
 ```{}
-# Mac
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
-
 # Linux
 
 bash ./code/requirements/iMAP_requirements_linux_driver.bash
+
+# Mac
+bash ./code/requirements/iMAP_requirements_mac_driver.bash
 
 ```
 
 <br>
 
-## Verify required folders and files {-}
+## Verify required folders and files
 
 ```{}
 bash ./code/requirements/iMAP_checkFiles_driver.bash
@@ -103,11 +106,11 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 <br>
 <br>
 
-# <mark>Bioinformatics analysis</mark> {-}
+# Bioinformatics analysis
 
 <br>
 
-## CLI: Command-line-interface {-}
+## CLI: Command-line-interface
 This is basically a method where users sequentially run individual or bundle scripts on CLI (Command -Line_Interface) one at a time. We have bundled workflow-specific scripts into a driver to make the analysis easily implemented on CLI by just a single click.
 
 
@@ -128,7 +131,7 @@ bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash
 
 <br>
 
-## Batch mode on CLI {-}
+## Batch mode on CLI
 The *iMAP_driver.bash* is the master driver for running all analyses on CLI at once.
 
 ```{}
@@ -137,7 +140,7 @@ bash ./code/iMAP_driver.bash
 
 <br>
 
-## Remotely via job scheduling script {-}
+## Remotely via job scheduling script
 Users must create a Portable Batch System (PBS) script that describes cluster resources to be used, parameters for the job and the commands to be executed. The following is a PBS script for running executing iMAP pipeline remotely. Note that you must provide the group allocation name (-A) but this may differ from one system to the other. Google for help just in case.
 
 <br>
