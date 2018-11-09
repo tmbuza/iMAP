@@ -13,6 +13,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 <br>
 
 Table: Table S1: List of required materials for running iMAP pipeline
+
 | **Required**    | **Description**   |  **Folder** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
 | **iMAP pipeline**       | Bundled scripts for comprehensive microbiome analysis            |  iMAP |[Link](https://github.com/tmbuza/iMAP.git)   |
