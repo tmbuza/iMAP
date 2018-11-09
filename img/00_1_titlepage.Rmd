@@ -1,0 +1,31 @@
+# Bushmeat Microbiome Data Analysis {-}
+<br>
+<center>
+<h3>Teresia M. Buza^1^, Triza Tonui^2^, et al^1^^,^^2^^,^^3^^,^^4^</h3>
+^1^Penn State University, ^2^BecA-ILRI Hub, ^3^Third Institute, ^4^Fouth Institute, etc 
+
+<!-- <h4>Updated: `r Sys.Date()`</h4> -->
+<h4>Updated: `r Sys.time()`</h4>
+
+<hr>
+
+<!-- <h2>Preliminary Bioinfographics</h2> -->
+<!-- ![Photo courtesy of Peter Hudson](img/bbrp.png) -->
+</center>
+
+<center>
+
+![](img/cover1.png){width=50%}
+</center>
+
+<!-- <center><h2>Image features</h2> -->
+<!-- <ul style="list-style-type: none"> -->
+<!-- <li>Analysis pipeline</li> -->
+<!-- <li>Project logo</li> -->
+<!-- <li>Proportion of experimental variables</li> -->
+<!-- <li>Phylogenetic tree of 186 bushmeat samples</li> -->
+<!-- </ul> -->
+<!-- </center> -->
+<!-- ![Photo courtesy of Kay van der Horst](img/giraffe2.png) -->
+<!-- ![Photo courtesy of Kay van der Horst](img/giraffe3.png) -->
+

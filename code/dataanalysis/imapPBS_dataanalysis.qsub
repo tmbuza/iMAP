@@ -1,0 +1,16 @@
+#!/bin/bash -f
+
+#PBS dataanalysis
+#PBS -A vxk1_a_g_sc_default
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=4000:00:00
+#PBS -l pmem=25gb
+#PBS -j oe
+#PBS -o dataanalysis_AUG.log
+#PBS -m abe
+#PBS -M tmb72@psu.edu
+
+cd $PBS_O_WORKDIR
+
+# bash ./code/dataanalysis/iMAP_dataanalysis_driver.bash
+bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash

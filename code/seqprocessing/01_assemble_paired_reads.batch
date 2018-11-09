@@ -1,0 +1,12 @@
+set.dir(input=data/mothur/, output=data/mothur/)
+set.current(processors=4)
+make.file(inputdir=data/raw/qced, type=gz, prefix=qced)
+make.contigs(file=current, inputdir=data/raw/qced, outputdir=data/mothur/)
+summary.seqs(fasta=current)
+screen.seqs(fasta=current, group=current, maxambig=0, minlength=140, maxlength=310)
+unique.seqs(fasta=current)
+summary.seqs(fasta=current, name=current)
+count.seqs(name=current, group=current)
+summary.seqs(count=current)
+
+# Profile contig report

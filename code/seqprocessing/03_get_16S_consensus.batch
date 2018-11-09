@@ -1,0 +1,11 @@
+set.dir(input=data/mothur/, output=data/mothur/)
+set.current(processors=4)
+align.seqs(fasta=qced.trim.contigs.good.unique.fasta, reference=data/references/silva.seed.align)
+summary.seqs(fasta=current, count=qced.trim.contigs.good.count_table)
+screen.seqs(fasta=current, count=current, maxambig=0, minlength=200, maxlength=310, maxhomop=8)
+summary.seqs(fasta=current, count=current)
+filter.seqs(fasta=current, vertical=T)
+summary.seqs(fasta=current, count=current)
+unique.seqs(fasta=current, count=current)
+summary.seqs(fasta=current, count=current)
+
