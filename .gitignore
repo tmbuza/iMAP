@@ -51,6 +51,7 @@ data/*/*
 !README.md
 
 img/*/*
+!img/imapWorkflow*
 
 reports/*/*
 results/*/*
