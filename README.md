@@ -18,7 +18,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | **Hardware**      | Computer with multi-core processor: preferably 64-bit.   |    |                |
 |    | Remote Accessory Memory (RAM): 8 GB minimum.  |      ||
 |    | Storage: Tens of gigabytes for small dataset otherwise a few terabytes  |      ||
-| **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
+| **Raw data**      | Demultiplexed reads in FASTQ format with primers, adapters and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file showing sample identifiers, categorical and numeric variables        |  data/metadata        |          |
 | **Mapping file**      | A file that links sample IDs (1st column) to the names of forward (2nd column) and reverse (3rd column) data files   |     |                    |
 | **Design files**      | Files that assign samples to a specific variables or other categories   |     |                    |
