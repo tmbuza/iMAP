@@ -2,7 +2,7 @@
 
 mkdir results/tables
 
-mothur "#set.dir(input=./data/mothur/, output=./data/mothur/phylotype/00_processed_seqs);
+"#set.dir(input=./data/mothur/, output=./data/mothur/phylotype/00_processed_seqs);
 count.groups(group=./data/mothur/qced.contigs.groups);
 count.groups(count=./data/mothur/qced.trim.contigs.good.count_table);
 count.groups(count=./data/mothur/qced.trim.contigs.good.good.count_table);
