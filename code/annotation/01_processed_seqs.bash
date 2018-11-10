@@ -15,4 +15,5 @@ paste -d'\t' ./data/mothur/phylotype/00_processed_seqs/qced.contigs.count.summar
 
 echo -e "SampleID\tOriginal\tScreened\tAligned\tPDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >results/tables/processedSeqs.tsv
 cut -f1,2,4,6,8,10,12,14 ./data/mothur/phylotype/00_processed_seqs/seqdepth.tsv >>results/tables/processedSeqs.tsv
+
 head results/tables/processedSeqs.tsv
