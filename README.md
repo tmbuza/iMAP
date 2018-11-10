@@ -102,7 +102,7 @@ bash ./code/requirements/iMAP_checkFiles_driver.bash
 
 ![](img/required.png)
 
-Figure S1: Major folders in the iMAP root directory. Folders and files marked with â exist. Missing file marked â must be found by the above script before proceeding.
+Figure S1: Major folders in the iMAP root directory. Folders and files marked with - [X] exist. Missing file marked **X** must be found by the above script before proceeding.
 
 <hr>
 <br>
