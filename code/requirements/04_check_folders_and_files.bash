@@ -18,7 +18,6 @@ REQUIRED_EXECUTABLE_FILES=(
   "FastQC"
   "bbmap"
   "mothur"
-  "seqkit"
   )
 
 REQUIRED_CODE_FOLDERS_OR_FILES=(
