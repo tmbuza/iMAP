@@ -118,13 +118,13 @@ This is basically a method where users sequentially run individual or bundle scr
 
 ```{}
 # linux
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
+bash ./code/requirements/iMAP_requirements_linux_driver.bash
 
 # mac OS
 bash ./code/requirements/iMAP_requirements_mac_driver.bash
 
 # windows
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
+bash ./code/requirements/iMAP_requirements_windows_driver.bash
 ```
 
 Keep going...
