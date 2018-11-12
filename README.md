@@ -117,7 +117,19 @@ This is basically a method where users sequentially run individual or bundle scr
 
 
 ```{}
+# linux
 bash ./code/requirements/iMAP_requirements_mac_driver.bash
+
+# mac OS
+bash ./code/requirements/iMAP_requirements_mac_driver.bash
+
+# windows
+bash ./code/requirements/iMAP_requirements_mac_driver.bash
+```
+
+Keep going...
+
+```{}
 bash ./code/requirements/iMAP_checkFiles_driver.bash
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
@@ -137,7 +149,15 @@ bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash
 The *iMAP_driver.bash* is the master driver for running all analyses on CLI at once.
 
 ```{}
-bash ./code/iMAP_driver.bash
+bash ./code/linux_iMAP_driver.bash
+bash ./code/mac_iMAP_driver.bash
+bash ./code/windows_iMAP_driver.bash
+
+# Optionally you can use time tracking driver
+bash ./code/linux_time_tracking_driver.bash
+bash ./code/mac_time_tracking_driver.bash
+bash ./code/windows_time_tracking_driver.bash
+
 ```
 
 <br>
