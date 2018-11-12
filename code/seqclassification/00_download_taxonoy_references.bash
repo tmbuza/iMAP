@@ -7,7 +7,7 @@
 ## Make a taxonomy references fasta file from silva.nr.align . This will output silva.nr.fasta which automatically is placed in the data/references
 # * Clean up the directories to remove the extra files
 
-./code/mothur/mothur "#degap.seqs(fasta=data/references/silva.nr.align)"
+mothur "#degap.seqs(fasta=data/references/silva.nr.align)"
 # ```
 
 ##############################################################
@@ -15,7 +15,7 @@
 ## Make a taxonomy references fasta file from silva.seed.align . This will output silva.seed.fasta which automatically is placed in the data/references
 # * Clean up the directories to remove the extra files
 
-./code/mothur/mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
+mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
 # ```
 
 ##############################################################
@@ -50,11 +50,11 @@ wget --no-check-certificate https://www.mothur.org/MiSeqDevelopmentData/HMP_MOCK
 mv HMP_MOCK.fasta data/references
 
 # silva nr alignment
-code/mothur/mothur "#align.seqs(fasta=data/references/HMP_MOCK.fasta, reference=data/references/silva.nr.v4.align);degap.seqs()"
+mothur "#align.seqs(fasta=data/references/HMP_MOCK.fasta, reference=data/references/silva.nr.v4.align);degap.seqs()"
 mv data/references/HMP_MOCK.ng.fasta data/references/HMP_MOCK.nr.v4.fasta
 
 # silva seed alignment
-code/mothur/mothur "#align.seqs(fasta=data/references/HMP_MOCK.fasta, reference=data/references/silva.seed.v4.align);degap.seqs()"
+mothur "#align.seqs(fasta=data/references/HMP_MOCK.fasta, reference=data/references/silva.seed.v4.align);degap.seqs()"
 mv data/references/HMP_MOCK.ng.fasta data/references/HMP_MOCK.seed.v4.fasta
 #```
 
