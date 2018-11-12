@@ -3,7 +3,7 @@
 bash ./code/requirements/04_check_folders_and_files.bash > ./reports/checked_files.txt
 
 ## View the output
-open ./reports/checked_files.txt
+#open ./reports/checked_files.txt
 
 ## Save the output
 
