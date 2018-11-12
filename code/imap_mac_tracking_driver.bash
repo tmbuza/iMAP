@@ -37,7 +37,7 @@ date +%Y-%m-%d_%H:%M
 #------------------------------
 git clone https://github.com/tmbuza/iMAP.git
 cd iMAP
-bash ./code/iMAP_driver.bash
+bash ./code/mac_iMAP_driver.bash
 
 #------------------------------
 
