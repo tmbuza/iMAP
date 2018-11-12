@@ -1,0 +1,12 @@
+bash ./code/metadataprofiling/iMAP_metadata_profiling_driver.bash
+bash ./code/requirements/iMAP_requirements_windows_driver.bash
+bash ./code/requirements/iMAP_checkFiles_driver.bash
+bash ./code/preprocessing/iMAP_preprocessing_driver.bash
+bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
+bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
+bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
+bash ./code/seqclassification/iMAP_seqclassification_driver.bash
+bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash
+bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
+bash ./code/annotation/iMAP_annotation_driver.bash
+bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash
