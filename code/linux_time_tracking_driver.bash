@@ -35,10 +35,7 @@ echo "Analysis started:"
 date +%Y-%m-%d_%H:%M
 
 #------------------------------
-git clone https://github.com/tmbuza/iMAP.git
-cd iMAP
 bash ./code/linux_iMAP_driver.bash
-
 #------------------------------
 
 echo ""
