@@ -22,7 +22,7 @@ mkdir ./results/
 
 
 # Create log file
-LOG=./results/imap_tracking_$DT.log
+LOG=./results/windows_imap_tracking_$DT.log
 
 echo ""
 echo ""
