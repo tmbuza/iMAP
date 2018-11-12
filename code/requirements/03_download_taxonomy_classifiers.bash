@@ -14,7 +14,7 @@
 ## Make a taxonomy references fasta file from silva.seed.align . This will output silva.seed.fasta which automatically is placed in the data/references
 # * Clean up the directories to remove the extra files
 
-./code/mothur/mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
+mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
 # ```
 
 # ##############################################################
