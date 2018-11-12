@@ -42,7 +42,7 @@ mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
 # #```{}
 #-------------------------------
 
-# Generate HMP_MOCK.v4.fasta - an unaligned fasta sequence file
+# Generate HMP_MOCK.fasta - an unaligned fasta sequence file
 
 wget --no-check-certificate https://www.mothur.org/MiSeqDevelopmentData/HMP_MOCK.fasta
 mv HMP_MOCK.fasta data/references
