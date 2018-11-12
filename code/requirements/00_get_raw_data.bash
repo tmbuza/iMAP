@@ -7,7 +7,7 @@
 mkdir data
 mkdir data/metadata 
 mkdir data/raw 
-
+mkdir data/raw/qced
 # <br>
 
 ## Obtain the raw data and put the files into the data/raw directory
@@ -20,9 +20,10 @@ rm -rf raw* __MACOSX
 
 
 # Copy demo metadata and put the files in the data/metadata directory
-
 cp ./data/demo/metadata/* ./data/metadata/
 
+# Copy mapping fastq file and put it in the data/raw/qced directory
+cp ./data/demo/mapping.files ./data/raw/qced/qced.files
 
 # #Raw data for the iMAP test package (19 murine gut samples + 1 Mock sample)
 # wget --no-check-certificate https://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip
