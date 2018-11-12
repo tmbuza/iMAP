@@ -9,14 +9,12 @@
 # Linux version
 wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
 tar -zxvf seqkit_linux_amd64.tar.gz
-cp seqkit ~/bin/
 mv seqkit code/
 rm seqkit_linux_amd64.tar.gz
 
 # Mac version
 # wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_darwin_amd64.tar.gz
 # tar -zxvf seqkit_darwin_amd64.tar.gz
-# cp seqkit ~/bin/
 # mv seqkit code/
 # rm seqkit_darwin_amd64.tar.gz
 
@@ -60,7 +58,6 @@ rm BBMap_37.90.tar.gz
 ##wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.40.0.1/Mothur.linux_64.zip
 wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
 unzip Mothur.linux_64.zip
-cp mothur/mothur ~/bin/
 mv mothur code/
 rm Mothur.linux_64.zip
 rm -rf __MACOSX
@@ -68,7 +65,6 @@ rm -rf __MACOSX
 # # Mac
 # wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.mac_64.OSX-10.12.zip
 # unzip Mothur.mac_64.OSX-10.12.zip
-# cp mothur/mothur ~/bin/
 # mv mothur code/
 # rm Mothur.mac_64.OSX-10.12.zip
 # rm -rf __MACOSX
