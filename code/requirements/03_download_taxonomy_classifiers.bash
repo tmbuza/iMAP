@@ -6,7 +6,7 @@
 # Silva nr
 ## Make a taxonomy references fasta file from silva.nr.align. This will output silva.nr.fasta which automatically is placed in the data/references
 
-# ./code/mothur/mothur "#degap.seqs(fasta=data/references/silva.nr.align)"
+# mothur "#degap.seqs(fasta=data/references/silva.nr.align)"
 # ```
 
 ##############################################################
