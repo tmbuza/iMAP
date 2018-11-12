@@ -183,7 +183,7 @@ Users must create a Portable Batch System (PBS) script that describes cluster re
 
 cd $PBS_O_WORKDIR
 
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
+bash ./code/requirements/iMAP_requirements_linux_driver.bash
 bash ./code/requirements/iMAP_checkFiles_driver.bash
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
@@ -214,7 +214,7 @@ bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash
 
 cd $PBS_O_WORKDIR
 
-bash code/iMAP_driver.bash
+bash code/linux_iMAP_driver.bash
 ```
 
 <br>
