@@ -54,7 +54,7 @@ mv HMP_MOCK.fasta data/references
 # mv data/references/HMP_MOCK.ng.fasta data/references/HMP_MOCK.nr.v4.fasta
 
 # silva seed alignment
-/mothur "#align.seqs(fasta=data/references/HMP_MOCK.fasta, reference=data/references/silva.seed.align);degap.seqs()"
+mothur "#align.seqs(fasta=data/references/HMP_MOCK.fasta, reference=data/references/silva.seed.align);degap.seqs()"
 mv data/references/HMP_MOCK.ng.fasta data/references/HMP_MOCK.seed.fasta
 # # #```
 
