@@ -72,6 +72,5 @@ cp mothur/mothur ~/bin/
 cp mothur/uchime ~/bin/
 cp mothur/vsearch ~/bin/
 mv mothur code/
-ln -s code/mothur/mothur ./mothur
 rm Mothur.mac_64.OSX-10.12.zip
 rm -rf __MACOSX
