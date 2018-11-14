@@ -16,8 +16,8 @@
 # Mac version
 wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_darwin_amd64.tar.gz
 tar -zxvf seqkit_darwin_amd64.tar.gz
-cp seqkit ~/bin/
 mv seqkit code/
+cp code/seqkit ~/bin/
 rm seqkit_darwin_amd64.tar.gz
 
 # ```
@@ -34,6 +34,7 @@ wget --no-check-certificate https://www.bioinformatics.babraham.ac.uk/projects/f
 unzip fastqc_v0.11.7.zip
 chmod 755 FastQC/fastqc
 mv -v FastQC code/
+cp code/FastQC/fastqc ~/bin/
 rm fastqc_v0.11.7.zip
 # ```
 
@@ -49,6 +50,7 @@ rm fastqc_v0.11.7.zip
 wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_37.90.tar.gz
 tar -xvzf BBMap_37.90.tar.gz
 mv -v bbmap code/
+cp code/bbmap/bbduk.sh ~/bin/
 rm BBMap_37.90.tar.gz
 
 
@@ -68,9 +70,9 @@ rm BBMap_37.90.tar.gz
 # # Mac
 wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.mac_64.OSX-10.12.zip
 unzip Mothur.mac_64.OSX-10.12.zip
-cp mothur/mothur ~/bin/
-cp mothur/uchime ~/bin/
-cp mothur/vsearch ~/bin/
 mv mothur code/
+cp code/mothur/mothur ~/bin/
+cp code/mothur/uchime ~/bin/
+cp code/mothur/vsearch ~/bin/
 rm Mothur.mac_64.OSX-10.12.zip
 rm -rf __MACOSX
