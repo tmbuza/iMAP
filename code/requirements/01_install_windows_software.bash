@@ -10,7 +10,7 @@ wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/downlo
 tar -zxvf seqkit_windows_amd64.exe.tar.gz
 mv seqkit.exe code/
 chmod 755 seqkit.exe
-cp seqkit.exe ~/bin/
+cp code/seqkit.exe ~/bin/
 rm seqkit_windows_amd64.exe.tar.gz
 
 # ```
