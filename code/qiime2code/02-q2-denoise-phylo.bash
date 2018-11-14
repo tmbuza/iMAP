@@ -1,5 +1,5 @@
 cd qiime2
-source activate qiime2-2018.6
+source activate qiime2-2018.8
 
 time qiime dada2 denoise-paired \
   --i-demultiplexed-seqs qced-demux.qza \
