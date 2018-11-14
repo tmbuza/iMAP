@@ -1,5 +1,5 @@
 cd qiime2
-source activate qiime2-2018.6
+source activate qiime2-2018.8
 
 # # Batch1  
 # time qiime tools import \
