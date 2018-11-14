@@ -70,5 +70,6 @@ wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v
 unzip Mothur.mac_64.OSX-10.12.zip
 cp mothur/mothur ~/bin/
 mv mothur code/
+ln -s code/mothur/mothur ./mothur
 rm Mothur.mac_64.OSX-10.12.zip
 rm -rf __MACOSX
