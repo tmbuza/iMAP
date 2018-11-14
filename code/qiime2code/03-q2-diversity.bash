@@ -3,7 +3,7 @@
 ## Activate qiime2 then confirm the version
 
 cd qiime2
-source activate qiime2-2018.6
+source activate qiime2-2018.8
 
 
 ## Alpha diversity: Rarefaction
