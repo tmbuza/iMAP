@@ -5,26 +5,11 @@
 ##############################################################
 ## Download seqkit and put it into the code directory
 # ```{}
-
-# Linux version
-# wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
-# tar -zxvf seqkit_linux_amd64.tar.gz
-# cp seqkit ~/bin/
-# mv seqkit code/
-# rm seqkit_linux_amd64.tar.gz
-
-# Mac version
-# wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_darwin_amd64.tar.gz
-# tar -zxvf seqkit_darwin_amd64.tar.gz
-# cp seqkit ~/bin/
-# mv seqkit code/
-# rm seqkit_darwin_amd64.tar.gz
-
 # Windows version
 wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.9.1/seqkit_windows_amd64.exe.tar.gz
 tar -zxvf seqkit_windows_amd64.exe.tar.gz
-cp seqkit ~/bin/
-mv seqkit code/
+mv seqkit.exe code/
+cp seqkit.exe ~/bin/
 rm seqkit_windows_amd64.exe.tar.gz
 
 # ```
@@ -35,8 +20,9 @@ rm seqkit_windows_amd64.exe.tar.gz
 
 wget --no-check-certificate https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip
 unzip fastqc_v0.11.7.zip
-chmod 755 FastQC/fastqc
+chmod 755 FastQC/fastqc.exe
 mv -v FastQC code/
+cp code/FastQC/fastqc.exe ~/bin/
 rm fastqc_v0.11.7.zip
 # ```
 
@@ -48,6 +34,7 @@ rm fastqc_v0.11.7.zip
 wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_37.90.tar.gz
 tar -xvzf BBMap_37.90.tar.gz
 mv -v bbmap code/
+cp code/bbmap/bbduk.sh ~/bin/
 rm BBMap_37.90.tar.gz
 
 
@@ -75,7 +62,9 @@ rm BBMap_37.90.tar.gz
 # # Windows
 wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.win_64.zip
 unzip Mothur.win_64.zip
-cp mothur/mothur ~/bin/
 mv mothur code/
+cp code/mothur/mothur.exe ~/bin/
+cp code/mothur/uchime.exe ~/bin/
+cp code/mothur/vsearch.exe ~/bin/
 rm Mothur.win_64.zip
 rm -rf __MACOSX
