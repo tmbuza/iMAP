@@ -122,10 +122,10 @@ bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
-bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash
+bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
 bash ./code/annotation/01_processed_seqs.bash
-bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash
+bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
 
 ```
 
