@@ -66,6 +66,7 @@ code/mothur
 code/FastQC
 code/bbmap
 code/seqkit
+code/qiime2code
 
 # Hidden files
 .~*
