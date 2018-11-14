@@ -77,22 +77,23 @@ cd iMAP
 ## Gather required materials
 * Raw data (demultiplexed compressed FASTQ files). 
 * Metadata, mothur-formatted mapping files (commonly with extension .design)
-* Install required software
+* Install required software 
 * Download reference databases (alignments and classifiers)
 
 ```{}
-# Mac
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
-
-# Linux
-
+# linux
 bash ./code/requirements/iMAP_requirements_linux_driver.bash
 
+# mac OS
+bash ./code/requirements/iMAP_requirements_mac_driver.bash
+
+# windows
+bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incpmplete
 ```
 
 <br>
 
-## Verify required folders and files
+## Verify required folders and important files
 
 ```{}
 bash ./code/requirements/iMAP_checkFiles_driver.bash
@@ -102,7 +103,7 @@ bash ./code/requirements/iMAP_checkFiles_driver.bash
 
 ![](img/required.png)
 
-Figure S1: Major folders in the iMAP root directory. Folders and files marked with green tick exist. Missing file marked red X must be found by the above script before proceeding.
+Figure S1: Major folders in the iMAP root directory. Folders and files marked with tick exist. Missing file marked X must be found before proceeding.
 
 <hr>
 <br>
@@ -115,22 +116,7 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 ### CLI: Command-line-interface
 This is basically a method where users sequentially run individual or bundle scripts on CLI (Command -Line_Interface) one at a time. We have bundled workflow-specific scripts into a driver to make the analysis easily implemented on CLI by just a single click.
 
-
 ```{}
-# linux
-bash ./code/requirements/iMAP_requirements_linux_driver.bash
-
-# mac OS
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
-
-# windows
-bash ./code/requirements/iMAP_requirements_windows_driver.bash
-```
-
-Keep going...
-
-```{}
-bash ./code/requirements/iMAP_checkFiles_driver.bash
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
