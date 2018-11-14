@@ -23,7 +23,7 @@ wget --no-check-certificate https://www.bioinformatics.babraham.ac.uk/projects/f
 unzip fastqc_v0.11.7.zip
 chmod 755 FastQC/fastqc.exe
 mv -v FastQC code/
-cp code/FastQC/fastqc.exe ~/bin/
+cp code/FastQC/fastqc ~/bin/
 rm fastqc_v0.11.7.zip
 # ```
 
