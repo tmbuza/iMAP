@@ -9,6 +9,7 @@
 wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.9.1/seqkit_windows_amd64.exe.tar.gz
 tar -zxvf seqkit_windows_amd64.exe.tar.gz
 mv seqkit.exe code/
+chmod 755 seqkit.exe
 cp seqkit.exe ~/bin/
 rm seqkit_windows_amd64.exe.tar.gz
 
@@ -63,6 +64,9 @@ rm BBMap_37.90.tar.gz
 wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.win_64.zip
 unzip Mothur.win_64.zip
 mv mothur code/
+chmod 755 code/mothur/mothur.exe
+chmod 755 code/mothur/uchime.exe
+chmod 755 code/mothur/vsearch.exe
 cp code/mothur/mothur.exe ~/bin/
 cp code/mothur/uchime.exe ~/bin/
 cp code/mothur/vsearch.exe ~/bin/
