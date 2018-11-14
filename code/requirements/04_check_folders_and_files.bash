@@ -15,33 +15,34 @@ REQUIRED_README_FILE=(
 
 REQUIRED_EXECUTABLE_FILES=(
   "seqkit"
-  "FastQC"
-  "bbmap"
+  "fastqc"
+  "bbduk.sh"
   "mothur"
+  "uchime"
+  "vsearch"
   )
 
-REQUIRED_CODE_FOLDERS_OR_FILES=(
-  "annotation"
-  "dataanalysis"
-  "linux_iMAP_driver.bash"
-  "mac_iMAP_driver.bash"
-  "mockcommunity"
-  "otutaxonomy"
-  "preprocessing"
-  "qiime2code"
-  "README.md"
- # "Rmd"
-  "requirements"
-  "seqclassification"
-  "seqerrorrate"
-  "seqprocessing"
-  "summarizeFastQC"
-)
+# REQUIRED_CODE_FOLDERS_OR_FILES=(
+# 	"annotation"
+# 	"dataanalysis"
+# 	"linux_iMAP_driver.bash"
+# 	"mac_iMAP_driver.bash"
+# 	"win_iMAP_driver.bash"
+# 	"mockcommunity"
+# 	"otutaxonomy"
+# 	"preprocessing"
+# 	"qiime2code"
+# 	"README.md"
+# 	"Rmd"
+# 	"requirements"
+# 	"seqclassification"
+# 	"seqerrorrate"
+# 	"seqprocessing"
+# 	"summarizeFastQC"
+# )
 
 REQUIRED_DATA_FOLDERS=(
   "metadata"
-  # "mothur"
-  # "qiime2"
   "raw"
   "references"
 )
@@ -49,7 +50,6 @@ REQUIRED_DATA_FOLDERS=(
 REQUIRED_REFERENCES_FILES=(
   "HMP_MOCK.fasta"
   "silva.seed.align"
-  "silva.seed.ng.fasta"
   "silva.seed.tax"
 )
 
@@ -159,11 +159,11 @@ check_required_dirs REQUIRED_DIRS
 # check required files [$PWD] directory
 check_dir_files $PWD REQUIRED_README_FILE
 
-# check required files [code] directory
-check_dir_files $PWD/code REQUIRED_EXECUTABLE_FILES
+# check required files [~/bin] directory
+check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
 
 # check required files [code] directory
-check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES
+# check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES
 
 # check required files [data] directory
 check_dir_files $PWD/data REQUIRED_DATA_FOLDERS
