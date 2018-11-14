@@ -10,6 +10,7 @@
 wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
 tar -zxvf seqkit_linux_amd64.tar.gz
 mv seqkit code/
+chmod 755 seqkit
 cp code/seqkit ~/bin
 rm seqkit_linux_amd64.tar.gz
 
@@ -67,9 +68,4 @@ cp code/mothur/uchime ~/bin/
 cp code/mothur/vsearch ~/bin/
 rm Mothur.linux_64.zip
 rm -rf __MACOSX
-# # Mac
-# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.mac_64.OSX-10.12.zip
-# unzip Mothur.mac_64.OSX-10.12.zip
-# mv mothur code/
-# rm Mothur.mac_64.OSX-10.12.zip
-# rm -rf __MACOSX
+
