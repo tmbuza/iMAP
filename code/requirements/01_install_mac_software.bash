@@ -69,6 +69,8 @@ rm BBMap_37.90.tar.gz
 wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.mac_64.OSX-10.12.zip
 unzip Mothur.mac_64.OSX-10.12.zip
 cp mothur/mothur ~/bin/
+cp mothur/uchime ~/bin/
+cp mothur/vsearch ~/bin/
 mv mothur code/
 ln -s code/mothur/mothur ./mothur
 rm Mothur.mac_64.OSX-10.12.zip
