@@ -41,7 +41,7 @@ Table: Table S1: List of required materials for running iMAP pipeline
 | *RDP*      | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
 | *Greengenes*     | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
 | *EzBioCloud*     | Mothur-formatted  |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
-| *Custom classifiesr*     | Any manually built classifiers  | ||
+| *Custom classifiesr*     | Any manually built classifiers (Highly recommended).  | ||
 |||||
 
 Table: Table S1: List of required materials for running iMAP pipeline
@@ -149,7 +149,7 @@ bash ./code/windows_time_tracking_driver.bash
 <br>
 
 ### Remotely via job scheduling script
-Users must create a Portable Batch System (PBS) script that describes cluster resources to be used, parameters for the job and the commands to be executed. The following is a PBS script for running executing iMAP pipeline remotely. Note that you must provide the group allocation name (-A) but this may differ from one system to the other. Google for help just in case.
+Users must create a Portable Batch System (PBS) script that describes cluster resources to be used, parameters for the job and the commands to be executed. The following is a PBS script for running executing iMAP pipeline remotely. Note that you must provide the group allocation name (-A) but this may differ from system to system. Google for help just in case.
 
 <br>
 
@@ -169,6 +169,8 @@ Users must create a Portable Batch System (PBS) script that describes cluster re
 
 cd $PBS_O_WORKDIR
 
+# Comment unused command(s) as necessary and uncomment the command(s) to be executed
+
 bash ./code/requirements/iMAP_requirements_linux_driver.bash
 bash ./code/requirements/iMAP_checkFiles_driver.bash
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
@@ -176,10 +178,10 @@ bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
-bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash
+bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
 bash ./code/annotation/01_processed_seqs.bash
-bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash
+bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analyses
 ```
 
 <br>
