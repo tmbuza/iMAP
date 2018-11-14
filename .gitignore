@@ -67,6 +67,7 @@ code/FastQC
 code/bbmap
 code/seqkit
 code/qiime2code
+code*win*
 
 # Hidden files
 .~*
