@@ -97,7 +97,18 @@ bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incpmplete
 
 ```{}
 bash ./code/requirements/iMAP_checkFiles_driver.bash
+
+open reports/checked_file.txt
+
+# OR
+
+cat reports/checked_file.txt
 ```
+
+<br>
+
+### Sample output 
+Middle and right panel
 
 <br>
 
