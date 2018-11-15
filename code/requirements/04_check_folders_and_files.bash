@@ -7,7 +7,7 @@ REQUIRED_DIRS=(
   "data/*"
   "results/"
   "reports/" 
-  "img/*"
+  "img/"
 )
 REQUIRED_README_FILE=(
   "README.md" 
@@ -33,7 +33,7 @@ REQUIRED_CODE_FOLDERS_OR_FILES=(
 	"preprocessing/*"
 	# "qiime2code"
 	"README.md"
-	"Rmd"
+	#"Rmd"
 	"requirements/*"
 	"seqclassification/*"
 	"seqerrorrate/*"
