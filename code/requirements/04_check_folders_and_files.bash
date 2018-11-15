@@ -3,11 +3,11 @@
 # Checks if required dirs/files are found or exits with an error
 
 REQUIRED_DIRS=(
-  "code"
-  "data"
-  "results"
-  "reports" 
-  "img"
+  "code/*"
+  "data/*"
+  "results/*"
+  "reports/*" 
+  "img/*"
 )
 REQUIRED_README_FILE=(
   "README.md" 
@@ -22,29 +22,29 @@ REQUIRED_EXECUTABLE_FILES=(
   "vsearch"
   )
 
-# REQUIRED_CODE_FOLDERS_OR_FILES=(
-# 	"annotation"
-# 	"dataanalysis"
-# 	"linux_iMAP_driver.bash"
-# 	"mac_iMAP_driver.bash"
-# 	"win_iMAP_driver.bash"
-# 	"mockcommunity"
-# 	"otutaxonomy"
-# 	"preprocessing"
-# 	"qiime2code"
-# 	"README.md"
-# 	"Rmd"
-# 	"requirements"
-# 	"seqclassification"
-# 	"seqerrorrate"
-# 	"seqprocessing"
-# 	"summarizeFastQC"
-# )
+REQUIRED_CODE_FOLDERS_OR_FILES=(
+	"annotation/*"
+	"dataanalysis/*"
+	"linux_iMAP_driver.bash"
+	"mac_iMAP_driver.bash"
+	"windows_iMAP_driver.bash"
+	"mockcommunity/*"
+	"otutaxonomy/*"
+	"preprocessing/*"
+	# "qiime2code"
+	"README.md"
+	"Rmd"
+	"requirements/*"
+	"seqclassification/*"
+	"seqerrorrate/*"
+	"seqprocessing/*"
+	"summarizeFastQC/*"
+)
 
 REQUIRED_DATA_FOLDERS=(
-  "metadata"
-  "raw"
-  "references"
+  "metadata/*"
+  "raw/*"
+  "references/*"
 )
 
 REQUIRED_REFERENCES_FILES=(
@@ -159,11 +159,11 @@ check_required_dirs REQUIRED_DIRS
 # check required files [$PWD] directory
 check_dir_files $PWD REQUIRED_README_FILE
 
-# check required files [~/bin] directory
+check required files [~/bin] directory
 check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
 
-# check required files [code] directory
-# check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES
+check required files [code] directory
+check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES
 
 # check required files [data] directory
 check_dir_files $PWD/data REQUIRED_DATA_FOLDERS
@@ -175,15 +175,4 @@ check_dir_files $PWD/data/references REQUIRED_REFERENCES_FILES
 check_dir_files $PWD/data/metadata REQUIRED_METADATA_FILES
 
 end_comment "✅ HURRAY!! EVERYTHING PASSED!"
-
-
-
-
-
-
-
-
-
-
-
 
