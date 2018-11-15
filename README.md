@@ -1,12 +1,20 @@
 # iMAP: Pipeline for Microbiome Data Analysis and Exploratory Visualization
 
+The iMAP pipeline is a two-tier pipeline
+
+1. Bioinformatics analysis of 16S rRNA gene reads
+2. Exploratory visualization. 
+
 <br>
 
-iMAP stands for **i**ntegrative **M**icrobiome **A**nalysis **P**ipeline. It is designed to run on Command-Line-Interface (CLI) but can be ran in batch mode on PC or clusters as described in the guideline (this README).
+## Audience
+* Microbiologists
+* Ecologist
+* Any interested user
 
-# Guidelines for implementing iMAP pipeline
+<br>
 
-## Requirements
+# Requirements
 
 The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table S1). 
 
@@ -120,11 +128,11 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 <br>
 <br>
 
-## Bioinformatics analysis
+# Bioinformatics analysis
 
 <br>
 
-### CLI: Command-line-interface
+## CLI: Command-line-interface
 This is basically a method where users sequentially run individual or bundle scripts on CLI (Command -Line_Interface) one at a time. We have bundled workflow-specific scripts into a driver to make the analysis easily implemented on CLI by just a single click.
 
 ```{}
@@ -142,7 +150,7 @@ bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-ba
 
 <br>
 
-### Batch mode on CLI
+## Batch mode on CLI
 The *iMAP_driver.bash* is the master driver for running all analyses on CLI at once.
 
 ```{}
@@ -159,7 +167,7 @@ bash ./code/windows_time_tracking_driver.bash
 
 <br>
 
-### Remotely via job scheduling script
+## Remotely via job scheduling script
 Users must create a Portable Batch System (PBS) script that describes cluster resources to be used, parameters for the job and the commands to be executed. The following is a PBS script for running executing iMAP pipeline remotely. Note that you must provide the group allocation name (-A) but this may differ from system to system. Google for help just in case.
 
 <br>
