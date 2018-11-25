@@ -5,8 +5,8 @@
 # Check what version of python is installed on your computer by typping 'python --version'
 # For more details see the installation manual http://multiqc.info/docs/#manual-installation
 
-pip install --upgrade pip
-pip install --user multiqc
+#pip3 install --upgrade pip
+#pip3 install --user multiqc
 
 #git clone https://github.com/ewels/MultiQC.git
 #mv MultiQC ./code
