@@ -43,12 +43,12 @@ rm BBMap_37.90.tar.gz
 ## Important: Latest versions may not work well until it is stable. Should that hapen, just install a previous version.
 
 # # Mac
-# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.mac_64.OSX-10.12.zip
-wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.0/Mothur.mac_64.OSX-10.13.zip
-unzip Mothur.mac_64.OSX-10.13.zip
+wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.mac_64.OSX-10.12.zip
+# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.0/Mothur.mac_64.OSX-10.13.zip
+unzip Mothur.mac_64.OSX-10.12.zip
 mv mothur code/
 cp code/mothur/mothur ~/bin/
 cp code/mothur/uchime ~/bin/
 cp code/mothur/vsearch ~/bin/
-rm Mothur.mac_64.OSX-10.13.zip
+rm Mothur.mac_64.OSX-10.12.zip
 rm -rf __MACOSX
