@@ -38,7 +38,7 @@ Table: Table S1: List of required materials for running iMAP pipeline
 | **Design files**      | Files that assign samples to a specific variables or other categories   |     |                    |
 | **Software**      |    |      ||
 | *sekit*       | For inspecting rawdata format and simple statistics.    |  code | [Link](https://github.com/shenwei356/seqkit/releases/)  |
-| *FASTQC*      | For creating base call quality score images and statistics. Requires the latest [Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html).    |  code | [Link](https://www.bioinformatics.babraham.ac.uk/projects/FASTQc/)  |
+| *FASTQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit [JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html).    |  code | [Link](https://www.bioinformatics.babraham.ac.uk/projects/FASTQc/)  |
 | *bbmap_bbduk*      | For trimming poor quality reads    |  code | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *multiqc*      | For summarizing FASTQc output    |  |[Link](https://github.com/ewels/MultiQC.git)  |
 | *Mothur*      | For sequence processing and classifying the sequences and preliminary analysis    |  code | [Link](https://github.com/Mothur/Mothur/releases/ ) |
