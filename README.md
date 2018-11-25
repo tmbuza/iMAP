@@ -160,12 +160,12 @@ The *iMAP_driver.bash* is the master driver for running all analyses on CLI at o
 ```{}
 bash ./code/linux_iMAP_driver.bash
 bash ./code/mac_iMAP_driver.bash
-bash ./code/windows_iMAP_driver.bash
+bash ./code/windows_iMAP_driver.bash # In progress
 
 # Optionally you can use time tracking driver
 bash ./code/linux_time_tracking_driver.bash
 bash ./code/mac_time_tracking_driver.bash
-bash ./code/windows_time_tracking_driver.bash
+bash ./code/windows_time_tracking_driver.bash # In progress
 
 ```
 
