@@ -20,11 +20,11 @@ The iMAP pipeline is a two-tier pipeline
 
 ## Requirements
 
-The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table S1). 
+The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table 1). 
 
 <br>
 
-Table: Table S1: List of required materials for running iMAP pipeline
+Table 1: List of required materials for running iMAP pipeline
 
 | **Required**    | **Description**   |  **Folder** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
