@@ -28,22 +28,23 @@ Table: Table S1: List of required materials for running iMAP pipeline
 
 | **Required**    | **Description**   |  **Folder** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
-| **iMAP pipeline**       | Bundled scripts for comprehensive microbiome analysis            |  iMAP |[Link](https://github.com/tmbuza/iMAP.git)   |
 | **Hardware**      | Computer with multi-core processor: preferably 64-bit.   |    |                |
 |    | Remote Accessory Memory (RAM): 8 GB minimum.  |      ||
 |    | Storage: Tens of gigabytes for small dataset otherwise a few terabytes  |      ||
+| **iMAP pipeline**       | Bundled scripts for microbiome data analysis            |  iMAP |[Link](https://github.com/tmbuza/iMAP.git)   |
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file showing sample identifiers, categorical and numeric variables        |  data/metadata        |          |
-| **Mapping file**      | A file that links sample IDs (1st column) to the names of forward (2nd column) and reverse (3rd column) data files   |     |                    |
-| **Design files**      | Files that assign samples to a specific variables or other categories   |     |                    |
+| **Mapping file**      | A file that links sample IDs (1st column) to the names of forward (2nd column) and reverse (3rd column) data files   |  data/references   |                    |
+| **Design files**      | Files that assign samples to a specific variables or other categories   |  data/references   |                    |
 | **Software**      |    |      ||
 | *sekit*       | For inspecting rawdata format and simple statistics.    |  code & ~/bin | [Link](https://github.com/shenwei356/seqkit/releases/)  |
 | *FASTQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  code & ~/bin | [Link](https://www.bioinformatics.babraham.ac.uk/projects/FASTQc/)  |
-| *bbmap_bbduk*      | For trimming poor quality reads    |  code & ~/bin  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
+| *bbmap*      | For trimming poor quality reads    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
+| *bbduk.sh*      | For trimming poor quality reads    |  code & ~/bin  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *multiqc*      | For summarizing FASTQc output    | $PATH |[Link](https://github.com/ewels/MultiQC.git)  |
 | *Mothur*      | For sequence processing and classifying the sequences and preliminary analysis    |  code & ~/bin | [Link](https://github.com/Mothur/Mothur/releases/ ) |
 | **Statistical analysis and visualization**     | |  |  |
-| *R*      | For statistical analysis and visualization    |   | [Link](https://cran.r-project.org/)  |
+| *R*      | For statistical analysis and visualization    | $PATH  | [Link](https://cran.r-project.org/)  |
 | *Rstudio*      | An IDE (integrated development environment) for R    |  |[Link](https://www.rstudio.com/products/rstudio/download/)  |
 | *iTOL*      | For display, annotation and management of phylogenetic trees   | |   [Link](http://itol.embl.de/)  |
 | **Reference 16S rRNA gene alignments**   |  |  |      |
