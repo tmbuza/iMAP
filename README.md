@@ -54,7 +54,7 @@ Table: Table S1: List of required materials for running iMAP pipeline
 | *RDP*      | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
 | *Greengenes*     | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
 | *EzBioCloud*     | Mothur-formatted  |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
-| *Custom classifiesr*     | Any manually built classifiers (Highly recommended).  | ||
+| *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | ||
 |||||
 
 Table: Table S1: List of required materials for running iMAP pipeline
