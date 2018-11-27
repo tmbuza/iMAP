@@ -24,7 +24,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 <br>
 
-Table 1: List of required materials for running iMAP pipeline
+**Table S1: List of required materials for running iMAP pipeline**
 
 | **Required**    | **Description**   |  **Folder** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
@@ -57,7 +57,6 @@ Table 1: List of required materials for running iMAP pipeline
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | ||
 |||||
 
-Table: Table S1: List of required materials for running iMAP pipeline
               
 <br>
 
