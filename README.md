@@ -26,7 +26,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 **Table S1: List of required materials for running iMAP pipeline**
 
-| **Required**    | **Description**   |  **Folder** | **Remarks**          |
+| **Requirement**    | **Description**   |  **Folder or PATH** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
 | **Hardware**      | Computer with multi-core processor: preferably 64-bit.   |    |                |
 |    | Remote Accessory Memory (RAM): 8 GB minimum.  |      ||
