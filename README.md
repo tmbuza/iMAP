@@ -37,7 +37,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | **Mapping file**      | A file that links sample IDs (1st column) to the names of forward (2nd column) and reverse (3rd column) data files   |  data/references   |                    |
 | **Design files**      | Files that assign samples to a specific variables or other categories   |  data/references   |                    |
 | **Software**      |    |      ||
-| *sekit*       | For inspecting rawdata format and simple statistics.    |  code & ~/bin | [Link](https://github.com/shenwei356/seqkit/releases/)  |
+| *seqkit*       | For inspecting rawdata format and simple statistics.    |  code & ~/bin | [Link](https://github.com/shenwei356/seqkit/releases/)  |
 | *FASTQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  code & ~/bin | [Link](https://www.bioinformatics.babraham.ac.uk/projects/FASTQc/)  |
 | *bbmap*      | For trimming poor quality reads    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *bbduk.sh*      | For trimming poor quality reads    |  code & ~/bin  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
