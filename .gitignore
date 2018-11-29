@@ -70,8 +70,10 @@ code/qiime2code
 code/*win*
 code/summarizeFastQC
 
+CaseStudy
+
 # Hidden files
 .~*
 ._*
 
-CaseStudy
+
