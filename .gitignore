@@ -44,6 +44,7 @@ rsconnect/
 
 .DS_Store
 
+## Added by TMB
 # Big data
 data/*/*
 !data/metadata
@@ -70,7 +71,7 @@ code/qiime2code
 code/*win*
 code/summarizeFastQC
 
-CaseStudy/*/*
+.CaseStudy/*/*
 
 # Hidden files
 .~*
