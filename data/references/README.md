@@ -1,6 +1,3 @@
-
-#!/usr/bin/env bash
-
 ## Prepare project folders
 ```{}
 mkdir data
