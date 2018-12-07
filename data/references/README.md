@@ -1,7 +1,7 @@
 
 #!/usr/bin/env bash
 
-## Author: TMB, April, 2018
+<--## Author: TMB, April, 2018-->
 
 ## Prepare project folders
 ```{}
