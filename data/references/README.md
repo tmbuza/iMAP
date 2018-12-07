@@ -4,9 +4,10 @@
 ## Author: TMB, April, 2018
 
 ## Prepare project folders
-
+```{}
 mkdir data
 mkdir data/references 
+```
 
 ## Default reference alignments
  ```{}
