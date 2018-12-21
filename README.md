@@ -49,6 +49,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *iTOL*      | For display, annotation and management of phylogenetic trees   | |   [Link](http://itol.embl.de/)  |
 | **Reference 16S rRNA gene alignments**   |  |  |      |
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.Mothur.org/wiki/Silva_reference_files)  |
+| *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
 | **Reference 16S rRNA gene classifiers**   |    |      ||
 | *SILVA*(no gap)     | Degapped using *degap.seqs* function in *Mothur*  |   data/references   |[Link](https://www.Mothur.org/wiki/Silva_reference_files)  |
 | *RDP*      | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
