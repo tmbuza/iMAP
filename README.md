@@ -51,7 +51,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
 | *SILVA* (seed)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
 | **Reference 16S rRNA gene classifiers**   |    |      ||
-| *SILVA*(no gap)     | Degapped using *degap.seqs* function in *Mothur*  |   data/references   |[Link](https://www.Mothur.org/wiki/Silva_reference_files)  |
+| *SILVA*(no gap)     | Degapped using *degap.seqs* function in *Mothur*  |   data/references   ||
 | *RDP*      | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
 | *Greengenes*     | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
 | *EzBioCloud*     | Mothur-formatted  |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
