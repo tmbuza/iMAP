@@ -33,9 +33,9 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 |    | Storage: Tens of gigabytes for small dataset otherwise a few terabytes  |      ||
 | **iMAP pipeline**       | Bundled scripts for microbiome data analysis            |  iMAP |[Link](https://github.com/tmbuza/iMAP.git)   |
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
-| **Sample metadata**      | A tab-separated file showing sample identifiers, categorical and numeric variables        |  data/metadata        |          |
+| **Sample metadata**      | A tab-separated file showing sample identifiers, categorical, numeric variables, description...        |  data/metadata        |          |
 | **Mapping file**      | A file that links sample IDs (1st column) to the names of forward (2nd column) and reverse (3rd column) data files   |  data/references   |                    |
-| **Design files**      | Files that assign samples to a specific variables or other categories   |  data/references   |                    |
+| **Design files**      | Files that link samples with variables   |  data/references   |                    |
 | **Software**      |    |      ||
 | *seqkit*       | For inspecting rawdata format and simple statistics.    |  code & ~/bin | [Link](https://github.com/shenwei356/seqkit/releases/)  |
 | *FastQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  code & ~/bin | [Link](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)  |
