@@ -101,7 +101,7 @@ bash ./code/requirements/iMAP_requirements_linux_driver.bash
 bash ./code/requirements/iMAP_requirements_mac_driver.bash
 
 # windows
-bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incpmplete
+bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incomplete
 ```
 
 <br>
