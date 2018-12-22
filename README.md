@@ -46,7 +46,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | **Statistical analysis and visualization**     | |  |  |
 | *R*      | For statistical analysis and visualization    | $PATH  | [Link](https://cran.r-project.org/)  |
 | *Rstudio*      | An IDE (integrated development environment) for R    |  |[Link](https://www.rstudio.com/products/rstudio/download/)  |
-| *iTOL*      | For display, annotation and management of phylogenetic trees   | |   [Link](http://itol.embl.de/)  |
+| *iTOL*      | For displaying, annotating and managing phylogenetic trees   | |   [Link](http://itol.embl.de/)  |
 | **Reference 16S rRNA gene alignments**   |  |  |      |
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
 | *SILVA* (seed)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
