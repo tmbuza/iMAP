@@ -24,7 +24,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 <br>
 
-**Table S1: List of required materials for running iMAP pipeline**
+**Table 1: List of required materials for running iMAP pipeline**
 
 | **Requirement**    | **Description**   |  **Folder or PATH** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
