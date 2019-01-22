@@ -28,8 +28,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 | **Requirement**    | **Description**   |  **Folder or PATH** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
-| **Hardware**      | Computer with multi-core processor: preferably 64-bit. <br>Random Access Memory (RAM): 8 GB minimum. <br> Operating Systems: Linux/UNIX   |    |                |
-|    | Storage: Tens of gigabytes for small dataset otherwise a few terabytes  |      ||
+| **Hardware**      | Computer with multi-core processor: preferably 64-bit. <br>Random Access Memory (RAM): 8 GB minimum. <br> Operating Systems: Linux/UNIX <br>Storage: Tens of gigabytes for small dataset otherwise a few terabytes   |    |                |
 | **iMAP pipeline**       | Bundled scripts for microbiome data analysis            |  iMAP |[Link](https://github.com/tmbuza/iMAP.git)   |
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file showing sample identifiers, categorical, numeric variables, description...        |  data/metadata        |          |
