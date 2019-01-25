@@ -1,6 +1,6 @@
-# iMAP: Pipeline for Microbiome Data Analysis and Exploratory Visualization
+# iMAP: Integrative Microbiome Analysis Pipeline
 
-The iMAP pipeline is a two-tier pipeline
+The iMAP is a two-tier pipeline consisting of:
 
 1. Bioinformatics analysis of 16S rRNA gene reads
 2. Exploratory visualization. 
