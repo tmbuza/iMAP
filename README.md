@@ -229,3 +229,7 @@ bash code/linux_iMAP_driver.bash
 
 <br>
 <hr>
+
+# iMAP Poster: 2017 ASM Conference: NGS & Bioinformatics Pipelines 
+
+![](posterASM2017.png)
