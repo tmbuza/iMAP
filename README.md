@@ -231,7 +231,7 @@ bash code/linux_iMAP_driver.bash
 <hr>
 
 # iMAP Poster
-Presented at the <strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong>
+Presented at the: <br><i><strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong></i><br> 
 Oct 08 - 11, 2017 | Washington, DC | USA
 
 ![](./posters/posterASM2017.png)
