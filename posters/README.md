@@ -1,3 +1,3 @@
 # iMAP-related posters
 
-![](imapASM17.png)
+![](posterASM2017.png)
