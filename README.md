@@ -230,6 +230,8 @@ bash code/linux_iMAP_driver.bash
 <br>
 <hr>
 
-# iMAP Poster: 2017 ASM Conference: NGS & Bioinformatics Pipelines 
+# iMAP Poster
+Presented at the <strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong>
+Oct 08 - 11, 2017 | Washington, DC | USA
 
 ![](./posters/posterASM2017.png)
