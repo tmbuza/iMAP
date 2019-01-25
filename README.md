@@ -232,4 +232,4 @@ bash code/linux_iMAP_driver.bash
 
 # iMAP Poster: 2017 ASM Conference: NGS & Bioinformatics Pipelines 
 
-![](posterASM2017.png)
+![](./posters/posterASM2017.png)
