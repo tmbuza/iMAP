@@ -109,11 +109,11 @@ bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incomplete
 ```{}
 bash ./code/requirements/iMAP_checkFiles_driver.bash
 
-open reports/checked_file.txt
+open reports/checked_files.txt
 
 # OR
 
-cat reports/checked_file.txt
+cat reports/checked_files.txt
 ```
 
 <br>
