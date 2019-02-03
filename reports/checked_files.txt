@@ -8,7 +8,7 @@ Checking if you have the required directories and files.
 ✅ [img/] found
 
 
-Checking for valid folders or files in [/Users/tmbuza/iMAP] directory
+Checking for valid folders or files in [/Volumes/SeagateTMB/iMAP_CURRENT/iMAP] directory
 
 ✅ [README.md] found
 
@@ -23,7 +23,7 @@ Checking for valid folders or files in [/Users/tmbuza/bin] directory
 ✅ [vsearch] found
 
 
-Checking for valid folders or files in [/Users/tmbuza/iMAP/code] directory
+Checking for valid folders or files in [/Volumes/SeagateTMB/iMAP_CURRENT/iMAP/code] directory
 
 ✅ [annotation/*] found
 ✅ [dataanalysis/*] found
@@ -41,21 +41,21 @@ Checking for valid folders or files in [/Users/tmbuza/iMAP/code] directory
 ✅ [summarizeFastQC/*] found
 
 
-Checking for valid folders or files in [/Users/tmbuza/iMAP/data] directory
+Checking for valid folders or files in [/Volumes/SeagateTMB/iMAP_CURRENT/iMAP/data] directory
 
 ✅ [metadata/*] found
 ✅ [raw/*] found
 ✅ [references/*] found
 
 
-Checking for valid folders or files in [/Users/tmbuza/iMAP/data/references] directory
+Checking for valid folders or files in [/Volumes/SeagateTMB/iMAP_CURRENT/iMAP/data/references] directory
 
 ✅ [HMP_MOCK.fasta] found
 ✅ [silva.seed.align] found
 ✅ [silva.seed.tax] found
 
 
-Checking for valid folders or files in [/Users/tmbuza/iMAP/data/metadata] directory
+Checking for valid folders or files in [/Volumes/SeagateTMB/iMAP_CURRENT/iMAP/data/metadata] directory
 
 ✅ [mouse.test.dayID.design] found
 ✅ [mouse.test.dpw.design] found
