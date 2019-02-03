@@ -1,0 +1,686 @@
+---
+title: "Progress report 2"
+bibliography: ./library/imap.bib
+date: 'Updated: `r Sys.time()`'
+output:
+  html_document:
+    css: ./code/css/report.css
+    keep_md: yes
+link-citations: yes
+subtitle: 'Pre-processing of paired-reads'
+biblio-style: apalike
+---
+
+```{r child='00_00_global_setup.Rmd'}
+
+```
+
+<!-- # <mark>Progress report 2</mark> -->
+
+<br>
+
+<!-- # Pre-processing of paired-reads {-} -->
+
+<!-- <br> -->
+
+
+```{r loadreaddata, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+library(dplyr)
+
+qc0statR1 <- readr::read_table2(file="./results/stats/qc0/R1qcstats.txt", col_names = TRUE)
+qc0statR2 <- readr::read_table2(file="./results/stats/qc0/R2qcstats.txt", col_names = TRUE)
+qctrim25statR1 <- readr::read_table2(file="./results/stats/qctrim25/R1qcstats.txt", col_names = TRUE)
+qctrim25statR2 <- readr::read_table2(file="./results/stats/qctrim25/R2qcstats.txt", col_names = TRUE)
+qcedstatR1 <- readr::read_table2(file="./results/stats/qced/R1qcstats.txt", col_names = TRUE)
+qcedstatR2 <- readr::read_table2(file="./results/stats/qced/R2qcstats.txt", col_names = TRUE)
+
+qc0statR1 <- qc0statR1 %>%  filter(!grepl("*Mock*", file))
+qc0statR2 <- qc0statR2 %>%  filter(!grepl("*Mock*", file))
+qctrim25statR1 <- qctrim25statR1 %>%  filter(!grepl("*Mock*", file))
+qctrim25statR2 <- qctrim25statR2 %>%  filter(!grepl("*Mock*", file))
+qcedstatR1 <- qcedstatR1 %>%  filter(!grepl("*Mock*", file))
+qcedstatR2 <- qcedstatR2 %>%  filter(!grepl("*Mock*", file))
+
+f_qc0read.v <- cbind(murinevars, qc0statR1[,6:8])
+r_qc0read.v <- cbind(murinevars, qc0statR2[,6:8])
+
+f_qc0read.v.m <- reshape2::melt(f_qc0read.v, id = c("SampleID","origGroup","Sex","Time","DayID","DPW"))
+r_qc0read.v.m <- reshape2::melt(r_qc0read.v, id = c("SampleID","origGroup","Sex","Time","DayID","DPW"))
+
+
+qcstatsR1 <- cbind(qc0statR1[,c(1,4)],qctrim25statR1[,c(4)],qcedstatR1[,c(4)])
+qcstatsR2 <- cbind(qc0statR2[,c(1,4)],qctrim25statR2[,c(4)],qcedstatR2[,c(4)])
+
+colnames(qcstatsR1) <- c("File","Original_R1","TrimQ25_R1","NophiX_R1")
+colnames(qcstatsR2) <- c("File","Original_R2","TrimQ25_R2","NophiX_R2")
+
+qcstatsR1_2 <- qcstatsR1[order(qcstatsR1$File),]
+qcstatsR2_2 <- qcstatsR2[order(qcstatsR2$File),]
+
+readcountR1.v <- cbind(murinevars[,-6], qcstatsR1[,-1])
+readcountR2.v <- cbind(murinevars[,-6], qcstatsR2[,-1])
+
+# Number of readss in forward and reverse are equal
+readcount.v <- cbind(readcountR1.v, readcountR2.v[,-c(1:5)])
+# dim(readcount.v)
+# names(readcount.v)
+
+save(qc0statR1, qc0statR2, qctrim25statR1, qctrim25statR2, qcedstatR1, qcedstatR2, qc0statR1, qc0statR2, qctrim25statR1, qctrim25statR2, qcedstatR1, qcedstatR2, f_qc0read.v, r_qc0read.v, f_qc0read.v.m, r_qc0read.v.m, qcstatsR1, qcstatsR2, qcstatsR1_2, qcstatsR2_2, readcountR1.v, readcountR2.v, readcount.v, readcount.v, file = "results/readcount.RData")
+
+```
+
+```{r}
+load(file = "results/readcount.RData")
+```
+
+
+## Read count {-}
+
+<hr>
+
+```{r readsum}
+qc0r1 <-sum(readcountR1.v$Original_R1)
+qc0r1perc <-(qc0r1/qc0r1)*100
+cat("Number of forward reads before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
+
+qc0r2 <-sum(readcountR2.v$Original_R2)
+qc0r2perc <-(qc0r2/qc0r2)*100
+cat("Number of reverse reads before QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
+
+cat("Total number of reads before QC:\t", qc0r1 + qc0r2)
+
+cat("\n\n")
+```
+
+
+<br>
+
+
+## Read length {-}
+
+<hr>
+
+
+```{r fig.height=4, fig.width=10, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+# Forward read (Sex)
+f_qc0dens <- ggdensity(f_qc0read.v.m, x = "value",
+   add = "mean", rug = FALSE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Forward")
+
+
+# Reverse read (Sex)
+r_qc0dens <- ggdensity(r_qc0read.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Reverse")
+
+# Forward read (Sex)
+f_qc0hist <- gghistogram(f_qc0read.v.m, x = "value",
+   add = "mean", rug = FALSE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Forward")
+
+
+# Reverse read (Sex)
+r_qc0hist <- gghistogram(r_qc0read.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Reverse")
+
+```
+
+
+```{r qc0readhist, fig.height=6, fig.width=10}
+ggpubr::ggarrange(f_qc0dens, r_qc0dens,  f_qc0hist, r_qc0hist, ncol = 2, nrow = 2,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+
+```
+
+Figure x: ensity and histograms plots showing forward and reverse read length. Dotted line indicates mean value for the specified variable
+
+<br>
+
+```{r readmeltdata}
+set.seed(110912)
+
+f_readcount.v.m <- reshape2::melt(readcount.v[,-c(9:11)], id = c("SampleID", "origGroup" , "Sex","Time","DayID"))
+r_readcount.v.m <- reshape2::melt(readcount.v[,-c(6:8)], id = c("SampleID", "origGroup" , "Sex","Time","DayID"))
+
+```
+
+
+<br>
+
+# Distribution of raw reads {-}
+
+<br>
+
+## Barplots  {-}
+
+<hr>
+
+**Grouped by Sex variable**
+```{r readbar1, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar1 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "Sex",           # change fill color by mpg_level
+          color = "Sex",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar1, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+
+```
+
+Figure x: Barplots of pre-processed reads grouped by sex variable. 
+
+<br>
+
+**Grouped by Time variable**
+```{r readbar2, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar2 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "Time",           # change fill color by mpg_level
+          color = "Time",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar2, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+
+```
+
+Figure x: Barplots of pre-processed reads grouped by time variable
+
+<br>
+
+**Grouped by days-post-weaning (D) variable**
+
+```{r readbar3, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar3 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "DayID",           # change fill color by mpg_level
+          color = "DayID",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar3, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+
+```
+
+Figure x: Barplots of pre-processed reads grouped by time variable
+
+<br>
+
+# Base call quality {-}
+
+* In the results folder you will find a folder named *multiqc* which contains data for HTML display. Right-click-open with your favorite browser
+* Using CLI: Alternatively, open the HTML file on command line by running the following commands
+
+<br>
+
+## Original base call quality (qc0) {-}
+
+<hr>
+
+
+```{}
+open ./results/multiqc/qc0/multiqc_report.html
+open ./results/multiqc/qc0/R1/multiqc_report.html
+open ./results/multiqc/qc0/R2/multiqc_report.html
+```
+
+
+<br>
+
+![](./img/qc0_fastQC.png)
+
+Figure x: Example of report generated by running **open ./results/multiqc/qc0/multiqc_report.html** on CLI
+
+<br>
+
+## Base call quality after trimming at Q = 25 (qctrim25) {-}
+
+<hr>
+
+```{}
+open ./results/multiqc/qctrim25/multiqc_report.html
+open ./results/multiqc/qctrim25/R1/multiqc_report.html
+open ./results/multiqc/qctrim25/R2/multiqc_report.html
+```
+
+<br>
+
+![](./img/qctrim25_fastQC.png)
+
+Figure x: Example of report generated by running **open ./results/multiqc/qced/R2/multiqc_report.html** on CLI
+
+<br>
+
+## Base call quality after removing phiX {-}
+
+<hr>
+
+```{}
+open ./results/multiqc/qced/multiqc_report.html
+open ./results/multiqc/qced/R1/multiqc_report.html
+open ./results/multiqc/qced/R2/multiqc_report.html
+
+```
+
+<br>
+
+![](./img/qced_fastQC.png)
+
+Figure x: Example of report generated by running **open ./results/multiqc/qced/R2/multiqc_report.html** on CLI
+
+
+<br>
+
+
+# Status of pre-processed reads {-}
+* Check for missing data
+
+<hr>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+data_status <- funModeling::df_status(readcount.v)
+# arrange(data_status, -p_zeros) %>% select(variable, q_zeros, p_zeros)
+```
+
+```{r}
+knitr::kable(data_status, "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 14)
+
+```
+
+Key: **q_zeros**: quantity of zeros or missing data ; **q_na**: quantity of NA; **q_inf**: quantity of infinite values; **type**: factor, character, integer or numeric..; **unique**: quantity of unique values. Percentages are indicated by **p_**.
+
+<br>
+
+# Distribution of pre-processed reads {-}
+* Bar plots
+* Box plots
+* Density plots
+* Histogram plots
+
+<br>
+
+## Stacked barplot {-}
+
+<hr>
+
+```{r readbar4, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar4 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "variable",           # change fill color by mpg_level
+          color = "variable",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar4, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "top", align = "hv", labels = "")
+
+```
+
+Figure x: Stacked barplots of pre-processed reads grouped by QC variable
+
+<br>
+
+## Boxplots {-}
+
+<hr>
+
+```{r boxforintext, fig.height=6, fig.width=10}
+
+library(ggpubr)
+
+boxforintext1 <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
+                color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "point", shape = "variable") +  xlab("") + ylab("Number of reads") + ggtitle("")
+
+boxforintext2 <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
+                color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads") + ggtitle("")
+
+ggpubr::ggarrange(boxforintext1, boxforintext2, ncol = 1, nrow = 2,  common.legend = TRUE, legend = "none", align = "v", labels = "AUTO")
+```
+
+<br>
+
+## Density plots {-}
+
+<hr>
+
+```{r fig.height=4, fig.width=10}
+
+library(ggpubr)
+
+readdens <- f_timedensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads")+
+  facet_wrap(~variable) + nolegend
+
+readdens
+```
+
+<br>
+
+## Histograms {-}
+
+<hr>
+
+```{r fig.height=4, fig.width=10}
+
+readdhist <- f_timedensplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads")+
+  facet_wrap(~variable) + nolegend
+
+readdhist
+```
+
+```{r eval=FALSE, fig.height=10, fig.width=10, include=FALSE}
+
+ggpubr::ggarrange(readboxpoint, readboxjitter, readdhist, readdens, ncol = 1, nrow = 4,  common.legend = TRUE, legend = "none", align = "v", labels = "AUTO")
+
+```
+
+<!-- Figure x: Boxplot of pre-processed reads plotted with overplotting points (A) and jitter points (B). -->
+
+<br>
+<br>
+
+```{r readjitterbox, fig.height=8, fig.width=10}
+
+library(ggpubr)
+
+# Box plots with jittered points
+
+f_readbox <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
+                color = "Sex", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads") + ggtitle("Forward reads") + facet_grid(~ Time)
+
+r_readbox <- ggboxplot(r_readcount.v.m, x = "variable", y = "value",
+                color = "Sex", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads") + ggtitle("Reverse reads") + facet_grid(~ Time)
+
+ggpubr::ggarrange(f_readbox, r_readbox, ncol = 1, nrow = 2,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+```
+
+
+<!-- Figure x: Boxplot of pre-processed reads by read.  -->
+
+<br>
+
+## Grouped by variable {-}
+
+<hr>
+
+```{r prebyvar, fig.height=5, fig.width=10}
+# Forward read (Sex)
+f_sexdensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("h") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_sexdensplot <- ggdensity(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Reverse reads")
+
+# Forward read (Sex)
+f_timedensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_timedensplot <- ggdensity(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Reverse reads")
+```
+
+```{r density, fig.height=7, fig.width=10}
+# ggpubr::ggarrange(f_sexdensplot,r_sexdensplot, f_timedensplot, r_timedensplot, ncol = 2, nrow = 2,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+
+```
+
+<!-- Figure x: Density plots of pre-processed read grouped by QC variables. Mean values are indicated by the dotted lines and marginal rugs are shown at the bottom. -->
+
+```{r paperplots, fig.height=4, fig.width=10}
+
+readboxplot <- ggboxplot(f_readcount.v.m, x = "Time", y = "value",
+   color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+   add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads") + ggtitle("") + facet_grid(~ Sex) + normalaxislayout
+
+sexdensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("") + nolegend + normalaxislayout
+
+timedensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("") + nolegend + normalaxislayout
+
+sexhistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("") + nolegend + normalaxislayout
+timehistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("") + nolegend + normalaxislayout
+
+
+# ggpubr::ggarrange(boxplot, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
+# ggpubr::ggarrange(sexdensplot, timedensplot, ncol = 2, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
+# ggpubr::ggarrange(sexhistplot, timehistplot, ncol = 2, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
+```
+
+
+<!-- <br> -->
+
+```{r paper_preprocplots, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
+
+plots <- cowplot::align_plots(readboxplot, sexdensplot,  sexhistplot, align = 'v', axis = 'l')
+top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h')
+middle_row <- cowplot::plot_grid(plots[[2]], timedensplot, labels = "", align = 'h', rel_widths = c(1, 1))
+bottom_row <- cowplot::plot_grid(plots[[3]], timehistplot, labels = "", align = 'h', rel_widths = c(1, 1))
+
+# ggpubr::ggarrange(top_row, middle_row, bottom_row, ncol = 1, nrow=3, common.legend = TRUE, legend = "bottom", align = "hv", labels = "AUTO", rel_heights = c(1.8, 1.2, 1.2))
+cowplot::plot_grid(top_row, middle_row, bottom_row, ncol = 1, rel_heights = c(1.8, 1.4, 1.4), labels = "")
+
+```
+
+ 
+<!-- <br> -->
+
+
+<!-- ## Histogram plots {-} -->
+
+<!-- <hr> -->
+
+
+```{r fig.height=5, fig.width=10, include=FALSE}
+# Forward read (Sex)
+f_sexhistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("h") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_sexhistplot <- gghistogram(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Reverse reads")
+
+# Forward read (Sex)
+f_timehistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_timehistplot <- gghistogram(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Reverse reads")
+```
+
+```{r histogram, eval=FALSE, fig.height=7, fig.width=10, include=FALSE}
+ggpubr::ggarrange(f_sexhistplot, f_timehistplot, r_sexhistplot, r_timehistplot, ncol = 2, nrow = 2,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+
+```
+
+<!-- Figure x: Histogram plots of pre-processed read grouped by QC variables. Mean values are indicated by the dotted lines and marginal rugs are shown at the bottom. -->
+
+<br>
+
+# Summary of pre-processed reads {-}
+
+<br>
+
+## Total read count
+
+<hr>
+
+* Sum of reads in all samples
+
+```{r readcount, echo=FALSE, message=FALSE, warning=FALSE}
+qc0r1 <-sum(readcountR1.v$Original_R1)
+qc0r1perc <-(qc0r1/qc0r1)*100
+cat("Number of forward reads before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
+
+qc0r2 <-sum(readcountR2.v$Original_R2)
+qc0r2perc <-(qc0r2/qc0r2)*100
+cat("Number of reverse reads before QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
+
+# cat("Total Reads before QC:\t", qc0r1 + qc0r2)
+
+cat("\n\n")
+
+qctrim25r1 <-sum(readcountR1.v$TrimQ25_R1)
+qctrim25r1perc <-(qctrim25r1/qc0r1)*100
+cat("Number of forward reads after trimming at Q=25 (TrimQ25_R1):\t", qctrim25r1, "(",qctrim25r1perc,"%",")\n") 
+
+qctrim25r2 <-sum(readcountR2.v$TrimQ25_R2)
+qctrim25r2perc <-(qctrim25r2/qc0r1)*100
+cat("Number of reverse reads after trimming at Q=25 (TrimQ25_R2):\t", qctrim25r2, "(",qctrim25r2perc,"%",")\n") 
+
+# cat("Total Reads after trimming at Q=25:\t", qctrim25r1 + qctrim25r2)
+
+cat("\n\n")
+
+qctrim25r1 <-sum(readcountR1.v$TrimQ25_R1)
+qcedr1 <-sum(readcountR1.v$NophiX_R1)
+qcedr1perc <-(qcedr1/qc0r1)*100
+cat("Number of forward reads after phiX removal (NophiX_R1):\t", qcedr1, "(",qcedr1perc,"%",")\n") 
+
+qcedr2 <-sum(readcountR2.v$NophiX_R2)
+qcedr2perc <-(qcedr2/qc0r1)*100
+cat("Number of reverse reads after phiX removal (NophiX_R2):\t", qcedr2, "(",qcedr2perc,"%",")\n") 
+
+# cat("Total Reads after phiX removal:\t", qcedr1 + qcedr2)
+
+```
+
+<br>
+
+## Descriptive statistics
+
+<hr>
+
+```{r summarystats, message=FALSE, warning=FALSE}
+readsummary <- summary(readcount.v[,-c(1:5)])
+
+knitr::kable(readsummary, "html", booktabs = TRUE) %>%
+kable_styling(bootstrap_options = "striped", font_size = 12)
+
+```
+
+<br>
+
+# Posible questions {-}
+
+<hr>
+
+## At read inspection step
+* QN1: Are there samples to be removed from the analysis based on read depth?
+* QN2: Are there samples to be removed from the analysis based on read length?
+* QN3: .......?
+* QN4: .......?
+
+
+<br>
+
+## At base call quality checking step
+* QN1: Are there samples to be removed from the analysis based on read quality?
+* QN2: What are the minimum trimming parameters?
+* QN3: Is trimming both ends necessary?
+* QN4: Was phiX control used in the experiment, if so should removal of phiX contamination necessary?
+
+
+<br>
+
+```{bash eval=FALSE, include=FALSE}
+# Bash command
+
+# Rscript -e "rmarkdown::render('./report2.Rmd', clean=TRUE, quiet=FALSE, output_file='report2_read_preprocessing.html', output_dir='reports')"
+
+```
+
+<br>

@@ -1,0 +1,77 @@
+---
+title: "Microbiome Data Analysis using iMAP pipeline"
+date: 'Updated: `r Sys.time()`'
+link-citations: yes
+output:
+  html_document:
+    css: ./code/css/report.css
+subtitle: Reproducible report template
+biblio-style: apalike
+
+---
+
+```{r child='00_00_global_setup.Rmd'}
+
+```
+
+<br>
+
+# <mark>iMAP Workflow</mark> {-}
+
+Code for implementing iMAP is designed with four bundles of commands wrapped individually in bash driver scripts for performing bioinformatic analysis of microbiome data (Figure 1). The output is then transformed into data structure suitable for conducting exploratory visualization. A progress report is generated at each major analysis step to summarize the output.
+
+<br>
+
+
+![](img/imapWorkflow.png)
+
+Schematic illustration of the iMAP pipeline.
+
+<br>
+
+```{r child='README.Rmd'}
+
+```
+
+<br>
+
+# <mark>Progress report 1: Metadata profiling</mark>
+
+<br>
+
+```{r child='report1.Rmd'}
+
+```
+
+<br>
+
+# <mark>Progress report 2: Pre-processing of paired-reads</mark>
+
+<br>
+
+```{r child='report2.Rmd'}
+
+```
+
+<br>
+
+# <mark>Progress report 3: Sequence Processing and classification</mark>
+
+<br>
+
+```{r child='report3.Rmd'}
+
+```
+
+<br>
+
+# <mark>Progress report 4: OTU clustering & Preliminary analysis</mark>
+
+<br>
+
+```{r child='report4.Rmd'}
+
+```
+
+<hr>
+
