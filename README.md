@@ -88,6 +88,8 @@ cd iMAP
 ## Gather required materials
 * Raw data (demultiplexed compressed FASTQ files). 
 * Metadata, mothur-formatted mapping files (commonly with extension .design)
+
+
 * Install required software 
 * Download reference databases (alignments and classifiers)
 
