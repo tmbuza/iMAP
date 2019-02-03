@@ -132,11 +132,9 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 
 # Progress report 1: Metadata profiling
 
-
 ```{}
-Rscript -e "rmarkdown::render('Rmd/report1.Rmd', clean=TRUE, quiet=FALSE, output_file='report1_read_preprocessing.html', output_dir='reports')"
+bash ./code/progressreport1.bash
 ```
-
 
 <br>
 
@@ -150,14 +148,21 @@ This is basically a method where users sequentially run individual or bundle scr
 ```{}
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
+
+bash ./code/progressreport2.bash # Currently being revised
+
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
 bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
+
+bash ./code/progressreport3.bash # Currently being revised
+
 bash ./code/annotation/01_processed_seqs.bash
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
 
+bash ./code/progressreport4.bash # Currently being revised
 ```
 
 <br>
