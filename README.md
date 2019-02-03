@@ -109,11 +109,11 @@ bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incomplete
 ```{}
 bash ./code/requirements/iMAP_checkFiles_driver.bash
 
-open reports/checked_file.txt
+open reports/checked_files.txt
 
 # OR
 
-cat reports/checked_file.txt
+cat reports/checked_files.txt
 ```
 
 <br>
@@ -129,6 +129,13 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 
 <hr>
 <br>
+
+# Progress report 1: Metadata profiling
+
+```{}
+bash ./code/progressreport1.bash
+```
+
 <br>
 
 # Bioinformatics analysis
@@ -141,14 +148,21 @@ This is basically a method where users sequentially run individual or bundle scr
 ```{}
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
+
+bash ./code/progressreport2.bash # Currently being revised
+
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
 bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
+
+bash ./code/progressreport3.bash # Currently being revised
+
 bash ./code/annotation/01_processed_seqs.bash
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
 
+bash ./code/progressreport4.bash # Currently being revised
 ```
 
 <br>
