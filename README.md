@@ -88,8 +88,6 @@ cd iMAP
 ## Gather required materials
 * Raw data (demultiplexed compressed FASTQ files). 
 * Metadata, mothur-formatted mapping files (commonly with extension .design)
-
-
 * Install required software 
 * Download reference databases (alignments and classifiers)
 
@@ -131,6 +129,15 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 
 <hr>
 <br>
+
+# Progress report 1: Metadata profiling
+
+
+```{}
+Rscript -e "rmarkdown::render('Rmd/report1.Rmd', clean=TRUE, quiet=FALSE, output_file='report1_read_preprocessing.html', output_dir='reports')"
+```
+
+
 <br>
 
 # Bioinformatics analysis
