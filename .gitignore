@@ -56,7 +56,6 @@ img/*/*
 
 
 results/*/*
-!code/progressreport*.bash
 *.pptx
 *.tmp
 *.map
@@ -71,7 +70,7 @@ code/seqkit
 code/qiime2code
 code/*win*
 code/summarizeFastQC
-
+!code/progressreport1.bash
 .CaseStudy/*/*
 
 # Hidden files
