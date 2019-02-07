@@ -156,7 +156,7 @@ bash ./code/progressreport3.bash # Revised on 02/06/2019
 
 ## Preliminary Analysis
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
-bash ./code/progressreport4.bash # Revised on 02/06/2019
+bash ./code/progressreport4.bash # Revision in progress
 ```
 
 <br>
@@ -219,7 +219,7 @@ bash ./code/progressreport3.bash # Revised on 02/06/2019
 
 ## Preliminary Analysis
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
-bash ./code/progressreport4.bash # Revised on 02/06/2019
+bash ./code/progressreport4.bash # Revision in progress
 ```
 
 <br>
