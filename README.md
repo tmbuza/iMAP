@@ -98,8 +98,6 @@ bash ./code/requirements/iMAP_requirements_linux_driver.bash
 # mac OS
 bash ./code/requirements/iMAP_requirements_mac_driver.bash
 
-# windows
-bash ./code/requirements/iMAP_requirements_windows_driver.bash # Incomplete
 ```
 
 <br>
@@ -130,28 +128,23 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 <hr>
 <br>
 
-# Progress report 1: Metadata profiling
-
-```{}
-bash ./code/progressreport1.bash # Revised on 02/06/2019
-```
-
-<br>
-
 # Bioinformatics analysis
 
 <br>
 
 ## CLI: Command-line-interface
-This is basically a method where users sequentially run individual or bundle scripts on CLI (Command -Line_Interface) one at a time. We have bundled workflow-specific scripts into a driver to make the analysis easily implemented on CLI by just a single click.
+This is basically a method where users sequentially run individual or bundle scripts on CLI (Command-Line-Interface) one at a time. We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented on CLI by just a single click.
 
 ```{}
-#Read Preprocessing
+## Metadata Profiling
+bash ./code/progressreport1.bash # Revised on 02/06/2019
+
+## Read Preprocessing
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
 bash ./code/progressreport2.bash # Revised on 02/06/2019
 
-#Sequence Processing
+## Sequence Processing
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
@@ -161,7 +154,7 @@ bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
 bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to evaluate read length
 bash ./code/progressreport3.bash # Revised on 02/06/2019
 
-#Output Analysis
+## Preliminary Analysis
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
 bash ./code/progressreport4.bash # Revised on 02/06/2019
 ```
@@ -174,12 +167,10 @@ The *iMAP_driver.bash* is the master driver for running all analyses on CLI at o
 ```{}
 bash ./code/linux_iMAP_driver.bash
 bash ./code/mac_iMAP_driver.bash
-bash ./code/windows_iMAP_driver.bash # In progress
 
 # Optionally you can use time tracking driver
 bash ./code/linux_time_tracking_driver.bash
 bash ./code/mac_time_tracking_driver.bash
-bash ./code/windows_time_tracking_driver.bash # In progress
 
 ```
 
@@ -208,17 +199,27 @@ cd $PBS_O_WORKDIR
 
 # Comment unused command(s) as necessary and uncomment the command(s) to be executed
 
-bash ./code/requirements/iMAP_requirements_linux_driver.bash
-bash ./code/requirements/iMAP_checkFiles_driver.bash
+## Metadata Profiling
+bash ./code/progressreport1.bash # Revised on 02/06/2019
+
+## Read Preprocessing
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
+bash ./code/progressreport2.bash # Revised on 02/06/2019
+
+## Sequence Processing
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
 bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
-bash ./code/annotation/01_processed_seqs.bash
-bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analyses
+bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
+bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to evaluate read length
+bash ./code/progressreport3.bash # Revised on 02/06/2019
+
+## Preliminary Analysis
+bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
+bash ./code/progressreport4.bash # Revised on 02/06/2019
 ```
 
 <br>
@@ -245,7 +246,7 @@ bash code/linux_iMAP_driver.bash
 <br>
 <hr>
 
-# iMAP Conference Poster
+# iMAP ASM Conference Poster
 Presented at the: <br><i><strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong></i><br> 
 Oct 08 - 11, 2017 | Washington, DC | USA
 
