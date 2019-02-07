@@ -163,7 +163,7 @@ bash ./code/progressreport3.bash # Revised on 02/06/2019
 
 #Output Analysis
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
-bash ./code/progressreport4.bash # Currently being revised
+bash ./code/progressreport4.bash # Revised on 02/06/2019
 ```
 
 <br>
