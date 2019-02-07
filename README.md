@@ -133,7 +133,7 @@ Figure S1: Major folders in the iMAP root directory. Folders and files marked wi
 # Progress report 1: Metadata profiling
 
 ```{}
-bash ./code/progressreport1.bash
+bash ./code/progressreport1.bash # Revised on 02/06/2019
 ```
 
 <br>
@@ -146,22 +146,23 @@ bash ./code/progressreport1.bash
 This is basically a method where users sequentially run individual or bundle scripts on CLI (Command -Line_Interface) one at a time. We have bundled workflow-specific scripts into a driver to make the analysis easily implemented on CLI by just a single click.
 
 ```{}
+#Read Preprocessing
 bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
+bash ./code/progressreport2.bash # Revised on 02/06/2019
 
-bash ./code/progressreport2.bash # Currently being revised
-
+#Sequence Processing
 bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
 bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
+bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
+bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to evaluate read length
+bash ./code/progressreport3.bash # Revised on 02/06/2019
 
-bash ./code/progressreport3.bash # Currently being revised
-
-bash ./code/annotation/01_processed_seqs.bash
+#Output Analysis
 bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
-
 bash ./code/progressreport4.bash # Currently being revised
 ```
 
