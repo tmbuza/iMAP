@@ -831,7 +831,7 @@ mtext("Number sampled", cex = 1.2, side = 1, line = -2, outer = TRUE)
 
 <hr>
 
-```{r inext_qo, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r inext_qo, emessage=FALSE, warning=FALSE}
 library(iNEXT)
 
 otu_inextrichness <- iNEXT::iNEXT(otu.t,  q=0, datatype="abundance", endpoint = 500)
