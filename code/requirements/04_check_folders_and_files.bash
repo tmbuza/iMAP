@@ -27,7 +27,7 @@ REQUIRED_CODE_FOLDERS_OR_FILES=(
 	"dataanalysis/*"
 	"linux_iMAP_driver.bash"
 	"mac_iMAP_driver.bash"
-	"windows_iMAP_driver.bash"
+	# "windows_iMAP_driver.bash"
 	"mockcommunity/*"
 	"otutaxonomy/*"
 	"preprocessing/*"
