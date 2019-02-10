@@ -532,7 +532,7 @@ names(variables)[2] <- "origGroup"
 <br>
 
 
-```{r loadtaxadata, eval=FALSE, include=FALSE}
+```{r loadtaxadata}
 ##all taxa data
 phylum.a <- read.table(file = "../../results/tables/phylotype/phylum.a.tsv", header = TRUE, sep = "\t")
 class.a <- read.table(file = "../../results/tables/phylotype/class.a.tsv", header = TRUE, sep = "\t")
