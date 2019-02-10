@@ -31,7 +31,7 @@ load("../../results/tables/phylotype/otutaxon.RData")
 * Phylogeny method where tree was taxonomically classified with minimum set at 97% identity
 
 
-```{r taxonomydata, eval=FALSE, warning=FALSE, , message=FALSE, include=FALSE}
+```{r taxonomydata, warning=FALSE, , message=FALSE}
 
 ## Phylotype approach
 
