@@ -51,13 +51,13 @@ load("../../results//mergealignreport.RData")
 contigrpt_2 <- contigrpt[c(2,3,6)]
 names(contigrpt_2) <- c("SeqLength","Overlap_Length","MisMatches")
 
-write.table(contigrpt_2,"../../results/tables/phylotype/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(contigrpt_2,"../../results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 
 alignrpt_2 <- alignrpt[c(2,12,16)]
 names(alignrpt_2) <- c("QueryLength","PairwiseAlignmentLength","SimBtwnQuery.Template")
 
-write.table(alignrpt_2,"../../results/tables/phylotype/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(alignrpt_2,"../../results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 ```
 
