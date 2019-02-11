@@ -1,6 +1,6 @@
 # bash ./code/metadataprofiling/iMAP_metadata_profiling_driver.bash
-# bash ./code/requirements/iMAP_requirements_linux_driver.bash
-# bash ./code/requirements/iMAP_checkFiles_driver.bash
+bash ./code/requirements/iMAP_requirements_linux_driver.bash
+bash ./code/requirements/iMAP_checkFiles_driver.bash
 # bash ./code/preprocessing/iMAP_preprocessing_driver.bash
 # bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
 # bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
