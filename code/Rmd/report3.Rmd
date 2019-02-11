@@ -5,7 +5,7 @@ date: 'Updated: `r Sys.time()`'
 output:
   html_document:
     css: ../../code/css/report.css
-    keep_md: yes
+    # keep_md: yes
 link-citations: yes
 subtitle: 'Sequence Processing and classification'
 biblio-style: apalike
@@ -61,7 +61,7 @@ write.table(alignrpt_2,"../../results/tables/alignrpt_2.tsv", append = FALSE, qu
 
 ```
 
-```{r include=FALSE}
+```{r, fig.height=6, fig.width=10, include=FALSE}
 p1 <- funModeling::plot_num(contigrpt_2)
 p2 <- funModeling::plot_num(alignrpt_2)
 ```
@@ -142,7 +142,7 @@ seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
 
 ### Stacked barplot {-}
 
-```{r seqbar1, fig.height=3, fig.width=5, message=FALSE, warning=FALSE}
+```{r seqbar1, fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
 
 library(ggpubr)
 
@@ -165,11 +165,11 @@ Figure x: Stacked barplots of processed sequences grouped by processing variable
 
 <br>
 
-### Boxplots grouped by processing variable{-}
+### Boxplots grouped by process variable{-}
 
 <br>
 
-```{r barbox, message=FALSE, warning=FALSE}
+```{r barbox, message=FALSE, warning=FALSE, fig.height=6, fig.width=10}
 
 library(ggplot2)
 library(ggpubr)
@@ -210,7 +210,7 @@ seqjitterbox
 <br>
 
 ### Boxplots grouped by sex and time variable
-```{r boxrpt3_2, fig.height=3, fig.width=5}
+```{r boxrpt3_2, , fig.height=6, fig.width=10}
 
 boxplot <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
                 color = "Sex", palette =c("rainbow"),
@@ -221,7 +221,7 @@ ggpubr::ggarrange(boxplot, ncol = 1, nrow = 1,  common.legend = FALSE, legend = 
 
 <br>
 
-```{r denshistrpt3, fig.height=3, fig.width=6, message=FALSE, warning=FALSE, include=FALSE}
+```{r denshistrpt3, , fig.height=6, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
 sexdensplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack",
    color = "variable", fill = "variable",
@@ -254,7 +254,7 @@ timehistplot <- gghistogram(seqcount.v.m, x = "value",
 
 ### Publication-ready distribution plots
 
-```{r seqintext_barboxdenshist, fig.height=3, fig.width=6, message=FALSE, warning=FALSE}
+```{r seqintext_barboxdenshist, , fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
 seqbar <- ggplot(seqcount.v.m,aes(variable,value, fill=variable)) +
      geom_bar(stat="identity", width=.8, position="dodge")+
   xlab("") + ylab("Sequence depth")  + ggtitle("")+
@@ -266,7 +266,7 @@ seqbar
 ```
 
 
-```{r}
+```{r, fig.height=6, fig.width=10,}
 boxforintext2 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
                 color = "variable", palette =c("rainbow"),
                 add = "jitter", shape = 19) +  xlab("") + ylab("Sequence depth") + ggtitle("") +
@@ -279,7 +279,7 @@ boxforintext2
 ```
 
 
-```{r}
+```{r, fig.height=6, fig.width=10,}
 
 sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack",
@@ -294,7 +294,7 @@ sexintext_densplot
 ```
 
 
-```{r}
+```{r, fig.height=6, fig.width=10,}
 # sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
 #    add = "mean", rug = TRUE, bins = 25,
 #    color = "white", fill = "variable",
@@ -307,7 +307,7 @@ sexintext_densplot
 ```
 
 
-```{r}
+```{r, fig.height=6, fig.width=10,}
 timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "dodge", alpha = 0.05,
    color = "variable", fill = "variable",
@@ -321,7 +321,7 @@ timeintext_densplot
 ```
 
 
-```{r}
+```{r, fig.height=6, fig.width=10,}
 # timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   #  add = "mean", rug = TRUE, binwidth = 1000,
   #  color = "white", fill = "variable",
@@ -334,7 +334,7 @@ timeintext_densplot
 ```
 
 
-```{r}
+```{r, fig.height=6, fig.width=10,}
 # 
 # plots <- cowplot::align_plots(boxforintext2, sexintext_densplot,  sexintext_histplot, align = 'v', axis = 'l')
 # top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h')

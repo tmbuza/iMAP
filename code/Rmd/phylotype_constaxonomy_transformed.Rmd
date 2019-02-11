@@ -402,16 +402,6 @@ colnames(samplemetadata)[1] <- "SampleID"
 variables <- samplemetadata %>% select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
 View(variables)
 
-richdiv <- readr::read_table2(file = "../../data/mothur/phylotype/03_summary/qced.otu.groups.summary")
-richdiv.v <- cbind(variables, richdiv)
-
-phylodiv <- readr::read_table2(file = "../../data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary")
-View(phylodiv)
-phylodiv.v <- cbind(variables, phylodiv)
-
-richdivphylo.v <- cbind(richdiv.v, phylodiv[,2:3])
-
-
 otu.t.v <- otu.t
 otu.t.v <- cbind(variables, otu.t)
 otuprop.v <- cbind(variables, otuprop)
@@ -496,24 +486,6 @@ write.table(familyprop.v,"../../results/tables/phylotype/familyprop.v.tsv", quot
 write.table(genusprop.v,"../../results/tables/phylotype/genusprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-
-
-# Species richness and diversity
-write.table(richdiv, "../../results/tables/phylotype/richdiv.tsv", quote = FALSE, sep="\t",
-            row.names = FALSE, col.names = TRUE)
-
-write.table(richdiv.v, "../../results/tables/phylotype/richdiv.v.tsv", quote = FALSE, sep="\t",
-            row.names = FALSE, col.names = TRUE)
-
-write.table(phylodiv, "../../results/tables/phylotype/phylodiv.tsv", quote = FALSE, sep="\t",
-            row.names = FALSE, col.names = TRUE)
-
-write.table(phylodiv.v,"../../results/tables/phylotype/phylodiv.v.tsv", quote = FALSE, sep="\t",
-            row.names = FALSE, col.names = TRUE)
-
-write.table(richdivphylo.v,"../../results/tables/phylotype/richdivphylo.v.tsv", quote = FALSE, sep="\t",
-            row.names = FALSE, col.names = TRUE)
-
 ```
 
 
@@ -526,7 +498,7 @@ colnames(samplemetadata)[1] <- "SampleID"
 # Subsetting metadata for mapping to output from dowmstream analysis
 library(dplyr)
 variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-names(variables)[2] <- "origGroup"
+names(variables)[2] <- "origID"
 ```
 
 <br>
@@ -596,8 +568,7 @@ f.scaled.prop <- scale(familyprop, scale = TRUE) # Scale the data
 g.scaled.prop <- scale(genusprop, scale = TRUE) # Scale the data
 
 
-save(class, class.a, class.t, class.t.v, classprop, classprop.v, family, family.a, family.t, family.t.v, familyprop, familyprop.v, genus, genus.a, genus.t, genus.t.v, genusprop, genusprop.v, order, order.a, order.t, order.t.v, orderprop, orderprop.v, otu, otu.t, otu.t.v, otuprop, otuprop.v, phylum, phylum.a, phylum.t, phylum.t.v,	phylumprop,	phylumprop.v, otu.scaled.t, p.scaled.t, c.scaled.t, o.scaled.t, f.scaled.t, g.scaled.t, otu.scaled.prop, p.scaled.prop, c.scaled.prop, o.scaled.prop, f.scaled.prop, g.scaled.prop, file = "../../results/taxadata.RData")
-phylum
+save(class, class.a, class.t, class.t.v, classprop, classprop.v, family, family.a, family.t, family.t.v, familyprop, familyprop.v, genus, genus.a, genus.t, genus.t.v, genusprop, genusprop.v, order, order.a, order.t, order.t.v, orderprop, orderprop.v, otu, otu.t, otu.t.v, otuprop, otuprop.v, phylum, phylum.a, phylum.t, phylum.t.v, phylumprop, phylumprop.v, otu.scaled.t, p.scaled.t, c.scaled.t, o.scaled.t, f.scaled.t, g.scaled.t, otu.scaled.prop, p.scaled.prop, c.scaled.prop, o.scaled.prop, f.scaled.prop, g.scaled.prop, file = "../../results/taxadata.RData")
 ```
 
 ```{r}

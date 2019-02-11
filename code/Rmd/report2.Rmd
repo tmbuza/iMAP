@@ -5,7 +5,7 @@ date: 'Updated: `r Sys.time()`'
 output:
   html_document:
     css: ../../code/css/report.css
-    keep_md: yes
+    # keep_md: yes
 link-citations: yes
 subtitle: 'Pre-processing of paired-reads'
 biblio-style: apalike
@@ -193,9 +193,9 @@ readbar1 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points (8 samples)", 
           legend.title = ""
-          ) + noxlabels
+          ) #+ noxlabels
 
 ggpubr::ggarrange(readbar1, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
 
@@ -218,9 +218,9 @@ readbar2 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points (8 samples)", 
           legend.title = ""
-          ) + noxlabels
+          ) #+ noxlabels
 
 ggpubr::ggarrange(readbar2, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
 
@@ -244,9 +244,9 @@ readbar3 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points (8 samples)", 
           legend.title = ""
-          ) + noxlabels
+          ) #+ noxlabels
 
 ggpubr::ggarrange(readbar3, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
 
@@ -365,9 +365,9 @@ readbar4 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points (8 samples)", 
           legend.title = ""
-          ) + noxlabels
+          ) #+ noxlabels
 
 ggpubr::ggarrange(readbar4, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "top", align = "hv", labels = "")
 

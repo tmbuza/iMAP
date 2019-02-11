@@ -1,7 +1,7 @@
 ---
 output:
   html_document: default
-bibliography: ["library/imap.bib"]
+bibliography: ["../../library/imap.bib"]
 biblio-style: apalike
 link-citations: yes
 date: "Updated: `r Sys.time()`"
@@ -12,6 +12,9 @@ date: "Updated: `r Sys.time()`"
 
 ```
 
+```{r}
+load("../../results/tables/phylotype/otutaxon.RData")
+```
 
 ## Heatmaps
 
@@ -26,7 +29,7 @@ ggplot(melt(p.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
   geom_tile(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
   scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="Samples (n = 360)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10)) + noxlabels
+  labs(x="Samples (n = 8)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10))
 
 ```
 
@@ -40,7 +43,7 @@ ggplot(melt(c.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
   geom_tile(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
   scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="Samples (n = 360)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10)) + noxlabels
+  labs(x="Samples (n = 8)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10))
 ```
 
 <br>
@@ -53,7 +56,7 @@ ggplot(melt(o.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
   geom_tile(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
   scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="Samples (n = 360)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10)) + noxlabels
+  labs(x="Samples (n = 8)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10))
 ```
 
 <br>
@@ -66,7 +69,7 @@ ggplot(melt(f.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
   geom_tile(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
   scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="Samples (n = 360)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10)) + noxlabels
+  labs(x="Samples (n = 8)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10))
 ```
 
 <br>
@@ -79,7 +82,7 @@ ggplot(melt(g.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
   geom_tile(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
   scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="Samples (n = 360)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10)) + noxlabels
+  labs(x="Samples (n = 8)", y="") + theme(axis.text.y = element_text(face = "italic", size = 10))
 ```
 
 <br>
@@ -97,10 +100,6 @@ ggplot(melt(g.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
 * Robust for partitioning data set into clusters of observation.
 * User are required to know the data to indicate the appropriate number of clusters to be produced. 
 * Visualize clusters (pam results) using factoextra::fviz_cluster()
-
-```{r}
-load("../../results/tables/phylotype/otutaxon.RData")
-```
 
 <br>
 
@@ -170,7 +169,7 @@ Figure x: Optimal number of OTU clusters. The suggested number of best clusters 
 <!-- * Measures how well a cluster is -->
 <!-- * Estimates the average distance between clusters. -->
 
-```{r fviz_silhouette, fig.height=7, fig.width=10, message=FALSE, warning=FALSE}
+```{r fviz_silhouette, fig.height=10, fig.width=10, message=FALSE, warning=FALSE}
 
 otu.pam.t <- pam(otu.t, 2, metric = "euclidean", stand = FALSE)
 p.pam.t <- pam(phylum.t, 2, metric = "euclidean", stand = FALSE)
@@ -180,12 +179,12 @@ f.pam.t <- pam(family.t,2, metric = "euclidean", stand = FALSE)
 g.pam.t <- pam(genus.t, 2, metric = "euclidean", stand = FALSE)
 
 # Visualize pam
-otu.fviz.t <- factoextra::fviz_silhouette(otu.pam.t, diss=FALSE, 2) + ggtitle("OTUs")+ normalaxislayout2 + noxlabels + xlab("Data point") + ylab("Si width")
-p.fviz.t <- factoextra::fviz_silhouette(p.pam.t, diss=FALSE, 3) + ggtitle("Phylum")+ normalaxislayout2 + noxlabels + xlab("Data point") + ylab("Si width")
-c.fviz.t <- factoextra::fviz_silhouette(c.pam.t, diss=FALSE, 3) + ggtitle("Class")+ normalaxislayout2 + noxlabels + xlab("Data point") + ylab("Si width")
-o.fviz.t <- factoextra::fviz_silhouette(o.pam.t, diss=FALSE, 2) + ggtitle("Order")+ normalaxislayout2 + noxlabels + xlab("Data point") + ylab("Si width") 
-f.fviz.t <- factoextra::fviz_silhouette(f.pam.t, diss=FALSE, 2) + ggtitle("Family")+ normalaxislayout2 + noxlabels + xlab("Data point") + ylab("Si width") 
-g.fviz.t <- factoextra::fviz_silhouette(g.pam.t, diss=FALSE, 2) + ggtitle("Genus")+ normalaxislayout2 + noxlabels + xlab("Data point") + ylab("Si width") 
+otu.fviz.t <- factoextra::fviz_silhouette(otu.pam.t, diss=FALSE, 2) + ggtitle("OTUs")+ normalaxislayout2 + xlab("Data point") + ylab("Si width")
+p.fviz.t <- factoextra::fviz_silhouette(p.pam.t, diss=FALSE, 3) + ggtitle("Phylum")+ normalaxislayout2 + xlab("Data point") + ylab("Si width")
+c.fviz.t <- factoextra::fviz_silhouette(c.pam.t, diss=FALSE, 3) + ggtitle("Class")+ normalaxislayout2 + xlab("Data point") + ylab("Si width")
+o.fviz.t <- factoextra::fviz_silhouette(o.pam.t, diss=FALSE, 2) + ggtitle("Order")+ normalaxislayout2 + xlab("Data point") + ylab("Si width") 
+f.fviz.t <- factoextra::fviz_silhouette(f.pam.t, diss=FALSE, 2) + ggtitle("Family")+ normalaxislayout2 + xlab("Data point") + ylab("Si width") 
+g.fviz.t <- factoextra::fviz_silhouette(g.pam.t, diss=FALSE, 2) + ggtitle("Genus")+ normalaxislayout2 + xlab("Data point") + ylab("Si width") 
 
 
 ggpubr::ggarrange(otu.fviz.t, p.fviz.t, c.fviz.t, o.fviz.t, f.fviz.t, g.fviz.t, ncol = 2, nrow = 3,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
@@ -197,7 +196,7 @@ Figure x: Silhouette plot guided by the best number of clusters. Observations wi
 <br>
 
 ### Cluster visualization
-```{r sampleclusters, fig.height=7, fig.width=10}
+```{r sampleclusters, fig.height=10, fig.width=10}
 pam1 <- factoextra::fviz_cluster(otu.pam.t, 
              palette = c("#00AFBB", "#FC4E07"), # color palette
              ellipse.type = "convex", # Concentration ellipse
@@ -274,37 +273,11 @@ ggpubr::ggarrange(pam1, pam2, pam3, pam4, pam5, pam6, ncol = 2, nrow = 3,  commo
 ```
 
 <br>
-
-## Subsetting for data-driven hypotheses
-
-<hr>
-
-Example: Early vs Late DPW
-
-* Early = First 10 days of treatment
-* Late = Last 10 days of treatment
-* Samples: Female number 3 and Male number 3
-```{r eval=FALSE, include=FALSE}
-
-cat("\nIndex numbers for Female early & late DPW\n")
-tenD3early
-
-cat("\nIndex numbers for Male early & late DPW\n")
-tenD3late
-
-otushared <- read_table2("./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.shared")
-
-otusubset.shared <- otushared[c(tenD3early, tenD3late),]
-
-write.table(otusubset.shared,"results/tables/otusubset.shared", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
-
-```
-
 <br>
 
 ### Number of best clusters
 * Range: Shown sequencially for OTU, Phylum, Class. Order, Family and Genus
-```{r fviz_silhouette_intext, fig.width=10, message=FALSE, warning=FALSE,fig.height=7}
+```{r fviz_silhouette_intext, eval=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
 # <!-- ########################## -->
 # <!-- ########################## -->
 # <!-- ########################## -->
@@ -312,12 +285,12 @@ write.table(otusubset.shared,"results/tables/otusubset.shared", append = FALSE, 
 
 ### Cluster validation for Day3
 
-# otu.pam.t <- pam(otu.t[c(tenD3early,tenD3late),], 2, metric = "euclidean", stand = FALSE)
-# p.pam.t <- pam(phylum.t[c(tenD3early,tenD3late),], 2, metric = "euclidean", stand = FALSE)
-# c.pam.t <- pam(class.t[c(tenD3early,tenD3late),], 2, metric = "euclidean", stand = FALSE)
-# o.pam.t <- pam(order.t[c(tenD3early,tenD3late),], 2, metric = "euclidean", stand = FALSE)
-# f.pam.t <- pam(family.t[c(tenD3early,tenD3late),], 2, metric = "euclidean", stand = FALSE)
-# g.pam.t <- pam(genus.t[c(tenD3early,tenD3late),], 2, metric = "euclidean", stand = FALSE)
+otu.pam.t <- pam(otu.t, 2, metric = "euclidean", stand = FALSE)
+p.pam.t <- pam(phylum.t, 2, metric = "euclidean", stand = FALSE)
+c.pam.t <- pam(class.t, 2, metric = "euclidean", stand = FALSE)
+o.pam.t <- pam(order.t, 2, metric = "euclidean", stand = FALSE)
+f.pam.t <- pam(family.t, 2, metric = "euclidean", stand = FALSE)
+g.pam.t <- pam(genus.t, 2, metric = "euclidean", stand = FALSE)
 
 # Visualize pam
 otu.fviz.t <- factoextra::fviz_silhouette(otu.pam.t) + ggplot2::ggtitle("OTUs")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels 
@@ -329,7 +302,14 @@ g.fviz.t <- factoextra::fviz_silhouette(g.pam.t) + ggplot2::ggtitle("Genus")+ no
 
 
 ggpubr::ggarrange(otu.fviz.t, p.fviz.t, c.fviz.t, o.fviz.t, f.fviz.t, g.fviz.t, ncol = 2, nrow = 3,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
+```
 
+`
+
+<br>
+
+```{r eval=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
+library(vegan)
 
 # <br>
 
@@ -439,7 +419,7 @@ g.pca <- FactoMineR::PCA(genus.t, scale.unit = FALSE, graph = FALSE)
 
 
 ### Scree plot: Analysis of number of suitable components
-```{r fviz_screeplot, eval=FALSE, fig.height=8, fig.width=10, include=FALSE}
+```{r fviz_screeplot, fig.height=8, fig.width=10}
 
 otu.scree <- factoextra::fviz_screeplot(otu.pca, xlab = "Dimens ions", ylab = "Explained variance(%)", addlabels = TRUE,  ylim = c(0, 100)) + ggplot2::ggtitle("") + cleanup
 p.scree <- factoextra::fviz_screeplot(p.pca, xlab = "Dimens ions", ylab = "Explained variance(%)", addlabels = TRUE,  ylim = c(0, 100)) + ggplot2::ggtitle("") + cleanup
@@ -501,7 +481,6 @@ g.pco <- pco(g.dis.bray, k=10)
 # barplot(f.pco$eig, main = "Family", xlab = "PCO1", ylab = "PCO2")
 # barplot(g.pco$eig, main = "Genus", xlab = "PCO1", ylab = "PCO2") 
 
-par(mfrow = c(2, 3))
 
 plot(otu.pco$points, main = "OTUs", xlab = "PCO1", ylab = "PCO2", col=2)
 abline(h=0, v=0, lt=2, col="grey")
@@ -586,8 +565,8 @@ g.mds
 
 ### Sherperd and non-metric multidimensional scaling plots.
 
-```{r stressplot, fig.height=10, fig.width=10}
-par(mfrow=c(4,3))
+```{r stressplot, fig.height=8, fig.width=10}
+par(mfrow=c(2,3))
 par(cex.axis=1.5, cex.lab=1.8, cex.main=2, cex.sub=1.2)
 
 stressplot(otu.mds)
@@ -602,6 +581,13 @@ stressplot(f.mds)
 mtext("Family", cex=.8, adj = 0)
 stressplot(g.mds)
 mtext("Genus", cex=.8, adj = 0)
+```
+
+<br><hr>
+
+```{r goodness, fig.height=8, fig.width=10}
+par(mfrow=c(2,3))
+par(cex.axis=1.5, cex.lab=1.8, cex.main=2, cex.sub=1.2)
 
 gof <- goodness(otu.mds)
 plot(otu.mds, display = "species", cex = gof/mean(gof))
