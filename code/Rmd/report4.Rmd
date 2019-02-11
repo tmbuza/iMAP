@@ -679,6 +679,15 @@ Figure x: Species diversity and correlation to species richness. Definitely phyl
 
 <br>
 
+### Correlation between species diversity and species richness
+* Sample size: 360 samples
+
+<br>
+
+![Example: Figure10 in iMAP paper](../../img/Figure10.png)
+
+
+
 ## Species accumulation
 
 <hr>
