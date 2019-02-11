@@ -1685,7 +1685,7 @@ Figure x: Principal coordinate analysis ordination using Bray-Curtis dissimilari
 * Goodness of fit and Sheperd plot can be used to determine the good or poor fit. 
 * Stress values are used to indicate the quality of NMDS ordination, <0.1 are considered fair, <0.05 indicate good fit.
 * [Reference](https://mb3is.megx.net/gustame/dissimilarity-based-methods/nmds)
-```{r eval=FALSE, include=FALSE}
+```{r echo=FALSE}
 set.seed(110912)
 library(vegan)
 
@@ -1700,7 +1700,7 @@ save(otu.mds,p.mds,c.mds,o.mds,f.mds,g.mds, file = "../../results/mds.RData")
 ```
 
 
-```{r}
+```{r echo=FALSE}
 load(file = "../../results/mds.RData")
 ```
 
