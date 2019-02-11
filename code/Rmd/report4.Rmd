@@ -1052,7 +1052,7 @@ ggarrange(otu_type3, p_type3, c_type3,o_type3,f_type3,g_type3, ncol =3, nrow = 2
 ggpubr::ggarrange(otu_type1, otu_type2, otu_type3, p_type1, p_type2, p_type3, c_type1, c_type2, c_type3, o_type1, o_type2, o_type3, f_type1, f_type2, f_type3, g_type1, g_type2, g_type3, ncol =3, nrow = 6, common.legend = TRUE, legend = "none", align = "hv", labels = "")
 ```
 
-Figure x. Rarefaction and extrapolation curves. Sample Size curve (**A**), sample completeness curve (**B**), Coverage-based curves (**C**).
+<!-- Figure x. Rarefaction and extrapolation curves. Sample Size curve (**A**), sample completeness curve (**B**), Coverage-based curves (**C**). -->
 
 <br>
 
