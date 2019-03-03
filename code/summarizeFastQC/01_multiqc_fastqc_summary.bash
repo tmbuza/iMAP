@@ -8,9 +8,9 @@
 #pip3 install --upgrade pip
 #pip3 install --user multiqc
 
-#git clone https://github.com/ewels/MultiQC.git
-#mv MultiQC ./code
-#python3 ./code/MultiQC/setup.py install
+git clone https://github.com/ewels/MultiQC.git
+mv MultiQC ./code
+python3 ./code/MultiQC/setup.py install
 
 mkdir results/multiqc
 mkdir results/multiqc/qc0
