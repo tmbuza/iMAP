@@ -1,6 +1,7 @@
 
 #!/usr/bin/env bash
 
+mkdir ~/bin
 
 ##############################################################
 ## Download seqkit and put it into the code directory
