@@ -60,8 +60,9 @@ rm BBMap_37.90.tar.gz
 #!Important: Latest versions may not work well until it is stable. Should that hapen, just install a previous version.
 
 # #Linux
-##wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.40.0.1/Mothur.linux_64.zip
-wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
+wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.3/Mothur.linux_64.zip
+# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.40.0.1/Mothur.linux_64.zip
+# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
 unzip Mothur.linux_64.zip
 mv mothur code/
 cp code/mothur/mothur ~/bin/
