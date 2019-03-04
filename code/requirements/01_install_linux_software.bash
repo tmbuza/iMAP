@@ -11,7 +11,7 @@ mkdir ~/bin
 wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
 tar -zxvf seqkit_linux_amd64.tar.gz
 mv seqkit code/
-chmod 755 seqkit
+chmod 755 code/seqkit
 cp code/seqkit ~/bin
 rm seqkit_linux_amd64.tar.gz
 
@@ -59,16 +59,17 @@ rm BBMap_37.90.tar.gz
 ## Download latest mothur compartible to your platform and put it into the code directory
 ##!Important: Latest versions may not work well until it is stable. Should that hapen, just install a previous version.
 # #Linux
-# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.3/Mothur.linux_64.zip
-# # wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.40.0.1/Mothur.linux_64.zip
-# # wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
-# unzip Mothur.linux_64.zip
-# mv ./mothur code/
-# cp ./code/mothur/mothur ~/bin/
-# cp ./code/mothur/uchime ~/bin/
-# cp ./code/mothur/vsearch ~/bin/
-# rm ./Mothur.linux_64.zip
-# rm -rf ./__MACOSX
+wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.3/Mothur.linux_64.zip
+# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.40.0.1/Mothur.linux_64.zip
+# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
+unzip Mothur.linux_64.zip
+mv ./mothur code/
+cp ./code/mothur/mothur ~/bin/
+cp ./code/mothur/uchime ~/bin/
+cp ./code/mothur/vsearch ~/bin/
+rm ./Mothur.linux_64.zip
+rm -rf ./__MACOSX
 
-sudo apt install mothur
+
+# sudo apt install mothur
 
