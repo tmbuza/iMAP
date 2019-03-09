@@ -126,7 +126,7 @@ ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  co
 
 <br>
 
-### Frequency of experimental variables (360 samples)
+### Frequency of experimental variables (360 samples: Case study)
 
 <hr>
 
@@ -164,7 +164,7 @@ Figure 3. Frequency of experimental variables
 
 <br>
 
-### Frequency of experimental variables (Custom study)
+### Custom variables from Bushmeat project
 
 <hr>
 
