@@ -73,3 +73,9 @@ rm -rf ./__MACOSX
 
 # sudo apt install mothur
 
+# # Install MultiQC
+
+git clone https://github.com/ewels/MultiQC.git
+  cd MultiQC
+  python setup.py install
+  
