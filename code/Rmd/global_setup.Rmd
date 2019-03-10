@@ -5,7 +5,7 @@ date: 'Updated: `r Sys.time()`'
 
 ```{r}
 # Global Setup
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(fig.path='./figures/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%")
 knitr::opts_chunk$set(comment = NA)
 knitr::opts_chunk$set(message = FALSE)
