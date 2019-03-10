@@ -12,7 +12,7 @@ biblio-style: apalike
 
 ---
 
-```{r child='00_00_global_setup.Rmd'}
+```{r child='global_setup.Rmd'}
 
 ```
 
