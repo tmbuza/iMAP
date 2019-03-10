@@ -1,5 +1,5 @@
 set.dir(input=./data/mothur/otus/, output=./data/mothur/otus/)
-system(cp ./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.shared ./data/mothur/otus/qced.otu.shared)
+system(cp ./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.shared ./data/mothur/otus/qced.otu.shared)
 set.dir(input=./data/mothur/otus/, output=./data/mothur/otus/01_groupcount)
 count.groups(shared=qced.otu.shared)
 set.dir(input=./data/mothur/otus/, output=./data/mothur/otus/02_subsample)
