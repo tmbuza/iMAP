@@ -13,14 +13,14 @@ mkdir data/raw/qced
 ## Obtain the raw data and put the files into the data/raw directory
 
 # unzip MiSeqSOPData.zip 
-cp ./data/demo/raw.zip ./
+cp ./data/demo/raw.zip .
 unzip raw.zip
 cp raw/* ./data/raw
 rm -rf raw* __MACOSX
 
 
 # Copy demo metadata and put the files in the data/metadata directory
-cp ./data/demo/metadata/* ./data/metadata/
+cp ./data/demo/metadata/* ./data/metadata
 
 # Copy mapping fastq file and put it in the data/raw/qced directory
 # cp ./data/demo/mapping.files ./data/raw/qced/qced.files
