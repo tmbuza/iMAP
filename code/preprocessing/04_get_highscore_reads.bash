@@ -1,7 +1,4 @@
-#!/usr/bash
-# Author:
-# Purpose: 
-# Usage: 
+#!/usr/bin/env bash
 
 cd data/raw
 for i in `ls -1 *R1_001.fastq.gz | sed 's/R1_001.fastq.gz//'`
@@ -10,10 +7,5 @@ do
 done
 cd ../../
 
-/myprojects/FastQC/fastqc ./data/raw/qctrim25/*trim25*fastq.gz -o ./results/fastqc/qctrim25
-#source activate py3.6.3
-#multiqc  ./results/fastqc/qctrim25 -o ./results/multiqc/qctrim25
-# Deactivate python
-#source deactivate
-# # Open the multiqc html files to review
-# open ./results/qctrim25/multiqc_report.html
+/myprojects/FastQC/fastqc /mprojects/data/raw/qctrim25/*trim25*fastq.gz -o /myprojects/results/fastqc/qctrim25
+

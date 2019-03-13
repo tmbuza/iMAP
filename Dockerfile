@@ -108,18 +108,25 @@ RUN wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBM
 	cp bbmap/bbduk.sh /usr/local/bin/ && \
 	rm BBMap_37.90.tar.gz
 
-
 #---------------------------------------------------------------------------
-# Install mothur
+# Install mothur (shared)
 #---------------------------------------------------------------------------
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-apt-get install -y mothur && \
-apt-get clean && \
-apt-get purge && \
-rm -rf /var/lib/apt/lists/* /tmp/* ./*mothur.log*
+	apt-get install -y mothur && \
+	apt-get clean && \
+	apt-get purge && \
+	rm -rf /var/lib/apt/lists/* /tmp/*
+
+#---------------------------------------------------------------------------
+# Install vsearch (shared)
+#---------------------------------
+RUN apt-get update && \
+	apt-get install -y vsearch && \
+	apt-get clean && \
+	apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/*
 
 
 #---------------------------------------------------------------------------
