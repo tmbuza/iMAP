@@ -136,8 +136,10 @@ RUN git clone https://github.com/ewels/MultiQC.git && \
 # ------------------------------------------------------------------
 
 RUN apt-get update && \
-	apt-get install -y pandoc
+	apt-get install -y pandoc 
 
+RUN apt-get update && \
+	apt-get install -y pandoc-citeproc
 
 #---------------------------------------------------------------------------
 # Install r-base and all required packages
@@ -170,7 +172,6 @@ RUN apt-get update \
 	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
 	&& rm -rf /var/lib/apt/lists/*
 
-CMD ["R"]
 
 #---------------------------------------------------------------------------
 # Install required R packages
@@ -216,122 +217,4 @@ CMD ["R"]
 	RUN Rscript -e "install.packages('bookdown')"
 	RUN Rscript -e "install.packages('plotrix')"
 
-
-#---------------------------------------------------------------------------
-# Happily thereafter<3
-#---------------------------------------------------------------------------
-
-tmbuza@tmbuza-VirtualBox:~/Desktop/docker/rbase/rockerR/iMAP$ sudo docker run --name=imapapp --rm -ti tmbuza/imapapp:1.0 /bin/bash
-[sudo] password for tmbuza: 
-root@2bc21321aa79:/myprojects# ls
-bbmap  code  data  Dockerfile  FastQC  img  library  LICENSE  MultiQC  posters  README.md  reports  results  seqkit
-root@2bc21321aa79:/myprojects# ls /
-bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  myprojects  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-
-root@2bc21321aa79:/myprojects# which bbduk.sh fastqc mothur multiqc pip python R Rscript seqkit
-/usr/local/bin/bbduk.sh
-/usr/local/bin/fastqc
-/usr/bin/mothur
-/usr/local/bin/multiqc
-/usr/bin/pip
-/usr/bin/python
-/usr/bin/R
-/usr/bin/Rscript
-/usr/local/bin/seqkit
-root@2bc21321aa79:/myprojects# mothur
-
-
-mothur v.1.39.5
-Last updated: 3/20/2017
-
-by
-Patrick D. Schloss
-
-Department of Microbiology & Immunology
-University of Michigan
-http://www.mothur.org
-
-When using, please cite:
-Schloss, P.D., et al., Introducing mothur: Open-source, platform-independent, community-supported software for describing and comparing microbial communities. Appl Environ Microbiol, 2009. 75(23):7537-41.
-
-Distributed under the GNU General Public License
-
-Type 'help()' for information on the commands that are available
-
-For questions and analysis support, please visit our forum at https://www.mothur.org/forum
-
-Type 'quit()' to exit program
-
-
-
-mothur > 
-
-
-tmbuza@tmbuza-VirtualBox:~/Desktop/docker/rbase/rockerR/iMAP$ sudo docker push tmbuza/imapapp:1.0
-The push refers to repository [docker.io/tmbuza/imapapp]
-fc5735aab994: Preparing 
-a5d6405a26bd: Preparing 
-c5804abe1337: Preparing 
-5128b9442ee4: Preparing 
-444a1306b5a7: Preparing 
-9bbf10f04266: Preparing 
-069b32d3dfa5: Preparing 
-15506d2b3f0d: Preparing 
-57a5433cc6d6: Preparing 
-16fad1fb3347: Preparing 
-1e5e9cd948d7: Preparing 
-6c44854c37f8: Preparing 
-e8f842c5e938: Preparing 
-354207391c9f: Preparing 
-b5007a6d63c5: Preparing 
-2921c96d64af: Preparing 
-35570d0676cc: Preparing 
-b507592bd14e: Preparing 
-abbb246492fa: Preparing 
-30c3a53882bb: Preparing 
-ef2857d96fe3: Preparing 
-56ee400dbe14: Preparing 
-fc683424cb13: Preparing 
-bd59fa60116b: Preparing 
-b427b51b1fb7: Preparing 
-25ca36664f8e: Preparing 
-c58ae3a87409: Preparing 
-72ee4698edb1: Preparing 
-71719fcf1486: Preparing 
-76b17f9a3de2: Preparing 
-bd59fa60116b: Pushed 
-118cb8a224e0: Pushed 
-402c41496d0a: Pushed 
-dc025a1903c1: Pushed 
-358bacf80934: Pushed 
-e22fd432c474: Pushed 
-99b8bbb876e6: Pushed 
-29bed0370127: Pushed 
-82a86b9e2a0e: Pushed 
-b3e38082b932: Pushed 
-e7f98d8889eb: Pushed 
-b6303eb0afa4: Pushed 
-4830e27db55a: Pushed 
-242918d56950: Pushed 
-6f088ac55dc1: Pushed 
-40dcd25371e0: Pushed 
-c858b32ee7c5: Pushed 
-10afd1da8f74: Pushed 
-42360e26868f: Pushed 
-b49f98bf6d5c: Pushed 
-739aac8e0da3: Pushed 
-334b5c1a4757: Pushed 
-da9a8f2f05d0: Pushed 
-7a3760ff3f95: Pushed 
-9da50ceeb05c: Pushed 
-e7d07e5ff651: Pushed 
-9b1b70cb7735: Pushed 
-4b7d93055d87: Mounted from tmbuza/install 
-663e8522d78b: Mounted from tmbuza/install 
-283fb404ea94: Mounted from tmbuza/install 
-bebe7ce6215a: Mounted from tmbuza/install 
-1.0: digest: sha256:f9d15b7b0a6862d887ed1639f795ac85b9e4264f0602058352df499acb644c51 size: 13152
-tmbuza@tmbuza-VirtualBox:~/Desktop/docker/rbase/rockerR/iMAP$ 
-
-Testing
-
+CMD ["bash"]

@@ -3,7 +3,7 @@
 # Purpose: 
 # Usage: 
 
-./code/FastQC/fastqc ./data/raw/*fastq.gz -o ./results/fastqc/qc0
+/myprojects/FastQC/fastqc /myprojects/data/raw/*fastq.gz -o ./results/fastqc/qc0
 
 #source activate py3.6.3
 #multiqc  ./results/fastqc/qc0 -o ./results/multiqc/qc0

@@ -6,8 +6,8 @@
 # For more details see the installation manual http://multiqc.info/docs/#manual-installation
 
 # python --version
-pip3 install --upgrade pip
-pip3 install --user multiqc
+# pip3 install --upgrade pip
+# pip3 install --user multiqc
 
 # git clone https://github.com/ewels/MultiQC.git
 # mv MultiQC ./code

@@ -13,14 +13,14 @@ REQUIRED_README_FILE=(
   "README.md" 
 )
 
-REQUIRED_EXECUTABLE_FILES=(
-  "seqkit"
-  "fastqc"
-  "bbduk.sh"
-  "mothur"
-  "uchime"
-  "vsearch"
-  )
+# REQUIRED_EXECUTABLE_FILES=(
+#   "seqkit"
+#   "fastqc"
+#   "bbduk.sh"
+#   "mothur"
+#   "uchime"
+#   "vsearch"
+#   )
 
 REQUIRED_CODE_FOLDERS_OR_FILES=(
 	"annotation/*"
@@ -159,8 +159,8 @@ check_required_dirs REQUIRED_DIRS
 # check required files [$PWD] directory
 check_dir_files $PWD REQUIRED_README_FILE
 
-# check required files [~/bin] directory
-check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
+# # check required files [~/bin] directory
+# check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
 
 # check required files [code] directory
 check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES

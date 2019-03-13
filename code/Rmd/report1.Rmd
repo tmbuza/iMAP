@@ -61,9 +61,7 @@ names(variables)[2] <- "origID"
 
 
 ```{r message=FALSE, warning=FALSE}
-
-library(kableExtra)
-knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 14)
+knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE)
 
 ```
 
@@ -81,10 +79,7 @@ When reviewing metadata status you may notice that numeric variables are confuse
 **First 5 lines of mapping metadata**
 
 ```{r message=FALSE, warning=FALSE}
-
-library(kableExtra)
-knitr::kable(head(variables, 5), "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 12)
-
+knitr::kable(head(variables, 5), "html", position = "center", booktabs = TRUE)
 ```
 
 <br>
@@ -93,9 +88,7 @@ knitr::kable(head(variables, 5), "html", position = "center", booktabs = TRUE) %
 **Last 5 lines of mapping metadata**
 
 ```{r message=FALSE, warning=FALSE}
-library(kableExtra)
-knitr::kable(tail(variables, 5), "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 12)
-
+knitr::kable(tail(variables, 5), "html", position = "center", booktabs = TRUE)
 ```
 
 <br>
@@ -170,13 +163,12 @@ Figure 3. Frequency of experimental variables
 
 
 ```{r bushmeat, echo=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
-samplemetadata <- readr::read_table2(file="/Volumes/SeagateTMB/ALLBATCHES/refer/data/metadata/186samples.metadata", col_names = T)
+samplemetadata <- readr::read_table2(file="../../data/metadata/186samples.metadata", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 metadata_status <- funModeling::df_status(samplemetadata)
 
-library(kableExtra)
-knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 14)
+knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE)
 
 
 

@@ -1,10 +1,10 @@
 ---
 title: "Progress report 3"
-bibliography: ../../library/imap.bib
+bibliography: /myprojects/library/imap.bib
 date: 'Updated: `r Sys.time()`'
 output:
   html_document:
-    css: ../../code/css/report.css
+    css: /myprojects/code/css/report.css
     # keep_md: yes
 link-citations: yes
 subtitle: 'Sequence Processing and classification'
@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="/myprojects/data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 # Subsetting metadata for mapping to output from dowmstream analysis
@@ -40,24 +40,25 @@ names(variables)[2] <- "origID"
 <!-- The clean paired-end sequences that passed the preprocessing trimming and filtering were processed and classified using mothur-based phylotype and OTU-based approaches as described [@Schloss2009]. This step enables investigators to review merged sequences to determine if expected length is in-line with the targeted 16S rRNA gene region. Lack of good overlapping region could results into too many sequences that are wrong and the effect will be propagated in the downstream analysis. High quality sequences align in the same region when searched against a reference template. -->
 
 ```{r mergereportdata, message=FALSE, warning=FALSE, include=FALSE}
-contigrpt <- readr::read_table2(file = "../../data/mothur/qced.contigs.report")
-alignrpt <- readr::read_table2(file = "../../data/mothur/qced.trim.contigs.good.unique.align.report")
-save(contigrpt, alignrpt, file = "../../results/mergealignreport.RData")
+library(readr)
+contigrpt <- readr::read_table2(file = "/myprojects/data/mothur/qced.contigs.report")
+alignrpt <- readr::read_table2(file = "/myprojects/data/mothur/qced.trim.contigs.good.unique.align.report")
+save(contigrpt, alignrpt, file = "/myprojects/results/mergealignreport.RData")
 ```
 
 
 ```{r alignreport, include=FALSE}
-load("../../results//mergealignreport.RData")
+load("/myprojects/results//mergealignreport.RData")
 contigrpt_2 <- contigrpt[c(2,3,6)]
 names(contigrpt_2) <- c("SeqLength","Overlap_Length","MisMatches")
 
-write.table(contigrpt_2,"../../results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(contigrpt_2,"/myprojects/results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 
 alignrpt_2 <- alignrpt[c(2,12,16)]
 names(alignrpt_2) <- c("QueryLength","PairwiseAlignmentLength","SimBtwnQuery.Template")
 
-write.table(alignrpt_2,"../../results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(alignrpt_2,"/myprojects/results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 ```
 
@@ -78,9 +79,8 @@ p1
 
 ## Descriptive statistics of assembled sequence
 ```{r message=FALSE, warning=FALSE}
-library(kableExtra)
 
-knitr::kable(summary(contigrpt_2), "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 12)
+knitr::kable(summary(contigrpt_2), "html", position = "center", booktabs = TRUE)
 
 ```
 
@@ -97,7 +97,7 @@ p2
 ## Descriptive statistics of aligned sequence
 
 ```{r message=FALSE, warning=FALSE}
-knitr::kable(summary(alignrpt_2), "html", position = "center", booktabs = TRUE) %>% kable_styling(bootstrap_options = "striped", font_size = 12)
+knitr::kable(summary(alignrpt_2), "html", position = "center", booktabs = TRUE)
 
 ```
 
@@ -105,7 +105,7 @@ knitr::kable(summary(alignrpt_2), "html", position = "center", booktabs = TRUE) 
 ```{r processedseqdata, message=FALSE, warning=FALSE}
 library(dplyr)
 library(readr)
-processedseqs <- read_table2(file="../../results/tables/processedSeqs.tsv", col_names = TRUE)
+processedseqs <- read_table2(file="/myprojects/results/tables/processedSeqs.tsv", col_names = TRUE)
 # names(processedseqs)
 # dim(processedseqs)
 
