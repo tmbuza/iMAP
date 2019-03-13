@@ -1,0 +1,38 @@
+.dockerignore
+
+dockerimage*
+
+posters
+
+.gitignore
+
+*.md
+    !README*.md
+## Added by TMB
+# Big data
+data/*/*
+!data/metadata
+!data/demo
+!README.md
+
+Dockerfile
+dockerimage.sh
+posters/*/*
+
+figure*
+img/*/*
+!img/imapWorkflow*
+
+results/*/*
+reports/*/*
+*.pptx
+*.tmp
+*.map
+
+*.qsub*
+mothur*logfile
+*temp*
+
+# Hidden files
+.~*
+._*
