@@ -1,7 +1,7 @@
 set.dir(input=./data/mothur/otus/, output=./data/mothur/otus/)
 
 # If using mothur v1.39.5
-system(cp ./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.shared ./data/mothur/otus/qced.otu.shared)
+system(cp ./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.shared ./data/mothur/otus/qced.otu.shared)
 set.dir(input=./data/mothur/otus/, output=./data/mothur/otus/01_groupcount)
 
 # If using mothur v1.40.3
