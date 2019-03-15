@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo git clone https://github.com/tmbuza/iMAP.git
-cp -r iMAP/* .
+cd iMAP
 
 # Declare variables
 imageName=tmbuza/imap:v1.1
