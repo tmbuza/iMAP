@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
+sudo git clone https://github.com/tmbuza/iMAP.git
+cp -r iMAP/* .
 
 # Declare variables
-imageName=tmbuza/imapapp:soft1.0
-containerName=installsoft1.0
+imageName=tmbuza/imap:v1.1
+containerName=imapv1
 
-sudo docker build -t $imageName -f Dockerfile  .
+sudo docker build -t $imageName -f Dockerfile .
 
+sudo docker run --name=containerName --rm -ti $imageName /bin/bash 
+bash code/linux_iMAP_driver.bash
+echo "Successfully completed the analysis"
