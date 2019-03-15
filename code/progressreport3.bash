@@ -2,4 +2,4 @@
 
 # Rscript -e "rmarkdown::render('code/Rmd/report3.Rmd', clean=TRUE, quiet=FALSE, output_file='report3_sequence_processing.html', output_dir='reports')"
 
-Rscript -e "rmarkdown::render('/myprojects/code/Rmd/report3.Rmd', clean=TRUE, quiet=FALSE, output_file='report3_sequence_processing.html', output_dir='/myprojects/reports')"
+Rscript -e "rmarkdown::render('./code/Rmd/report3.Rmd', clean=TRUE, quiet=FALSE, output_file='report3_sequence_processing.html', output_dir='./reports')"

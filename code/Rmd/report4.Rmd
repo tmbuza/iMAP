@@ -1,10 +1,10 @@
 ---
 title: "Progress report 4"
-bibliography: /myprojects/library/imap.bib
+bibliography: ./library/imap.bib
 date: 'Updated: `r Sys.time()`'
 output:
   html_document:
-    css: /myprojects//code/css/report.css
+    css: ./code/css/report.css
     # keep_md: yes
 link-citations: yes
 subtitle: 'OTU clustering, Taxonomy assignment & Preliminary analysis
@@ -18,7 +18,7 @@ biblio-style: apalike
 ```
 
 ```{r}
-load("/myprojects/results/tables/phylotype/otutaxon.RData")
+load("./results/tables/phylotype/otutaxon.RData")
 ```
 
 
@@ -36,95 +36,95 @@ load("/myprojects/results/tables/phylotype/otutaxon.RData")
 ## Phylotype approach
 
 # For raw abundance analysis
-phylotype_shared <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.shared")
+phylotype_shared <- readr::read_table2(file = "./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.shared")
 phylotype_shared.v <- cbind(variables, phylotype_shared)
 
 
 
 # For rank abundance analysis
-phylotyperabund <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.rabund")
+phylotyperabund <- readr::read_table2(file = "./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.rabund")
 dim(phylotyperabund)
 
 # For taxon analysis
-phylotypetaxsummary <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.cons.tax.summary")
+phylotypetaxsummary <- readr::read_table2(file = "./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.cons.tax.summary")
 dim(phylotypetaxsummary)
 
 # For taxonomy Venn diagram
-phylotypeconstaxonomy <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.cons.taxonomy", col_names = TRUE)
+phylotypeconstaxonomy <- readr::read_table2(file = "./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.cons.taxonomy", col_names = TRUE)
 dim(phylotypeconstaxonomy)
 
 # For relative abundance analysis
-phylotypetaxlefse <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.lefse")
+phylotypetaxlefse <- readr::read_table2(file = "./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.lefse")
 dim(phylotypetaxlefse)
 
 # For raw abundance analysis
-phylotypetaxbiom <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.biom")
+phylotypetaxbiom <- readr::read_table2(file = "./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.biom")
 dim(phylotypetaxbiom)
 
 #---------------------
-dir.create("/myprojects/results/tables/phylotype")
-write.table(phylotypeconstaxonomy,"/myprojects/results/tables/phylotype/phylotypeconstaxonomy.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+dir.create("./results/tables/phylotype")
+write.table(phylotypeconstaxonomy,"./results/tables/phylotype/phylotypeconstaxonomy.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 #---------------------
 
 
 ## OTUbased approach
 # For taxon analysis
-otubasedtaxsummary <- readr::read_table2(file = "/myprojects/data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.cons.tax.summary")
+otubasedtaxsummary <- readr::read_table2(file = "./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.cons.tax.summary")
 dim(otubasedtaxsummary)
 
 # For taxonomy Venn diagram
-otubasedconstaxonomy <- readr::read_table2(file = "/myprojects/data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.cons.taxonomy", col_names = TRUE)
+otubasedconstaxonomy <- readr::read_table2(file = "./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.cons.taxonomy", col_names = TRUE)
 dim(otubasedconstaxonomy)
 
 # For raw abundance analysis
-otubased_shared <- readr::read_table2(file = "/myprojects/data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.shared")
+otubased_shared <- readr::read_table2(file = "./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.shared")
 dim(otubased_shared)
 
 otubased_shared_2 <- cbind(variables, otubased_shared)
 dim(otubased_shared_2)
 
 # For significant statistics
-otubasedmccsensspec <- readr::read_table2(file = "/myprojects/data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.sensspec")
+otubasedmccsensspec <- readr::read_table2(file = "./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.sensspec")
 dim(otubasedmccsensspec)
 
 # For relative abundance analysis
-otubasedtaxlefse <- readr::read_table2(file = "/myprojects/data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.lefse")
+otubasedtaxlefse <- readr::read_table2(file = "./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.lefse")
 dim(otubasedtaxlefse)
 
 # For raw abundance analysis
-otubasedtaxbiom <- readr::read_table2(file = "/myprojects/data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.biom")
+otubasedtaxbiom <- readr::read_table2(file = "./data/mothur/otus/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.unique_list.0.03.biom")
 
 dim(otubasedtaxbiom)
 
 
 #---------------------
-dir.create("/myprojects/results/tables/otus.0.03")
-write.table(otubasedconstaxonomy,"/myprojects/results/tables/otus.0.03/otubasedconstaxonomy.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+dir.create("./results/tables/otus.0.03")
+write.table(otubasedconstaxonomy,"./results/tables/otus.0.03/otubasedconstaxonomy.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 #---------------------
 
 
 ## Phylogeny approach
 # For species richness
 
-phylogenydiversity <- readr::read_table2(file = "/myprojects/data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary", col_names = TRUE)
+phylogenydiversity <- readr::read_table2(file = "./data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary", col_names = TRUE)
 dim(phylogenydiversity)
 
 # For taxonomy Venn diagram
-phylogenyconstaxonomy <- readr::read_table2(file = "/myprojects/data/mothur/phylogeny/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.taxonomy.summary", col_names = TRUE)
+phylogenyconstaxonomy <- readr::read_table2(file = "./data/mothur/phylogeny/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.taxonomy.summary", col_names = TRUE)
 dim(phylogenyconstaxonomy)
 
 #---------------------
-dir.create("/myprojects/results/tables/phylogeny")
-write.table(phylogenyconstaxonomy,"/myprojects/results/tables/phylogeny/phylogenyconstaxonomy.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+dir.create("./results/tables/phylogeny")
+write.table(phylogenyconstaxonomy,"./results/tables/phylogeny/phylogenyconstaxonomy.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 # Create iMAP objects for future use
-save(otubased_shared, otubased_shared_2, otubasedconstaxonomy, otubasedmccsensspec, otubasedtaxbiom, otubasedtaxlefse, otubasedtaxsummary, phylogenyconstaxonomy, phylogenydiversity, phylotype_shared, phylotype_shared.v, phylotypeconstaxonomy, phylotyperabund, phylotypetaxlefse, phylotypetaxbiom, phylotypetaxsummary, file = "/myprojects/results/permethodtaxdata.RData")
+save(otubased_shared, otubased_shared_2, otubasedconstaxonomy, otubasedmccsensspec, otubasedtaxbiom, otubasedtaxlefse, otubasedtaxsummary, phylogenyconstaxonomy, phylogenydiversity, phylotype_shared, phylotype_shared.v, phylotypeconstaxonomy, phylotyperabund, phylotypetaxlefse, phylotypetaxbiom, phylotypetaxsummary, file = "./results/permethodtaxdata.RData")
 
 ```
 
 
 ```{r eval=FALSE, include=FALSE}
-load("/myprojects/results/permethodtaxdata.RData")
+load("./results/permethodtaxdata.RData")
 ```
 
 
@@ -162,11 +162,11 @@ Table: Table x: Statistical parameters calculated from the OTU-based classificat
 set.seed(110912)
 library(tm)
 
-# taxon4wordcloud <- readr::read_table2(file = "/myprojects/results/tables/wordcloud/merged.tsv")
-taxon4wordcloud <- readr::read_table2(file = "/myprojects/results/tables/wordcloud/taxmerged4wordcloud.txt")
+# taxon4wordcloud <- readr::read_table2(file = "./results/tables/wordcloud/merged.tsv")
+taxon4wordcloud <- readr::read_table2(file = "./results/tables/wordcloud/taxmerged4wordcloud.txt")
 
 phylumwords <- taxon4wordcloud$Phylum
-write.table(phylumwords,"/myprojects/results/tables/wordcloud/phylumwords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
+write.table(phylumwords,"./results/tables/wordcloud/phylumwords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
 
 # Load the data as a corpus
 docs <- Corpus(VectorSource(phylumwords))
@@ -196,7 +196,7 @@ docs <- tm_map(docs, stripWhitespace)
 #####################
 
 classwords <- taxon4wordcloud$Class
-write.table(classwords,"/myprojects/results/tables/wordcloud/classwords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
+write.table(classwords,"./results/tables/wordcloud/classwords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
 # Load the data as a corpus
 docs <- Corpus(VectorSource(classwords))
 
@@ -225,7 +225,7 @@ docs <- tm_map(docs, stripWhitespace)
 #####################
 
 orderwords <- taxon4wordcloud$Order
-write.table(orderwords,"/myprojects/results/tables/wordcloud/orderwords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
+write.table(orderwords,"./results/tables/wordcloud/orderwords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
 
 # Load the data as a corpus
 docs <- Corpus(VectorSource(orderwords))
@@ -255,7 +255,7 @@ docs <- tm_map(docs, stripWhitespace)
 #####################
 
 familywords <- taxon4wordcloud$Family
-write.table(familywords,"/myprojects/results/tables/wordcloud/familywords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
+write.table(familywords,"./results/tables/wordcloud/familywords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
 
 # Load the data as a corpus
 docs <- Corpus(VectorSource(familywords))
@@ -285,7 +285,7 @@ docs <- tm_map(docs, stripWhitespace)
 #####################
 
 genuswords <- taxon4wordcloud$Genus
-write.table(genuswords,"/myprojects/results/tables/wordcloud/genuswords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
+write.table(genuswords,"./results/tables/wordcloud/genuswords.tsv",sep="\t", row.names = FALSE, col.names = FALSE)
 # Load the data as a corpus
 docs <- Corpus(VectorSource(genuswords))
 
@@ -369,7 +369,7 @@ webshot("g_cloud.html","g_cloud.png", delay =5, vwidth = 480, vheight=480) # cha
 <br>
 
 
-![](/myprojects/img/otuabund.png)
+![](./img/otuabund.png)
 
 Figure x: Unfiltered and curated OTU abundance. Visual representation of taxon terms highlight the most abundant taxon based on frequency of being assigned to an OTU or tree nodes. Muribaculaceae is the most frequently assigned family and Muribaculaceae_ge is the most frequent species assigned to most sequences. 
 
@@ -515,10 +515,10 @@ Figure x. Correlation between species identified at phylum-level. Species are or
 
 # Species richness and diversity
 
-richdiv <- readr::read_table2(file = "/myprojects/data/mothur/phylotype/03_summary/qced.otu.groups.summary")
+richdiv <- readr::read_table2(file = "./data/mothur/phylotype/03_summary/qced.otu.groups.summary")
 richdiv.v <- cbind(variables, richdiv)
 
-phylodiv <- readr::read_table2(file = "/myprojects/data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary")
+phylodiv <- readr::read_table2(file = "./data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary")
 
 # View(phylodiv)
 
@@ -526,30 +526,30 @@ phylodiv.v <- cbind(variables, phylodiv)
 
 richdivphylo.v <- cbind(richdiv.v, phylodiv[,2:3])
 
-write.table(richdiv, "/myprojects/results/tables/phylotype/richdiv.tsv", quote = FALSE, sep="\t",
+write.table(richdiv, "./results/tables/phylotype/richdiv.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(richdiv.v, "/myprojects/results/tables/phylotype/richdiv.v.tsv", quote = FALSE, sep="\t",
+write.table(richdiv.v, "./results/tables/phylotype/richdiv.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(phylodiv, "/myprojects/results/tables/phylotype/phylodiv.tsv", quote = FALSE, sep="\t",
+write.table(phylodiv, "./results/tables/phylotype/phylodiv.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(phylodiv.v,"/myprojects/results/tables/phylotype/phylodiv.v.tsv", quote = FALSE, sep="\t",
+write.table(phylodiv.v,"./results/tables/phylotype/phylodiv.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(richdivphylo.v,"/myprojects/results/tables/phylotype/richdivphylo.v.tsv", quote = FALSE, sep="\t",
+write.table(richdivphylo.v,"./results/tables/phylotype/richdivphylo.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
 ```
 
 
 ```{r alpharichdiv, fig.height=4, fig.width=10, message=FALSE, warning=FALSE}
-richdiv <- readr::read_table2(file = "/myprojects/results/tables/phylotype/richdiv.tsv")
-phylodiv <- readr::read_table2(file = "/myprojects/results/tables/phylotype/phylodiv.tsv")
-richdiv.v <- readr::read_table2(file = "/myprojects/results/tables/phylotype/richdiv.v.tsv")
-phylodiv.v <- readr::read_table2(file = "/myprojects/results/tables/phylotype/phylodiv.v.tsv")
-richdivphylo.v <- readr::read_table2(file = "/myprojects/results/tables/phylotype/richdivphylo.v.tsv")
+richdiv <- readr::read_table2(file = "./results/tables/phylotype/richdiv.tsv")
+phylodiv <- readr::read_table2(file = "./results/tables/phylotype/phylodiv.tsv")
+richdiv.v <- readr::read_table2(file = "./results/tables/phylotype/richdiv.v.tsv")
+phylodiv.v <- readr::read_table2(file = "./results/tables/phylotype/phylodiv.v.tsv")
+richdivphylo.v <- readr::read_table2(file = "./results/tables/phylotype/richdivphylo.v.tsv")
 ```
 
 ### Species richness at each datapoint
@@ -684,7 +684,7 @@ Figure x: Species diversity and correlation to species richness. Definitely phyl
 
 <br>
 
-![Example: Figure10 in iMAP paper](/myprojects/img/Figure10.png)
+![Example: Figure10 in iMAP paper](./img/Figure10.png)
 
 
 
@@ -893,7 +893,7 @@ o_inextsimpson <- iNEXT::iNEXT(order.t,  q=2, datatype="abundance", endpoint = 5
 f_inextsimpson <- iNEXT::iNEXT(family.t,  q=2, datatype="abundance", endpoint = 500)
 g_inextsimpson <- iNEXT::iNEXT(genus.t,  q=2, datatype="abundance", endpoint = 500)
 
-save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_inextrichness,	g_inextrichness,	otu_inextshannon,	p_inextshannon,	c_inextshannon,	o_inextshannon,	f_inextshannon,	g_inextshannon,	otu_inextsimpson,	p_inextsimpson,	c_inextsimpson,	o_inextsimpson,	f_inextsimpson,	g_inextsimpson, file = "/myprojects/results/iNEXT.RData")
+save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_inextrichness,	g_inextrichness,	otu_inextshannon,	p_inextshannon,	c_inextshannon,	o_inextshannon,	f_inextshannon,	g_inextshannon,	otu_inextsimpson,	p_inextsimpson,	c_inextsimpson,	o_inextsimpson,	f_inextsimpson,	g_inextsimpson, file = "./results/iNEXT.RData")
 
 ```
 
@@ -901,7 +901,7 @@ save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_ine
 ### Type 1: Sample-size-based R/E curve
 
 ```{r}
-load("/myprojects/results/iNEXT.RData")
+load("./results/iNEXT.RData")
 ```
 
 
@@ -1614,7 +1614,7 @@ ggplot(melt(g.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
 # * Similar to PCA but is basically an eigen-analysis of a distance or dissimilarity matrix.
 # ```{r loadings, fig.height=3, fig.width=6, message=FALSE, warning=FALSE}
 
-# # load("/myprojects/results/tables/phylotype/otutaxon.RData")
+# # load("./results/tables/phylotype/otutaxon.RData")
 
 # pco <- function(dis, k=2)
 # {
@@ -1698,12 +1698,12 @@ ggplot(melt(g.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
 # f.mds <- metaMDS(family.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # family abundance data.
 # g.mds <- metaMDS(genus.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # genus abundance data.
 
-# save(otu.mds,p.mds,c.mds,o.mds,f.mds,g.mds, file = "/myprojects/results/mds.RData")
+# save(otu.mds,p.mds,c.mds,o.mds,f.mds,g.mds, file = "./results/mds.RData")
 # ```
 
 
 # ```{r echo=FALSE}
-# load(file = "/myprojects/results/mds.RData")
+# load(file = "./results/mds.RData")
 # ```
 
 # <br>
@@ -1817,7 +1817,7 @@ ggplot(melt(g.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
 # <hr>
 
 
-# ![](/myprojects//img/phyloclusters.png)
+# ![](./img/phyloclusters.png)
 
 # Figure x: Sample Phylip or Newick-formatted tree clustered using the UPGMA (Unweighted Pair Group Method with Arithmetic Mean) algorithm. Similar data was used to construct different types of tree including rectangular (**A**), circular (**B**) and unrooted (**C**). The tree is annotated with sequence depth, species richness, and phylum abundance as seen in (**D**). 
 
@@ -1863,7 +1863,7 @@ ggplot(melt(g.scaled.t), aes(x=Var1, y=Var2, fill=value)) +
 # <!-- colongenera <- filter(genus, colongeneranames %in% genus$taxon) -->
 # <!-- dim(colongenera) -->
 
-# <!-- write.table(colongenera,"/myprojects//myprojects//results/tables/colongenera.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "") -->
+# <!-- write.table(colongenera,"..//results/tables/colongenera.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "") -->
 
 # <!-- ``` -->
 

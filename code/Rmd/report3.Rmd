@@ -1,10 +1,10 @@
 ---
 title: "Progress report 3"
-bibliography: /myprojects/library/imap.bib
+bibliography: ./library/imap.bib
 date: 'Updated: `r Sys.time()`'
 output:
   html_document:
-    css: /myprojects/code/css/report.css
+    css: ./code/css/report.css
     # keep_md: yes
 link-citations: yes
 subtitle: 'Sequence Processing and classification'
@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="/myprojects/data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="./data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 # Subsetting metadata for mapping to output from dowmstream analysis
@@ -41,24 +41,24 @@ names(variables)[2] <- "origID"
 
 ```{r mergereportdata, message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
-contigrpt <- readr::read_table2(file = "/myprojects/data/mothur/qced.contigs.report")
-alignrpt <- readr::read_table2(file = "/myprojects/data/mothur/qced.trim.contigs.good.unique.align.report")
-save(contigrpt, alignrpt, file = "/myprojects/results/mergealignreport.RData")
+contigrpt <- readr::read_table2(file = "./data/mothur/qced.contigs.report")
+alignrpt <- readr::read_table2(file = "./data/mothur/qced.trim.contigs.good.unique.align.report")
+save(contigrpt, alignrpt, file = "./results/mergealignreport.RData")
 ```
 
 
 ```{r alignreport, include=FALSE}
-load("/myprojects/results//mergealignreport.RData")
+load("./results//mergealignreport.RData")
 contigrpt_2 <- contigrpt[c(2,3,6)]
 names(contigrpt_2) <- c("SeqLength","Overlap_Length","MisMatches")
 
-write.table(contigrpt_2,"/myprojects/results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(contigrpt_2,"./results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 
 alignrpt_2 <- alignrpt[c(2,12,16)]
 names(alignrpt_2) <- c("QueryLength","PairwiseAlignmentLength","SimBtwnQuery.Template")
 
-write.table(alignrpt_2,"/myprojects/results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
+write.table(alignrpt_2,"./results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 ```
 
@@ -105,7 +105,7 @@ knitr::kable(summary(alignrpt_2), "html", position = "center", booktabs = TRUE)
 ```{r processedseqdata, message=FALSE, warning=FALSE}
 library(dplyr)
 library(readr)
-processedseqs <- read_table2(file="/myprojects/results/tables/processedSeqs.tsv", col_names = TRUE)
+processedseqs <- read_table2(file="./results/tables/processedSeqs.tsv", col_names = TRUE)
 # names(processedseqs)
 # dim(processedseqs)
 
