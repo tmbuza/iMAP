@@ -1,6 +1,6 @@
 set.dir(input=/imap/data/mothur, output=/imap/data/mothur/phylotype, seed=110912)
 set.current(processors=8)
-remove.groups(fasta=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, taxonomy=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.taxonomy, groups=Mock-Mock2)
+remove.groups(fasta=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, taxonomy=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.taxonomy, groups=Mock*)
 summary.seqs(fasta=current, count=current)
 summary.tax(taxonomy=current, count=current)
 phylotype(taxonomy=current)
