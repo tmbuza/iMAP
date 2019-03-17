@@ -61,15 +61,15 @@ echo 'export PATH=$PWD/code/bbmap/bbduk.sh' >> ~/.bashrc
 ## Download latest mothur compartible to your platform and put it into the code directory
 ##!Important: Latest versions may not work well until it is stable. Should that hapen, just install a previous version.
 # #Linux
-wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.3/Mothur.linux_64.zip
+# wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.41.3/Mothur.linux_64.zip
 # wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.40.0.1/Mothur.linux_64.zip
 # wget --no-check-certificate https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip
-unzip Mothur.linux_64.zip
-mv -v /imap/mothur code/
-rm Mothur.linux_64.zip
-rm -rf ./__MACOSX
+# unzip Mothur.linux_64.zip
+# mv -v /imap/mothur code/
+# rm Mothur.linux_64.zip
+# rm -rf ./__MACOSX
 
-echo 'export PATH=$PWD/code/mothur/mothur' >> ~/.bashrc 
+# echo 'export PATH=$PWD/code/mothur/mothur' >> ~/.bashrc 
 
 # sudo apt install mothur
 
