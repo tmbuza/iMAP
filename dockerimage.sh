@@ -9,6 +9,6 @@ containerName=imapv1
 
 sudo docker build -t $imageName -f Dockerfile .
 
-sudo docker run --name=containerName --rm -ti $imageName /bin/bash 
-bash code/linux_iMAP_driver.bash
-echo "Successfully completed the analysis"
+# sudo docker run --name=containerName --rm -ti $imageName /bin/bash 
+# bash code/linux_iMAP_driver.bash
+# echo "Successfully completed the analysis"
