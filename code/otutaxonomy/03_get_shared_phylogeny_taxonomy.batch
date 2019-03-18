@@ -6,5 +6,5 @@ summary.tax(taxonomy=current, count=current)
 set.dir(input=data/mothur/phylogeny, output=data/mothur/phylogeny, seed=110912)
 dist.seqs(fasta=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, output=lt)
 clearcut(phylip=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.dist)
-classify.tree(taxonomy=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.taxonomy, tree=current, cutoff=80)
+classify.tree(taxonomy=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.taxonomy, tree=current, cutoff=97)
 
