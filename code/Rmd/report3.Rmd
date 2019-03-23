@@ -11,7 +11,7 @@ subtitle: 'Sequence Processing and classification'
 biblio-style: apalike
 ---
 
-```{r child='global_setup.Rmd'}
+```{r child='global_setup.Rmd', echo = FALSE}
 
 ```
 
