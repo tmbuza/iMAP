@@ -9,18 +9,18 @@ title: "Transformation of taxonomy data"
 * Input file: *.cons.summary
 
 ```{r, echo=TRUE}
-dir.create("./results/tables/phylotype")
-otushared = read.table(file="./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.shared", stringsAsFactors=FALSE, header=T, sep='\t')
+dir.create("../../results/tables/phylotype")
+otushared = read.table(file="../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.shared", stringsAsFactors=FALSE, header=T, sep='\t')
 # View(otushared)
 
-write.table(otushared, "./results/tables/phylotype/otushared.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE)
+write.table(otushared, "../../results/tables/phylotype/otushared.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE)
 
 
-constaxsummary = read.table(file="./data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.cons.tax.summary", stringsAsFactors=FALSE, header=T, sep='\t')
+constaxsummary = read.table(file="../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.cons.tax.summary", stringsAsFactors=FALSE, header=T, sep='\t')
 # dim(constaxsummary)
 # View(constaxsummary)
 
-write.table(constaxsummary, "./results/tables/phylotype/constaxsummary.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE)
+write.table(constaxsummary, "../../results/tables/phylotype/constaxsummary.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE)
 
 ```
 
@@ -72,22 +72,22 @@ dim(genus.a)
 
 ## Save each taxon object to local computer
 ```{r, echo=TRUE}
-write.table(otushared,"./results/tables/phylotype/otushared.tsv", quote = FALSE, sep="\t",
+write.table(otushared,"../../results/tables/phylotype/otushared.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(phylum.a,"./results/tables/phylotype/phylum.a.tsv", quote = FALSE, sep="\t",
+write.table(phylum.a,"../../results/tables/phylotype/phylum.a.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(class.a,"./results/tables/phylotype/class.a.tsv", quote = FALSE, sep="\t",
+write.table(class.a,"../../results/tables/phylotype/class.a.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(order.a,"./results/tables/phylotype/order.a.tsv", quote = FALSE, sep="\t",
+write.table(order.a,"../../results/tables/phylotype/order.a.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(family.a,"./results/tables/phylotype/family.a.tsv", quote = FALSE, sep="\t",
+write.table(family.a,"../../results/tables/phylotype/family.a.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(genus.a,"./results/tables/phylotype/genus.a.tsv", quote = FALSE, sep="\t",
+write.table(genus.a,"../../results/tables/phylotype/genus.a.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 ```
 
@@ -133,22 +133,22 @@ genus<- genus[order(genus$taxon),]
 
 ## Save the filtered and sorted taxon data
 ```{r, echo=TRUE}
-write.table(otu,"./results/tables/phylotype/otu.tsv", quote = FALSE, sep="\t",
+write.table(otu,"../../results/tables/phylotype/otu.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(phylum,"./results/tables/phylotype/phylum.tsv", quote = FALSE, sep="\t",
+write.table(phylum,"../../results/tables/phylotype/phylum.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(class,"./results/tables/phylotype/class.tsv", quote = FALSE, sep="\t",
+write.table(class,"../../results/tables/phylotype/class.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(order,"./results/tables/phylotype/order.tsv", quote = FALSE, sep="\t",
+write.table(order,"../../results/tables/phylotype/order.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(family,"./results/tables/phylotype/family.tsv", quote = FALSE, sep="\t",
+write.table(family,"../../results/tables/phylotype/family.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(genus,"./results/tables/phylotype/genus.tsv", quote = FALSE, sep="\t",
+write.table(genus,"../../results/tables/phylotype/genus.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 ```
 
@@ -156,12 +156,12 @@ write.table(genus,"./results/tables/phylotype/genus.tsv", quote = FALSE, sep="\t
 
 ## Reload transformed data to update the objects
 ```{r}
-otu <- read.table(file="./results/tables/phylotype/otu.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-phylum <- read.table(file="./results/tables/phylotype/phylum.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-class <- read.table(file="./results/tables/phylotype/class.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-order <- read.table(file="./results/tables/phylotype/order.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-family <- read.table(file="./results/tables/phylotype/family.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-genus <- read.table(file="./results/tables/phylotype/genus.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+otu <- read.table(file="../../results/tables/phylotype/otu.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+phylum <- read.table(file="../../results/tables/phylotype/phylum.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+class <- read.table(file="../../results/tables/phylotype/class.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+order <- read.table(file="../../results/tables/phylotype/order.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+family <- read.table(file="../../results/tables/phylotype/family.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+genus <- read.table(file="../../results/tables/phylotype/genus.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
 ```
 
 <br>
@@ -187,33 +187,33 @@ dim(genus)
 * Note that [,1] of transposed df will contain the sample names
 
 ```{r}
-otu<-read.table(file="./results/tables/phylotype/otu.tsv", header = TRUE, sep="\t")
+otu<-read.table(file="../../results/tables/phylotype/otu.tsv", header = TRUE, sep="\t")
 rownames(otu) <- otu[,1]
 otu.t <- otu[,-1]
 # View(otu)
 # View(otu.t)
 
-phylum<-read.table(file="./results/tables/phylotype/phylum.tsv", header = TRUE, sep="\t")
+phylum<-read.table(file="../../results/tables/phylotype/phylum.tsv", header = TRUE, sep="\t")
 phylum.t = setNames(data.frame(t(phylum)), phylum[,1])
 phylum.t <- phylum.t[-1,]
 # View(phylum.t)
 
-class<-read.table(file="./results/tables/phylotype/class.tsv", header = TRUE, sep="\t")
+class<-read.table(file="../../results/tables/phylotype/class.tsv", header = TRUE, sep="\t")
 class.t = setNames(data.frame(t(class)), class[,1])
 class.t <- class.t[-1,]
 # View(class.t)
 
-order<-read.table(file="./results/tables/phylotype/order.tsv", header = TRUE, sep="\t")
+order<-read.table(file="../../results/tables/phylotype/order.tsv", header = TRUE, sep="\t")
 order.t = setNames(data.frame(t(order)), order[,1])
 order.t <- order.t[-1,]
 # View(order.t)
 
-family<-read.table(file="./results/tables/phylotype/family.tsv", header = TRUE, sep="\t")
+family<-read.table(file="../../results/tables/phylotype/family.tsv", header = TRUE, sep="\t")
 family.t = setNames(data.frame(t(family)), family[,1])
 family.t <- family.t[-1,]
 # View(family.t)
 
-genus<-read.table(file="./results/tables/phylotype/genus.tsv", header = TRUE, sep="\t")
+genus<-read.table(file="../../results/tables/phylotype/genus.tsv", header = TRUE, sep="\t")
 genus.t = setNames(data.frame(t(genus)), genus[,1])
 genus.t <- genus.t[-1,]
 # View(genus.t)
@@ -253,12 +253,12 @@ rownames(phylum.t)
 
 ### Save transposed and modified data
 ```{r, echo=TRUE}
-write.table(otu.t,"./results/tables/phylotype/otu.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(phylum.t,"./results/tables/phylotype/phylum.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(class.t,"./results/tables/phylotype/class.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(order.t,"./results/tables/phylotype/order.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(family.t,"./results/tables/phylotype/family.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(genus.t,"./results/tables/phylotype/genus.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(otu.t,"../../results/tables/phylotype/otu.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(phylum.t,"../../results/tables/phylotype/phylum.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(class.t,"../../results/tables/phylotype/class.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(order.t,"../../results/tables/phylotype/order.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(family.t,"../../results/tables/phylotype/family.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(genus.t,"../../results/tables/phylotype/genus.t.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = TRUE, col.names = TRUE, qmethod = c("escape", "double"))
 ```
 
 <br>
@@ -266,12 +266,12 @@ write.table(genus.t,"./results/tables/phylotype/genus.t.tsv", append = FALSE, qu
 ## Reload the transformed or altered data 
 
 ```{r}
-otu.t <- read.table(file="./results/tables/phylotype/otu.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-phylum.t <- read.table(file="./results/tables/phylotype/phylum.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-class.t <- read.table(file="./results/tables/phylotype/class.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-order.t <- read.table(file="./results/tables/phylotype/order.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-family.t <- read.table(file="./results/tables/phylotype/family.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
-genus.t <- read.table(file="./results/tables/phylotype/genus.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+otu.t <- read.table(file="../../results/tables/phylotype/otu.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+phylum.t <- read.table(file="../../results/tables/phylotype/phylum.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+class.t <- read.table(file="../../results/tables/phylotype/class.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+order.t <- read.table(file="../../results/tables/phylotype/order.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+family.t <- read.table(file="../../results/tables/phylotype/family.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
+genus.t <- read.table(file="../../results/tables/phylotype/genus.t.tsv", stringsAsFactors=FALSE, header=T, sep='\t')
 ```
 
 <br>
@@ -329,12 +329,12 @@ dim(genusprop)
 
 ## Save relative abundance data
 ```{r, echo=TRUE}
-write.table(otuprop,"./results/tables/phylotype/otuprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(phylumprop,"./results/tables/phylotype/phylumprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(classprop,"./results/tables/phylotype/classprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(orderprop,"./results/tables/phylotype/orderprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(familyprop,"./results/tables/phylotype/familyprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
-write.table(genusprop,"./results/tables/phylotype/genusprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(otuprop,"../../results/tables/phylotype/otuprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(phylumprop,"../../results/tables/phylotype/phylumprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(classprop,"../../results/tables/phylotype/classprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(orderprop,"../../results/tables/phylotype/orderprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(familyprop,"../../results/tables/phylotype/familyprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
+write.table(genusprop,"../../results/tables/phylotype/genusprop.tsv", append = FALSE, quote = FALSE, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"))
 ```
 
 <br>
@@ -396,7 +396,7 @@ dim(genusprop)
 * This assumes that 1st column in each file is SampleID
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="./data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 variables <- samplemetadata %>% select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
@@ -449,41 +449,41 @@ genusprop.v <- cbind(variables, genusprop)
 ## Save taxon dataframe containing variables
 * Adding metadata to the dataframe facilitates analysis by groups
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
-write.table(otu.t.v,"./results/tables/phylotype/otu.t.v.tsv", quote = FALSE, sep="\t",
+write.table(otu.t.v,"../../results/tables/phylotype/otu.t.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(phylum.t.v,"./results/tables/phylotype/phylum.t.v.tsv", quote = FALSE, sep="\t",
+write.table(phylum.t.v,"../../results/tables/phylotype/phylum.t.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(class.t.v,"./results/tables/phylotype/class.t.v.tsv", quote = FALSE, sep="\t",
+write.table(class.t.v,"../../results/tables/phylotype/class.t.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(order.t.v,"./results/tables/phylotype/order.t.v.tsv", quote = FALSE, sep="\t",
+write.table(order.t.v,"../../results/tables/phylotype/order.t.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(family.t.v,"./results/tables/phylotype/family.t.v.tsv", quote = FALSE, sep="\t",
+write.table(family.t.v,"../../results/tables/phylotype/family.t.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(genus.t.v,"./results/tables/phylotype/genus.t.v.tsv", quote = FALSE, sep="\t",
+write.table(genus.t.v,"../../results/tables/phylotype/genus.t.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
 # Relative data (prop)
-write.table(otuprop.v,"./results/tables/phylotype/otuprop.v.tsv", quote = FALSE, sep="\t",
+write.table(otuprop.v,"../../results/tables/phylotype/otuprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(phylumprop.v,"./results/tables/phylotype/phylumprop.v.tsv", quote = FALSE, sep="\t",
+write.table(phylumprop.v,"../../results/tables/phylotype/phylumprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(classprop.v,"./results/tables/phylotype/classprop.v.tsv", quote = FALSE, sep="\t",
+write.table(classprop.v,"../../results/tables/phylotype/classprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(orderprop.v,"./results/tables/phylotype/orderprop.v.tsv", quote = FALSE, sep="\t",
+write.table(orderprop.v,"../../results/tables/phylotype/orderprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(familyprop.v,"./results/tables/phylotype/familyprop.v.tsv", quote = FALSE, sep="\t",
+write.table(familyprop.v,"../../results/tables/phylotype/familyprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
-write.table(genusprop.v,"./results/tables/phylotype/genusprop.v.tsv", quote = FALSE, sep="\t",
+write.table(genusprop.v,"../../results/tables/phylotype/genusprop.v.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
 
 ```
@@ -492,7 +492,7 @@ write.table(genusprop.v,"./results/tables/phylotype/genusprop.v.tsv", quote = FA
 }
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="./data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 # Subsetting metadata for mapping to output from dowmstream analysis
@@ -506,51 +506,51 @@ names(variables)[2] <- "origID"
 
 ```{r loadtaxadata}
 ##all taxa data
-phylum.a <- read.table(file = "./results/tables/phylotype/phylum.a.tsv", header = TRUE, sep = "\t")
-class.a <- read.table(file = "./results/tables/phylotype/class.a.tsv", header = TRUE, sep = "\t")
-order.a <- read.table(file = "./results/tables/phylotype/order.a.tsv", header = TRUE, sep = "\t")
-family.a <- read.table(file = "./results/tables/phylotype/family.a.tsv", header = TRUE, sep = "\t")
-genus.a <- read.table(file = "./results/tables/phylotype/genus.a.tsv", header = TRUE, sep = "\t")
+phylum.a <- read.table(file = "../../results/tables/phylotype/phylum.a.tsv", header = TRUE, sep = "\t")
+class.a <- read.table(file = "../../results/tables/phylotype/class.a.tsv", header = TRUE, sep = "\t")
+order.a <- read.table(file = "../../results/tables/phylotype/order.a.tsv", header = TRUE, sep = "\t")
+family.a <- read.table(file = "../../results/tables/phylotype/family.a.tsv", header = TRUE, sep = "\t")
+genus.a <- read.table(file = "../../results/tables/phylotype/genus.a.tsv", header = TRUE, sep = "\t")
 
 # otutaxonfiltered
-otu <- read.table(file = "./results/tables/phylotype/otu.tsv", header = TRUE, sep = "\t")
-phylum <- read.table(file = "./results/tables/phylotype/phylum.tsv", header = TRUE, sep = "\t")
-class <- read.table(file = "./results/tables/phylotype/class.tsv", header = TRUE, sep = "\t")
-order <- read.table(file = "./results/tables/phylotype/order.tsv", header = TRUE, sep = "\t")
-family <- read.table(file = "./results/tables/phylotype/family.tsv", header = TRUE, sep = "\t")
-genus <- read.table(file = "./results/tables/phylotype/genus.tsv", header = TRUE, sep = "\t")
+otu <- read.table(file = "../../results/tables/phylotype/otu.tsv", header = TRUE, sep = "\t")
+phylum <- read.table(file = "../../results/tables/phylotype/phylum.tsv", header = TRUE, sep = "\t")
+class <- read.table(file = "../../results/tables/phylotype/class.tsv", header = TRUE, sep = "\t")
+order <- read.table(file = "../../results/tables/phylotype/order.tsv", header = TRUE, sep = "\t")
+family <- read.table(file = "../../results/tables/phylotype/family.tsv", header = TRUE, sep = "\t")
+genus <- read.table(file = "../../results/tables/phylotype/genus.tsv", header = TRUE, sep = "\t")
 
 # transposed
-otu.t <- read.table(file = "./results/tables/phylotype/otu.t.tsv", header = TRUE, sep = "\t")
-phylum.t<- read.table(file = "./results/tables/phylotype/phylum.t.tsv", header = TRUE, sep = "\t")
-class.t <- read.table(file = "./results/tables/phylotype/class.t.tsv", header = TRUE, sep = "\t")
-order.t <- read.table(file = "./results/tables/phylotype/order.t.tsv", header = TRUE, sep = "\t")
-family.t <- read.table(file = "./results/tables/phylotype/family.t.tsv", header = TRUE, sep = "\t")
-genus.t <- read.table(file = "./results/tables/phylotype/genus.t.tsv", header = TRUE, sep = "\t")
+otu.t <- read.table(file = "../../results/tables/phylotype/otu.t.tsv", header = TRUE, sep = "\t")
+phylum.t<- read.table(file = "../../results/tables/phylotype/phylum.t.tsv", header = TRUE, sep = "\t")
+class.t <- read.table(file = "../../results/tables/phylotype/class.t.tsv", header = TRUE, sep = "\t")
+order.t <- read.table(file = "../../results/tables/phylotype/order.t.tsv", header = TRUE, sep = "\t")
+family.t <- read.table(file = "../../results/tables/phylotype/family.t.tsv", header = TRUE, sep = "\t")
+genus.t <- read.table(file = "../../results/tables/phylotype/genus.t.tsv", header = TRUE, sep = "\t")
 
 # with variables
-otu.t.v <- read.table(file = "./results/tables/phylotype/otu.t.v.tsv", header = TRUE, sep = "\t")
-phylum.t.v<- read.table(file = "./results/tables/phylotype/phylum.t.v.tsv", header = TRUE, sep = "\t")
-class.t.v <- read.table(file = "./results/tables/phylotype/class.t.v.tsv", header = TRUE, sep = "\t")
-order.t.v <- read.table(file = "./results/tables/phylotype/order.t.v.tsv", header = TRUE, sep = "\t")
-family.t.v <- read.table(file = "./results/tables/phylotype/family.t.v.tsv", header = TRUE, sep = "\t")
-genus.t.v <- read.table(file = "./results/tables/phylotype/genus.t.v.tsv", header = TRUE, sep = "\t")
+otu.t.v <- read.table(file = "../../results/tables/phylotype/otu.t.v.tsv", header = TRUE, sep = "\t")
+phylum.t.v<- read.table(file = "../../results/tables/phylotype/phylum.t.v.tsv", header = TRUE, sep = "\t")
+class.t.v <- read.table(file = "../../results/tables/phylotype/class.t.v.tsv", header = TRUE, sep = "\t")
+order.t.v <- read.table(file = "../../results/tables/phylotype/order.t.v.tsv", header = TRUE, sep = "\t")
+family.t.v <- read.table(file = "../../results/tables/phylotype/family.t.v.tsv", header = TRUE, sep = "\t")
+genus.t.v <- read.table(file = "../../results/tables/phylotype/genus.t.v.tsv", header = TRUE, sep = "\t")
 
 # proportions
-otuprop <- read.table(file = "./results/tables/phylotype/otuprop.tsv", header = TRUE, sep = "\t")
-phylumprop<- read.table(file = "./results/tables/phylotype/phylumprop.tsv", header = TRUE, sep = "\t")
-classprop <- read.table(file = "./results/tables/phylotype/classprop.tsv", header = TRUE, sep = "\t")
-orderprop <- read.table(file = "./results/tables/phylotype/orderprop.tsv", header = TRUE, sep = "\t")
-familyprop <- read.table(file = "./results/tables/phylotype/familyprop.tsv", header = TRUE, sep = "\t")
-genusprop <- read.table(file = "./results/tables/phylotype/genusprop.tsv", header = TRUE, sep = "\t")
+otuprop <- read.table(file = "../../results/tables/phylotype/otuprop.tsv", header = TRUE, sep = "\t")
+phylumprop<- read.table(file = "../../results/tables/phylotype/phylumprop.tsv", header = TRUE, sep = "\t")
+classprop <- read.table(file = "../../results/tables/phylotype/classprop.tsv", header = TRUE, sep = "\t")
+orderprop <- read.table(file = "../../results/tables/phylotype/orderprop.tsv", header = TRUE, sep = "\t")
+familyprop <- read.table(file = "../../results/tables/phylotype/familyprop.tsv", header = TRUE, sep = "\t")
+genusprop <- read.table(file = "../../results/tables/phylotype/genusprop.tsv", header = TRUE, sep = "\t")
 
 # proportions with variables
-otuprop.v <- read.table(file = "./results/tables/phylotype/otuprop.v.tsv", header = TRUE, sep = "\t")
-phylumprop.v<- read.table(file = "./results/tables/phylotype/phylumprop.v.tsv", header = TRUE, sep = "\t")
-classprop.v <- read.table(file = "./results/tables/phylotype/classprop.v.tsv", header = TRUE, sep = "\t")
-orderprop.v <- read.table(file = "./results/tables/phylotype/orderprop.v.tsv", header = TRUE, sep = "\t")
-familyprop.v <- read.table(file = "./results/tables/phylotype/familyprop.v.tsv", header = TRUE, sep = "\t")
-genusprop.v <- read.table(file = "./results/tables/phylotype/genusprop.v.tsv", header = TRUE, sep = "\t")
+otuprop.v <- read.table(file = "../../results/tables/phylotype/otuprop.v.tsv", header = TRUE, sep = "\t")
+phylumprop.v<- read.table(file = "../../results/tables/phylotype/phylumprop.v.tsv", header = TRUE, sep = "\t")
+classprop.v <- read.table(file = "../../results/tables/phylotype/classprop.v.tsv", header = TRUE, sep = "\t")
+orderprop.v <- read.table(file = "../../results/tables/phylotype/orderprop.v.tsv", header = TRUE, sep = "\t")
+familyprop.v <- read.table(file = "../../results/tables/phylotype/familyprop.v.tsv", header = TRUE, sep = "\t")
+genusprop.v <- read.table(file = "../../results/tables/phylotype/genusprop.v.tsv", header = TRUE, sep = "\t")
 
 
 otu.scaled.t <- scale(otu.t) # Scale the data
@@ -568,13 +568,13 @@ f.scaled.prop <- scale(familyprop, scale = TRUE) # Scale the data
 g.scaled.prop <- scale(genusprop, scale = TRUE) # Scale the data
 
 
-save(class, class.a, class.t, class.t.v, classprop, classprop.v, family, family.a, family.t, family.t.v, familyprop, familyprop.v, genus, genus.a, genus.t, genus.t.v, genusprop, genusprop.v, order, order.a, order.t, order.t.v, orderprop, orderprop.v, otu, otu.t, otu.t.v, otuprop, otuprop.v, phylum, phylum.a, phylum.t, phylum.t.v, phylumprop, phylumprop.v, otu.scaled.t, p.scaled.t, c.scaled.t, o.scaled.t, f.scaled.t, g.scaled.t, otu.scaled.prop, p.scaled.prop, c.scaled.prop, o.scaled.prop, f.scaled.prop, g.scaled.prop, file = "./results/taxadata.RData")
+save(class, class.a, class.t, class.t.v, classprop, classprop.v, family, family.a, family.t, family.t.v, familyprop, familyprop.v, genus, genus.a, genus.t, genus.t.v, genusprop, genusprop.v, order, order.a, order.t, order.t.v, orderprop, orderprop.v, otu, otu.t, otu.t.v, otuprop, otuprop.v, phylum, phylum.a, phylum.t, phylum.t.v, phylumprop, phylumprop.v, otu.scaled.t, p.scaled.t, c.scaled.t, o.scaled.t, f.scaled.t, g.scaled.t, otu.scaled.prop, p.scaled.prop, c.scaled.prop, o.scaled.prop, f.scaled.prop, g.scaled.prop, file = "../../results/taxadata.RData")
 ```
 
 <br>
 
 ```{r}
-save.image("./results/tables/phylotype/otutaxon.RData")
+save.image("../../results/tables/phylotype/otutaxon.RData")
 ```
 
 

@@ -1,10 +1,10 @@
 ---
 title: "Progress report 1"
-bibliography: /imap/library/imap.bib
+bibliography: ../../library/imap.bib
 date: 'Updated: `r Sys.time()`'
 output:
   html_document:
-    css: /imap/code/css/report.css
+    css: ../../code/css/report.css
     # keep_md: yes
 link-citations: yes
 subtitle: Metadata profiling
@@ -12,7 +12,7 @@ biblio-style: apalike
 
 ---
 
-```{r child='global_setup.Rmd'}
+```{r child='global_setup.Rmd', echo=FALSE}
 
 ```
 
@@ -43,7 +43,7 @@ biblio-style: apalike
 
 ```{r}
 
-samplemetadata <- readr::read_table2(file="/imap/data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 metadata_status <- funModeling::df_status(samplemetadata)
@@ -126,7 +126,7 @@ ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  co
 
 ```{r varfreq_casestudy, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
 library(ggplot2)
-samplemetadata_casestudy <- readr::read_table2(file="/imap/data/metadata/samplemetadata_casestudy.txt", col_names = T)
+samplemetadata_casestudy <- readr::read_table2(file="../../data/metadata/samplemetadata_casestudy.txt", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 metadata_status <- funModeling::df_status(samplemetadata_casestudy)
@@ -163,7 +163,7 @@ Figure 3. Frequency of experimental variables
 
 
 ```{r bushmeat, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
-samplemetadata <- readr::read_table2(file="/imap/data/metadata/186samples.metadata", col_names = T)
+samplemetadata <- readr::read_table2(file="../../data/metadata/186samples.metadata", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 metadata_status <- funModeling::df_status(samplemetadata)

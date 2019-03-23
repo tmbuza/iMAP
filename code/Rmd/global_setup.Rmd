@@ -1,92 +1,4 @@
----
-title: 'Global setup'
-date: 'Updated: `r Sys.time()`'
----
-
-```{r}
-# Load packages
-# if (!require("knitr")) {install.packages("knitr", dependencies = TRUE)}
-library("knitr")
-# if (!require("rmarkdown")) {install.packages("rmarkdown", dependencies = TRUE)}
-library("rmarkdown")
-# if (!require("ggplot2")) {install.packages("ggplot2", dependencies = TRUE)}
-library("ggplot2")
-# if (!require("reshape2")) {install.packages("reshape2", dependencies = TRUE)}
-library("reshape2")
-# if (!require("grid")) {install.packages("grid", dependencies = TRUE)}
-library("grid")
-# if (!require("scales")) {install.packages("scales", dependencies = TRUE)}
-library("scales")
-# if (!require("iNEXT")) {install.packages("iNEXT", dependencies = TRUE)}
-library("iNEXT")
-# if (!require("readr")) {install.packages("readr", dependencies = TRUE)}
-library("readr")
-# if (!require("funModeling")) {install.packages("funModeling", dependencies = TRUE)}
-library("funModeling")
-# if (!require("dplyr")) {install.packages("dplyr", dependencies = TRUE)}
-library("dplyr")
-# if (!require("vegan")) {install.packages("vegan", dependencies = TRUE)}
-library("vegan")
-# if (!require("factoextra")) {install.packages("factoextra", dependencies = TRUE)}
-# library("factoextra")
-# if (!require("FactoMineR")) {install.packages("FactoMineR", dependencies = TRUE)}
-# library("FactoMineR")
-# if (!require("NbClust")) {install.packages("NbClust", dependencies = TRUE)}
-# library("NbClust")
-# if (!require("cluster")) {install.packages("cluster", dependencies = TRUE)}
-# library("cluster")
-# if (!require("ggdendro")) {install.packages("ggdendro", dependencies = TRUE)}
-# library("ggdendro")
-# # if (!require("kableExtra")) {install.packages("kableExtra", dependencies = TRUE)}
-# # library("kableExtra")
-# if (!require("tm")) {install.packages("tm", dependencies = TRUE)}
-# library("tm")
-# if (!require("SnowballC")) {install.packages("SnowballC", dependencies = TRUE)}
-# library("SnowballC")
-# if (!require("wordcloud")) {install.packages("wordcloud", dependencies = TRUE)}
-# library("wordcloud")
-# if (!require("htmlwidgets")) {install.packages("htmlwidgets", dependencies = TRUE)}
-# library("htmlwidgets")
-# if (!require("wordcloud2")) {install.packages("wordcloud2", dependencies = TRUE)}
-# library("wordcloud2")
-# if (!require("RColorBrewer")) {install.packages("RColorBrewer", dependencies = TRUE)}
-# library("RColorBrewer")
-# if (!require("servr")) {install.packages("servr", dependencies = TRUE)}
-# library("servr")
-# if (!require("bookdownplus")) {install.packages("bookdownplus", dependencies = TRUE)} # For books eg gitbook
-# library("caTools")
-# library("bookdownplus")
-# if (!require("data.table")) {install.packages("data.table", dependencies = TRUE)}
-# library("data.table")
-# if (!require("png")) {install.packages("png", dependencies = TRUE)}
-# library("png")
-# if (!require("corrplot")) {install.packages("corrplot", dependencies = TRUE)}
-# library("corrplot")
-# if (!require("ggpubr")) {install.packages("ggpubr", dependencies = TRUE)} # For pub-ready figs
-# library("caTools")
-# library("ggpubr")
-# if (!require("webshot")) {webshot::install_phantomjs()}
-# library("webshot")
-# if (!require("goeveg")) {install.packages("goeveg", dependencies = TRUE)}
-# library("goeveg")
-# if (!require("cowplot")) {install.packages("cowplot", dependencies = TRUE)} # For combined plots
-# library("cowplot")
-# if (!require("caTools")) {install.packages("caTools", dependencies = TRUE)} # For regression
-# library("caTools")
-# if (!require("bookdown")) {install.packages("bookdown", dependencies = TRUE)} # For books
-# library("bookdown")
-# # if (!require("devtools")) {install.packages("devtools", dependencies = TRUE)}
-# # library("devtools")
-# if (!require("tidyverse")) {install.packages("tidyverse", dependencies = TRUE)}
-# library("tidyverse")
-# if (!require("plotrix")) {install.packages("plotrix", dependencies = TRUE)}
-# library("plotrix")
-# if (!require("flexdashboard")) {install.packages("flexdashboard", dependencies = TRUE)}
-# library("flexdashboard")
-```
-# -----------------------------------------------------------
-
-```{r}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 # Global Setup
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(fig.path='./figures/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%")
@@ -96,9 +8,104 @@ knitr::opts_chunk$set(warning = FALSE)
 ```
 
 
-# -----------------------------------------------------------
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+
+# Load packages
+if (!require("knitr")) {install.packages("knitr", dependencies = TRUE)}
+library("knitr")
+if (!require("rmarkdown")) {install.packages("rmarkdown", dependencies = TRUE)}
+library("rmarkdown")
+if (!require("ggplot2")) {install.packages("ggplot2", dependencies = TRUE)}
+library("ggplot2")
+if (!require("reshape2")) {install.packages("reshape2", dependencies = TRUE)}
+library("reshape2")
+if (!require("grid")) {install.packages("grid", dependencies = TRUE)}
+library("grid")
+if (!require("scales")) {install.packages("scales", dependencies = TRUE)}
+library("scales")
+if (!require("iNEXT")) {install.packages("iNEXT", dependencies = TRUE)}
+library("iNEXT")
+if (!require("readr")) {install.packages("readr", dependencies = TRUE)}
+library("readr")
+if (!require("funModeling")) {install.packages("funModeling", dependencies = TRUE)}
+library("funModeling")
+if (!require("dplyr")) {install.packages("dplyr", dependencies = TRUE)}
+library("dplyr")
+if (!require("vegan")) {install.packages("vegan", dependencies = TRUE)}
+library("vegan")
+if (!require("factoextra")) {install.packages("factoextra", dependencies = TRUE)}
+library("factoextra")
+if (!require("FactoMineR")) {install.packages("FactoMineR", dependencies = TRUE)}
+library("FactoMineR")
+if (!require("NbClust")) {install.packages("NbClust", dependencies = TRUE)}
+library("NbClust")
+if (!require("cluster")) {install.packages("cluster", dependencies = TRUE)}
+library("cluster")
+if (!require("ggdendro")) {install.packages("ggdendro", dependencies = TRUE)}
+library("ggdendro")
+if (!require("kableExtra")) {install.packages("kableExtra", dependencies = TRUE)}
+library("kableExtra")
+if (!require("tm")) {install.packages("tm", dependencies = TRUE)}
+library("tm")
+if (!require("SnowballC")) {install.packages("SnowballC", dependencies = TRUE)}
+library("SnowballC")
+if (!require("wordcloud")) {install.packages("wordcloud", dependencies = TRUE)}
+library("wordcloud")
+if (!require("htmlwidgets")) {install.packages("htmlwidgets", dependencies = TRUE)}
+library("htmlwidgets")
+if (!require("wordcloud2")) {install.packages("wordcloud2", dependencies = TRUE)}
+library("wordcloud2")
+if (!require("RColorBrewer")) {install.packages("RColorBrewer", dependencies = TRUE)}
+library("RColorBrewer")
+if (!require("servr")) {install.packages("servr", dependencies = TRUE)}
+library("servr")
+if (!require("bookdownplus")) {install.packages("bookdownplus", dependencies = TRUE)} # For books eg gitbook
+library("caTools")
+library("bookdownplus")
+if (!require("data.table")) {install.packages("data.table", dependencies = TRUE)}
+library("data.table")
+if (!require("png")) {install.packages("png", dependencies = TRUE)}
+library("png")
+if (!require("corrplot")) {install.packages("corrplot", dependencies = TRUE)}
+library("corrplot")
+if (!require("ggpubr")) {install.packages("ggpubr", dependencies = TRUE)} # For pub-ready figs
+library("caTools")
+library("ggpubr")
+if (!require("webshot")) {webshot::install_phantomjs()}
+library("webshot")
+if (!require("goeveg")) {install.packages("goeveg", dependencies = TRUE)}
+library("goeveg")
+if (!require("cowplot")) {install.packages("cowplot", dependencies = TRUE)} # For combined plots
+library("cowplot")
+if (!require("caTools")) {install.packages("caTools", dependencies = TRUE)} # For regression
+library("caTools")
+if (!require("bookdown")) {install.packages("bookdown", dependencies = TRUE)} # For books
+library("bookdown")
+# if (!require("devtools")) {install.packages("devtools", dependencies = TRUE)}
+# library("devtools")
+if (!require("tidyverse")) {install.packages("tidyverse", dependencies = TRUE)}
+library("tidyverse")
+if (!require("plotrix")) {install.packages("plotrix", dependencies = TRUE)}
+library("plotrix")
+if (!require("flexdashboard")) {install.packages("flexdashboard", dependencies = TRUE)}
+library("flexdashboard")
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Global Setup
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.path='./figures/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%")
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+
 ```{r}
 library(ggplot2)
+library(scales)
+
 # clean ggplot background
 cleanup = theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(color = "black"))
 
