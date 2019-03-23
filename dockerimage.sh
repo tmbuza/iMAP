@@ -1,14 +1,51 @@
 #!/usr/bin/env bash
 
-sudo git clone https://github.com/tmbuza/iMAP.git
-cd iMAP
+# Build r-base and packages docker image 
+imageName=tmbuza/rpackages:v3.5.2
+docker build -t $imageName -f Dockerfile_rpackages .
 
-# Declare variables
-imageName=tmbuza/imap:v1.1
-containerName=imapv1
+# Create docker container for generating all reports
+containerName=metadata_profiling
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-sudo docker build -t $imageName -f Dockerfile .
+# Metadata profiling
+bash code/imap_metadata_profiling_driver.bash
+# # ########################
+# # ########################
 
-# sudo docker run --name=containerName --rm -ti $imageName /bin/bash 
-# bash code/linux_iMAP_driver.bash
-# echo "Successfully completed the analysis"
+
+# Build imap dependencies docker image
+imageName=tmbuza/readqctools:v1.0.0
+docker build -t $imageName -f Dockerfile_qctools .
+
+# Create docker container
+containerName=preprocess1
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
+
+# Preprocessing
+bash code/imap_preprocess_driver.bash
+
+
+# # ########################
+# # ########################
+
+# Build a mothur docker image
+imageName=tmbuza/mothur:v1.41.3
+docker build -t $imageName -f Dockerfile_mothur .
+
+# Create a docker container
+containerName=seqclassify
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
+
+# Process and classify the sequences
+bash code/imap_classify_driver.bash
+
+# ########################
+# ########################
+
+# Create docker container for generating all reports
+containerName=progress_reports
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
+
+# Reporting
+bash code/imap_report_driver.bash
