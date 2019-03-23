@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Get the iMAP repository
+
+
+
+
 # Create docker container for metadata profiling
 containerName=metadata_profiling
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
