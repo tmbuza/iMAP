@@ -18,10 +18,6 @@
 
 <br>
 
-## Guidelines: This README
-
-<hr>
-
 ## Requirements
 
 The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table 1). 
@@ -126,6 +122,8 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash /imap/code/progressreport2.bash
 
+exit
+
 ```
 
 
@@ -136,6 +134,8 @@ containerName=seqclassify
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
 bash code/imap_classify_driver.bash
+
+exit
 
 ```
 <br>
@@ -150,6 +150,8 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash /imap/code/progressreport3.bash
 
+exit
+
 ```
 <br>
 
@@ -160,6 +162,9 @@ containerName=OTUanalysis
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
 bash code/imap_OTUanalysis_driver.bash
+
+exit
+
 ```
 
 <br>
@@ -174,9 +179,13 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash /imap/code/progressreport4.bash
 
+exit
+
 ```
 
 <br><hr>
+
+# Progress
 
 ## iMAP Poster: 2017 ASM Conference
 Presented at the: <br><i><strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong></i><br> 
