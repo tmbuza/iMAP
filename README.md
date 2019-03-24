@@ -1,20 +1,24 @@
 # iMAP: Integrative Microbiome Analysis Pipeline
 
-The iMAP is a two-tier pipeline consisting of:
-
-1. Bioinformatics analysis of 16S rRNA gene reads
-2. Exploratory visualization. 
+## Analyses
+1. Profiling of Metadata
+2. Pre-processing of reads
+3. Bioinformatics analysis of 16S rRNA gene reads
+  * Phylotype-based method.
+  * OTU-based method.
+  * Phylogeny-based method.
+4. Exploratory visualization. 
 
 <br>
 
 ## Audience
 * Microbiologists
-* Ecologist
+* Bioinformaticians
 * Any interested user
 
 <br>
 
-# Guidelines
+## Guidelines (This README)
 
 <hr>
 
