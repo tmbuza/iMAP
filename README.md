@@ -18,7 +18,7 @@
 
 <br>
 
-## Guidelines (This README)
+## Guidelines: This README
 
 <hr>
 
