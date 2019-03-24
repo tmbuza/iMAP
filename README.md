@@ -3,7 +3,7 @@
 ## Analyses
 1. Profiling of Metadata
 2. Pre-processing of reads
-3. Bioinformatics analysis of 16S rRNA gene reads
+3. Sequence classification
     * Phylotype-based method.
     * OTU-based method.
     * Phylogeny-based method.
