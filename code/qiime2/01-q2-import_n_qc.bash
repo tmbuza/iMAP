@@ -1,5 +1,5 @@
-cd qiime2
-source activate qiime2-2018.6
+# cd qiime2
+# source activate qiime2-2018.6
 
 # # Batch1  
 # time qiime tools import \
@@ -144,12 +144,12 @@ source activate qiime2-2018.6
 # # qced 
 time qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
-  --input-path $PWD/murine-qced-manifest.txt \
-  --output-path $PWD/qced-demux.qza \
+  --input-path $PWD/data/metadata/manifest.txt \
+  --output-path $PWD/data/qiime2/demux.qza \
   --source-format PairedEndFastqManifestPhred33
 time qiime demux summarize \
-  --i-data qced-demux.qza \
---o-visualization qced-demux.qzv
+  --i-data $PWD/data/qiime2/demux.qza \
+  --o-visualization results/qzv/demux.qzv
 # #Subset  
 # time qiime tools import \
 #   --type 'SampleData[PairedEndSequencesWithQuality]' \
@@ -159,8 +159,8 @@ time qiime demux summarize \
 # time qiime demux summarize \
 #   --i-data subset-demux.qza \
 #   --o-visualization subset-demux.qzv
-cd ..
-source deactivate
+# cd ..
+# source deactivate
 
 
 
