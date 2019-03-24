@@ -71,7 +71,6 @@ code/Rmd/figures/*.png
 code/bbmap/*
 !code/bbmap/bbduk.sh
 code/seqkit
-code/qiime2code
 code/*win*
 code/summarizeFastQC
 !code/progressreport*.bash
