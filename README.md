@@ -61,7 +61,14 @@ The first step is to gather all materials needed for implementing the iMAP pipel
               
 <br> -->
 
+
+
+
+
 # Implementation
+
+## Install Docker
+* https://docs.docker.com/v17.12/install/
 
 ## Download iMAP repository
 ```{}
