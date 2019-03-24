@@ -70,6 +70,8 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 ## Install Docker
 * https://docs.docker.com/v17.12/install/
 
+<br>
+
 ## Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
@@ -92,6 +94,12 @@ mv iMAP-master iMAP
 rm -rf master.zip
 
 ```
+
+<br>
+
+## Add data to designated folders
+* Rawdata
+* Metadata
 
 <br>
 
