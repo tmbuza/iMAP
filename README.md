@@ -20,7 +20,7 @@
 
 <br>
 
-## Requirements
+<!-- ## Requirements
 
 The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table 1). 
 
@@ -59,7 +59,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 |||||
 
               
-<br>
+<br> -->
 
 ## Download iMAP repository
 ```{}
