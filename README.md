@@ -61,6 +61,8 @@ The first step is to gather all materials needed for implementing the iMAP pipel
               
 <br> -->
 
+# Implementation
+
 ## Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
