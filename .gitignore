@@ -49,6 +49,7 @@ rsconnect/
 data/*/*
 !data/metadata
 !data/demo
+READMEbackup.md
 !README.md
 
 img/*/*

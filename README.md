@@ -1,5 +1,7 @@
 # iMAP: Integrative Microbiome Analysis Pipeline
 
+## Version: iMAP v1.0
+
 ## Analyses
 1. Profiling of Metadata
 2. Pre-processing of reads
@@ -191,4 +193,4 @@ exit
 Presented at the: <br><i><strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong></i><br> 
 Oct 08 - 11, 2017 | Washington, DC | USA
 
-![](./posters/posterASM2017.png)
+<!-- ![](./posters/posterASM2017.png) -->
