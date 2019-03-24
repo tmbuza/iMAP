@@ -4,9 +4,9 @@
 1. Profiling of Metadata
 2. Pre-processing of reads
 3. Bioinformatics analysis of 16S rRNA gene reads
-  * Phylotype-based method.
-  * OTU-based method.
-  * Phylogeny-based method.
+    * Phylotype-based method.
+    * OTU-based method.
+    * Phylogeny-based method.
 4. Exploratory visualization. 
 
 <br>
