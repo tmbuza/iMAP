@@ -53,6 +53,8 @@ Table: Table x: Statistical parameters calculated from the OTU-based classificat
 <!-- <br> -->
 
 
+
+
 ## Overall OTU abundance {-}
 
 ```{bash}
@@ -841,7 +843,7 @@ mtext("Number sampled", cex = 1.2, side = 1, line = -2, outer = TRUE)
 
 <hr>
 
-```{r inext_qo, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r inext_qo, message=FALSE, warning=FALSE, include=FALSE}
 library(iNEXT)
 
 otu_inextrichness <- iNEXT::iNEXT(otu.t,  q=0, datatype="abundance", endpoint = 500)
@@ -865,7 +867,7 @@ o_inextsimpson <- iNEXT::iNEXT(order.t,  q=2, datatype="abundance", endpoint = 5
 f_inextsimpson <- iNEXT::iNEXT(family.t,  q=2, datatype="abundance", endpoint = 500)
 g_inextsimpson <- iNEXT::iNEXT(genus.t,  q=2, datatype="abundance", endpoint = 500)
 
-save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_inextrichness,	g_inextrichness,	otu_inextshannon,	p_inextshannon,	c_inextshannon,	o_inextshannon,	f_inextshannon,	g_inextshannon,	otu_inextsimpson,	p_inextsimpson,	c_inextsimpson,	o_inextsimpson,	f_inextsimpson,	g_inextsimpson, file = "../../results/iNEXT.RData")
+# save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_inextrichness,	g_inextrichness,	otu_inextshannon,	p_inextshannon,	c_inextshannon,	o_inextshannon,	f_inextshannon,	g_inextshannon,	otu_inextsimpson,	p_inextsimpson,	c_inextsimpson,	o_inextsimpson,	f_inextsimpson,	g_inextsimpson, file = "../../results/iNEXT.RData")
 
 ```
 
@@ -873,7 +875,7 @@ save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_ine
 ### Type 1: Sample-size-based R/E curve
 
 ```{r}
-load("../../results/iNEXT.RData")
+# load("../../results/iNEXT.RData")
 ```
 
 
@@ -1828,3 +1830,4 @@ Figure x: Sample Phylip or Newick-formatted tree clustered using the UPGMA (Unwe
 sessionInfo()
 ```
 
+<br>

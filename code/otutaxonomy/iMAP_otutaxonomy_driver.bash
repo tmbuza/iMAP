@@ -1,3 +1,4 @@
 mothur code/otutaxonomy/01_get_shared_phylotype.batch
 mothur code/otutaxonomy/02_get_shared_otus.batch
 mothur code/otutaxonomy/03_get_shared_phylogeny_taxonomy.batch
+mothur code/otutaxonomy/04_processed_seqs.bash

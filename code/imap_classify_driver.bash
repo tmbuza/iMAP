@@ -23,6 +23,6 @@ bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to eval
 # bash ./code/progressreport3.bash 
 
 ## Preliminary Analysis
-bash ./code/datatransformation.bash
+# bash ./code/datatransformation.bash
 # bash ./code/dataanalysis/iMAP_dataanalysis_driver.bash # Optional mothur-based preliminary analysis
 # bash ./code/progressreport4.bash

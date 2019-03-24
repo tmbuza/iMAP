@@ -62,7 +62,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 ## Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
-cd iMAP
+
 
 # OR
 
@@ -70,7 +70,6 @@ curl -LOk https://github.com/tmbuza/iMAP/archive/master.zip
 unzip master.zip
 mv iMAP-master iMAP
 rm -rf master.zip
-cd iMAP
 
 
 # OR
@@ -80,175 +79,102 @@ wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip
 unzip master.zip
 mv iMAP-master iMAP
 rm -rf master.zip
-cd iMAP
-```
-
-<br>
-
-## Gather required materials
-* Raw data (demultiplexed compressed FASTQ files). 
-* Metadata, mothur-formatted mapping files (commonly with extension .design)
-* Install required software 
-* Download reference databases (alignments and classifiers)
-
-```{}
-# linux
-bash ./code/requirements/iMAP_requirements_linux_driver.bash
-
-# mac OS
-bash ./code/requirements/iMAP_requirements_mac_driver.bash
 
 ```
 
 <br>
 
-## Verify required folders and important files
+## Metadata profiling
 
 ```{}
-bash ./code/requirements/iMAP_checkFiles_driver.bash
 
-open reports/checked_files.txt
+containerName=metadataProfilingReport
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-# OR
+bash /imap/code/imap_metadata_profiling_driver.bash
 
-cat reports/checked_files.txt
+exit
+
 ```
 
 <br>
-
-### Sample output 
-Middle and right panel
-
-<br>
-
-![](img/required.png)
-
-Figure S1: Major folders in the iMAP root directory. Folders and files marked with tick exist. Missing file marked X must be found before proceeding.
-
-<hr>
-<br>
-
-# Bioinformatics analysis
-
-<br>
-
-## CLI: Command-line-interface
-This is basically a method where users sequentially run individual or bundle scripts on CLI (Command-Line-Interface) one at a time. We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented on CLI by just a single click.
-
-```{}
-## Metadata Profiling
-bash ./code/progressreport1.bash # Revised on 02/06/2019
 
 ## Read Preprocessing
-bash ./code/preprocessing/iMAP_preprocessing_driver.bash
-bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
-bash ./code/progressreport2.bash # Revised on 02/06/2019
+```{}
 
-## Sequence Processing
-bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
-bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
-bash ./code/seqclassification/iMAP_seqclassification_driver.bash
-bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
-bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
-bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
-bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to evaluate read length
-bash ./code/progressreport3.bash # Revised on 02/06/2019
-bash ./code/datatransformation.bash # Revised on 02/09/2019
+containerName=preprocessing
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
 
-## Preliminary Analysis
-bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
-bash ./code/progressreport4.bash # Revision in progress
+bash code/imap_preprocess_driver.bash
+
+exit
+
 ```
-
 <br>
 
-## Batch mode on CLI
-The *iMAP_driver.bash* is the master driver for running all analyses on CLI at once.
+
+### Preprocessing progress report
 
 ```{}
-bash ./code/linux_iMAP_driver.bash
-bash ./code/mac_iMAP_driver.bash
 
-# Optionally you can use time tracking driver
-bash ./code/linux_time_tracking_driver.bash
-bash ./code/mac_time_tracking_driver.bash
+containerName=readPreprocessReport
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
+
+bash /imap/code/progressreport2.bash
 
 ```
 
-<br>
 
-## Remotely via job scheduling script
-Users must create a Portable Batch System (PBS) script that describes cluster resources to be used, parameters for the job and the commands to be executed. The following is a PBS script for running executing iMAP pipeline remotely. Note that you must provide the group allocation name (-A) but this may differ from system to system. Google for help just in case.
-
-<br>
-
-**Individual driver**
+### Sequence Processing
 ```{}
-#!/bin/bash -f
 
-#PBS iMAPtest
-#PBS -A group allocation name
-#PBS -l nodes=1:ppn=8
-#PBS -l walltime=4000:00:00
-#PBS -l pmem=20gb
-#PBS -j oe
-#PBS -o iMAPtest.log
-#PBS -m abe
-#PBS -M tmb72@psu.edu
+containerName=seqclassify
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
-cd $PBS_O_WORKDIR
+bash code/imap_classify_driver.bash
 
-# Comment unused command(s) as necessary and uncomment the command(s) to be executed
-
-## Metadata Profiling
-bash ./code/progressreport1.bash # Revised on 02/06/2019
-
-## Read Preprocessing
-bash ./code/preprocessing/iMAP_preprocessing_driver.bash
-bash ./code/summarizeFastQC/iMAP_multiqc_driver.bash
-bash ./code/progressreport2.bash # Revised on 02/06/2019
-
-## Sequence Processing
-bash ./code/mockcommunity/iMAP_mockcommunity_driver.bash
-bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
-bash ./code/seqclassification/iMAP_seqclassification_driver.bash
-bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash # Optional
-bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
-bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
-bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to evaluate read length
-bash ./code/progressreport3.bash # Revised on 02/06/2019
-bash ./code/datatransformation.bash # Revised on 02/09/2019
-
-## Preliminary Analysis
-bash ./code/dataanalysis/iMAP_dataanalysis_demo_driver.bash # Optional mothur-based preliminary analysis
-bash ./code/progressreport4.bash # Revision in progress
 ```
-
 <br>
 
-**Batch mode**
+
+### Sequence processing progress report
+
 ```{}
-#!/bin/bash -f
 
-#PBS iMAPtest
-#PBS -A group allocation name
-#PBS -l nodes=1:ppn=8
-#PBS -l walltime=4000:00:00
-#PBS -l pmem=20gb
-#PBS -j oe
-#PBS -o iMAPtest.log
-#PBS -m abe
-#PBS -M tmb72@psu.edu
+containerName=seqProcessingReport
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-cd $PBS_O_WORKDIR
+bash /imap/code/progressreport3.bash
 
-bash code/linux_iMAP_driver.bash
+```
+<br>
+
+
+## OTU data analysis and visualization 
+```{}
+containerName=OTUanalysis
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
+
+bash code/imap_OTUanalysis_driver.bash
 ```
 
 <br>
-<hr>
 
-# iMAP Poster: 2017 ASM Conference
+
+### OTU analysis progress report
+
+```{}
+
+containerName=OTUanalysisReport
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
+
+bash /imap/code/progressreport4.bash
+
+```
+
+<br><hr>
+
+## iMAP Poster: 2017 ASM Conference
 Presented at the: <br><i><strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong></i><br> 
 Oct 08 - 11, 2017 | Washington, DC | USA
 

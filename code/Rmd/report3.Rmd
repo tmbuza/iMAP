@@ -31,13 +31,9 @@ variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time
 names(variables)[2] <- "origID"
 ```
 
-<!-- # <mark>Progress report 3</mark> -->
 
 <br>
 
-<!-- # Sequence Processing and conserved Taxonomy Assignment {-} -->
-
-<!-- The clean paired-end sequences that passed the preprocessing trimming and filtering were processed and classified using mothur-based phylotype and OTU-based approaches as described [@Schloss2009]. This step enables investigators to review merged sequences to determine if expected length is in-line with the targeted 16S rRNA gene region. Lack of good overlapping region could results into too many sequences that are wrong and the effect will be propagated in the downstream analysis. High quality sequences align in the same region when searched against a reference template. -->
 
 ```{r mergereportdata, message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
@@ -100,6 +96,40 @@ p2
 knitr::kable(summary(alignrpt_2), "html", position = "center", booktabs = TRUE)
 
 ```
+
+
+```{bash}
+paste -d'\t' ../../data/mothur/phylotype/00_processed_seqs/qced.contigs.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.good.count.summary  ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count.summary >../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv
+
+echo -e "SampleID\tOriginal\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/processedSeqs.tsv
+cut -f1,2,4,6,8,10,12,14 ../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv >>../../results/tables/processedSeqs.tsv
+
+head ../../results/tables/processedSeqs.tsv
+
+```
+
+
+```{bash}
+
+paste -d'\t' \
+../../data/mothur/qced.trim.contigs.summary \
+../../data/mothur/qced.trim.contigs.good.unique.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.summary \
+../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.summary \
+>../../data/mothur/phylotype/00_processed_seqs/seqsummary.tsv
+
+echo -e "Original\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/seqsummary.tsv
+cut -f4,11,18,25,32,39,46 ./data/mothur/phylotype/00_processed_seqs/seqsummary.tsv >>../../results/tables/seqsummary.tsv
+
+head ../../results/tables/seqsummary.tsv
+
+```
+
+
+
 
 
 ```{r processedseqdata, message=FALSE, warning=FALSE}
@@ -375,21 +405,12 @@ timeintext_densplot
 * QN3: .......?
 * QN4: .......?
 
-<br>
-
-<!-- ### At OTU clustering and conserved taxonomy assignment {-} -->
-<!-- * QN1: What cutoff should be used? -->
-<!-- * QN2: .......? -->
-<!-- * QN3: .......? -->
-<!-- * QN4: .......? -->
 
 <br>
 
-```{bash eval=FALSE, include=FALSE}
-# Bash command
-
-# Rscript -e "rmarkdown::render('./report3.Rmd', clean=TRUE, quiet=FALSE, output_file='report3_sequence_processing.html', output_dir='reports')"
-
+## Summary of packages used in the analysis
+```{r}
+sessionInfo()
 ```
 
 <br>

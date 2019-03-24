@@ -16,29 +16,7 @@ biblio-style: apalike
 
 ```
 
-
-<!-- # <mark>Progress report 1</mark> -->
-
 <br>
-
-
-<!-- # Metadata profiling -->
-
-# <!-- <br> -->
-# ```{r}
-# pco <- function(dis, k=2)
-# {
-#         tmp <-cmdscale(dis,k=k,eig=TRUE)
-#         class(tmp) <- "pco"
-#         return(tmp)
-# }
-
-# #############################
-# #############################
-# scaleFUN <- function(x) sprintf("%.0f", x)
-
-# ```
-
 
 
 ```{r}
@@ -207,14 +185,11 @@ cowplot::plot_grid(top_row, bottom_row, ncol = 1, rel_heights = c(1.2, 1.5))
 * QN4: .......?
 * QN5: .......?
 
-
 <br>
 
-```{bash eval=FALSE, include=FALSE}
-# Bash command
-
-# Rscript -e "rmarkdown::render('./report3.Rmd', clean=TRUE, quiet=FALSE, output_file='report3_read_preprocessing.html', output_dir='reports')"
-
+## Summary of packages used in the analysis
+```{r}
+sessionInfo()
 ```
 
 <br>
