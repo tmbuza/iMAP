@@ -65,14 +65,14 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 
 
-# Implementation
+# iMAP Implementation
 
-## Install Docker
+### Install Docker
 * https://docs.docker.com/v17.12/install/
 
 <br>
 
-## Download iMAP repository
+### Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
 
@@ -97,13 +97,13 @@ rm -rf master.zip
 
 <br>
 
-## Add data to designated folders
+### Add data to designated folders
 * Rawdata
 * Metadata
 
 <br>
 
-## Metadata profiling
+### Metadata profiling
 ```{}
 
 containerName=report1
@@ -117,7 +117,7 @@ exit
 
 <br>
 
-## Read Preprocessing
+### Read Preprocessing
 ```{}
 
 containerName=readpreprocess
@@ -172,7 +172,7 @@ exit
 <br>
 
 
-## OTU data analysis and visualization 
+### OTU data analysis and visualization 
 ```{}
 
 containerName=getotu
