@@ -2,6 +2,9 @@ version: '3.4'
 
 services:
 
+  report1:
+    image: tmbuza/rpackages:v3.5.2
+
   readpreprocess:
     image: tmbuza/readqctools:v1.0.0
 

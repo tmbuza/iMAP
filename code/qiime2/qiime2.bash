@@ -1,48 +1,48 @@
-# # QIIME2 Pipeline for profiling microbial communities
+# QIIME2 Pipeline for profiling microbial communities
 
-# ## Inspect metadata
+## Inspect metadata
 
-# qiime tools inspect-metadata \
-#   $PWD/data/metadata/samplemetadata.tsv 
+qiime tools inspect-metadata \
+  $PWD/data/metadata/samplemetadata.tsv 
 
-# ## Tabulate metadata in QIIME2 format
+## Tabulate metadata in QIIME2 format
 
-# qiime metadata tabulate \
-#   --m-input-file $PWD/data/metadata/samplemetadata.tsv \
-#   --o-visualization results/qzv/tabulated-sample-metadata.qzv
+qiime metadata tabulate \
+  --m-input-file $PWD/data/metadata/samplemetadata.tsv \
+  --o-visualization results/qzv/tabulated-sample-metadata.qzv
 
-# ## Import demultiplexed PairedEnd Raw read data
+## Import demultiplexed PairedEnd Raw read data
+
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path $PWD/data/metadata/manifest.txt \
+  --output-path $PWD/data/qiime2/demux.qza \
+  --input-format PairedEndFastqManifestPhred33
 
 # qiime tools import \
-#   --type 'SampleData[PairedEndSequencesWithQuality]' \
-#   --input-path $PWD/data/metadata/manifest.txt \
-#   --output-path $PWD/data/qiime2/demux.qza \
-#   --input-format PairedEndFastqManifestPhred33
-
-# # qiime tools import \
-# #   --input-path $PWD/data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta \
-# #   --output-path $PWD/data/qiime2/aligned-sequences.qza \
-# #   --type 'FeatureData[AlignedSequence]'
+#   --input-path $PWD/data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta \
+#   --output-path $PWD/data/qiime2/aligned-sequences.qza \
+#   --type 'FeatureData[AlignedSequence]'
 
 
 
-# ## Summarize preliminary analysis
-# qiime demux summarize \
-#   --i-data $PWD/data/qiime2/demux.qza \
-#   --o-visualization $PWD/results/qzv/demux.qzv
+## Summarize preliminary analysis
+qiime demux summarize \
+  --i-data $PWD/data/qiime2/demux.qza \
+  --o-visualization $PWD/results/qzv/demux.qzv
 
-# # ## Review the quality plots then pick truncate parameters
+# ## Review the quality plots then pick truncate parameters
 
-# # ## Quality control using DADA2 
-# qiime dada2 denoise-paired \
-#   --i-demultiplexed-seqs $PWD/data/qiime2/demux.qza \
-#   --p-trim-left-f 0 \
-#   --p-trunc-len-f 0 \
-#   --p-trim-left-r 0 \
-#   --p-trunc-len-r 0 \
-#   --o-representative-sequences $PWD/data/qiime2/rep-seqs.qza \
-#   --o-table $PWD/data/qiime2/feature-table.qza \
-#   --o-denoising-stats $PWD/data/qiime2/stats.qza
+# ## Quality control using DADA2 
+qiime dada2 denoise-paired \
+  --i-demultiplexed-seqs $PWD/data/qiime2/demux.qza \
+  --p-trim-left-f 0 \
+  --p-trunc-len-f 0 \
+  --p-trim-left-r 0 \
+  --p-trunc-len-r 0 \
+  --o-representative-sequences $PWD/data/qiime2/rep-seqs.qza \
+  --o-table $PWD/data/qiime2/feature-table.qza \
+  --o-denoising-stats $PWD/data/qiime2/stats.qza
 
 ## View denoise statistics
 qiime metadata tabulate \
@@ -103,40 +103,37 @@ qiime taxa barplot \
   --o-visualization $PWD/results/qzv/greengenes-taxa-bar-plots.qzv
   
 
-# ## EXPORTED FILES: DATA TRANSFORMATION
+## EXPORTED FILES: DATA TRANSFORMATION
 
-# qiime tools export \
-#   --input-path feature-table.qza \
-#   --output-path exported-feature-table # Output feature-table.biom 
+qiime tools export \
+  --input-path $PWD/data/qiime2/feature-table.qza \
+  --output-path $PWD/results/qzv/exported-feature-table # Output feature-table.biom 
 
-# ## CONVERT BIOM TO TSV
+## CONVERT BIOM TO TSV
 
-# biom convert \
-#   -i exported-feature-table/feature-table.biom \
-#   -o exported-feature-table/feature-table.tsv --to-tsv
+biom convert \
+  -i $PWD/results/qzv/exported-feature-table/feature-table.biom \
+  -o $PWD/results/qzv/exported-feature-table/feature-table.tsv --to-tsv
   
-# qiime tools export \
-#   --input-path silva-taxonomy.qza \
-#   --output-path exported-taxonomy-table # Output taxonomy.tsv
+qiime tools export \
+  --input-path greengenes-taxonomy.qza \
+  --output-path exported-taxonomy-table # Output taxonomy.tsv
 
-# ## COMBINE FEATURE TSV with TAXONOMY.TSV
-# qiime metadata tabulate \
-#   --m-input-file exported-feature-table/feature-table.tsv \
-#   --m-input-file exported-taxonomy-table/taxonomy.tsv \
-#   --o-visualization results/qzv/exported-feature-table/feature-taxonomy-table.qzv
-
-
-# ## Newick tree
-# qiime tools export \
-#   --input-path rooted-tree.qza \
-#   --output-path exported-rooted-tree
-
-# qiime tools export \
-#   --input-path unrooted-tree.qza \
-#   --output-path exported-unrooted-tree
+## COMBINE FEATURE TSV with TAXONOMY.TSV
+qiime metadata tabulate \
+  --m-input-file exported-feature-table/feature-table.tsv \
+  --m-input-file exported-taxonomy-table/taxonomy.tsv \
+  --o-visualization results/qzv/exported-feature-table/feature-taxonomy-table.qzv
 
 
-# # source deactivate
+## Newick tree
+qiime tools export \
+  --input-path rooted-tree.qza \
+  --output-path exported-rooted-tree
 
-# #```
+qiime tools export \
+  --input-path unrooted-tree.qza \
+  --output-path exported-unrooted-tree
+
+
 
