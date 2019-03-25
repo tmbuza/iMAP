@@ -107,7 +107,7 @@ rm -rf master.zip
 
 ```{}
 
-containerName=metadataProfilingReport
+containerName=report1
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash /imap/code/imap_metadata_profiling_driver.bash
@@ -121,7 +121,7 @@ exit
 ## Read Preprocessing
 ```{}
 
-containerName=preprocessing
+containerName=readpreproc
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
 
 bash code/imap_preprocess_driver.bash
@@ -136,7 +136,7 @@ exit
 
 ```{}
 
-containerName=readPreprocessReport
+containerName=report2
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash /imap/code/progressreport2.bash
@@ -149,7 +149,7 @@ exit
 ### Sequence Processing
 ```{}
 
-containerName=seqclassify
+containerName=seqprocess
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
 bash code/imap_classify_driver.bash
@@ -164,7 +164,7 @@ exit
 
 ```{}
 
-containerName=seqProcessingReport
+containerName=report3
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash /imap/code/progressreport3.bash
@@ -177,7 +177,7 @@ exit
 
 ## OTU data analysis and visualization 
 ```{}
-containerName=OTUanalysis
+containerName=getotu
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
 bash code/imap_OTUanalysis_driver.bash
@@ -193,7 +193,7 @@ exit
 
 ```{}
 
-containerName=OTUanalysisReport
+containerName=report4
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash /imap/code/progressreport4.bash
