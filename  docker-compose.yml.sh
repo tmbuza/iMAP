@@ -2,41 +2,25 @@ version: '3.4'
 
 services:
 
-  webmvc:
-    image: eshop/web
-    environment:
-      - CatalogUrl=http://catalog.api
-      - OrderingUrl=http://ordering.api
-    ports:
-      - "80:80"
-    depends_on:
-      - catalog.api
-      - ordering.api
+  readpreprocess:
+    image: tmbuza/readqctools:v1.0.0
 
-  catalog.api:
-    image: eshop/catalog.api
-    environment:
-      - ConnectionString=Server=sql.data;Port=1433;Database=CatalogDB;…
-    ports:
-      - "81:80"
-    depends_on:
-      - sql.data
+  report2:
+    image: tmbuza/rpackages:v3.5.2
 
-  ordering.api:
-    image: eshop/ordering.api
-    environment:
-      - ConnectionString=Server=sql.data;Database=OrderingDb;…
-    ports:
-      - "82:80"
-    extra_hosts:
-      - "CESARDLBOOKVHD:10.0.75.1"
-    depends_on:
-      - sql.data
+  seqprocess:
+    image: tmbuza/mothur:v1.41.3
 
-  sql.data:
-    image: mssql-server-linux:latest
-    environment:
-      - SA_PASSWORD=Pass@word
-      - ACCEPT_EULA=Y
-    ports:
-      - "5433:1433"
+  report3:
+    image: tmbuza/rpackages:v3.5.2
+
+  getotu:
+    image: tmbuza/mothur:v1.41.3
+
+  report4:
+    image: tmbuza/rpackages:v3.5.2
+
+  qiime2:
+    image: tmbuza/qiime2:core
+
+
