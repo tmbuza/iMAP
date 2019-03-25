@@ -121,7 +121,7 @@ exit
 ## Read Preprocessing
 ```{}
 
-containerName=readpreproc
+containerName=readpreprocess
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
 
 bash code/imap_preprocess_driver.bash
@@ -202,12 +202,3 @@ exit
 
 ```
 
-<!-- <br><hr>
-
-# Progress
-
-## iMAP Poster: 2017 ASM Conference
-Presented at the: <br><i><strong>2nd American Society For Microbiology (ASM) Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines</strong></i><br> 
-Oct 08 - 11, 2017 | Washington, DC | USA
-
-![](./posters/posterASM2017.png) -->
