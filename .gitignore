@@ -55,7 +55,7 @@ READMEbackup.md
 img/*/*
 !img/imapWorkflow*
 figures
-
+*.qza
 results/*/*
 reports/*/*
 *.pptx
