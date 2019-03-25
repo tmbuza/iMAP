@@ -1,0 +1,17 @@
+sample-id,absolute-filepath,direction
+F3D001,$PWD/data/raw/F3D001_S189_L001_R1_001.fastq.gz,forward
+F3D006,$PWD/data/raw/F3D006_S194_L001_R1_001.fastq.gz,forward
+F3D142,$PWD/data/raw/F3D142_S208_L001_R1_001.fastq.gz,forward
+F3D143,$PWD/data/raw/F3D143_S209_L001_R1_001.fastq.gz,forward
+M1D001,$PWD/data/raw/M1D001_S2_L001_R1_001.fastq.gz,forward
+M1D006,$PWD/data/raw/M1D006_S7_L001_R1_001.fastq.gz,forward
+M1D142,$PWD/data/raw/M1D142_S21_L001_R1_001.fastq.gz,forward
+M1D143,$PWD/data/raw/M1D143_S22_L001_R1_001.fastq.gz,forward
+F3D001,$PWD/data/raw/F3D001_S189_L001_R2_001.fastq.gz,reverse
+F3D006,$PWD/data/raw/F3D006_S194_L001_R2_001.fastq.gz,reverse
+F3D142,$PWD/data/raw/F3D142_S208_L001_R2_001.fastq.gz,reverse
+F3D143,$PWD/data/raw/F3D143_S209_L001_R2_001.fastq.gz,reverse
+M1D001,$PWD/data/raw/M1D001_S2_L001_R2_001.fastq.gz,reverse
+M1D006,$PWD/data/raw/M1D006_S7_L001_R2_001.fastq.gz,reverse
+M1D142,$PWD/data/raw/M1D142_S21_L001_R2_001.fastq.gz,reverse
+M1D143,$PWD/data/raw/M1D143_S22_L001_R2_001.fastq.gz,reverse
