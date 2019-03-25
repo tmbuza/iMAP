@@ -104,7 +104,6 @@ rm -rf master.zip
 <br>
 
 ## Metadata profiling
-
 ```{}
 
 containerName=report1
@@ -133,7 +132,6 @@ exit
 
 
 ### Preprocessing progress report
-
 ```{}
 
 containerName=report2
@@ -146,7 +144,7 @@ exit
 ```
 
 
-### Sequence Processing
+### Sequence Processing and Classification with mothur
 ```{}
 
 containerName=seqprocess
@@ -161,7 +159,6 @@ exit
 
 
 ### Sequence processing progress report
-
 ```{}
 
 containerName=report3
@@ -177,6 +174,7 @@ exit
 
 ## OTU data analysis and visualization 
 ```{}
+
 containerName=getotu
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
@@ -190,13 +188,27 @@ exit
 
 
 ### OTU analysis progress report
-
 ```{}
 
 containerName=report4
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash /imap/code/progressreport4.bash
+
+exit
+
+```
+
+<br>
+
+
+### Sequence Processing and Classification with QIIME2
+```{}
+
+containerName=qiime2
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
+
+bash /imap/code/qiime2/qiime2.bash
 
 exit
 
