@@ -109,7 +109,7 @@ rm -rf master.zip
 containerName=report1
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-bash /imap/code/imap_metadata_profiling_driver.bash
+bash code/01_metadataProfiling_driver.bash
 
 exit
 
@@ -123,7 +123,7 @@ exit
 containerName=readpreprocess
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
 
-bash code/imap_preprocess_driver.bash
+bash code/02_readPreprocess_driver.bash
 
 exit
 
@@ -137,7 +137,7 @@ exit
 containerName=report2
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-bash /imap/code/progressreport2.bash
+bash code/progressreport2.bash
 
 exit
 
@@ -147,10 +147,12 @@ exit
 ### Sequence Processing and Classification with mothur
 ```{}
 
-containerName=seqprocess
+containerName=seqclassification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
-bash code/imap_classify_driver.bash
+bash code/03_imapClassifyOTU_driver.bash
+
+mkdir LOG && mv *log* LOG/ && rm *.temp
 
 exit
 
@@ -164,7 +166,7 @@ exit
 containerName=report3
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-bash /imap/code/progressreport3.bash
+bash code/progressreport3.bash
 
 exit
 
@@ -178,7 +180,24 @@ exit
 containerName=getotu
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
-bash code/imap_OTUanalysis_driver.bash
+bash code/04_OTUanalysis_driver.bash
+
+mkdir LOG && mv *log* LOG/ && rm *.temp
+
+exit
+
+```
+
+<br>
+
+
+### Transformation of taxonomy data
+```{}
+
+containerName=datatransformation
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
+
+bash code/datatransformation.bash
 
 exit
 
@@ -193,7 +212,7 @@ exit
 containerName=report4
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
-bash /imap/code/progressreport4.bash
+bash code/progressreport4.bash
 
 exit
 
@@ -208,7 +227,7 @@ exit
 containerName=qiime2
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
 
-bash /imap/code/qiime2/qiime2.bash
+bash code/qiime2/qiime2.bash
 
 exit
 

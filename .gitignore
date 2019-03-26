@@ -49,6 +49,9 @@ rsconnect/
 data/*/*
 !data/metadata
 !data/demo
+
+resources/refDBs.zip
+
 READMEbackup.md
 !README.md
 
@@ -57,7 +60,8 @@ img/*/*
 figures
 *.qza
 results/*/*
-reports/*/*
+reports/*.html
+*html
 *.pptx
 *.tmp
 *.map
@@ -67,6 +71,8 @@ mothur*logfile
 *temp*
 code/mothur
 code/FastQC
+code/Rmd/report*.html
+code/Rmd/global*.html
 code/Rmd/figures/*.png
 code/bbmap/*
 !code/bbmap/bbduk.sh

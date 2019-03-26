@@ -372,7 +372,267 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code>library(ggplot2)
+library(scales)
 
+# clean ggplot background
+cleanup = theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(color = &quot;black&quot;))
+
+# multiplot
+multiplot &lt;- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+
+# Make a list from the ... arguments and plotlist
+plots &lt;- c(list(...), plotlist)
+
+numPlots = length(plots)
+
+  # If layout is NULL, then use &#39;cols&#39; to determine layout
+  if (is.null(layout)) {
+  # Make the panel
+  # ncol: Number of columns of plots
+  # nrow: Number of rows needed, calculated from # of cols
+  layout &lt;- matrix(seq(1, cols * ceiling(numPlots/cols)), ncol = cols, nrow = ceiling(numPlots/cols))}
+  if (numPlots==1) {
+  print(plots[[1]])
+  } else {
+  # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx &lt;- as.data.frame(which(layout == i, arr.ind = TRUE))
+
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+
+#################################
+library(ggplot2)
+library(gridExtra)
+library(grid)
+
+bottomsharedlegend &lt;- function(..., nrow = 1, ncol = length(list(...)), position = c(&quot;bottom&quot;, &quot;right&quot;)) {
+
+  plots &lt;- list(...)
+  position &lt;- match.arg(position)
+  g &lt;- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend &lt;- g[[which(sapply(g, function(x) x$name) == &quot;guide-box&quot;)]]
+  lheight &lt;- sum(legend$height)
+  lwidth &lt;- sum(legend$width)
+  gl &lt;- lapply(plots, function(x) x + theme(legend.position = &quot;none&quot;))
+  gl &lt;- c(gl, nrow = nrow, ncol = ncol)
+
+  combined &lt;- switch(position,
+                     &quot;bottom&quot; = arrangeGrob(do.call(arrangeGrob, gl),
+                                            legend,
+                                            ncol = 1,
+                                            heights = unit.c(unit(1, &quot;npc&quot;) - lheight, lheight)),
+                     &quot;right&quot; = arrangeGrob(do.call(arrangeGrob, gl),
+                                           legend,
+                                           ncol = 2,
+                                           widths = unit.c(unit(1, &quot;npc&quot;) - lwidth, lwidth)))
+  grid.newpage()
+  grid.draw(combined)
+
+}
+#################################
+rightsharedlegend &lt;- function(..., nrow = 1, ncol = length(list(...)), position = &quot;right&quot;) {
+
+  plots &lt;- list(...)
+  position &lt;- match.arg(position)
+  g &lt;- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend &lt;- g[[which(sapply(g, function(x) x$name) == &quot;guide-box&quot;)]]
+  lheight &lt;- sum(legend$height)
+  lwidth &lt;- sum(legend$width)
+  gl &lt;- lapply(plots, function(x) x + theme(legend.position = &quot;none&quot;))
+  gl &lt;- c(gl, nrow = nrow, ncol = ncol)
+
+  combined &lt;- switch(position,
+                     &quot;bottom&quot; = arrangeGrob(do.call(arrangeGrob, gl),
+                                            legend,
+                                            ncol = 1,
+                                            heights = unit.c(unit(1, &quot;npc&quot;) - lheight, lheight)),
+                     &quot;right&quot; = arrangeGrob(do.call(arrangeGrob, gl),
+                                           legend,
+                                           ncol = 2,
+                                           widths = unit.c(unit(1, &quot;npc&quot;) - lwidth, lwidth)))
+  grid.newpage()
+  grid.draw(combined)
+
+}
+
+#################################
+
+axislayout &lt;- theme(axis.text.x = element_text(size=12,angle = 90, hjust = 0)) +
+  theme(axis.text.y = element_text(size=12))+      
+  theme(axis.title=element_text(size=14,face=&quot;bold&quot;))
+
+mediumaxislayout &lt;- theme(axis.text.x = element_text(size=10,angle = 90, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+      
+  theme(axis.title=element_text(size=14,face=&quot;bold&quot;))
+
+mediumaxislayout2 &lt;- theme(axis.text.x = element_text(size=10,angle = 90, hjust = 1)) +
+  theme(axis.text.y = element_text(size=10))+      
+  theme(axis.title=element_text(size=12,face=&quot;bold&quot;))
+
+mediumaxislayout3 &lt;- theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+      
+  theme(axis.title=element_text(size=12,face=&quot;bold&quot;))
+
+smallaxislayout &lt;- theme(axis.text.x = element_text(size=8,angle = 90, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+      
+  theme(axis.title=element_text(size=12,face=&quot;bold&quot;))
+
+smallaxislayout2 &lt;- theme(axis.text.x = element_text(size=8,angle = 90, hjust = 1)) +
+  theme(axis.text.y = element_text(size=8))+      
+  theme(axis.title=element_text(size=10,face=&quot;bold&quot;))
+
+manysampleslayout &lt;- theme(axis.text.x = element_text(size=6,angle = 90, hjust = 0)) +
+  theme(axis.text.y = element_text(size=6))+      
+  theme(axis.title=element_text(size=10,face=&quot;bold&quot;))
+
+normalaxislayout &lt;- theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face=&quot;bold&quot;))     
+
+normalaxislayout2 &lt;- theme(axis.text.x = element_text(size=8,angle = 90, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face=&quot;bold&quot;))
+     
+normalaxislayout3 &lt;- theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12))
+
+###############################
+
+# scree plot
+library(ggplot2)
+
+ggscreeplot &lt;- function(pcobj, type = c(&#39;pev&#39;, &#39;cev&#39;)) 
+{
+  type &lt;- match.arg(type)
+  d &lt;- pcobj$sdev^2
+  yvar &lt;- switch(type, 
+                 pev = d / sum(d), 
+                 cev = cumsum(d) / sum(d))
+
+  yvar.lab &lt;- switch(type,
+                     pev = &#39;% of variance&#39;,
+                     cev = &#39;Cumulative % of var&#39;)
+
+  df &lt;- data.frame(PC = 1:length(d), yvar = yvar)
+
+  ggplot(data = df, aes(x = PC, y = yvar)) + 
+    xlab(&#39;Dimensions&#39;) + ylab(yvar.lab) +
+    geom_point(color=&quot;blue&quot;, size = 2.5, shape = 18) + geom_path(color=&quot;red&quot;, size = 1)
+}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+###############################
+
+# metacharacters
+metaChar = c(&quot;$&quot;,&quot;*&quot;,&quot;+&quot;,&quot;.&quot;,&quot;?&quot;,&quot;[&quot;,&quot;^&quot;,&quot;{&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;#&quot;)
+
+###############################
+
+italic = theme(axis.text = element_text(face = &quot;italic&quot;, size = 12))
+xitalic = theme(axis.text.x = element_text(face = &quot;italic&quot;, size = 12))
+yitalic = theme(axis.text.y = element_text(face = &quot;italic&quot;, size = 12))
+
+###############################
+
+rightlegend &lt;- theme(legend.position=&quot;right&quot;)
+bottomlegend &lt;- theme(legend.position=&quot;bottom&quot;)
+leftlegend &lt;- theme(legend.position=&quot;left&quot;)
+nolegend &lt;- theme(legend.position=&quot;none&quot;)
+
+###############################
+xbreaks5 &lt;- scale_x_continuous(labels = comma, breaks=pretty_breaks(n=5))
+xbreaks10 &lt;- scale_x_continuous(labels = comma, breaks=pretty_breaks(n=10))
+xbreaks15 &lt;- scale_x_continuous(labels = comma, breaks=pretty_breaks(n=15))
+
+ybreaks5 &lt;- scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))
+ybreaks10 &lt;- scale_y_continuous(labels = comma, breaks=pretty_breaks(n=10))
+ybreaks15 &lt;- scale_y_continuous(labels = comma, breaks=pretty_breaks(n=15))
+
+
+###############################
+x8y10 &lt;- (theme(axis.text.x = element_text(size = 8))+ theme(axis.text.y = element_text(size = 10)))
+
+x8y10 &lt;- (theme(axis.text.x = element_text(size = 8))+ theme(axis.text.y = element_text(size = 12)))
+
+x10y10 &lt;- (theme(axis.text.x = element_text(size = 10))+ theme(axis.text.y = element_text(size = 10)))
+
+x10y12 &lt;- (theme(axis.text.x = element_text(size = 10))+ theme(axis.text.y = element_text(size = 12)))
+
+x12y12 &lt;- (theme(axis.text.x = element_text(size = 12))+ theme(axis.text.y = element_text(size = 12)))
+
+cex &lt;- par(cex.axis=.8, cex.lab=1, cex.main=1.2, cex.sub=.8)
+
+
+
+# #############################
+
+# toSpace &lt;- content_transformer(function (x , pattern ) gsub(pattern, &quot; &quot;, x))
+
+
+#############################
+# mat : is a matrix of data
+# ... : further arguments to pass to the native R cor.test function
+cor.mtest &lt;- function(mat, ...) {
+    mat &lt;- as.matrix(mat)
+    n &lt;- ncol(mat)
+    p.mat&lt;- matrix(NA, n, n)
+    diag(p.mat) &lt;- 0
+    for (i in 1:(n - 1)) {
+        for (j in (i + 1):n) {
+            tmp &lt;- cor.mtest(mat[, i], mat[, j], ...)
+            p.mat[i, j] &lt;- p.mat[j, i] &lt;- tmp$p.value
+        }
+    }
+  colnames(p.mat) &lt;- rownames(p.mat) &lt;- colnames(mat)
+  p.mat
+}
+
+
+#############################
+
+replaceCommas&lt;-function(x){
+  x&lt;-as.numeric(gsub(&quot;\\,&quot;, &quot;&quot;, x))
+}
+
+
+#############################
+
+noxticks &lt;- theme(axis.text.x=element_blank())
+
+noxlabels &lt;- theme(axis.text.x=element_blank())
+
+noxtitle &lt;- theme(axis.title.x=element_blank())
+
+noyticks &lt;- theme(axis.text.y=element_blank())
+
+noylabels &lt;- theme(axis.text.y=element_blank())
+
+noytitle &lt;- theme(axis.title.y=element_blank())
+
+
+#############################
+pco &lt;- function(dis, k=2)
+{
+        tmp &lt;-cmdscale(dis,k=k,eig=TRUE)
+        class(tmp) &lt;- &quot;pco&quot;
+        return(tmp)
+}
+
+
+#############################
+scaleFUN &lt;- function(x) sprintf(&quot;%.0f&quot;, x)
+
+
+#############################</code></pre>
 
 
 

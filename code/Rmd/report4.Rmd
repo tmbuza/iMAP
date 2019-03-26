@@ -16,6 +16,7 @@ biblio-style: apalike
 
 ```
 
+
 ```{r}
 load("../../results/tables/phylotype/otutaxon.RData")
 ```
@@ -61,6 +62,7 @@ Table: Table x: Statistical parameters calculated from the OTU-based classificat
 perl ../../code/splitlefse.pl ../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.lefse ../../results/tables/phylotype/lefse_shared.tsv
 
 ```
+
 
 
 ```{r message=FALSE, warning=FALSE}
@@ -653,12 +655,12 @@ Figure x: Species diversity and correlation to species richness. Definitely phyl
 
 <br>
 
-### Correlation between species diversity and species richness
-* Sample size: 360 samples
+<!-- ### Correlation between species diversity and species richness -->
+<!-- * Sample size: 360 samples -->
 
-<br>
+<!-- <br> -->
 
-![Example: Figure10 in iMAP paper](../../img/Figure10.png)
+<!-- ![Example: Figure10 in iMAP paper](../../img/Figure10.png) -->
 
 
 
@@ -846,33 +848,33 @@ mtext("Number sampled", cex = 1.2, side = 1, line = -2, outer = TRUE)
 ```{r inext_qo, message=FALSE, warning=FALSE, include=FALSE}
 library(iNEXT)
 
-otu_inextrichness <- iNEXT::iNEXT(otu.t,  q=0, datatype="abundance", endpoint = 500)
-p_inextrichness <- iNEXT::iNEXT(phylum.t,  q=0, datatype="abundance", endpoint = 500)
-c_inextrichness <- iNEXT::iNEXT(class.t,  q=0, datatype="abundance", endpoint = 500)
-o_inextrichness <- iNEXT::iNEXT(order.t,  q=0, datatype="abundance", endpoint = 500)
-f_inextrichness <- iNEXT::iNEXT(family.t,  q=0, datatype="abundance", endpoint = 500)
-g_inextrichness <- iNEXT::iNEXT(genus.t,  q=0, datatype="abundance", endpoint = 500)
+# otu_inextrichness <- iNEXT::iNEXT(otu.t,  q=0, datatype="abundance", endpoint = 1000)
+p_inextrichness <- iNEXT::iNEXT(phylum.t,  q=0, datatype="abundance", endpoint = 1000)
+# c_inextrichness <- iNEXT::iNEXT(class.t,  q=0, datatype="abundance", endpoint = 1000)
+# o_inextrichness <- iNEXT::iNEXT(order.t,  q=0, datatype="abundance", endpoint = 1000)
+# f_inextrichness <- iNEXT::iNEXT(family.t,  q=0, datatype="abundance", endpoint = 1000)
+# g_inextrichness <- iNEXT::iNEXT(genus.t,  q=0, datatype="abundance", endpoint = 1000)
 
-otu_inextshannon <- iNEXT::iNEXT(otu.t,  q=1, datatype="abundance", endpoint = 500)
-p_inextshannon <- iNEXT::iNEXT(phylum.t,  q=1, datatype="abundance", endpoint = 500)
-c_inextshannon <- iNEXT::iNEXT(class.t,  q=1, datatype="abundance", endpoint = 500)
-o_inextshannon <- iNEXT::iNEXT(order.t,  q=1, datatype="abundance", endpoint = 500)
-f_inextshannon <- iNEXT::iNEXT(family.t,  q=1, datatype="abundance", endpoint = 500)
-g_inextshannon <- iNEXT::iNEXT(genus.t,  q=1, datatype="abundance", endpoint = 500)
+# otu_inextshannon <- iNEXT::iNEXT(otu.t,  q=1, datatype="abundance", endpoint = 1000)
+p_inextshannon <- iNEXT::iNEXT(phylum.t,  q=1, datatype="abundance", endpoint = 1000)
+# c_inextshannon <- iNEXT::iNEXT(class.t,  q=1, datatype="abundance", endpoint = 1000)
+# o_inextshannon <- iNEXT::iNEXT(order.t,  q=1, datatype="abundance", endpoint = 1000)
+# f_inextshannon <- iNEXT::iNEXT(family.t,  q=1, datatype="abundance", endpoint = 1000)
+# g_inextshannon <- iNEXT::iNEXT(genus.t,  q=1, datatype="abundance", endpoint = 1000)
 
-otu_inextsimpson <- iNEXT::iNEXT(otu.t,  q=2, datatype="abundance", endpoint = 500)
-p_inextsimpson <- iNEXT::iNEXT(phylum.t,  q=2, datatype="abundance", endpoint = 500)
-c_inextsimpson <- iNEXT::iNEXT(class.t,  q=2, datatype="abundance", endpoint = 500)
-o_inextsimpson <- iNEXT::iNEXT(order.t,  q=2, datatype="abundance", endpoint = 500)
-f_inextsimpson <- iNEXT::iNEXT(family.t,  q=2, datatype="abundance", endpoint = 500)
-g_inextsimpson <- iNEXT::iNEXT(genus.t,  q=2, datatype="abundance", endpoint = 500)
+# otu_inextsimpson <- iNEXT::iNEXT(otu.t,  q=2, datatype="abundance", endpoint = 1000)
+p_inextsimpson <- iNEXT::iNEXT(phylum.t,  q=2, datatype="abundance", endpoint = 1000)
+# c_inextsimpson <- iNEXT::iNEXT(class.t,  q=2, datatype="abundance", endpoint = 1000)
+# o_inextsimpson <- iNEXT::iNEXT(order.t,  q=2, datatype="abundance", endpoint = 1000)
+# f_inextsimpson <- iNEXT::iNEXT(family.t,  q=2, datatype="abundance", endpoint = 1000)
+# g_inextsimpson <- iNEXT::iNEXT(genus.t,  q=2, datatype="abundance", endpoint = 1000)
 
 # save(otu_inextrichness,	p_inextrichness,	c_inextrichness,	o_inextrichness,	f_inextrichness,	g_inextrichness,	otu_inextshannon,	p_inextshannon,	c_inextshannon,	o_inextshannon,	f_inextshannon,	g_inextshannon,	otu_inextsimpson,	p_inextsimpson,	c_inextsimpson,	o_inextsimpson,	f_inextsimpson,	g_inextsimpson, file = "../../results/iNEXT.RData")
 
 ```
 
 
-### Type 1: Sample-size-based R/E curve
+<!-- ### Type 1: Sample-size-based R/E curve -->
 
 ```{r}
 # load("../../results/iNEXT.RData")
@@ -884,10 +886,10 @@ library(iNEXT)
 library(ggplot2)
 library(scales)
 
-otu_type1 <- ggiNEXT(otu_inextrichness,  type=1, se=FALSE, color="site") + theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("OTU: Sample Size curve") + labs(x="Sampled sequences", y="OTU richness") + theme_grey() + normalaxislayout3
-# otu_type1
+# otu_type1 <- ggiNEXT(otu_inextrichness,  type=1, se=FALSE, color="site") + theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("OTU: Sample Size curve") + labs(x="Sampled sequences", y="OTU richness") + theme_grey() + normalaxislayout3
+# # otu_type1
 
 p_type1 <- ggiNEXT(p_inextrichness,  type=1,  se = FALSE, color="site") +
   theme_bw(base_size=12)+
@@ -895,31 +897,31 @@ p_type1 <- ggiNEXT(p_inextrichness,  type=1,  se = FALSE, color="site") +
   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Phylum: Sample Size curve") + labs(x="Sampled sequences", y="Phyla richness") + theme_grey() + normalaxislayout3
 # p_type1
 
-c_type1 <- ggiNEXT(c_inextrichness,  type=1,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Class: Sample Size curve") + labs(x="Sampled sequences", y="Class richness") + theme_grey() + normalaxislayout3
-# c_type1
+# c_type1 <- ggiNEXT(c_inextrichness,  type=1,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Class: Sample Size curve") + labs(x="Sampled sequences", y="Class richness") + theme_grey() + normalaxislayout3
+# # c_type1
 
-o_type1 <- ggiNEXT(o_inextrichness,  type=1,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Order: Sample Size curve") + labs(x="Sampled sequences", y="Order richness") + theme_grey() + normalaxislayout3
-# o_type1
+# o_type1 <- ggiNEXT(o_inextrichness,  type=1,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Order: Sample Size curve") + labs(x="Sampled sequences", y="Order richness") + theme_grey() + normalaxislayout3
+# # o_type1
 
-f_type1 <- ggiNEXT(f_inextrichness,  type=1,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Family: Sample Size curve") + labs(x="Sampled sequences", y="Family richness") + theme_grey() + normalaxislayout3
-# f_type1
+# f_type1 <- ggiNEXT(f_inextrichness,  type=1,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Family: Sample Size curve") + labs(x="Sampled sequences", y="Family richness") + theme_grey() + normalaxislayout3
+# # f_type1
 
-g_type1 <- ggiNEXT(g_inextrichness,  type=1,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Genus: Sample Size curve") + labs(x="Sampled sequences", y="Genera richness") + theme_grey() + normalaxislayout3
-# g_type1
+# g_type1 <- ggiNEXT(g_inextrichness,  type=1,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Genus: Sample Size curve") + labs(x="Sampled sequences", y="Genera richness") + theme_grey() + normalaxislayout3
+# # g_type1
 
-ggarrange(otu_type1, p_type1, c_type1,o_type1,f_type1,g_type1, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
+# ggarrange(otu_type1, p_type1, c_type1,o_type1,f_type1,g_type1, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
 
 ```
 
@@ -929,71 +931,71 @@ ggarrange(otu_type1, p_type1, c_type1,o_type1,f_type1,g_type1, ncol =3, nrow = 2
 
 
 
-<br>
+<!-- <br> -->
 
-### Type 2: Sample completeness curve
+<!-- ### Type 2: Sample completeness curve -->
 
 ```{r inexttyp2, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
 library(iNEXT)
 library(ggplot2)
 
-otu_type2 <- ggiNEXT(otu_inextrichness,  type=2, se=FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("OTU: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
-# otu_type2
+# otu_type2 <- ggiNEXT(otu_inextrichness,  type=2, se=FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("OTU: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
+# # otu_type2
 
 p_type2 <- ggiNEXT(p_inextrichness,  type=2, se = FALSE, color="site") +
   theme_bw(base_size=12)+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Phylum: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
 # p_type2
-
-c_type2 <- ggiNEXT(c_inextrichness,  type=2, se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Class: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
-# c_type2
-
-o_type2 <- ggiNEXT(o_inextrichness,  type=2, se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Order: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
-# o_type2
-
-f_type2 <- ggiNEXT(f_inextrichness,  type=2, se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Family: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
-# f_type2
-
-g_type2 <- ggiNEXT(g_inextrichness,  type=2, se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Genus: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
-# g_type2
-
-ggarrange(otu_type2, p_type2, c_type2,o_type2,f_type2,g_type2, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
+# 
+# c_type2 <- ggiNEXT(c_inextrichness,  type=2, se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Class: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
+# # c_type2
+# 
+# o_type2 <- ggiNEXT(o_inextrichness,  type=2, se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Order: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
+# # o_type2
+# 
+# f_type2 <- ggiNEXT(f_inextrichness,  type=2, se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Family: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
+# # f_type2
+# 
+# g_type2 <- ggiNEXT(g_inextrichness,  type=2, se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Genus: Sample completeness curve") + labs(x="Sampled sequences", y="Sample coverage") + theme_grey() + normalaxislayout3
+# # g_type2
+# 
+# ggarrange(otu_type2, p_type2, c_type2,o_type2,f_type2,g_type2, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
 
 ```
 
-Figure x: Species diversity estimates as a function of sample size. Only species with abundance greater or equal to 1 are detected in the sample.
+<!-- Figure x: Species diversity estimates as a function of sample size. Only species with abundance greater or equal to 1 are detected in the sample. -->
 
-<br>
+<!-- <br> -->
 
-### Type 3: Coverage‐based R/E curves
+<!-- ### Type 3: Coverage‐based R/E curves -->
 
-<hr>
+<!-- <hr> -->
 
-```{r inexttyp3, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
+```{r inexttyp3, message=FALSE, warning=FALSE}
 library(iNEXT)
 library(ggplot2)
 
-otu_type3 <- ggiNEXT(otu_inextrichness,  type=3,  se=FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("OTU: Coverage curves") + labs(x="Sample coverage", y="OTU richness") + theme_grey() + normalaxislayout3
-# otu_type3
+# otu_type3 <- ggiNEXT(otu_inextrichness,  type=3,  se=FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("OTU: Coverage curves") + labs(x="Sample coverage", y="OTU richness") + theme_grey() + normalaxislayout3
+# # otu_type3
 
 p_type3 <- ggiNEXT(p_inextrichness,  type=3,  se = FALSE, color="site") +
   theme_bw(base_size=12)+
@@ -1001,35 +1003,35 @@ p_type3 <- ggiNEXT(p_inextrichness,  type=3,  se = FALSE, color="site") +
   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Phylum: Coverage curves") + labs(x="Sample coverage", y="Phyla richness") + theme_grey() + normalaxislayout3
 # otu_type3
 
-c_type3 <- ggiNEXT(c_inextrichness,  type=3,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Class: Coverage curves") + labs(x="Sample coverage", y="Class richness") + theme_grey() + normalaxislayout3
-# c_type3
-
-o_type3 <- ggiNEXT(o_inextrichness,  type=3,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Order: Coverage curves") + labs(x="Sample coverage", y="Order richness") + theme_grey() + normalaxislayout3
-# o_type3
-
-f_type3 <- ggiNEXT(f_inextrichness,  type=3,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Family: Coverage curves") + labs(x="Sample coverage", y="Family richness") + theme_grey() + normalaxislayout3
-# f_type3
-
-g_type3 <- ggiNEXT(g_inextrichness,  type=3,  se = FALSE, color="site") +
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Genus: Coverage curves") + labs(x="Sample coverage", y="Genera richness") + theme_grey() + normalaxislayout3
-# g_type3
-
-ggarrange(otu_type3, p_type3, c_type3,o_type3,f_type3,g_type3, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
+# c_type3 <- ggiNEXT(c_inextrichness,  type=3,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Class: Coverage curves") + labs(x="Sample coverage", y="Class richness") + theme_grey() + normalaxislayout3
+# # c_type3
+# 
+# o_type3 <- ggiNEXT(o_inextrichness,  type=3,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Order: Coverage curves") + labs(x="Sample coverage", y="Order richness") + theme_grey() + normalaxislayout3
+# # o_type3
+# 
+# f_type3 <- ggiNEXT(f_inextrichness,  type=3,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Family: Coverage curves") + labs(x="Sample coverage", y="Family richness") + theme_grey() + normalaxislayout3
+# # f_type3
+# 
+# g_type3 <- ggiNEXT(g_inextrichness,  type=3,  se = FALSE, color="site") +
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("Genus: Coverage curves") + labs(x="Sample coverage", y="Genera richness") + theme_grey() + normalaxislayout3
+# # g_type3
+# 
+# ggarrange(otu_type3, p_type3, c_type3,o_type3,f_type3,g_type3, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
 
 ```
 
-<br>
+<!-- <br> -->
 
 ```{r inextspeciesrich, eval=FALSE, fig.height=14, fig.width=10, include=FALSE}
 ggpubr::ggarrange(otu_type1, otu_type2, otu_type3, p_type1, p_type2, p_type3, c_type1, c_type2, c_type3, o_type1, o_type2, o_type3, f_type1, f_type2, f_type3, g_type1, g_type2, g_type3, ncol =3, nrow = 6, common.legend = TRUE, legend = "none", align = "hv", labels = "")
@@ -1037,117 +1039,123 @@ ggpubr::ggarrange(otu_type1, otu_type2, otu_type3, p_type1, p_type2, p_type3, c_
 
 <!-- Figure x. Rarefaction and extrapolation curves. Sample Size curve (**A**), sample completeness curve (**B**), Coverage-based curves (**C**). -->
 
-<br>
+<!-- <br> -->
 
-### Shannon diversity index
+<!-- ### Shannon diversity index -->
 
 ```{r shannon, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
 
-otu_shannon <- ggiNEXT(otu_inextshannon, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("") +
-  labs(x="Sampled sequences", y="Shannon index") + cleanup
-# otu_shannon
+# otu_shannon <- ggiNEXT(otu_inextshannon, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5)) + ggtitle("") +
+#   labs(x="Sampled sequences", y="Shannon index") + cleanup
+# # otu_shannon
 
 p_shannon <- ggiNEXT(p_inextshannon, type=1,  se = FALSE, color="site")+
   theme_bw(base_size=12)+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="Shannon index") + cleanup
+  labs(x="Sampled sequences", y="Shannon index", title = "Shannon diversity index") + cleanup
 # p_shannon
 
-c_shannon <- ggiNEXT(c_inextshannon, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="Shannon index") + cleanup
-# otu_shannon
-
-o_shannon <- ggiNEXT(o_inextshannon, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="Shannon index") + cleanup
-
-f_shannon <- ggiNEXT(f_inextshannon, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="Shannon index") + cleanup
-# f_shannon
-
-
-g_shannon <- ggiNEXT(g_inextshannon, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="Shannon index") + cleanup
-# g_shannon
-
-ggarrange(otu_shannon, p_shannon, c_shannon,o_shannon,f_shannon,g_shannon, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
+# c_shannon <- ggiNEXT(c_inextshannon, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="Shannon index") + cleanup
+# # otu_shannon
+# 
+# o_shannon <- ggiNEXT(o_inextshannon, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="Shannon index") + cleanup
+# 
+# f_shannon <- ggiNEXT(f_inextshannon, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="Shannon index") + cleanup
+# # f_shannon
+# 
+# 
+# g_shannon <- ggiNEXT(g_inextshannon, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="Shannon index") + cleanup
+# # g_shannon
+# 
+# ggarrange(otu_shannon, p_shannon, c_shannon,o_shannon,f_shannon,g_shannon, ncol =3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
 
 ```
 
-<br>
+<!-- <br> -->
 
-### Inverse Simpson diversity index
+<!-- ### Inverse Simpson diversity index -->
 
-```{r invsimpson, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
-otu_invsimpson <- ggiNEXT(otu_inextsimpson, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="InvSimpson index") + ggtitle("") + cleanup
-# otu_simpson
+```{r invsimpson, message=FALSE, warning=FALSE}
+# otu_invsimpson <- ggiNEXT(otu_inextsimpson, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="InvSimpson index") + ggtitle("") + cleanup
+# # otu_simpson
 
 p_invsimpson <- ggiNEXT(p_inextsimpson, type=1,  se = FALSE, color="site")+
   theme_bw(base_size=12)+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="InvSimpson index") + cleanup
+  labs(x="Sampled sequences", y="InvSimpson index", title = "Inverse Simpson diversity index") + cleanup
 # p_simpson
 
-c_invsimpson <- ggiNEXT(c_inextsimpson, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="InvSimpson index") + cleanup
-# c_simpson
-
-o_invsimpson <- ggiNEXT(o_inextsimpson, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="InvSimpson index") + cleanup
-# o_simpson
-
-f_invsimpson <- ggiNEXT(f_inextsimpson, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="InvSimpson index") + cleanup
-# f_simpson
-
-g_invsimpson <- ggiNEXT(g_inextsimpson, type=1,  se = FALSE, color="site")+
-  theme_bw(base_size=12)+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
-  labs(x="Sampled sequences", y="InvSimpson index") + cleanup
-# g_simpson
-
-
-ggarrange(otu_invsimpson, p_invsimpson, c_invsimpson,o_invsimpson,f_invsimpson,g_invsimpson, ncol = 3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
+# c_invsimpson <- ggiNEXT(c_inextsimpson, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="InvSimpson index") + cleanup
+# # c_simpson
+# 
+# o_invsimpson <- ggiNEXT(o_inextsimpson, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="InvSimpson index") + cleanup
+# # o_simpson
+# 
+# f_invsimpson <- ggiNEXT(f_inextsimpson, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="InvSimpson index") + cleanup
+# # f_simpson
+# 
+# g_invsimpson <- ggiNEXT(g_inextsimpson, type=1,  se = FALSE, color="site")+
+#   theme_bw(base_size=12)+
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#   scale_y_continuous(labels = comma, breaks=pretty_breaks(n=5))+
+#   labs(x="Sampled sequences", y="InvSimpson index") + cleanup
+# # g_simpson
+# 
+# 
+# ggarrange(otu_invsimpson, p_invsimpson, c_invsimpson,o_invsimpson,f_invsimpson,g_invsimpson, ncol = 3, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
 
 
 ```
 
-```{r inextdiverity, eval=FALSE, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
+```{r inextdiverity, eval=FALSE, message=FALSE, warning=FALSE}
 ggarrange(otu_shannon,  otu_invsimpson, p_shannon, p_invsimpson, c_shannon, c_invsimpson, o_shannon, o_invsimpson, f_shannon, f_invsimpson, g_shannon, g_invsimpson, ncol =2, nrow = 6, common.legend = TRUE, legend = "none", align = "hv", labels = c("OTUs","", "Phylum","",  "Class","",  "Order","",  "Family","",  "Genus",""))
 ```
 
 
-<br>
+<!-- <br> -->
+
+
+```{r fig.height=6, fig.width=10}
+ggarrange(p_type1, p_type2, p_type3, p_shannon,ncol =2, nrow = 2, common.legend = TRUE, legend = "none", align = "hv", labels = "AUTO")
+
+```
 
 <br>
 
@@ -1583,8 +1591,8 @@ print (g.nbclust$Best.nc)
 
 <hr>
 
-* Similar to PCA but is basically an eigen-analysis of a distance or dissimilarity matrix.
-```{r loadings, fig.height=3, fig.width=6, message=FALSE, warning=FALSE}
+<!-- * Similar to PCA but is basically an eigen-analysis of a distance or dissimilarity matrix. -->
+```{r loadings, message=FALSE, warning=FALSE}
 
 # load("../../results/tables/phylotype/otutaxon.RData")
 
@@ -1597,7 +1605,6 @@ pco <- function(dis, k=2)
 
 ```
 
-<br>
 
 ```{r pcoa, fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
 library(vegan)
@@ -1610,13 +1617,26 @@ o.dis.bray <- vegdist(order.t, method="bray")
 f.dis.bray <- vegdist(family.t, method="bray")
 g.dis.bray <- vegdist(genus.t, method="bray")
 
+
+pco <- function(dis, k=3)
+{
+        tmp <-cmdscale(dis,k=k,eig=TRUE)
+        class(tmp) <- "pco"
+        return(tmp)
+}
+
 otu.pco <- pco(otu.dis.bray, k=3)
 p.pco <- pco(p.dis.bray, k=3)
 c.pco <- pco(c.dis.bray, k=3)
 o.pco <- pco(o.dis.bray, k=3)
 f.pco <- pco(f.dis.bray, k=3)
 g.pco <- pco(g.dis.bray, k=3)
-#
+```
+
+<br>
+
+<!-- ### Barplots of PCoA Eigen Values -->
+```{r include=FALSE}
 par(cex.axis=1, cex.lab=1.5, cex.main=1.5, cex.sub=1)
 par(mfrow = c(2, 3))
 barplot(otu.pco$eig, main = "OTUs", xlab = "PCoA1", ylab = "PCoA2")
@@ -1625,8 +1645,12 @@ barplot(c.pco$eig, main = "Class", xlab = "PCoA1", ylab = "PCoA2")
 barplot(o.pco$eig, main = "Order", xlab = "PCoA1", ylab = "PCoA2")
 barplot(f.pco$eig, main = "Family", xlab = "PCoA1", ylab = "PCoA2")
 barplot(g.pco$eig, main = "Genus", xlab = "PCoA1", ylab = "PCoA2")
+```
 
+<br>
 
+### Point plots: PCoA Eigen Values
+```{r}
 plot(otu.pco$points, main = "OTUs", xlab = "PCoA1", ylab = "PCoA2", col=2)
 abline(h=0, v=0, lt=2, col="grey")
 
@@ -1708,7 +1732,7 @@ g.mds
 
 <br>
 
-### Sherperd and non-metric multidimensional scaling plots.
+### Sherperd or stress plots
 
 ```{r stressplot, fig.height=8, fig.width=10}
 par(mfrow=c(2,3))
@@ -1730,6 +1754,7 @@ mtext("Genus", cex=.8, adj = 0)
 
 <br><hr>
 
+### Non-metric multidimensional scaling plots.
 ```{r goodness, fig.height=8, fig.width=10}
 par(mfrow=c(2,3))
 par(cex.axis=1, cex.lab=1.2, cex.main=1.5, cex.sub=1)
@@ -1778,8 +1803,7 @@ text(6000, -2000, "Stress = 0.00")
 
 ```
 
-Figure X. Sherperd and non-metric multidimensional scaling plot. Green oints represent samples and red points represent OTU or species. Similar samples are ordinated together. Stress values are shown at the botthom of ordination plot.
-
+Figure X. Non-metric multidimensional scaling plot. Green points represent samples and red points represent OTU or species. Similar samples are ordinated together. 
 <br>
 
 

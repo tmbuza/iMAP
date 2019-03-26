@@ -2,6 +2,9 @@
 
 ## Inspect metadata
 
+mkdir data/qiime2
+mkdir results/qzv
+
 qiime tools inspect-metadata \
   $PWD/data/metadata/samplemetadata.tsv 
 
@@ -110,30 +113,31 @@ qiime tools export \
   --output-path $PWD/results/qzv/exported-feature-table # Output feature-table.biom 
 
 ## CONVERT BIOM TO TSV
-
+  
 biom convert \
   -i $PWD/results/qzv/exported-feature-table/feature-table.biom \
   -o $PWD/results/qzv/exported-feature-table/feature-table.tsv --to-tsv
   
 qiime tools export \
-  --input-path greengenes-taxonomy.qza \
-  --output-path exported-taxonomy-table # Output taxonomy.tsv
+  --input-path $PWD/data/qiime2/greengenes-taxonomy.qza \
+  --output-path $PWD/results/qzv/exported-taxonomy-table # Output taxonomy.tsv
 
 ## COMBINE FEATURE TSV with TAXONOMY.TSV
 qiime metadata tabulate \
-  --m-input-file exported-feature-table/feature-table.tsv \
-  --m-input-file exported-taxonomy-table/taxonomy.tsv \
-  --o-visualization results/qzv/exported-feature-table/feature-taxonomy-table.qzv
+  --m-input-file $PWD/results/qzv/exported-feature-table/feature-table.tsv \
+  --m-input-file $PWD/results/qzv/exported-taxonomy-table/taxonomy.tsv \
+  --o-visualization $PWD/results/qzv/exported-feature-table/feature-taxonomy-table.qzv
 
 
 ## Newick tree
 qiime tools export \
-  --input-path rooted-tree.qza \
-  --output-path exported-rooted-tree
+  --input-path $PWD/data/qiime2/rooted-tree.qza \
+  --output-path $PWD/results/qzv/exported-rooted-tree
 
 qiime tools export \
-  --input-path unrooted-tree.qza \
-  --output-path exported-unrooted-tree
+  --input-path $PWD/data/qiime2/unrooted-tree.qza \
+  --output-path $PWD/results/qzv/exported-unrooted-tree
+
 
 
 

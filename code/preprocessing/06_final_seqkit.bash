@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-mkdir results/stats
-mkdir results/stats/qc0
 mkdir results/stats/qctrim25
 mkdir results/stats/qced
 

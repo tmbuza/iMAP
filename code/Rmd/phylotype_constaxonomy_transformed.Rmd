@@ -577,17 +577,11 @@ save(class, class.a, class.t, class.t.v, classprop, classprop.v, family, family.
 save.image("../../results/tables/phylotype/otutaxon.RData")
 ```
 
+<br>
 
-```{r include=FALSE}
-sink("./sessionInfo.txt")
-cat("\nSummary of session information\n\n")
+## Summary of packages used in the analysis
+```{r}
 sessionInfo()
-sink()
-
-sink("./LatexsessionInfo.txt")
-cat("\nSummary of Latex session information\n\n")
-toLatex(sessionInfo())
-sink()
 ```
 
 <br>
