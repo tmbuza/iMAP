@@ -59,10 +59,8 @@ Table: Table x: Statistical parameters calculated from the OTU-based classificat
 ## Overall OTU abundance {-}
 
 ```{bash}
-perl ../../code/splitlefse.pl ../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.lefse ../../results/tables/phylotype/lefse_shared.tsv
-
-```
-
+perl ../../code/splitlefse.pl ../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.lefse \
+>../../results/tables/phylotype/lefse_shared.tsv
 
 
 ```{r message=FALSE, warning=FALSE}
@@ -1732,7 +1730,7 @@ g.mds
 
 <br>
 
-### Sherperd or stress plots
+### Sherperd and non-metric multidimensional scaling plots.
 
 ```{r stressplot, fig.height=8, fig.width=10}
 par(mfrow=c(2,3))
@@ -1754,7 +1752,6 @@ mtext("Genus", cex=.8, adj = 0)
 
 <br><hr>
 
-### Non-metric multidimensional scaling plots.
 ```{r goodness, fig.height=8, fig.width=10}
 par(mfrow=c(2,3))
 par(cex.axis=1, cex.lab=1.2, cex.main=1.5, cex.sub=1)
@@ -1803,7 +1800,8 @@ text(6000, -2000, "Stress = 0.00")
 
 ```
 
-Figure X. Non-metric multidimensional scaling plot. Green points represent samples and red points represent OTU or species. Similar samples are ordinated together. 
+Figure X. Sherperd and non-metric multidimensional scaling plot. Green oints represent samples and red points represent OTU or species. Similar samples are ordinated together. Stress values are shown at the botthom of ordination plot.
+
 <br>
 
 

@@ -37,7 +37,7 @@ qiime demux summarize \
 # ## Review the quality plots then pick truncate parameters
 
 # ## Quality control using DADA2 
-qiime dada2 denoise-paired \
+time qiime dada2 denoise-paired \
   --i-demultiplexed-seqs $PWD/data/qiime2/demux.qza \
   --p-trim-left-f 0 \
   --p-trunc-len-f 0 \
@@ -88,7 +88,7 @@ qiime phylogeny midpoint-root \
 
 ## TAXONOMY ANALYSIS
 ### Greengenes classifiation
-qiime feature-classifier classify-sklearn \
+time qiime feature-classifier classify-sklearn \
   --i-classifier $PWD/data/references/gg-13-8-99-nb-classifier.qza \
   --i-reads $PWD/data/qiime2/rep-seqs.qza \
   --o-classification $PWD/data/qiime2/greengenes-taxonomy.qza
