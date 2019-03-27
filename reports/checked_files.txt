@@ -1,0 +1,79 @@
+
+Checking if you have the required directories and files.
+
+✅ [code/] found
+✅ [data/] found
+✅ [img/] found
+✅ [library/] found
+✅ [LOG/] found
+✅ [posters/] found
+✅ [reports/] found
+✅ [resources/] found
+✅ [results/] found
+
+
+Checking for valid folders or files in [/Users/tmbuza/GitHub/docker/iMAP] directory
+
+✅ [README.md] found
+
+
+Checking for valid folders or files in [/Users/tmbuza/GitHub/docker/iMAP/code] directory
+
+✅ [01_metadataProfiling_driver.bash] found
+✅ [02_readPreprocess_driver.bash] found
+✅ [03_imapClassifyOTU_driver.bash] found
+✅ [04_OTUanalysis_driver.bash] found
+✅ [bbmap] found
+✅ [css] found
+✅ [dataanalysis] found
+✅ [datatransformation.bash] found
+✅ [dockerImages.sh] found
+✅ [imapOTUanalysisReport_driver.bash] found
+✅ [otutaxonomy] found
+✅ [preprocessing] found
+✅ [progressreport1.bash] found
+✅ [progressreport2.bash] found
+✅ [progressreport3.bash] found
+✅ [progressreport4.bash] found
+✅ [qiime2] found
+✅ [refdatabase] found
+✅ [requirements] found
+✅ [Rmd] found
+✅ [seqclassification] found
+✅ [seqerrorrate] found
+✅ [seqprocessing] found
+✅ [splitlefse.pl] found
+✅ [summarizeFastQC] found
+
+
+Checking for valid folders or files in [/Users/tmbuza/GitHub/docker/iMAP/data] directory
+
+✅ [demo/*] found
+✅ [metadata/*] found
+✅ [qiime2/*] found
+✅ [raw/*] found
+✅ [references/*] found
+
+
+Checking for valid folders or files in [/Users/tmbuza/GitHub/docker/iMAP/data/references] directory
+
+✅ [HMP_MOCK.fasta] found
+✅ [silva.seed.align] found
+✅ [silva.seed.tax] found
+
+
+Checking for valid folders or files in [/Users/tmbuza/GitHub/docker/iMAP/data/metadata] directory
+
+✅ [var1.design] found
+✅ [var2.design] found
+✅ [var3.design] found
+✅ [var4.design] found
+✅ [samplemetadata.tsv] found
+✅ [samplemetadata_casestudy.txt] found
+✅ [qced.files] found
+✅ [manifest.txt] found
+✅ [186samples.metadata] found
+
+
+✅ HURRAY!! EVERYTHING PASSED!
+

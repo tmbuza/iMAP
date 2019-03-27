@@ -3,61 +3,46 @@
 # Checks if required dirs/files are found or exits with an error
 
 REQUIRED_DIRS=(
-  "code/"
-  "data/"
-  "img/"
-  "library/"
-  "LOG/"
-  "posters/"
-  "reports/"
-  "resources/"
+  "code/*"
+  "data/*"
   "results/"
+  "reports/" 
+  "img/"
 )
 REQUIRED_README_FILE=(
   "README.md" 
 )
 
-# REQUIRED_EXECUTABLE_FILES=(
-#   "seqkit"
-#   "fastqc"
-#   "bbduk.sh"
-#   "mothur"
-#   "uchime"
-#   "vsearch"
-#   )
+REQUIRED_EXECUTABLE_FILES=(
+  "seqkit"
+  "fastqc"
+  "bbduk.sh"
+  "mothur"
+  "uchime"
+  "vsearch"
+  )
 
 REQUIRED_CODE_FOLDERS_OR_FILES=(
-"01_metadataProfiling_driver.bash"
-"02_readPreprocess_driver.bash"
-"03_imapClassifyOTU_driver.bash"
-"04_OTUanalysis_driver.bash"
-"bbmap"
-"css"
-"dataanalysis"
-"datatransformation.bash"
-"dockerImages.sh"
-"imapOTUanalysisReport_driver.bash"
-"otutaxonomy"
-"preprocessing"
-"progressreport1.bash"
-"progressreport2.bash"
-"progressreport3.bash"
-"progressreport4.bash"
-"qiime2"
-"refdatabase"
-"requirements"
-"Rmd"
-"seqclassification"
-"seqerrorrate"
-"seqprocessing"
-"splitlefse.pl"
-"summarizeFastQC"
+	"annotation/*"
+	"dataanalysis/*"
+	"linux_iMAP_driver.bash"
+	"mac_iMAP_driver.bash"
+	# "windows_iMAP_driver.bash"
+	"mockcommunity/*"
+	"otutaxonomy/*"
+	"preprocessing/*"
+	# "qiime2code"
+	"README.md"
+	#"Rmd"
+	"requirements/*"
+	"seqclassification/*"
+	"seqerrorrate/*"
+	"seqprocessing/*"
+	"summarizeFastQC/*"
 )
 
 REQUIRED_DATA_FOLDERS=(
-  "demo/*"  
   "metadata/*"
-  "qiime2/*"
   "raw/*"
   "references/*"
 )
@@ -69,15 +54,10 @@ REQUIRED_REFERENCES_FILES=(
 )
 
 REQUIRED_METADATA_FILES=(
-  "var1.design"
-  "var2.design"
-  "var3.design"
-  "var4.design"
-  "samplemetadata.tsv"
-  "samplemetadata_casestudy.txt"
-  "qced.files"
-  "manifest.txt"
-  "186samples.metadata"
+  "mouse.test.dayID.design"
+  "mouse.test.dpw.design"
+  "mouse.test.sex.design"
+  "mouse.test.time.design"
 )
 
 
@@ -180,7 +160,7 @@ check_required_dirs REQUIRED_DIRS
 check_dir_files $PWD REQUIRED_README_FILE
 
 # check required files [~/bin] directory
-# check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
+check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
 
 # check required files [code] directory
 check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES
@@ -194,14 +174,5 @@ check_dir_files $PWD/data/references REQUIRED_REFERENCES_FILES
 # check required files [data/reference] directory
 check_dir_files $PWD/data/metadata REQUIRED_METADATA_FILES
 
-
-if [ "$?" != "0" ]; then
-    echo "[Error] Some files are missing,!" 1>&2
-    exit 1
-fi
-
-echo "If you see this message you have everything set correctly!:)"
-
 end_comment "✅ HURRAY!! EVERYTHING PASSED!"
-
 

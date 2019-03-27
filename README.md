@@ -67,10 +67,10 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 # iMAP Implementation
 
-### Install Docker
+### Install Docker (Only once)
 * https://docs.docker.com/v17.12/install/
 
-<br>
+<hr><br>
 
 ### Download iMAP repository
 ```{}
@@ -100,6 +100,15 @@ rm -rf master.zip
 ### Add data to designated folders
 * Rawdata
 * Metadata
+
+<br>
+
+### Verify required folders and files
+```{}
+
+bash code/requirements/04_check_folders_and_files.bash
+
+```
 
 <br>
 
@@ -147,7 +156,7 @@ exit
 ### Sequence Processing and Classification with mothur
 ```{}
 
-containerName=seqclassification
+containerName=mothurclassification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
 bash code/03_imapClassifyOTU_driver.bash
@@ -224,10 +233,25 @@ exit
 ### Sequence Processing and Classification with QIIME2
 ```{}
 
-containerName=qiime2
+containerName=qiime2classification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
 
 bash code/qiime2/qiime2.bash
+
+exit
+
+```
+
+<br>
+
+
+### Convert mothur biom file using QIIME2
+```{}
+
+containerName=biomconvertmothur
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
+
+bash code/qiime2/convertmothur_biom.bash
 
 exit
 
