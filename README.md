@@ -49,7 +49,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *Docker*       | For creating containers that wrap up iMAP dependencies.    |   | [Link](https://docs.docker.com/v17.12/install)  |
 | *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://cloud.docker.com/repository/list/)  |
 | *FastQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  docker images: readqctools | [Link](https://cloud.docker.com/repository/list/)  |
-| *BBMap*      | Package containing tools for trimming poor quality reads    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
+| *BBMap*      | Package containing tools for trimming poor quality reads and removing phiX contamination    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://cloud.docker.com/repository/list)  |
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:1.41.3 | [Link](https://cloud.docker.com/repository/list ) |
 | **Statistical analysis and visualization**     | |  |  |
