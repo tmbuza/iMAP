@@ -41,7 +41,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 **Table 1: List of required materials for running iMAP pipeline**
 
 | **Requirement**    | **Description**   |  **Location** | **Remarks**          |
-| :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
+| :------------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur and QIIME2    |
 | **Mapping files**      | For linking sample IDs to the data files   |  data/references   |                    |
