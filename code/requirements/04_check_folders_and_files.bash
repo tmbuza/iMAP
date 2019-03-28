@@ -13,6 +13,7 @@ REQUIRED_iMAP_FOLDERS=(
   "resources/"
   "results/"
 )
+
 REQUIRED_README_FILE=(
   "README.md" 
 )
@@ -57,27 +58,28 @@ REQUIRED_CODE_FOLDERS_OR_FILES=(
 REQUIRED_DATA_FOLDERS=(
   "demo/*"  
   "metadata/*"
+  "mothur/*"
   "qiime2/*"
   "raw/*"
   "references/*"
 )
 
-REQUIRED_REFERENCES_FILES=(
-  "HMP_MOCK.fasta"
-  "silva.seed.align"
-  "silva.seed.tax"
-)
+# REQUIRED_REFERENCES_FILES=(
+#   "HMP_MOCK.fasta"
+#   "silva.seed.align"
+#   "silva.seed.tax"
+# )
 
 REQUIRED_METADATA_FILES=(
   "var1.design"
   "var2.design"
-  "var3.design"
-  "var4.design"
+  # "var3.design"
+  # "var4.design"
   "samplemetadata.tsv"
-  "samplemetadata_casestudy.txt"
+  # "samplemetadata_casestudy.txt"
   "qced.files"
   "manifest.txt"
-  "186samples.metadata"
+  # "186samples.metadata"
 )
 
 
@@ -116,7 +118,7 @@ check_required_dirs(){
   local name=$1[@]
   local dirs=("${!name}")
 
-  for Path in "$PWD/iMAP${dirs[@]}"
+  for Path in "${dirs[@]}"
   do
     if is_dir $Path; then
       echo "✅ [${Path}] found"
@@ -138,10 +140,10 @@ check_dir_files(){
   local name=$2[@]
   local files=("${!name}")
 
-  # if !(is_dir $dir); then
-  #   end_comment "exiting.. [$dir] directory is not found"
-  #   exit 1
-  # fi
+  if !(is_dir $dir); then
+    end_comment "exiting.. [$dir] directory is not found"
+    exit 1
+  fi
  
   begin_comment "Checking for valid folders or files in [$dir] directory"
 
@@ -171,10 +173,10 @@ check_dir_files(){
 
 ### Main Script Starts Here
 
-begin_comment "Checking if you have the required directories and files."
+# begin_comment "Checking if you have the required directories and files."
 
 # check required dirs
-check_required_dirs REQUIRED_DIRS
+# check_required_dirs REQUIRED_DIRS
 
 # check required files [$PWD/iMAP] directory
 check_dir_files $PWD/iMAP REQUIRED_iMAP_FOLDERS
@@ -192,7 +194,7 @@ check_dir_files $PWD/iMAP/code REQUIRED_CODE_FOLDERS_OR_FILES
 check_dir_files $PWD/iMAP/data REQUIRED_DATA_FOLDERS
 
 # check required files [$PWD/iMAP/data/references] directory
-check_dir_files $PWD/iMAP/data/references REQUIRED_REFERENCES_FILES
+# check_dir_files $PWD/iMAP/data/references REQUIRED_REFERENCES_FILES
 
 # check required files [$PWD/iMAP/data/metadata] directory
 check_dir_files $PWD/iMAP/data/metadata REQUIRED_METADATA_FILES
