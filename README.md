@@ -45,7 +45,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur and QIIME2    |
 | **Mapping files**      | For linking sample IDs to the data files   |  data/references   |                    |
-| **Software**      | Available via pre-built docker images   |      |https://hub.docker.com/r/tmbuza/readqctools|
+| **Software**      | Available via pre-built docker images   |      |[Link[(https://cloud.docker.com/u/tmbuza/repository/list)|
 | *Docker*       | For creating containers that wrap up iMAP dependencies.    |   | [Link](https://docs.docker.com/v17.12/install)  |
 | *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)).    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
 | *BBduk.sh via BBMap*      | For trimming poor quality reads and removing phiX contamination    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
