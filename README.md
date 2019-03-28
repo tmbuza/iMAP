@@ -66,7 +66,6 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *Greengenes*     | QIIME2-formatted  |   data/qiime2   |[Link](https://data.qiime2.org/2018.11/common/gg-13-8-99-nb-classifier.qza) |
 | *EzBioCloud*     | Mothur-formatted  |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references ||
-|||||
 
 \*BBmap is pre-downloaded
 
