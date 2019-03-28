@@ -52,7 +52,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://hub.docker.com/r/tmbuza/mothur ) |
 | *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
-<tr><td align="left" colspan="4"><strong>Statistical analysis and visualization</strong></td></tr>
+| <tr><td align="left" colspan="4"><strong>Statistical analysis and visualization</strong></td></tr> |
 | *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://hub.docker.com/r/tmbuza/rpackages)  |
 | *iTOL*      | For displaying, and manually annotating and managing phylogenetic trees   | Interactive |   [Link](http://itol.embl.de/)  | 
 | **Reference 16S rRNA gene alignments**   |  |  |      |
