@@ -53,8 +53,8 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
 | *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
 | **Statistical analysis and visualization**     | |  |  |
-| *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://cloud.docker.com/repository/docker/tmbuza/rpackages)  |
-| *iTOL*      | For displaying, annotating and managing phylogenetic trees   | Onlline |   [Link](http://itol.embl.de/)  | 
+| *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://hub.docker.com/r/tmbuza/rpackages)  |
+| *iTOL*      | For displaying, and manually annotating and managing phylogenetic trees   | Interactive |   [Link](http://itol.embl.de/)  | 
 | **Reference 16S rRNA gene alignments**   |  |  |      |
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
 | *SILVA* (seed)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
