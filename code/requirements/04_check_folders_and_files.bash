@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Checks if required dirs/files are found or exits with an error
+# Checks if required dirs or files are found or exits with an error
 
 REQUIRED_iMAP_FOLDERS=(
   "code/"
