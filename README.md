@@ -33,16 +33,11 @@ The project directory has code, data, img, reports, and results directories. Wit
 
 
 <br>
-<hr>
-<br>
 
 ## Requirements
 
-Before working with iMAP, docker must be installed as instructed at this link: https://docs.docker.com/v17.12/install/
 
-
-
-<!-- The first step is to gather all materials needed for implementing the iMAP pipeline smoothly (Table 1). 
+The first step is to gather all materials needed for implementing the iMAP pipeline as describe in the following table. 
 
 <br>
 
@@ -50,22 +45,19 @@ Before working with iMAP, docker must be installed as instructed at this link: h
 
 | **Requirement**    | **Description**   |  **Folder or PATH** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
-| **Hardware**      | Computer with multi-core processor: preferably 64-bit. <br>Random Access Memory (RAM): 8 GB minimum. <br> Operating Systems: Linux/UNIX <br>Storage: Tens of gigabytes for small dataset otherwise a few terabytes   |    |                |
-| **iMAP pipeline**       | Bundled scripts for microbiome data analysis            |  iMAP |[Link](https://github.com/tmbuza/iMAP.git)   |
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file showing sample identifiers, categorical, numeric variables, description...        |  data/metadata        |          |
 | **Mapping file**      | A file that links sample IDs (1st column) to the names of forward (2nd column) and reverse (3rd column) data files   |  data/references   |                    |
-| **Design files**      | Files that link samples with variables   |  data/references   |                    |
 | **Software**      |    |      ||
-| *seqkit*       | For inspecting rawdata format and simple statistics.    |  code & ~/bin | [Link](https://github.com/shenwei356/seqkit/releases/)  |
-| *FastQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  code & ~/bin | [Link](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)  |
+| *Docker*       | For Docker containers wrap up software and its dependencies .    |   | [Link](https://docs.docker.com/v17.12/install)  |
+| *seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://cloud.docker.com/repository/list/)  |
+| *FastQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  docker images: readqctools | [Link](https://cloud.docker.com/repository/list/)  |
 | *bbmap*      | Package containing tools for trimming poor quality reads    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
-| *bbduk.sh*      | A script for trimming poor quality reads. Available within bbmap package   |  code & ~/bin  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
-| *multiqc*      | For summarizing FASTQc output    | $PATH |[Link](https://github.com/ewels/MultiQC.git)  |
-| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  code & ~/bin | [Link](https://github.com/Mothur/Mothur/releases/ ) |
+| *bbduk.sh*      | A script for trimming poor quality reads. Available within bbmap package   |  docker images: readqctools  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
+| *multiqc*      | For summarizing FASTQc output    | $PATH | [Link](https://cloud.docker.com/repository/list)  |
+| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:1.41.3 | [Link](https://cloud.docker.com/repository/list ) |
 | **Statistical analysis and visualization**     | |  |  |
-| *R*      | For statistical analysis and visualization    | $PATH  | [Link](https://cran.r-project.org/)  |
-| *Rstudio*      | An IDE (integrated development environment) for R    |  |[Link](https://www.rstudio.com/products/rstudio/download/)  |
+| *R*      | For statistical analysis and visualization    | docker image:rpackages:3.5.2  | [Link](https://cran.r-project.org/)  |
 | *iTOL*      | For displaying, annotating and managing phylogenetic trees   | |   [Link](http://itol.embl.de/)  |
 | **Reference 16S rRNA gene alignments**   |  |  |      |
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
@@ -78,16 +70,9 @@ Before working with iMAP, docker must be installed as instructed at this link: h
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references ||
 |||||
 
--->
+<br>
 
-              
-<!-- <br>
-
-
-### Install Docker (Only once)
-* https://docs.docker.com/v17.12/install/
- -->
-<hr><br>
+Before working with iMAP, docker must be installed as instructed at this link: https://docs.docker.com/v17.12/install/
 
 ### Download iMAP repository
 ```{}
@@ -126,6 +111,16 @@ rm -rf master.zip
 bash code/requirements/04_check_folders_and_files.bash
 
 ```
+<br>
+
+## Download required Docker images 
+
+```{}
+
+bash code/dockerImages.sh
+
+```
+
 
 <br>
 
