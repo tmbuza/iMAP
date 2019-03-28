@@ -71,7 +71,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 <br>
 
-## Implementation
+## Get Started
 
 Before working with iMAP, docker must be installed as instructed at this link: https://docs.docker.com/v17.12/install/
 
@@ -272,6 +272,7 @@ exit
 
 <br><hr>
 
-```{r label, out.width = "85%", fig.cap = "Figure1"}
+<!-- ```{r label, out.width = "85%", fig.cap = "Figure1"}
 knitr::include_graphics("img/Figure1.pdf", auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE), dpi = NULL)
 ```
+ -->
