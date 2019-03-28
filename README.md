@@ -40,7 +40,7 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 **Table 1: List of required materials for running iMAP pipeline**
 
-| **Requirement**    | **Description**   |  **Folder or PATH** | **Remarks**          |
+| **Requirement**    | **Description**   |  **Location** | **Remarks**          |
 | :--------------------   | :-------------------------------------------------------------   |  :---------------: | :------------:   |
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file showing sample identifiers, categorical, numeric variables, description...        |  data/metadata        |          |
@@ -49,9 +49,9 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *Docker*       | For Docker containers wrap up software and its dependencies .    |   | [Link](https://docs.docker.com/v17.12/install)  |
 | *seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://cloud.docker.com/repository/list/)  |
 | *FastQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  docker images: readqctools | [Link](https://cloud.docker.com/repository/list/)  |
-| *bbmap*      | Package containing tools for trimming poor quality reads    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
+| *bbmap*      | Package containing tools for trimming poor quality reads    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
 | *bbduk.sh*      | A script for trimming poor quality reads. Available within bbmap package   |  docker images: readqctools  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
-| *multiqc*      | For summarizing FASTQc output    | $PATH | [Link](https://cloud.docker.com/repository/list)  |
+| *multiqc*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://cloud.docker.com/repository/list)  |
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:1.41.3 | [Link](https://cloud.docker.com/repository/list ) |
 | **Statistical analysis and visualization**     | |  |  |
 | *R*      | For statistical analysis and visualization    | docker image:rpackages:3.5.2  | [Link](https://cran.r-project.org/)  |
@@ -60,12 +60,16 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
 | *SILVA* (seed)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
 | **Reference 16S rRNA gene classifiers**   |    |      ||
-| *SILVA*(no gap)     | Degapped using *degap.seqs* function in *Mothur*  |   data/references   ||
+| *SILVA*(de-gapped)     | mothur-formatted  |   data/references   ||
+| *SILVA NR*     | QIIME2-formatted  |   data/qiime2   || [Link](https://data.qiime2.org/2018.11/common/silva-132-99-nb-classifier.qza)
 | *RDP*      | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
 | *Greengenes*     | Mothur-formatted  |   data/references   |[Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
+| *Greengenes*     | QIIME2-formatted  |   data/qiime2   |[Link](https://data.qiime2.org/2018.11/common/gg-13-8-99-nb-classifier.qza) |
 | *EzBioCloud*     | Mothur-formatted  |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references ||
 |||||
+*BBmap is pre-downloaded
+
 
 <br>
 
