@@ -70,7 +70,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 
 ## Get Started
 
-Install Docker
+### Install Docker
 * Install compatible Docker software Link: https://docs.docker.com/install/
 * Register for a Docker ID. Link: https://docs.docker.com/docker-id/  
 
