@@ -22,8 +22,8 @@ The project directory has code, data, img, reports, and results directories. Wit
 1. Profiling of Metadata
 2. Pre-processing and quality control of paired-reads
 3. Sequence processing and classification (default: mothur)
-    * Phylotype-based method (works for any dataset size).
-    * OTU-based method (works best of small datatset with <100,000 representative sequences).
+    * Phylotype-based method.
+    * OTU-based method.
     * Phylogeny-based method.
     * QIIME2 
 4. Transformation of OTU and taxa results. 
@@ -38,7 +38,8 @@ The project directory has code, data, img, reports, and results directories. Wit
 
 ## Requirements
 
-Before working with iMAP, docker must be installed as instructed at this link: https://docs.docker.com/v17.12/install/
+Before working with iMAP, docker must be installed as instructed at this link: .
+
 
 
 
@@ -81,12 +82,17 @@ Before working with iMAP, docker must be installed as instructed at this link: h
 -->
 
               
-<!-- <br>
+<br>
 
+
+
+
+
+# iMAP Implementation
 
 ### Install Docker (Only once)
 * https://docs.docker.com/v17.12/install/
- -->
+
 <hr><br>
 
 ### Download iMAP repository

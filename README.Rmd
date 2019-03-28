@@ -1,4 +1,10 @@
 ---
+title: "Untitled"
+author: "Elevated Life"
+date: "3/27/2019"
+output: html_document
+---
+---
 
 ---
 # iMAP: Integrative Microbiome Analysis Pipeline
@@ -38,7 +44,8 @@ The project directory has code, data, img, reports, and results directories. Wit
 
 ## Requirements
 
-Before working with iMAP, docker must be installed as instructed at this link: https://docs.docker.com/v17.12/install/
+Before working with iMAP, docker must be installed as instructed at this link: .
+
 
 
 
@@ -81,12 +88,17 @@ Before working with iMAP, docker must be installed as instructed at this link: h
 -->
 
               
-<!-- <br>
+<br>
 
+
+
+
+
+# iMAP Implementation
 
 ### Install Docker (Only once)
 * https://docs.docker.com/v17.12/install/
- -->
+
 <hr><br>
 
 ### Download iMAP repository
