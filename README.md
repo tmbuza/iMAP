@@ -50,7 +50,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
 | *BBduk.sh via BBMap*      | For trimming poor quality reads and removing phiX contamination    |  Auto-loaded to code at pre-processing  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
-| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
+| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://hub.docker.com/r/tmbuza/mothur ) |
 | *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
 | **Statistical analysis and visualization**     | |  |  |
 | *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://hub.docker.com/r/tmbuza/rpackages)  |
