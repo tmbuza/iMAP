@@ -2,7 +2,7 @@
 #
 # Checks if required dirs/files are found or exits with an error
 
-REQUIRED_DIRS=(
+REQUIRED_iMAP_FOLDERS=(
   "code/"
   "data/"
   "img/"
@@ -116,7 +116,7 @@ check_required_dirs(){
   local name=$1[@]
   local dirs=("${!name}")
 
-  for Path in "${dirs[@]}"
+  for Path in "$PWD/iMAP${dirs[@]}"
   do
     if is_dir $Path; then
       echo "✅ [${Path}] found"
@@ -176,23 +176,26 @@ begin_comment "Checking if you have the required directories and files."
 # check required dirs
 check_required_dirs REQUIRED_DIRS
 
-# check required files [$PWD] directory
-check_dir_files $PWD REQUIRED_README_FILE
+# check required files [$PWD/iMAP] directory
+check_dir_files $PWD/iMAP REQUIRED_iMAP_FOLDERS
+
+# check required files [$PWD/iMAP] directory
+check_dir_files $PWD/iMAP REQUIRED_README_FILE
 
 # check required files [~/bin] directory
 # check_dir_files $HOME/bin REQUIRED_EXECUTABLE_FILES
 
-# check required files [code] directory
-check_dir_files $PWD/code REQUIRED_CODE_FOLDERS_OR_FILES
+# check required files [$PWD/iMAP/code] directory
+check_dir_files $PWD/iMAP/code REQUIRED_CODE_FOLDERS_OR_FILES
 
-# check required files [data] directory
-check_dir_files $PWD/data REQUIRED_DATA_FOLDERS
+# check required files [$PWD/iMAP/data] directory
+check_dir_files $PWD/iMAP/data REQUIRED_DATA_FOLDERS
 
-# check required files [data/reference] directory
-check_dir_files $PWD/data/references REQUIRED_REFERENCES_FILES
+# check required files [$PWD/iMAP/data/references] directory
+check_dir_files $PWD/iMAP/data/references REQUIRED_REFERENCES_FILES
 
-# check required files [data/reference] directory
-check_dir_files $PWD/data/metadata REQUIRED_METADATA_FILES
+# check required files [$PWD/iMAP/data/metadata] directory
+check_dir_files $PWD/iMAP/data/metadata REQUIRED_METADATA_FILES
 
 
 if [ "$?" != "0" ]; then
