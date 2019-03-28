@@ -2,7 +2,7 @@
 
 ## Version: iMAP v1.0
 
-The project directory has code, data, img, reports, and results directories. Within the data directory are demo, metadata, mothur, qiime2, raw, and references directories. Most iMAP dependencies are executable are in PATH so you should be able to launch them directly from the corresponding docker container shell prompt once created. 
+The project directory has code, data, img, reports, and results directories. Within the data directory are demo, metadata, mothur, qiime2, raw, and references directories.
 
 <br>
 
@@ -34,7 +34,7 @@ The project directory has code, data, img, reports, and results directories. Wit
 ## Requirements
 
 
-The first step is to gather all materials needed for implementing the iMAP pipeline as describe in the following table. 
+The first step is to gather all materials needed for implementing the iMAP pipeline as describe in the following table. Most iMAP dependencies are executable and are alredy placed in the PATH using docker so users should be able to launch them directly from the command line of the specified container. 
 
 <br>
 
@@ -45,15 +45,15 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur and QIIME2    |
 | **Mapping files**      | For linking sample IDs to the data files   |  data/references   |                    |
-| **Software**      |    |      ||
+| **Software**      | Available via pre-built docker images   |      |https://hub.docker.com/r/tmbuza/readqctools|
 | *Docker*       | For creating containers that wrap up iMAP dependencies.    |   | [Link](https://docs.docker.com/v17.12/install)  |
-| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://cloud.docker.com/repository/list/)  |
-| *FastQC*      | For creating base call quality score images and statistics. Requires the latest Java Development Kit ([JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)).    |  docker images: readqctools | [Link](https://cloud.docker.com/repository/list/)  |
+| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)).    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
 | *BBduk.sh via BBMap*      | For trimming poor quality reads and removing phiX contamination    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
-| *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://cloud.docker.com/repository/list)  |
-| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:1.41.3 | [Link](https://cloud.docker.com/repository/list ) |
+| *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
+| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
+| *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
 | **Statistical analysis and visualization**     | |  |  |
-| *R*      | For statistical analysis and visualization    | docker image:rpackages:3.5.2  | [Link](https://cran.r-project.org/)  |
+| *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://cloud.docker.com/repository/docker/tmbuza/rpackages)  |
 | *iTOL*      | For displaying, annotating and managing phylogenetic trees   | Onlline |   [Link](http://itol.embl.de/)  | 
 | **Reference 16S rRNA gene alignments**   |  |  |      |
 | *SILVA* (nr)   | Reference rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
@@ -73,7 +73,11 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 
 ## Get Started
 
-Before working with iMAP, docker must be installed as instructed at this link: https://docs.docker.com/v17.12/install/
+## Install Docker 
+* Link: https://docs.docker.com/install/
+
+
+The community edition is sufficient
 
 ### Download iMAP repository
 ```{}
@@ -106,7 +110,7 @@ rm -rf master.zip
 
 <br>
 
-### Verify required folders and files
+### Verify required folders, files and docker images
 ```{}
 
 bash code/requirements/04_check_folders_and_files.bash
@@ -114,14 +118,19 @@ bash code/requirements/04_check_folders_and_files.bash
 ```
 <br>
 
-## Download required Docker images 
+## Get started
+
+### Download and view required Docker images 
 
 ```{}
 
 bash code/dockerImages.sh
 
+docker images
+
 ```
 
+### Create containers and start analysis
 
 <br>
 
