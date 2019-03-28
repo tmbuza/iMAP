@@ -34,7 +34,7 @@ The project directory has code, data, img, reports, and results directories. Wit
 ## Requirements
 
 
-The first step is to gather all materials needed for implementing the iMAP pipeline as describe in the following table. Most iMAP dependencies are executable and are alredy placed in the PATH using docker so users should be able to launch them directly from the command line of the specified container. 
+The first step is to gather all the materials needed for implementing the iMAP pipeline as described in the following table. Most iMAP dependencies are executable and are already placed in the PATH using docker, so users should be able to launch them directly from the command line of the specified container. 
 
 <br>
 
