@@ -20,13 +20,13 @@ The project directory has code, data, img, reports, and results directories. Wit
 2. Pre-processing and quality control of paired-reads
 3. Sequence processing and classification (default: mothur)
     * Phylotype-based method (works for any dataset size).
-    * OTU-based method (works best of small datatset with <100,000 representative sequences).
+    * OTU-based method (works best for small dataset with <100,000 representative sequences).
     * Phylogeny-based method.
     * QIIME2 
 4. Transformation of OTU and taxa results. 
 5. Diversity and statistical analysis and visualization.
 6. Phylogenetic analysis and interactive tree annotation 
-6. R-Markdown web-based progress reports 
+6. R-Markdown web-based progress reports
 
 
 <br>
