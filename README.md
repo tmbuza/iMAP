@@ -117,7 +117,7 @@ bash iMAP/code/requirements/iMAP_checkFiles_driver.bash
 
 ```{}
 
-bash code/dockerImages.sh
+bash iMAP/code/dockerImages.sh
 
 docker images
 
