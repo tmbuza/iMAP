@@ -105,22 +105,23 @@ rm -rf master.zip
 
 ### Download reference databases
 ```{}
-bash iMAP/code/refDatabase/
+
+bash iMAP/code/refdatabase/iMAP_download_driver.bash
+
 ```
 
 <br>
 
-### Verify required folders, files and docker images
+### Verify required folders and files
 ```{}
 
-bash code/requirements/04_check_folders_and_files.bash
+bash iMAP/code/requirements/iMAP_checkFiles_driver.bash
 
 ```
 <br>
 
-## Get started
 
-### Download and view required Docker images 
+### Download and verify required Docker images 
 
 ```{}
 
@@ -130,7 +131,7 @@ docker images
 
 ```
 
-### Create containers and start analysis
+## Create docker containers and start analysis
 
 <br>
 
