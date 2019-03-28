@@ -47,8 +47,8 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | **Mapping files**      | For linking sample IDs to the data files   |  data/references   |                    |
 | **Software**      | Available via pre-built docker images   |      |[Link](https://cloud.docker.com/u/tmbuza/repository/list)|
 | *Docker*       | For creating containers that wrap up iMAP dependencies.    |   | [Link](https://docs.docker.com/v17.12/install)  |
-| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)).    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
-| *BBduk.sh via BBMap*      | For trimming poor quality reads and removing phiX contamination    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
+| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools).    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
+| *BBduk.sh via BBMap\**      | For trimming poor quality reads and removing phiX contamination    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
 | *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
