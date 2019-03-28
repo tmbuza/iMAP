@@ -100,8 +100,13 @@ rm -rf master.zip
 <br>
 
 ### Add data to designated folders
-* Rawdata
-* Metadata
+* Add rawdata to iMAP/data/raw folder
+* Add metadata to iMAP/data/metadata folder
+
+### Download reference databases
+```{}
+bash iMAP/code/refDatabase/
+```
 
 <br>
 
