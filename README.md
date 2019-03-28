@@ -45,11 +45,10 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/references   |               |
 | **Sample metadata**      | A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur and QIIME2    |
 | **Mapping files**      | For linking sample IDs to the data files   |  data/references   |                    |
-| **Software**      | Available via pre-built docker images   |      |https://hub.docker.com/r/tmbuza/readqctools|
-| <tr><td align="left" colspan="4"><strong>Software (Available via pre-built docker images)</strong></td></tr> |
+| <tr><td align="left" colspan="4"><strong>Software</strong> (Most are available via pre-built docker images)</td></tr> |
 | *Docker*       | For creating containers that wrap up iMAP dependencies.    |   | [Link](https://docs.docker.com/v17.12/install)  |
-| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)).    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
-| *BBduk.sh via BBMap*      | For trimming poor quality reads and removing phiX contamination    |  code  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
+| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
+| *BBduk.sh via BBMap*   | For trimming poor quality reads and removing phiX contamination    |  Auto-loaded at preprocessing step  | [Link](https://sourceforge.net/projects/bbmap/files/)*  |
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
 | *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
@@ -58,7 +57,6 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | <tr><td align="left" colspan="4"><strong>Reference databases</strong></td></tr> |
 | *SILVA* (nr)   | Mothur-formatted rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
 | *SILVA* (seed)   | Mothur-formatted rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
-| **Reference 16S rRNA gene classifiers**   |    |      ||
 | *SILVA*(de-gapped)     | mothur-formatted classifiers |   data/references   ||
 | *SILVA NR*     | QIIME2-formatted classifiers |   data/qiime2   || [Link](https://data.qiime2.org/2018.11/common/silva-132-99-nb-classifier.qza)
 | *RDP*      | Mothur-formatted classifiers |   data/references   |[Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
@@ -67,7 +65,6 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *EzBioCloud*     | Mothur-formatted classifiers |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references ||
 
-\*BBmap is pre-downloaded
 
 <br>
 
