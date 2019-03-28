@@ -67,8 +67,8 @@ The first step is to gather all materials needed for implementing the iMAP pipel
 | *EzBioCloud*     | Mothur-formatted  |   data/references   |[Link](https://www.ezbiocloud.net/resources)  ||
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references ||
 |||||
-*BBmap is pre-downloaded
 
+\*BBmap is pre-downloaded
 
 <br>
 
