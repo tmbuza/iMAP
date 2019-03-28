@@ -105,14 +105,13 @@ rm -rf master.zip
 
 <br>
 
-### Verify required folders and files
+<!-- ### Verify required folders and files
 ```{}
 
 bash iMAP/code/requirements/iMAP_checkFiles_driver.bash
 
 ```
-<br>
-
+ -->
 
 ### Download and verify required Docker images 
 
@@ -170,6 +169,10 @@ exit
 
 
 ### Sequence Processing and Classification with mothur
+
+<br>
+
+
 ```{}
 
 containerName=mothurclassification
