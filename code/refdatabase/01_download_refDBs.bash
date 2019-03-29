@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-unzip -oj resources/refDBs.zip -d data/references/
+#unzip -oj resources/refDBs.zip -d data/references/

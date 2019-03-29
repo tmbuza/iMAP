@@ -12,6 +12,9 @@ docker pull tmbuza/readqctools:v1.0.0
 docker pull tmbuza/mothur:v1.41.3
 
 
+# mothur image
+docker pull tmbuza/qiime2:core
+
 
 
 
