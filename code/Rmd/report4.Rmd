@@ -60,7 +60,7 @@ Table: Table x: Statistical parameters calculated from the OTU-based classificat
 
 ```{bash}
 perl ../../code/splitlefse.pl ../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.seed.wang.pick.pick.tx.1.lefse \
->../../results/tables/phylotype/lefse_shared.tsv
+../../results/tables/phylotype/lefse_shared.tsv
 
 
 ```{r message=FALSE, warning=FALSE}
