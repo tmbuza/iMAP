@@ -1814,7 +1814,7 @@ Figure X. Sherperd and non-metric multidimensional scaling plot. Green oints rep
 
 ![](../../img/phyloclusters.png)
 
-Figure x: Sample Phylip or Newick-formatted tree clustered using the UPGMA (Unweighted Pair Group Method with Arithmetic Mean) algorithm. Similar data was used to construct different types of tree including rectangular (**A**), circular (**B**) and unrooted (**C**). The tree is annotated with sequence depth, species richness, and phylum abundance as seen in (**D**).
+Figure x: The circular phylograms (**A**), unrooted cladogram (**B**), and the rectangular phylograms (**C**) display the relationships of the 360 samples used in the case study. Female (red) and male (blue) linked with sequence counts showing the proportion of the number of classified (green) and unclassified (red) displayed on a pie chart followed by the phyla abundance (heatmap) and species richness bar chart showing the observed (green) and estimated (maroon) richness. A portion of the tree (**D**) is enlarged to show some details.
 
 
 # Posible questions {-}
