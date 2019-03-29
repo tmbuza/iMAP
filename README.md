@@ -179,9 +179,7 @@ exit
 containerName=mothurclassification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
-bash code/03_imapClassifyOTU_driver.bash
-
-mkdir LOG && mv *log* LOG/ && rm *.temp
+bash code/03_imapClassifyOTU_driver.bash && mkdir LOG && mv *log* LOG/ && rm *.temp
 
 exit
 
@@ -209,9 +207,7 @@ exit
 containerName=getotu
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
-bash code/04_OTUanalysis_driver.bash
-
-mkdir LOG && mv *log* LOG/ && rm *.temp
+bash code/04_OTUanalysis_driver.bash && mkdir LOG && mv *log* LOG/ && rm *.temp
 
 exit
 
