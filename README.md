@@ -2,27 +2,15 @@
 
 ## Version: iMAP v1.0
 
-The project directory has code, data, img, reports, and results directories. Within the data directory are demo, metadata, mothur, qiime2, raw, and references directories.
-
-<br>
-
-## Audience
-* Microbiologists
-* Ecologists
-* Bioinformaticians
-* Bioinformatics researchers
-* Data Scientists
-* Any interested user
-
-
 ## Supported Analyses
 1. Profiling of Metadata
 2. Pre-processing and quality control of paired-reads
-3. Sequence processing and classification (default: mothur)
-    * Phylotype-based method (works for any dataset size).
-    * OTU-based method (works best for small dataset with <100,000 representative sequences).
-    * Phylogeny-based method.
-    * QIIME2 
+3. Sequence processing and classification
+* mothur (default)
+   * Phylotype-based method (works for any dataset size).
+   * OTU-based method (works best for small dataset with <100,000 representative sequences).
+   * Phylogeny-based method.
+* QIIME2
 4. Transformation of OTU and taxa results. 
 5. Diversity and statistical analysis and visualization.
 6. Phylogenetic analysis and interactive tree annotation 
@@ -32,7 +20,6 @@ The project directory has code, data, img, reports, and results directories. Wit
 <br>
 
 ## Requirements
-
 
 The first step is to gather all the materials needed for implementing the iMAP pipeline as described in the following table. Most iMAP dependencies are executable and are already placed in the PATH using docker, so users should be able to launch them directly from the command line of the specified container. 
 
