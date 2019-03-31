@@ -8,8 +8,8 @@
 3. Sequence processing and classification
 * mothur (default)
    * Phylotype-based method (works for any dataset size).
-   * OTU-based method (works best for small dataset with <100,000 representative sequences).
-   * Phylogeny-based method.
+   * OTU-based method (works best for small dataset).
+   * Phylogeny-based method (works best for small dataset).
 * QIIME2
 4. Transformation of OTU and taxa results. 
 5. Diversity and statistical analysis and visualization.
