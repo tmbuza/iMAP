@@ -94,20 +94,6 @@ rm -rf master.zip
 ## User Options
 Users who want to change the default settings may do so using any text editor. The table below shows the location of default parameters that may be altered. 
 
-| **Parameter**    | **File Path**   |  **Filename** | **Default** |
-| :---------------------   | :--------------------  |  :-------------------------------- | -------------- |
-| Phred score  | iMAP/code/preprocessing | 04_get_highscore_reads.bash | trimq=25 |
-| Minimum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch <br>
-02_align_for_16S_consensus.batch| minlength=100 |
-| Maximum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | maxlength=300 |
-| Minimum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | minlength=100 |
-| Maximum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | maxlength=300 |
-| Minimum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | minlength=100 |
-| Maximum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | maxlength=300 |
-| Minimum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | minlength=100 |
-| Maximum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | maxlength=300 |
-
-
 <table>
 <thead>
 <tr>
@@ -124,13 +110,13 @@ Users who want to change the default settings may do so using any text editor. T
 </tr>
 
 <tr>
-<td align="left", rowspan=2>Minimum sequence length</td><td align="left", rowspan=4>iMAP/code/seqprocessing</td><td align="left">01_assemble_paired_reads.batch</td><td>minlength=100</td>
+<td align="left", rowspan=2>Minimum sequence length</td><td align="left", rowspan=2>iMAP/code/seqprocessing</td><td align="left">01_assemble_paired_reads.batch</td><td>minlength=100</td>
 </tr>
 <tr>
 <td align="left">02_align_for_16S_consensus.batch</td><td>minlength=100</td>
 </tr>
 <tr>
-<td align="left", rowspan=2>Maximum sequence length</td><td align="left">01_assemble_paired_reads.batch</td><td>maxlength=300</td>
+<td align="left", rowspan=2>Maximum sequence length</td><td align="left", rowspan=2>iMAP/code/seqprocessing</td><td align="left">01_assemble_paired_reads.batch</td><td>maxlength=300</td>
 </tr>
 <tr>
 <td align="left">02_align_for_16S_consensus.batch</td><td>minlength=100</td>
