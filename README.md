@@ -146,7 +146,7 @@ Users who want to change the default settings may do so using any text editor. T
 
 <br>
 
-## Download and verify required Docker images 
+## Get required Docker images 
 
 ```{}
 
@@ -156,7 +156,7 @@ docker images
 
 ```
 
-## Create docker containers and start analysis
+## Start analysis
 
 <br>
 
