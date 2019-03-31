@@ -93,6 +93,7 @@ rm -rf master.zip
 
 ## User Options
 This section is for users who want to change the default settings
+
 | **Parameter**    | **File Path**   |  **Filename** | **Default** |
 | :---------------------   | :--------------------  |  :-------------------------------- | -------------- |
 | Phred score  | iMAP/code/preprocessing | 04_get_highscore_reads.bash | trimq=25 |
