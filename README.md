@@ -125,7 +125,7 @@ Users who want to change the default settings may do so using any text editor. T
 <td align="left">Reference</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>silva.seed.ng.fasta</td>
 </tr>
 <tr>
-<td align="left">Reference</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>silva.seed.tax</td>
+<td align="left">Taxonomy</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>silva.seed.tax</td>
 </tr>
 </tr>
 <tr>
