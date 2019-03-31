@@ -91,17 +91,11 @@ rm -rf master.zip
 * Place fastq.gz files in iMAP/data/raw folder.
 * Place samplemetadata.tsv file in the iMAP/data/metadata folder. 
 
-<br>
+## User Options
+This section is for users who want to change the default settings
 
-<!-- ### Verify required folders and files
-```{}
 
-bash iMAP/code/requirements/iMAP_checkFiles_driver.bash
-
-```
- -->
-
-### Download and verify required Docker images 
+## Download and verify required Docker images 
 
 ```{}
 
