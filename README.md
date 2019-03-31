@@ -131,8 +131,6 @@ Users who want to change the default settings may do so using any text editor. T
 <td>minlength=100</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">02_align_for_16S_consensus.batch</td>
 <td>minlength=100</td>
 </tr>
@@ -143,8 +141,6 @@ Users who want to change the default settings may do so using any text editor. T
 <td>maxlength=300</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">02_align_for_16S_consensus.batch</td>
 <td>minlength=100</td>
 </tr>
@@ -180,6 +176,7 @@ Users who want to change the default settings may do so using any text editor. T
 </tr>-->
 </tbody>
 </table>
+
 
 
 
