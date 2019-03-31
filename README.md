@@ -92,7 +92,7 @@ rm -rf master.zip
 * Place samplemetadata.tsv file in the iMAP/data/metadata folder. 
 
 ## User Options
-This section is for users who want to change the default settings
+Users who want to change the default settings may do so by opening the file in the path provided below and change the default settings to their preferred custom values.
 
 | **Parameter**    | **File Path**   |  **Filename** | **Default** |
 | :---------------------   | :--------------------  |  :-------------------------------- | -------------- |
