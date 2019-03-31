@@ -125,9 +125,9 @@ Users who want to change the default settings may do so using any text editor. T
 <td>trimq=25</td>
 </tr>
 <tr>
-<td align="left">Minimum sequence length</td>
+<td align="left", rowspan=4>Minimum sequence length</td>
 <td align="left">iMAP/code/seqprocessing</td>
-<td align="left">01_assemble_paired_reads.batch <br></td>
+<td align="left">01_assemble_paired_reads.batch</td>
 <td></td>
 </tr>
 <tr>
