@@ -92,14 +92,20 @@ rm -rf master.zip
 * Place samplemetadata.tsv file in the iMAP/data/metadata folder. 
 
 ## User Options
-Users who want to change the default settings may do so by opening the file in the path provided below and change the default settings to their preferred custom values.
+Users who want to change the default settings may do so using any text editor. The table below shows the location of default parameters that may be altered. 
 
 | **Parameter**    | **File Path**   |  **Filename** | **Default** |
 | :---------------------   | :--------------------  |  :-------------------------------- | -------------- |
 | Phred score  | iMAP/code/preprocessing | 04_get_highscore_reads.bash | trimq=25 |
+| Minimum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch <br>
+02_align_for_16S_consensus.batch| minlength=100 |
+| Maximum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | maxlength=300 |
+| Minimum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | minlength=100 |
+| Maximum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | maxlength=300 |
 | Minimum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | minlength=100 |
 | Maximum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | maxlength=300 |
-
+| Minimum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | minlength=100 |
+| Maximum sequence length  | iMAP/code/seqprocessing | 02_align_for_16S_consensus.batch | maxlength=300 |
 
 
 ## Download and verify required Docker images 
