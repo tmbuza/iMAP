@@ -91,6 +91,8 @@ rm -rf master.zip
 * Place fastq.gz files in iMAP/data/raw folder.
 * Place samplemetadata.tsv file in the iMAP/data/metadata folder. 
 
+<br>
+
 ## User Options
 Users who want to change the default settings may do so using any text editor. The table below shows the location of default parameters that may be altered. 
 
@@ -142,6 +144,7 @@ Users who want to change the default settings may do so using any text editor. T
 
 
 
+<br>
 
 ## Download and verify required Docker images 
 
