@@ -118,31 +118,22 @@ Users who want to change the default settings may do so using any text editor. T
 </tr>
 </thead>
 <tbody>
+
 <tr>
-<td align="left">Phred score</td>
-<td align="left">iMAP/code/preprocessing</td>
-<td align="left">04_get_highscore_reads.bash</td>
-<td>trimq=25</td>
+<td align="left">Phred score</td><td align="left">iMAP/code/preprocessing</td><td align="left">04_get_highscore_reads.bash</td><td>trimq=25</td>
+</tr>
+
+<tr>
+<td align="left", rowspan=2>Minimum sequence length</td><td align="left", rowspan=4>iMAP/code/seqprocessing</td><td align="left">01_assemble_paired_reads.batch</td><td>minlength=100</td>
 </tr>
 <tr>
-<td align="left", rowspan=2>Minimum sequence length</td>
-<td align="left", rowspan=4>iMAP/code/seqprocessing</td>
-<td align="left">01_assemble_paired_reads.batch</td>
-<td>minlength=100</td>
+<td align="left">02_align_for_16S_consensus.batch</td><td>minlength=100</td>
 </tr>
 <tr>
-<td align="left">02_align_for_16S_consensus.batch</td>
-<td>minlength=100</td>
+<td align="left", rowspan=2>Maximum sequence length</td><td align="left">01_assemble_paired_reads.batch</td><td>maxlength=300</td>
 </tr>
 <tr>
-<td align="left", rowspan=2>Maximum sequence length</td>
-<td align="left"></td>
-<td align="left">01_assemble_paired_reads.batch</td>
-<td>maxlength=300</td>
-</tr>
-<tr>
-<td align="left">02_align_for_16S_consensus.batch</td>
-<td>minlength=100</td>
+<td align="left">02_align_for_16S_consensus.batch</td><td>minlength=100</td>
 </tr>
 <!-- <tr>
 <td align="left">Maximum sequence length</td>
@@ -176,7 +167,6 @@ Users who want to change the default settings may do so using any text editor. T
 </tr>-->
 </tbody>
 </table>
-
 
 
 
