@@ -140,8 +140,6 @@ bash code/02_readPreprocess_driver.bash
 exit
 
 ```
-<br>
-
 
 ### Preprocessing progress report
 ```{}
@@ -155,12 +153,7 @@ exit
 
 ```
 
-
 ### Sequence Processing and Classification with mothur
-
-<br>
-
-
 ```{}
 
 containerName=mothurclassification
@@ -208,9 +201,6 @@ exit
 
 ```
 
-<br>
-
-
 ### Data Transformation
 ```{}
 
@@ -222,9 +212,6 @@ bash code/datatransformation.bash
 exit
 
 ```
-
-<br>
-
 
 ### OTU analysis progress report
 ```{}
@@ -238,9 +225,6 @@ exit
 
 ```
 
-<br>
-
-
 ### Sequence Processing and Classification with QIIME2
 ```{}
 
@@ -253,10 +237,8 @@ exit
 
 ```
 
-<br>
-
-
 ### Convert mothur biom file using QIIME2
+The output is a file containing OTUs and taxonomy
 ```{}
 
 containerName=biomconvertmothur
@@ -268,9 +250,3 @@ exit
 
 ```
 
-<br><hr>
-
-<!-- ```{r label, out.width = "85%", fig.cap = "Figure1"}
-knitr::include_graphics("img/Figure1.pdf", auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE), dpi = NULL)
-```
- -->
