@@ -93,6 +93,12 @@ rm -rf master.zip
 
 ## User Options
 This section is for users who want to change the default settings
+| **Parameter**    | **File Path**   |  **Filename** | **Default** |
+| :---------------------   | :--------------------  |  :-------------------------------- | -------------- |
+| Phred score  | iMAP/code/preprocessing | 04_get_highscore_reads.bash | trimq=25 |
+| Minimum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | minlength=100 |
+| Maximum sequence length  | iMAP/code/seqprocessing | 01_assemble_paired_reads.batch | maxlength=300 |
+
 
 
 ## Download and verify required Docker images 
