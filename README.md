@@ -1,4 +1,4 @@
-# iMAP: Integrative Microbiome Analysis Pipeline
+# iMAP: Integrated Microbiome Analysis Pipeline
 
 ## Version: iMAP v1.0
 
