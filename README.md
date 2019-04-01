@@ -38,7 +38,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *BBduk.sh via BBMap*   | For trimming poor quality reads and removing phiX contamination    |  Auto-loaded at preprocessing step  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
 | *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
-| *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2:core | [Link]( https://hub.docker.com/r/tmbuza/qiime2) |
+| *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2core:v2019.1 | [Link]( https://hub.docker.com/r/tmbuza/qiime2core:v2019.1) |
 | *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://cloud.docker.com/repository/docker/tmbuza/rpackages)  |
 | *iTOL*      | For displaying, annotating and managing phylogenetic trees   | Onlline |   [Link](http://itol.embl.de/)  | 
 | <tr><td align="left" colspan="4"><strong>Reference databases</strong></td></tr> |
@@ -56,11 +56,6 @@ The first step is to gather all the materials needed for implementing the iMAP p
 <br>
 
 ## Get Started
-
-### Install Docker
-Link: https://docs.docker.com/install/
-
-Register for a Docker ID. Link: https://docs.docker.com/docker-id/  
 
 ### Download iMAP repository
 ```{}
@@ -137,23 +132,29 @@ Users who want to change the default settings may do so using any text editor. T
 </table>
 
 
-
-
-
-
-
-
-
 <br>
 
-## Get required Docker images 
 
+
+## Set up Docker
+Link: https://docs.docker.com/install/
+Register for a Docker ID. Link: https://docs.docker.com/docker-id/
+
+### Download dependencies images
+Includes:
+1. *rpackgages:v3.5.2* for R version 3.5.2 and selected packages
+2. *readqctools:v1.0.0* for quality control of the reads
+3. *mothur:v1.41.3* for sequence classification and generating of mothur-based OTU tables
+4. *qiime2core:v2019.1* for sequence classification and generating of qiime2-based OTU table.
+
+Run the following to install all four images
 ```{}
-
 bash iMAP/code/dockerImages.sh
+```
 
+### Confirm the installation
+```{}
 docker images
-
 ```
 
 ## Start analysis
