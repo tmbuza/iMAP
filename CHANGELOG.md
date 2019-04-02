@@ -13,7 +13,7 @@
 </ul>
 <br>
   
-<h4 class="version">Version 1.0.0 – March 25st, 2019</h4>
+<h4 class="version">Version 1.0.0 – March 25th, 2019</h4>
 <ul class="changelog">
 <li>[*] Automated installation of dependencies using Docker</li>
 <li>[+] Added changelog.md</li>
