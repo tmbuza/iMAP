@@ -4,7 +4,7 @@
 
 <div class="code">
 <h4 class="version">Version 1.0.1 – April 1st, 2019</h4>
-<ul class="changelog, style=list-style: none;">
+<ul class="changelog">
 <li>[+] Added user options.</li>
 <li>[^] Renamed qiime2:core to qiime2core:v2019.1.</li>
 <li>[^] Modified README.md</li>
@@ -14,11 +14,6 @@
 <br>
 
 
-<ul style="list-style: none;">
-<li>List item with no bullet</li>
-<li>Second item</li>
-</ul>
-  
 <h4 class="version">Version 1.0.0 – March 25th, 2019</h4>
 <ul class="changelog">
 <li>[*] Automated installation of dependencies using Docker</li>
