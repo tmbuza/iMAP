@@ -1,6 +1,6 @@
 # iMAP Changelog
 
-Current version is 1.0.1
+### Current version is 1.0.1
 
 <div class="code">
 <h5 class="version">Version 1.0.1 – April 1st, 2019</h5>
