@@ -14,5 +14,6 @@
 <li>[+] Added changelog.md</li>
 <li>[^] Modified README.md</li>
 <li>[-] Removed unnecessary files</li>
+<li>[*] Fixed minor problems</li>
 </ul>
 </div>
