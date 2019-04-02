@@ -127,6 +127,9 @@ Users who want to change the default settings may do so using any text editor. T
 </tr>
 <tr>
 <td align="left">Classification cutoff</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>cutoff=80</td>
+<tr>
+<td align="left">QIIME2 settings</td><td align="left">iMAP/code/qiime2</td><td align="left">qiime2.bash</td><td>DADA2 QC parameters are set at 0</td>
+</tr>
 </tr>
 </tbody>
 </table>
