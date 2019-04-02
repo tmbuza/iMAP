@@ -1,3 +1,11 @@
+---
+date: 'Updated: `r Sys.time()`'
+output:
+  html_document:
+    css: code/css/report.css
+    keep_md: yes
+---
+
 # iMAP Changelog
 
 ## Current version is 1.0.1
