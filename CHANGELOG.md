@@ -2,7 +2,7 @@
 
 ## Current version is 1.0.1
 
-<div class="code">
+<div class="code", style="list-style: none;>
 <h4 class="version">Version 1.0.1 – April 1st, 2019</h4>
 <ul class="changelog">
 <li>[+] Added user options.</li>
@@ -14,7 +14,7 @@
 <br>
   
 <h4 class="version">Version 1.0.0 – March 25th, 2019</h4>
-<ul class="changelog, list-style: none">
+<ul class="changelog">
 <li>[*] Automated installation of dependencies using Docker</li>
 <li>[+] Added changelog.md</li>
 <li>[^] Modified README.md</li>
