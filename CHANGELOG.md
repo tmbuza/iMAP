@@ -2,9 +2,9 @@
 
 ## Current version is 1.0.1
 
-<div class="code", style="list-style: none;>
+<div class="code">
 <h4 class="version">Version 1.0.1 – April 1st, 2019</h4>
-<ul class="changelog">
+<ul class="changelog, style=list-style: none;">
 <li>[+] Added user options.</li>
 <li>[^] Renamed qiime2:core to qiime2core:v2019.1.</li>
 <li>[^] Modified README.md</li>
