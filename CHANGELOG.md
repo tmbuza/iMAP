@@ -12,6 +12,12 @@
 <li>[*] Fixed minor problems</li>
 </ul>
 <br>
+
+
+<ul style="list-style: none;">
+<li>List item with no bullet</li>
+<li>Second item</li>
+</ul>
   
 <h4 class="version">Version 1.0.0 – March 25th, 2019</h4>
 <ul class="changelog">
