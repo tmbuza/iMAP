@@ -266,7 +266,7 @@ exit
 ```
 
 ### Statistical analysis
-> Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to the specified statistical analysis:
+> Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to most important statistical analyses in microbiome studies:
 
 * [AMOVA](https://mothur.org/wiki/Amova)
 * [HOMOVA](https://mothur.org/wiki/Homova)
