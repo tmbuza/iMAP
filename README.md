@@ -266,7 +266,7 @@ exit
 ```
 
 ### Statistical analysis
-> Statistical analysis compares the variables. Variables are unique to every study. We recommend users to refer to mothur MiSeq-SOP https://www.mothur.org/wiki/MiSeq_SOP and for statistical analysis such as:
+> Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to the specified statistical analysis:
 
 * [AMOVA](https://mothur.org/wiki/Amova)
 * [HOMOVA](https://mothur.org/wiki/Homova)
