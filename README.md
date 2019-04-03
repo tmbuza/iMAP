@@ -236,6 +236,8 @@ exit
 
 
 ### OTU data analysis and visualization 
+
+**Preliminary analysis**
 ```{}
 
 containerName=getotu
@@ -262,6 +264,19 @@ bash code/datatransformation.bash
 exit
 
 ```
+
+### Statistical analysis
+> Statistical analysis compares the variables. Variables are unique to every study. We recommend users to refer to mothur MiSeq-SOP https://www.mothur.org/wiki/MiSeq_SOP and for statistical analysis such as:
+
+* [AMOVA](https://mothur.org/wiki/Amova)
+* [HOMOVA](https://mothur.org/wiki/Homova)
+* [ANOSIM](https://mothur.org/wiki/Anosim)
+* [Kruska-Walis](https://mothur.org/wiki/Kruskal.wallis)
+* [Lefse](https://mothur.org/wiki/Lefse)
+* [Metastats](https://mothur.org/wiki/Metastats)
+* etc.
+
+
 
 ### OTU analysis progress report
 ```{}
