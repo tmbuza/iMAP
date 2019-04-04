@@ -19,7 +19,9 @@
 <ul class="changelog">
 <li>[*] Automated installation of dependencies using Docker</li>
 <li>[+] Added dockerImage.sh</li>
-<li>[+] Added changelog.md</li>
+<li>[+] Added LOG folder</li>
+<li>[+] Added CHANGELOG.md</li>
+<li>[+] Added exit status to bash drivers</li>
 <li>[^] Modified README.md</li>
 <li>[-] Removed unnecessary files</li>
 <li>[*] Fixed minor problems</li>
