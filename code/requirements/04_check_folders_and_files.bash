@@ -15,7 +15,8 @@ REQUIRED_iMAP_FOLDERS=(
 )
 
 REQUIRED_README_FILE=(
-  "README.md" 
+  "README.md"
+  "CHANGELOG.md" 
 )
 
 # REQUIRED_EXECUTABLE_FILES=(
@@ -199,14 +200,4 @@ check_dir_files $PWD/iMAP/data REQUIRED_DATA_FOLDERS
 # check required files [$PWD/iMAP/data/metadata] directory
 check_dir_files $PWD/iMAP/data/metadata REQUIRED_METADATA_FILES
 
-
-if [ "$?" != "0" ]; then
-    echo "[Error] Some files are missing,!" 1>&2
-    exit 1
-fi
-
-echo "If you see this message you have everything set correctly!:)"
-
 end_comment "✅ HURRAY!! EVERYTHING PASSED!"
-
-
