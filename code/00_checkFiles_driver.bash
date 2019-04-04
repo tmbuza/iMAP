@@ -4,6 +4,6 @@ bash iMAP/code/requirements/iMAP_checkFiles_driver.bash
 
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Some files are missing,!" 1>&2
+    echo "[Error] Sorry! Some files are missing, exiting...!" 1>&2
     exit 1
 fi
