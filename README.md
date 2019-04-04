@@ -274,7 +274,7 @@ exit
 * [Kruska-Walis](https://mothur.org/wiki/Kruskal.wallis)
 * [Lefse](https://mothur.org/wiki/Lefse)
 * [Metastats](https://mothur.org/wiki/Metastats)
-* etc.
+* [More...](https://mothur.org/wiki/Category:Commands)
 
 
 
