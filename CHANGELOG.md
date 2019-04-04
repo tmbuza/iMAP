@@ -1,6 +1,6 @@
 # iMAP Changelog
 
-## Current version is 1.0.1
+## Current version is 1.0
 
 <div class="code">
 <h4 class="version">Version 1.0.1 – April 1st, 2019</h4>
@@ -15,7 +15,7 @@
 <br>
 
 
-<h4 class="version">Version 1.0.0 – March 25th, 2019</h4>
+<h4 class="version">Version 1.0.0 – March 27th, 2019</h4>
 <ul class="changelog">
 <li>[*] Automated installation of dependencies using Docker</li>
 <li>[+] Added dockerImage.sh</li>
@@ -27,3 +27,5 @@
 <li>[*] Fixed minor problems</li>
 </ul>
 </div>
+
+<h4 class="version">Version 1.0 – March 25th, 2019</h4>
