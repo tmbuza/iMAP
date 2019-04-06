@@ -2,28 +2,16 @@ version: '3.4'
 
 services:
 
-  report1:
+  rpackages:
     image: tmbuza/rpackages:v3.5.2
 
-  readpreprocess:
+  readqctools:
     image: tmbuza/readqctools:v1.0.0
 
-  report2:
-    image: tmbuza/rpackages:v3.5.2
-
-  seqprocess:
+  mothur:
     image: tmbuza/mothur:v1.41.3
 
-  report3:
-    image: tmbuza/rpackages:v3.5.2
-
-  getotu:
-    image: tmbuza/mothur:v1.41.3
-
-  report4:
-    image: tmbuza/rpackages:v3.5.2
-
-  qiime2:
+  qiime2core:
     image: tmbuza/qiime2core:v2019.1
 
 
