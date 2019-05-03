@@ -83,14 +83,12 @@ rm -rf master.zip
 <br>
 
 ### Add data to designated folders
-* We will copy demo metadata and fastq files available in the iMAP/resources/ folder.
-
-* Place samplemetadata.tsv file in the iMAP/data/metadata folder. 
-
-```{}
-cp iMAP/resources/metadata/samplemetadata.tsv ./iMAP/data/metadata/
-```
-* Place fastq.gz files in iMAP/data/raw folder.
+* File format:
+  [1. samplemetadata.tsv](https://github.com/tmbuza/iMAP/edit/master/README.md
+  
+  
+  
+* The files in the iMAP/resources/ folder can.
 
 ```{}
 cp iMAP/resources/metadata/samplemetadata.tsv ./iMAP/data/metadata/
