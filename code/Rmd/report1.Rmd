@@ -43,7 +43,7 @@ knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE)
 
 ```
 
-Key: **q_zeros**: quantity of zeros or missing data; **q_na**: quantity of NA; **q_inf**: quantity of infinite values; **type**: factor, character, integer or numeric..; **unique**: quantity of unique values. Percentages are indicated by **p_**.
+Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: frequency of the values.
 
 
 When reviewing metadata status you may notice that numeric variables are confused with numeric data. For example, variable **DPW** (days post weaning) on Table x shows 12 missing values (3.33%) which is incorrect. As investigators we know that day 1 was coded zero (0) (12 zeros for 12 mouse) which in descriptive statistics is interpreted as missing data. To correct this we re-coded the samples with unique identifies shown as DayID to distinguish them from integers. However, depending of experiment this kind of variables need to be converted to character during analysis. 
