@@ -87,10 +87,16 @@ rm -rf master.zip
 1. Metadata: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
 
  2. Mapping files:
- [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
-  
-  
-  
+ [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/qced.files)
+ 
+ 2. Variable files:
+ 
+ a. Variable 1: 
+ [var1.design.files](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
+ 
+ b. Variable 2: 
+ [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
+   
   
   
 * The files in the iMAP/resources/ folder can.
