@@ -83,7 +83,7 @@ rm -rf master.zip
 <br>
 
 ### Add data to designated folders
-* File format:
+#### File format
   [1. samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
   
   
