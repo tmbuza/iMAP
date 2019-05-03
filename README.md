@@ -85,9 +85,11 @@ rm -rf master.zip
 ### Add data to designated folders
 #### File formats
 
-1. Metadata: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
+1. Metadata: Compatible for Mothur and QIIME2
 
-2. Mapping files: Compatible for Mthur and QIIME2
+[samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
+
+2. Mapping files:
 
     * Mothur-format:
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
