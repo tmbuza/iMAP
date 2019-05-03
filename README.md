@@ -86,20 +86,20 @@ rm -rf master.zip
 #### File formats
 1. Metadata: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
 
-2. **Mapping files:**
+2. Mapping files
 
-  a. Mothur-format
+*Mothur-format:*
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
  
-  b. QIIME2-format
+*QIIME2-format:*
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
-3. **Variable files:**
- 
- a. Variable 1: 
+3. Mothur-based analysis
+
+Variable 1: 
  [var1.design.files](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
  
- b. Variable 2: 
+Variable 2: 
  [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
    
   
