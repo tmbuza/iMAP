@@ -89,10 +89,10 @@ rm -rf master.zip
 
 2. Mapping files
 
-*Mothur-format:*
+Mothur-format:
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
  
-*QIIME2-format:*
+QIIME2-format:
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
 3. Mothur-based analysis
