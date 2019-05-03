@@ -104,8 +104,10 @@ rm -rf master.zip
  
     * Variable 2: 
  [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var2.design)
-  
-## Optional demonstration
+
+<br>
+
+## Data for optional testing of iMAP
 The following command copy the data files from the iMAP/resources/ folder and place them in the their folders as indicated on Table 1 above.
 ```{}
 bash iMAP/demo_data.bash
