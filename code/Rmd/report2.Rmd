@@ -18,7 +18,7 @@ biblio-style: apalike
 
 ```{r}
 
-samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.demo.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 # Subsetting metadata for mapping to output from dowmstream analysis
