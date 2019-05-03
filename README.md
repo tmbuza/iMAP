@@ -84,7 +84,7 @@ rm -rf master.zip
 
 ### Add data to designated folders
 #### File formats
-```{}
+
 1. Metadata: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
 
 2. Mapping files
@@ -102,14 +102,11 @@ Variable 1:
  
 Variable 2: 
  [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
-
-```
   
   
-* The files in the iMAP/resources/ folder can.
-
+The following command copy the data files from the iMAP/resources/ folder and place them in the their folders as indicated on Table 1 above.
 ```{}
-cp iMAP/resources/metadata/samplemetadata.tsv ./iMAP/data/metadata/
+bash iMAP/demo_data.bash
 ```
 
 <br>
