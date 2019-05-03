@@ -97,7 +97,7 @@ rm -rf master.zip
     * QIIME2-format:
  [manifest.txt](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
-3. Mothur-based analysis
+3. Variable files (Mothur-based analysis).
 
     * Variable 1: 
  [var1.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
