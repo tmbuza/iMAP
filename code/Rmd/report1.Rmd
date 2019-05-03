@@ -43,7 +43,7 @@ knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE)
 
 ```
 
-Key: **q_zeros**: quantity of zeros or missing data; **q_na**: quantity of NA; **q_inf**: quantity of infinite values; **type**: factor, character, integer or numeric..; **unique**: quantity of unique values. Percentages are indicated by **p_**.
+Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: frequency of the values.
 
 
 When reviewing metadata status you may notice that numeric variables are confused with numeric data. For example, variable **DPW** (days post weaning) on Table x shows 12 missing values (3.33%) which is incorrect. As investigators we know that day 1 was coded zero (0) (12 zeros for 12 mouse) which in descriptive statistics is interpreted as missing data. To correct this we re-coded the samples with unique identifies shown as DayID to distinguish them from integers. However, depending of experiment this kind of variables need to be converted to character during analysis. 
@@ -94,84 +94,6 @@ dpwhistplot <- ggpubr::gghistogram(variables, x = "DayID", stat="count", fill = 
 
 ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
 ```
-
-<br>
-
-### Frequency of experimental variables (360 samples: Case study)
-
-<hr>
-
-
-```{r varfreq_casestudy, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
-library(ggplot2)
-samplemetadata_casestudy <- readr::read_table2(file="../../data/metadata/samplemetadata_casestudy.txt", col_names = T)
-colnames(samplemetadata)[1] <- "SampleID"
-
-metadata_status <- funModeling::df_status(samplemetadata_casestudy)
-
-# Subsetting metadata for mapping to output from dowmstream analysis
-library(dplyr)
-variables <- samplemetadata_casestudy %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-
-
-#sort by dpw (descending)
-
-
-variables <- variables[order(variables$DPW),] 
-
-sexhistplot <- ggpubr::gghistogram(variables, x = "Sex", stat="count", fill = "#ff0000") + ggtitle("Sex variable")
-
-timehistplot <- ggpubr::gghistogram(variables, x = "Time", stat="count", fill = "#00ff00") + ggtitle("Time variable")
-
-# scaleFUN <- function(x) sprintf("%.0f", x)
-
-dpwhistplot <- ggpubr::gghistogram(variables, x = "DayID", stat="count", fill = "#0000ff") + ggtitle("Days post weaning")+
-  theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN)
-
-ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
-```
-
-Figure 3. Frequency of experimental variables
-
-<br>
-
-### Custom variables from Bushmeat project
-
-<hr>
-
-
-```{r bushmeat, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
-samplemetadata <- readr::read_table2(file="../../data/metadata/186samples.metadata", col_names = T)
-colnames(samplemetadata)[1] <- "SampleID"
-
-metadata_status <- funModeling::df_status(samplemetadata)
-
-knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE)
-
-
-
-
-# Subsetting metadata for mapping to output from dowmstream analysis
-library(dplyr)
-variables <- samplemetadata %>% dplyr::select("SampleID", "Season", "Condition", "Ecosystem", "Species", "BatchNo")
-
-
-seasonhistplot <- ggpubr::gghistogram(variables, x = "Season", stat="count", fill = "#ff0000") + ggtitle("") + labs(x="Season", y="Count")
-
-condhistplot <- ggpubr::gghistogram(variables, x = "Condition", stat="count", fill = "#00ff00") + ggtitle("") + labs(x="Condition", y="Count")
-
-ecosyhistplot <- ggpubr::gghistogram(variables, x = "Ecosystem", stat="count", fill = "#fff000") + ggtitle("") + labs(x="Ecosystem", y="Count")
-
-spphistplot <- ggpubr::gghistogram(variables, x = "Species", stat="count", fill = "#0000ff") + ggtitle("") + theme(axis.text.x = element_text(angle = 90)) + labs(x="Animal Species", y="Count")
-
-plots <- cowplot::align_plots(seasonhistplot, spphistplot, align = 'v', axis = 'l')
-top_row <- cowplot::plot_grid(plots[[1]], condhistplot, ecosyhistplot, ncol=3, labels = "", align = 'h')
-bottom_row <- cowplot::plot_grid(plots[[2]], labels = "", align = 'hv')
-
-cowplot::plot_grid(top_row, bottom_row, ncol = 1, rel_heights = c(1.2, 1.5))
-
-```
-
 
 ## Posible questions
 
