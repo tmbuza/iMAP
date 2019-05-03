@@ -150,7 +150,7 @@ ggpubr::ggarrange(f_qc0dens, r_qc0dens,  f_qc0hist, r_qc0hist, ncol = 2, nrow = 
 
 ```
 
-Figure x: ensity and histograms plots showing forward and reverse read length. Dotted line indicates mean value for the specified variable
+Figure x: Density and histograms plots showing forward and reverse read length. Dotted line indicates mean value for the specified variable
 
 <br>
 
