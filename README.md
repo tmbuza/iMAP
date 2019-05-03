@@ -87,13 +87,13 @@ rm -rf master.zip
 
 1. Metadata: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
 
-2. Mapping files
+2. Mapping files: Compatible for Mthur and QIIME2
 
     * Mothur-format:
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
  
     * QIIME2-format:
- [manifest.txt)](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
+ [manifest.txt](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
 3. Mothur-based analysis
 
