@@ -89,21 +89,21 @@ rm -rf master.zip
 
 2. Mapping files
 
-Mothur-format:
+  Mothur-format:
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
  
-QIIME2-format:
+  QIIME2-format:
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
 3. Mothur-based analysis
 
-Variable 1: 
+  Variable 1: 
  [var1.design.files](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
  
-Variable 2: 
+  Variable 2: 
  [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
   
-  
+
 The following command copy the data files from the iMAP/resources/ folder and place them in the their folders as indicated on Table 1 above.
 ```{}
 bash iMAP/demo_data.bash
