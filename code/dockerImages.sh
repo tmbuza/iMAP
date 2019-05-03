@@ -13,7 +13,8 @@ docker pull tmbuza/mothur:v1.41.3
 
 
 # mothur image
-docker pull tmbuza/qiime2:core
+# docker pull tmbuza/qiime2:core
+docker pull tmbuza/qiime2core:v2019.1
 
 
 
