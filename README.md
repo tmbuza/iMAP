@@ -93,15 +93,15 @@ rm -rf master.zip
  [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
  
     * QIIME2-format:
- [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
+ [manifest.txt)](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
 3. Mothur-based analysis
 
     * Variable 1: 
- [var1.design.files](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
+ [var1.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
  
     * Variable 2: 
- [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
+ [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var2.design)
   
 
 The following command copy the data files from the iMAP/resources/ folder and place them in the their folders as indicated on Table 1 above.
