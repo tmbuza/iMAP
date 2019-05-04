@@ -350,8 +350,7 @@ wget -O "./data/references/gg-13-8-99-nb-classifier.qza" "https://data.qiime2.or
 <br>
 
 ### Create QIIME2 container
-
-
+```{}
 containerName=qiime2classification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
 
