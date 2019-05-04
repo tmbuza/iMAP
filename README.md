@@ -230,21 +230,22 @@ exit
 
 ```
 
-### Download reference alignment and classifiers
-Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
+### Sequence Processing
+
+1. Download reference alignments
+    * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
 
 ```{}
-bash iMAP/code/refdatabase/iMAP_download_driver.bash
+bash iMAP/code/refdatabase/02_download_ref_alignments.bash
 ```
 
-### Sequence Processing and Classification with mothur
-```{}
+2. Create a mothur container for sequence processing and classification.
 
-containerName=mothurclassification
+```{}
+containerName=mothurseqprocessing
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
-bash code/03_imapClassifyOTU_driver.bash 
-
+bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash 
 mv mothur.*.logfile LOG
 
 rm *.temp
