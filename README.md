@@ -206,7 +206,6 @@ containerName=report1
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash code/01_metadataProfiling_driver.bash
-
 exit
 
 ```
@@ -232,7 +231,6 @@ containerName=report2
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash code/progressreport2.bash
-
 exit
 
 ```
@@ -263,20 +261,10 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
 
 ```{}
 bash ./code/03_imapClassifyOTU_driver.bash 
-```
-<br>
-
-3. Move the logfiles to LOG folder and delete any temporary files if found.
-
-```{}
-mv mothur.*.logfile LOG
-rm *.temp
 exit
 
 ```
-
 <br>
-
 
 ### Sequence processing progress report
 ```{}
@@ -285,7 +273,6 @@ containerName=report3
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash code/progressreport3.bash
-
 exit
 
 ```
@@ -301,11 +288,6 @@ containerName=getotu
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
 bash code/04_OTUanalysis_driver.bash 
-
-mv mothur.*.logfile LOG
-
-rm *.temp
-
 exit
 
 ```
@@ -317,7 +299,6 @@ containerName=datatransformation
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash code/datatransformation.bash
-
 exit
 
 ```
@@ -342,7 +323,6 @@ containerName=report4
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash code/progressreport4.bash
-
 exit
 
 ```
@@ -367,7 +347,6 @@ containerName=biomconvertmothur
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
 
 bash code/qiime2/convertmothur_biom.bash
-
 exit
 
 ```
