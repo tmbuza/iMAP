@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+Requires bbmap tool
+
+
+
 # cd data/raw
 # for i in `ls -1 *R1_001.fastq.gz | sed 's/R1_001.fastq.gz//'`
 # do
