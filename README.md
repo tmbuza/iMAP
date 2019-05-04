@@ -29,7 +29,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 
 | **Requirement**    | **Description**   |  **Location** | **Remarks**          |
 | :--------------------------   | :-----------------------------------------------------  |  :---------------: | :------------:   |
-| **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/raw   |               |
+| **Raw data**      | Demultiplexed reads in FASTQ format with primers and barcodes removed        |  data/raw   |    fastq.gz   |
 | **Sample metadata**      | File name: samplemetadata.tsv. A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur and QIIME2    |
 | **Mapping files**      | For linking sample IDs to the data files   |  data/metadata   |      |
 | <tr><td align="left" colspan="4"><strong>Software</strong> (Most are available via pre-built docker images)</td></tr> |
