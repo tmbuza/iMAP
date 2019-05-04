@@ -331,7 +331,7 @@ exit
 ```{}
 
 containerName=qiime2classification
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
 
 bash code/qiime2/qiime2.bash
 
