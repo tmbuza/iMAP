@@ -255,6 +255,8 @@ bash ./code/refdatabase/iMAP_download_driver.bash
 ```
 
 3. Start sequence processing.
+    * Download reference alignments
+      * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)    
     * Assemble the forward and reverse reads, screen by length and create representative sequences
     * Align representative sequences with reference alignments. Default [SILVA seed](https://www.mothur.org/w/images/7/71/).
     * Denoise to remove poor alignments
