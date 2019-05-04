@@ -257,11 +257,14 @@ bash ./code/refdatabase/iMAP_download_driver.bash
 3. Start sequence processing.
     * Assemble the forward and reverse reads, screen by length and create representative sequences
     * Align representative sequences with reference alignments. Default [SILVA seed](https://www.mothur.org/w/images/7/71/).
-    * Denoising to remove poor alignments
-    * Removes Chimeric sequences.
+    * Denoise to remove poor alignments
+    * Remove Chimeric sequences.
     * Classify the sequences and post-classification QC.
-    * Cluster OTU based on Phylotype, OTU-based and Phylogeny methids.
-    * Assign taxonomy nanes to OTUs.
+    * Cluster mothur-based OTUs.
+      * Phylotype-based method (works for any dataset size).
+      * OTU-based method (works best for small dataset).
+      * Phylogeny-based method (works best for small dataset).
+    * Assign taxonomy names to OTUs.
 
 ```{}
 bash ./code/03_imapClassifyOTU_driver.bash 
