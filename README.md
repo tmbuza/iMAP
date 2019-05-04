@@ -328,6 +328,24 @@ exit
 ```
 
 ### Sequence Processing and Classification with QIIME2
+* Requires a QIIME2 trained classifer. 
+* You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
+* Default classifier: Pretrained on GreenGenes database with 99% OTUs. [Link](https://data.qiime2.org/2019.4/common/gg-13-8-99-nb-classifier.qza).
+
+### Download greengenes classifier
+* The 515-806 conservative fragments 
+	* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
+```{}
+wget -O "./data/references/gg-13-8-99-515-806-nb-classifier.qza" "https://data.qiime2.org/2019.4/common/gg-13-8-99-515-806-nb-classifier.qza")
+
+```
+
+* Full length
+
+```{}
+wget -O "./data/references/gg-13-8-99-nb-classifier.qza" "https://data.qiime2.org/2019.4/common/gg-13-8-99-nb-classifier.qza")
+
+```
 ```{}
 
 containerName=qiime2classification
