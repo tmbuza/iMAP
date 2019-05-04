@@ -232,19 +232,33 @@ exit
 
 ### Sequence Processing
 
-1. Download reference alignments
-    * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
-
-```{}
-bash iMAP/code/refdatabase/02_download_ref_alignments.bash
-```
-
-2. Create a mothur container for sequence processing and classification.
+1. Create a mothur container for sequence processing and classification.
 
 ```{}
 containerName=mothurseqprocessing
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 
+```
+
+2. Download reference alignments
+    * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
+
+```{}
+bash iMAP/code/refdatabase/iMAP_download_driver.bash
+```
+
+3. Start sequence processing.
+
+The command below runs the following processes:
+    * Assemble the forward and reverse reads, screen by length and create representative sequences
+    * Align representative sequences with reference alignments. Default [SILVA seed](https://www.mothur.org/w/images/7/71/).
+    * Denoising to remove poor alignments
+    * Removes Chimeric sequences.
+    * Classify the sequences and post-classification QC.
+    * Cluster OTU based on Phylotype, OTU-based and Phylogeny methids.
+    Assign taxonomy nanes to OTUs.
+
+```{}
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash 
 mv mothur.*.logfile LOG
 
