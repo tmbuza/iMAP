@@ -8,6 +8,10 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
+mv mothur.*.logfile LOG
+
+rm *.temp
+
 
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 
@@ -15,6 +19,10 @@ if [ "$?" != "0" ]; then
     echo "[Error] Sorry, sequence processing did not finish, exiting...,!" 1>&2
     exit 1
 fi
+
+mv mothur.*.logfile LOG
+
+rm *.temp
 
 
 bash ./code/seqclassification/iMAP_seqclassification_driver.bash
@@ -33,14 +41,21 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
+mv mothur.*.logfile LOG
 
+rm *.temp
 
 bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
+
 
 if [ "$?" != "0" ]; then
     echo "[Error] Sorry, OTU taxonomy assignment failed, exiting...,!" 1>&2
     exit 1
 fi
+
+mv mothur.*.logfile LOG
+
+rm *.temp
 
 
 # bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
