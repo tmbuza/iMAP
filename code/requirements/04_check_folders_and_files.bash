@@ -65,11 +65,17 @@ REQUIRED_DATA_FOLDERS=(
   "references/*"
 )
 
-# REQUIRED_REFERENCES_FILES=(
-#   "HMP_MOCK.fasta"
-#   "silva.seed.align"
-#   "silva.seed.tax"
-# )
+REQUIRED_REFERENCES_FILES=(
+  # Ref alignments (mothur)
+  "silva.seed.align"  
+  # Classifiers (mothur)
+  "HMP_MOCK.fasta"
+  "silva.seed.align"
+  "silva.seed.ng.fasta"
+  "silva.seed.tax"
+  # Classifiers (mothur)QIIME2
+  ""
+)
 
 REQUIRED_METADATA_FILES=(
   "var1.design"
