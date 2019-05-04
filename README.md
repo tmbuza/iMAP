@@ -231,7 +231,7 @@ exit
 ```
 
 ### Download reference alignment and classifiers
-Default: [SILVA seed[(https://www.mothur.org/w/images/7/71/)
+Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
 
 ```{}
 bash iMAP/code/refdatabase/iMAP_download_driver.bash
