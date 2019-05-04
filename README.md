@@ -247,14 +247,7 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
 
 ```
 
-2. Download reference alignments
-    * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
-
-```{}
-bash ./code/refdatabase/iMAP_download_driver.bash
-```
-
-3. Start sequence processing.
+2. Start sequence processing.
     * Download reference alignments
       * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)    
     * Assemble the forward and reverse reads, screen by length and create representative sequences
@@ -273,7 +266,7 @@ bash ./code/03_imapClassifyOTU_driver.bash
 ```
 <br>
 
-4. Move the logfiles to LOG folder and delete any temporary files if found.
+3. Move the logfiles to LOG folder and delete any temporary files if found.
 
 ```{}
 mv mothur.*.logfile LOG
