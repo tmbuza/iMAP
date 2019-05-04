@@ -410,7 +410,7 @@ g.abund15
 
 <hr>
 
-* Demonstration using four samples
+* Demonstration using eight samples
 * Rank abundance curves can be used to display species richness and species evenness across selected samples.
 
 ```{r rankabund, fig.height=8, fig.width=12, message=FALSE, warning=FALSE}
@@ -494,7 +494,6 @@ richdiv <- readr::read_table2(file = "../../data/mothur/phylotype/03_summary/qce
 richdiv.v <- cbind(variables, richdiv)
 
 phylodiv <- readr::read_table2(file = "../../data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary")
-
 # View(phylodiv)
 
 phylodiv.v <- cbind(variables, phylodiv)
@@ -503,7 +502,6 @@ richdivphylo.v <- cbind(richdiv.v, phylodiv[,2:3])
 
 write.table(richdiv, "../../results/tables/phylotype/richdiv.tsv", quote = FALSE, sep="\t",
             row.names = FALSE, col.names = TRUE)
-
 write.table(richdiv.v, "../../results/tables/phylotype/richdiv.v.tsv", quote = FALSE, sep="\t",
         row.names = FALSE, col.names = TRUE)
 

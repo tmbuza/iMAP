@@ -396,7 +396,7 @@ dim(genusprop)
 * This assumes that 1st column in each file is SampleID
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.demo.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 variables <- samplemetadata %>% select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
@@ -492,8 +492,8 @@ write.table(genusprop.v,"../../results/tables/phylotype/genusprop.v.tsv", quote 
 }
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
-colnames(samplemetadata)[1] <- "SampleID"
+# samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
+# colnames(samplemetadata)[1] <- "SampleID"
 
 # Subsetting metadata for mapping to output from dowmstream analysis
 library(dplyr)
