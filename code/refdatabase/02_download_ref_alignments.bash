@@ -41,6 +41,12 @@ mv silva.seed_v132.pick.tax data/references/silva.seed.tax
 rm S*.tgz
 rm silv*
 
+if [ "$?" != "0" ]; then
+    echo "[Error] Sorry, missing required reference alignment, exiting...!" 1>&2
+    exit 1
+fi
+
+
 # # !For V4 datasets only
 # Generate a customized version of the SILVA reference database that targets the V4 region
 # mothur "#pcr.seqs(fasta=data/references/silva.seed.align, start=11894, end=25319, keepdots=F, processors=8)"

@@ -51,3 +51,8 @@ mv HMP_MOCK.fasta data/references
 # #```{}
 # rm mothur.*.logfile
 #```
+
+if [ "$?" != "0" ]; then
+    echo "[Error] Sorry, something may be wrong with the classifiers, exiting...!" 1>&2
+    exit 1
+fi
