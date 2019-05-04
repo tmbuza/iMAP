@@ -330,7 +330,7 @@ exit
 ### Sequence Processing and Classification with QIIME2
 * Requires a QIIME2 trained classifer. 
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
-* Default classifier: Pretrained on GreenGenes database with 99% OTUs. [Link](https://data.qiime2.org/2019.4/common/gg-13-8-99-nb-classifier.qza).
+* Default classifier: Pretrained on GreenGenes database with 99% OTUs. [Link](https://data.qiime2.org/2019.4/).
 
 ### Download greengenes classifier
 * The 515-806 conservative fragments 
