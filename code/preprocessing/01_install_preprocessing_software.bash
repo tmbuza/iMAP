@@ -49,4 +49,3 @@
 # mv -v bbmap code/
 # rm BBMap_37.90.tar.gz
 
-unzip -o iMAP/resources/bbmap.zip -d iMAP/code/
