@@ -248,9 +248,6 @@ bash iMAP/code/refdatabase/iMAP_download_driver.bash
 ```
 
 3. Start sequence processing.
-
-The command below runs the following processes:
-
     * Assemble the forward and reverse reads, screen by length and create representative sequences
     * Align representative sequences with reference alignments. Default [SILVA seed](https://www.mothur.org/w/images/7/71/).
     * Denoising to remove poor alignments
@@ -268,6 +265,7 @@ rm *.temp
 exit
 
 ```
+
 <br>
 
 
