@@ -251,7 +251,7 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
     * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)
 
 ```{}
-bash iMAP/code/refdatabase/iMAP_download_driver.bash
+bash ./code/refdatabase/iMAP_download_driver.bash
 ```
 
 3. Start sequence processing.
