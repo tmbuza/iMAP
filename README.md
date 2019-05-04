@@ -271,7 +271,7 @@ bash ./code/03_imapClassifyOTU_driver.bash
 ```
 <br>
 
-4. Move the logfiles to LOG folder and delete any tmp files.
+4. Move the logfiles to LOG folder and delete any temporary files if found.
 
 ```{}
 mv mothur.*.logfile LOG
