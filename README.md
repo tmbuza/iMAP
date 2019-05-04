@@ -257,11 +257,15 @@ bash iMAP/code/refdatabase/iMAP_download_driver.bash
     * Assign taxonomy nanes to OTUs.
 
 ```{}
-bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash 
+bash ./code/03_imapClassifyOTU_driver.bash 
+```
+<br>
+
+4. Move the logfiles to LOG folder and delete any tmp files.
+
+```{}
 mv mothur.*.logfile LOG
-
 rm *.temp
-
 exit
 
 ```
