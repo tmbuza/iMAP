@@ -56,12 +56,11 @@ REQUIRED_CODE_FOLDERS_OR_FILES=(
 "summarizeFastQC"
 )
 
-REQUIRED_DATA_FOLDERS=(
-  "demo/*"  
+REQUIRED_DATA_FOLDERS=(  
   "metadata/*"
   "mothur/*"
   "qiime2/*"
-  "raw/*"
+  "raw/*.gz"
   "references/*"
 )
 

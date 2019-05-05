@@ -81,7 +81,7 @@ code/*win*
 code/summarizeFastQC
 !code/progressreport*.bash
 .CaseStudy/*/*
-
+code/Rmd/*Casestudy.Rmd
 # Hidden files
 .~*
 ._*
