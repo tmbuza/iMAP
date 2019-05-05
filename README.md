@@ -235,7 +235,7 @@ exit
 
 ```
 
-### Sequence Processing
+### Sequence Processing and classification
 
 1. Create a mothur container for sequence processing and classification.
 
@@ -245,25 +245,58 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
 
 ```
 
-2. Start sequence processing.
+2. Run the sequence processing and classification command which implements the folllowing:
     * Download reference alignments
       * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)    
     * Assemble the forward and reverse reads, screen by length and create representative sequences
     * Align representative sequences with reference alignments. Default [SILVA seed](https://www.mothur.org/w/images/7/71/).
     * Denoise to remove poor alignments
     * Remove Chimeric sequences.
-    * Classify the sequences and post-classification QC.
-    * Cluster mothur-based OTUs.
-      * Phylotype-based method (works for any dataset size).
-      * OTU-based method (works best for small dataset).
-      * Phylogeny-based method (works best for small dataset).
-    * Assign taxonomy names to OTUs.
+    * Classify the sequences and do post-classification QC.
+    * Estimates the sequencing error rate.
 
 ```{}
-bash ./code/03_imapClassifyOTU_driver.bash 
-exit
+
+bash ./code/03_imapClassifySEQ_driver.bash 
 
 ```
+
+<br>
+
+### OTU clustering and Taxonomy assignement (Mothur)
+1. Phylotype-based method  (works for any dataset size).
+    
+```{}
+
+bash ./code/04_1_phylotype_driver.bash
+
+
+
+```
+<br>
+
+2. OTU-cluster method (works best for small dataset).
+    
+```{}
+
+bash ./code/04_2_otucluster_driver.bash
+
+
+
+```
+
+<br>
+
+3. Phylogeny-based method (works best for small dataset).
+    
+```{}
+
+bash ./code/04_3_phylogeny_driver.bash
+
+
+
+```
+
 <br>
 
 ### Sequence processing progress report
@@ -276,6 +309,7 @@ bash code/progressreport3.bash
 exit
 
 ```
+
 <br>
 
 
