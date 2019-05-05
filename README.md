@@ -110,7 +110,7 @@ rm -rf master.zip
 ## Data for optional testing of iMAP
 The following command copy the required data files located in the iMAP/resources/ and place them in their respective folders, as shown on Table 1 above.
 ```{}
-bash iMAP/demo_data.bash
+bash iMAP/code/demo_data.bash
 ```
 
 <br>
