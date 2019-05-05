@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Requires bbmap tool. Predownloaded package is in the resources. Unzip it and place the content in the code folder.
+
+unzip -o iMAP/resources/bbmap.zip -d iMAP/code/
+
 # cd data/raw
 # for i in `ls -1 *R1_001.fastq.gz | sed 's/R1_001.fastq.gz//'`
 # do

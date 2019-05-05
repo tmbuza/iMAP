@@ -23,6 +23,3 @@ mkdir results/figures
 bash code/preprocessing/04_get_highscore_reads.bash
 bash code/preprocessing/05_get_qced_reads.bash
 bash code/preprocessing/06_final_seqkit.bash
-
-## Generate pre-processing progress report and save it in file named report2_pre_processing.html
-# Rscript -e "rmarkdown::render('./report2.Rmd', clean=TRUE, quiet=FALSE, output_file='report2_pre_processing.html', output_dir='reports')"
