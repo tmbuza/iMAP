@@ -45,17 +45,17 @@ mv mothur.*.logfile LOG
 
 rm *.temp
 
-bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
+# bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
 
 
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, OTU taxonomy assignment failed, exiting...,!" 1>&2
-    exit 1
-fi
+# if [ "$?" != "0" ]; then
+#     echo "[Error] Sorry, OTU taxonomy assignment failed, exiting...,!" 1>&2
+#     exit 1
+# fi
 
-mv mothur.*.logfile LOG
+# mv mothur.*.logfile LOG
 
-rm *.temp
+# rm *.temp
 
 
 # bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
