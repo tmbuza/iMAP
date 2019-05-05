@@ -263,26 +263,18 @@ bash ./code/03_imapClassifySEQ_driver.bash
 
 <br>
 
-### OTU clustering and Taxonomy assignement (Mothur)
+### OTU clustering, Taxonomy assignement and preliminary analysis (Mothur)
 1. Phylotype-based method  (works for any dataset size).
     
 ```{}
-
 bash ./code/04_1_phylotype_driver.bash
-
-
-
 ```
 <br>
 
 2. OTU-cluster method (works best for small dataset).
     
 ```{}
-
 bash ./code/04_2_otucluster_driver.bash
-
-
-
 ```
 
 <br>
@@ -290,10 +282,7 @@ bash ./code/04_2_otucluster_driver.bash
 3. Phylogeny-based method (works best for small dataset).
     
 ```{}
-
 bash ./code/04_3_phylogeny_driver.bash
-
-
 
 ```
 
@@ -312,29 +301,13 @@ exit
 
 <br>
 
-
-### OTU data analysis and visualization 
-
-**Preliminary analysis**
-```{}
-
-containerName=getotu
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
-
-bash code/04_OTUanalysis_driver.bash 
-exit
-
-```
-
 ### Data Transformation
 ```{}
-
 containerName=datatransformation
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
 bash code/datatransformation.bash
 exit
-
 ```
 
 ### Statistical analysis
