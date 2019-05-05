@@ -5,10 +5,11 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-mothur code/dataanalysis/03_phylogeny_analysis.batch
+
+mothur code/dataanalysis/02_otus_analysis.batch
 
 
 if [ "$?" != "0" ]; then
-   echo "[Error] Sorry, phylogeny-based analysis did not finish, exiting...,!" 1>&2
+   echo "[Error] Sorry, OTU-based preliminary analysis did not finish, exiting...,!" 1>&2
     exit 1
 fi
