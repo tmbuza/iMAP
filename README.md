@@ -187,7 +187,6 @@ bash iMAP/code/dockerImages.sh
 # Individual image
 
 docker pull tmbuza/imagename.
-
 ```
 
 ### Confirm the installation
@@ -207,7 +206,6 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash code/01_metadataProfiling_driver.bash
 exit
-
 ```
 
 <br>
@@ -221,8 +219,9 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctool
 bash code/02_readPreprocess_driver.bash
 
 exit
-
 ```
+
+<br>
 
 ### Preprocessing progress report
 ```{}
@@ -232,8 +231,9 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash code/progressreport2.bash
 exit
-
 ```
+
+<br>
 
 ### Sequence Processing and classification
 
@@ -242,7 +242,6 @@ exit
 ```{}
 containerName=mothurseqprocessing
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
-
 ```
 
 2. Run the sequence processing and classification command which implements the folllowing:
@@ -256,9 +255,7 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
     * Estimates the sequencing error rate.
 
 ```{}
-
 bash ./code/03_imapClassifySEQ_driver.bash 
-
 ```
 
 <br>
@@ -283,7 +280,6 @@ bash ./code/04_2_otucluster_driver.bash
     
 ```{}
 bash ./code/04_3_phylogeny_driver.bash
-
 ```
 
 <br>
@@ -296,7 +292,6 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash code/progressreport3.bash
 exit
-
 ```
 
 <br>
@@ -310,6 +305,8 @@ bash code/datatransformation.bash
 exit
 ```
 
+<br>
+
 ### Statistical analysis
 > Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to most important statistical analyses in microbiome studies:
 
@@ -322,6 +319,8 @@ exit
 * [More...](https://mothur.org/wiki/Category:Commands)
 
 
+<br>
+
 
 ### OTU analysis progress report
 ```{}
@@ -331,7 +330,6 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash code/progressreport4.bash
 exit
-
 ```
 
 ### Sequence Processing and Classification with QIIME2
@@ -351,7 +349,6 @@ wget -O "./data/references/gg-13-8-99-515-806-nb-classifier.qza" "https://data.q
 
 ```{}
 wget -O "./data/references/gg-13-8-99-nb-classifier.qza" "https://data.qiime2.org/2019.4/common/gg-13-8-99-nb-classifier.qza")
-
 ```
 
 <br>
@@ -364,7 +361,6 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 bash code/qiime2/qiime2.bash
 
 exit
-
 ```
 
 ### Convert mothur biom file using QIIME2
@@ -376,6 +372,5 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 
 bash code/qiime2/convertmothur_biom.bash
 exit
-
 ```
 
