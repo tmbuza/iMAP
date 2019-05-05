@@ -22,3 +22,5 @@ if [ "$?" != "0" ]; then
    echo "[Error] Sorry, OTU-based preliminary analysis did not finish, exiting...,!" 1>&2
     exit 1
 fi
+
+mv mothur.*.logfile LOG
