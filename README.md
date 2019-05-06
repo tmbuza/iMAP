@@ -333,12 +333,14 @@ exit
 	* The 515-806 conservative fragments (iMAP defaultue to its small size).
 		* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
 	*  Alternatives QIIME-formatted classifiers are available including SILVA and Full length greengenes (see link on Table 1).
+<br>
 
+**1. 515-806 conservative fragments**
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 ```
 
-* Full length greengenes classifier can be downloaded using the following command.
+**2. Full length greengenes classifier**
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
 ```
