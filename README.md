@@ -340,6 +340,26 @@ bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
 ```
+>If using full length greengenes or any other classifiers make sure that you change the parameter in the executable file: Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the name of your favorable one.
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Parameter to change</strong></th>
+<th align="left"><strong>Filename</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td align="left">Classifier</td><td align="left">iMAP/code/qiime2/qiime2.bash</td><td>gg-13-8-99-515-806-nb-classifier.qza</td>
+</tr>
+
+</tr>
+</tbody>
+</table>
+
 
 <br>
 
