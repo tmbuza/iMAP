@@ -61,7 +61,6 @@ The first step is to gather all the materials needed for implementing the iMAP p
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
 
-
 # OR
 
 curl -LOk https://github.com/tmbuza/iMAP/archive/master.zip
@@ -69,9 +68,7 @@ unzip master.zip
 mv iMAP-master iMAP
 rm -rf master.zip
 
-
 # OR
-
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
 unzip master.zip
