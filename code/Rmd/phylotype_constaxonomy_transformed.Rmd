@@ -396,7 +396,7 @@ dim(genusprop)
 * This assumes that 1st column in each file is SampleID
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.demo.tsv", col_names = T)
+samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
 
 variables <- samplemetadata %>% select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
