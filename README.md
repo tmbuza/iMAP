@@ -336,7 +336,7 @@ exit
 bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 ```
 
-* Full length
+* Full length greengenes classifier can be downloaded using the following command.
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
 ```
