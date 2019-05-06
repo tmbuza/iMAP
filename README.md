@@ -345,10 +345,13 @@ bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 <br>
 
 **Download full length greengenes classifier**
+
+If using full length greengenes or any other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file.
+
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
 ```
->If using full length greengenes or any other pretrained QIIME2-formatted classifiers make sure that you change the parameter in the executable file: Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the name of your favorable classifier.
+>Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the name of your favorable classifier.
 
 <table>
 <thead>
