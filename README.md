@@ -283,7 +283,6 @@ bash ./code/04_3_phylogeny_driver.bash
 
 ### Sequence processing progress report
 ```{}
-
 containerName=report3
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
