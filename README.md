@@ -347,7 +347,7 @@ bash code/qiime2_gg_classifier_fragments.bash
 
 * Full length
 ```{}
-bash code/qiime2_gg_classifier_full.bash
+bash code/qiime2_gg_classifier_fulllength.bash
 
 ```
 
