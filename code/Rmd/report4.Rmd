@@ -12,12 +12,15 @@ biblio-style: apalike
 ---
 
 
-```{r child='global_setup.Rmd', include=FALSE}
-
-```
-
-
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.path='./images/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+# knitr::opts_chunk$set(fig.path='./images/pdf/', fig.show='asis',  dev = 'pdf', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+load("./Rpackages.RData")
+load("./functions.RData")
 load("../../results/tables/phylotype/otutaxon.RData")
 ```
 
