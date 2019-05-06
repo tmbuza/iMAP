@@ -22,3 +22,5 @@ if [ "$?" != "0" ]; then
 fi
 
 mv mothur.*.logfile LOG
+
+rm *.temp
