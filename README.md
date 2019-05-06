@@ -368,7 +368,7 @@ The output is a file containing OTUs and taxonomy
 ```{}
 
 containerName=biomconvertmothur
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2:core /bin/bash
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
 
 bash code/qiime2/convertmothur_biom.bash
 exit
