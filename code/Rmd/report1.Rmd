@@ -12,14 +12,21 @@ biblio-style: apalike
 
 ---
 
-```{r child='global_setup.Rmd', echo=FALSE}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.path='./img/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+# knitr::opts_chunk$set(fig.path='./images/pdf/', fig.show='asis',  dev = 'pdf', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
 
+load("./Rpackages.RData")
 ```
 
 <br>
 
 
-```{r}
+```{r include=FALSE}
 
 samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
@@ -39,7 +46,13 @@ names(variables)[2] <- "origID"
 
 
 ```{r message=FALSE, warning=FALSE}
-knitr::kable(metadata_status, "html", position = "center", booktabs = TRUE)
+library(dplyr)
+# library(kableExtra)
+
+# show data
+metadata_status %>% knitr::kable() 
+# %>%
+#   kable_styling(bootstrap_options = "striped", full_width = T)
 
 ```
 
@@ -57,7 +70,10 @@ When reviewing metadata status you may notice that numeric variables are confuse
 **First 5 lines of mapping metadata**
 
 ```{r message=FALSE, warning=FALSE}
-knitr::kable(head(variables, 5), "html", position = "center", booktabs = TRUE)
+
+variables %>% head(5)  %>% knitr::kable() 
+# %>%
+  # kable_styling(bootstrap_options = "striped", full_width = T)
 ```
 
 <br>
@@ -66,7 +82,10 @@ knitr::kable(head(variables, 5), "html", position = "center", booktabs = TRUE)
 **Last 5 lines of mapping metadata**
 
 ```{r message=FALSE, warning=FALSE}
-knitr::kable(tail(variables, 5), "html", position = "center", booktabs = TRUE)
+
+variables %>% tail(5)  %>% knitr::kable() 
+# %>%
+  # kable_styling(bootstrap_options = "striped", full_width = T)
 ```
 
 <br>
@@ -101,7 +120,7 @@ ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  co
 
 ### Metadata profiling 
 
-* QN1: Are there samples to be removed from the analysis based on their frequency?
+* QN1: Are there samples to be removed from the analysis based on their count?
 * QN2: Are there enough variables for downstream diversity and statistical analysis?
 * QN3: .......?
 * QN4: .......?
@@ -115,3 +134,4 @@ sessionInfo()
 ```
 
 <br>
+
