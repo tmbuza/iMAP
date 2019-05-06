@@ -341,13 +341,13 @@ exit
 * The 515-806 conservative fragments 
 	* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
 ```{}
-bash code/qiime2_gg_classifier_fragments.bash
+bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 
 ```
 
 * Full length
 ```{}
-bash code/qiime2_gg_classifier_fulllength.bash
+bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
 
 ```
 
