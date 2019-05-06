@@ -11,10 +11,46 @@ subtitle: 'Pre-processing of paired-reads'
 biblio-style: apalike
 ---
 
-```{r child='global_setup.Rmd', echo=FALSE}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.path='./img/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+# knitr::opts_chunk$set(fig.path='./images/pdf/', fig.show='asis',  dev = 'pdf', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+load("./Rpackages.RData")
+
+library(ggplot2)
+library(scales)
+
+noxlabels <- theme(axis.text.x=element_blank())
+italic = theme(axis.text = element_text(face = "italic", size = 12))
+xitalic = theme(axis.text.x = element_text(face = "italic", size = 12))
+yitalic = theme(axis.text.y = element_text(face = "italic", size = 12))
+rightlegend <- theme(legend.position="right")
+bottomlegend <- theme(legend.position="bottom")
+leftlegend <- theme(legend.position="left")
+nolegend <- theme(legend.position="none")
+noxticks <- theme(axis.text.x=element_blank())
+noxlabels <- theme(axis.text.x=element_blank())
+noxtitle <- theme(axis.title.x=element_blank())
+noyticks <- theme(axis.text.y=element_blank())
+noylabels <- theme(axis.text.y=element_blank())
+noytitle <- theme(axis.title.y=element_blank())
+
+xbreaks5 <- scale_x_continuous(labels = comma, breaks=scales::pretty_breaks(n=5))
+xbreaks10 <- scale_x_continuous(labels = comma, breaks=scales::pretty_breaks(n=10))
+xbreaks15 <- scale_x_continuous(labels = comma, breaks=scales::pretty_breaks(n=15))
+
+ybreaks5 <- scale_y_continuous(labels = comma, breaks=scales::pretty_breaks(n=5))
+ybreaks10 <- scale_y_continuous(labels = comma, breaks=scales::pretty_breaks(n=10))
+ybreaks15 <- scale_y_continuous(labels = comma, breaks=scales::pretty_breaks(n=15))
+noxticks <- theme(axis.text.x=element_blank())
 
 ```
 
+<br>
 
 ```{r}
 
@@ -186,9 +222,9 @@ readbar1 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (8 samples)", 
+          xlab = "Data Points (360 samples)", 
           legend.title = ""
-          ) #+ noxlabels
+          ) + noxlabels
 
 ggpubr::ggarrange(readbar1, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
 
@@ -211,9 +247,9 @@ readbar2 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (8 samples)", 
+          xlab = "Data Points (360 samples)", 
           legend.title = ""
-          ) #+ noxlabels
+          ) + noxlabels
 
 ggpubr::ggarrange(readbar2, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
 
@@ -237,11 +273,12 @@ readbar3 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (8 samples)", 
+          xlab = "Data Points (360 samples)", 
           legend.title = ""
-          ) #+ noxlabels
+          ) + noxlabels
 
-ggpubr::ggarrange(readbar3, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+
+ggpubr::ggarrange(readbar3, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "none", align = "hv", labels = "")
 
 ```
 
@@ -339,9 +376,9 @@ readbar4 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (8 samples)", 
+          xlab = "Data Points (360 samples)", 
           legend.title = ""
-          ) #+ noxlabels
+          ) + noxlabels + nolegend
 
 ggpubr::ggarrange(readbar4, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "top", align = "hv", labels = "")
 
@@ -668,3 +705,4 @@ sessionInfo()
 ```
 
 <br>
+
