@@ -89,7 +89,7 @@ qiime phylogeny midpoint-root \
 ## TAXONOMY ANALYSIS
 ### Greengenes classifiation
 time qiime feature-classifier classify-sklearn \
- ## --i-classifier $PWD/data/references/gg-13-8-99-nb-classifier.qza \
+##  --i-classifier $PWD/data/references/gg-13-8-99-nb-classifier.qza \
   --i-classifier $PWD/data/references/gg-13-8-99-515-806-nb-classifier.qza \
   --i-reads $PWD/data/qiime2/rep-seqs.qza \
   --o-classification $PWD/data/qiime2/greengenes-taxonomy.qza
