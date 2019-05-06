@@ -200,7 +200,6 @@ docker images
 
 ### Metadata profiling
 ```{}
-
 containerName=report1
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
