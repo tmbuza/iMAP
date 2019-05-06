@@ -194,7 +194,7 @@ readbar1 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels
 
@@ -219,7 +219,7 @@ readbar2 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels
 
@@ -245,7 +245,7 @@ readbar3 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels
 
@@ -348,7 +348,7 @@ readbar4 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Number of reads",
-          xlab = "Data Points (360 samples)", 
+          xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels + nolegend
 
