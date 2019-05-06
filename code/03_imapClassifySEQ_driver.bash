@@ -43,6 +43,7 @@ fi
 
 mv mothur.*.logfile LOG
 
+rm *.temp
 
 # bash ./code/otutaxonomy/iMAP_otutaxonomy_driver.bash
 
