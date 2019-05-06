@@ -327,11 +327,12 @@ exit
 ### Sequence Processing and Classification with QIIME2
 * Requires a QIIME2 trained classifer. 
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
-* Default classifier: Pretrained on GreenGenes database with 99% OTUs.
+* Default classifier: Naive Bayes classifiers trained on on GreenGenes database with 99% OTUs. 
+	* The 515-806 conservative fragments is chosen due to its small size.
+	* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
 
 ### Download greengenes classifier for QIIME2.
-* The 515-806 conservative fragments 
-	* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
+
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 ```
