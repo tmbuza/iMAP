@@ -55,9 +55,6 @@ rm *.temp
 
 # mv mothur.*.logfile LOG
 
-# rm *.temp
-
-
 # bash ./code/annotation/01_processed_seqs.bash # Summarizing processed sequences
 # bash ./code/annotation/02_merge_summary_files.bash # Merge summary files to evaluate read length
 
