@@ -212,7 +212,6 @@ exit
 
 ### Read Preprocessing
 ```{}
-
 containerName=readpreprocess
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
 
@@ -225,7 +224,6 @@ exit
 
 ### Preprocessing progress report
 ```{}
-
 containerName=report2
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
@@ -324,7 +322,6 @@ exit
 
 ### OTU analysis progress report
 ```{}
-
 containerName=report4
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
@@ -363,7 +360,6 @@ exit
 ### Convert mothur biom file using QIIME2
 The output is a file containing OTUs and taxonomy
 ```{}
-
 containerName=biomconvertmothur
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
 
