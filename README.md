@@ -346,7 +346,7 @@ bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 
 **Download full length greengenes classifier**
 
-If using full length greengenes or any other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file (see details below)
+If using full length greengenes or any other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file (see details below).
 
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
