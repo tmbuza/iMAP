@@ -224,6 +224,8 @@ Figure x: Stacked barplots of processed sequences grouped by processing variable
 
 ### Boxplots grouped by process
 ```{r, fig.height=6, fig.width=10,}
+library(scales)
+
 boxforintext2 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
                 color = "variable", palette =c("rainbow"),
                 add = "jitter", shape = 19) +  xlab("") + ylab("Sequence depth") + ggtitle("") + nolegend +
