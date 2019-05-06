@@ -70,6 +70,7 @@ reports/*.html
 *.qsub*
 mothur*logfile
 *temp*
+bbmap
 code/mothur
 code/FastQC
 code/Rmd/report*.html
@@ -86,5 +87,5 @@ code/Rmd/*Casestudy.Rmd
 # Hidden files
 .~*
 ._*
-
+*.swp
 
