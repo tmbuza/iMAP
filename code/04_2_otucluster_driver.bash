@@ -6,14 +6,12 @@ if [ "$?" != "0" ]; then
 fi
 
 
+# mothur code/otutaxonomy/04_processed_seqs.bash
 
-mothur code/otutaxonomy/04_processed_seqs.bash
-
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, the command failed, exiting...,!" 1>&2
-    exit 1
-fi
-
+# if [ "$?" != "0" ]; then
+#     echo "[Error] Sorry, the command failed, exiting...,!" 1>&2
+#     exit 1
+# fi
 
 mothur code/dataanalysis/02_otus_analysis.batch
 
