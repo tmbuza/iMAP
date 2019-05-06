@@ -337,14 +337,14 @@ exit
 	
 <br>
 
-**1. 515-806 conservative fragments**
+**Download 515-806 conservative fragments**
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 ```
 	
 <br>
 
-**2. Full length greengenes classifier**
+**Download full length greengenes classifier**
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
 ```
