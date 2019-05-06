@@ -342,13 +342,11 @@ exit
 	* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
-
 ```
 
 * Full length
 ```{}
 bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
-
 ```
 
 <br>
@@ -359,7 +357,6 @@ containerName=qiime2classification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
 
 bash code/qiime2/qiime2.bash
-
 exit
 ```
 
