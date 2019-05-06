@@ -18,11 +18,8 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(comment = NA)
 knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
-
 load("./Rpackages.RData")
-
 load("./functions.RData")
-
 ```
 
 <br>
