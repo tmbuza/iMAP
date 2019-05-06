@@ -341,14 +341,14 @@ exit
 * The 515-806 conservative fragments 
 	* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
 ```{}
-wget -O "./data/references/gg-13-8-99-515-806-nb-classifier.qza" "https://data.qiime2.org/2019.4/common/gg-13-8-99-515-806-nb-classifier.qza")
+bash code/qiime2_gg_classifier_fragments.bash
 
 ```
 
 * Full length
-
 ```{}
-wget -O "./data/references/gg-13-8-99-nb-classifier.qza" "https://data.qiime2.org/2019.4/common/gg-13-8-99-nb-classifier.qza")
+bash code/qiime2_gg_classifier_full.bash
+
 ```
 
 <br>
