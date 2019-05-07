@@ -168,6 +168,8 @@ set.seed(110912)
 f_readcount.v.m <- reshape2::melt(readcount.v[,-c(9:11)], id = c("SampleID", "origID" , "Sex","Time","DayID"))
 r_readcount.v.m <- reshape2::melt(readcount.v[,-c(6:8)], id = c("SampleID", "origID" , "Sex","Time","DayID"))
 
+f_readcount.v.m$value <- as.numeric(f_readcount.v.m$value)
+f_readcount.v.m$value <- f_readcount.v.m$value/1000
 ```
 
 
@@ -492,9 +494,6 @@ r_timedensplot <- ggdensity(r_readcount.v.m, x = "value",
 
 ````{r paperplots, fig.height=4, fig.width=10}
 library(dplyr)
-
-f_readcount.v.m$value <- as.numeric(f_readcount.v.m$value)
-f_readcount.v.m$value <- f_readcount.v.m$value/1000
 
 sexboxplot <- ggboxplot(f_readcount.v.m, x = "Sex", y = "value", alpha = 0.8,
    color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
