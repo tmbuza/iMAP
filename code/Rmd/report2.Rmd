@@ -75,7 +75,7 @@ qcstatsR2_2 <- qcstatsR2[order(qcstatsR2$File),]
 readcountR1.v <- cbind(variables[,-6], qcstatsR1[,-1])
 readcountR2.v <- cbind(variables[,-6], qcstatsR2[,-1])
 
-# Number of readss in forward and reverse are equal
+# Number of reads in forward and reverse are equal
 readcount.v <- cbind(readcountR1.v, readcountR2.v[,-c(1:5)])
 # dim(readcount.v)
 # names(readcount.v)
@@ -96,13 +96,13 @@ load(file = "../../results/readcount.RData")
 ```{r readsum}
 qc0r1 <-sum(readcountR1.v$Original_R1)
 qc0r1perc <-(qc0r1/qc0r1)*100
-cat("Number of forward reads before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
+cat("Number of forward reads (thousand) before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
 
 qc0r2 <-sum(readcountR2.v$Original_R2)
 qc0r2perc <-(qc0r2/qc0r2)*100
-cat("Number of reverse reads before QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
+cat("Number of reverse reads before (thousand) QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
 
-cat("Total number of reads before QC:\t", qc0r1 + qc0r2)
+cat("Total number of reads before (thousand) QC:\t", qc0r1 + qc0r2)
 
 cat("\n\n")
 ```
@@ -193,7 +193,7 @@ readbar1 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           # sort.val = "desc",           # Sort the value in ascending order
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
-          ylab = "Number of reads",
+          ylab = "Number of reads (thousand)",
           xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels
@@ -218,7 +218,7 @@ readbar2 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           # sort.val = "desc",           # Sort the value in ascending order
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
-          ylab = "Number of reads",
+          ylab = "Number of reads (thousand)",
           xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels
@@ -244,7 +244,7 @@ readbar3 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           # sort.val = "desc",           # Sort the value in ascending order
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
-          ylab = "Number of reads",
+          ylab = "Number of reads (thousand)",
           xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels
@@ -347,7 +347,7 @@ readbar4 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
           # sort.val = "desc",           # Sort the value in ascending order
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
-          ylab = "Number of reads",
+          ylab = "Number of reads (thousand)",
           xlab = "Data Points", 
           legend.title = ""
           ) + noxlabels + nolegend
@@ -370,11 +370,11 @@ library(ggpubr)
 
 boxforintext1 <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
                 color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
-                add = "point", shape = "variable") +  xlab("") + ylab("Number of reads") + ggtitle("")
+                add = "point", shape = "variable") +  xlab("") + ylab("Number of reads (thousand) (thousand)") + ggtitle("")
 
 boxforintext2 <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
                 color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
-                add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads") + ggtitle("")
+                add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("")
 
 ggpubr::ggarrange(boxforintext1, boxforintext2, ncol = 1, nrow = 2,  common.legend = TRUE, legend = "none", align = "v", labels = "AUTO")
 ```
@@ -393,7 +393,7 @@ library(ggpubr)
 readdens <- f_timedensplot <- ggdensity(f_readcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack",
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)")+
   facet_wrap(~variable) + theme(legend.position="none")
 
 readdens
@@ -410,7 +410,7 @@ readdens
 readdhist <- f_timedensplot <- gghistogram(f_readcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack",
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)")+
   facet_wrap(~variable) + theme(legend.position="none")
 
 readdhist
@@ -435,11 +435,11 @@ library(ggpubr)
 
 f_readbox <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
                 color = "Sex", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
-                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads") + ggtitle("Forward reads") + facet_grid(~ Time)
+                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("Forward reads") + facet_grid(~ Time)
 
 r_readbox <- ggboxplot(r_readcount.v.m, x = "variable", y = "value",
                 color = "Sex", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
-                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads") + ggtitle("Reverse reads") + facet_grid(~ Time)
+                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("Reverse reads") + facet_grid(~ Time)
 
 ggpubr::ggarrange(f_readbox, r_readbox, ncol = 1, nrow = 2,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
 ```
@@ -472,14 +472,14 @@ r_sexdensplot <- ggdensity(r_readcount.v.m, x = "value",
 f_timedensplot <- ggdensity(f_readcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack",
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads") + ylab("Count")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)") + ylab("Count")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Forward reads")
 
 # Reverse read (Sex)
 r_timedensplot <- ggdensity(r_readcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack",
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Reverse reads")
 ```
 
@@ -564,14 +564,14 @@ r_sexhistplot <- gghistogram(r_readcount.v.m, x = "value",
 f_timehistplot <- gghistogram(f_readcount.v.m, x = "value",
    add = "mean", rug = TRUE, bins = 25,
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads") + ylab("Count")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)") + ylab("Count")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Forward reads")
 
 # Reverse read (Sex)
 r_timehistplot <- gghistogram(r_readcount.v.m, x = "value",
    add = "mean", rug = TRUE, bins = 25,
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Reverse reads")
 ```
 
@@ -597,19 +597,19 @@ ggpubr::ggarrange(f_sexhistplot, f_timehistplot, r_sexhistplot, r_timehistplot, 
 ```{r readcount, echo=FALSE, message=FALSE, warning=FALSE}
 qc0r1 <-sum(readcountR1.v$Original_R1)
 qc0r1perc <-(qc0r1/qc0r1)*100
-cat("Number of forward reads before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
+cat("Number of forward reads (thousand) before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
 
 qc0r2 <-sum(readcountR2.v$Original_R2)
 qc0r2perc <-(qc0r2/qc0r2)*100
-cat("Number of reverse reads before QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
+cat("Number of reverse reads before (thousand) QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
 
-# cat("Total Reads before QC:\t", qc0r1 + qc0r2)
+# cat("Total Reads before (thousand) QC:\t", qc0r1 + qc0r2)
 
 cat("\n\n")
 
 qctrim25r1 <-sum(readcountR1.v$TrimQ25_R1)
 qctrim25r1perc <-(qctrim25r1/qc0r1)*100
-cat("Number of forward reads after trimming at Q=25 (TrimQ25_R1):\t", qctrim25r1, "(",qctrim25r1perc,"%",")\n") 
+cat("Number of forward reads (thousand) after trimming at Q=25 (TrimQ25_R1):\t", qctrim25r1, "(",qctrim25r1perc,"%",")\n") 
 
 qctrim25r2 <-sum(readcountR2.v$TrimQ25_R2)
 qctrim25r2perc <-(qctrim25r2/qc0r1)*100
@@ -622,7 +622,7 @@ cat("\n\n")
 qctrim25r1 <-sum(readcountR1.v$TrimQ25_R1)
 qcedr1 <-sum(readcountR1.v$NophiX_R1)
 qcedr1perc <-(qcedr1/qc0r1)*100
-cat("Number of forward reads after phiX removal (NophiX_R1):\t", qcedr1, "(",qcedr1perc,"%",")\n") 
+cat("Number of forward reads (thousand) after phiX removal (NophiX_R1):\t", qcedr1, "(",qcedr1perc,"%",")\n") 
 
 qcedr2 <-sum(readcountR2.v$NophiX_R2)
 qcedr2perc <-(qcedr2/qc0r1)*100
