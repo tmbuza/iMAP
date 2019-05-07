@@ -490,58 +490,56 @@ r_timedensplot <- ggdensity(r_readcount.v.m, x = "value",
 
 <!-- Figure x: Density plots of pre-processed read grouped by QC variables. Mean values are indicated by the dotted lines and marginal rugs are shown at the bottom. -->
 
-```{r paperplots, fig.height=4, fig.width=10}
+````{r paperplots, fig.height=4, fig.width=10}
+library(dplyr)
 
-readboxplot <- ggboxplot(f_readcount.v.m, x = "Time", y = "value",
+f_readcount.v.m$value <- as.numeric(f_readcount.v.m$value)
+f_readcount.v.m$value <- f_readcount.v.m$value/1000
+
+sexboxplot <- ggboxplot(f_readcount.v.m, x = "Sex", y = "value", alpha = 0.8,
    color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
-   add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads") + ggtitle("") + facet_grid(~ Sex) + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+   add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("") +# facet_grid(~ time) + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
+timeboxplot <- ggboxplot(f_readcount.v.m, x = "Time", y = "value", alpha = 0.8,
+   color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+   add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("") +# facet_grid(~ Sex) + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
   theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
 
 sexdensplot <- ggdensity(f_readcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack",
+   add = "median", rug = FALSE, position = "stack", alpha = 0.8,
    color = "variable", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Density")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Density")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
-  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold"))
 
 timedensplot <- ggdensity(f_readcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack",
+   add = "median", rug = FALSE, position = "stack", alpha = 0.8,
    color = "variable", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Density")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Density")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
   theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
 
 sexhistplot <- gghistogram(f_readcount.v.m, x = "value",
-   add = "mean", rug = TRUE, bins = 25,
+   add = "median", rug = FALSE, bins = 25, position = "stack", alpha = 0.8,
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
   theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
 timehistplot <- gghistogram(f_readcount.v.m, x = "value",
-   add = "mean", rug = TRUE, bins = 25,
+   add = "median", rug = FALSE, bins = 25, position = "stack", alpha = 0.8,
    color = "white", fill = "variable",
-   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads") + ylab("Count")+
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
   theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
   theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
 
-
-# ggpubr::ggarrange(boxplot, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
-# ggpubr::ggarrange(sexdensplot, timedensplot, ncol = 2, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
-# ggpubr::ggarrange(sexhistplot, timehistplot, ncol = 2, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
 ```
 
-
-<!-- <br> -->
+<br>
 
 ```{r paper_preprocplots, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
-
-plots <- cowplot::align_plots(readboxplot, sexdensplot,  sexhistplot, align = 'v', axis = 'l')
-top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h')
-middle_row <- cowplot::plot_grid(plots[[2]], timedensplot, labels = "", align = 'h', rel_widths = c(1, 1))
-bottom_row <- cowplot::plot_grid(plots[[3]], timehistplot, labels = "", align = 'h', rel_widths = c(1, 1))
-
-# ggpubr::ggarrange(top_row, middle_row, bottom_row, ncol = 1, nrow=3, common.legend = TRUE, legend = "bottom", align = "hv", labels = "AUTO", rel_heights = c(1.8, 1.2, 1.2))
-cowplot::plot_grid(top_row, middle_row, bottom_row, ncol = 1, rel_heights = c(1.8, 1.4, 1.4), labels = "")
+ggpubr::ggarrange(sexboxplot, timeboxplot, sexdensplot,  timedensplot,  sexhistplot, timehistplot, ncol = 2, nrow=3, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
 
 ```
 
