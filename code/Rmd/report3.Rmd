@@ -48,13 +48,13 @@ save(contigrpt, alignrpt, file = "../../results/mergealignreport.RData")
 ```{r alignreport, include=FALSE}
 load("../../results//mergealignreport.RData")
 contigrpt_2 <- contigrpt[c(2,3,6)]
-names(contigrpt_2) <- c("SeqLength","Overlap_Length","MisMatches")
+names(contigrpt_2) <- c("SequenceLength","OverlapLength","MisMatches")
 
 write.table(contigrpt_2,"../../results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
 
 alignrpt_2 <- alignrpt[c(2,12,16)]
-names(alignrpt_2) <- c("QueryLength","PairwiseAlignmentLength","SimBtwnQuery.Template")
+names(alignrpt_2) <- c("QueryLength","AlignmentLength","PercentIdentity")
 
 write.table(alignrpt_2,"../../results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
 
