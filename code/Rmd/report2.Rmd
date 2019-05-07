@@ -639,9 +639,7 @@ cat("Number of reverse reads after phiX removal (NophiX_R2):\t", qcedr2, "(",qce
 
 ```{r summarystats, message=FALSE, warning=FALSE}
 readsummary <- summary(readcount.v[,-c(1:5)])
-
-knitr::kable(readsummary, "html", booktabs = TRUE)
-
+readsummary %>% knitr::kable()
 ```
 
 <br>
