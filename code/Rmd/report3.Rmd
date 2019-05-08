@@ -646,6 +646,8 @@ cat("Number of reverse reads after phiX removal (NophiX_R2):\t", qcedr2, "(",qce
 
 <hr>
 
+> Shows summary of the exact number of sequences remaining at each step in 4-quantiles.
+
 ```{r summarystats, message=FALSE, warning=FALSE}
  summary(readcount.v[,-c(1:5)])
 ```
