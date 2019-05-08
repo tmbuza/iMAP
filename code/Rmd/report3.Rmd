@@ -437,8 +437,10 @@ timeintext_histplot
 
 <br><hr>
 
-### Multiple varieties of plots for same data
+
 ```{r pubready, fig.height=4, fig.width=8}
+### Multiple varieties of plots for same data
+
 seqcount.v.m$variable <- as.factor(seqcount.v.m$variable)
 seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
 
@@ -541,6 +543,9 @@ bottom_row <- cowplot::plot_grid(plots[[4]], timeintext_histplot, labels = "", a
 
 ggpubr::ggarrange(top_row, middle_row1,  middle_row2, bottom_row, ncol = 1, nrow=4, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
 ```
+
+<br>
+<br>
 
 
 # Posible questions {-}
