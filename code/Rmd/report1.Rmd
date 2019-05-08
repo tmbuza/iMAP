@@ -26,10 +26,17 @@ load("./functions.RData")
 <br>
 
 
-```{r include=FALSE}
 
+```{r include=FALSE}
 samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
 colnames(samplemetadata)[1] <- "SampleID"
+names(samplemetadata)
+
+samplemetadata$SampleID <- as.factor(samplemetadata$SampleID)
+samplemetadata$origID <- as.factor(samplemetadata$origID)
+samplemetadata$Sex <- as.factor(samplemetadata$Sex)
+samplemetadata$DayID <- as.factor(samplemetadata$DayID)
+samplemetadata$DPW <- as.factor(samplemetadata$DPW)
 
 metadata_status <- funModeling::df_status(samplemetadata)
 
@@ -37,7 +44,11 @@ metadata_status <- funModeling::df_status(samplemetadata)
 library(dplyr)
 variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
 names(variables)[2] <- "origID"
+
+save(samplemetadata, variables, file = "metadatavars.RData")
 ```
+
+
 
 
 ## Status of metadata
