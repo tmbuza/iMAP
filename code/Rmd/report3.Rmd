@@ -11,8 +11,9 @@ subtitle: 'Sequence Processing and classification'
 biblio-style: apalike
 ---
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.path='./images/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(fig.path='./img/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
 # knitr::opts_chunk$set(fig.path='./images/pdf/', fig.show='asis',  dev = 'pdf', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(comment = NA)
@@ -20,7 +21,16 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 load("./Rpackages.RData")
 load("./functions.RData")
+
+library(ggplot2)
+formatPlot <-   
+  theme(plot.title = element_text(size = 12, face = "bold")) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text = element_text(hjust = 1, size = 8))+
+  theme(axis.title=element_text(size=10,face="bold")) +
+  theme(axis.text.x = element_text(hjust=0.5))
 ```
+
 
 ```{r message=FALSE, warning=FALSE}
 
@@ -39,37 +49,18 @@ names(variables)[2] <- "origID"
 
 ```{r mergereportdata, message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
+
+# assembly report
 contigrpt <- readr::read_table2(file = "../../data/mothur/qced.contigs.report")
-alignrpt <- readr::read_table2(file = "../../data/mothur/qced.trim.contigs.good.unique.align.report")
-save(contigrpt, alignrpt, file = "../../results/mergealignreport.RData")
-```
-
-
-```{r alignreport, include=FALSE}
-load("../../results//mergealignreport.RData")
 contigrpt_2 <- contigrpt[c(2,3,6)]
 names(contigrpt_2) <- c("SequenceLength","OverlapLength","MisMatches")
 
-write.table(contigrpt_2,"../../results/tables/contigrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
-
-
+# alignment report
+alignrpt <- readr::read_table2(file = "../../data/mothur/qced.trim.contigs.good.unique.align.report")
 alignrpt_2 <- alignrpt[c(2,12,16)]
 names(alignrpt_2) <- c("QueryLength","AlignmentLength","PercentIdentity")
 
-write.table(alignrpt_2,"../../results/tables/alignrpt_2.tsv", append = FALSE, quote = FALSE, sep="\t", row.names = FALSE, col.names = TRUE, qmethod = c("escape", "double"), fileEncoding = "")
-
-```
-
-```{r, fig.height=6, fig.width=10, include=FALSE}
-p1 <- funModeling::plot_num(contigrpt_2)
-p2 <- funModeling::plot_num(alignrpt_2)
-```
-
-<br>
-
-## Features of assembled sequences 
-```{r fig.height=3, fig.width=8}
-p1
+save(contigrpt, contigrpt_2, alignrpt, alignrpt_2, file = "../../results/mergealignreport.RData")
 ```
 
 
@@ -78,16 +69,39 @@ p1
 ## Descriptive statistics of assembled sequence
 ```{r message=FALSE, warning=FALSE}
 
-knitr::kable(summary(contigrpt_2), "html", position = "center", booktabs = TRUE)
-
+knitr::kable(summary(contigrpt_2))
 ```
 
-<br>
+<!-- ## Plot features of assembled sequences  -->
+```{r}
+library(ggplot2)
+library(dplyr)
 
-## Features of aligned sequences 
+# Barplot
+seqlen <- contigrpt_2 %>%
+  ggplot( aes(x=SequenceLength)) +
+    geom_bar(stat="count", fill="blue4", binwidth = 50) +
+    theme_grey()  + 
+    labs(x = "Sequence Length", y = "Sequences Count") +
+  # xbreaks5 +
+  ybreaks5 + formatPlot
 
-```{r fig.height=3, fig.width=8}
-p2
+overlaplen <- contigrpt_2 %>%
+  ggplot( aes(x=OverlapLength)) +
+    geom_bar(stat="count", fill="blue4", binwidth =25) +
+    theme_grey()  + 
+    labs(x = "Overlap Length", y = "Sequences Count") +
+  # xbreaks5 +
+  ybreaks5 + formatPlot
+
+mismatch <- contigrpt_2 %>%
+  ggplot( aes(x=MisMatches)) +
+    geom_bar(stat="count", fill="blue4", binwidth = 10) +
+    theme_grey()  +
+    labs(x = "Number of Mismatch", y = "Sequences Count") +
+  # xbreaks5 +
+  ybreaks5 + formatPlot
+
 ```
 
 <br>
@@ -96,8 +110,51 @@ p2
 
 ```{r message=FALSE, warning=FALSE}
 knitr::kable(summary(alignrpt_2))
+```
+
+<br>
+
+<!-- ## Plot features of aligned sequences  -->
+```{r align}
+library(ggplot2)
+library(dplyr)
+
+# Barplot
+querylen <- alignrpt_2 %>%
+  ggplot( aes(x=QueryLength)) +
+    geom_bar(stat="count", fill="green4", binwidth = 50) +
+    theme_grey() +
+    labs(x = "Query Length", y = "Sequences Count") +
+  # xbreaks5 +
+  ybreaks5 + formatPlot
+
+alignlen <- alignrpt_2 %>%
+  ggplot( aes(x=AlignmentLength)) +
+    geom_bar(stat="count", fill="green4", binwidth = 50) +
+    theme_grey() + xlim(0, 310) +
+    labs(x = "Alignment Length", y = "Sequences Count") +
+  # xbreaks5 +
+  ybreaks5 + formatPlot
+
+idperc <- alignrpt_2 %>%
+  ggplot( aes(x=PercentIdentity)) +
+    geom_bar(stat="count", fill="green4", binwidth = 10) +
+    theme_grey() +
+    labs(x = "Percent Identity", y = "Sequences Count") +
+  # xbreaks5 +
+  ybreaks5 + formatPlot
 
 ```
+
+<br>
+
+## Features of assembled and aligned sequences 
+
+```{r contalignpubready}
+ggpubr::ggarrange(seqlen, overlaplen, mismatch, querylen, alignlen, idperc, ncol = 3, nrow = 2, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
+```
+
+
 
 ## Number of processed sequences 
 ```{bash}
@@ -110,9 +167,6 @@ paste -d'\t' \
 ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count.summary \
 ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count.summary \
 >../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv
-
-
-# paste -d'\t' ../../data/mothur/phylotype/00_processed_seqs/qced.contigs.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.good.count.summary  ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count.summary ../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count.summary >../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv
 
 echo -e "SampleID\tOriginal\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/processedSeqs.tsv
 cut -f1,2,4,6,8,10,12,14 ../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv >>../../results/tables/processedSeqs.tsv
@@ -192,11 +246,13 @@ seqcount.v.m <- reshape2::melt(seqcount.v, id = c("SampleID", "origID", "Sex", "
 
 # seqcount.v.m <- seqcount.v.m[-c(41:48),]
 seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
+
 ```
 
-<br>
+<br><hr>
 
 ### Stacked barplot {-}
+>Note that it for large number of samples it is difficult to plot the x-axis. In such situation it is good to split the samples (see example below)
 
 ```{r seqbar1, fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
 
@@ -209,77 +265,277 @@ seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
 seqcount.v.m$variable <- as.factor(seqcount.v.m$variable)
 
 seqbar1 <- ggplot(seqcount.v.m, aes(x = reorder(SampleID, -value), y = value, fill = variable)) +
-geom_bar(stat = "identity") +
-labs(x = "Data Point", y = "Sequence depth", title = "") +
-theme(axis.text=element_text(size=10))
+geom_bar(stat = "identity", position = "stack") +
+labs(x = "Data Points", y = "Sequence depth", title = "") +
+theme(axis.text=element_text(size=10)) +
+  noxlabels +
+  ybreaks10
 
 ggpubr::ggarrange(seqbar1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
 
 ```
 
-Figure x: Stacked barplots of processed sequences grouped by processing variable
+<br>
 
+## Subsampling examples
+### Samples with less than 2000 sequences
+```{r echo=TRUE}
+library(dplyr)
+subsetlt2000 <- seqcount.v.m %>% as.data.frame() %>% dplyr::filter(value <2000)
+```
+
+```{r}
+subsetlt2000 <- ggplot(subsetlt2000, aes(x = reorder(SampleID, value), y = value, fill = variable)) +
+  theme_classic() +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(x = "Data Points", y = "Sequence depth", title = "") +
+  theme(axis.text=element_text(size=10)) +
+  ybreaks10 +
+  mediumaxislayout 
+
+ggpubr::ggarrange(subsetlt2000, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
+```
+
+<br>
+<hr>
+
+### Barplots showing maximum sequence depth grouped by process
+
+```{r barforintext1, fig.height=4, fig.width=8}
+library(scales)
+barforintext1 <- ggplot(seqcount.v.m, aes(x = variable, y = value, fill= variable)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  ggpubr::color_palette("rainbow")+
+  ggpubr::theme_classic2() +
+  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") + nolegend +
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) +
+  theme(axis.text.y=element_text(size=10)) +
+  theme(axis.title=element_text(size=10,face="bold")) + cleanup + theme(legend.position="none")+
+  scale_y_continuous(breaks=pretty_breaks(n=8)) +
+  theme(axis.text.x = element_text(hjust=0.5))
+
+ggpubr::ggarrange(barforintext1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
+```
 
 <br>
 
 ### Boxplots grouped by process
-```{r, fig.height=6, fig.width=10,}
+```{r, boxforintext2, fig.height=4, fig.width=8}
 library(scales)
 
-boxforintext2 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
-                color = "variable", palette =c("rainbow"),
-                add = "jitter", shape = 19) +  xlab("") + ylab("Sequence depth") + ggtitle("") + nolegend +
+boxforintext1 <- ggplot(seqcount.v.m, aes(x = variable, y = value)) +
+  geom_boxplot(aes(color = variable), size = 0.7) +
+  geom_jitter(aes(color = variable), size = 1, width = 0.20, shape = 19) +
+  ggpubr::color_palette("rainbow")+
+  theme_classic() +
+  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") + 
   theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) +
   theme(axis.text.y=element_text(size=10)) +
-  theme(axis.title=element_text(size=10,face="bold"))+ cleanup+ theme(legend.position="none")+
-  scale_y_continuous(breaks=pretty_breaks(n=8))
-boxforintext2
+  theme(axis.title=element_text(size=10,face="bold")) + 
+  theme(legend.position="none") +
+  scale_y_continuous(breaks=pretty_breaks(n=8)) +
+  theme(axis.text.x = element_text(hjust=0.5))
+
+ggpubr::ggarrange(boxforintext1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
+
 ```
 
 <br>
 
-### Boxplots grouped by sex and time
-```{r boxrpt3_2, , fig.height=6, fig.width=10}
+### Boxplots grouped by sex
+```{r boxplot2, fig.height=4, fig.width=8}
 
-boxplot <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
+boxplot2 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
                 color = "Sex", palette =c("rainbow"),
                 add = "jitter") +  xlab("") + ylab("Sequence depth") + ggtitle("")  
-ggpubr::ggarrange(boxplot, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
+
+ggpubr::ggarrange(boxplot2, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
 ```
 
 <br>
 
-### Density plots
-```{r, fig.height=4, fig.width=8,}
+### Boxplots grouped by time
+```{r boxplot3, fig.height=4, fig.width=8}
 
+boxplot3 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
+                color = "Time", palette =c("rainbow"),
+                add = "jitter") +  xlab("") + ylab("Sequence depth") + ggtitle("")  
+
+ggpubr::ggarrange(boxplot3, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
+```
+
+<br><hr>
+
+### Density plots grouped by sex and time
+
+```{r sexintext_densplot, fig.height=4, fig.width=8}
 sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.05,
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
-   palette = c("rainbow")) + xlab("Sequence depth") + ylab("Density") +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) +
-  theme(axis.text.y=element_text(size=10)) +
-  theme(axis.title=element_text(size=10,face="bold"))+ cleanup+ theme(legend.position="right")+
-  scale_x_continuous(breaks=pretty_breaks(n=8))
+   palette = c("rainbow")) + 
+    labs(x = "Sequence depth", y ="Density", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Sex) +
+  xbreaks10
 sexintext_densplot
-```
 
-<br>
-
-```{r fig.height=4, fig.width=8, message=FALSE, warning=FALSE}
 timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "dodge", alpha = 0.05,
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
-   palette = c("rainbow")) + xlab("Sequence depth") + ylab("Density") +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) +
-  theme(axis.text.y=element_text(size=10)) +
-  theme(axis.title=element_text(size=10,face="bold"))+ cleanup+ theme(legend.position="right")+
-  scale_x_continuous(breaks=pretty_breaks(n=8))
+   palette = c("rainbow")) +   
+  labs(x = "Sequence depth", y ="Density", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Time) +
+  xbreaks10
 timeintext_densplot
 ```
 
+### Histograms grouped by sex and time
+
+```{r sexintext_histplot, fig.height=4, fig.width=8}
+sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
+   color = "variable", fill = "variable",
+   palette = c("rainbow")) + 
+    labs(x = "Sequence depth", y ="Count", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Sex) +
+  xbreaks10
+sexintext_histplot
+
+
+timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
+   color = "variable", fill = "variable",
+   palette = c("rainbow")) +   
+  labs(x = "Sequence depth", y ="Count", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=12,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Time) +
+  xbreaks10
+timeintext_histplot
+```
+
+<br><hr>
+
+### Multiple varieties of plots for same data
+```{r pubready, fig.height=4, fig.width=8}
+seqcount.v.m$variable <- as.factor(seqcount.v.m$variable)
+seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
+
+
+barforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value, fill= variable)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  ggpubr::color_palette("rainbow")+
+  ggpubr::theme_classic2() +
+  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") +
+  theme(axis.text.x=element_text(size=14, angle = 0, hjust=0.5)) +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) + 
+  scale_y_continuous(breaks=pretty_breaks(n=8)) +
+  theme(legend.position="top") + formatPlot
+# barforintext
+
+
+boxforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value)) +
+  geom_boxplot(aes(color = variable), size = 0.7) +
+  geom_jitter(aes(color = variable), size = 1, width = 0.20, shape = 19) +
+  ggpubr::color_palette("rainbow")+
+  ggpubr::theme_classic2() +
+  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") + 
+  nolegend +
+  theme(axis.text.x=element_text(size=14, angle = 0, hjust = 1)) +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+    nolegend +
+  scale_y_continuous(breaks=pretty_breaks(n=8)) +
+  theme(axis.text.x = element_text(hjust=0.5)) + formatPlot
+# boxforintext
+
+sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
+   color = "variable", fill = "variable",
+   palette = c("rainbow")) + 
+    labs(x = "Sequence depth", y ="Density", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Sex) +
+  xbreaks10 + formatPlot
+# sexintext_densplot
+
+timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
+   color = "variable", fill = "variable",
+   palette = c("rainbow")) +   
+  labs(x = "Sequence depth", y ="Density", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Time) +
+  xbreaks10 + formatPlot
+# timeintext_densplot
+
+sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
+   color = "variable", fill = "variable",
+   palette = c("rainbow")) + 
+    labs(x = "Sequence depth", y ="Count", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Sex) +
+  xbreaks10 + formatPlot
+# sexintext_histplot
+
+
+timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
+   color = "variable", fill = "variable",
+   palette = c("rainbow")) +   
+  labs(x = "Sequence depth", y ="Count", title = "") +
+    nolegend +
+  theme(axis.text.y=element_text(size=14)) +
+  theme(axis.title=element_text(size=12,face="bold")) +
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
+  facet_grid(~Time) +
+  xbreaks10 + formatPlot
+# timeintext_histplot
+```
+
 
 <br>
+
+## Publication-ready figure
+
+* All subplots on single plot: 
+```{r paper_procplots, fig.height=14, fig.width=14, message=FALSE, warning=FALSE}
+
+plots <- cowplot::align_plots(barforintext, boxforintext,  sexintext_densplot, sexintext_histplot, align = 'v', axis = 'l')
+top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h')
+middle_row1<- cowplot::plot_grid(plots[[2]], labels = "", align = 'h')
+middle_row2 <- cowplot::plot_grid(plots[[3]], timeintext_densplot, labels = "", align = 'h', rel_widths = c(1, 1))
+bottom_row <- cowplot::plot_grid(plots[[4]], timeintext_histplot, labels = "", align = 'h', rel_widths = c(1, 1))
+
+ggpubr::ggarrange(top_row, middle_row1,  middle_row2, bottom_row, ncol = 1, nrow=4, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO", rel_heights = c(1.8, 1.2, 1.4, 1.4))
+
+```
+
+
 
 # Posible questions {-}
 
