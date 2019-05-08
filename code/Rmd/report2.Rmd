@@ -10,9 +10,8 @@ link-citations: yes
 subtitle: 'Pre-processing of paired-reads'
 biblio-style: apalike
 ---
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.path='./images/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(fig.path='./img/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
 # knitr::opts_chunk$set(fig.path='./images/pdf/', fig.show='asis',  dev = 'pdf', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(comment = NA)
@@ -20,19 +19,31 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 load("./Rpackages.RData")
 load("./functions.RData")
+load("casestudy_samplemetadata.RData")
+load("metadatavars.RData")
+
+library(ggplot2)
+formatPlot <- theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text = element_text(hjust = 1, size = 8))+      
+  theme(axis.title=element_text(size=10,face="bold")) + 
+  theme(plot.title = element_text(size = 10, face = "bold")) +
+  theme(axis.text.x = element_text(hjust=0.5))
+
 ```
 
-<br>
+
 
 ```{r}
-
-samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
-colnames(samplemetadata)[1] <- "SampleID"
-
-# Subsetting metadata for mapping to output from dowmstream analysis
-library(dplyr)
-variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-names(variables)[2] <- "origID"
+# load("casestudy_samplemetadata.RData")
+# 
+# 
+# # samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
+# colnames(samplemetadata)[1] <- "SampleID"
+# 
+# # Subsetting metadata for mapping to output from dowmstream analysis
+# library(dplyr)
+# variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
+# names(variables)[2] <- "origID"
 ```
 
 <br>
@@ -638,11 +649,10 @@ cat("Number of reverse reads after phiX removal (NophiX_R2):\t", qcedr2, "(",qce
 <hr>
 
 ```{r summarystats, message=FALSE, warning=FALSE}
-readsummary <- summary(readcount.v[,-c(1:5)])
-readsummary %>% knitr::kable()
+ summary(readcount.v[,-c(1:5)])
 ```
 
-<br>
+<br><br>
 
 # Posible questions {-}
 
