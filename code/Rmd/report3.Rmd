@@ -21,6 +21,7 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 load("./Rpackages.RData")
 load("./functions.RData")
+load("metadatavars.RData")
 
 library(ggplot2)
 formatPlot <-   
@@ -42,13 +43,13 @@ formatPlot2 <-
 
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
-colnames(samplemetadata)[1] <- "SampleID"
-
-# Subsetting metadata for mapping to output from dowmstream analysis
-library(dplyr)
-variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-names(variables)[2] <- "origID"
+# samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
+# colnames(samplemetadata)[1] <- "SampleID"
+# 
+# # Subsetting metadata for mapping to output from dowmstream analysis
+# library(dplyr)
+# variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
+# names(variables)[2] <- "origID"
 ```
 
 
@@ -110,6 +111,7 @@ mismatch <- contigrpt_2 %>%
   # xbreaks5 +
   ybreaks5 + formatPlot
 
+ggpubr::ggarrange(seqlen, overlaplen, mismatch, ncol = 3, nrow = 2, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
 ```
 
 <br>
@@ -122,7 +124,8 @@ knitr::kable(summary(alignrpt_2))
 
 <br>
 
-<!-- ## Plot features of aligned sequences  -->
+## Features of aligned sequences
+igned sequences  -->
 ```{r align}
 library(ggplot2)
 library(dplyr)
@@ -152,11 +155,14 @@ idperc <- alignrpt_2 %>%
   # xbreaks5 +
   ybreaks5 + formatPlot
 
+ggpubr::ggarrange(querylen, alignlen, idperc, ncol = 3, nrow = 1, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
 ```
 
 <br>
+<br>
 
-## Features of assembled and aligned sequences 
+
+## Publication-ready figure: Assembled and aligned sequences
 
 ```{r contalignpubready}
 ggpubr::ggarrange(seqlen, overlaplen, mismatch, querylen, alignlen, idperc, ncol = 3, nrow = 2, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
@@ -164,7 +170,7 @@ ggpubr::ggarrange(seqlen, overlaplen, mismatch, querylen, alignlen, idperc, ncol
 
 
 
-## Number of processed sequences 
+## Summary statistics of processed sequences
 ```{bash}
 paste -d'\t' \
 ../../data/mothur/phylotype/00_processed_seqs/qced.contigs.count.summary \
@@ -179,43 +185,7 @@ paste -d'\t' \
 echo -e "SampleID\tOriginal\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/processedSeqs.tsv
 cut -f1,2,4,6,8,10,12,14 ../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv >>../../results/tables/processedSeqs.tsv
 
-head ../../results/tables/processedSeqs.tsv
-
 ```
-
-<br>
-
-## Summary of sequence length in eaach sample
-
-```{bash}
-
-paste -d'\t' \
-../../data/mothur/qced.trim.contigs.summary \
-../../data/mothur/qced.trim.contigs.good.unique.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.summary \
-../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.summary \
->../../data/mothur/phylotype/00_processed_seqs/seqsummary.tsv
-
-echo -e "Original\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/seqsummary.tsv
-cut -f4,11,18,25,32,39,46 ../../data/mothur/phylotype/00_processed_seqs/seqsummary.tsv >>../../results/tables/seqsummary.tsv
-
-head ../../results/tables/seqsummary.tsv
-
-```
-
-## Inspect sequence length
-```{r}
-library(ggplot2)
-seqlen <- readr::read_table2("../../results/tables/seqsummary.tsv")
-seqlen <- seqlen[-1,]
-
-seqlen
-```
-
-
 
 
 ```{r processedseqdata, message=FALSE, warning=FALSE}
@@ -225,26 +195,75 @@ processedseqs <- read_table2(file="../../results/tables/processedSeqs.tsv", col_
 # names(processedseqs)
 # dim(processedseqs)
 
-processedseqs <- processedseqs[-c(9:10),] # Remove Mock rows. Be sure to remove only the rows that contains the Mock data
+# Define variables (Very very very important!)
 
-seqcount.v <- cbind(variables, processedseqs[,-2])
-names(seqcount.v)[7] <- "Group"
-# funModeling::df_status(seqcount.v)
-
-```
-
-<br>
+processedseqs$SampleID <- as.factor(processedseqs$SampleID)
+processedseqs$Original <- as.numeric(processedseqs$Original)
+processedseqs$Screened <- as.numeric(processedseqs$Screened)
+processedseqs$Aligned <- as.numeric(processedseqs$Aligned)
+processedseqs$Denoised <- as.numeric(processedseqs$Denoised)
+processedseqs$NonChimeric <- as.numeric(processedseqs$NonChimeric)
+processedseqs$BacteriaOnly <- as.numeric(processedseqs$BacteriaOnly)
+processedseqs$NoMock <- as.numeric(processedseqs$NoMock)
 
 ## Summary statistics of processed sequences
-```{r}
-# names(seqcount.v[,8:13])
-summary(seqcount.v[,8:13])
+processedseqs <- processedseqs %>% dplyr::filter(SampleID != "Mock" & SampleID != "Mock2") # Remove Mock rows. Be sure to remove only the rows that contains the Mock data
 
+processedseqs %>% head(10) %>% kable()
+
+seqcount.v <- cbind(variables, processedseqs)
+
+summary(processedseqs[,-1])
 ```
 
 <br>
 
-## Distribution of processed sequences {-}
+## View first 10 sequence length
+
+```{bash}
+paste -d'\t' \
+../../data/mothur/qced.trim.contigs.summary \
+../../data/mothur/qced.trim.contigs.good.unique.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary \
+../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.summary \
+../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.summary \
+>../../data/mothur/phylotype/00_processed_seqs/seqlenth.tsv
+
+echo -e "Original\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/seqlenth.tsv
+cut -f4,11,18,25,32,39,46 ../../data/mothur/phylotype/00_processed_seqs/seqlenth.tsv >>../../results/tables/seqlenth.tsv
+
+```
+
+```{r}
+library(dplyr)
+library(readr)
+seqlen <- read_table2(file="../../results/tables/seqlenth.tsv", col_names = TRUE)
+# names(seqlen)
+# dim(seqlen)
+
+# Define variables (Very very very important!)
+
+seqlen$Original <- as.numeric(seqlen$Original)
+seqlen$Screened <- as.numeric(seqlen$Screened)
+seqlen$Aligned <- as.numeric(seqlen$Aligned)
+seqlen$Denoised <- as.numeric(seqlen$Denoised)
+seqlen$NonChimeric <- as.numeric(seqlen$NonChimeric)
+seqlen$BacteriaOnly <- as.numeric(seqlen$BacteriaOnly)
+seqlen$NoMock <- as.numeric(seqlen$NoMock)
+
+## Summary statistics of processed sequences
+
+seqlen %>% head(10)
+
+```
+
+
+
+<br>
+
+## Graphical distribution of processed sequences {-}
 
 <hr>
 
