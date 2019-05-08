@@ -29,6 +29,14 @@ formatPlot <-
   theme(axis.text = element_text(hjust = 1, size = 8))+
   theme(axis.title=element_text(size=10,face="bold")) +
   theme(axis.text.x = element_text(hjust=0.5))
+
+
+formatPlot2 <-   
+  theme(plot.title = element_text(size = 16, face = "bold")) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text = element_text(hjust = 1, size = 12))+
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x = element_text(hjust=0.5))
 ```
 
 
@@ -444,7 +452,7 @@ barforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value, fill= variable
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) + 
   scale_y_continuous(breaks=pretty_breaks(n=8)) +
-  theme(legend.position="top") + formatPlot
+  theme(legend.position="top") + formatPlot2
 # barforintext
 
 
@@ -460,7 +468,7 @@ boxforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value)) +
   theme(axis.title=element_text(size=14,face="bold")) +
     nolegend +
   scale_y_continuous(breaks=pretty_breaks(n=8)) +
-  theme(axis.text.x = element_text(hjust=0.5)) + formatPlot
+  theme(axis.text.x = element_text(hjust=0.5)) + formatPlot2
 # boxforintext
 
 sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
@@ -473,7 +481,7 @@ sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
   facet_grid(~Sex) +
-  xbreaks10 + formatPlot
+  xbreaks10 + formatPlot2
 # sexintext_densplot
 
 timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
@@ -486,7 +494,7 @@ timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
   facet_grid(~Time) +
-  xbreaks10 + formatPlot
+  xbreaks10 + formatPlot2
 # timeintext_densplot
 
 sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
@@ -499,7 +507,7 @@ sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
   facet_grid(~Sex) +
-  xbreaks10 + formatPlot
+  xbreaks10 + formatPlot2
 # sexintext_histplot
 
 
@@ -513,7 +521,7 @@ timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   theme(axis.title=element_text(size=12,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
   facet_grid(~Time) +
-  xbreaks10 + formatPlot
+  xbreaks10 + formatPlot2
 # timeintext_histplot
 ```
 
@@ -523,18 +531,16 @@ timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
 ## Publication-ready figure
 
 * All subplots on single plot: 
-```{r paper_procplots, fig.height=14, fig.width=14, message=FALSE, warning=FALSE}
+```{r paper_procplots, echo=FALSE, fig.height=14, fig.width=14, message=FALSE, warning=FALSE}
 
 plots <- cowplot::align_plots(barforintext, boxforintext,  sexintext_densplot, sexintext_histplot, align = 'v', axis = 'l')
-top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h')
-middle_row1<- cowplot::plot_grid(plots[[2]], labels = "", align = 'h')
-middle_row2 <- cowplot::plot_grid(plots[[3]], timeintext_densplot, labels = "", align = 'h', rel_widths = c(1, 1))
-bottom_row <- cowplot::plot_grid(plots[[4]], timeintext_histplot, labels = "", align = 'h', rel_widths = c(1, 1))
+top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h', rel_heights = c(1.4, 1.4))
+middle_row1<- cowplot::plot_grid(plots[[2]], labels = "", align = 'h', rel_heights = c(1, 1))
+middle_row2 <- cowplot::plot_grid(plots[[3]], timeintext_densplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
+bottom_row <- cowplot::plot_grid(plots[[4]], timeintext_histplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
 
-ggpubr::ggarrange(top_row, middle_row1,  middle_row2, bottom_row, ncol = 1, nrow=4, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO", rel_heights = c(1.8, 1.2, 1.4, 1.4))
-
+ggpubr::ggarrange(top_row, middle_row1,  middle_row2, bottom_row, ncol = 1, nrow=4, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
 ```
-
 
 
 # Posible questions {-}
