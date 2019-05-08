@@ -1,5 +1,5 @@
 ---
-title: "Progress report 3"
+title: "Progress report 2"
 bibliography: ../../library/imap.bib
 date: 'Updated: `r Sys.time()`'
 output:
@@ -7,10 +7,9 @@ output:
     css: ../../code/css/report.css
     # keep_md: yes
 link-citations: yes
-subtitle: 'Sequence Processing and classification'
+subtitle: 'Pre-processing of paired-reads'
 biblio-style: apalike
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(fig.path='./img/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
@@ -21,29 +20,25 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 load("./Rpackages.RData")
 load("./functions.RData")
+load("casestudy_samplemetadata.RData")
 load("metadatavars.RData")
 
 library(ggplot2)
-formatPlot <-   
-  theme(plot.title = element_text(size = 12, face = "bold")) +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text = element_text(hjust = 1, size = 8))+
-  theme(axis.title=element_text(size=10,face="bold")) +
+formatPlot <- theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text = element_text(hjust = 1, size = 8))+      
+  theme(axis.title=element_text(size=10,face="bold")) + 
+  theme(plot.title = element_text(size = 10, face = "bold")) +
   theme(axis.text.x = element_text(hjust=0.5))
 
-
-formatPlot2 <-   
-  theme(plot.title = element_text(size = 16, face = "bold")) +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text = element_text(hjust = 1, size = 12))+
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x = element_text(hjust=0.5))
 ```
 
 
-```{r message=FALSE, warning=FALSE}
 
-# samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
+```{r}
+# load("casestudy_samplemetadata.RData")
+# 
+# 
+# # samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
 # colnames(samplemetadata)[1] <- "SampleID"
 # 
 # # Subsetting metadata for mapping to output from dowmstream analysis
@@ -52,558 +47,636 @@ formatPlot2 <-
 # names(variables)[2] <- "origID"
 ```
 
-
 <br>
 
-
-```{r mergereportdata, message=FALSE, warning=FALSE, include=FALSE}
-library(readr)
-
-# assembly report
-contigrpt <- readr::read_table2(file = "../../data/mothur/qced.contigs.report")
-contigrpt_2 <- contigrpt[c(2,3,6)]
-names(contigrpt_2) <- c("SequenceLength","OverlapLength","MisMatches")
-
-# alignment report
-alignrpt <- readr::read_table2(file = "../../data/mothur/qced.trim.contigs.good.unique.align.report")
-alignrpt_2 <- alignrpt[c(2,12,16)]
-names(alignrpt_2) <- c("QueryLength","AlignmentLength","PercentIdentity")
-
-save(contigrpt, contigrpt_2, alignrpt, alignrpt_2, file = "../../results/mergealignreport.RData")
-```
-
-
-<br>
-
-## Descriptive statistics of assembled sequence
-```{r message=FALSE, warning=FALSE}
-
-knitr::kable(summary(contigrpt_2))
-```
-
-<!-- ## Plot features of assembled sequences  -->
-```{r}
-library(ggplot2)
+```{r loadreaddata, message=FALSE, warning=FALSE, include=FALSE}
 library(dplyr)
 
-# Barplot
-seqlen <- contigrpt_2 %>%
-  ggplot( aes(x=SequenceLength)) +
-    geom_bar(stat="count", fill="blue4", binwidth = 50) +
-    theme_grey()  + 
-    labs(x = "Sequence Length", y = "Sequences Count") +
-  # xbreaks5 +
-  ybreaks5 + formatPlot
+qc0statR1 <- readr::read_table2(file="../../results/stats/qc0/R1qcstats.txt", col_names = TRUE)
+qc0statR2 <- readr::read_table2(file="../../results/stats/qc0/R2qcstats.txt", col_names = TRUE)
+qctrim25statR1 <- readr::read_table2(file="../../results/stats/qctrim25/R1qcstats.txt", col_names = TRUE)
+qctrim25statR2 <- readr::read_table2(file="../../results/stats/qctrim25/R2qcstats.txt", col_names = TRUE)
+qcedstatR1 <- readr::read_table2(file="../../results/stats/qced/R1qcstats.txt", col_names = TRUE)
+qcedstatR2 <- readr::read_table2(file="../../results/stats/qced/R2qcstats.txt", col_names = TRUE)
 
-overlaplen <- contigrpt_2 %>%
-  ggplot( aes(x=OverlapLength)) +
-    geom_bar(stat="count", fill="blue4", binwidth =25) +
-    theme_grey()  + 
-    labs(x = "Overlap Length", y = "Sequences Count") +
-  # xbreaks5 +
-  ybreaks5 + formatPlot
-
-mismatch <- contigrpt_2 %>%
-  ggplot( aes(x=MisMatches)) +
-    geom_bar(stat="count", fill="blue4", binwidth = 10) +
-    theme_grey()  +
-    labs(x = "Number of Mismatch", y = "Sequences Count") +
-  # xbreaks5 +
-  ybreaks5 + formatPlot
-
-ggpubr::ggarrange(seqlen, overlaplen, mismatch, ncol = 3, nrow = 2, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
-```
-
-<br>
-
-## Descriptive statistics of aligned sequence
-
-```{r message=FALSE, warning=FALSE}
-knitr::kable(summary(alignrpt_2))
-```
-
-<br>
-
-## Features of aligned sequences
-igned sequences  -->
-```{r align}
-library(ggplot2)
-library(dplyr)
-
-# Barplot
-querylen <- alignrpt_2 %>%
-  ggplot( aes(x=QueryLength)) +
-    geom_bar(stat="count", fill="green4", binwidth = 50) +
-    theme_grey() +
-    labs(x = "Query Length", y = "Sequences Count") +
-  # xbreaks5 +
-  ybreaks5 + formatPlot
-
-alignlen <- alignrpt_2 %>%
-  ggplot( aes(x=AlignmentLength)) +
-    geom_bar(stat="count", fill="green4", binwidth = 50) +
-    theme_grey() + xlim(0, 310) +
-    labs(x = "Alignment Length", y = "Sequences Count") +
-  # xbreaks5 +
-  ybreaks5 + formatPlot
-
-idperc <- alignrpt_2 %>%
-  ggplot( aes(x=PercentIdentity)) +
-    geom_bar(stat="count", fill="green4", binwidth = 10) +
-    theme_grey() +
-    labs(x = "Percent Identity", y = "Sequences Count") +
-  # xbreaks5 +
-  ybreaks5 + formatPlot
-
-ggpubr::ggarrange(querylen, alignlen, idperc, ncol = 3, nrow = 1, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
-```
-
-<br>
-<br>
-
-
-## Publication-ready figure: Assembled and aligned sequences
-
-```{r contalignpubready}
-ggpubr::ggarrange(seqlen, overlaplen, mismatch, querylen, alignlen, idperc, ncol = 3, nrow = 2, align = "hv", labels = "AUTO", font.label = list(size = 12, color = "black", face = "bold", family = NULL))
-```
+qc0statR1 <- qc0statR1 %>%  filter(!grepl("*Mock*", file))
+qc0statR2 <- qc0statR2 %>%  filter(!grepl("*Mock*", file))
+qctrim25statR1 <- qctrim25statR1 %>%  filter(!grepl("*Mock*", file))
+qctrim25statR2 <- qctrim25statR2 %>%  filter(!grepl("*Mock*", file))
+qcedstatR1 <- qcedstatR1 %>%  filter(!grepl("*Mock*", file))
+qcedstatR2 <- qcedstatR2 %>%  filter(!grepl("*Mock*", file))
 
 
 
-## Summary statistics of processed sequences
-```{bash}
-paste -d'\t' \
-../../data/mothur/phylotype/00_processed_seqs/qced.contigs.count.summary \
-../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.count.summary \
-../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.good.count.summary \
-../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.count.summary \
-../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count.summary \
-../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count.summary \
-../../data/mothur/phylotype/00_processed_seqs/qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count.summary \
->../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv
+f_qc0read.v <- cbind(variables, qc0statR1[,6:8])
+r_qc0read.v <- cbind(variables, qc0statR2[,6:8])
 
-echo -e "SampleID\tOriginal\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/processedSeqs.tsv
-cut -f1,2,4,6,8,10,12,14 ../../data/mothur/phylotype/00_processed_seqs/seqdepth.tsv >>../../results/tables/processedSeqs.tsv
-
-```
+f_qc0read.v.m <- reshape2::melt(f_qc0read.v, id = c("SampleID","origID","Sex","Time","DayID","DPW"))
+r_qc0read.v.m <- reshape2::melt(r_qc0read.v, id = c("SampleID","origID","Sex","Time","DayID","DPW"))
 
 
-```{r processedseqdata, message=FALSE, warning=FALSE}
-library(dplyr)
-library(readr)
-processedseqs <- read_table2(file="../../results/tables/processedSeqs.tsv", col_names = TRUE)
-# names(processedseqs)
-# dim(processedseqs)
+qcstatsR1 <- cbind(qc0statR1[,c(1,4)],qctrim25statR1[,c(4)],qcedstatR1[,c(4)])
+qcstatsR2 <- cbind(qc0statR2[,c(1,4)],qctrim25statR2[,c(4)],qcedstatR2[,c(4)])
 
-# Define variables (Very very very important!)
+colnames(qcstatsR1) <- c("File","Original_R1","TrimQ25_R1","NophiX_R1")
+colnames(qcstatsR2) <- c("File","Original_R2","TrimQ25_R2","NophiX_R2")
 
-processedseqs$SampleID <- as.factor(processedseqs$SampleID)
-processedseqs$Original <- as.numeric(processedseqs$Original)
-processedseqs$Screened <- as.numeric(processedseqs$Screened)
-processedseqs$Aligned <- as.numeric(processedseqs$Aligned)
-processedseqs$Denoised <- as.numeric(processedseqs$Denoised)
-processedseqs$NonChimeric <- as.numeric(processedseqs$NonChimeric)
-processedseqs$BacteriaOnly <- as.numeric(processedseqs$BacteriaOnly)
-processedseqs$NoMock <- as.numeric(processedseqs$NoMock)
+qcstatsR1_2 <- qcstatsR1[order(qcstatsR1$File),]
+qcstatsR2_2 <- qcstatsR2[order(qcstatsR2$File),]
 
-## Summary statistics of processed sequences
-processedseqs <- processedseqs %>% dplyr::filter(SampleID != "Mock" & SampleID != "Mock2") # Remove Mock rows. Be sure to remove only the rows that contains the Mock data
+readcountR1.v <- cbind(variables[,-6], qcstatsR1[,-1])
+readcountR2.v <- cbind(variables[,-6], qcstatsR2[,-1])
 
-processedseqs %>% head(10) %>% kable()
+# Number of readss in forward and reverse are equal
+readcount.v <- cbind(readcountR1.v, readcountR2.v[,-c(1:5)])
+# dim(readcount.v)
+# names(readcount.v)
 
-seqcount.v <- cbind(variables, processedseqs)
-
-summary(processedseqs[,-1])
-```
-
-<br>
-
-## View first 10 sequence length
-
-```{bash}
-paste -d'\t' \
-../../data/mothur/qced.trim.contigs.summary \
-../../data/mothur/qced.trim.contigs.good.unique.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary \
-../../data/mothur/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.summary \
-../../data/mothur/phylotype/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.summary \
->../../data/mothur/phylotype/00_processed_seqs/seqlenth.tsv
-
-echo -e "Original\tScreened\tAligned\tDenoised\tNonChimeric\tBacteriaOnly\tNoMock" >../../results/tables/seqlenth.tsv
-cut -f4,11,18,25,32,39,46 ../../data/mothur/phylotype/00_processed_seqs/seqlenth.tsv >>../../results/tables/seqlenth.tsv
+save(qc0statR1, qc0statR2, qctrim25statR1, qctrim25statR2, qcedstatR1, qcedstatR2, qc0statR1, qc0statR2, qctrim25statR1, qctrim25statR2, qcedstatR1, qcedstatR2, f_qc0read.v, r_qc0read.v, f_qc0read.v.m, r_qc0read.v.m, qcstatsR1, qcstatsR2, qcstatsR1_2, qcstatsR2_2, readcountR1.v, readcountR2.v, readcount.v, readcount.v, file = "../../results/readcount.RData")
 
 ```
 
 ```{r}
-library(dplyr)
-library(readr)
-seqlen <- read_table2(file="../../results/tables/seqlenth.tsv", col_names = TRUE)
-# names(seqlen)
-# dim(seqlen)
-
-# Define variables (Very very very important!)
-
-seqlen$Original <- as.numeric(seqlen$Original)
-seqlen$Screened <- as.numeric(seqlen$Screened)
-seqlen$Aligned <- as.numeric(seqlen$Aligned)
-seqlen$Denoised <- as.numeric(seqlen$Denoised)
-seqlen$NonChimeric <- as.numeric(seqlen$NonChimeric)
-seqlen$BacteriaOnly <- as.numeric(seqlen$BacteriaOnly)
-seqlen$NoMock <- as.numeric(seqlen$NoMock)
-
-## Summary statistics of processed sequences
-
-seqlen %>% head(10)
-
+load(file = "../../results/readcount.RData")
 ```
 
+
+## Read count {-}
+
+<hr>
+
+```{r readsum}
+qc0r1 <-sum(readcountR1.v$Original_R1)
+qc0r1perc <-(qc0r1/qc0r1)*100
+cat("Number of forward reads before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
+
+qc0r2 <-sum(readcountR2.v$Original_R2)
+qc0r2perc <-(qc0r2/qc0r2)*100
+cat("Number of reverse reads before QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
+
+cat("Total Number of reads (thousand) before QC:\t", qc0r1 + qc0r2)
+
+cat("\n\n")
+```
 
 
 <br>
 
-## Graphical distribution of processed sequences {-}
+
+## Read length {-}
 
 <hr>
 
 
-```{r}
-seqcount.v.m <- reshape2::melt(seqcount.v, id = c("SampleID", "origID", "Sex", "Time", "DayID", "DPW", "Group"))
+```{r fig.height=4, fig.width=10, message=FALSE, warning=FALSE}
 
-# seqcount.v.m <- seqcount.v.m[-c(41:48),]
-seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
+library(ggpubr)
+
+# Forward read (Sex)
+f_qc0dens <- ggdensity(f_qc0read.v.m, x = "value",
+   add = "mean", rug = FALSE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Forward")
+
+
+# Reverse read (Sex)
+r_qc0dens <- ggdensity(r_qc0read.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Reverse")
+
+# Forward read (Sex)
+f_qc0hist <- gghistogram(f_qc0read.v.m, x = "value",
+   add = "mean", rug = FALSE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Forward")
+
+
+# Reverse read (Sex)
+r_qc0hist <- gghistogram(r_qc0read.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 5,
+   color = "variable", 
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Read length") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) + ggtitle("Reverse")
 
 ```
 
-<br><hr>
 
-### Stacked barplot {-}
->Note that it for large number of samples it is difficult to plot the x-axis. In such situation it is good to split the samples (see example below)
+```{r qc0readhist, fig.height=6, fig.width=10}
+ggpubr::ggarrange(f_qc0dens, r_qc0dens,  f_qc0hist, r_qc0hist, ncol = 2, nrow = 2,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
 
-```{r seqbar1, fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
+```
+
+Figure x: Density and histograms plots showing forward and reverse read length. Dotted line indicates mean value for the specified variable
+
+<br>
+
+```{r readmeltdata}
+set.seed(110912)
+
+f_readcount.v.m <- reshape2::melt(readcount.v[,-c(9:11)], id = c("SampleID", "origID" , "Sex","Time","DayID"))
+r_readcount.v.m <- reshape2::melt(readcount.v[,-c(6:8)], id = c("SampleID", "origID" , "Sex","Time","DayID"))
+
+f_readcount.v.m$value <- as.numeric(f_readcount.v.m$value)
+f_readcount.v.m$value <- f_readcount.v.m$value/1000
+```
+
+
+<br>
+
+# Distribution of raw reads {-}
+
+<br>
+
+## Barplots  {-}
+
+<hr>
+
+**Grouped by Sex variable**
+```{r readbar1, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar1 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "Sex",           # change fill color by mpg_level
+          color = "Sex",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads (thousand)",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar1, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+
+```
+
+Figure x: Barplots of pre-processed reads grouped by sex variable. 
+
+<br>
+
+**Grouped by Time variable**
+```{r readbar2, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar2 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "Time",           # change fill color by mpg_level
+          color = "Time",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads (thousand)",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar2, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+
+```
+
+Figure x: Barplots of pre-processed reads grouped by time variable
+
+<br>
+
+**Grouped by days-post-weaning (D) variable**
+
+```{r readbar3, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar3 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "DayID",           # change fill color by mpg_level
+          color = "DayID",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads (thousand)",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar3, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "none", align = "hv", labels = "")
+
+```
+
+Figure x: Barplots of pre-processed reads grouped by time variable
+
+<br>
+
+# Base call quality {-}
+
+* In the results folder you will find a folder named *multiqc* which contains data for HTML display. Right-click-open with your favorite browser
+* Using CLI: Alternatively, open the HTML file on command line by running the following commands
+
+<br>
+
+## Original base call quality (qc0) {-}
+
+<hr>
+
+
+```{}
+open ./results/multiqc/qc0/multiqc_report.html
+open ./results/multiqc/qc0/R1/multiqc_report.html
+open ./results/multiqc/qc0/R2/multiqc_report.html
+```
+
+
+<br>
+
+![](../../img/qc0_fastQC.png)
+
+Figure x: Example of report generated by running **open ./results/multiqc/qc0/multiqc_report.html** on CLI
+
+<br>
+
+## Base call quality after trimming at Q = 25 (qctrim25) {-}
+
+<hr>
+
+```{}
+open ./results/multiqc/qctrim25/multiqc_report.html
+open ./results/multiqc/qctrim25/R1/multiqc_report.html
+open ./results/multiqc/qctrim25/R2/multiqc_report.html
+```
+
+<br>
+
+![](../../img/qctrim25_fastQC.png)
+
+Figure x: Example of report generated by running **open ./results/multiqc/qced/R2/multiqc_report.html** on CLI
+
+<br>
+
+## Base call quality after removing phiX {-}
+
+<hr>
+
+```{}
+open ./results/multiqc/qced/multiqc_report.html
+open ./results/multiqc/qced/R1/multiqc_report.html
+open ./results/multiqc/qced/R2/multiqc_report.html
+
+```
+
+<br>
+
+![](../../img/qced_fastQC.png)
+
+Figure x: Example of report generated by running **open ./results/multiqc/qced/R2/multiqc_report.html** on CLI
+
+
+<br>
+
+
+# Distribution of pre-processed reads {-}
+* Bar plots
+* Box plots
+* Density plots
+* Histogram plots
+
+<br>
+
+## Stacked barplot {-}
+
+<hr>
+
+```{r readbar4, fig.height=5, fig.width=12, message=FALSE, warning=FALSE}
+
+library(ggpubr)
+
+readbar4 <- ggbarplot(f_readcount.v.m, x = "SampleID", y = "value",
+          fill = "variable",           # change fill color by mpg_level
+          color = "variable",            # Set bar border colors to white
+          palette = "rainbow",            # jco journal color palett. see ?ggpar
+          # sort.val = "desc",           # Sort the value in ascending order
+          sort.by.groups = TRUE,     # Don't sort inside each group
+          x.text.angle = 0,          # Rotate vertically x axis texts
+          ylab = "Number of reads (thousand)",
+          xlab = "Data Points (360 samples)", 
+          legend.title = ""
+          ) + noxlabels
+
+ggpubr::ggarrange(readbar4, ncol = 1, nrow = 1,  common.legend = TRUE, legend = "top", align = "hv", labels = "")
+
+```
+
+Figure x: Stacked barplots of pre-processed reads grouped by QC variable
+
+<br>
+
+## Boxplots {-}
+
+<hr>
+
+```{r boxforintext, fig.height=6, fig.width=10}
+
+library(ggpubr)
+
+boxforintext1 <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
+                color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "point", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("")
+
+boxforintext2 <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
+                color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("")
+
+ggpubr::ggarrange(boxforintext1, boxforintext2, ncol = 1, nrow = 2,  common.legend = TRUE, legend = "none", align = "v", labels = "AUTO")
+```
+
+<br>
+
+## Density plots {-}
+
+<hr>
+
+```{r fig.height=4, fig.width=10}
 
 library(ggplot2)
 library(ggpubr)
 
-seqcount.v.m$SampleID <- as.factor(seqcount.v.m$SampleID)
-seqcount.v.m$DPW <- as.factor(seqcount.v.m$DPW)
-seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
-seqcount.v.m$variable <- as.factor(seqcount.v.m$variable)
+readdens <- f_timedensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)")+
+  facet_wrap(~variable) + theme(legend.position="none")
 
-seqbar1 <- ggplot(seqcount.v.m, aes(x = reorder(SampleID, -value), y = value, fill = variable)) +
-geom_bar(stat = "identity", position = "stack") +
-labs(x = "Data Points", y = "Sequence depth", title = "") +
-theme(axis.text=element_text(size=10)) +
-  noxlabels +
-  ybreaks10
-
-ggpubr::ggarrange(seqbar1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
-
+readdens
 ```
 
 <br>
 
-## Subsampling examples
-### Samples with less than 2000 sequences
-```{r echo=TRUE}
-library(dplyr)
-subsetlt2000 <- seqcount.v.m %>% as.data.frame() %>% dplyr::filter(value <2000)
-```
+## Histograms {-}
 
-```{r}
-subsetlt2000 <- ggplot(subsetlt2000, aes(x = reorder(SampleID, value), y = value, fill = variable)) +
-  theme_classic() +
-  geom_bar(stat = "identity", position = "stack") +
-  labs(x = "Data Points", y = "Sequence depth", title = "") +
-  theme(axis.text=element_text(size=10)) +
-  ybreaks10 +
-  mediumaxislayout 
-
-ggpubr::ggarrange(subsetlt2000, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
-```
-
-<br>
 <hr>
 
-### Barplots showing maximum sequence depth grouped by process
+```{r fig.height=4, fig.width=10}
 
-```{r barforintext1, fig.height=4, fig.width=8}
-library(scales)
-barforintext1 <- ggplot(seqcount.v.m, aes(x = variable, y = value, fill= variable)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  ggpubr::color_palette("rainbow")+
-  ggpubr::theme_classic2() +
-  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") + nolegend +
-  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) +
-  theme(axis.text.y=element_text(size=10)) +
-  theme(axis.title=element_text(size=10,face="bold")) + cleanup + theme(legend.position="none")+
-  scale_y_continuous(breaks=pretty_breaks(n=8)) +
-  theme(axis.text.x = element_text(hjust=0.5))
+readdhist <- f_timedensplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)")+
+  facet_wrap(~variable) + theme(legend.position="none")
 
-ggpubr::ggarrange(barforintext1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
+readdhist
 ```
 
-<br>
+```{r eval=FALSE, fig.height=10, fig.width=10, include=FALSE}
 
-### Boxplots grouped by process
-```{r, boxforintext2, fig.height=4, fig.width=8}
-library(scales)
-
-boxforintext1 <- ggplot(seqcount.v.m, aes(x = variable, y = value)) +
-  geom_boxplot(aes(color = variable), size = 0.7) +
-  geom_jitter(aes(color = variable), size = 1, width = 0.20, shape = 19) +
-  ggpubr::color_palette("rainbow")+
-  theme_classic() +
-  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") + 
-  theme(axis.text.x=element_text(size=10, angle = 0, hjust = 1)) +
-  theme(axis.text.y=element_text(size=10)) +
-  theme(axis.title=element_text(size=10,face="bold")) + 
-  theme(legend.position="none") +
-  scale_y_continuous(breaks=pretty_breaks(n=8)) +
-  theme(axis.text.x = element_text(hjust=0.5))
-
-ggpubr::ggarrange(boxforintext1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
+ggpubr::ggarrange(readboxpoint, readboxjitter, readdhist, readdens, ncol = 1, nrow = 4,  common.legend = TRUE, legend = "none", align = "v", labels = "AUTO")
 
 ```
 
-<br>
-
-### Boxplots grouped by sex
-```{r boxplot2, fig.height=4, fig.width=8}
-
-boxplot2 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
-                color = "Sex", palette =c("rainbow"),
-                add = "jitter") +  xlab("") + ylab("Sequence depth") + ggtitle("")  
-
-ggpubr::ggarrange(boxplot2, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
-```
-
-<br>
-
-### Boxplots grouped by time
-```{r boxplot3, fig.height=4, fig.width=8}
-
-boxplot3 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
-                color = "Time", palette =c("rainbow"),
-                add = "jitter") +  xlab("") + ylab("Sequence depth") + ggtitle("")  
-
-ggpubr::ggarrange(boxplot3, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
-```
-
-<br><hr>
-
-### Density plots grouped by sex and time
-
-```{r sexintext_densplot, fig.height=4, fig.width=8}
-sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) + 
-    labs(x = "Sequence depth", y ="Density", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
-  xbreaks10
-sexintext_densplot
-
-timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) +   
-  labs(x = "Sequence depth", y ="Density", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
-  xbreaks10
-timeintext_densplot
-```
-
-### Histograms grouped by sex and time
-
-```{r sexintext_histplot, fig.height=4, fig.width=8}
-sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) + 
-    labs(x = "Sequence depth", y ="Count", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
-  xbreaks10
-sexintext_histplot
-
-
-timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) +   
-  labs(x = "Sequence depth", y ="Count", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=12,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
-  xbreaks10
-timeintext_histplot
-```
-
-<br><hr>
-
-
-```{r pubready, fig.height=4, fig.width=8}
-### Multiple varieties of plots for same data
-
-seqcount.v.m$variable <- as.factor(seqcount.v.m$variable)
-seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
-
-
-barforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value, fill= variable)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  ggpubr::color_palette("rainbow")+
-  ggpubr::theme_classic2() +
-  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") +
-  theme(axis.text.x=element_text(size=14, angle = 0, hjust=0.5)) +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) + 
-  scale_y_continuous(breaks=pretty_breaks(n=8)) +
-  theme(legend.position="top") + formatPlot2
-# barforintext
-
-
-boxforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value)) +
-  geom_boxplot(aes(color = variable), size = 0.7) +
-  geom_jitter(aes(color = variable), size = 1, width = 0.20, shape = 19) +
-  ggpubr::color_palette("rainbow")+
-  ggpubr::theme_classic2() +
-  nolegend + ybreaks10+  xlab("") + ylab("Sequence depth") + ggtitle("") + 
-  nolegend +
-  theme(axis.text.x=element_text(size=14, angle = 0, hjust = 1)) +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-    nolegend +
-  scale_y_continuous(breaks=pretty_breaks(n=8)) +
-  theme(axis.text.x = element_text(hjust=0.5)) + formatPlot2
-# boxforintext
-
-sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) + 
-    labs(x = "Sequence depth", y ="Density", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
-  xbreaks10 + formatPlot2
-# sexintext_densplot
-
-timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) +   
-  labs(x = "Sequence depth", y ="Density", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
-  xbreaks10 + formatPlot2
-# timeintext_densplot
-
-sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) + 
-    labs(x = "Sequence depth", y ="Count", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=14,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
-  xbreaks10 + formatPlot2
-# sexintext_histplot
-
-
-timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
-   add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
-   color = "variable", fill = "variable",
-   palette = c("rainbow")) +   
-  labs(x = "Sequence depth", y ="Count", title = "") +
-    nolegend +
-  theme(axis.text.y=element_text(size=14)) +
-  theme(axis.title=element_text(size=12,face="bold")) +
-  theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
-  xbreaks10 + formatPlot2
-# timeintext_histplot
-```
-
-
-<br>
-
-## Publication-ready figure
-
-* All subplots on single plot: 
-```{r paper_procplots, echo=FALSE, fig.height=14, fig.width=14, message=FALSE, warning=FALSE}
-
-plots <- cowplot::align_plots(barforintext, boxforintext,  sexintext_densplot, sexintext_histplot, align = 'v', axis = 'l')
-top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h', rel_heights = c(1.4, 1.4))
-middle_row1<- cowplot::plot_grid(plots[[2]], labels = "", align = 'h', rel_heights = c(1, 1))
-middle_row2 <- cowplot::plot_grid(plots[[3]], timeintext_densplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
-bottom_row <- cowplot::plot_grid(plots[[4]], timeintext_histplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
-
-ggpubr::ggarrange(top_row, middle_row1,  middle_row2, bottom_row, ncol = 1, nrow=4, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
-```
+<!-- Figure x: Boxplot of pre-processed reads plotted with overplotting points (A) and jitter points (B). -->
 
 <br>
 <br>
 
+```{r readjitterbox, fig.height=8, fig.width=10}
+
+library(ggpubr)
+
+# Box plots with jittered points
+
+f_readbox <- ggboxplot(f_readcount.v.m, x = "variable", y = "value",
+                color = "Sex", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("Forward reads") + facet_grid(~ Time)
+
+r_readbox <- ggboxplot(r_readcount.v.m, x = "variable", y = "value",
+                color = "Sex", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+                add = "jitter", shape = "Sex") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("Reverse reads") + facet_grid(~ Time)
+
+ggpubr::ggarrange(f_readbox, r_readbox, ncol = 1, nrow = 2,  common.legend = TRUE, legend = "right", align = "hv", labels = "")
+```
+
+
+<!-- Figure x: Boxplot of pre-processed reads by read.  -->
+
+<br>
+
+## Grouped by variable {-}
+
+```{r prebyvar, fig.height=5, fig.width=10}
+# Forward read (Sex)
+f_sexdensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("h") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_sexdensplot <- ggdensity(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Reverse reads")
+
+# Forward read (Sex)
+f_timedensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_timedensplot <- ggdensity(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, position = "stack",
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Reverse reads")
+```
+
+```{r density, fig.height=7, fig.width=10}
+# ggpubr::ggarrange(f_sexdensplot,r_sexdensplot, f_timedensplot, r_timedensplot, ncol = 2, nrow = 2,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+
+```
+
+<!-- Figure x: Density plots of pre-processed read grouped by QC variables. Mean values are indicated by the dotted lines and marginal rugs are shown at the bottom. -->
+
+```{r paperplots, fig.height=4, fig.width=10}
+library(dplyr)
+
+sexboxplot <- ggboxplot(f_readcount.v.m, x = "Sex", y = "value", alpha = 0.8,
+   color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+   add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("") +# facet_grid(~ time) + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
+timeboxplot <- ggboxplot(f_readcount.v.m, x = "Time", y = "value", alpha = 0.8,
+   color = "variable", palette =c("#00AFBB", "#E7B800", "#FC4E07"),
+   add = "jitter", shape = "variable") +  xlab("") + ylab("Number of reads (thousand)") + ggtitle("") +# facet_grid(~ Sex) + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
+sexdensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "median", rug = FALSE, position = "stack", alpha = 0.8,
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold"))
+
+timedensplot <- ggdensity(f_readcount.v.m, x = "value",
+   add = "median", rug = FALSE, position = "stack", alpha = 0.8,
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Density")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
+sexhistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "median", rug = FALSE, bins = 25, position = "stack", alpha = 0.8,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
+timehistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "median", rug = FALSE, bins = 25, position = "stack", alpha = 0.8,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("") + theme(legend.position="none") + theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
+  theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12,face="bold")) 
+
+```
+
+<br>
+
+```{r paper_preprocplots, fig.height=10, fig.width=12, message=FALSE, warning=FALSE}
+ggpubr::ggarrange(sexboxplot, timeboxplot, sexdensplot,  timedensplot,  sexhistplot, timehistplot, ncol = 2, nrow=3, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
+
+```
+
+
+
+```{r fig.height=5, fig.width=10, include=FALSE}
+# Forward read (Sex)
+f_sexhistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("h") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_sexhistplot <- gghistogram(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "variable", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Sex) + ggtitle("Reverse reads")
+
+# Forward read (Sex)
+f_timehistplot <- gghistogram(f_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) +  xlab("Number of reads (thousand)") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Forward reads")
+
+# Reverse read (Sex)
+r_timehistplot <- gghistogram(r_readcount.v.m, x = "value",
+   add = "mean", rug = TRUE, bins = 25,
+   color = "white", fill = "variable",
+   palette = c("#00AFBB", "#E7B800", "#FC4E07")) + xlab("Number of reads (thousand)") + ylab("Count")+
+  theme(axis.text.x=element_text(size=10, angle = 90, hjust = 1)) + facet_grid(~Time) + ggtitle("Reverse reads")
+```
+
+```{r histogram, eval=FALSE, fig.height=7, fig.width=10, include=FALSE}
+ggpubr::ggarrange(f_sexhistplot, f_timehistplot, r_sexhistplot, r_timehistplot, ncol = 2, nrow = 2,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+
+```
+
+<!-- Figure x: Histogram plots of pre-processed read grouped by QC variables. Mean values are indicated by the dotted lines and marginal rugs are shown at the bottom. -->
+
+<br>
+
+# Summary of pre-processed reads {-}
+
+<br>
+
+## Total read count
+
+<hr>
+
+* Sum of reads in all samples
+
+```{r readcount, echo=FALSE, message=FALSE, warning=FALSE}
+qc0r1 <-sum(readcountR1.v$Original_R1)
+qc0r1perc <-(qc0r1/qc0r1)*100
+cat("Number of forward reads before QC (Original_R1):\t", qc0r1, "(",qc0r1perc,"%",")\n") 
+
+qc0r2 <-sum(readcountR2.v$Original_R2)
+qc0r2perc <-(qc0r2/qc0r2)*100
+cat("Number of reverse reads before QC (Original_R2):\t", qc0r2, "(",qc0r2perc,"%",")\n") 
+
+# cat("Total Reads before QC:\t", qc0r1 + qc0r2)
+
+cat("\n\n")
+
+qctrim25r1 <-sum(readcountR1.v$TrimQ25_R1)
+qctrim25r1perc <-(qctrim25r1/qc0r1)*100
+cat("Number of forward reads after trimming at Q=25 (TrimQ25_R1):\t", qctrim25r1, "(",qctrim25r1perc,"%",")\n") 
+
+qctrim25r2 <-sum(readcountR2.v$TrimQ25_R2)
+qctrim25r2perc <-(qctrim25r2/qc0r1)*100
+cat("Number of reverse reads after trimming at Q=25 (TrimQ25_R2):\t", qctrim25r2, "(",qctrim25r2perc,"%",")\n") 
+
+# cat("Total Reads after trimming at Q=25:\t", qctrim25r1 + qctrim25r2)
+
+cat("\n\n")
+
+qctrim25r1 <-sum(readcountR1.v$TrimQ25_R1)
+qcedr1 <-sum(readcountR1.v$NophiX_R1)
+qcedr1perc <-(qcedr1/qc0r1)*100
+cat("Number of forward reads after phiX removal (NophiX_R1):\t", qcedr1, "(",qcedr1perc,"%",")\n") 
+
+qcedr2 <-sum(readcountR2.v$NophiX_R2)
+qcedr2perc <-(qcedr2/qc0r1)*100
+cat("Number of reverse reads after phiX removal (NophiX_R2):\t", qcedr2, "(",qcedr2perc,"%",")\n") 
+
+# cat("Total Reads after phiX removal:\t", qcedr1 + qcedr2)
+
+```
+
+<br>
+
+## Descriptive statistics
+
+<hr>
+
+```{r summarystats, message=FALSE, warning=FALSE}
+ summary(readcount.v[,-c(1:5)])
+```
+
+<br><br>
 
 # Posible questions {-}
 
 <hr>
 
-### At sequence processing 
-* QN1: Do the paired sequences overlap as expected?
-* QN2: Are there sequences to be removed from the analysis based on sequence length?
-* QN3: Does the dorminant length match the targeted region of 16S rRNA gene?
-* QN4: Are the representative sequences too few or too many? <mark>Note that too many non-redundant sequences may results from poor overlapping between forward and reverse reads. Review before proceeding to avoid misleading conclusions<mark>.
-
-
-<br>
-
-### At sequence classification {-}
-* QN1: What taxonomic classifier should be used? Think of need to develop and use custom classifier that suits the study objectives.
-* QN2: Are there sequences assigned to non-bacterial taxonomic lineages?
-* QN3: Should the matches to non-bacterial lineages be removed from further analysis?
-* QN4: .......?
-
-<br>
-
-### At error estimation {-}
-* QN1: Is the error too high to cause rejection of the results results?
-* QN2: .......?
+## At read inspection step
+* QN1: Are there samples to be removed from the analysis based on read depth?
+* QN2: Are there samples to be removed from the analysis based on read length?
 * QN3: .......?
 * QN4: .......?
 
 
 <br>
 
+## At base call quality checking step
+* QN1: Are there samples to be removed from the analysis based on read quality?
+* QN2: What are the minimum trimming parameters?
+* QN3: Is trimming both ends necessary?
+* QN4: Was phiX control used in the experiment, if so should removal of phiX contamination necessary?
+
+
+<br>
+
 ## Summary of packages used in the analysis
-
-<hr>
-
 ```{r}
 sessionInfo()
 ```
 
 <br>
-
