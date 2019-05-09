@@ -57,7 +57,7 @@ save(samplemetadata, variables, file = "metadatavars.RData")
 ### Optional renaming the categoric variables with meaningful names
 >Example using the demo dataset located in this path: iMAP/resources/metadata/samplemetadata.tsv
 
-```{r renamevars}
+```{r renamevars, eval = FALSE}
 library("knitr")
 # Original names
 variables %>% head(5) %>% knitr::kable()
@@ -79,10 +79,11 @@ varstatus <- funModeling::df_status(variables)
 
 ```{r message=FALSE, warning=FALSE}
 library(dplyr)
-# library(kableExtra)
+library(knitr)
 
 # show data
 varstatus %>% knitr::kable() 
+
 # %>%
 #   kable_styling(bootstrap_options = "striped", full_width = T)
 
