@@ -26,17 +26,22 @@ colnames(samplemetadata)[1] <- "SampleID"
 names(samplemetadata)
 
 samplemetadata$SampleID <- as.factor(samplemetadata$SampleID)
-samplemetadata$origID <- as.factor(samplemetadata$origID)
-samplemetadata$Sex <- as.factor(samplemetadata$Sex)
-samplemetadata$DayID <- as.factor(samplemetadata$DayID)
-samplemetadata$DPW <- as.factor(samplemetadata$DPW)
+samplemetadata$Var1 <- as.factor(samplemetadata$Var1)
+samplemetadata$Var2 <- as.factor(samplemetadata$Var2)
+samplemetadata$Var3 <- as.factor(samplemetadata$Var3)
+samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
+samplemetadata$Var5 <- as.factor(samplemetadata$Var5)
+
+# You can add more variables as needed
 
 metadata_status <- funModeling::df_status(samplemetadata)
 
 # Subsetting metadata for mapping to output from dowmstream analysis
 library(dplyr)
-variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-names(variables)[2] <- "origID"
+variables <- samplemetadata %>% dplyr::select("SampleID", "Var1", "Var2", "Var3", "Var4", "Var5")
+
+# Confirm variable names
+names(variables)
 
 save(samplemetadata, variables, file = "metadatavars.RData")
 ```
