@@ -15,21 +15,6 @@ load("./globalSetup.RData")
 load("metadatavars.RData")
 ```
 
-
-
-```{r}
-# load("casestudy_samplemetadata.RData")
-# 
-# 
-# # samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
-# colnames(samplemetadata)[1] <- "SampleID"
-# 
-# # Subsetting metadata for mapping to output from dowmstream analysis
-# library(dplyr)
-# variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-# names(variables)[2] <- "origID"
-```
-
 <br>
 
 ```{r loadreaddata, message=FALSE, warning=FALSE, include=FALSE}
