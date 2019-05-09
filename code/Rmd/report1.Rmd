@@ -47,8 +47,6 @@ samplemetadata$Var3 <- as.factor(samplemetadata$Var3)
 samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
 
 # Add more variables as needed
-
-save(samplemetadata, file = "metadatavars.RData")
 ```
 
 <br>
@@ -215,6 +213,12 @@ dpwhistplot <- ggpubr::gghistogram(variables2, x = "DayID", stat="count", fill =
   labs(x = "Day Code", title = "Sex variable")
 
 ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+```
+
+
+```{r}
+
+save(samplemetadata, samplemetadata2, variables, variables2, file = "metadatavars.RData")
 ```
 
 <br>
