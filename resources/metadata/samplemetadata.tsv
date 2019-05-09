@@ -1,9 +1,9 @@
-#SampleID	BarcodeSequence	ForwardPrimerSequence	ReversePrimerSequence	ForwardRead	ReverseRead	origID	Var1	Var2	Var3	Var4	Description
-F3D001	NA	NA	NA	F3D1_S189_L001_R1_001.fastq.gz	F3D1_S189_L001_R2_001.fastq.gz	F3D1	Female	Early	D001	1	iMAPtrainingSet
-F3D006	NA	NA	NA	F3D6_S194_L001_R1_001.fastq.gz	F3D6_S194_L001_R2_001.fastq.gz	F3D6	Female	Early	D006	6	iMAPtrainingSet
-F3D142	NA	NA	NA	F3D142_S208_L001_R1_001.fastq.gz	F3D142_S208_L001_R2_001.fastq.gz	F3D142	Female	Late	D142	142	iMAPtrainingSet
-F3D143	NA	NA	NA	F3D143_S209_L001_R1_001.fastq.gz	F3D143_S209_L001_R2_001.fastq.gz	F3D143	Female	Late	D143	143	iMAPtrainingSet
-M1D001	NA	NA	NA	M1D1_S2_L001_R1_001.fastq.gz	M1D1_S2_L001_R2_001.fastq.gz	M1D1	Male	Early	D001	1	iMAPtrainingSet
-M1D006	NA	NA	NA	M1D6_S7_L001_R1_001.fastq.gz	M1D6_S7_L001_R2_001.fastq.gz	M1D6	Male	Early	D006	6	iMAPtrainingSet
-M1D142	NA	NA	NA	M1D142_S21_L001_R1_001.fastq.gz	M1D142_S21_L001_R2_001.fastq.gz	M1D142	Male	Late	D142	142	iMAPtrainingSet
-M1D143	NA	NA	NA	M1D143_S22_L001_R1_001.fastq.gz	M1D143_S22_L001_R2_001.fastq.gz	M1D143	Male	Late	D143	143	iMAPtrainingSet
+#SampleID	BarcodeSequence	ForwardPrimerSequence	ReversePrimerSequence	ForwardRead	ReverseRead	Var1	Var2	Var3	Var4	Description
+F3D001	NA	NA	NA	F3D1_S189_L001_R1_001.fastq.gz	F3D1_S189_L001_R2_001.fastq.gz	Female	Early	D001	1	iMAPtrainingSet
+F3D006	NA	NA	NA	F3D6_S194_L001_R1_001.fastq.gz	F3D6_S194_L001_R2_001.fastq.gz	Female	Early	D006	6	iMAPtrainingSet
+F3D142	NA	NA	NA	F3D142_S208_L001_R1_001.fastq.gz	F3D142_S208_L001_R2_001.fastq.gz	Female	Late	D142	142	iMAPtrainingSet
+F3D143	NA	NA	NA	F3D143_S209_L001_R1_001.fastq.gz	F3D143_S209_L001_R2_001.fastq.gz	Female	Late	D143	143	iMAPtrainingSet
+M1D001	NA	NA	NA	M1D1_S2_L001_R1_001.fastq.gz	M1D1_S2_L001_R2_001.fastq.gz	Male	Early	D001	1	iMAPtrainingSet
+M1D006	NA	NA	NA	M1D6_S7_L001_R1_001.fastq.gz	M1D6_S7_L001_R2_001.fastq.gz	Male	Early	D006	6	iMAPtrainingSet
+M1D142	NA	NA	NA	M1D142_S21_L001_R1_001.fastq.gz	M1D142_S21_L001_R2_001.fastq.gz	Male	Late	D142	142	iMAPtrainingSet
+M1D143	NA	NA	NA	M1D143_S22_L001_R1_001.fastq.gz	M1D143_S22_L001_R2_001.fastq.gz	Male	Late	D143	143	iMAPtrainingSet
