@@ -59,7 +59,7 @@ save(samplemetadata, variables, file = "metadatavars.RData")
 
 ```{r renamevars}
 library(knitr)
-
+library(kable)
 # Original names
 variables %>% head(5) %>% knitr::kable()
 
