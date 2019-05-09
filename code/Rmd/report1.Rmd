@@ -14,11 +14,22 @@ biblio-style: apalike
 
 ```{r setup, include=FALSE}
 load("./globalSetup.RData")
+
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
 ```
 
 <br>
 
-
+## Transforming metadata
+* Load metadata.
+* Inspect the metadata column names.
+* Remove # sign at column one.
+* Note that Var1 starts at index 7.
+* Select important variables for downstream analysis.
+* Define each variable
 
 ```{r include=FALSE}
 samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
@@ -33,8 +44,6 @@ samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
 #samplemetadata$Var5 <- as.factor(samplemetadata$Var5)
 
 # You can add more variables as needed
-
-metadatastatus <- funModeling::df_status(samplemetadata)
 
 # Subsetting metadata for mapping to output from dowmstream analysis
 
@@ -54,26 +63,35 @@ variables$Var4 <- as.factor(variables$Var4)
 save(samplemetadata, variables, file = "metadatavars.RData")
 ```
 
-### Optional renaming the categoric variables with meaningful names
->Example using the demo dataset located in this path: iMAP/resources/metadata/samplemetadata.tsv
+<br>
+<br>
 
-```{r renamevars, eval = FALSE}
-library("knitr")
-# Original names
-variables %>% head(5) %>% knitr::kable()
-
-names(variables) <- c("SampleID", "Sex", "Time", "DayID", "DPW")
-
-# New names
-variables %>% head(5) %>% kable()
-
-```
-
-<hr>
 
 ## Status of metadata
 
-```{r}
+```{r, include=FALSE}
+metadatastatus <- funModeling::df_status(samplemetadata)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+
+# show data
+metadatastatus %>% knitr::kable() 
+
+# %>%
+#   kable_styling(bootstrap_options = "striped", full_width = T)
+
+```
+
+<br>
+<br>
+
+
+## Status of metadata
+
+```{r, include=FALSE}
 varstatus <- funModeling::df_status(variables)
 ```
 
@@ -123,7 +141,7 @@ variables %>% tail(5)  %>% knitr::kable()
 
 <br>
 
-## Frequency of experimental variables (Demo dataset)
+## Frequency of experimental variables
 
 <hr>
 
@@ -144,11 +162,84 @@ dpwhistplot <- ggpubr::gghistogram(variables, x = "Var3", stat="count", fill = "
 ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
 ```
 
+<br>
+
+
+### Renaming the categoric variables with meaningful names
+>Example using the demo dataset located in this path: iMAP/resources/metadata/samplemetadata.tsv
+
+```{r renamevars}
+library("knitr")
+# Original names
+variables2 <- variables
+
+names(variables2) <- c("SampleID", "Sex", "Time", "DayID", "DPW")
+
+# New names
+variables2 %>% head(5) %>% kable()
+
+```
+
+## Status of example metadata
+
+<br>
+
+```{r, include = FALSE}
+varstatus2 <- funModeling::df_status(variables2)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+
+# show data
+varstatus2 %>% knitr::kable() 
+
+# %>%
+#   kable_styling(bootstrap_options = "striped", full_width = T)
+
+```
+
+
+Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: frequency of the values.
+
+
+When reviewing metadata status you may notice that numeric variables are confused with numeric data. For example, variable **DPW** (days post weaning) on Table x shows 12 missing values (3.33%) which is incorrect. As investigators we know that day 1 was coded zero (0) (12 zeros for 12 mouse) which in descriptive statistics is interpreted as missing data. To correct this we re-coded the samples with unique identifies shown as DayID to distinguish them from integers. However, depending of experiment this kind of variables need to be converted to character during analysis. 
+
+<br>
+<br>
+
+## Frequency of experimental variables in the Demo dataset
+
+```{r varfreq, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
+library(ggplot2)
+#sort by dpw (descending)
+
+sexhistplot <- ggpubr::gghistogram(variables, x = "Sex", stat="count", fill = "#ff0000") + ggtitle("Sex variable")
+
+timehistplot <- ggpubr::gghistogram(variables, x = "Time", stat="count", fill = "#00ff00") + ggtitle("Time variable")
+
+# scaleFUN <- function(x) sprintf("%.0f", x)
+
+dpwhistplot <- ggpubr::gghistogram(variables, x = "DayID", stat="count", fill = "#0000ff") + ggtitle("Days post weaning")+
+  theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN)
+
+ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+```
+
+
+## Samples mapped to the categorical variables
+
+<br>
+<hr>
+<br>
+
 ## Posible questions
 
-<hr>
+<br>
 
 ### Metadata profiling 
+
 
 * QN1: Are there samples to be removed from the analysis based on their count?
 * QN2: Are there enough variables for downstream diversity and statistical analysis?
