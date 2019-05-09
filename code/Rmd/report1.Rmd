@@ -34,7 +34,7 @@ samplemetadata$Var5 <- as.factor(samplemetadata$Var5)
 
 # You can add more variables as needed
 
-metadata_status <- funModeling::df_status(samplemetadata)
+metadatastatus <- funModeling::df_status(samplemetadata)
 
 # Subsetting metadata for mapping to output from dowmstream analysis
 library(dplyr)
@@ -59,7 +59,7 @@ library(dplyr)
 # library(kableExtra)
 
 # show data
-metadata_status %>% knitr::kable() 
+metadatastatus %>% knitr::kable() 
 # %>%
 #   kable_styling(bootstrap_options = "striped", full_width = T)
 
