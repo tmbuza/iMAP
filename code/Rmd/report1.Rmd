@@ -58,8 +58,7 @@ save(samplemetadata, variables, file = "metadatavars.RData")
 >Example using the demo dataset located in this path: iMAP/resources/metadata/samplemetadata.tsv
 
 ```{r renamevars}
-library(knitr)
-library(kable)
+library("kableExtra")
 # Original names
 variables %>% head(5) %>% knitr::kable()
 
