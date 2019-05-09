@@ -1,4 +1,4 @@
-#SampleID	BarcodeSequence	ForwardPrimerSequence	ReversePrimerSequence	ForwardRead	ReverseRead	origID	Sex	Time	DayID	DPW	Description
+#SampleID	BarcodeSequence	ForwardPrimerSequence	ReversePrimerSequence	ForwardRead	ReverseRead	origID	Var1	Var2	Var3	Var4	Description
 F3D001	NA	NA	NA	F3D1_S189_L001_R1_001.fastq.gz	F3D1_S189_L001_R2_001.fastq.gz	F3D1	Female	Early	D001	1	iMAPtrainingSet
 F3D006	NA	NA	NA	F3D6_S194_L001_R1_001.fastq.gz	F3D6_S194_L001_R2_001.fastq.gz	F3D6	Female	Early	D006	6	iMAPtrainingSet
 F3D142	NA	NA	NA	F3D142_S208_L001_R1_001.fastq.gz	F3D142_S208_L001_R2_001.fastq.gz	F3D142	Female	Late	D142	142	iMAPtrainingSet
