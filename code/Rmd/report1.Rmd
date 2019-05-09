@@ -59,7 +59,7 @@ save(samplemetadata, variables, file = "metadatavars.RData")
 
 ```{r renamevars}
 # Original names
-variables %>% head(5) %>% kable()
+variables %>% head(5) %>% knitr::kable()
 
 names(variables) <- c("SampleID", "Sex", "Time", "DayID", "DPW")
 
