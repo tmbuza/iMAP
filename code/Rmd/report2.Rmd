@@ -11,39 +11,8 @@ subtitle: 'Pre-processing of paired-reads'
 biblio-style: apalike
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.path='./img/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
-# knitr::opts_chunk$set(fig.path='./images/pdf/', fig.show='asis',  dev = 'pdf', fig.align='center', out.width = "80%",  out.height = "80%", echo=TRUE, comment = NA, warning=FALSE, message=FALSE)
-knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(comment = NA)
-knitr::opts_chunk$set(message = FALSE)
-knitr::opts_chunk$set(warning = FALSE)
-load("./Rpackages.RData")
-load("./functions.RData")
-load("casestudy_samplemetadata.RData")
+load("./globalSetup.RData")
 load("metadatavars.RData")
-
-library(ggplot2)
-formatPlot <- theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text = element_text(hjust = 1, size = 8))+      
-  theme(axis.title=element_text(size=10,face="bold")) + 
-  theme(plot.title = element_text(size = 10, face = "bold")) +
-  theme(axis.text.x = element_text(hjust=0.5))
-
-```
-
-
-
-```{r}
-# load("casestudy_samplemetadata.RData")
-# 
-# 
-# # samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
-# colnames(samplemetadata)[1] <- "SampleID"
-# 
-# # Subsetting metadata for mapping to output from dowmstream analysis
-# library(dplyr)
-# variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-# names(variables)[2] <- "origID"
 ```
 
 <br>
