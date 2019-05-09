@@ -130,16 +130,13 @@ variables %>% tail(5)  %>% knitr::kable()
 library(ggplot2)
 #sort by dpw (descending)
 
+sexhistplot <- ggpubr::gghistogram(variables, x = "Var1", stat="count", fill = "#ff0000") + ggtitle("Sex variable")
 
-variables <- variables[order(variables$DPW),] 
-
-sexhistplot <- ggpubr::gghistogram(variables, x = "Sex", stat="count", fill = "#ff0000") + ggtitle("Sex variable")
-
-timehistplot <- ggpubr::gghistogram(variables, x = "Time", stat="count", fill = "#00ff00") + ggtitle("Time variable")
+timehistplot <- ggpubr::gghistogram(variables, x = "Var2", stat="count", fill = "#00ff00") + ggtitle("Time variable")
 
 # scaleFUN <- function(x) sprintf("%.0f", x)
 
-dpwhistplot <- ggpubr::gghistogram(variables, x = "DayID", stat="count", fill = "#0000ff") + ggtitle("Days post weaning")+
+dpwhistplot <- ggpubr::gghistogram(variables, x = "Var3", stat="count", fill = "#0000ff") + ggtitle("Days post weaning")+
   theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN)
 
 ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
