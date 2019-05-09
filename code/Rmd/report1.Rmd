@@ -217,9 +217,6 @@ dpwhistplot <- ggpubr::gghistogram(variables2, x = "DayID", stat="count", fill =
 ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
 ```
 
-
-## Samples mapped to the categorical variables
-
 <br>
 <hr>
 <br>
