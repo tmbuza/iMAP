@@ -28,9 +28,9 @@ names(samplemetadata)
 samplemetadata$SampleID <- as.factor(samplemetadata$SampleID)
 samplemetadata$Var1 <- as.factor(samplemetadata$Var1)
 samplemetadata$Var2 <- as.factor(samplemetadata$Var2)
-samplemetadata$Var3 <- as.factor(samplemetadata$Var3)
-samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
-samplemetadata$Var5 <- as.factor(samplemetadata$Var5)
+#samplemetadata$Var3 <- as.factor(samplemetadata$Var3)
+#samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
+#samplemetadata$Var5 <- as.factor(samplemetadata$Var5)
 
 # You can add more variables as needed
 
