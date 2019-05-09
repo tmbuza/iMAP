@@ -211,7 +211,7 @@ When reviewing metadata status you may notice that numeric variables are confuse
 
 ## Frequency of experimental variables in the Demo dataset
 
-```{r varfreq, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
+```{r varfreq2, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
 library(ggplot2)
 #sort by dpw (descending)
 
