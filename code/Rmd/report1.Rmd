@@ -127,16 +127,19 @@ variables %>% head(5)  %>% knitr::kable()
 library(ggplot2)
 
 # Var1
-var1histplot <- ggpubr::gghistogram(variables, x = "Var1", stat="count", fill = "#ff0000") + ggtitle("Sex variable")
-
+var1histplot <- ggpubr::gghistogram(variables, x = "Var1", stat="count", fill = "#ff0000") + 
+  labs(x = "Variable 1", y = "Sample count") 
+  
 # Var2
-var2histplot <- ggpubr::gghistogram(variables, x = "Var2", stat="count", fill = "#00ff00") + ggtitle("Time variable")
+var2histplot <- ggpubr::gghistogram(variables, x = "Var2", stat="count", fill = "#00ff00") + 
+  labs(x = "Variable 2", y = "Sample count") 
 
 # Var3
-var3histplot <- ggpubr::gghistogram(variables, x = "Var3", stat="count", fill = "#0000ff") + ggtitle("Days post weaning")+
-  theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN)
+var3histplot <- ggpubr::gghistogram(variables, x = "Var3", stat="count", fill = "#0000ff") + 
+  theme(axis.text.x=element_text(angle = 0, hjust = 0))+ scale_y_continuous(labels=scaleFUN) +
+  labs(x = "Variable 3", y = "Sample count") 
 
-ggpubr::ggarrange(var1histplot,var2histplot, var3histplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+ggpubr::ggarrange(var1histplot,var2histplot, var3histplot, ncol = 1, nrow = 3, align = "hv", labels = c("AUTO"))
 ```
 
 <br>
@@ -201,12 +204,15 @@ When reviewing metadata status you may notice that numeric variables are confuse
 library(ggplot2)
 #sort by dpw (descending)
 
-sexhistplot <- ggpubr::gghistogram(variables2, x = "Sex", stat="count", fill = "#ff0000") + ggtitle("Sex variable")
+sexhistplot <- ggpubr::gghistogram(variables2, x = "Sex", stat="count", fill = "#ff0000") + 
+  labs(x = "Sex of animal", title = "Sex variable")
 
-timehistplot <- ggpubr::gghistogram(variables2, x = "Time", stat="count", fill = "#00ff00") + ggtitle("Time variable")
+timehistplot <- ggpubr::gghistogram(variables2, x = "Time", stat="count", fill = "#00ff00") + 
+  labs(x = "Time of Weaning", title = "Time variable")
 
-dpwhistplot <- ggpubr::gghistogram(variables2, x = "DayID", stat="count", fill = "#0000ff") + ggtitle("Days post weaning")+
-  theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN)
+dpwhistplot <- ggpubr::gghistogram(variables2, x = "DayID", stat="count", fill = "#0000ff") +
+  theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN) + 
+  labs(x = "Day Code", title = "Sex variable")
 
 ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
 ```
