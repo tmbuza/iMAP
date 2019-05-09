@@ -1,14 +1,17 @@
+---
+title: "Global Setup"
+date: 'Updated: `r Sys.time()`'
+---
+
+
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-# Global Setup
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(fig.path='./figures/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%")
 knitr::opts_chunk$set(comment = NA)
 knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
-```
 
-
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+#################################
 
 # Load packages
 if (!require("knitr")) {install.packages("knitr", dependencies = TRUE)}
@@ -21,6 +24,8 @@ if (!require("reshape2")) {install.packages("reshape2", dependencies = TRUE)}
 library("reshape2")
 if (!require("grid")) {install.packages("grid", dependencies = TRUE)}
 library("grid")
+if (!require("gridExtra")) {install.packages("gridExtra", dependencies = TRUE)}
+library("gridExtra")
 if (!require("scales")) {install.packages("scales", dependencies = TRUE)}
 library("scales")
 if (!require("iNEXT")) {install.packages("iNEXT", dependencies = TRUE)}
@@ -89,22 +94,10 @@ if (!require("plotrix")) {install.packages("plotrix", dependencies = TRUE)}
 library("plotrix")
 if (!require("flexdashboard")) {install.packages("flexdashboard", dependencies = TRUE)}
 library("flexdashboard")
-```
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-# Global Setup
-knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(fig.path='./figures/', fig.show='asis',  dev = 'png', fig.align='center', out.width = "80%",  out.height = "80%")
-knitr::opts_chunk$set(comment = NA)
-knitr::opts_chunk$set(message = FALSE)
-knitr::opts_chunk$set(warning = FALSE)
-```
+#################################
 
-
-```{r}
-library(ggplot2)
-library(scales)
 
 # clean ggplot background
 cleanup = theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(color = "black"))
@@ -142,9 +135,6 @@ numPlots = length(plots)
 }
 
 #################################
-library(ggplot2)
-library(gridExtra)
-library(grid)
 
 bottomsharedlegend <- function(..., nrow = 1, ncol = length(list(...)), position = c("bottom", "right")) {
 
@@ -171,6 +161,7 @@ bottomsharedlegend <- function(..., nrow = 1, ncol = length(list(...)), position
 
 }
 #################################
+
 rightsharedlegend <- function(..., nrow = 1, ncol = length(list(...)), position = "right") {
 
   plots <- list(...)
@@ -235,6 +226,18 @@ normalaxislayout2 <- theme(axis.text.x = element_text(size=8,angle = 90, hjust =
 normalaxislayout3 <- theme(axis.text.x = element_text(size=10,angle = 0, hjust = 0)) +
   theme(axis.text.y = element_text(size=10))+ theme(axis.title=element_text(size=12))
 
+formatPlot <- theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text = element_text(hjust = 1, size = 8))+      
+  theme(axis.title=element_text(size=10,face="bold")) + 
+  theme(plot.title = element_text(size = 10, face = "bold")) +
+  theme(axis.text.x = element_text(hjust=0.5))
+
+formatPlot2 <-   
+  theme(plot.title = element_text(size = 16, face = "bold")) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text = element_text(hjust = 1, size = 12))+
+  theme(axis.title=element_text(size=14,face="bold")) +
+  theme(axis.text.x = element_text(hjust=0.5))
 ###############################
 
 # scree plot
@@ -306,7 +309,7 @@ cex <- par(cex.axis=.8, cex.lab=1, cex.main=1.2, cex.sub=.8)
 
 # #############################
 
-# toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
 
 
 #############################
@@ -365,5 +368,6 @@ scaleFUN <- function(x) sprintf("%.0f", x)
 
 #############################
 
+save.image(file = "./globalSetup.RData")
 ```
 
