@@ -18,6 +18,12 @@ if (!require("knitr")) {install.packages("knitr", dependencies = TRUE)}
 library("knitr")
 if (!require("rmarkdown")) {install.packages("rmarkdown", dependencies = TRUE)}
 library("rmarkdown")
+if (!require("kableExtra")) {devtools::install_github("haozhu233/kableExtra", dependencies = TRUE)}
+library("kableExtra")
+if (!requireNamespace("BiocManager", quietly=TRUE)) {install.packages("BiocManager", dependencies = TRUE)}
+library(BiocManager)
+if (!require("microbiome")) {BiocManager::install("microbiome")}
+library("microbiome") 
 if (!require("ggplot2")) {install.packages("ggplot2", dependencies = TRUE)}
 library("ggplot2")
 if (!require("reshape2")) {install.packages("reshape2", dependencies = TRUE)}
@@ -94,7 +100,8 @@ if (!require("plotrix")) {install.packages("plotrix", dependencies = TRUE)}
 library("plotrix")
 if (!require("flexdashboard")) {install.packages("flexdashboard", dependencies = TRUE)}
 library("flexdashboard")
-
+if (!require("phyloseq")) {install.packages("phyloseq", dependencies = TRUE)}
+library("phyloseq")
 
 #################################
 
@@ -283,6 +290,7 @@ leftlegend <- theme(legend.position="left")
 nolegend <- theme(legend.position="none")
 
 ###############################
+xdisbreaks5 <- scale_x_discrete(breaks=pretty_breaks(n=10))
 xbreaks5 <- scale_x_continuous(labels = comma, breaks=pretty_breaks(n=5))
 xbreaks10 <- scale_x_continuous(labels = comma, breaks=pretty_breaks(n=10))
 xbreaks15 <- scale_x_continuous(labels = comma, breaks=pretty_breaks(n=15))
