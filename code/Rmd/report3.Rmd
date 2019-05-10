@@ -32,7 +32,7 @@ load("metadatavars.RData")
 # 
 # # Subsetting metadata for mapping to output from dowmstream analysis
 # library(dplyr)
-# variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
+# variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Var1", "Var2", "DayID", "DPW")
 # names(variables)[2] <- "origID"
 ```
 
@@ -276,7 +276,7 @@ seqlen %>% head(10)
 ```{r}
 seqcount.v <- cbind(variables, processedseqs)
 names(variables)[2] <- "origID"
-seqcount.v.m <- reshape2::melt(seqcount.v, id = c("SampleID", "origID", "Sex", "Time", "DayID", "DPW"))
+seqcount.v.m <- reshape2::melt(seqcount.v, id = c("SampleID","Var1","Var2","Var3","Var4"))
 
 # seqcount.v.m <- seqcount.v.m[-c(41:48),]
 seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
@@ -292,7 +292,7 @@ library(ggplot2)
 library(ggpubr)
 
 seqcount.v.m$SampleID <- as.factor(seqcount.v.m$SampleID)
-seqcount.v.m$DPW <- as.factor(seqcount.v.m$DPW)
+seqcount.v.m$Var4 <- as.factor(seqcount.v.m$Var4)
 seqcount.v.m$value <- as.numeric(seqcount.v.m$value)
 seqcount.v.m$variable <- as.factor(seqcount.v.m$variable)
 
@@ -382,11 +382,11 @@ ggpubr::ggarrange(boxforintext1, ncol = 1, nrow = 1,  common.legend = FALSE, leg
 <br>
 <br>
 
-### Boxplots grouped by sex
+### Boxplots grouped by Var1
 ```{r boxplot2, fig.height=4, fig.width=8}
 
 boxplot2 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
-                color = "Sex", palette =c("rainbow"),
+                color = "Var1", palette =c("rainbow"),
                 add = "jitter") +  xlab("") + ylab("Sequence depth") + ggtitle("")  
 
 ggpubr::ggarrange(boxplot2, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
@@ -395,11 +395,11 @@ ggpubr::ggarrange(boxplot2, ncol = 1, nrow = 1,  common.legend = FALSE, legend =
 <br>
 <br>
 
-### Boxplots grouped by time
+### Boxplots grouped by Var2
 ```{r boxplot3, fig.height=4, fig.width=8}
 
 boxplot3 <- ggboxplot(seqcount.v.m, x = "variable", y = "value",
-                color = "Time", palette =c("rainbow"),
+                color = "Var2", palette =c("rainbow"),
                 add = "jitter") +  xlab("") + ylab("Sequence depth") + ggtitle("")  
 
 ggpubr::ggarrange(boxplot3, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "top", align = "hv", labels = "")
@@ -407,10 +407,10 @@ ggpubr::ggarrange(boxplot3, ncol = 1, nrow = 1,  common.legend = FALSE, legend =
 
 <br><hr><br>
 
-### Density plots grouped by sex and time
+### Density plots grouped by Var1 and Var2
 
-```{r sexintext_densplot, fig.height=4, fig.width=8}
-sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
+```{r Var1intext_densplot, fig.height=4, fig.width=8}
+Var1intext_densplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) + 
@@ -419,11 +419,11 @@ sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
+  facet_grid(~Var1) +
   xbreaks10
-sexintext_densplot
+Var1intext_densplot
 
-timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
+Var2intext_densplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) +   
@@ -432,17 +432,17 @@ timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
+  facet_grid(~Var2) +
   xbreaks10
-timeintext_densplot
+Var2intext_densplot
 ```
 
 <br><hr><br>
 
-### Histograms grouped by sex and time
+### Histograms grouped by Var1 and Var2
 
-```{r sexintext_histplot, fig.height=4, fig.width=8}
-sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+```{r Var1intext_histplot, fig.height=4, fig.width=8}
+Var1intext_histplot <- gghistogram(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) + 
@@ -451,12 +451,12 @@ sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
+  facet_grid(~Var1) +
   xbreaks10
-sexintext_histplot
+Var1intext_histplot
 
 
-timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+Var2intext_histplot <- gghistogram(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) +   
@@ -465,9 +465,9 @@ timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=12,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
+  facet_grid(~Var2) +
   xbreaks10
-timeintext_histplot
+Var2intext_histplot
 ```
 
 
@@ -506,7 +506,7 @@ boxforintext <- ggplot(seqcount.v.m, aes(x = variable, y = value)) +
   theme(axis.text.x = element_text(hjust=0.5)) + formatPlot2
 # boxforintext
 
-sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
+Var1intext_densplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) + 
@@ -515,11 +515,11 @@ sexintext_densplot <- ggdensity(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
+  facet_grid(~Var1) +
   xbreaks10 + formatPlot2
-# sexintext_densplot
+# Var1intext_densplot
 
-timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
+Var2intext_densplot <- ggdensity(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) +   
@@ -528,11 +528,11 @@ timeintext_densplot <- ggdensity(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
+  facet_grid(~Var2) +
   xbreaks10 + formatPlot2
-# timeintext_densplot
+# Var2intext_densplot
 
-sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+Var1intext_histplot <- gghistogram(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) + 
@@ -541,12 +541,12 @@ sexintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=14,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Sex) +
+  facet_grid(~Var1) +
   xbreaks10 + formatPlot2
-# sexintext_histplot
+# Var1intext_histplot
 
 
-timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
+Var2intext_histplot <- gghistogram(seqcount.v.m, x = "value",
    add = "mean", rug = TRUE, position = "stack", alpha = 0.5,
    color = "variable", fill = "variable",
    palette = c("rainbow")) +   
@@ -555,9 +555,9 @@ timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
   theme(axis.text.y=element_text(size=14)) +
   theme(axis.title=element_text(size=12,face="bold")) +
   theme(axis.text.x=element_text(size=10, angle = 90, hjust=0.5)) +
-  facet_grid(~Time) +
+  facet_grid(~Var2) +
   xbreaks10 + formatPlot2
-# timeintext_histplot
+# Var2intext_histplot
 ```
 
 
@@ -569,11 +569,11 @@ timeintext_histplot <- gghistogram(seqcount.v.m, x = "value",
 * All subplots on single plot: 
 ```{r paper_procplots, echo=FALSE, fig.height=14, fig.width=14, message=FALSE, warning=FALSE}
 
-plots <- cowplot::align_plots(barforintext, boxforintext,  sexintext_densplot, sexintext_histplot, align = 'v', axis = 'l')
+plots <- cowplot::align_plots(barforintext, boxforintext,  Var1intext_densplot, Var1intext_histplot, align = 'v', axis = 'l')
 top_row <- cowplot::plot_grid(plots[[1]], labels = "", align = 'h', rel_heights = c(1.4, 1.4))
 middle_row1<- cowplot::plot_grid(plots[[2]], labels = "", align = 'h', rel_heights = c(1, 1))
-middle_row2 <- cowplot::plot_grid(plots[[3]], timeintext_densplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
-bottom_row <- cowplot::plot_grid(plots[[4]], timeintext_histplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
+middle_row2 <- cowplot::plot_grid(plots[[3]], Var2intext_densplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
+bottom_row <- cowplot::plot_grid(plots[[4]], Var2intext_histplot, labels = "", align = 'h', rel_widths = c(1, 1), rel_heights = c(1.2, 1.2))
 
 ggpubr::ggarrange(top_row, middle_row1,  middle_row2, bottom_row, ncol = 1, nrow=4, common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
 ```
