@@ -2,6 +2,15 @@
 title: "Transformation of taxonomy data"
 ---
 
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+load("./globalSetup.RData")
+load("metadatavars.RData")
+```
+
 <br>
 
 ## Taxonomy results from Phylotype-based approach
@@ -396,13 +405,6 @@ dim(genusprop)
 * This assumes that 1st column in each file is SampleID
 ```{r message=FALSE, warning=FALSE}
 
-samplemetadata <- readr::read_table2(file="../../resources/metadata/samplemetadata.tsv", col_names = T)
-colnames(samplemetadata)[1] <- "SampleID"
-
-variables <- samplemetadata %>% select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-# View(variables)
-
-otu.t.v <- otu.t
 otu.t.v <- cbind(variables, otu.t)
 otuprop.v <- cbind(variables, otuprop)
 
@@ -489,18 +491,6 @@ write.table(genusprop.v,"../../results/tables/phylotype/genusprop.v.tsv", quote 
 ```
 
 
-}
-```{r message=FALSE, warning=FALSE}
-
-# samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
-# colnames(samplemetadata)[1] <- "SampleID"
-
-# Subsetting metadata for mapping to output from dowmstream analysis
-library(dplyr)
-variables <- samplemetadata %>% dplyr::select("SampleID", "origID", "Sex", "Time", "DayID", "DPW")
-names(variables)[2] <- "origID"
-```
-
 <br>
 
 
@@ -574,7 +564,7 @@ save(class, class.a, class.t, class.t.v, classprop, classprop.v, family, family.
 <br>
 
 ```{r}
-save.image("../../results/tables/phylotype/otutaxon.RData")
+save.image(file = "otutaxon.RData")
 ```
 
 <br>
