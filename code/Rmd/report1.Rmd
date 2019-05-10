@@ -64,7 +64,9 @@ library(dplyr)
 library(knitr)
 
 # show data
-metadatastatus %>% knitr::kable() 
+metadatastatus %>% knitr::kable()  %>%
+  kable_styling(bootstrap_options = "striped",
+                full_width = F)
 ```
 
 Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: levels of the variable.
