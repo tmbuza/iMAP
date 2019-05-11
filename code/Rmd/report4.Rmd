@@ -547,12 +547,12 @@ Figure x. Correlation between species identified at phylum-level. Species are or
 # Species richness and diversity
 
 richdiv <- readr::read_table2(file = "../../data/mothur/phylotype/03_summary/qced.otu.groups.summary")
-richdiv.v <- cbind(variables2, richdiv)
+richdiv.v <- cbind(variables, richdiv)
 
 phylodiv <- readr::read_table2(file = "../../data/mothur/phylogeny/01_rarefy/qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.1.phylodiv.summary")
 # View(phylodiv)
 
-phylodiv.v <- cbind(variables2, phylodiv)
+phylodiv.v <- cbind(variables, phylodiv)
 
 richdivphylo.v <- cbind(richdiv.v, phylodiv[,2:3])
 
@@ -570,7 +570,7 @@ richdivphylo.v <- cbind(richdiv.v, phylodiv[,2:3])
 # write.table(richdivphylo.v,"../../results/tables/phylotype/richdivphylo.v.tsv", quote = FALSE, sep="\t",
 #             row.names = FALSE, col.names = TRUE)
 
-save(richdiv, richdiv.v, phylodiv, phylodiv.v, richdivphylo.v, file = "casestudyrichness.RData")
+# save(richdiv, richdiv.v, phylodiv, phylodiv.v, richdivphylo.v, file = "casestudyrichness.RData")
 ```
 
 
@@ -579,8 +579,8 @@ save(richdiv, richdiv.v, phylodiv, phylodiv.v, richdivphylo.v, file = "casestudy
 # Define categoric variables like
 richdivphylo.v$SampleID <- as.factor(richdivphylo.v$SampleID)
 richdivphylo.v$coverage <- as.factor(richdivphylo.v$coverage)
-richdivphylo.v$Sex <- as.factor(richdivphylo.v$Sex)
-richdivphylo.v$Time <- as.factor(richdivphylo.v$Time)
+richdivphylo.v$Var1 <- as.factor(richdivphylo.v$Var1)
+richdivphylo.v$Var2 <- as.factor(richdivphylo.v$Var2)
 richdivphylo.v$nseqs <- as.numeric(richdivphylo.v$nseqs)
 richdivphylo.v$sobs <- as.numeric(richdivphylo.v$sobs)
 richdivphylo.v$chao <- as.numeric(richdivphylo.v$chao)
@@ -595,15 +595,15 @@ library(scales)
 library(ggpubr)
 
 spprichbar1 <- ggbarplot(richdivphylo.v, x = "SampleID", y = "sobs",
-          fill = "Sex",           # change fill color by variable
-          color = "Sex",            # Set bar border colors to white
+          fill = "Var1",           # change fill color by variable
+          color = "Var1",            # Set bar border colors to white
           palette = c("rainbow"),            # jco journal color palett. see ?ggpar
           # palette = c("#00AFBB", "#E7B800"),            # jco journal color palett. see ?ggpar
           # sort.val = "desc",           # Sort the value in ascending order
           sort.by.groups = TRUE,     # Don't sort inside each group
           x.text.angle = 0,          # Rotate vertically x axis texts
           ylab = "Species richness",
-          xlab = "Data Points (360 samples)",
+          xlab = "Data Points",
           legend.title = "Calculator"
           ) + noxlabels
 ggpubr::ggarrange(spprichbar1, ncol = 1, nrow = 1,  common.legend = FALSE, legend = "right", align = "hv", labels = "")
@@ -620,20 +620,20 @@ Figure x: Stacked barplots for species richness. The estimated richness (green b
 
 ```{r boxspprich, fig.height=10, fig.width=12}
 library(ggpubr)
-boxspprich <- ggboxplot(richdivphylo.v, x = "Time", y = "sobs", fill = "Time", color = "Time",
+boxspprich <- ggboxplot(richdivphylo.v, x = "Var2", y = "sobs", fill = "Var2", color = "Var2",
                 palette =c("#00AFBB", "#E7B800"),
                 add = "point", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Sex) + theme_gray()
+          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Var1) + theme_gray()
 
-densspprich <- ggdensity(richdivphylo.v, x = "sobs", fill = "Time", color = "Time",
+densspprich <- ggdensity(richdivphylo.v, x = "sobs", fill = "Var2", color = "Var2",
                palette =c("#00AFBB", "#E7B800"),
                 add = "mean", shape = 19, alpha = 0.5, 
-          legend.title = "Calculator") +  xlab("Species richness") + ylab("Density") + ggtitle("") + facet_grid(~ Sex)  + theme_gray()
+          legend.title = "Calculator") +  xlab("Species richness") + ylab("Density") + ggtitle("") + facet_grid(~ Var1)  + theme_gray()
 
-histspprich <- gghistogram(richdivphylo.v, x = "sobs", color = "Time",
-                fill = "Time", palette =c("#00AFBB", "#E7B800"),
+histspprich <- gghistogram(richdivphylo.v, x = "sobs", color = "Var2",
+                fill = "Var2", palette =c("#00AFBB", "#E7B800"),
                 add = "mean", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Species richness") + ylab("Frequency") + ggtitle("") + facet_grid(~ Sex)
+          legend.title = "Calculator") +  xlab("Species richness") + ylab("Frequency") + ggtitle("") + facet_grid(~ Var1)
 
 ggpubr::ggarrange(boxspprich, densspprich, histspprich, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "right", align = "hv", labels = "AUTO")
 
@@ -655,7 +655,7 @@ Include are:
 ```{r corrspprich, fig.height=18, fig.width=14}
 library(ggpubr)
 
-load("casestudyrichness.RData")
+# load("casestudyrichness.RData")
 
 formatPlot3 <-   
   theme(plot.title = element_text(size = 16, face = "bold")) +
@@ -665,116 +665,116 @@ formatPlot3 <-
   theme(axis.text.x = element_text(hjust=0.5))
 
 sobsvsseqdepth1 <- ggline(
-  richdivphylo.v, x = "sobs", y = "nseqs", color = "Time",  palette =c("#00AFBB", "#E7B800"), add = "none", shape = 19) +
+  richdivphylo.v, x = "sobs", y = "nseqs", color = "Var2",  palette =c("#00AFBB", "#E7B800"), add = "none", shape = 19) +
   labs(x = "Observed species richness", y = "Sequence Depth", title = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5 + 
   scale_x_discrete(breaks = seq(10, 100, by = 10)) + theme(legend.text=element_text(size=16), legend.title=element_text(size=16, face = "bold")) + guides(color = guide_legend(override.aes = list(size=5), title.hjust = 0.5))
 
   
 sobsvsseqdepth2 <- ggscatter(
-  richdivphylo.v, x = "sobs", y = "nseqs", color = "Time", palette =c("#00AFBB", "#E7B800"), add = "none", shape = 19) +
+  richdivphylo.v, x = "sobs", y = "nseqs", color = "Var2", palette =c("#00AFBB", "#E7B800"), add = "none", shape = 19) +
   labs(x = "Observed species richness", y = "Sequence Depth", title = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5
 
-sobsvsseqdepth3 <- ggboxplot(richdivphylo.v, x = "Time", y = "sobs", fill = "Time", color = "Time",
-                palette =c("#00AFBB", "#E7B800"), width = 1, notch = TRUE,
+sobsvsseqdepth3 <- ggboxplot(richdivphylo.v, x = "Var2", y = "sobs", fill = "Var2", color = "Var2",
+                palette =c("#00AFBB", "#E7B800"), width = 1, notch = FALSE,
                 add = "jitter", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Observed richness") + ggtitle("") + facet_grid(~ Sex) + formatPlot3 + ybreaks5
+          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Observed richness") + ggtitle("") + facet_grid(~ Var1) + formatPlot3 + ybreaks5
 
 
 chaovsseqdepth1 <- ggline(
-  richdivphylo.v, x = "chao", y = "nseqs", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "chao", y = "nseqs", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Estimated species richness", y = "Sequence Depth", title = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5 + 
   scale_x_discrete(breaks = seq(10, 110, by = 10))
   
 
 chaovsseqdepth2 <- ggscatter(
-  richdivphylo.v, x = "chao", y = "nseqs", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "chao", y = "nseqs", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Estimated species richness", y = "Sequence Depth", title = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5
 
 
-chaovsseqdepth3 <- ggboxplot(richdivphylo.v, x = "Time", y = "chao", fill = "Time", color = "Time",
-                palette =c("#00AFBB", "#E7B800"), width = 1, notch = TRUE,
+chaovsseqdepth3 <- ggboxplot(richdivphylo.v, x = "Var2", y = "chao", fill = "Var2", color = "Var2",
+                palette =c("#00AFBB", "#E7B800"), width = 1, notch = FALSE,
                 add = "jitter", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Estimated richness") + ggtitle("") + facet_grid(~ Sex) + formatPlot3 + ybreaks5
+          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Estimated richness") + ggtitle("") + facet_grid(~ Var1) + formatPlot3 + ybreaks5
 
 
 invsppdiv1 <- ggline(
-  richdivphylo.v, x = "sobs", y = "invsimpson", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "sobs", y = "invsimpson", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Species richness", y = "invsimpson-Diversity", ggtitle = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5 + 
   scale_x_discrete(breaks = seq(10, 100, by = 10))
 
 
 invsppdiv2 <- ggscatter(
-  richdivphylo.v, x = "sobs", y = "invsimpson", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "sobs", y = "invsimpson", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Species richness", y = "invsimpson-Diversity", ggtitle = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5
 
-invsppdiv3 <- ggboxplot(richdivphylo.v, x = "Time", y = "invsimpson", fill = "Time", color = "Time",
-                palette =c("#00AFBB", "#E7B800"), width = 1, notch = TRUE,
+invsppdiv3 <- ggboxplot(richdivphylo.v, x = "Var2", y = "invsimpson", fill = "Var2", color = "Var2",
+                palette =c("#00AFBB", "#E7B800"), width = 1, notch = FALSE,
                 add = "jitter", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Sex) + formatPlot3 + ybreaks5
+          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Var1) + formatPlot3 + ybreaks5
 
 
 shansppdiv1 <- ggline(
-  richdivphylo.v, x = "sobs", y = "npshannon", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "sobs", y = "npshannon", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Species richness", y = "npshannon-Diversity", ggtitle = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5 + 
   scale_x_discrete(breaks = seq(10, 100, by = 10))
 
 
 shansppdiv2 <- ggscatter(
-  richdivphylo.v, x = "sobs", y = "npshannon", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "sobs", y = "npshannon", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Species richness", y = "npshannon-Diversity", ggtitle = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5
 
-shansppdiv3 <- ggboxplot(richdivphylo.v, x = "Time", y = "npshannon", fill = "Time", color = "Time",
-                palette =c("#00AFBB", "#E7B800"), width = 1, notch = TRUE,
+shansppdiv3 <- ggboxplot(richdivphylo.v, x = "Var2", y = "npshannon", fill = "Var2", color = "Var2",
+                palette =c("#00AFBB", "#E7B800"), width = 1, notch = FALSE,
                 add = "jitter", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Sex) + formatPlot3 + ybreaks5
+          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Var1) + formatPlot3 + ybreaks5
 
 
 phylopdiv1 <- ggline(
-  richdivphylo.v, x = "sobs", y = "phyloDiversity", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "sobs", y = "phyloDiversity", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Species richness", y = "Phylo-Diversity", ggtitle = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5 + 
   scale_x_discrete(breaks = seq(10, 100, by = 10))
 
 
 phylopdiv2 <- ggscatter(
-  richdivphylo.v, x = "sobs", y = "phyloDiversity", color = "Time",  palette =c("#00AFBB", "#E7B800"), 
+  richdivphylo.v, x = "sobs", y = "phyloDiversity", color = "Var2",  palette =c("#00AFBB", "#E7B800"), 
   add = "none", shape = 19) +
   labs(x = "Species richness", y = "Phylo-Diversity", ggtitle = "") +
-  facet_grid(~ Sex) +
+  facet_grid(~ Var1) +
   stat_cor(method = "spearman") + formatPlot3 + ybreaks5
 
 
-phylopdiv3 <- ggboxplot(richdivphylo.v, x = "Time", y = "phyloDiversity", fill = "Time", color = "Time",
-                palette =c("#00AFBB", "#E7B800"), width = 1, notch = TRUE,
+phylopdiv3 <- ggboxplot(richdivphylo.v, x = "Var2", y = "phyloDiversity", fill = "Var2", color = "Var2",
+                palette =c("#00AFBB", "#E7B800"), width = 1, notch = FALSE,
                 add = "jitter", shape = 19, alpha = 0.5,
-          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Sex) + formatPlot3 + ybreaks5
+          legend.title = "Calculator") +  xlab("Time of weaning") + ylab("Species richness") + ggtitle("") + facet_grid(~ Var1) + formatPlot3 + ybreaks5
 
 
-ggpubr::ggarrange(sobsvsseqdepth1, sobsvsseqdepth2, sobsvsseqdepth3, chaovsseqdepth1, chaovsseqdepth2, chaovsseqdepth3, invsppdiv1, invsppdiv2, invsppdiv3, shansppdiv1, shansppdiv2, shansppdiv3, phylopdiv1, phylopdiv2, phylopdiv3, ncol = 3, nrow = 5,  common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
+ggpubr::ggarrange(sobsvsseqdepth2, sobsvsseqdepth3, chaovsseqdepth2, chaovsseqdepth3, invsppdiv2, invsppdiv3, shansppdiv2, shansppdiv3, phylopdiv2, phylopdiv3, ncol = 2, nrow = 5,  common.legend = TRUE, legend = "top", align = "hv", labels = "AUTO")
 
 ```
 
