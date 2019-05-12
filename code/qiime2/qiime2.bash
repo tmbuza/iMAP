@@ -91,7 +91,9 @@ qiime phylogeny midpoint-root \
 ## TAXONOMY ANALYSIS
 ### Greengenes classifier
 
-echo " Requires a pre-trained classifier. Now downloading the default classifier, greengenes 515-806 conservative fragments ......
+echo " Requires a pre-trained classifier"
+echo " Now downloading the default classifier, greengenes 515-806 conservative fragments ......
+
 bash ./code/qiime2/qiime2_gg_classifier_fragments.bash
 
 time qiime feature-classifier classify-sklearn \
