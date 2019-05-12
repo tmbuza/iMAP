@@ -30,7 +30,7 @@ qiime tools import \
 
 
 ## Summarize preliminary analysis
-qiime demux summarize \
+time qiime demux summarize \
   --i-data $PWD/data/qiime2/demux.qza \
   --o-visualization $PWD/results/qzv/demux.qzv
 
