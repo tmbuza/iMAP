@@ -89,7 +89,11 @@ qiime phylogeny midpoint-root \
 ## --i-classifier $PWD/data/references/gg-13-8-99-515-806-nb-classifier.qza \
 
 ## TAXONOMY ANALYSIS
-### Greengenes classifiation
+### Greengenes classifier
+
+echo " Requires a pre-trained classifier. Now downloading the default classifier, greengenes 515-806 conservative fragments ......
+bash ./code/qiime2/qiime2_gg_classifier_fragments.bash
+
 time qiime feature-classifier classify-sklearn \
   --i-classifier $PWD/data/references/gg-13-8-99-515-806-nb-classifier.qza \
   --i-reads $PWD/data/qiime2/rep-seqs.qza \
