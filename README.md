@@ -20,7 +20,7 @@
 
 ## Files and Folders
 
-[](img/filefolderstruc.png)
+![](img/filefolderstruc.png)
 
 <br>
 
