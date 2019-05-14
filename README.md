@@ -18,7 +18,7 @@
 
 <br>
 
-## Primary file folders
+## Primary iMAP file folders
 
 ![](img/filefolderstructure.png)
 
