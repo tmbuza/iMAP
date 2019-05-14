@@ -66,6 +66,9 @@ reports/*.html
 *.pptx
 *.tmp
 *.map
+code/*/*.png
+code/*/*.pdf
+code/*/*.html
 
 *.qsub*
 mothur*logfile
