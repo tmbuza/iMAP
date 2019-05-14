@@ -18,7 +18,7 @@
 
 <br>
 
-## Files and Folders
+## Primary file folders
 
 ![](img/filefolderstructure.png)
 
