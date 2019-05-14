@@ -18,6 +18,12 @@
 
 <br>
 
+## Files and Folders
+
+[](img/filefolderstruc.png)
+
+<br>
+
 ## Requirements
 
 The first step is to gather all the materials needed for implementing the iMAP pipeline as described in the following table. Most iMAP dependencies are executable and are already placed in the PATH using docker, so users should be able to launch them directly from the command line of the specified container. 
