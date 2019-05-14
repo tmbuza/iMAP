@@ -16,6 +16,40 @@
 6. Phylogenetic analysis and interactive tree annotation 
 6. R-Markdown web-based progress reports
 
+<br>
+
+## Files and folders
+iMAP       
+    |- README.md      # Top level instructions for implementing iMAP
+    |
+    |- code/          # Programmatic code required for the iMAP project
+    | +- *.bash or *.sh       # Bash scripts
+    | +- *.batch      # batch scripts run at command line
+    | |- qiime2/    # Folder containing qiime2 functions
+    | |- Rmd/         # Folder containing Rmarkdown scripts
+    |
+    |- data/          # Data for the iMAP project. Must remain unaltered once created.
+    | |- metadata/      # Sample description
+    | |- mothur/      # Data processed using *mothur* commands
+    | |- qiime2/      # Data processed using *QIIME2* commands
+    | |- references/  # Reference databases to be used in the analysis
+    | |- raw/         # Raw data, should remain unaltered
+    |
+    |- img/      # images related to iMAP
+    |
+    |- LOG/       # mothur-based logfile 
+    |
+    |- reports/       # Reports generated for the iMAP project
+    | |- *.html       # HTML documents 
+    | |- *.docx       # Word documents
+    | |- *.pdf        # PDF documents
+    |
+    |- resources/       # Folder containing data for demo purposes
+    |
+    |- results/       # QC output for furtherfrom the analyses
+    | |- tables/      # Transformed data ready for visualization
+    | |- figures/     # Publication-quality figures 
+
 
 <br>
 
