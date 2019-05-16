@@ -63,9 +63,9 @@ The first step is to gather all the materials needed for implementing the iMAP p
 ## Get Started
 
 ### Running a shell command as root or system administrator
-* Put `sudo` in front of the command, and enter your password when prompted.
-* Applies to some systems, including Ubuntu, Linux, ...
-* Note that that system is often configured to not ask again for a few minutes allowing you to run several commands in succession.
+ It is likely that some systems, including Ubuntu, Linux, ... may require users to have administative right, in such cases:
+	* Put `sudo` in front of the command, and enter your password when prompted.
+	* Note that that system is often configured to not ask again for a few minutes allowing you to run several commands in succession.
 
 <br>
 
