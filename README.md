@@ -179,7 +179,7 @@ Includes:
 3. [mothur:v1.41.3](https://hub.docker.com/r/tmbuza/mothur) for sequence classification and generating of mothur-based OTU tables.
 4. [qiime2core:v2019.1](https://hub.docker.com/r/tmbuza/qiime2core) for sequence classification and generating of qiime2-based OTU table.
 
-Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`.
+Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`. It is likely that some users may require administative right, in such cases add *sudo* before the command.
 
 ```{}
 # All images at once
@@ -188,7 +188,8 @@ bash iMAP/code/dockerImages.sh
 
 # Individual image
 
-docker pull tmbuza/imagename.
+docker pull tmbuza/imagename
+
 ```
 
 ### Confirm the installation
