@@ -51,8 +51,6 @@ data/*/*
 !data/metadata
 !data/demo
 
-resources/refDBs.zip
-
 READMEbackup.md
 !README.md
 
@@ -60,15 +58,20 @@ img/*/*
 !img/imapWorkflow*
 figures
 *.qza
-results/*/*
+
 reports/*.html
-*html
+*.html
 *.pptx
 *.tmp
 *.map
 code/Rmd/*.png
 code/Rmd/*.pdf
 code/Rmd/*.html
+
+results/*/*
+
+resources/refDBs.zip
+!resources/progressReports/*.html
 
 *.qsub*
 mothur*logfile
