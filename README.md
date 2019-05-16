@@ -62,6 +62,13 @@ The first step is to gather all the materials needed for implementing the iMAP p
 
 ## Get Started
 
+### Running a shell command as root or system administrator
+* Put `sudo` in front of the command, and enter your password when prompted.
+* Applies to some systems, including Ubuntu, Linux, ...
+* Note that that system is often configured to not ask again for a few minutes allowing you to run several commands in succession.
+
+<br>
+
 ### Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
@@ -179,7 +186,7 @@ Includes:
 3. [mothur:v1.41.3](https://hub.docker.com/r/tmbuza/mothur) for sequence classification and generating of mothur-based OTU tables.
 4. [qiime2core:v2019.1](https://hub.docker.com/r/tmbuza/qiime2core) for sequence classification and generating of qiime2-based OTU table.
 
-Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`. It is likely that some users may require administative right, in such cases add *sudo* before the command.
+Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`.
 
 ```{}
 # All images at once
