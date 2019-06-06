@@ -407,8 +407,3 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 bash code/qiime2/convertmothur_biom.bash
 exit
 ```
-
-# Full release of iMAP version 1.0: Coming soon! Tentatively by August 2019!. This release will be associated with a manuscript entitled "iMAP: An integrated bioinformatics and visualization pipeline for profiling microbial communities within a sample using 16S rRNA gene sequences". The paper is currently being revised to incorporate reviewer's comments.
-
-# Note: The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any significant modifications.
-
