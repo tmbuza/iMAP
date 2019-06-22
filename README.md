@@ -398,7 +398,9 @@ bash code/qiime2/qiime2.bash
 exit
 ```
 
-### Convert mothur biom file using QIIME2
+## Useful commands
+
+1. Convert mothur biom file using QIIME2
 The output is a file containing OTUs and taxonomy
 ```{}
 containerName=biomconvertmothur
