@@ -4,7 +4,7 @@
 The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
 
 ## Supported Analyses
-1. Profiling of Metadata
+1. Profiling of sample metadata
 2. Pre-processing and quality control of paired-reads
 3. Sequence processing and classification
 * mothur (default)
@@ -12,10 +12,10 @@ The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspect
    * OTU-based method (works best for small dataset).
    * Phylogeny-based method (works best for small dataset).
 * QIIME2
-4. Transformation of OTU and taxa results. 
-5. Diversity and statistical analysis and visualization.
+4. Transformation of OTU and taxa results into data structure. 
+5. Diversity and statistical analysis, and visualization.
 6. Phylogenetic analysis and interactive tree annotation 
-6. R-Markdown web-based progress reports
+6. Generating web-based progress reports
 
 <br>
 
