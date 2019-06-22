@@ -15,7 +15,9 @@ The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspect
 4. Transformation of OTU and taxa results into data structure. 
 5. Diversity and statistical analysis, and visualization.
 6. Phylogenetic analysis and interactive tree annotation 
-6. Generating web-based progress reports
+7. Generating web-based progress reports
+8. and more...
+
 
 <br>
 
