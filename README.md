@@ -64,7 +64,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 ## Get Started
 
 ### Running a shell command as root or system administrator
- It is likely that some systems, including Ubuntu, Linux, ... may require users to have administative right, in such cases:
+ It is likely that some systems, including Ubuntu, Linux, ... may require users to have administrative right, and in such cases:
  
 * Put `sudo` in front of the command, and enter your password when prompted.
 * Note that the system is often configured to not ask again for a few minutes allowing you to run several commands in succession.
@@ -183,10 +183,10 @@ Register for a Docker ID. Link: https://docs.docker.com/docker-id/
 
 ### Download dependencies images
 Includes:
-1. [rpackages:v3.5.2](https://hub.docker.com/r/tmbuza/rpackages) for R version 3.5.2 and several packages (fundamental units of reproducible visualization).
+1. [rpackages:v3.5.2](https://hub.docker.com/r/tmbuza/rpackages) for R version 3.5.2 and several packages.
 2. [readqctools:v1.0.0](https://hub.docker.com/r/tmbuza/readqctools) for quality control of the reads.
-3. [mothur:v1.41.3](https://hub.docker.com/r/tmbuza/mothur) for sequence classification and generating of mothur-based OTU tables.
-4. [qiime2core:v2019.1](https://hub.docker.com/r/tmbuza/qiime2core) for sequence classification and generating of qiime2-based OTU table.
+3. [mothur:v1.41.3](https://hub.docker.com/r/tmbuza/mothur) for sequence classification and for generating mothur-based OTU tables.
+4. [qiime2core:v2019.1](https://hub.docker.com/r/tmbuza/qiime2core) for sequence classification and for generating qiime2-based OTU table.
 
 Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`.
 
