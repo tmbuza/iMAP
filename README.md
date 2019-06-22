@@ -400,7 +400,7 @@ exit
 
 ## Useful commands
 
-1. Convert mothur biom file within QIIME2
+### Convert mothur biom file within QIIME2
 
 The output is a file containing OTUs and taxonomy
 ```{}
