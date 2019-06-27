@@ -100,7 +100,7 @@ rm -rf master.zip
 
 1. Metadata: 
 
-    * Compatible for Mothur and QIIME2: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.demo.tsv)
+    * Compatible for Mothur and QIIME2: [samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.tsv)
 
 2. Mapping files:
 
