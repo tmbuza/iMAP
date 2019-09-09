@@ -14,14 +14,12 @@ biblio-style: apalike
 
 load("./packages.RData")
 load("./globalSetup.RData")
-
+load("./metadatavars.RData")
 
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(comment = NA)
 knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
-
-load("./metadatavars.RData")
 
 ```
 
