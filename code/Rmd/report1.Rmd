@@ -13,8 +13,9 @@ biblio-style: apalike
 ---
 
 ```{r setup, include=FALSE}
-load("./globalSetup.RData")
+
 load("./packages.RData")
+load("./globalSetup.RData")
 
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(comment = NA)
