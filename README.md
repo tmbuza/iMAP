@@ -411,7 +411,7 @@ Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.
 
 For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
-<br>
+<br><hr><br>
 
 ## Useful commands
 
