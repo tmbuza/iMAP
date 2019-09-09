@@ -62,6 +62,7 @@ metadatastatus <- funModeling::df_status(samplemetadata)
 ```{r message=FALSE, warning=FALSE}
 library(dplyr)
 library(knitr)
+library(kableExtra)
 
 # show data
 metadatastatus %>% knitr::kable()  %>%
