@@ -235,7 +235,7 @@ bash code/02_readPreprocess_driver.bash
 
 exit
 ```
-> The HTML files summarizing the Read FastQC reports are stored in results/multiqc/ folder. Open the files in your favorite browser. You can also open it using CLI like:
+> The HTML files summarizing the Read FastQC reports are stored in the **results/multiqc/ folder**. Open the files in your favorite browser or try to open it using CLI like:
 
 ```{}
 open results/multiqc/qced/R1/multiqc_report.html
