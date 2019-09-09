@@ -11,13 +11,16 @@ subtitle: 'Pre-processing of paired-reads'
 biblio-style: apalike
 ---
 ```{r setup, include=FALSE}
+
+load("./packages.RData")
+load("./globalSetup.RData")
+
+
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(comment = NA)
 knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 
-load("./packages.RData")
-load("./globalSetup.RData")
 load("./metadatavars.RData")
 
 ```
