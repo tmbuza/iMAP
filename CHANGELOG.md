@@ -5,7 +5,8 @@
 <div class="code/Rmd">
 <h4 class="version">Version 1.0 Pre-release – Sept 09, 2019</h4>
 <ul class="changelog">
-<li>[+] Fixed kableExtra error</li>
+<li>[+] Added packages.RData</li>
+<li>[^] Fixed kableExtra error</li>
 <li>[^] Modified README.md</li>
 </ul>
   
