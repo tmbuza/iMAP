@@ -402,6 +402,13 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 bash code/qiime2/qiime2.bash
 exit
 ```
+### View QIIME 2 results
+Output path: iMAP/data/qiime2/results/
+
+Use the client-side interface at [https://view.qiime2.org/}(https://view.qiime2.org/) for viewing QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
+
+For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
+
 
 ## Useful commands
 
