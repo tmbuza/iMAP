@@ -59,7 +59,8 @@ samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
 metadatastatus <- funModeling::df_status(samplemetadata)
 ```
 
-```{r message=FALSE, warning=FALSE}
+The following script (disabled) requires kableExtra package. Installation doesn't work in docker container but can be installed directly from R or RStudio.
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(knitr)
 library(kableExtra)
@@ -70,7 +71,7 @@ metadatastatus %>% knitr::kable()  %>%
                 full_width = F)
 ```
 
-Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: levels of the variable.
+#Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: levels of the variable.
 
 <br>
 
