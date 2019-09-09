@@ -327,6 +327,17 @@ exit
 
 <br>
 
+
+### OTU analysis progress report
+```{}
+containerName=report4
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
+
+bash code/progressreport4.bash
+exit
+```
+<br><hr><br>
+
 ### Statistical analysis
 > Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to most important statistical analyses in microbiome studies:
 
@@ -339,17 +350,7 @@ exit
 * [More...](https://mothur.org/wiki/Category:Commands)
 
 
-<br>
-
-
-### OTU analysis progress report
-```{}
-containerName=report4
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/progressreport4.bash
-exit
-```
+<hr><hr><br>
 
 ### Sequence Processing and Classification with QIIME2
 * Requires a QIIME2 trained classifer. 
