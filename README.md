@@ -254,7 +254,7 @@ exit
 
 <br>
 
-### Sequence Processing and classification
+# MOTHUR: Sequence Processing and classification
 
 1. Create a mothur container for sequence processing and classification.
 
@@ -352,7 +352,7 @@ exit
 
 <hr><hr><br>
 
-### Sequence Processing and Classification with QIIME2
+# QIIME2: Sequence Processing and Classification
 * Requires a QIIME2 trained classifer. 
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
 * Classifier: Naive Bayes classifiers trained on GreenGenes database with 99% OTUs. 
