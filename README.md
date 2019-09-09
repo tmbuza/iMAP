@@ -276,7 +276,8 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
 ```{}
 bash ./code/03_imapClassifySEQ_driver.bash 
 ```
-
+> You may see a lot of WARNINGS, It is safe to ignore them.
+> The program is set to remove all temporary files. If no file found you may see error message that reads: *rm: cannot remove '*.temp': No such file or directory*
 <br>
 
 ### OTU clustering, Taxonomy assignement and preliminary analysis (Mothur)
