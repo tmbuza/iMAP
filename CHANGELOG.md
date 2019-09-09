@@ -1,6 +1,15 @@
 # iMAP Changelog
 
 ## Current version is 1.0, Pre-release
+
+<div class="code/Rmd">
+<h4 class="version">Version 1.0 Pre-release – Sept 09, 2019</h4>
+<ul class="changelog">
+<li>[+] Fixed kableExtra error</li>
+<li>[^] Modified README.md</li>
+</ul>
+  
+  
 <div class="code">
 <h4 class="version">Version 1.0 Pre-release – May 15th, 2019</h4>
 <ul class="changelog">
