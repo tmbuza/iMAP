@@ -1,6 +1,6 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
-## Version: iMAP v1.0
+## Version: iMAP v1.0 (Pre-Release)
 The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
 
 ## Citation
