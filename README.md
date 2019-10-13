@@ -28,34 +28,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 #![](img/filefolderstructure.png)
 
-	**iMAP**
-	|- README.md      # Top level description of iMAP.
-	|- LICENSE.md     # License for the iMAP project.
-	|- CHANGELOG.md   # File documenting changes made to iMAP repository in descending order.
-	|
-	|- code/          # Programmatic code and all software required for the iMAP project
-	| |+ *.bash	      # Bash scripts
-	| |+ *.batch      # Batch scripts run at command line
-	| |- qiime2/      # Folder containing executable QIIME scripts
-	| |- Rmd/         # Folder containing executable Rmarkdown scripts
-	|
-	|- data/          # Data for the iMAP project. Must remain unaltered once created.
-	| |- metadata/    # Sample description.
-	| |- mothur/      # Data processed using MOTHUR commands.
-	| |- qiime2/      # Data processed using QIIME2 commands.
-	| |- raw/         # Raw data. Should remain unaltered.
-	| |- references/  # Reference databases to be used in the analysis.
-	|
-	|- img/           # Images related to the iMAP.
-	|
-	|- LOG/           # Folder containing iMAP analysis logfiles.
-	|
-	|- results/       # Folder for saving input files for the downstream analyses.
-	|
-	|- reports/       # Folder for saving the progress reports generated during the analysis. 
-	|
-	|- resources      # Folder containing resources for testing iMAP and demo purposes.
-
+![](img/structureOfiMAP.png)
 
 <br>
 
