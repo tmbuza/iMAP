@@ -26,9 +26,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 ## Primary iMAP file folders
 
-#![](img/filefolderstructure.png)
-
-![](img/structureOfiMAP.png)
+![](img/structureOfiMAP2.png)
 
 <br>
 
