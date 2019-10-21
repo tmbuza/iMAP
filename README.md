@@ -211,7 +211,7 @@ docker pull tmbuza/imagename
 docker images
 ```
 
-## Start analysis
+## Start the analysis
 
 <br>
 
