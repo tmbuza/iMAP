@@ -66,7 +66,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 
 <br>
 
-## Get Started
+## Getting Started
 
 ### Running a shell command as root or system administrator
  It is likely that some systems, including Ubuntu, Linux, ... may require users to have administrative right, and in such cases:
