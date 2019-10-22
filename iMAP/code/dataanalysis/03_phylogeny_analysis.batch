@@ -1,0 +1,8 @@
+# set.dir(input=./data/mothur/, output=./data/mothur/phylogeny/00_table)
+# make.table(group=qced.contigs.good.groups, name=qced.trim.contigs.good.names)
+set.dir(input=./data/mothur/phylogeny/, output=./data/mothur/phylogeny/01_rarefy)
+phylo.diversity(tree=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.tre, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count_table)
+set.dir(input=./data/mothur/phylogeny/, output=./data/mothur/phylogeny/02_unweighted)
+unifrac.unweighted(tree=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.tre, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count_table, distance=lt, processors=2, random=F, subsample=T)
+set.dir(input=./data/mothur/phylogeny/, output=./data/mothur/phylogeny/03_weighted)
+unifrac.weighted(tree=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.phylip.tre, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count_table, distance=lt, processors=2, random=F, subsample=T)
