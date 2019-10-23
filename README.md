@@ -1,6 +1,8 @@
-<br><h1><center>Running Analysis Outside DOCKER Images</h1></center>
+<br>
 
-<h2><center>Platform: Unix-Linux Environments</h2></center>
+# Running Analysis Outside DOCKER Images
+
+## Platform: Unix-Linux Environments
 
 <hr>
 <br>
