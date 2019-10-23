@@ -1,2 +1,0 @@
-# Sequence processing using Mothur
-

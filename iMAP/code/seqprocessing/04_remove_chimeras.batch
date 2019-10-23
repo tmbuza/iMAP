@@ -1,5 +1,0 @@
-set.dir(input=data/mothur/, output=data/mothur/)
-set.current(processors=4)
-chimera.vsearch(fasta=qced.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=T)
-remove.seqs(fasta=current, accnos=current)
-summary.seqs(fasta=current, count=current)
