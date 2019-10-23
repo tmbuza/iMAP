@@ -149,14 +149,14 @@ The above PBS submit script specifies:
 * Finally, the PBS manager will instruct the system to exit once the execution is done (exit 0).
 
 
-<br>
+<!-- <br>
 <br>
 <hr>
 
 ## Phase II: In-depth Analysis and Visualization via Rstudio Environment
 The output of phase I is visualized using integrated R functions and the entire analysis is summarized in a single HTML report using Rmarkdown.
 
-<hr>
+<hr> -->
 <br>
 <br>
 
