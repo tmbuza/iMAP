@@ -40,7 +40,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 <br>
 <hr>
 
-## Instructions for Non-Docker Image Users
+### Non-Docker Image Users
 
 * Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md): README2.md provides guidance to run iMAP directly on specific platform, including Unix-Linux and Mac OS X.
 
