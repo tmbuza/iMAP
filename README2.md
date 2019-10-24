@@ -1,6 +1,8 @@
->This README2 is under active development<br>
+>This README2 describes a work under active development. Visit this page regularly for more updates.
 
-## Running Analysis Outside DOCKER Images
+<br>
+
+## Running Analysis Outside DOCKER Images (Coming soon)
 
 <hr>
 <br>
