@@ -6,10 +6,7 @@ The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspect
 ## Citation
 Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Link](https://rdcu.be/bIxrg).
 
-<br><br>
-## Instructions for Non-Docker Image Users
-* Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) 
-<br><br>
+<br>
 
 ## Supported Analyses
 1. Profiling of sample metadata
@@ -37,9 +34,16 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 ## Requirements
 
-The first step is to gather all the materials needed for implementing the iMAP pipeline as described in the following table. Most iMAP dependencies are executable and are already placed in the PATH using docker, so users should be able to launch them directly from the command line of the specified container. 
+The first step is to gather all the materials needed for implementing the iMAP pipeline as described in Table 1. Most iMAP dependencies are executable and are already placed in the PATH using docker, so users should be able to launch them directly from the command line of the specified container. 
+
 
 <br>
+<hr>
+## Instructions for Non-Docker Image Users
+* Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) 
+<hr>
+<br>
+
 
 **Table 1: List of required materials for running iMAP pipeline**
 
