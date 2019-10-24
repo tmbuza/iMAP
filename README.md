@@ -39,8 +39,11 @@ The first step is to gather all the materials needed for implementing the iMAP p
 
 <br>
 <hr>
+
 ## Instructions for Non-Docker Image Users
+
 * Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) 
+
 <hr>
 <br>
 
