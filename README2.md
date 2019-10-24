@@ -179,7 +179,9 @@ The above PBS submit script specifies:
 ## Phase II: In-depth Analysis and Visualization via Rstudio Environment
 The output of phase I is visualized using integrated R functions and the entire analysis is summarized in a single HTML report using Rmarkdown.
 
------------  IN PROGRESS ----------
+<br>
+
+<center> -----------  IN PROGRESS ---------- </center>
 
 <hr>
 <br>
