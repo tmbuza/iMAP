@@ -91,7 +91,7 @@ The iMAP tool starts preprocessing the raw reads by performing rigorous quality 
 <br>
 <br>
 
-## Phase I: Interactive mode on Command-Line-interface (CLI)
+## Phase 1.1: Interactive mode on Command-Line-interface (CLI)
 This is basically a method where users sequentially run individual or bundled scripts on CLI (Command-Line-Interface), **one at a time**. We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented on CLI by just a single click. Interactive mode allows investigators to review the results progressively and make well-informed decisions.
 
 ### Read preprocessing
@@ -122,7 +122,7 @@ bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
 
 <br>
 
-## Phase I: Remotely via job scheduling script (No docker image needed)
+## Phase 1.2: Remotely via job scheduling script (No docker image needed)
 * Create a Portable Batch System (PBS) shell script. Typically, the PBS performs job scheduling and allocates the available computing resources. 
 
 ### Example Script for Multi Processor Job
@@ -178,6 +178,8 @@ The above PBS submit script specifies:
 
 ## Phase II: In-depth Analysis and Visualization via Rstudio Environment
 The output of phase I is visualized using integrated R functions and the entire analysis is summarized in a single HTML report using Rmarkdown.
+
+-----------  IN PROGRESS ----------
 
 <hr> -->
 <br>
