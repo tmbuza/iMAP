@@ -80,6 +80,8 @@ cd iMAP
 <br>
 
 ### Step1: Install required software
+The following script installs the executable tools integrated in the pipeline, including, seqkit, fastqc, bbmap, multiqc, and mothur.If the installation fails, please try to install them manually. The tool name is hyperlinked to lead you to site.  
+
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
 ```
