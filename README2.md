@@ -180,9 +180,9 @@ The above PBS submit script specifies:
 The output of phase I is visualized using integrated R functions and the entire analysis is summarized in a single HTML report using Rmarkdown.
 
 <br>
-
+<div>
 <center> -----------  IN PROGRESS ---------- </center>
-
+</div>
 <hr>
 <br>
 <br>
