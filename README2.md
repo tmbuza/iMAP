@@ -16,16 +16,18 @@
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
-unzip iMAP-Mac-OSX.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-Mac-OSX.v1.0.zip
+mv iMAP-Mac-OSX.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 
 
 # OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
-unzip iMAP-Mac-OSX.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-Mac-OSX.v1.0.zip
+mv iMAP-Mac-OSX.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 ```
 
@@ -36,16 +38,18 @@ cd iMAP
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
-unzip iMAP-UnixLinux.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-UnixLinux.v1.0.zip
+mv iMAP-UnixLinux.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 
 
 # OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
-unzip iMAP-UnixLinux.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-UnixLinux.v1.0.zip
+mv iMAP-UnixLinux.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 ```
 
@@ -57,16 +61,18 @@ cd iMAP
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
-unzip iMAP-Windows10.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-Windows10.v1.0.zip
+mv iMAP-Windows10.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 
 
 # OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
-unzip iMAP-Windows10.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-Windows10.v1.0.zip
+mv iMAP-Windows10.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 ```
 
