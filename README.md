@@ -8,7 +8,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 
 ## Instructions for Non-Docker Image Users
-* Read [README2.md[(https://github.com/tmbuza/iMAP/blob/master/README2.md) 
+* Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) 
 
 
 ## Supported Analyses
