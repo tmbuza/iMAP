@@ -6,6 +6,11 @@ The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspect
 ## Citation
 Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Link](https://rdcu.be/bIxrg).
 
+
+## Instructions for Non-Docker Image Users
+* Read [README2.md[(https://github.com/tmbuza/iMAP/blob/master/README2.md) 
+
+
 ## Supported Analyses
 1. Profiling of sample metadata
 2. Pre-processing and quality control of paired-reads
