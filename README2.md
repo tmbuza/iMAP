@@ -172,7 +172,7 @@ The above PBS submit script specifies:
 * Finally, the PBS manager will instruct the system to exit once the execution is done (exit 0).
 
 
-<!-- <br>
+<br>
 <br>
 <hr>
 
@@ -181,7 +181,7 @@ The output of phase I is visualized using integrated R functions and the entire 
 
 -----------  IN PROGRESS ----------
 
-<hr> -->
+<hr>
 <br>
 <br>
 
