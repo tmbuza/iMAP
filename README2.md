@@ -38,7 +38,7 @@ rm -rf master.zip
 <br>
 <br>
 
-## Running Analysis Outside of Docker Container
+## Running Analysis Outside of a Docker Container
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
 
