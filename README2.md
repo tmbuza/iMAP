@@ -100,12 +100,18 @@ The following script installs the executable tools integrated in the pipeline, i
 bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 
+<br>
+<br>
+
 ### Step 3: Add data and reference databases
 * Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders.
 * Highly recommended testing your system with the demo data loaded using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
 ```
+
+<br>
+<br>
 
 ### Step 4: Check folders and files to be certain
 > Repeat this step as necessary.
