@@ -7,7 +7,7 @@
 
 ## Running Analysis on Docker Container (Default)
 
-[README](https://github.com/tmbuza/iMAP/blob/master/README2.md)
+[README](https://github.com/tmbuza/iMAP/blob/master/README2.md) (iMAP-master)
 
 * Requires Docker Images.
 * Runs both Windows and Linux applications.
