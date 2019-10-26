@@ -12,7 +12,7 @@
 * Requires Docker Images.
 * Runs both Windows and Linux applications.
 * Uses less resources but memory-intensive computing may sometimes fail.
-* All analyses are run interactively on container Command-line.
+* All analyses are run interactively on container’s Command-line.
 * The output is stored on your computer in the current working directory (iMAP is default folder).
 
 > Important: Graphical applications don't work well. Some R-packages do not install well when creating docker images.
