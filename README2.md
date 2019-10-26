@@ -5,8 +5,8 @@
 ## Running Analysis on Specific Platform
 * No DOCKER Images are required.
 * Involves two separate workflows:
-  1. Preprocessing and Bioinformatics.
-  2. OTU analysis and visualization.
+  * Preprocessing and Bioinformatics.
+  * OTU analysis and visualization.
 
 <hr>
 <br>
