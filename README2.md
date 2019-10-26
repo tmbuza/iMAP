@@ -2,7 +2,46 @@
 
 <br>
 
-## Running Analysis on Specific Platform
+
+<br>
+
+## Running Analysis on Docker Container (Default)
+
+[README](https://github.com/tmbuza/iMAP/blob/master/README2.md)
+
+* Requires Docker Images.
+* Runs both Windows and Linux applications.
+* Uses less resources.
+* All analyses are run interactively on container Command-line.
+* The output is stored on your computerin the linked current working directory (iMAP is default folder).
+
+
+```{}
+git clone https://github.com/tmbuza/iMAP.git
+
+# OR
+
+curl -LOk https://github.com/tmbuza/iMAP/archive/master.zip
+unzip master.zip
+mv iMAP-master iMAP
+rm -rf master.zip
+
+# OR
+
+wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
+unzip master.zip
+mv iMAP-master iMAP
+rm -rf master.zip
+
+```
+<br>
+<br>
+
+## Running Analysis Outside Docker Container
+
+[README](https://github.com/tmbuza/iMAP/blob/master/README2.md)
+
+* Best option for memory-intensive computing.
 * No DOCKER Images are required.
 * Involves two separate workflows:
   * Preprocessing and Bioinformatics.
@@ -20,6 +59,7 @@
 ### Step 1: Dowload a Package suitable for your platform
 
 <br>
+<br>
 
 #### MAC OS X
 ```{}
@@ -31,7 +71,7 @@ rm -f iMAP-Mac-OSX.v1.0.zip
 cd iMAP
 
 
-OR
+# OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
 unzip iMAP-Mac-OSX.v1.0.zip
@@ -53,7 +93,7 @@ rm -f iMAP-UnixLinux.v1.0.zip
 cd iMAP
 
 
-OR
+# OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
 unzip iMAP-UnixLinux.v1.0.zip
@@ -77,7 +117,7 @@ rm -f Windows10-WSL.v1.0.zip
 cd iMAP
 
 
-OR
+# OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
 unzip iMAP-Windows10-WSL.v1.0.zip
@@ -277,8 +317,3 @@ The output is analyzed and visualized via the RStudio IDE (Integrated Developmen
 <hr>
 <br>
 <br>
-
-
- 
-
-
