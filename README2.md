@@ -135,16 +135,7 @@ Users sequentially run individual or bundled scripts on CLI (Command-Line-Interf
 ### Node 2: Running analysis Remotely on HPC (Not tested)
 * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. 
 
-<br>
-<br>
-
-## Major Steps
-1. **PreProcessing.**
-2. **Sequence Processing and Classification.**
-3. **OTU Preliminary Analysis.**
-4. **In-depth OTU Analysis, Visualization, and Reporting.**
-
-<hr> 
+<hr>
 <br>
 
 
