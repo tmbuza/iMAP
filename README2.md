@@ -5,7 +5,7 @@
 
 <br>
 
-## Running Analysis on Docker Container (Default)
+## Running Analysis within Docker Container (Default)
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) (iMAP-master)
 
@@ -37,15 +37,15 @@ rm -rf master.zip
 <br>
 <br>
 
-## Running Analysis Outside Docker Container
+## Running Analysis Outside of Docker Container
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
 
 * Best option for memory-intensive computing.
 * No DOCKER Images are required.
 * Involves two separate workflows:
-  * Preprocessing and Bioinformatics.
-  * OTU analysis, visualization and reporting.
+  * Preprocessing and Bioinformatics, which is run interactively (or in batch mode) from the Command-line or remotely on HPC computing nodes.
+  * OTU analysis, visualization and reporting, which is run interactively within the RStudio IDE,.
 
 <hr>
 <br>
