@@ -42,7 +42,7 @@ rm -rf master.zip
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
 
-* Best option for better results.
+* Best option for integrating most applications and packages.
 * No DOCKER Images are required.
 * Involves two separate workflows:
   * Preprocessing and Bioinformatics, which is run interactively (or in batch mode) from the Command-line or remotely on HPC computing nodes.
