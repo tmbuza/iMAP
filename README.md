@@ -1,27 +1,83 @@
+>This README2 describes a work under active development. Visit this page regularly for more updates.
+
 <br>
 
-# Running Analysis Outside DOCKER Images
-
-## Platform: Unix-Linux Environments
+## Running Analysis Outside DOCKER Images
 
 <hr>
 <br>
 <br>
 
-### Dowload iMAP-UnixLinux package
+### Dowload Package suitable for your platform
+
+<br>
+
+#### MAC OS X package
+```{}
+
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
+unzip iMAP-Mac-OSX.v1.0.zip
+mv iMAP-Mac-OSX.v1.0 iMAP
+rm -f iMAP-Mac-OSX.v1.0.zip
+cd iMAP
+
+
+# OR
+
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
+unzip iMAP-Mac-OSX.v1.0.zip
+mv iMAP-Mac-OSX.v1.0 iMAP
+rm -f iMAP-Mac-OSX.v1.0.zip
+cd iMAP
+```
+
+<br>
+<br>
+
+#### Unix-Linux package
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
-unzip iMAP-UnixLinux.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-UnixLinux.v1.0.zip
+mv iMAP-UnixLinux.v1.0 iMAP
+rm -f iMAP-UnixLinux.v1.0.zip
 cd iMAP
 
 
 # OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
-unzip iMAP-UnixLinux.v1.0.zip -d iMAP
-rm -rf *iMAP*.zip
+unzip iMAP-UnixLinux.v1.0.zip
+mv iMAP-UnixLinux.v1.0 iMAP
+rm -f iMAP-UnixLinux.v1.0.zip
+cd iMAP
+```
+
+
+<br>
+<br>
+
+#### Windows 10 package (in progress)
+Suitable for Windows 10 with either: 
+
+* WSL (Windows Subsystem Linux) OR
+* Git bash
+
+```{}
+
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
+unzip iMAP-Windows10.v1.0.zip
+mv iMAP-Windows10.v1.0 iMAP
+rm -rf *iMAP-*
+cd iMAP
+
+
+# OR
+
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
+unzip iMAP-Windows10.v1.0.zip
+mv iMAP-Windows10.v1.0 iMAP
+rm -rf *iMAP-*
 cd iMAP
 ```
 
@@ -29,24 +85,28 @@ cd iMAP
 <br>
 <hr>
 
-## DEPENDENCIES
+## REQUIREMENTS
 
 <hr>
 <br>
 
-### Install required software
+### Step1: Install required software
+The following script installs the executable tools integrated in the pipeline, including, [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its site.  
+
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 
-### Add data and reference databases
+### Step 2: Add data and reference databases
 * Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders.
 * Highly recommended testing your system with the demo data loaded using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
 ```
 
-### Check folders and files to be certain
+### Step 3: Check folders and files to be certain
+> Repeat this step as necessary.
+
 ```{}
 bash ./code/00_3_CheckFilesDriver.bash
 ```
@@ -56,32 +116,48 @@ bash ./code/00_3_CheckFilesDriver.bash
 <hr>
 
 ## MICROBIOME DATA ANALYSIS 
-The iMAP tool starts preprocessing the raw reads by performing rigorous quality filtering. High quality reads then pass through a series of processing steps and more qualitychecking before assigned to known taxonomic labels. The final steps include in-depth OTU analysis, visualization, and reporting.
+We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented sequentially on CLI and on Rstudio environment. Interactive mode (recommended) allows investigators to review the results progressively and make well-informed decisions. We also provide an example of job scheduling script for running analysis remotely on HPC computing nodes. 
 
-**Heads-Up:** The iMAP-UnixLinux version runs in two phases due to complications of installing all the required R-packages.
+<br>
 
-* **Phase I:** Bioinformatics analysis on Unix-Linux environment.
+### Mode 1: Running analysis interactively on CLI
+Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). Interactive mode allows investigators to review the results progressively and make well-informed decisions.
 
-* **Phase 1I:** Analysis of Phase one output on Rstudio environment.
+### Node 2: Running analysis Remotely on HPC (Not tested)
+* Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. 
 
-<hr>
 <br>
 <br>
 
-## Phase I: Interactive mode on Command-Line-interface (CLI)
-This is basically a method where users sequentially run individual or bundled scripts on CLI (Command-Line-Interface), **one at a time**. We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented on CLI by just a single click. Interactive mode allows investigators to review the results progressively and make well-informed decisions.
+## Major Steps
+1. **PreProcessing.**
+2. **Sequence Processing and Classification.**
+3. **OTU Preliminary Analysis.**
+4. **In-depth OTU Analysis, Visualization, and Reporting.**
 
-### Read preprocessing
+<hr> 
+<br>
+
+
+### 1.0: Preprocessing
+The preprocessing step includes: 
+
+  * Metadata profiling
   * Computing simple statistics of the raw reads 
   * Inspecting base quality scores of original reads (qc0)
   * Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
   * Removing phiX contamination (qced)
   * Summarizing Base Call Phred scores graphically
+  
 ```{}
 bash ./code/01_1_ReadPreprocessDriver.bash
 ```
 
-### Sequence Processing and OTU Preliminary Analysis
+<br>
+
+### 2.0 Sequence Processing and Classification
+The step uses mothur functions to perform the following: 
+
 * Assembling of the forward and reverse reads, screen by length and create representative sequences.
 * Aligning the representative sequences with reference alignments. Default SILVA seed.
 * Denoising to remove poor alignments.
@@ -92,20 +168,43 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 ```{}
 bash ./code/01_2_SeqProcessingDriver.bash
 bash ./code/01_3_ClassifySeqDriver.bash
-bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
-#bash ./code/01_5_ClusterBasedTaxaDriver.bash
-#bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 ```
 
 <br>
 
-## Phase I: Remotely via job scheduling script (No docker image needed)
-* Create a Portable Batch System (PBS) shell script. Typically, the PBS performs job scheduling and allocates the available computing resources. 
+### 3.0  OTU Preliminary Analysis
+Useful link: [Mothur MiSeq SOP: Preparing for analysis](https://www.mothur.org/wiki/MiSeq_SOP#Preparing_for_analysis).
 
-### Example Script for Multi Processor Job
-* The **qsub** command scans the lines of the PBS script file for directives.  
-* Important: Replace the parameters in the script to match your systems.
-* [Useful sites](http://docs.adaptivecomputing.com/torque/4-0-2/Content/topics/commands/qsub.htm)
+<br>
+
+**Phylotype method** (Default) 
+
+```{}
+bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
+```
+
+<br>
+
+**Cluster-based method** (Memory-intensive)
+
+```{}
+bash ./code/01_5_ClusterBasedTaxaDriver.bash
+```
+
+<br>
+
+**Phylogeny method** (Memory-intensive)
+
+```{}
+bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
+```
+
+<br>
+
+## Remotely on HPC Using PBS (Portable Batch System) Script
+* The Portable Batch System or PBS in short is the most used workload management solution for HPC systems and Linux clusters. 
+* The **qsub** command scans the lines of the PBS script file for directives.
+* Below is a sample PBS script. Replace the parameters in the script to match your systems.
 
 ```{}
 #!/bin/bash -f
@@ -116,7 +215,7 @@ bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
 #PBS -l pmem=10gb
 #PBS -j oe
 #PBS -o [Output file]
-#PBS -M [Email for notification]
+#PBS -M [Email address]
 #PBS -m bea
 
 cd $PBS_O_WORKDIR
@@ -143,20 +242,20 @@ The above PBS submit script specifies:
 * Joins the error and output in a single file (#PBS -j oe)
 * Writes the output in a text file named iMAPtutorial.txt (#PBS -o iMAPtutorial.txt)
 * Instructs the PBS manager to send message to a specified email address when the job (b)egins, (e)xits or (a)borts (bea) (#PBS -m bea). 
-* Instructs the PBS manager to send the notification emails to tmb72@psu.edu
+* Instructs the PBS manager to send the notification emails to the specified email.
 * The working directory (cd $PBS_O_WORKDIR)
 * The code or individual scripts to be executed: # See the list above 
 * Finally, the PBS manager will instruct the system to exit once the execution is done (exit 0).
 
 
-<!-- <br>
+<br>
 <br>
 <hr>
 
-## Phase II: In-depth Analysis and Visualization via Rstudio Environment
-The output of phase I is visualized using integrated R functions and the entire analysis is summarized in a single HTML report using Rmarkdown.
+## 4.0: In-depth OTU Analysis, Visualization, and Reporting (In progress)
+The output from previous analyses is analyzed and visualized using integrated R functions. The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
-<hr> -->
+<hr>
 <br>
 <br>
 
