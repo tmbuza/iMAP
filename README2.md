@@ -13,7 +13,7 @@
 <br>
 
 
-## PREPROCESSING & BIOINFORMATICS
+# PREPROCESSING & BIOINFORMATICS
 
 <br>
 
@@ -253,7 +253,7 @@ The above PBS submit script specifies:
 <br>
 <hr>
 
-## OTU ANALYSIS, VISUALIZATION & REPORTING (In progress)
+# OTU ANALYSIS, VISUALIZATION & REPORTING (In progress)
 The output is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
 <hr>
