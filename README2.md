@@ -252,7 +252,7 @@ The above PBS submit script specifies:
 <br>
 <hr>
 
-## 4.0: In-depth OTU Analysis, Visualization, and Reporting
+## 4.0: In-depth OTU Analysis, Visualization, and Reporting (In progress)
 The output from previous analyses is analyzed and visualized using integrated R functions. The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
 <hr>
