@@ -31,7 +31,7 @@ rm -f iMAP-Mac-OSX.v1.0.zip
 cd iMAP
 
 
-# OR
+OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
 unzip iMAP-Mac-OSX.v1.0.zip
@@ -53,7 +53,7 @@ rm -f iMAP-UnixLinux.v1.0.zip
 cd iMAP
 
 
-# OR
+OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
 unzip iMAP-UnixLinux.v1.0.zip
@@ -81,7 +81,7 @@ rm -rf *iMAP-*
 cd iMAP
 
 
-# OR
+OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
 unzip iMAP-Windows10.v1.0.zip
