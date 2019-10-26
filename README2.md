@@ -39,7 +39,7 @@ rm -rf master.zip
 
 ## Running Analysis Outside Docker Container
 
-[README](https://github.com/tmbuza/iMAP/blob/master/README2.md)
+[README](https://github.com/tmbuza/iMAP/blob/master/README2.md) (this document).
 
 * Best option for memory-intensive computing.
 * No DOCKER Images are required.
