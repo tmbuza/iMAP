@@ -283,9 +283,9 @@ cd $PBS_O_WORKDIR
 bash ./code/01_1_ReadPreprocessDriver.bash
 bash ./code/01_2_SeqProcessingDriver.bash
 bash ./code/01_3_ClassifySeqDriver.bash
-bash ./code/01_4_PhylotypeBasedTaxaDriver.bash # Default
-bash ./code/01_5_ClusterBasedTaxaDriver.bash # Memory intensive but classifies all sequences
-bash ./code/01_6_PhylogenyBasedTaxaDriver.bash # Memory intensive but classifies all sequences
+bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
+bash ./code/01_5_ClusterBasedTaxaDriver.bash
+bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 
 ```
 
@@ -304,7 +304,7 @@ The above PBS submit script specifies:
 * Instructs the PBS manager to send message to a specified email address when the job (b)egins, (e)xits or (a)borts (bea) (#PBS -m bea). 
 * Instructs the PBS manager to send the notification emails to the specified email.
 * The working directory (cd $PBS_O_WORKDIR)
-* The code or individual scripts to be executed: # See the list above 
+* The code or individual scripts to be executed
 * Finally, the PBS manager will instruct the system to exit once the execution is done (exit 0).
 
 
