@@ -130,7 +130,8 @@ We have bundled workflow-specific scripts into a driver script to make the analy
 <br>
 
 ### Mode 1: Running analysis interactively on CLI
-Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). Interactive mode allows investigators to review the results progressively and make well-informed decisions.
+* Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). 
+* Interactive mode allows investigators to review the results progressively and make well-informed decisions.
 
 ### Mode 2: Running analysis Remotely on HPC (Not tested)
 * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. 
