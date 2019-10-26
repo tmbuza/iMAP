@@ -61,7 +61,7 @@ rm -rf master.zip
 <br>
 <br>
 
-#### MAC OS X
+#### MAC OS X (in progress)
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
@@ -83,7 +83,7 @@ cd iMAP
 <br>
 <br>
 
-#### Unix-Linux environments
+#### Unix-Linux environments (in progress)
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
