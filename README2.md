@@ -12,7 +12,7 @@
 
 <br>
 
-#### [MAC OS X package](https://github.com/tmbuza/iMAP/releases/download/v1.0/)
+#### MAC OS X package
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
