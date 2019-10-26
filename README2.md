@@ -253,7 +253,7 @@ The above PBS submit script specifies:
 <br>
 <hr>
 
-## 4.0: In-depth OTU Analysis, Visualization, and Reporting (In progress)
+## OTU ANALYSIS, VISUALIZATION & REPORTING (In progress)
 The output is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
 <hr>
