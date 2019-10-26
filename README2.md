@@ -17,7 +17,7 @@
 
 <br>
 
-### Dowload a Package suitable for your platform
+### Step 1: Dowload a Package suitable for your platform
 
 <br>
 
@@ -92,28 +92,22 @@ cd iMAP
 
 <br>
 <br>
-<hr>
 
-## INSTALL SOFTWARE
-
-<hr>
-<br>
-
-### Step1: Install required software
+### Step2: Install required software
 The following script installs the executable tools integrated in the pipeline, including, [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its site.  
 
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 
-### Step 2: Add data and reference databases
+### Step 3: Add data and reference databases
 * Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders.
 * Highly recommended testing your system with the demo data loaded using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
 ```
 
-### Step 3: Check folders and files to be certain
+### Step 4: Check folders and files to be certain
 > Repeat this step as necessary.
 
 ```{}
