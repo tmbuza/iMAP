@@ -21,7 +21,7 @@
 
 <br>
 
-#### MAC OS X package
+#### MAC OS X
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
@@ -43,7 +43,7 @@ cd iMAP
 <br>
 <br>
 
-#### Unix-Linux package
+#### Unix-Linux environments
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
@@ -66,15 +66,11 @@ cd iMAP
 <br>
 <br>
 
-#### Windows 10 package (in progress)
-Suitable for Windows 10 with either: 
-
-* WSL (Windows Subsystem Linux) OR
-* Git bash
+#### Windows 10 with WSL (in progress)
 
 ```{}
 
-curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
 unzip iMAP-Windows10.v1.0.zip
 mv iMAP-Windows10.v1.0 iMAP
 rm -rf *iMAP-*
@@ -83,7 +79,29 @@ cd iMAP
 
 OR
 
-wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
+unzip iMAP-Windows10.v1.0.zip
+mv iMAP-Windows10.v1.0 iMAP
+rm -rf *iMAP-*
+cd iMAP
+```
+<br>
+<br>
+
+#### Windows 10 with GIT bash (in progress)
+
+```{}
+
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-GIT.v1.0.zip
+unzip iMAP-Windows10.v1.0.zip
+mv iMAP-Windows10.v1.0 iMAP
+rm -rf *iMAP-*
+cd iMAP
+
+
+OR
+
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
 unzip iMAP-Windows10.v1.0.zip
 mv iMAP-Windows10.v1.0 iMAP
 rm -rf *iMAP-*
