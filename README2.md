@@ -2,7 +2,11 @@
 
 <br>
 
-## Running Analysis Outside DOCKER Images
+## Running Analysis on Specific Platform
+* No DOCKER Image requirement.
+* Involves two separate workflows:
+  1. Preprocessing and Bioinformatics.
+  2. OTU analysis and visualization.
 
 <hr>
 <br>
