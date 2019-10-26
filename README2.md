@@ -45,7 +45,7 @@ rm -rf master.zip
 * No DOCKER Images are required.
 * Involves two separate workflows:
   * Preprocessing and Bioinformatics, which is run interactively (or in batch mode) from the Command-line or remotely on HPC computing nodes.
-  * OTU analysis, visualization and reporting, which is run interactively within the RStudio IDE,.
+  * OTU analysis, visualization and reporting, which is run interactively within the RStudio IDE.
 
 <hr>
 <br>
