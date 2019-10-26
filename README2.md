@@ -71,18 +71,18 @@ cd iMAP
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
-unzip iMAP-Windows10.v1.0.zip
-mv iMAP-Windows10.v1.0 iMAP
-rm -rf *iMAP-*
+unzip Windows10-WSL.v1.0.zip
+mv iMAP-Windows10-WSL.v1.0 iMAP
+rm -f Windows10-WSL.v1.0.zip
 cd iMAP
 
 
 OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
-unzip iMAP-Windows10.v1.0.zip
+unzip iMAP-Windows10-WSL.v1.0.zip
 mv iMAP-Windows10.v1.0 iMAP
-rm -rf *iMAP-*
+rm -f Windows10-WSL.v1.0.zip
 cd iMAP
 ```
 <br>
@@ -93,18 +93,18 @@ cd iMAP
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-GIT.v1.0.zip
-unzip iMAP-Windows10.v1.0.zip
-mv iMAP-Windows10.v1.0 iMAP
-rm -rf *iMAP-*
+unzip iMAP-Windows10-GIT.v1.0.zip
+mv iMAP-Windows10-GIT.v1.0 iMAP
+rm -f iMAP-Windows10-GIT.v1.0.zip
 cd iMAP
 
 
 OR
 
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10-WSL.v1.0.zip
-unzip iMAP-Windows10.v1.0.zip
-mv iMAP-Windows10.v1.0 iMAP
-rm -rf *iMAP-*
+unzip iMAP-Windows10-GIT.v1.0.zip
+mv iMAP-Windows10-GIT.v1.0 iMAP
+rm -f iMAP-Windows10-GIT.v1.0.zip
 cd iMAP
 ```
 
