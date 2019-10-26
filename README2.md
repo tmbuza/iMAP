@@ -58,12 +58,9 @@ cd iMAP
 <br>
 
 #### Windows 10 package (in progress)
-Requires: 
+Suitable for Windows 10 with either: 
 
-* Bash on WSL (Windows Subsystem Linux)
-
-OR
-
+* WSL (Windows Subsystem Linux) OR
 * Git bash
 
 ```{}
