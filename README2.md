@@ -143,12 +143,12 @@ We have bundled workflow-specific scripts into a driver script to make the analy
 ### 1.0: Preprocessing
 The preprocessing step includes: 
 
-  * Metadata profiling
-  * Computing simple statistics of the raw reads 
-  * Inspecting base quality scores of original reads (qc0)
-  * Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
-  * Removing phiX contamination (qced)
-  * Summarizing Base Call Phred scores graphically
+  - Metadata profiling
+  - Computing simple statistics of the raw reads 
+  - Inspecting base quality scores of original reads (qc0)
+  - Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
+  - Removing phiX contamination (qced)
+  - Summarizing Base Call Phred scores graphically
   
 ```{}
 bash ./code/01_1_ReadPreprocessDriver.bash
