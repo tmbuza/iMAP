@@ -40,7 +40,7 @@ cd iMAP
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
 unzip iMAP-UnixLinux.v1.0.zip
 mv iMAP-UnixLinux.v1.0 iMAP
-rm -rf *iMAP-*
+rm -f iMAP-UnixLinux.v1.0.zip
 cd iMAP
 
 
@@ -49,7 +49,7 @@ cd iMAP
 wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
 unzip iMAP-UnixLinux.v1.0.zip
 mv iMAP-UnixLinux.v1.0 iMAP
-rm -rf *iMAP-*
+rm -f iMAP-UnixLinux.v1.0.zip
 cd iMAP
 ```
 
@@ -58,6 +58,14 @@ cd iMAP
 <br>
 
 #### Windows 10 package (in progress)
+Requires: 
+
+* Bash on WSL (Windows Subsystem Linux)
+
+OR
+
+* Git bash
+
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows10.v1.0.zip
