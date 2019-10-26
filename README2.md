@@ -125,14 +125,14 @@ bash ./code/00_3_CheckFilesDriver.bash
 <hr>
 
 ## Microbiome Data Analysis 
-We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented sequentially on CLI and on Rstudio environment. Interactive mode (recommended) allows investigators to review the results progressively and make well-informed decisions. We also provide an example of job scheduling script for running analysis remotely on HPC computing nodes. 
+We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented sequentially.
 
 <br>
 
 ### Mode 1: Running analysis interactively on CLI
 Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). Interactive mode allows investigators to review the results progressively and make well-informed decisions.
 
-### Node 2: Running analysis Remotely on HPC (Not tested)
+### Mode 2: Running analysis Remotely on HPC (Not tested)
 * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. 
 
 <hr>
