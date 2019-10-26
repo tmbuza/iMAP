@@ -124,7 +124,7 @@ bash ./code/00_3_CheckFilesDriver.bash
 <br>
 <hr>
 
-## MICROBIOME DATA ANALYSIS 
+## MICROBIOME BIOINFORMATICS 
 We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented sequentially on CLI and on Rstudio environment. Interactive mode (recommended) allows investigators to review the results progressively and make well-informed decisions. We also provide an example of job scheduling script for running analysis remotely on HPC computing nodes. 
 
 <br>
