@@ -215,7 +215,7 @@ bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 #PBS -l pmem=10gb
 #PBS -j oe
 #PBS -o [Output file]
-#PBS -M [Email for notification]
+#PBS -M [Email address]
 #PBS -m bea
 
 cd $PBS_O_WORKDIR
@@ -242,7 +242,7 @@ The above PBS submit script specifies:
 * Joins the error and output in a single file (#PBS -j oe)
 * Writes the output in a text file named iMAPtutorial.txt (#PBS -o iMAPtutorial.txt)
 * Instructs the PBS manager to send message to a specified email address when the job (b)egins, (e)xits or (a)borts (bea) (#PBS -m bea). 
-* Instructs the PBS manager to send the notification emails to tmb72@psu.edu
+* Instructs the PBS manager to send the notification emails to the specified email.
 * The working directory (cd $PBS_O_WORKDIR)
 * The code or individual scripts to be executed: # See the list above 
 * Finally, the PBS manager will instruct the system to exit once the execution is done (exit 0).
