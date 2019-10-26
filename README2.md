@@ -164,7 +164,7 @@ bash ./code/00_1_InstallSoftwareDriver.bash
 
 ### Step 3: Add data and reference databases
 * Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders.
-* Highly recommended testing your system with the demo data loaded using the following command:
+* Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
 ```
