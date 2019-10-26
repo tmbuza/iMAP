@@ -6,7 +6,7 @@
 * No DOCKER Images are required.
 * Involves two separate workflows:
   * Preprocessing and Bioinformatics.
-  * OTU analysis and visualization.
+  * OTU analysis, visualization and reporting.
 
 <hr>
 <br>
