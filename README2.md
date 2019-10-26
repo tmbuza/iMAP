@@ -12,7 +12,13 @@
 <br>
 <br>
 
-### Dowload Package suitable for your platform
+
+## REQUIREMENTS
+
+<hr>
+<br>
+
+###iMAP Package
 
 <br>
 
@@ -89,7 +95,7 @@ cd iMAP
 <br>
 <hr>
 
-## REQUIREMENTS
+## INSTALL SOFTWARE
 
 <hr>
 <br>
