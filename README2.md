@@ -13,12 +13,11 @@
 <br>
 
 
-## REQUIREMENTS
+## PREPROCESSING & BIOINFORMATICS
 
-<hr>
 <br>
 
-### iMAP Package
+### Dowload a Package suitable for your platform
 
 <br>
 
