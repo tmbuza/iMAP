@@ -51,16 +51,8 @@ rm -rf master.zip
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
 
 * Best option for integrating most applications and packages.
-* No DOCKER Images are required.
-* Analysis involves the following steps:
-1. Metadata Profiling: Run within RStudio IDE.
-2. Read Preprocessing: Run on Command-Line-Interface (CLI).
-3. Microbial Profiling and Preliminary Analysis: Run on CLI.
-4. In-depth OTU Analysis, Visualization & Reporting: Run within RStudio IDE.
+* No Docker images are required.
 
-
-
-<hr>
 <br>
 <br>
 
@@ -195,33 +187,31 @@ bash ./code/00_3_CheckFilesDriver.bash
 <br>
 <hr>
 
-### Step5: Metadata Profiling 
+### Step 5: Metadata Profiling 
 
-<br>
+<!-- <br> -->
 
-## Microbial Profiling and Preliminary Analysis 
-
-
-
-### Mode 1: Running analysis interactively on CLI
+<!-- ### Mode 1: Running analysis interactively on CLI
 * Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). 
 * Interactive mode allows investigators to review the results progressively and make well-informed decisions.
 
 ### Mode 2: Running analysis Remotely on HPC (Not tested)
-* Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. 
+* Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. --> 
 
 <hr>
 <br>
 
+## BIOINFORMATICS ANALYSIS
 
-### 1.0: Read Preprocessing
-The preprocessing step includes: 
+<br>
 
-  - Computing simple statistics of the raw reads 
-  - Inspecting base quality scores of original reads (qc0)
-  - Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
-  - Removing phiX contamination (qced)
-  - Summarizing Base Call Phred scores graphically
+
+### Step 6: Read Preprocessing
+- Computing simple statistics of the raw reads 
+- Inspecting base quality scores of original reads (qc0)
+- Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
+- Removing phiX contamination (qced)
+- Summarizing Base Call Phred scores graphically
   
 ```{}
 bash ./code/01_1_ReadPreprocessDriver.bash
@@ -229,29 +219,39 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 <br>
 
-### 
-The step uses mothur functions to perform the following: 
+### Step 7: Microbial Profiling
+
+**Sequence processing**
 
 * Assembling of the forward and reverse reads, screen by length and create representative sequences.
 * Aligning the representative sequences with reference alignments. Default SILVA seed.
 * Denoising to remove poor alignments.
 * Removing Chimeric sequences.
-* Classifying the sequences and performing post-classification QC.
-* Clustering the OTUs (97% identity) using Phylotype (default), cluster-based or Phylogeny method.
-* Assigning taxonomy names to observed OTUs.
+
 ```{}
 bash ./code/01_2_SeqProcessingDriver.bash
+```
+
+
+**Sequence classification**
+
+* Classifying the sequences and performing post-classification quality control.
+
+```{}
 bash ./code/01_3_ClassifySeqDriver.bash
 ```
 
 <br>
 
-### 3.0  OTU Preliminary Analysis
-Useful link: [Mothur MiSeq SOP: Preparing for analysis](https://www.mothur.org/wiki/MiSeq_SOP#Preparing_for_analysis).
+### Step 8: Preliminary Analysis
+
+* Clustering the OTUs (97% identity).
+* Assigning taxonomy names to observed OTUs.
+* Useful link: [Mothur MiSeq SOP: Preparing for analysis](https://www.mothur.org/wiki/MiSeq_SOP#Preparing_for_analysis).
 
 <br>
 
-**Phylotype method** (Default) 
+**Phylotype method** (Recommended) 
 
 ```{}
 bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
@@ -273,9 +273,9 @@ bash ./code/01_5_ClusterBasedTaxaDriver.bash
 bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 ```
 
-<br>
+<br><hr>
 
-## Remotely on HPC Using PBS (Portable Batch System) Script
+## Running Analysis Remotely on HPC Using PBS (Portable Batch System) Script
 * The Portable Batch System or PBS in short is the most used workload management solution for HPC systems and Linux clusters. 
 * The **qsub** command scans the lines of the PBS script file for directives.
 * Below is a sample PBS script. Replace the parameters in the script to match your systems.
@@ -326,7 +326,7 @@ The above PBS submit script specifies:
 <br>
 <hr>
 
-# OTU ANALYSIS, VISUALIZATION & REPORTING (In progress)
+## OTU ANALYSIS, VISUALIZATION & REPORTING (In progress)
 The output from preprocessing and bioinformatics analysis is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
 <hr>
