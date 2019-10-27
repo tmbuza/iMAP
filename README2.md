@@ -8,7 +8,7 @@
 
 ## Generalized iMAP Workflow 
 
-![](https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-workflow.png)
+<img src="https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-workflow.png">
 
 <br>
 <br>
