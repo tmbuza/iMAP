@@ -8,7 +8,8 @@
 
 ## Generalized iMAP Workflow 
 
-[PDF image](https://github.com/tmbuza/iMAP/blob/master/img/iMAP-workflow.pdf)
+... In Progress ...
+<!-- [PDF image](https://github.com/tmbuza/iMAP/blob/master/img/iMAP-workflow.pdf) -->
 <!-- <img src="https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-workflow.png"> -->
 
 <br>
