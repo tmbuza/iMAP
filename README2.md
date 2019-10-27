@@ -173,7 +173,7 @@ bash ./code/00_2_GetDemoDataDriver.bash
 <br>
 
 ### Step 4: Check folders and files to be certain
-> important!. Do not start the next step unless all the requirements are met. Make sure that you don’t have any missing file required for downstream analysis. Repeat this step as necessary.
+> important!. Do not start the next step unless all the requirements are met. Make sure that you don’t have any missing file required for the downstream analysis. Repeat this step as necessary.
 
 ```{}
 bash ./code/00_3_CheckFilesDriver.bash
