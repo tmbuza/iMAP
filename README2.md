@@ -2,7 +2,15 @@
 
 <br>
 
+# MICROBIOME DATA ANALYSIS
 
+<br>
+
+## Generalized Workflow 
+
+![]()
+
+<br>
 <br>
 
 ## Running Analysis within Docker Container (Default)
@@ -44,16 +52,20 @@ rm -rf master.zip
 
 * Best option for integrating most applications and packages.
 * No DOCKER Images are required.
-* Involves two separate workflows:
-  * **Preprocessing and Bioinformatics Analysis**: It involves running Bash-scripts interactively (or in batch mode) from the Command-line or remotely on HPC computing nodes.
-  * **OTU Analysis, Visualization and Reporting**:  It involves installing R-packages and running R-scripts interactively within the RStudio IDE.
+* Analysis involves the following steps:
+1. Metadata Profiling: Run within RStudio IDE.
+2. Read Preprocessing: Run on Command-Line-Interface (CLI).
+3. Microbial Profiling and Preliminary Analysis: Run on CLI.
+4. In-depth OTU Analysis, Visualization & Reporting: Run within RStudio IDE.
+
+
 
 <hr>
 <br>
 <br>
 
 
-# PREPROCESSING & BIOINFORMATICS
+## GETTING STARTED 
 
 <br>
 
@@ -183,10 +195,13 @@ bash ./code/00_3_CheckFilesDriver.bash
 <br>
 <hr>
 
-## Microbiome Data Analysis 
-We have bundled workflow-specific scripts into a driver script to make the analysis easily implemented sequentially.
+### Step5: Metadata Profiling 
 
 <br>
+
+## Microbial Profiling and Preliminary Analysis 
+
+
 
 ### Mode 1: Running analysis interactively on CLI
 * Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). 
@@ -199,10 +214,9 @@ We have bundled workflow-specific scripts into a driver script to make the analy
 <br>
 
 
-### 1.0: Preprocessing
+### 1.0: Read Preprocessing
 The preprocessing step includes: 
 
-  - Metadata profiling
   - Computing simple statistics of the raw reads 
   - Inspecting base quality scores of original reads (qc0)
   - Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
@@ -215,7 +229,7 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 <br>
 
-### 2.0 Sequence Processing and Classification
+### 
 The step uses mothur functions to perform the following: 
 
 * Assembling of the forward and reverse reads, screen by length and create representative sequences.
@@ -318,4 +332,3 @@ The output from preprocessing and bioinformatics analysis is analyzed and visual
 <hr>
 <br>
 <br>
-
