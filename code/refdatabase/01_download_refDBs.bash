@@ -27,7 +27,7 @@ if [ "$?" != "0" ]; then
 fi
 
 
-mothur "#get.lineage(fasta=data/references/silva.seed_v132.align, taxonomy=data/references/silva.seed_v132.tax, taxon=Bacteria);degap.seqs(fasta=data/references/silva.seed_v132.pick.align, processors=8)"
+$PWD/mothur "#get.lineage(fasta=data/references/silva.seed_v132.align, taxonomy=data/references/silva.seed_v132.tax, taxon=Bacteria);degap.seqs(fasta=data/references/silva.seed_v132.pick.align, processors=8)"
 
 
 if [ "$?" != "0" ]; then
@@ -66,7 +66,7 @@ rm Silva.seed_v132.tgz*
 ## Make a taxonomy references fasta file from silva.seed.align . This will output silva.seed.fasta which automatically is placed in the data/references
 # * Clean up the directories to remove the extra files
 
-mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
+$PWD/mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
 # ```
 
 if [ "$?" != "0" ]; then
