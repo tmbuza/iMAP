@@ -155,6 +155,7 @@ echo ""
 echo "Done|"
 echo ""
 
+# Added to the $HOME/.bashrc file
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/bbmap"
 export PATH="$PATH:$HOME/FastQC"
