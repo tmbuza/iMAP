@@ -11,11 +11,10 @@ mkdir data \
 
 sudo wget --no-check-certificate https://www.mothur.org/w/images/7/71/Silva.seed_v132.tgz && \
 sudo tar -xvzf Silva.seed_v132.tgz silva.seed_v132.align silva.seed_v132.tax && \
-mothur "#get.lineage(fasta=silva.seed_v132.align, taxonomy=silva.seed_v132.tax, taxon=Bacteria);degap.seqs(fasta=silva.seed_v132.pick.align, processors=8)" && \
+~/bin/mothur "#get.lineage(fasta=silva.seed_v132.align, taxonomy=silva.seed_v132.tax, taxon=Bacteria);degap.seqs(fasta=silva.seed_v132.pick.align, processors=8)" && \
 mv silva.seed_v132.pick.align data/references/silva.seed.align && \
 mv silva.seed_v132.pick.tax data/references/silva.seed.tax && \
-rm S*.tgz
-rm silv*
+rm Silva.seed_v132.tgz
 
 if [ "$?" != "0" ]; then
     echo "[Error] Sorry, missing required reference alignment, exiting...!" 1>&2
