@@ -63,7 +63,7 @@ rm -rf master.zip
 
 <br>
 
-### Step 1: Dowload a Package suitable for your platform
+### Step 1: Dowload the pre-built binary suitable for your platform
 
 <br>
 <br>
