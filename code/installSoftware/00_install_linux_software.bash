@@ -3,8 +3,6 @@
 # iMAP Unix/Linux Environment
 
 ## Install dependencies as necessary.
-* Below is an example of list of dependencies
-
 apt-get -y clean && \
 apt-get -y update && \
 apt-get -y install \
