@@ -113,9 +113,21 @@ ln -s /usr/local/bin/multiqc $HOME/bin/multiqc
 
 ## Hurray it worked!
 
+# ## Install noReadline mothur
+# sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_noReadline.zip && \
+# sudo unzip Mothur.linux_noReadline.zip && \
+# sudo chmod 755 mothur/mothur && \
+# sudo chmod 755 mothur/vsearch && \
+# sudo chmod 755 mothur/uchime && \
+#     mv -v mothur $HOME/ && \
+#     ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
+#     ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
+#     ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
+# 	rm -rf Mothur.linux_noReadline.zip
+
 ## Install noReadline mothur
-sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_noReadline.zip && \
-sudo unzip Mothur.linux_noReadline.zip && \
+sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.Ubuntu_18.zip && \
+sudo unzip Mothur.Ubuntu_18.zip && \
 sudo chmod 755 mothur/mothur && \
 sudo chmod 755 mothur/vsearch && \
 sudo chmod 755 mothur/uchime && \
@@ -123,7 +135,7 @@ sudo chmod 755 mothur/uchime && \
     ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
     ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
     ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
-	rm -rf Mothur.linux_noReadline.zip 
+	rm -rf Mothur.Ubuntu_18.zip 
 
 
 
