@@ -117,16 +117,17 @@ sudo unzip Mothur.linux_noReadline.zip && \
 sudo chmod 755 mothur/mothur && \
 sudo chmod 755 mothur/vsearch && \
 sudo chmod 755 mothur/uchime && \
-    mv -v mothur $HOME/ && \
-    ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
-    ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
-    ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
-    ln -s $HOME/mothur/mothur $PWD/mothur && \
-    ln -s $HOME/mothur/vsearch $PWD/vsearch && \
-    ln -s $HOME/mothur/uchime $PWD/uchime
 
-    
-	rm -rf Mothur.linux_noReadline.zip
+mv -v mothur $HOME/
+ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
+ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
+ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
+ln -s $HOME/mothur/mothur $PWD/mothur && \
+ln -s $HOME/mothur/vsearch $PWD/vsearch && \
+ln -s $HOME/mothur/uchime $PWD/uchime
+
+
+rm -rf Mothur.linux_noReadline.zip
 
 # ## Install noReadline mothur
 # sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.Ubuntu_18.zip && \
