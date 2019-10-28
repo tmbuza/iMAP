@@ -13,7 +13,7 @@ unzip -oj iMAP-demo-rawdata.zip -d ./data/raw/
 rm -f iMAP-demo-rawdata.zip
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, rawdata files not found, exiting...,!" 1>&2
+    echo "[Error] Sorry, something is wrong, download did not finish, exiting...,!" 1>&2
     exit 1
 fi
 
@@ -26,7 +26,7 @@ unzip -oj iMAP-demo-metadata.zip -d ./data/metadata/
 rm -f iMAP-demo-metadata.zip
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, metadata file not found, exiting...,!" 1>&2
+    echo "[Error] Sorry, some or all of the required metadata not found, exiting...,!" 1>&2
     exit 1
 fi
 
