@@ -18,7 +18,7 @@ if [ "$?" != "0" ]; then
 fi
 
 
-sudo tar -xvzf Silva.seed_v132.tgz silva.seed_v132.align silva.seed_v132.tax
+sudo tar -xvzf Silva.seed_v132.tgz -C data/references/
 
 
 if [ "$?" != "0" ]; then
@@ -27,21 +27,21 @@ if [ "$?" != "0" ]; then
 fi
 
 
-sudo mothur "#get.lineage(fasta=silva.seed_v132.align, taxonomy=silva.seed_v132.tax, taxon=Bacteria);degap.seqs(fasta=silva.seed_v132.pick.align, processors=8)"
+mothur "#get.lineage(fasta=data/references/silva.seed_v132.align, taxonomy=data/references/silva.seed_v132.tax, taxon=Bacteria);degap.seqs(fasta=data/references/silva.seed_v132.pick.align, processors=8)"
 
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, downloading the required reference alignment aborted, exiting...!" 1>&2
+    echo "[Error] Sorry, getting bacteria lineage and degapping aborted, exiting...!" 1>&2
     exit 1
 fi
 
-
-mv silva.seed_v132.pick.align data/references/silva.seed.align
-mv silva.seed_v132.pick.tax data/references/silva.seed.tax
+## Optional renaming of the files
+mv data/references/silva.seed_v132.pick.align data/references/silva.seed.align
+mv data/references/silva.seed_v132.pick.tax  data/references/silva.seed.tax
 
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, moving files to data/reference folder failed, exiting...!" 1>&2
+    echo "[Error] Sorry, moving files renaming the files failed, exiting...!" 1>&2
     exit 1
 fi
 
