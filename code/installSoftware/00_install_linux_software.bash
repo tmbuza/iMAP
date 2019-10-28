@@ -121,6 +121,11 @@ sudo chmod 755 mothur/uchime && \
     ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
     ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
     ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
+    ln -s $HOME/mothur/mothur $PWD/mothur && \
+    ln -s $HOME/mothur/vsearch $PWD/vsearch && \
+    ln -s $HOME/mothur/uchime $PWD/uchime
+
+    
 	rm -rf Mothur.linux_noReadline.zip
 
 # ## Install noReadline mothur
@@ -156,6 +161,6 @@ echo ""
 
 
 # Added to the $HOME/.bashrc file
-echo "export PATH=$PATH:$HOME::$HOME/bin:$HOME/FastQC:$HOME/bbmap:$HOME/mothur" >> ~/.bashrc
-source  ~/.bashrc
+# echo "export PATH=$PATH:$HOME::$HOME/bin:$HOME/FastQC:$HOME/bbmap:$HOME/mothur" >> ~/.bashrc
+# source  ~/.bashrc
 
