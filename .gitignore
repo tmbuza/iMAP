@@ -95,3 +95,12 @@ code/Rmd/*Casestudy.Rmd
 ._*
 *.swp
 
+./mothur*
+./uchime*
+./vsearch*
+./*seed*
+./*.zip
+./*tgz
+./*align
+./*.fasta
+./*accnos
