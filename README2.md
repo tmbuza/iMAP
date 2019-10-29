@@ -54,7 +54,7 @@ rm -rf master.zip
 
 * Best option for integrating most applications and packages.
 * No Docker images are required.
-* By default the executable files are saved or soft-linked to the $HOME/bin.
+* By default most of the executable files are saved or soft-linked to the $HOME/bin.
 
 <br>
 <br>
