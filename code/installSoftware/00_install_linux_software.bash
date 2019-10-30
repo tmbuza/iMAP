@@ -124,7 +124,7 @@ sudo chmod 755 mothur/uchime
 sudo  rm -rf Mothur.linux_noReadline.zip
 
 
-# Link the executable tools to the home/bin
+# Link the executable tools to the home/bin and export the home/bin to the PATH
 
 sudo ln -s ~/seqkit ~/bin/seqkit
 sudo ln -s ~/FastQC/fastqc ~/bin/fastqc
@@ -136,7 +136,7 @@ sudo ln -s ~/mothur/uchime ~/bin/uchime
 
 
 
-## Make sure all executable tools are working
+## Make sure all executable tools are in the PATH
 echo ""
 echo ""
 echo "Location of the executable tools"
