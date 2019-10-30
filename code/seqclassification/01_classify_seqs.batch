@@ -1,0 +1,6 @@
+set.dir(input=data/mothur/, output=data/mothur/)
+classify.seqs(fasta=qced.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=qced.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, reference=data/references/silva.seed.ng.fasta, taxonomy=data/references/silva.seed.tax, cutoff=80)
+summary.tax(taxonomy=current, count=current)
+remove.lineage(fasta=current, count=current, taxonomy=current, taxon=Chloroplast-chloroplast-f__mitochondria-Mitochondria-mitochondria-Unknown-unknown-Archaea-archaea-Eukaryota-eukaryota-Viruses-Virus-Viroids-viroids)
+summary.seqs(fasta=current, count=current)
+summary.tax(taxonomy=current, count=current)
