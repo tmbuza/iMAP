@@ -3,8 +3,8 @@
 # iMAP Unix/Linux Environment
 
 ## Install dependencies as necessary.
-sudo  apt-get -y clean && \
-apt-get -y update && \
+sudo  apt-get -y clean
+apt-get -y update
 apt-get -y install \
 	ant \
 	apt-transport-https \
@@ -35,22 +35,22 @@ apt-get -y install \
 	wget \
 	zip \
 	zlib1g-dev \
-	zlibc  && \
-sudo  rm -rf /var/lib/apt/lists/* && \
+	zlibc 
+sudo  rm -rf /var/lib/apt/lists/*
 apt-get clean 
 
 ## Create bin folder in home directory (if it doesn't exist)
-mkdir ~/bin
+mkdir $HOME/bin
 
 
 ## Get read statistics
 
 ### Install seqkit
 
-sudo wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz && \
-sudo tar -zxvf seqkit_linux_amd64.tar.gz && \
-sudo chmod 755 seqkit && \
-	sudo  mv seqkit ~/bin/seqkit && \
+sudo wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
+sudo tar -zxvf seqkit_linux_amd64.tar.gz
+sudo chmod 755 seqkit
+	ln -s seqkit $HOME/bin/seqkit
 	sudo  rm -f seqkit_linux_amd64.tar.gz
 
 # which seqkit # Must show the location of seqkit
@@ -59,11 +59,11 @@ sudo chmod 755 seqkit && \
 ## Base call quality
 
 ### Install FastQC
-sudo wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip && \
-sudo unzip fastqc_*.zip && \
-sudo chmod 755 FastQC/fastqc && \
-    sudo  mv -v FastQC $HOME/ && \
-    ln -s $HOME/FastQC/fastqc $HOME/bin/fastqc && \
+sudo wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip
+sudo unzip fastqc_*.zip
+sudo chmod 755 FastQC/fastqc
+    sudo  mv -v FastQC $HOME/
+    ln -s FastQC/fastqc $HOME/bin/fastqc
     sudo  rm -f fastqc_*.zip 
 
 # which fastqc # Must show the location of fastqc
@@ -72,11 +72,10 @@ sudo chmod 755 FastQC/fastqc && \
 ## Filter or trim out poor reads
 
 ### Install BBDuk via BBmap
-sudo wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_38.69.tar.gz && \
-sudo tar -xvzf BBMap_38.69.tar.gz && \
-sudo chmod 755 bbmap/bbduk.sh && \
-    sudo  mv -v bbmap $HOME/ && \
-    ln -s $HOME/bbmap/bbduk.sh $HOME/bin/bbduk.sh && \
+sudo wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_38.69.tar.gz
+sudo tar -xvzf BBMap_38.69.tar.gz
+sudo chmod 755 bbmap/bbduk.sh
+    ln -s bbmap/bbduk.sh $HOME/bin/bbduk.sh
     sudo  rm BBMap_38.69.tar.gz
 
 # which bbduk.sh # Must show the location of bbduk.sh 
@@ -85,20 +84,22 @@ sudo chmod 755 bbmap/bbduk.sh && \
 ## Summarize Base Call Phred Scores
 sudo pip3 --disable-pip-version-check --no-cache-dir install multiqc #Probably installed in /usr/local/bin/multiqc
 ln -s /usr/local/bin/multiqc $HOME/bin/multiqc
+ln -s /usr/local/bin/multiqc ./multiqc
+
 
 
 ## Sequence Processing classification
 
 # ### Install latest stable version of mothur
-# sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_64.zip && \
-# sudo unzip Mothur.linux_64.zip && \
-# sudo chmod 755 mothur/mothur && \
-# sudo chmod 755 mothur/vsearch && \
-# sudo chmod 755 mothur/uchime && \
-#     sudo  mv -v mothur $HOME/ && \
-#     ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
-#     ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
-#     ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
+# sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_64.zip
+# sudo unzip Mothur.linux_64.zip
+# sudo chmod 755 mothur/mothur
+# sudo chmod 755 mothur/vsearch
+# sudo chmod 755 mothur/uchime
+#     sudo  mv -v mothur $HOME/
+#     ln -s mothur/mothur $HOME/bin/mothur
+#     ln -s mothur/vsearch $HOME/bin/vsearch
+#     ln -s mothur/uchime $HOME/bin/uchime
 # sudo  rm -rf Mothur.linux_64.zip 
 
 
@@ -112,33 +113,30 @@ ln -s /usr/local/bin/multiqc $HOME/bin/multiqc
 ## Hurray it worked!
 
 ## Install noReadline mothur
-sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_noReadline.zip && \
-sudo unzip Mothur.linux_noReadline.zip && \
-sudo chmod 755 mothur/mothur && \
-sudo chmod 755 mothur/vsearch && \
-sudo chmod 755 mothur/uchime && \
+sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_noReadline.zip
+sudo unzip Mothur.linux_noReadline.zip
+sudo chmod 755 mothur/mothur
+sudo chmod 755 mothur/vsearch
+sudo chmod 755 mothur/uchime
 
-sudo  mv -v mothur $HOME/
-ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
-ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
-ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
-ln -s $HOME/mothur/mothur $PWD/mothur && \
-ln -s $HOME/mothur/vsearch $PWD/vsearch && \
-ln -s $HOME/mothur/uchime $PWD/uchime
+ln -s ./mothur/mothur $HOME/bin/mothur
+ln -s ./mothur/vsearch $HOME/bin/vsearch
+ln -s ./mothur/uchime $HOME/bin/uchime
+
 
 
 sudo  rm -rf Mothur.linux_noReadline.zip
 
 # ## Install noReadline mothur
-# sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.Ubuntu_18.zip && \
-# sudo unzip Mothur.Ubuntu_18.zip && \
-# sudo chmod 755 mothur/mothur && \
-# sudo chmod 755 mothur/vsearch && \
-# sudo chmod 755 mothur/uchime && \
-#     sudo  mv -v mothur $HOME/ && \
-#     ln -s $HOME/mothur/mothur $HOME/bin/mothur && \
-#     ln -s $HOME/mothur/vsearch $HOME/bin/vsearch && \
-#     ln -s $HOME/mothur/uchime $HOME/bin/uchime && \
+# sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.Ubuntu_18.zip
+# sudo unzip Mothur.Ubuntu_18.zip
+# sudo chmod 755 mothur/mothur
+# sudo chmod 755 mothur/vsearch
+# sudo chmod 755 mothur/uchime
+#     sudo  mv -v mothur $HOME/
+#     ln -s mothur/mothur $HOME/bin/mothur
+#     ln -s mothur/vsearch $HOME/bin/vsearch
+#     ln -s mothur/uchime $HOME/bin/uchime
 # 	sudo  rm -rf Mothur.Ubuntu_18.zip 
 
 
