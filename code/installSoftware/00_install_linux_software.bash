@@ -83,8 +83,8 @@ sudo chmod 755 bbmap/bbduk.sh
 
 ## Summarize Base Call Phred Scores
 sudo pip3 --disable-pip-version-check --no-cache-dir install multiqc #Probably installed in /usr/local/bin/multiqc
-sudo cp /usr/local/bin/multiqc $HOME/bin/multiqc
-sudo cp /usr/local/bin/multiqc ./multiqc
+sudo ln -s /usr/local/bin/multiqc $HOME/bin/multiqc
+sudo ln -s /usr/local/bin/multiqc ./multiqc
 
 
 
