@@ -95,12 +95,7 @@ code/Rmd/*Casestudy.Rmd
 ._*
 *.swp
 
-./mothur*
-./uchime*
-./vsearch*
-./*seed*
-./*.zip
-./*tgz
-./*align
-./*.fasta
-./*accnos
+*.tgz
+*.align
+*.fasta
+Silva.seed_v132.tgz
