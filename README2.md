@@ -54,17 +54,53 @@ rm -rf master.zip
 
 * Best option for integrating most applications and packages.
 * No Docker images are required.
-* By default most of the executable files are saved or soft-linked to the $HOME/bin.
 
 <br>
 <br>
 
+### Step1: Install required software
+The following script installs the executable tools integrated in the pipeline, including, [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its site.  
 
-## GETTING STARTED 
+```{}
+bash ./code/00_1_InstallSoftwareDriver.bash
+```
 
 <br>
 
-### Step 1: Dowload the pre-built binary suitable for your platform
+**Set up the config files**
+
+Required files:
+
+* *.bash_profile*: is executed for login shells before running the command prompt. More common in Mac OS X. 
+
+* *.bashrc*: is executed for interactive non-login shells. More common in Unix-Linux. 
+
+>In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. Simply, add the following lines to *.bash_profile*. If the files do not exist, create them.
+
+
+```{}
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+```
+
+<br>
+
+**Create a home bin folder**
+
+By default most of the executable files are saved or soft-linked to the $HOME/bin.
+
+```{}
+cd ~/
+mkdir bin
+touch ~/.bashrc
+touch ~/.bash_profile
+```
+
+<br>
+<br>
+
+### Step 2: Dowload the pre-built binary suitable for your platform
 
 <br>
 <br>
@@ -154,16 +190,6 @@ unzip iMAP-Windows10-GIT.v1.0.zip
 mv iMAP-Windows10-GIT.v1.0 iMAP
 rm -f iMAP-Windows10-GIT.v1.0.zip
 cd iMAP
-```
-
-<br>
-<br>
-
-### Step2: Install required software
-The following script installs the executable tools integrated in the pipeline, including, [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its site.  
-
-```{}
-bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 
 <br>
