@@ -154,7 +154,7 @@ echo ""
 
 
 
-# Add $HOME/bin in the PATH
+# Add $HOME/bin to the PATH
 # echo “export PATH=“$PATH:$HOME/bin" >> ~/.bashrc”
 # source  ~/.bashrc
 
