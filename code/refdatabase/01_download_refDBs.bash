@@ -36,8 +36,8 @@ if [ "$?" != "0" ]; then
 fi
 
 ## Optional renaming of the files
-mv data/references/silva.seed_v132.pick.align data/references/silva.seed.align
-mv data/references/silva.seed_v132.pick.tax  data/references/silva.seed.tax
+sudo mv data/references/silva.seed_v132.pick.align data/references/silva.seed.align
+sudo mv data/references/silva.seed_v132.pick.tax  data/references/silva.seed.tax
 
 
 if [ "$?" != "0" ]; then
@@ -45,7 +45,7 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-rm Silva.seed_v132.tgz*
+sudo rm Silva.seed_v132.tgz*
 
 
 ## Get taxonomy classifiers
@@ -98,7 +98,7 @@ fi
 # Get HMP_MOCK.fasta - an unaligned fasta sequence file that contains sequences in the mock community
 
 sudo wget --no-check-certificate https://www.mothur.org/MiSeqDevelopmentData/HMP_MOCK.fasta && \
-mv HMP_MOCK.fasta data/references
+sudo mv HMP_MOCK.fasta data/references
 
 
 if [ "$?" != "0" ]; then
@@ -108,5 +108,5 @@ fi
 
 
 # #```{}
-mv mothur.*.logfile LOG
+sudo mv mothur.*.logfile LOG
 #```

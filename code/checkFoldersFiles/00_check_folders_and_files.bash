@@ -5,30 +5,21 @@
 REQUIRED_DIRS=(
   "code/"
   "data/"
-  "img/"
   "LOG/"
   "reports/"
-  "resources/"
+  "resources/img/"
   "results/" 
 )
 
 REQUIRED_GUIDE_FILE=(
-  "code/"
-  "data/"
-  "img/"
-  "LOG/"
-  "reports/"
-  "resources/"
-  "results/" 
   "README.md"
-  "CHANGELOG.md" 
 )
 
 REQUIRED_EXECUTABLE_FILES=(
-  "seqkit"
-  "fastqc"
   "bbduk.sh"
+  "fastqc"
   "mothur"
+  "seqkit"
   "uchime"
   "vsearch"
   )
