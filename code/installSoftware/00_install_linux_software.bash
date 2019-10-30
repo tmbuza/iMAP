@@ -154,7 +154,7 @@ echo ""
 
 
 
-# Added to the $HOME/.bashrc file
-# echo "export PATH=$PATH:$HOME::bin:$HOME/FastQC:$HOME/bbmap:$HOME/mothur" >> ~/.bashrc
+# Add $HOME/bin in the PATH
+# echo “export PATH=“$PATH:$HOME/bin" >> ~/.bashrc”
 # source  ~/.bashrc
 
