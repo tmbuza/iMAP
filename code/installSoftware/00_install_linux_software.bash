@@ -52,8 +52,8 @@ sudo apt-get clean
 sudo wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
 sudo tar -zxvf seqkit_linux_amd64.tar.gz
 sudo chmod 755 seqkit
-	sudo ln -s seqkit bin/seqkit
-	sudo  rm -f seqkit_linux_amd64.tar.gz
+
+sudo  rm -f seqkit_linux_amd64.tar.gz
 
 # which seqkit # Must show the location of seqkit
 
@@ -64,8 +64,8 @@ sudo chmod 755 seqkit
 sudo wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.8.zip
 sudo unzip fastqc_*.zip
 sudo chmod 755 FastQC/fastqc
-    sudo ln -s FastQC/fastqc bin/fastqc
-    sudo  rm -f fastqc_*.zip 
+
+sudo  rm -f fastqc_*.zip 
 
 # which fastqc # Must show the location of fastqc
 
@@ -76,16 +76,16 @@ sudo chmod 755 FastQC/fastqc
 sudo wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_38.69.tar.gz
 sudo tar -xvzf BBMap_38.69.tar.gz
 sudo chmod 755 bbmap/bbduk.sh
-    sudo ln -s bbmap/bbduk.sh bin/bbduk.sh
-    sudo  rm BBMap_38.69.tar.gz
+
+sudo  rm BBMap_38.69.tar.gz
 
 # which bbduk.sh # Must show the location of bbduk.sh 
 
 
 ## Summarize Base Call Phred Scores
 sudo pip3 --disable-pip-version-check --no-cache-dir install multiqc #Probably installed in /usr/local/bin/multiqc
-sudo ln -s /usr/local/bin/multiqc bin/multiqc
 
+# which multiqc # Must show the location of multiqc 
 
 
 ## Sequence Processing classification
@@ -112,6 +112,8 @@ sudo ln -s /usr/local/bin/multiqc bin/multiqc
 
 ## Hurray it worked!
 
+
+
 ## Install noReadline mothur
 sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.linux_noReadline.zip
 sudo unzip Mothur.linux_noReadline.zip
@@ -119,25 +121,18 @@ sudo chmod 755 mothur/mothur
 sudo chmod 755 mothur/vsearch
 sudo chmod 755 mothur/uchime
 
-sudo ln -s mothur/mothur bin/mothur
-sudo ln -s mothur/vsearch bin/vsearch
-sudo ln -s mothur/uchime bin/uchime
-
-
-
 sudo  rm -rf Mothur.linux_noReadline.zip
 
-# ## Install noReadline mothur
-# sudo wget  --no-check-certificate https://github.com/mothur/mothur/releases/download/v.1.43.0/Mothur.Ubuntu_18.zip
-# sudo unzip Mothur.Ubuntu_18.zip
-# sudo chmod 755 mothur/mothur
-# sudo chmod 755 mothur/vsearch
-# sudo chmod 755 mothur/uchime
-#     sudo  mv -v mothur $HOME/
-#     sudo ln -s mothur/mothur bin/mothur
-#     sudo ln -s mothur/vsearch bin/vsearch
-#     sudo ln -s mothur/uchime bin/uchime
-# 	sudo  rm -rf Mothur.Ubuntu_18.zip 
+
+# Link the executable tools to the home/bin
+
+sudo ln -s ~/seqkit ~/bin/seqkit
+sudo ln -s ~/FastQC/fastqc ~/bin/fastqc
+sudo ln -s ~/bbmap/bbduk.sh ~/bin/bbduk.sh
+sudo ln -s /usr/local/bin/multiqc bin/multiqc
+sudo ln -s ~/mothur/mothur ~/bin/mothur
+sudo ln -s ~/mothur/vsearch ~/bin/vsearch
+sudo ln -s ~/mothur/uchime ~/bin/uchime
 
 
 
