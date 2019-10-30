@@ -4,8 +4,8 @@
 
 ## Install dependencies as necessary.
 sudo  apt-get -y clean
-apt-get -y update
-apt-get -y install \
+sudo apt-get -y update
+sudo apt-get -y install \
 	ant \
 	apt-transport-https \
 	apt-utils \
@@ -37,10 +37,10 @@ apt-get -y install \
 	zlib1g-dev \
 	zlibc 
 sudo  rm -rf /var/lib/apt/lists/*
-apt-get clean 
+sudo apt-get clean 
 
 ## Create bin folder in home directory (if it doesn't exist)
-mkdir $HOME/bin
+sudo mkdir $HOME/bin
 
 
 ## Get read statistics
@@ -50,7 +50,7 @@ mkdir $HOME/bin
 sudo wget --no-check-certificate https://github.com/shenwei356/seqkit/releases/download/v0.8.0/seqkit_linux_amd64.tar.gz
 sudo tar -zxvf seqkit_linux_amd64.tar.gz
 sudo chmod 755 seqkit
-	ln -s seqkit $HOME/bin/seqkit
+	sudo ln -s seqkit $HOME/bin/seqkit
 	sudo  rm -f seqkit_linux_amd64.tar.gz
 
 # which seqkit # Must show the location of seqkit
@@ -63,7 +63,7 @@ sudo wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11
 sudo unzip fastqc_*.zip
 sudo chmod 755 FastQC/fastqc
     sudo  mv -v FastQC $HOME/
-    ln -s FastQC/fastqc $HOME/bin/fastqc
+    sudo ln -s FastQC/fastqc $HOME/bin/fastqc
     sudo  rm -f fastqc_*.zip 
 
 # which fastqc # Must show the location of fastqc
@@ -75,7 +75,7 @@ sudo chmod 755 FastQC/fastqc
 sudo wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_38.69.tar.gz
 sudo tar -xvzf BBMap_38.69.tar.gz
 sudo chmod 755 bbmap/bbduk.sh
-    ln -s bbmap/bbduk.sh $HOME/bin/bbduk.sh
+    sudo ln -s bbmap/bbduk.sh $HOME/bin/bbduk.sh
     sudo  rm BBMap_38.69.tar.gz
 
 # which bbduk.sh # Must show the location of bbduk.sh 
@@ -83,8 +83,8 @@ sudo chmod 755 bbmap/bbduk.sh
 
 ## Summarize Base Call Phred Scores
 sudo pip3 --disable-pip-version-check --no-cache-dir install multiqc #Probably installed in /usr/local/bin/multiqc
-ln -s /usr/local/bin/multiqc $HOME/bin/multiqc
-ln -s /usr/local/bin/multiqc ./multiqc
+sudo ln -s /usr/local/bin/multiqc $HOME/bin/multiqc
+sudo ln -s /usr/local/bin/multiqc ./multiqc
 
 
 
@@ -97,9 +97,9 @@ ln -s /usr/local/bin/multiqc ./multiqc
 # sudo chmod 755 mothur/vsearch
 # sudo chmod 755 mothur/uchime
 #     sudo  mv -v mothur $HOME/
-#     ln -s mothur/mothur $HOME/bin/mothur
-#     ln -s mothur/vsearch $HOME/bin/vsearch
-#     ln -s mothur/uchime $HOME/bin/uchime
+#     sudo ln -s mothur/mothur $HOME/bin/mothur
+#     sudo ln -s mothur/vsearch $HOME/bin/vsearch
+#     sudo ln -s mothur/uchime $HOME/bin/uchime
 # sudo  rm -rf Mothur.linux_64.zip 
 
 
@@ -108,7 +108,7 @@ ln -s /usr/local/bin/multiqc ./multiqc
 ##### mothur error while loading shared libraries: libreadline.so.6: cannot open shared object file: No such file or directory
 ## Try this, it may or may not work.
 # cd /lib/x86_64-linux-gnu
-# sudo ln -s libreadline.so.7.0 libreadline.so.6
+# sudo sudo ln -s libreadline.so.7.0 libreadline.so.6
 
 ## Hurray it worked!
 
@@ -119,9 +119,9 @@ sudo chmod 755 mothur/mothur
 sudo chmod 755 mothur/vsearch
 sudo chmod 755 mothur/uchime
 
-ln -s ./mothur/mothur $HOME/bin/mothur
-ln -s ./mothur/vsearch $HOME/bin/vsearch
-ln -s ./mothur/uchime $HOME/bin/uchime
+sudo ln -s ./mothur/mothur $HOME/bin/mothur
+sudo ln -s ./mothur/vsearch $HOME/bin/vsearch
+sudo ln -s ./mothur/uchime $HOME/bin/uchime
 
 
 
@@ -134,9 +134,9 @@ sudo  rm -rf Mothur.linux_noReadline.zip
 # sudo chmod 755 mothur/vsearch
 # sudo chmod 755 mothur/uchime
 #     sudo  mv -v mothur $HOME/
-#     ln -s mothur/mothur $HOME/bin/mothur
-#     ln -s mothur/vsearch $HOME/bin/vsearch
-#     ln -s mothur/uchime $HOME/bin/uchime
+#     sudo ln -s mothur/mothur $HOME/bin/mothur
+#     sudo ln -s mothur/vsearch $HOME/bin/vsearch
+#     sudo ln -s mothur/uchime $HOME/bin/uchime
 # 	sudo  rm -rf Mothur.Ubuntu_18.zip 
 
 
