@@ -59,7 +59,8 @@ rm -rf master.zip
 <br>
 
 ### Step1: Install required software
-The following script installs the executable tools integrated in the pipeline, including, [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its site.  
+> Most basic
+The following script serves as an example on how to installs the executable tools integrated in the pipeline, including, [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its site.  
 
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
@@ -75,7 +76,7 @@ Required files:
 
 * *.bashrc*: is executed for interactive non-login shells. More common in Unix-Linux. 
 
->In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. Simply, add the following lines to *.bash_profile*. If the files do not exist, create them.
+>In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. Simply, add the following lines to the *.bash_profile* file. If the files do not exist, create them in the home directory.
 
 
 ```{}
