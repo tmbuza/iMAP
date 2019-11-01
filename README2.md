@@ -151,7 +151,7 @@ cd iMAP
 <br>
 <br>
 
-#### Windows 10 with WSL (in progress)
+#### Windows 10 with linux WSL-bash (in progress)
 
 ```{}
 
