@@ -1,0 +1,181 @@
+/*#######################################
+####default CSS added some modification######
+#######################################*/
+
+body{ /* Normal  */
+   font-size: 14px;
+   background-color: #dddddd;
+}
+
+body a {
+  color: #0080ff;
+}
+
+
+#header {
+color: #ffffff;
+}
+
+#header{
+margin-left: auto;
+margin-right: auto;  
+text-align: center;
+background-color: rgb(0, 50, 90);
+font-style: normal;
+}
+
+#TOC {
+  padding-top: 20px;;
+}
+
+/*#TOC a{
+color: rgb(0, 50, 220);
+}*/
+
+#TOC ul li{
+font-size: 16px;
+font-weight: bold;
+}
+
+#TOC ul li ul li{
+font-size: 14px;
+font-weight: normal;
+}
+
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  border: solid rgb(200, 200, 200);
+}
+blockquote {
+margin: 0 0 22px;
+font-size: 16px;
+border-left: 5px solid #aaaaaa;
+}
+img { width:100%; 
+}
+.main-container {
+  max-width: 1200px;
+}
+
+.figgure {
+  width: 500px;
+  height: 400px;
+}
+code {
+  background-color: #eeeddd;
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+
+
+td {  /* Table  */
+   font-size: 10px;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  background-color: rgb(0, 50, 90);
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+
+.footer p{
+color: white;
+}
+
+
+.footer small{
+color: white;
+}
+
+.footer a{
+color: #00CCFF;
+}
+
+code{
+  white-space: pre;
+}
+
+pre:not([class]) {
+    background-color: white;
+  }
+code{
+  white-space: pre;
+}
+.sourceCode {
+  overflow-x: visible;
+}
+pre code{
+    background-color: white;
+    font-size: 12px;
+  }
+p.abstract{
+    text-align: center;
+    font-weight: bold;
+  }
+.abstract{
+    margin: auto;
+    width: 90%;
+  }
+
+tbody {
+display: table-row-group;
+vertical-align: middle;
+border-color: inherit;
+font-size: 12px;
+}
+
+.table {
+  text-align: left;
+}
+
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+}
+.r{
+  background-color: #ddeeff;
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.kable-table {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 20px;
+  max-height: 350px;
+}
+
+.kable-table table {
+  margin-bottom: 0;
+}
+
+.kable-table table>thead>tr>th {
+  border: none;
+  border-bottom: 2px solid #dddddd;
+}
+
+.kable-table table>thead {
+  background-color: #fff;
+}

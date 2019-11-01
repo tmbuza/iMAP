@@ -1,0 +1,6 @@
+set.dir(input=data/mothur/, output=data/mothur/)
+set.current(processors=4)
+pre.cluster(fasta=qced.trim.contigs.good.unique.good.filter.unique.fasta, count=qced.trim.contigs.good.unique.good.filter.count_table, diffs=1)
+summary.seqs(fasta=current, count=current)
+system(rm ./data/mothur/*.map)
+

@@ -1,0 +1,25 @@
+## Transfer HTML files to the reports folder.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{bash}
+mv ./*rpt1*.html ../../rpt1_MetadataProfiling.html
+mv ./*rpt2*.html ../../rpt2_ReadPreprocessing.html
+mv ./*rpt3*.html ../../rpt3_SequenceProcessing.html
+mv ./*rpt4*.html ../../rpt4_PreliminaryAnalysis.html
+
+rm *.html
+```
+
+
+## Clean the Rmd folder. Remove other html files
+```{r}
+rmOthers <- c("*.html")
+    if(exists(rmOthers)) {
+        rm(list = rmOthers)
+    }
+```
+
