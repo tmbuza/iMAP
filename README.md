@@ -1,1 +1,2 @@
-# iMAP.v1.0: Mac OSX version (Pre-release)
+# iMAP.v1.0: Docker version (Pre-release)
+
