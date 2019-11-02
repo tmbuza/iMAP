@@ -51,6 +51,42 @@ rm -rf master.zip
 <br>
 <br>
 
+
+## Set-up the configuration file
+
+By default most of the executable files are saved or soft-linked to the $HOME/bin. If the folder does not exist, please create it in the home directory.
+
+```{}
+ls ~/
+
+# If bin folder does not exist create it
+
+cd ~/
+mkdir bin
+```
+
+<br>
+
+### Required config files:
+
+* *.bash_profile*: is executed for login shells before running the command prompt. Is more common in Mac OS X. 
+
+* *.bashrc*: is executed for interactive non-login shells. Is more common in Unix-Linux. 
+
+
+```{}
+touch ~/.bashrc
+touch ~/.bash_profile
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+```
+>In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. Simply, add the following lines to the *.bash_profile* file. 
+
+<br>
+
+
 ## Running Analysis Outside of a Docker Container
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
@@ -64,40 +100,9 @@ rm -rf master.zip
 ### Step1: Install required software
 The following script installs the executable tools integrated in the pipeline. Clicking on the tool name will open the site with more information. Required tools include: [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its download site.  
 
+
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
-```
-
-<br>
-
-**Set up the config files**
-
-Required files:
-
-* *.bash_profile*: is executed for login shells before running the command prompt. More common in Mac OS X. 
-
-* *.bashrc*: is executed for interactive non-login shells. More common in Unix-Linux. 
-
->In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. Simply, add the following lines to the *.bash_profile* file. If the files do not exist, create them in the home directory.
-
-
-```{}
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
-fi
-```
-
-<br>
-
-**Create a home bin folder**
-
-By default most of the executable files are saved or soft-linked to the $HOME/bin.
-
-```{}
-cd ~/
-mkdir bin
-touch ~/.bashrc
-touch ~/.bash_profile
 ```
 
 <br>
