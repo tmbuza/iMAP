@@ -60,7 +60,7 @@ By default most of the executable files are saved or soft-linked to the $HOME/bi
 # If bin folder does not exist please create it
 
 cd ~/
-ls
+ls -al
 mkdir bin
 ```
 
@@ -74,14 +74,26 @@ mkdir bin
 
 
 ```{}
+cd ~/
+ls -al
+
+# If the two config files do not exist please create them
+
 touch ~/.bashrc
+
+# Add the following lines to the *.bashrc* file. 
+
+export PATH=$PATH:$HOME/bin
+
 touch ~/.bash_profile
+
+# Add the following lines to the *.bash_profile* file. 
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 ```
->In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. Simply, add the following lines to the *.bash_profile* file. 
+>In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. 
 
 <br>
 
