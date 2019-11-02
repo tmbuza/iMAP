@@ -54,24 +54,23 @@ rm -rf master.zip
 
 ## Set-up the configuration file
 
-By default most of the executable files are saved or soft-linked to the $HOME/bin. If the folder does not exist, please create it in the home directory.
+By default most of the executable files are saved or soft-linked to the $HOME/bin directory. 
 
 ```{}
-ls ~/
-
-# If bin folder does not exist create it
+# If bin folder does not exist please create it
 
 cd ~/
+ls
 mkdir bin
 ```
 
 <br>
 
-### Required config files:
+### Required configuration files:
 
-* *.bash_profile*: is executed for login shells before running the command prompt. Is more common in Mac OS X. 
+* *.bash_profile*: A hidden file executed for login shells before running any command argument. Is more common in Mac OS X. 
 
-* *.bashrc*: is executed for interactive non-login shells. Is more common in Unix-Linux. 
+* *.bashrc*: A hidden file executed for interactive non-login shells before running any command argument. Is more common in Unix-Linux. 
 
 
 ```{}
