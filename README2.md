@@ -16,7 +16,6 @@
 <br>
 
 ## Running Analysis within Docker Container (Default)
-These images are considered experimental, and may change. They should not be used for strictly reproducible environments (yet!).
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master)
 
@@ -200,7 +199,7 @@ cd iMAP
 <br>
 
 ### Step 3: Add required files to designated folders
-* Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders.
+* Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders. See Table 1 in the [README](https://github.com/tmbuza/iMAP/blob/master/README.md) file.
 * Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
@@ -362,7 +361,7 @@ The above PBS submit script specifies:
 <hr>
 
 ## IN-DEPTH ANALYSIS, VISUALIZATION & REPORTING (In progress)
-* Uses RStudio extensively.
+* Uses R & RStudio extensively.
 * Useful site: [RStudio Community](https://community.rstudio.com/)
 
 The output from preprocessing and bioinformatics analysis is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
