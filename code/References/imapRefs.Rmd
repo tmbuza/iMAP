@@ -1,0 +1,35 @@
+# Tools Integrated in iMAP v1.0
+## Useful Download Links
+
+### MAC OS 10.4 +
+![iMAP]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![Seqkit](https://github.com/shenwei356/seqkit/releases/download/v0.11.0/seqkit_darwin_amd64.tar.gz)
+
+
+### Linux
+![iMAP]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+
+
+### Windows 10 +
+* Use Git bash. Pewershell or WSL bash to run command-line operations
+![iMAP]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()

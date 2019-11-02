@@ -1,0 +1,711 @@
+---
+output:
+  html_document: default
+bibliography: ["../../library/imap.bib"]
+biblio-style: apalike
+link-citations: yes
+date: "Updated: `r Sys.time()`"
+
+---
+
+```{r message=FALSE, warning=FALSE}
+load("./packages.RData")
+load("./otutaxon.RData")
+```
+
+## Heatmaps
+
+<hr>
+
+### Phyla
+
+```{r p_heatmap, fig.height=6, fig.width=10}
+library(dplyr)
+library(kableExtra)
+library(ggplot2)
+library(reshape2)
+library(viridis)
+
+p.scaled.t[,1:4] %>% head(5) %>% kable(align = "c") %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE) %>%
+footnote(general = "Phylum-Level: First few columns of the scaled abundance")
+
+cat("\n\n")
+
+melt(p.scaled.t) %>% 
+ggplot(aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(mapping = NULL, data = NULL, stat = "identity",
+  position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
+  # scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x="Sample ID", y="", fill ="Scaled Abund") + theme(axis.text.y = element_text(face = "italic", size = 10)) +
+  scale_fill_viridis(discrete = FALSE)
+
+```
+
+<br>
+
+### Class
+
+```{r c_heatmap, fig.height=8, fig.width=10}
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(viridis)
+
+c.scaled.t[,1:4] %>% head(5) %>% kable(align = "c") %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE) %>%
+footnote(general = "Class-Level: First few columns of the scaled abundance")
+
+cat("\n\n")
+
+melt(c.scaled.t) %>%
+ggplot(aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(mapping = NULL, data = NULL, stat = "identity",
+  position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
+  # scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x="Sample ID", y="", fill ="Scaled Abund") + theme(axis.text.y = element_text(face = "italic", size = 10)) +
+  scale_fill_viridis(discrete = FALSE)
+
+```
+
+<br>
+
+### Order
+
+```{r o_heatmap, fig.height=8, fig.width=10}
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(viridis)
+
+o.scaled.t[,1:4] %>% head(5) %>% kable(align = "c") %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE) %>%
+footnote(general = "Order-Level: First few columns of the scaled abundance")
+
+cat("\n\n")
+
+melt(o.scaled.t) %>%
+ggplot(aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(mapping = NULL, data = NULL, stat = "identity",
+  position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
+  # scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x="Sample ID", y="", fill ="Scaled Abund") + theme(axis.text.y = element_text(face = "italic", size = 10)) +
+  scale_fill_viridis(discrete = FALSE)
+
+```
+
+<br>
+
+### Family
+
+```{r f_heatmap, fig.height=12, fig.width=10}
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(viridis)
+
+f.scaled.t[,1:4] %>% head(5) %>% kable(align = "c") %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE) %>%
+footnote(general = "Family-Level: First few columns of the scaled abundance")
+
+cat("\n\n")
+
+melt(f.scaled.t) %>%
+ggplot(aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(mapping = NULL, data = NULL, stat = "identity",
+  position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
+  # scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x="Sample ID", y="", fill ="Scaled Abund") + theme(axis.text.y = element_text(face = "italic", size = 10)) +
+  scale_fill_viridis(discrete = FALSE)
+
+```
+
+<br>
+
+### Genus
+
+```{r g_heatmap, fig.height=16, fig.width=10}
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(viridis)
+
+g.scaled.t[,1:4] %>% head(5) %>% kable(align = "c") %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE) %>%
+footnote(general = "Genus-Level: First few columns of the scaled abundance")
+
+cat("\n\n")
+
+melt(g.scaled.t) %>%
+ggplot(aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(mapping = NULL, data = NULL, stat = "identity",
+  position = "identity", na.rm = TRUE,inherit.aes = TRUE)+
+  # scale_fill_gradient2(low = c("blue","blue4"), high = c("red", "red"), na.value = "white", name  ="Scaled abund") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x="Sample ID", y="", fill ="Scaled Abund") + theme(axis.text.y = element_text(face = "italic", size = 10)) +
+  scale_fill_viridis(discrete = FALSE)
+
+```
+
+<br>
+
+## PAM clustering
+
+<hr>
+
+* Partitioning Around Medoids (PAM)
+* Is considered to be the more robust version of K-means.
+* Medoids	are representative objects of the cluster.
+* Starts by determining the best number of clusters using factoextra::fviz_nbclust()
+* Method: Silhouette
+* Metric = Euclidean
+* Robust for partitioning data set into clusters of observation.
+* User are required to know the data to indicate the appropriate number of clusters to be produced. 
+* Visualize clusters (pam results) using factoextra::fviz_cluster()
+
+<br>
+
+### Number of best clusters
+
+<br>
+
+```{r bestclusters}
+library(NbClust)
+otu.nbclust <- NbClust(otu.scaled.t, distance = "euclidean", min.nc=2, max.nc=3, method = "average", index = "ch")
+p.nbclust <- NbClust(p.scaled.t, distance = "euclidean", min.nc=2, max.nc=3, method = "average", index = "ch")
+c.nbclust <- NbClust(c.scaled.t, distance = "euclidean", min.nc=2, max.nc=3, method = "average", index = "ch")
+o.nbclust <- NbClust(o.scaled.t, distance = "euclidean", min.nc=2, max.nc=3, method = "average", index = "ch")
+f.nbclust <- NbClust(f.scaled.t, distance = "euclidean", min.nc=2, max.nc=3, method = "average", index = "ch")
+g.nbclust <- NbClust(g.scaled.t, distance = "euclidean", min.nc=2, max.nc=3, method = "average", index = "ch")
+
+cat("OTUbased\n") 
+print (otu.nbclust$Best.nc)
+# fviz_nbclust(otu.nbclust) # Same output
+
+cat("Phylum\n") 
+print (p.nbclust$Best.nc)
+
+cat("Class\n") 
+print (c.nbclust$Best.nc)
+
+cat("Order\n") 
+print (o.nbclust$Best.nc)
+
+cat("Family\n") 
+print (f.nbclust$Best.nc)
+
+cat("Genus\n") 
+print (g.nbclust$Best.nc)
+```
+
+<br>
+
+### Visualization of best clusters
+
+```{r fviznbclust, eval=FALSE, fig.height=6, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
+library(cluster)
+library(factoextra)
+
+# Raw abundance
+
+otu_nbcluster1 <- factoextra::fviz_nbclust(otu.scaled.t, pam, method = "silhouette")+ labs(x="OTU clusters", title = "") + theme_classic()
+p_nbcluster1 <- factoextra::fviz_nbclust(p.scaled.t, pam, method = "silhouette")+ labs(x="Phylum clusters", title = "") + theme_classic()
+c_nbcluster1 <- factoextra::fviz_nbclust(c.scaled.t, pam, method = "silhouette")+ labs(x="Class clusters", title = "") + theme_classic()
+o_nbcluster1 <- factoextra::fviz_nbclust(o.scaled.t, pam, method = "silhouette")+ labs(x="Order clusters", title = "") + theme_classic()
+f_nbcluster1 <- factoextra::fviz_nbclust(f.scaled.t, pam, method = "silhouette")+ labs(x="Family clusters", title = "") + theme_classic()
+g_nbcluster1 <- factoextra::fviz_nbclust(g.scaled.t, pam, method = "silhouette")+ labs(x="Genus clusters", title = "") + theme_classic()
+
+ggpubr::ggarrange(otu_nbcluster1, p_nbcluster1, c_nbcluster1, o_nbcluster1, f_nbcluster1, g_nbcluster1, ncol = 3, nrow = 2,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
+
+```
+
+Figure x: Optimal number of OTU clusters. The suggested number of best clusters (dotted line) that could explain most variation is 2 for OTUs (A), 3 for phylum (B), 3 for class (C), 2 for Order (D), 10 for Family (E) and 2 for Genus (F). A high average Silhouette width indicates high quality clustering.
+
+
+
+<br>
+
+### Cluster validation
+<!-- * Using Silhouette Information -->
+<!-- * Use original data (non-matrices) -->
+<!-- * Measures how well a cluster is -->
+<!-- * Estimates the average distance between clusters. -->
+
+```{r fviz_silhouette, fig.height=10, fig.width=10, message=FALSE, warning=FALSE}
+library(cluster)
+library(factoextra)
+otu.pam.t <- pam(otu.t, 2, metric = "euclidean", stand = FALSE)
+p.pam.t <- pam(phylum.t, 2, metric = "euclidean", stand = FALSE)
+c.pam.t <- pam(class.t, 2, metric = "euclidean", stand = FALSE)
+o.pam.t <- pam(order.t, 2, metric = "euclidean", stand = FALSE)
+f.pam.t <- pam(family.t,2, metric = "euclidean", stand = FALSE)
+g.pam.t <- pam(genus.t, 2, metric = "euclidean", stand = FALSE)
+
+# Visualize pam
+otu.fviz.t <- factoextra::fviz_silhouette(otu.pam.t, diss=FALSE, 2) + ggtitle("OTUs")+ normalaxislayout2 + xlab("Data point") + ylab("Si width")
+p.fviz.t <- factoextra::fviz_silhouette(p.pam.t, diss=FALSE, 3) + ggtitle("Phylum")+ normalaxislayout2 + xlab("Data point") + ylab("Si width")
+c.fviz.t <- factoextra::fviz_silhouette(c.pam.t, diss=FALSE, 3) + ggtitle("Class")+ normalaxislayout2 + xlab("Data point") + ylab("Si width")
+o.fviz.t <- factoextra::fviz_silhouette(o.pam.t, diss=FALSE, 2) + ggtitle("Order")+ normalaxislayout2 + xlab("Data point") + ylab("Si width") 
+f.fviz.t <- factoextra::fviz_silhouette(f.pam.t, diss=FALSE, 2) + ggtitle("Family")+ normalaxislayout2 + xlab("Data point") + ylab("Si width") 
+g.fviz.t <- factoextra::fviz_silhouette(g.pam.t, diss=FALSE, 2) + ggtitle("Genus")+ normalaxislayout2 + xlab("Data point") + ylab("Si width") 
+
+
+ggpubr::ggarrange(otu.fviz.t, p.fviz.t, c.fviz.t, o.fviz.t, f.fviz.t, g.fviz.t, ncol = 2, nrow = 3,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
+
+```
+
+Figure x: Silhouette plot guided by the best number of clusters. Observations with a large Si (almost 1) are very well clustered. A small Si (around 0) means that the observation lies between two clusters while a negative Si are probably placed in the wrong cluster.
+
+<br>
+
+### Cluster visualization
+```{r sampleclusters, fig.height=10, fig.width=10}
+library(cluster)
+library(factoextra)
+
+pam1 <- factoextra::fviz_cluster(otu.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("OTUs")
+
+pam2 <- factoextra::fviz_cluster(p.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Phylum")
+
+pam3 <- factoextra::fviz_cluster(c.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Class")
+
+pam4 <- factoextra::fviz_cluster(o.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Order")
+
+pam5 <- factoextra::fviz_cluster(f.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Family")
+
+pam6 <- factoextra::fviz_cluster(g.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Genus")
+
+ggpubr::ggarrange(pam1, pam2, pam3, pam4, pam5, pam6, ncol = 2, nrow = 3,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
+```
+
+<br>
+<br>
+
+### Number of best clusters
+* Range: Shown sequencially for OTU, Phylum, Class. Order, Family and Genus
+```{r fviz_silhouette_intext, eval=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
+# <!-- ########################## -->
+# <!-- ########################## -->
+# <!-- ########################## -->
+# <!-- ########################## -->
+
+### Cluster validation for Day3
+
+otu.pam.t <- pam(otu.t, 2, metric = "euclidean", stand = FALSE)
+p.pam.t <- pam(phylum.t, 2, metric = "euclidean", stand = FALSE)
+c.pam.t <- pam(class.t, 2, metric = "euclidean", stand = FALSE)
+o.pam.t <- pam(order.t, 2, metric = "euclidean", stand = FALSE)
+f.pam.t <- pam(family.t, 2, metric = "euclidean", stand = FALSE)
+g.pam.t <- pam(genus.t, 2, metric = "euclidean", stand = FALSE)
+
+# Visualize pam
+otu.fviz.t <- factoextra::fviz_silhouette(otu.pam.t) + ggplot2::ggtitle("OTUs")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels 
+p.fviz.t <- factoextra::fviz_silhouette(p.pam.t) + ggplot2::ggtitle("Phylum")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels 
+c.fviz.t <- factoextra::fviz_silhouette(c.pam.t) + ggplot2::ggtitle("Class")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels 
+o.fviz.t <- factoextra::fviz_silhouette(o.pam.t) + ggplot2::ggtitle("Order")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels 
+f.fviz.t <- factoextra::fviz_silhouette(f.pam.t) + ggplot2::ggtitle("Family")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels  
+g.fviz.t <- factoextra::fviz_silhouette(g.pam.t) + ggplot2::ggtitle("Genus")+ normalaxislayout2 + labs(x = "Sample ID", y = "Si width")#+ noxlabels 
+
+
+ggpubr::ggarrange(otu.fviz.t, p.fviz.t, c.fviz.t, o.fviz.t, f.fviz.t, g.fviz.t, ncol = 2, nrow = 3,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
+```
+
+`
+
+<br>
+
+```{r, fig.height=8, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
+library(vegan)
+library(cluster)
+library(factoextra)
+
+pam1 <- factoextra::fviz_cluster(otu.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             main = "Cluster plot", 
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("OTUs")
+
+pam2 <- factoextra::fviz_cluster(p.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             main = "Cluster plot",
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Phylum")
+
+pam3 <- factoextra::fviz_cluster(c.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Class")
+
+pam4 <- factoextra::fviz_cluster(o.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Order")
+
+pam5 <- factoextra::fviz_cluster(f.pam.t, 
+             palette = c("#00AFBB", "#FC4E07"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Family")
+
+pam6 <- factoextra::fviz_cluster(g.pam.t, 
+             palette = c("#00AFBB", "#FC4E07", "black"), # color palette
+             ellipse.type = "convex", # Concentration ellipse
+             ellipse.level = 0.95,
+             stand = FALSE,
+             axes = c(1,2),
+             pointsize = 2,
+             geom = c("point", ""),
+             repel = FALSE, # Avoid label overplotting (slow)
+             ggtheme = theme_classic()
+             ) + ggplot2::ggtitle("") + normalaxislayout + ggtitle("Genus")
+
+ggpubr::ggarrange(pam1, pam2, pam3, pam4, pam5, pam6, ncol = 2, nrow = 3,  common.legend = FALSE, legend = "none", align = "hv", labels = "")
+
+# <!-- ########################### -->
+# <!-- ########################### -->
+# <!-- ########################### -->
+# <!-- ########################### -->
+```
+
+
+<br>
+
+## PCA (Principal Component Analysis)
+
+<hr>
+
+* Identifies smaller number of uncorrelated variables (principal components) from a large set of data. 
+* Explains the maximum amount of variance with the minimum number of principal components. 
+* Missing values are replaced by the column mean
+* Use scree plot to estimate which components explain most of the variability in the data
+
+```{r pca}
+library(grid)
+library(gridExtra)
+library(FactoMineR)
+
+otu.pca <- FactoMineR::PCA(otu.t, scale.unit = FALSE, graph = FALSE)
+p.pca <- FactoMineR::PCA(phylum.t, scale.unit = FALSE, graph = FALSE)
+c.pca <- FactoMineR::PCA(class.t, scale.unit = FALSE, graph = FALSE)
+o.pca <- FactoMineR::PCA(order.t, scale.unit = FALSE, graph = FALSE)
+f.pca <- FactoMineR::PCA(family.t, scale.unit = FALSE, graph = FALSE)
+g.pca <- FactoMineR::PCA(genus.t, scale.unit = FALSE, graph = FALSE)
+```
+
+
+### Scree plot: Analysis of number of suitable components
+```{r fviz_screeplot, fig.height=8, fig.width=10}
+library(factoextra)
+library(ggplot2)
+
+otu.scree <- factoextra::fviz_screeplot(otu.pca, xlab = "Dimens ions", ylab = "Explained variance(%)", addlabels = TRUE,  ylim = c(0, 100)) + ggplot2::ggtitle("") + cleanup
+p.scree <- factoextra::fviz_screeplot(p.pca, xlab = "Dimens ions", ylab = "Explained variance(%)", addlabels = TRUE,  ylim = c(0, 100)) + ggplot2::ggtitle("") + cleanup
+c.scree <- factoextra::fviz_screeplot(c.pca, xlab = "Dimensions", ylab = "Explained variance(%)", addlabels = TRUE, ylim = c(0, 100)) + ggplot2::ggtitle("")  + cleanup
+o.scree <- factoextra::fviz_screeplot(o.pca, xlab = "Dimensions", ylab = "Explained variance(%)", addlabels = TRUE, ylim = c(0, 100)) + ggplot2::ggtitle("")  + cleanup
+f.scree <- factoextra::fviz_screeplot(f.pca, xlab = "Dimensions", ylab = "Explained variance(%)", addlabels = TRUE, ylim = c(0,100)) + ggplot2::ggtitle("")  + cleanup
+g.scree <- factoextra::fviz_screeplot(g.pca, xlab = "Dimensions", ylab = "Explained variance(%)", addlabels = TRUE, ylim = c(0, 100)) + ggplot2::ggtitle("")  + cleanup
+
+multiplot(otu.scree, p.scree, f.scree, c.scree, o.scree, g.scree, cols = 2)
+```
+
+Figure x: Scree plot of PCA. Shows which components explain most of the variability in the data. Over 80% of the variances contained in OTU and taxonomy data are retained by the first two principal components. The first PC explains the maximum amount of variation in the data set.
+
+<br>
+
+## PCoA or PCO: Principal Coordinates Analysis 
+
+<hr>
+
+* Similar to PCA but is basically an eigen-analysis of a distance or dissimilarity matrix.
+```{r loadings, fig.height=3, fig.width=6, message=FALSE, warning=FALSE}
+
+# load("../../results/tables/phylotype/otutaxon.RData")
+
+pco <- function(dis, k=2)
+{
+        tmp <-cmdscale(dis,k=k,eig=TRUE)
+        class(tmp) <- "pco"
+        return(tmp)
+}
+
+```
+
+<br>
+
+```{r pcoa, eval=FALSE, fig.height=6, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
+library(vegan)
+
+otu.dis.bray <- vegdist(otu.t, method="bray")
+p.dis.bray <- vegdist(phylum.t, method="bray")
+c.dis.bray <- vegdist(class.t, method="bray")
+o.dis.bray <- vegdist(order.t, method="bray")
+f.dis.bray <- vegdist(family.t, method="bray")
+g.dis.bray <- vegdist(genus.t, method="bray")
+
+otu.pco <- pco(otu.dis.bray, k=10)
+p.pco <- pco(p.dis.bray, k=10)
+c.pco <- pco(c.dis.bray, k=10)
+o.pco <- pco(o.dis.bray, k=10)
+f.pco <- pco(f.dis.bray, k=10)
+g.pco <- pco(g.dis.bray, k=10)
+# 
+# par(cex.axis=1, cex.lab=1.5, cex.main=2, cex.sub=1)
+# par(mfrow = c(2, 3))
+# barplot(otu.pco$eig, main = "OTUs", xlab = "PCO1", ylab = "PCO2")
+# barplot(p.pco$eig, main = "Phylum", xlab = "PCO1", ylab = "PCO2")
+# barplot(c.pco$eig, main = "Class", xlab = "PCO1", ylab = "PCO2")
+# barplot(o.pco$eig, main = "Order", xlab = "PCO1", ylab = "PCO2")
+# barplot(f.pco$eig, main = "Family", xlab = "PCO1", ylab = "PCO2")
+# barplot(g.pco$eig, main = "Genus", xlab = "PCO1", ylab = "PCO2") 
+
+
+plot(otu.pco$points, main = "OTUs", xlab = "PCO1", ylab = "PCO2", col=2)
+abline(h=0, v=0, lt=2, col="grey")
+
+plot(p.pco$points, main = "Phylum", xlab = "PCO1", ylab = "PCO2", col=3)
+abline(h=0, v=0, lt=2, col="grey")
+
+plot(c.pco$points, main = "Class", xlab = "PCO1", ylab = "PCO2", col=4)
+abline(h=0, v=0, lt=2, col="grey")
+
+plot(o.pco$points, main = "Order", xlab = "PCO1", ylab = "PCO2", col=5)
+abline(h=0, v=0, lt=2, col="grey")
+
+plot(f.pco$points, main = "Family", xlab = "PCO1", ylab = "PCO2", col=6)
+abline(h=0, v=0, lt=2, col="grey")
+
+plot(g.pco$points, main = "Genus", xlab = "PCO1", ylab = "PCO2", col="orange") 
+abline(h=0, v=0, lt=2, col="grey")
+
+```
+
+Figure x: Principal coordinate analysis ordination using Bray-Curtis dissimilarity matrix. Objects that are ordinated closer together have smaller dissimilarity values than those ordinated further apart. A successful PCoA will capture most of the variation in the (dis)similarity matrix in a few PCoA axes.
+
+
+<br>
+
+
+## NMDS (Non-metric multidimensional scaling)
+
+<hr>
+
+* Goodness of fit and Sheperd plot can be used to determine the good or poor fit. 
+* Stress values are used to indicate the quality of NMDS ordination, <0.1 are considered fair, <0.05 indicate good fit.
+* [Reference](https://mb3is.megx.net/gustame/dissimilarity-based-methods/nmds)
+```{r eval=FALSE, include=FALSE}
+set.seed(110912)
+library(vegan)
+
+otu.mds <- metaMDS(otu.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # OTU abundance data.
+p.mds <- metaMDS(phylum.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # phylum abundance data.
+c.mds <- metaMDS(class.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # class abundance data.
+o.mds <- metaMDS(order.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # order abundance data.
+f.mds <- metaMDS(family.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # family abundance data.
+g.mds <- metaMDS(genus.t, distance = "bray", k=3, try=10, display = c("sites"), choices = c(1, 2), type = "t", shrink = FALSE) # genus abundance data.
+
+save(otu.mds,p.mds,c.mds,o.mds,f.mds,g.mds, file = "../../results/mds.RData")
+```
+
+
+```{r}
+load(file = "../../results/mds.RData")
+```
+
+<br>
+
+### Parameters used for the NMDS
+
+```{r}
+
+cat("\nOTUs\n----------------------------")
+otu.mds
+
+cat("\nPhylum\n----------------------------")
+p.mds 
+
+cat("\nClass\n----------------------------")
+c.mds 
+
+cat("\nOrder\n----------------------------")
+o.mds 
+
+
+cat("\nFamily\n----------------------------")
+f.mds 
+
+cat("\nGenus\n----------------------------")
+g.mds 
+
+```
+
+<br>
+
+### Sherperd and non-metric multidimensional scaling plots.
+
+```{r stressplot, fig.height=8, fig.width=10}
+par(mfrow=c(2,3))
+par(cex.axis=1.2, cex.lab=1.2, cex.main=15, cex.sub=1)
+
+stressplot(otu.mds)
+mtext("OTUs", cex=.8, adj = 0)
+stressplot(p.mds)
+mtext("Phylum", cex=.8, adj = 0)
+stressplot(c.mds)
+mtext("Class", cex=.8, adj = 0)
+stressplot(o.mds)
+mtext("Order", cex=.8, adj = 0)
+stressplot(f.mds)
+mtext("Family", cex=.8, adj = 0)
+stressplot(g.mds)
+mtext("Genus", cex=.8, adj = 0)
+```
+
+<br><hr>
+
+```{r goodness, fig.height=8, fig.width=10}
+par(mfrow=c(2,3))
+par(cex.axis=1.2, cex.lab=1.2, cex.main=15, cex.sub=1)
+
+gof <- goodness(otu.mds)
+plot(otu.mds, display = "species", cex = gof/mean(gof))
+points(otu.mds, display = "sites", cex = gof/mean(gof), col=3)
+abline(h=0, v=0, lt=2, col="grey")
+mtext("OTUs", cex=.8, adj = 0)
+text(9, -5, "Stress = 0.11")
+
+gof <- goodness(p.mds)
+plot(p.mds, display = "species", cex = gof/mean(gof))
+points(p.mds, display = "sites", cex = gof/mean(gof), col=3)
+abline(h=0, v=0, lt=2, col="grey")
+mtext("Phylum", cex=.8, adj = 0)
+text(1, -2.4, "Stress = 0.12")
+
+gof <- goodness(c.mds)
+plot(c.mds, display = "species", cex = gof/mean(gof))
+points(c.mds, display = "sites", cex = gof/mean(gof), col=3)
+abline(h=0, v=0, lt=2, col="grey")
+mtext("Class", cex=.8, adj = 0)
+text(3, -2.6, "Stress = 0.14")
+
+gof <- goodness(o.mds)
+plot(o.mds, display = "species", cex = gof/mean(gof))
+points(o.mds, display = "sites", cex = gof/mean(gof), col=3)
+abline(h=0, v=0, lt=2, col="grey")
+mtext("Order", cex=.8, adj = 0)
+text(-1.5, -1.3, "Stress = 0.14")
+
+gof <- goodness(f.mds)
+plot(f.mds, display = "species", cex = gof/mean(gof))
+points(f.mds, display = "sites", cex = gof/mean(gof), col=3)
+abline(h=0, v=0, lt=2, col="grey")
+mtext("Family", cex=.8, adj = 0)
+text(5,-3.5, "Stress = 0.13")
+
+gof <- goodness(g.mds)
+plot(g.mds, display = "species", cex = gof/mean(gof))
+points(g.mds, display = "sites", cex = gof/mean(gof), col=3)
+abline(h=0, v=0, lt=2, col="grey")
+mtext("Genus", cex=.8, adj = 0)
+text(6000, -2000, "Stress = 0.00")
+
+```
+
+Figure X. Sherperd and non-metric multidimensional scaling plot. Green oints represent samples and red points represent OTU or species. Similar samples are ordinated together. Stress values are shown at the botthom of ordination plot.
+
+<br>
+
+
+

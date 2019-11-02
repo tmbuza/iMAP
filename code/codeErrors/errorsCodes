@@ -1,0 +1,5 @@
+## Errors
+
+```{}
+Sementation errors: Chances are the system is running out of memory and results in a segmentation fault.
+```

@@ -1,0 +1,248 @@
+---
+title: "Progress report 1"
+bibliography: ../../library/imap.bib
+date: 'Updated: `r Sys.time()`'
+output:
+  html_document:
+    css: ../../code/css/report.css
+    output_file: "../../reports/report1.html"
+    # keep_md: yes
+link-citations: yes
+subtitle: Metadata profiling
+biblio-style: apalike
+
+---
+
+
+<br>
+
+## Preamble
+* Load Metadata
+	* Inspect the metadata column names.
+	* Remove number sign at the name of column one.
+	* Note that Var1 starts at index 7.
+	* Select important variables for downstream analysis.
+	* Define each categoric variable as factor.
+
+```{r echo=TRUE}
+# Load samplemetadata
+samplemetadata <- readr::read_table2(file="../../data/metadata/samplemetadata.tsv", col_names = T)
+colnames(samplemetadata)[1] <- "SampleID"
+
+# View column names
+names(samplemetadata)
+
+# Define categoric variables like
+samplemetadata$SampleID <- as.factor(samplemetadata$SampleID)
+samplemetadata$Var1 <- as.factor(samplemetadata$Var1)
+samplemetadata$Var2 <- as.factor(samplemetadata$Var2)
+samplemetadata$Var3 <- as.factor(samplemetadata$Var3)
+samplemetadata$Var4 <- as.factor(samplemetadata$Var4)
+
+# Add more variables as needed
+```
+
+<br>
+<br>
+
+
+### Status of sample metadata
+
+```{r, include=FALSE}
+metadatastatus <- funModeling::df_status(samplemetadata)
+```
+
+The following script (disabled) requires kableExtra package. Installation doesn't work in docker container but can be installed directly from R or RStudio.
+```{r dfstatus}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+# show data
+metadatastatus %>% kable() %>% kable_styling(bootstrap_options = "bordered", full_width = F)
+```
+
+#Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: levels of the variable.
+
+<br>
+
+<br>
+<br>
+
+
+### Selected variables for downsteam analysis
+> This is important for mapping to output from dowmstream analysis
+
+```{r, include=FALSE}
+library(dplyr)
+variables <- samplemetadata %>% dplyr::select("SampleID", "Var1", "Var2", "Var3", "Var4")
+
+# Confirm variable names
+names(variables)
+
+# Define variables
+variables$SampleID <- as.factor(variables$SampleID)
+variables$Var1 <- as.factor(variables$Var1)
+variables$Var2 <- as.factor(variables$Var2)
+variables$Var3 <- as.factor(variables$Var3)
+variables$Var4 <- as.factor(variables$Var4)
+
+varstatus <- funModeling::df_status(variables)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+# show variable status
+varstatus %>% kable() %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE)
+
+```
+
+Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: frequency of the values.
+
+<br>
+<br>
+
+## View variable levels (first 5 rows)
+
+```{r message=FALSE, warning=FALSE}
+library(kableExtra)
+
+variables %>% head(5)  %>% kable() %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE)
+```
+
+<br>
+<hr>
+<br>
+
+## Frequency of experimental variables
+
+```{r varfreq, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+# Var1
+var1histplot <- ggpubr::gghistogram(variables, x = "Var1", stat="count", fill = "#ff0000") + 
+  labs(x = "Variable 1", y = "Sample count") 
+  
+# Var2
+var2histplot <- ggpubr::gghistogram(variables, x = "Var2", stat="count", fill = "#00ff00") + 
+  labs(x = "Variable 2", y = "Sample count") 
+
+# Var3
+var3histplot <- ggpubr::gghistogram(variables, x = "Var3", stat="count", fill = "#0000ff") + 
+  theme(axis.text.x=element_text(angle = 0, hjust = 0))+ scale_y_continuous(labels=scaleFUN) +
+  labs(x = "Variable 3", y = "Sample count") 
+
+ggpubr::ggarrange(var1histplot,var2histplot, var3histplot, ncol = 1, nrow = 3, align = "hv", labels = c("AUTO"))
+```
+
+<br>
+
+### Profiling metadata used in the iMAP casestudy
+> Using the Casestudy metadata located in this path: iMAP/resources/metadata/samplemetadata_casestudy.tsv
+
+```{r casestudymetdat, echo=TRUE}
+library("dplyr")
+library("knitr")
+
+# Load samplemetadata
+
+samplemetadata2 <- readr::read_table2(file="../../data/metadata/samplemetadata_casestudy.tsv", col_names = T)
+samplemetadata2 <- samplemetadata2[, -7]
+colnames(samplemetadata2)[1] <- "SampleID"
+
+# View column names
+names(samplemetadata2)
+
+# Define categoric variables like
+samplemetadata2$SampleID <- as.factor(samplemetadata2$SampleID)
+samplemetadata2$Sex <- as.factor(samplemetadata2$Sex)
+samplemetadata2$Time <- as.factor(samplemetadata2$Time)
+samplemetadata2$DayID <- as.factor(samplemetadata2$DayID)
+samplemetadata2$DPW <- as.factor(samplemetadata2$DPW)
+
+# Add more variables as needed
+
+variables2 <- samplemetadata2  %>% dplyr::select("SampleID", "Sex", "Time", "DayID", "DPW" )
+
+```
+
+## Status of custom metadata
+
+<br>
+
+```{r, include = FALSE}
+varstatus2 <- funModeling::df_status(variables2)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+# show data
+varstatus2 %>% kable() %>% kable_styling(bootstrap_options = "bordered", full_width = FALSE) 
+```
+
+
+Key: **q_zeros**: quantity of missing data; **p_zeros**: percentage of missing data, **q_na**: quantity of NA; **p_na**: percentage of NA, **q_inf**: quantity of infinite values; **p_inf**: percentage of infinity values,  **type**: factor, character, integer or numeric; **unique**: levels of the variable.
+
+
+When reviewing metadata status you may notice that numeric variables are confused with numeric data. For example, variable **DPW** (days post weaning) on Table x shows 12 missing values (3.33%) which is incorrect. As investigators we know that day 1 was coded zero (0) (12 zeros for 12 mouse) which in descriptive statistics is interpreted as missing data. To correct this we re-coded the samples with unique identifies shown as DayID to distinguish them from integers. However, depending of experiment this kind of variables need to be converted to character during analysis. 
+
+<br>
+<br>
+
+## Frequency of experimental variables in the Demo dataset
+
+```{r varfreq2, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
+library(ggplot2)
+#sort by dpw (descending)
+
+sexhistplot <- ggpubr::gghistogram(variables2, x = "Sex", stat="count", fill = "#ff0000") + 
+  labs(x = "Sex of animal", title = "Sex variable")
+
+timehistplot <- ggpubr::gghistogram(variables2, x = "Time", stat="count", fill = "#00ff00") + 
+  labs(x = "Time of Weaning", title = "Time variable")
+
+dpwhistplot <- ggpubr::gghistogram(variables2, x = "DayID", stat="count", fill = "#0000ff") +
+  theme(axis.text.x=element_text(angle = 90, hjust = 0))+ scale_y_continuous(labels=scaleFUN) + 
+  labs(x = "Day Code", title = "Sex variable")
+
+ggpubr::ggarrange(sexhistplot,timehistplot, dpwhistplot, ncol = 1, nrow = 3,  common.legend = TRUE, legend = "top", align = "hv", labels = c(""))
+```
+
+
+```{r}
+
+save(samplemetadata, samplemetadata2, variables, variables2, file = "metadatavars.RData")
+```
+
+<br>
+<hr>
+<br>
+
+## Posible questions
+
+<br>
+
+### Metadata profiling 
+
+
+* QN1: Are there samples to be removed from the analysis based on their count?
+* QN2: Are there enough variables for downstream diversity and statistical analysis?
+* QN3: .......?
+* QN4: .......?
+* QN5: .......?
+
+<br>
+
+## Summary of packages used in the analysis
+```{r}
+sessionInfo()
+```
+
+<br>
+
