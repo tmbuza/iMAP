@@ -107,7 +107,7 @@ fi
 * Best option for integrating most applications
 * Uses RStudio to install R-packages (recommended)
 * No Docker images are required.
-* May probably requires manual installation of some tools.
+* May probably require manual installation of some tools.
 
 <br>
 <br>
