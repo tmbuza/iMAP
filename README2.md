@@ -17,9 +17,6 @@
 <br>
 
 ## Running Analysis within Docker Container (Default)
-
-[README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master)
-
 * Requires Docker Images.
 * Runs on both Windows and Linux applications.
 * Uses less resources but memory-intensive computing may sometimes fail.
@@ -49,6 +46,22 @@ mv iMAP-master iMAP
 rm -rf master.zip
 
 ```
+More nstructions: [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master).
+
+
+<br>
+<hr>
+<br>
+
+## Running Analysis On Specific Platforms (Best option)
+
+[README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
+
+* Best option for integrating most applications
+* Uses RStudio to install R-packages (recommended)
+* No Docker images are required.
+* May probably require manual installation of some tools.
+
 <br>
 <br>
 
@@ -67,7 +80,7 @@ mkdir bin
 
 <br>
 
-### Required configuration files:
+#### Required configuration files:
 
 * *.bash_profile*: A hidden file executed for login shells before running any command argument. Is more common in Mac OS X. 
 
@@ -97,33 +110,40 @@ fi
 ```
 
 <br>
-<hr>
 <br>
 
-## Running Analysis On Specific Platforms (Best option)
+### Step1: Install software
 
-[README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
-
-* Best option for integrating most applications
-* Uses RStudio to install R-packages (recommended)
-* No Docker images are required.
-* May probably require manual installation of some tools.
-
-<br>
-<br>
-
-### Step1: Install preprocessing software and mothur platform
-The following script installs the executable tools integrated in the pipeline. Clicking on the tool name will open the site with more information. Required tools include: [seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0), [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [bbmap](https://sourceforge.net/projects/bbmap/), [multiqc](https://multiqc.info/docs/#manual-installation), and [mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0). If the installation fails, please try to install it manually. Each tool name is hyperlinked to lead you to its download site.  
-
+The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be intalled manually by the user. QIIME2 will be added in the later version.
 
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
 ```
+<br>
+
+Manual Installation
+
+* [Install R](https://cran.r-project.org/)
+* [Install RStudio](https://rstudio.com/products/rstudio/download/)
 
 <br>
 <br>
 
-### Step 2: Dowload the pre-built binary suitable for your platform
+>If auto-install fails, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site.  
+
+* [Install seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0). 
+* [Install fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+* [Install bbmap](https://sourceforge.net/projects/bbmap/).
+* [Install multiqc](https://multiqc.info/docs/#manual-installation).
+* [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
+* QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
+
+
+
+<br>
+<br>
+
+### Dowload the pre-built binary suitable for your platform
 
 <br>
 <br>
