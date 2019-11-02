@@ -16,6 +16,7 @@
 <br>
 
 ## Running Analysis within Docker Container (Default)
+These images are considered experimental, and may change. They should not be used for strictly reproducible environments (yet!).
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master)
 
@@ -26,7 +27,9 @@
 * The iMAP folder is by default the working directory and is readable from the container.
 * The output is stored in the working directory which mean it can be accessed ouside the container.
 
-> Important: Graphical applications don't work well in Docker containers. Some R-packages do not install well when creating docker images.
+> Important: Graphical applications don't work well in Docker containers. 
+> Some R-packages do not install well when creating docker images.
+
 
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
@@ -196,7 +199,7 @@ cd iMAP
 <br>
 <br>
 
-### Step 3: Add data and reference databases
+### Step 3: Add required files to designated folders
 * Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders.
 * Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
@@ -216,6 +219,8 @@ bash ./code/00_3_CheckFilesDriver.bash
 <br>
 <br>
 <hr>
+
+## METADATA PROFILING
 
 ### Step 5: Metadata Profiling 
 
@@ -356,7 +361,10 @@ The above PBS submit script specifies:
 <br>
 <hr>
 
-## OTU ANALYSIS, VISUALIZATION & REPORTING (In progress)
+## IN-DEPTH ANALYSIS, VISUALIZATION & REPORTING (In progress)
+* Uses RStudio extensively.
+* Useful site: [RStudio Community](https://community.rstudio.com/)
+
 The output from preprocessing and bioinformatics analysis is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
 <hr>
