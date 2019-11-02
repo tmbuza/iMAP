@@ -20,12 +20,13 @@
 [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master)
 
 * Requires Docker Images.
-* Runs both Windows and Linux applications.
+* Runs on both Windows and Linux applications.
 * Uses less resources but memory-intensive computing may sometimes fail.
 * All analyses are run interactively on container’s Command-line.
-* The output is stored on your computer in the current working directory (iMAP is default folder).
+* The iMAP folder is by default the working directory and is readable from the container.
+* The output is stored in the working directory which mean it can be accessed ouside the container.
 
-> Important: Graphical applications don't work well. Some R-packages do not install well when creating docker images.
+> Important: Graphical applications don't work well in Docker containers. Some R-packages do not install well when creating docker images.
 
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
