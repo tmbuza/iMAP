@@ -56,7 +56,7 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | **Sample metadata**      | File name: samplemetadata.tsv. A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur or QIIME2    |
 | **Mapping files**      | For linking sample IDs to the data files   |  data/metadata   |  Mothur-formatted & QIIME2-formatted    |
 | <tr><td align="left" colspan="4"><strong>Software</strong> (Mostly available via pre-built docker images)</td></tr> |
-| *Docker*       | For creating containers that wrap up iMAP dependencies.    | fastq.gz  | [Link](https://docs.docker.com/v17.12/install)  |
+| *Docker*       | For creating containers that wrap up iMAP dependencies.    |  | [Link](https://docs.docker.com/v17.12/install)  |
 | *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
 | *BBduk.sh via BBMap*   | For trimming poor quality reads and removing phiX contamination    |  Auto-loaded at preprocessing step  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
 | *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
