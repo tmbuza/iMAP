@@ -13,6 +13,7 @@
 <!-- <img src="https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-workflow.png"> -->
 
 <br>
+<hr>
 <br>
 
 ## Running Analysis within Docker Container (Default)
@@ -72,6 +73,7 @@ mkdir bin
 
 * *.bashrc*: A hidden file executed for interactive non-login shells before running any command argument. Is more common in Unix-Linux. 
 
+>In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. 
 
 ```{}
 cd ~/
@@ -81,29 +83,31 @@ ls -al
 
 touch ~/.bashrc
 
-# Add the following lines to the *.bashrc* file. 
+# Add the following line to the *.bashrc* file. 
 
 export PATH=$PATH:$HOME/bin
 
 touch ~/.bash_profile
 
-# Add the following lines to the *.bash_profile* file. 
+# Add the following line to the *.bash_profile* file. 
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 ```
->In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. 
 
 <br>
+<hr>
+<br>
 
-
-## Running Analysis Outside of a Docker Container
+## Running Analysis On Specific Platforms (Best option)
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
 
-* Best option for integrating most applications and packages.
+* Best option for integrating most applications
+* Uses RStudio to install R-packages (recommended)
 * No Docker images are required.
+* May probably requires manual installation of some tools.
 
 <br>
 <br>
