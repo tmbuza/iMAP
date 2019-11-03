@@ -68,14 +68,14 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *SILVA NR* (mothur)   | Mothur-formatted rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
 | *SILVA NR* (QIIME2)    | QIIME2-formatted classifiers |   data/qiime2   | [Link](https://data.qiime2.org/2018.11/common/silva-132-99-nb-classifier.qza) 
 | *SILVA* (seed)   | Mothur-formatted rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
-| *SILVA*(de-gapped)     | mothur-formatted classifiers |   data/references   | Pre-generated |
+| *SILVA*(de-gapped)     | mothur-formatted classifiers |   data/references   | Auto-Generated|
 | *RDP*      | Mothur-formatted classifiers |   data/references   | [Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
 | *Greengenes*     | Mothur-formatted classifiers |   data/references   | [Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
 | *Greengenes*     | QIIME2-formatted classifiers |   data/qiime2   | [Link](https://data.qiime2.org/2018.11/common/gg-13-8-99-nb-classifier.qza) |
 | *EzBioCloud*     | Mothur-formatted classifiers |   data/references   | [Link](https://www.ezbiocloud.net/resources)  ||
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references |Manually-built|
 
-
+G
 <br>
 
 ## Getting Started
