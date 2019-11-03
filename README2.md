@@ -125,6 +125,8 @@ bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 <br>
 
+**Confirm the installation**
+
 Make sure that all executable tools are being discovered by the system. Simply use *which* or *type -p* function to see the location.
 
 ```{}
@@ -150,7 +152,7 @@ which uchime # must show the location of uchime
 
 
 
-#### R & RStudio Installation (Required)
+**R & RStudio Installation (Required)**
 
 <br>
 <br>
