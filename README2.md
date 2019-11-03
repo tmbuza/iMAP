@@ -125,25 +125,18 @@ bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 <br>
 
-Make sure that all executable tools are in the $HOME/bin. Simply use *which* function to see the location.
+Make sure that all executable tools are being discovered by the system. Simply use *which* or *type -p* function to see the location.
 
 ```{}
-which seqkit # Must show the location of seqkit
-which fastqc # Must show the location of fastqc
-which bbduk.sh # Must show the location of bbduk.sh
-which multiqc # Must show the location of multiqc
-which mothur # Must show the location of fastqc
-which vsearch # Must show the location of vsearch
-which uchime # Must show the location of uchime
+which seqkit # must show the location of seqkit
+which fastqc # must show the location of fastqc
+which bbduk.sh # must show the location of bbduk.sh
+which multiqc # must show the location of multiqc
+which mothur # must show the location of fastqc
+which vsearch # must show the location of vsearch
+which uchime # must show the location of uchime
 ``` 
-<br>
 
-#### R & RStudio Installation (Required)
-
-* [Install R](https://cran.r-project.org/)
-* [Install RStudio](https://rstudio.com/products/rstudio/download/)
-
-<br>
 <br>
 
 >If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site.  
@@ -156,6 +149,14 @@ which uchime # Must show the location of uchime
 * QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
 
 
+
+#### R & RStudio Installation (Required)
+
+<br>
+<br>
+
+* [Install R](https://cran.r-project.org/)
+* [Install RStudio](https://rstudio.com/products/rstudio/download/)
 
 <br>
 <br>
