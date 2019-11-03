@@ -66,7 +66,7 @@ More nstructions: [README](https://github.com/tmbuza/iMAP/blob/master/README.md)
 <br>
 
 
-## Set-up the configuration file
+### Step 1: Set-up the configuration file
 
 By default most of the executable files are saved or soft-linked to the $HOME/bin directory. 
 
@@ -92,11 +92,15 @@ mkdir bin
 cd ~/
 ls -al
 
-# If the two config files do not exist please create them
+# If the two config files do not exist please create them.
 
 touch ~/.bashrc
 
-# Add the following line to the *.bashrc* file. 
+# See if the $HOME/bin is in the $PATH.
+
+echo $PATH
+
+# If not add $HOME/bin line to the *.bashrc* file. 
 
 export PATH=$PATH:$HOME/bin
 
@@ -112,7 +116,7 @@ fi
 <br>
 <br>
 
-### Step1: Install software
+### Step 2: Install software
 
 The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be intalled manually by the user. QIIME2 will be added in the later version.
 
@@ -143,7 +147,7 @@ Manual Installation
 <br>
 <br>
 
-### Dowload the pre-built binary suitable for your platform
+### Step 3: Dowload the pre-built binary suitable for your platform
 
 <br>
 <br>
@@ -238,7 +242,7 @@ cd iMAP
 <br>
 <br>
 
-### Step 3: Add required files to designated folders
+### Step 4: Add required files to designated folders
 * Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders. See Table 1 in the [README](https://github.com/tmbuza/iMAP/blob/master/README.md) file.
 * Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
@@ -248,7 +252,7 @@ bash ./code/00_2_GetDemoDataDriver.bash
 <br>
 <br>
 
-### Step 4: Check folders and files to be certain
+### Step 5: Check folders and files to be certain
 > important!. Do not start the next step unless all the requirements are met. Make sure that you don’t have any missing file required for the downstream analysis. Repeat this step as necessary.
 
 ```{}
@@ -261,26 +265,31 @@ bash ./code/00_3_CheckFilesDriver.bash
 
 ## METADATA PROFILING
 
-### Step 5: Metadata Profiling 
-
-<!-- <br> -->
-
-<!-- ### Mode 1: Running analysis interactively on CLI
-* Users sequentially run individual or bundled scripts on CLI (Command-Line-Interface). 
-* Interactive mode allows investigators to review the results progressively and make well-informed decisions.
-
-### Mode 2: Running analysis Remotely on HPC (Not tested)
-* Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources. --> 
-
 <hr>
 <br>
-
-## BIOINFORMATICS ANALYSIS
-
 <br>
 
+### Step 6: Metadata Profiling 
 
-### Step 6: Read Preprocessing
+
+
+<br>
+<br>
+<hr>
+
+## BIOINFORMATICS ANALYSIS
+* **Mode 1: Interactively on CLI**
+   * Users sequentially run individual or the bundled scripts on CLI (Command-Line-Interface). 
+
+> Interactive mode allows investigators to review the results progressively and make well-informed decisions.
+
+* **Mode 2: Remotely on HPC (in-progress)**
+   * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources.
+
+<br>
+<br>
+
+### Step 7: Read Preprocessing
 - Computing simple statistics of the raw reads 
 - Inspecting base quality scores of original reads (qc0)
 - Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
@@ -293,7 +302,7 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 <br>
 
-### Step 7: Microbial Profiling
+### Step 8: Microbial Profiling
 
 **Sequence processing**
 
@@ -317,7 +326,7 @@ bash ./code/01_3_ClassifySeqDriver.bash
 
 <br>
 
-### Step 8: Preliminary Analysis
+### Step 9: Preliminary Analysis
 
 * Clustering the OTUs (97% identity).
 * Assigning taxonomy names to observed OTUs.
