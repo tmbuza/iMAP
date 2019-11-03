@@ -372,15 +372,16 @@ bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 
 <br><hr>
 
-## Running Analysis Remotely on HPC Using PBS (Portable Batch System) Script
-* The Portable Batch System or PBS in short is the most used workload management solution for HPC systems and Linux clusters. 
-* The **qsub** command scans the lines of the PBS script file for directives.
+## Running Analysis Remotely on HPC
+* Requires a job scheduling script.
+* The Portable Batch System (PBS) is the most used workload management solution for HPC systems and Linux clusters. 
+* The **qsub** command scans the lines of the PBS job scheduling script for directives or instructions.
 * Below is a sample PBS script. Replace the parameters in the script to match your systems.
 
 ```{}
 #!/bin/bash -f
-#PBS -N iMAPtutorial
-#PBS -A vxk1_a_g_sc_default
+#PBS -N [JobID]
+#PBS -A [group allocation name]
 #PBS -l nodes=1:ppn=10
 #PBS -l walltime=3:00:00
 #PBS -l pmem=10gb
@@ -398,6 +399,7 @@ bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
 bash ./code/01_5_ClusterBasedTaxaDriver.bash
 bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 
+exit 0
 ```
 
 **Description of the PBS code**
@@ -405,8 +407,8 @@ bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 The above PBS submit script specifies:  
 
 * The environment to use (#!/bin/bash -f)
-* The name of the job (#PBS -N iMAPtutorial)
-* The group allocation name (#PBS -A vxk1_a_g_sc_default)
+* The name of the job (#PBS -N JobID)
+* The group allocation name (#PBS -A group allocation name)
 * Ten processors to run on a single node (#PBS -l nodes=1:ppn=10)
 * Three walltime hours (#PBS -l walltime=3:00:00)
 * Ten gigabytes of memory (#PBS -l pmem=10gb)
@@ -424,10 +426,9 @@ The above PBS submit script specifies:
 <hr>
 
 ## IN-DEPTH ANALYSIS, VISUALIZATION & REPORTING (In progress)
-* Uses R & RStudio extensively.
-* Useful site: [RStudio Community](https://community.rstudio.com/)
-
 The output from preprocessing and bioinformatics analysis is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
+
+* Useful site for Q&A: [RStudio Community](https://community.rstudio.com/)
 
 <hr>
 <br>
