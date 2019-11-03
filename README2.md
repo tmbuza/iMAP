@@ -153,7 +153,7 @@ which uchime # must show the location of uchime
 <br>
 <br>
 
-**R & RStudio Installation (Required)**
+**Install R & RStudio (Required)**
 
 * [Install R](https://cran.r-project.org/)
 * [Install RStudio](https://rstudio.com/products/rstudio/download/)
