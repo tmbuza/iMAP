@@ -125,7 +125,20 @@ bash ./code/00_1_InstallSoftwareDriver.bash
 ```
 <br>
 
-Manual Installation
+Make sure that all executable tools are in the $HOME/bin. Simply use *which* function to see the location.
+
+```{}
+which seqkit # Must show the location of seqkit
+which fastqc # Must show the location of fastqc
+which bbduk.sh # Must show the location of bbduk.sh
+which multiqc # Must show the location of multiqc
+which mothur # Must show the location of fastqc
+which vsearch # Must show the location of vsearch
+which uchime # Must show the location of uchime
+``` 
+<br>
+
+#### R & RStudio Installation (Required)
 
 * [Install R](https://cran.r-project.org/)
 * [Install RStudio](https://rstudio.com/products/rstudio/download/)
@@ -133,7 +146,7 @@ Manual Installation
 <br>
 <br>
 
->If auto-install fails, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site.  
+>If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site.  
 
 * [Install seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0). 
 * [Install fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
