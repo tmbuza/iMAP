@@ -150,12 +150,10 @@ which uchime # must show the location of uchime
 * [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
 * QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
 
-
+<br>
+<br>
 
 **R & RStudio Installation (Required)**
-
-<br>
-<br>
 
 * [Install R](https://cran.r-project.org/)
 * [Install RStudio](https://rstudio.com/products/rstudio/download/)
