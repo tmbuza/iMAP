@@ -277,15 +277,22 @@ bash ./code/00_3_CheckFilesDriver.bash
 <br>
 <hr>
 
-## METADATA PROFILING
+## METADATA EXPLORATORY ANALYSIS
 
-<hr>
-<br>
 <br>
 
-### Step 6: Metadata Profiling 
+### Step 6: Metadata profiling
+This step helps you to: 
 
+* Discover if data is suitable for analysis.
+* Identify and correct issues.
+* Uncover if additional formatting is needed.
+* Make decision on whether to change anything before proceeding with the analysis.
 
+<br>
+
+#### Progress report 1: Metadata profiling
+--- Details: In-progress ---
 
 <br>
 <br>
@@ -316,6 +323,12 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 <br>
 
+#### Progress report 2: Read Preprocessing 
+--- Details: In-progress ---
+
+<br>
+<br>
+
 ### Step 8: Microbial Profiling
 
 **Sequence processing**
@@ -338,6 +351,12 @@ bash ./code/01_2_SeqProcessingDriver.bash
 bash ./code/01_3_ClassifySeqDriver.bash
 ```
 
+<br>
+
+#### Progress report 3: Sequence Processing 
+--- Details: In-progress ---
+
+<br>
 <br>
 
 ### Step 9: Preliminary Analysis
@@ -370,7 +389,15 @@ bash ./code/01_5_ClusterBasedTaxaDriver.bash
 bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 ```
 
-<br><hr>
+<br>
+
+#### Progress report 4: Preliminary Analysis 
+--- Details: In-progress ---
+
+
+<br>
+<br>
+<hr>
 
 ## Running Analysis Remotely on HPC
 * Requires a job scheduling script.
