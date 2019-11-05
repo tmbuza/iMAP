@@ -5,210 +5,306 @@ output: html_document
 
 <!-- # Load required packages -->
 ```{r packages, message=FALSE, warning=FALSE, include=FALSE}
-if (!require("knitr")) {install.packages("knitr", dependencies = TRUE)}
+
+if(!require("knitr")) {install.packages("knitr", dependencies = TRUE)}
 library("knitr")
-if (!require("rmarkdown")) {install.packages("rmarkdown", dependencies = TRUE)}
+
+if(!require("rmarkdown")) {install.packages("rmarkdown", dependencies = TRUE)}
 library("rmarkdown")
-if (!require("ggplot2")) {install.packages("ggplot2", dependencies = TRUE)}
+
+if(!require("ggplot2")) {install.packages("ggplot2", dependencies = TRUE)}
 library("ggplot2")
-if (!require("reshape2")) {install.packages("reshape2", dependencies = TRUE)}
+
+if(!require("reshape2")) {install.packages("reshape2", dependencies = TRUE)}
 library("reshape2")
-if (!require("grid")) {install.packages("grid", dependencies = TRUE)}
+
+if(!require("grid")) {install.packages("grid", dependencies = TRUE)}
 library("grid")
-if (!require("scales")) {install.packages("scales", dependencies = TRUE)}
+
+if(!require("scales")) {install.packages("scales", dependencies = TRUE)}
 library("scales")
-if (!require("iNEXT")) {install.packages("iNEXT", dependencies = TRUE)}
+
+if(!require("iNEXT")) {install.packages("iNEXT", dependencies = TRUE)}
 library("iNEXT")
-if (!require("readr")) {install.packages("readr", dependencies = TRUE)}
+
+if(!require("readr")) {install.packages("readr", dependencies = TRUE)}
 library("readr")
-if (!require("funModeling")) {install.packages("funModeling", dependencies = TRUE)}
+
+if(!require("funModeling")) {install.packages("funModeling", dependencies = TRUE)}
 library("funModeling")
-if (!require("dplyr")) {install.packages("dplyr", dependencies = TRUE)}
+
+if(!require("dplyr")) {install.packages("dplyr", dependencies = TRUE)}
 library("dplyr")
-if (!require("vegan")) {install.packages("vegan", dependencies = TRUE)}
+
+if(!require("vegan")) {install.packages("vegan", dependencies = TRUE)}
 library("vegan")
-if (!require("factoextra")) {install.packages("factoextra", dependencies = TRUE)}
+
+if(!require("factoextra")) {install.packages("factoextra", dependencies = TRUE)}
 library("factoextra")
-if (!require("FactoMineR")) {install.packages("FactoMineR", dependencies = TRUE)}
+
+if(!require("FactoMineR")) {install.packages("FactoMineR", dependencies = TRUE)}
 library("FactoMineR")
-if (!require("NbClust")) {install.packages("NbClust", dependencies = TRUE)}
+
+if(!require("NbClust")) {install.packages("NbClust", dependencies = TRUE)}
 library("NbClust")
-if (!require("cluster")) {install.packages("cluster", dependencies = TRUE)}
+
+if(!require("cluster")) {install.packages("cluster", dependencies = TRUE)}
 library("cluster")
-if (!require("ggdendro")) {install.packages("ggdendro", dependencies = TRUE)}
+
+if(!require("ggdendro")) {install.packages("ggdendro", dependencies = TRUE)}
 library("ggdendro")
-if (!require("kableExtra")) {install.packages("kableExtra", dependencies = TRUE)}
+
+if(!require("kableExtra")) {install.packages("kableExtra", dependencies = TRUE)}
 library("kableExtra")
-if (!require("tm")) {install.packages("tm", dependencies = TRUE)}
+
+if(!require("tm")) {install.packages("tm", dependencies = TRUE)}
 library("tm")
-if (!require("SnowballC")) {install.packages("SnowballC", dependencies = TRUE)}
+
+if(!require("SnowballC")) {install.packages("SnowballC", dependencies = TRUE)}
 library("SnowballC")
-if (!require("wordcloud")) {install.packages("wordcloud", dependencies = TRUE)}
+
+if(!require("wordcloud")) {install.packages("wordcloud", dependencies = TRUE)}
 library("wordcloud")
-if (!require("htmlwidgets")) {install.packages("htmlwidgets", dependencies = TRUE)}
+
+if(!require("htmlwidgets")) {install.packages("htmlwidgets", dependencies = TRUE)}
 library("htmlwidgets")
-if (!require("wordcloud2")) {install.packages("wordcloud2", dependencies = TRUE)}
+
+if(!require("wordcloud2")) {install.packages("wordcloud2", dependencies = TRUE)}
 library("wordcloud2")
-if (!require("RColorBrewer")) {install.packages("RColorBrewer", dependencies = TRUE)}
+
+if(!require("RColorBrewer")) {install.packages("RColorBrewer", dependencies = TRUE)}
 library("RColorBrewer")
-if (!require("servr")) {install.packages("servr", dependencies = TRUE)}
+
+if(!require("servr")) {install.packages("servr", dependencies = TRUE)}
 library("servr")
-if (!require("bookdownplus")) {install.packages("bookdownplus", dependencies = TRUE)} # For books eg gitbook
+
+if(!require("bookdownplus")) {install.packages("bookdownplus", dependencies = TRUE)} # For books eg gitbook
 library("bookdownplus")
-if (!require("data.table")) {install.packages("data.table", dependencies = TRUE)}
+
+if(!require("data.table")) {install.packages("data.table", dependencies = TRUE)}
 library("data.table")
-if (!require("png")) {install.packages("png", dependencies = TRUE)}
+
+if(!require("png")) {install.packages("png", dependencies = TRUE)}
 library("png")
-if (!require("corrplot")) {install.packages("corrplot", dependencies = TRUE)}
+
+if(!require("corrplot")) {install.packages("corrplot", dependencies = TRUE)}
 library("corrplot")
-if (!require("cowplot")) {install.packages("cowplot", dependencies = TRUE)} # For combined plots
+
+if(!require("cowplot")) {install.packages("cowplot", dependencies = TRUE)} # For combined plots
 library("cowplot")
-if (!require("caTools")) {install.packages("caTools", dependencies = TRUE)} # For regression
+
+if(!require("caTools")) {install.packages("caTools", dependencies = TRUE)} # For regression
 library("caTools")
-if (!require("ggpubr")) {install.packages("ggpubr", dependencies = TRUE)} # For pub-ready figs
+
+if(!require("ggpubr")) {install.packages("ggpubr", dependencies = TRUE)} # For pub-ready figs
 library("ggpubr")
-if (!require("webshot")) {webshot::install_phantomjs()}
+
+if(!require("webshot")) {webshot::install_phantomjs()}
 library("webshot")
-if (!require("goeveg")) {install.packages("goeveg", dependencies = TRUE)}
+
+if(!require("goeveg")) {install.packages("goeveg", dependencies = TRUE)}
 library("goeveg")
-if (!require("bookdown")) {install.packages("bookdown", dependencies = TRUE)} # For books
+
+if(!require("bookdown")) {install.packages("bookdown", dependencies = TRUE)} # For books
 library("bookdown")
-if (!require("tidyverse")) {install.packages("tidyverse", dependencies = TRUE)}
+
+if(!require("tidyverse")) {install.packages("tidyverse", dependencies = TRUE)}
 library("tidyverse")
-if (!require("plotrix")) {install.packages("plotrix", dependencies = TRUE)}
+
+if(!require("plotrix")) {install.packages("plotrix", dependencies = TRUE)}
 library("plotrix")
-if (!require("flexdashboard")) {install.packages("flexdashboard", dependencies = TRUE)}
+
+if(!require("flexdashboard")) {install.packages("flexdashboard", dependencies = TRUE)}
 library("flexdashboard")
-if (!require("VGAM")) {install.packages("VGAM", dependencies = TRUE)} # vector generalized additive model
+
+if(!require("VGAM")) {install.packages("VGAM", dependencies = TRUE)} # vector generalized additive model
 library("VGAM")
-if (!require("rmutil")) {install.packages("rmutil", dependencies = TRUE)} # for non-linear Regression and Repeated Models
+
+if(!require("rmutil")) {install.packages("rmutil", dependencies = TRUE)} # for non-linear Regression and Repeated Models
 library("rmutil")
-if (!require("ggraph")) {install.packages("ggraph", dependencies = TRUE)} # for amazing graphs
+
+if(!require("ggraph")) {install.packages("ggraph", dependencies = TRUE)} # for amazing graphs
 library("ggraph")
-if (!require("adegenet")) {install.packages("adegenet", dependencies = TRUE)} # for population genetics
+
+if(!require("adegenet")) {install.packages("adegenet", dependencies = TRUE)} # for population genetics
 library("adegenet")
-if (!require("ape")) {install.packages("ape", dependencies = TRUE)} # for phylogenetics and DNA data handling
+
+if(!require("ape")) {install.packages("ape", dependencies = TRUE)} # for phylogenetics and DNA data handling
 library("ape")
-if (!require("ade4")) {install.packages("ade4", dependencies = TRUE)} # for multivariate analysis
+
+if(!require("ade4")) {install.packages("ade4", dependencies = TRUE)} # for multivariate analysis
 library("ade4")
-if (!require("pegas")) {install.packages("pegas", dependencies = TRUE)} # for population genetics tools
+
+if(!require("pegas")) {install.packages("pegas", dependencies = TRUE)} # for population genetics tools
 library("pegas")
-if (!require("seqinr")) {install.packages("seqinr", dependencies = TRUE)} # for handling nucleic and proteic sequences
+
+if(!require("seqinr")) {install.packages("seqinr", dependencies = TRUE)} # for handling nucleic and proteic sequences
 library("seqinr")
-if (!require("shiny")) {install.packages("shiny", dependencies = TRUE)} # for R-based web interfaces
+
+if(!require("shiny")) {install.packages("shiny", dependencies = TRUE)} # for R-based web interfaces
 library("shiny")
-if (!require("phyclust")) {install.packages("phyclust", dependencies = TRUE)} # for R-based web interfaces
+
+if(!require("phyclust")) {install.packages("phyclust", dependencies = TRUE)} # for R-based web interfaces
 library("phyclust")
-if (!require("metacoder")) {install.packages("metacoder", dependencies = TRUE)} # for R-based web interfaces
+
+if(!require("metacoder")) {install.packages("metacoder", dependencies = TRUE)} # for R-based web interfaces
 library("metacoder")
-if (!require("blogdown")) {install.packages("blogdown", dependencies = TRUE)} # for creating websites using Rmarkdown
+
+if(!require("blogdown")) {install.packages("blogdown", dependencies = TRUE)} # for creating websites using Rmarkdown
 library("blogdown")
-if (!require("rsvg")) {install.packages("rsvg", dependencies = TRUE)} # r for svg
+
+if(!require("rsvg")) {install.packages("rsvg", dependencies = TRUE)} # r for svg
 library("rsvg")
-if (!require("RISmed")) {install.packages("RISmed", dependencies = TRUE)} # r for data mining from NCBI
+
+if(!require("RISmed")) {install.packages("RISmed", dependencies = TRUE)} # r for data mining from NCBI
 library("RISmed")
-if (!require("data.tree")) {install.packages("data.tree", dependencies = TRUE)} # r for data mining from NCBI
+
+if(!require("data.tree")) {install.packages("data.tree", dependencies = TRUE)} # r for data mining from NCBI
 library("data.tree")
-if (!require("ngram")) {install.packages("ngram", dependencies = TRUE)} # r for word count
+
+if(!require("ngram")) {install.packages("ngram", dependencies = TRUE)} # r for word count
 library("ngram")
-if (!require("d3heatmap")) {install.packages("d3heatmap", dependencies = TRUE)} # r for word count
+
+if(!require("d3heatmap")) {install.packages("d3heatmap", dependencies = TRUE)} # r for word count
 library("d3heatmap")
-if (!require("colormap")) {install.packages("colormap", dependencies = TRUE)} # r for word count
+
+if(!require("colormap")) {install.packages("colormap", dependencies = TRUE)} # r for word count
 library("colormap")
-if (!require("fmsb")) {install.packages("fmsb", dependencies = TRUE)} # r for word count
+
+if(!require("fmsb")) {install.packages("fmsb", dependencies = TRUE)} # r for word count
 library("fmsb")
-if (!require("tidytext")) {install.packages("tidytext", dependencies = TRUE)} # r for word count
+
+if(!require("tidytext")) {install.packages("tidytext", dependencies = TRUE)} # r for word count
 library("tidytext")
+
 if(!require("PubMedWordcloud")) {install.packages("PubMedWordcloud", dependencies = TRUE)}
 library("PubMedWordcloud")
+
 if(!require("GGally")) {install.packages("GGally", dependencies = TRUE)}
 library("GGally")
+
 if(!require("stringr")) {install.packages("stringr", dependencies = TRUE)}
 library("stringr")
+
 if(!require("sunburstR")) {install.packages("sunburstR", dependencies = TRUE)}
 library("sunburstR")
+
 if(!require("circlize")) {install.packages("circlize", dependencies = TRUE)}
 library("circlize")
+
 if(!require("migest")) {install.packages("migest", dependencies = TRUE)}
 library("migest")
+
 if(!require("maps")) {install.packages("maps", dependencies = TRUE)}
 library("maps")
+
 if(!require("ggridges")) {install.packages("ggridges", dependencies = TRUE)}
 library("ggridges")
+
 if(!require("hrbrthemes")) {install.packages("hrbrthemes", dependencies = TRUE)}
 library("hrbrthemes")
+
 if(!require("plotly")) {install.packages("plotly", dependencies = TRUE)}
 library("plotly")
+
 if(!require("babynames")) {install.packages("babynames", dependencies = TRUE)}
 library("babynames")
+
 if(!require("pheatmap")) {install.packages("pheatmap", dependencies = TRUE)}
 library("pheatmap")
+
 if(!require("PoiClaClu")) {install.packages("PoiClaClu", dependencies = TRUE)}
 library("PoiClaClu")
+
 if(!require("MASS")) {install.packages("MASS", dependencies = TRUE)}
 library("MASS")
+
 if(!require("tvthemes")) {install.packages("tvthemes", dependencies = TRUE)}
 library("tvthemes")
 
 
 #Predictions
+
 if(!require("randomForestExplainer")) {install.packages("randomForestExplainer", dependencies = TRUE)}
 library("randomForestExplainer")
+
 if(!require("rfVarImpOOB")) {install.packages("rfVarImpOOB", dependencies = TRUE)}
 library("rfVarImpOOB")
+
 if(!require("VSURF")) {install.packages("VSURF", dependencies = TRUE)}
 library("VSURF")
+
 if(!require("tidymodels")) {install.packages("tidymodels", dependencies = TRUE)}
 library("tidymodels")
+
 if(!require("lexicon")) {install.packages("lexicon", dependencies = TRUE)}
 library("lexicon")
-if (!require("remotes")) {install.packages("remotes", dependencies = TRUE)}
+
+if(!require("remotes")) {install.packages("remotes", dependencies = TRUE)}
 library("remotes")
 
 
 #From GitHub
 #Install devtools
-if (!require("devtools")) {install.packages("devtools", dependencies = TRUE)}
+
+if(!require("devtools")) {install.packages("devtools", dependencies = TRUE)}
 library("devtools")
+
 
 if(!require("circlepackeR")) {devtools::install_github("jeromefroe/circlepackeR", dependencies = TRUE)}
 library("circlepackeR")
 library("remotes")
+
 if(!require("d3treeR")) {devtools::install_github("d3treeR/d3treeR", dependencies = TRUE)}
 library("d3treeR")
+
 if(!require("patchwork")) {devtools::install_github("thomasp85/patchwork", dependencies = TRUE)}
 library("patchwork")
 
 
 #Using BiocManager
 #Install BiocManager package
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+
+if(!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 library(BiocManager)
+
 
 if(!require("airway")) {BiocManager::install("airway")}
 suppressPackageStartupMessages({library(airway)})
+
 if(!require("SummarizedExperiment")) {BiocManager::install("SummarizedExperiment")}
 library(SummarizedExperiment)
+
 if(!require("DESeq")) {BiocManager::install("DESeq")}
 library("DESeq")
+
 if(!require("DESeq2")) {BiocManager::install("DESeq2")}
 library("DESeq2")
+
 if(!require("edgeR")) {BiocManager::install("edgeR")}
 library("edgeR")
+
 if(!require("sSeq")) {BiocManager::install("sSeq")}
 library("sSeq")
+
 if(!require("EBSeq")) {BiocManager::install("EBSeq")}
 library("EBSeq")
+
 if(!require("phyloseq")) {BiocManager::install("phyloseq")}
 library("phyloseq")
+
 if(!require("DECIPHER")) {BiocManager::install("DECIPHER")}
 library("DECIPHER")
+
 if(!require("dada2")) {BiocManager::install("dada2")}
 library("dada2")
+
 if(!require("vsn")) {BiocManager::install("vsn")}
 library("vsn")
+
 if(!require("RNASeqPower")) {BiocManager::install("RNASeqPower")}
 library("RNASeqPower")
+
 if(!require("PROPER")) {BiocManager::install("PROPER")}
 library("PROPER")
 
