@@ -167,9 +167,10 @@ library("remotes")
 
 
 #From GitHub
-
+#Install devtools
 if (!require("devtools")) {install.packages("devtools", dependencies = TRUE)}
 library("devtools")
+
 if(!require("circlepackeR")) {devtools::install_github("jeromefroe/circlepackeR", dependencies = TRUE)}
 library("circlepackeR")
 library("remotes")
@@ -180,55 +181,34 @@ library("patchwork")
 
 
 #Using BiocManager
+#Install BiocManager package
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+library(BiocManager)
+
 if(!require("airway")) {BiocManager::install("airway")}
 suppressPackageStartupMessages({library(airway)})
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("SummarizedExperiment")) {BiocManager::install("SummarizedExperiment")}
 library(SummarizedExperiment)
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("DESeq")) {BiocManager::install("DESeq")}
 library("DESeq")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("DESeq2")) {BiocManager::install("DESeq2")}
 library("DESeq2")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("edgeR")) {BiocManager::install("edgeR")}
 library("edgeR")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("sSeq")) {BiocManager::install("sSeq")}
 library("sSeq")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("EBSeq")) {BiocManager::install("EBSeq")}
 library("EBSeq")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("phyloseq")) {BiocManager::install("phyloseq")}
 library("phyloseq")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("DECIPHER")) {BiocManager::install("DECIPHER")}
 library("DECIPHER")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("dada2")) {BiocManager::install("dada2")}
 library("dada2")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("vsn")) {BiocManager::install("vsn")}
 library("vsn")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("RNASeqPower")) {BiocManager::install("RNASeqPower")}
 library("RNASeqPower")
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 if(!require("PROPER")) {BiocManager::install("PROPER")}
 library("PROPER")
 
