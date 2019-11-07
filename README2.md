@@ -150,6 +150,9 @@ which uchime # must show the location of uchime
 * [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
 * QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
 
+**In consideration for future analyses**
+[Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
+
 <br>
 <br>
 
@@ -166,7 +169,7 @@ which uchime # must show the location of uchime
 <br>
 <br>
 
-#### MAC OS X (in progress)
+#### iMAP for MAC OS X (in progress)
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
@@ -188,7 +191,7 @@ cd iMAP
 <br>
 <br>
 
-#### Unix-Linux environments (in progress)
+#### iMAP for Unix-Linux environments (in progress)
 ```{}
 
 curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
@@ -211,7 +214,7 @@ cd iMAP
 <br>
 <br>
 
-#### Windows 10 with linux WSL-bash (in progress)
+#### iMAP for Windows 10 with linux WSL-bash (in progress)
 
 ```{}
 
@@ -233,7 +236,7 @@ cd iMAP
 <br>
 <br>
 
-#### Windows 10 with GIT bash (in progress)
+#### iMAP for Windows 10 with GIT bash (in progress)
 
 ```{}
 
