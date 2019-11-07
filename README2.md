@@ -152,7 +152,7 @@ which uchime # must show the location of uchime
 
 **Additional installation for future analyses**
 
-[Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
+* [Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
 
 <br>
 <br>
