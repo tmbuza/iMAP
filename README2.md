@@ -150,7 +150,8 @@ which uchime # must show the location of uchime
 * [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
 * QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
 
-**In consideration for future analyses**
+**Additional installation for future analyses**
+
 [Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
 
 <br>
