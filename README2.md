@@ -141,7 +141,7 @@ which uchime # must show the location of uchime
 
 <br>
 
->If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site.  
+>If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site. Please install the latest stable version.
 
 * [Install seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0). 
 * [Install fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
