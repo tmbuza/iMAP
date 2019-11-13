@@ -116,58 +116,7 @@ fi
 <br>
 <br>
 
-### Step 2: Install software
-
-The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be intalled manually by the user. QIIME2 will be added in the later version.
-
-```{}
-bash ./code/00_1_InstallSoftwareDriver.bash
-```
-<br>
-
-**Confirm the installation**
-
-Make sure that all executable tools are being discovered by the system. Simply use *which* or *type -p* function to see the location.
-
-```{}
-which seqkit # must show the location of seqkit
-which fastqc # must show the location of fastqc
-which bbduk.sh # must show the location of bbduk.sh
-which multiqc # must show the location of multiqc
-which mothur # must show the location of fastqc
-which vsearch # must show the location of vsearch
-which uchime # must show the location of uchime
-``` 
-
-<br>
-
->If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site. Please install the latest stable version.
-
-* [Install seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0). 
-* [Install fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
-* [Install bbmap](https://sourceforge.net/projects/bbmap/).
-* [Install multiqc](https://multiqc.info/docs/#manual-installation).
-* [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
-* QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
-
-<br>
-
-**Additional installation for future analyses**
-
-* [Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
-
-<br>
-<br>
-
-**Install R & RStudio (Required)**
-
-* [Install R](https://cran.r-project.org/)
-* [Install RStudio](https://rstudio.com/products/rstudio/download/)
-
-<br>
-<br>
-
-### Step 3: Dowload the pre-built binary suitable for your platform
+### Step 2: Dowload the pre-built binary suitable for your platform
 
 <br>
 <br>
@@ -258,6 +207,57 @@ mv iMAP-Windows10-GIT.v1.0 iMAP
 rm -f iMAP-Windows10-GIT.v1.0.zip
 cd iMAP
 ```
+
+<br>
+<br>
+
+### Step 3: Install iMAP dependencies
+
+The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be intalled manually by the user. QIIME2 will be added in the later version.
+
+```{}
+bash ./code/00_1_InstallSoftwareDriver.bash
+```
+<br>
+
+**Confirm the installation**
+
+Make sure that all executable tools are being discovered by the system. Simply use *which* or *type -p* function to see the location.
+
+```{}
+which seqkit # must show the location of seqkit
+which fastqc # must show the location of fastqc
+which bbduk.sh # must show the location of bbduk.sh
+which multiqc # must show the location of multiqc
+which mothur # must show the location of fastqc
+which vsearch # must show the location of vsearch
+which uchime # must show the location of uchime
+``` 
+
+<br>
+
+>If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site. Please install the latest stable version.
+
+* [Install seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0). 
+* [Install fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+* [Install bbmap](https://sourceforge.net/projects/bbmap/).
+* [Install multiqc](https://multiqc.info/docs/#manual-installation).
+* [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
+* QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
+
+<br>
+
+**Additional installation for future analyses**
+
+* [Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
+
+<br>
+<br>
+
+**Install R & RStudio (Required)**
+
+* [Install R](https://cran.r-project.org/)
+* [Install RStudio](https://rstudio.com/products/rstudio/download/)
 
 <br>
 <br>
