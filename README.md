@@ -1,5 +1,7 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
+[GH-Page](https://tmbuza.github.io/iMAP/)
+
 <!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
 
 ## Version: iMAP v1.0 (Pre-Release)
