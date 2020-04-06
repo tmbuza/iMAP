@@ -6,20 +6,6 @@
 
 <br>
 
-# MICROBIOME DATA ANALYSIS
-
-<br>
-
-## Generalized iMAP Workflow 
-
-... In Progress ...
-<!-- [PDF image](https://github.com/tmbuza/iMAP/blob/master/img/iMAP-workflow.pdf) -->
-<!-- <img src="https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-workflow.png"> -->
-
-<br>
-<hr>
-<br>
-
 ## Running Analysis within Docker Container (Default)
 * Requires Docker Images.
 * Runs on both Windows and Linux applications.
