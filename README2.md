@@ -8,7 +8,8 @@ The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspect
 
 ## Citation
 Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Link](https://rdcu.be/bIxrg).
-<br>
+
+<br><br>
 
 ## Running Analysis within Docker Container (Default)
 * Requires Docker Images.
@@ -19,8 +20,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 * The output is stored in the working directory which mean it can be accessed ouside the container.
 
 > Important: Graphical applications don't work well in Docker containers. 
-> Some R-packages do not install well when creating docker images.
-
+> Some R-packages that may install perfectly in RStudio may not work in docker images.
 
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
@@ -40,7 +40,7 @@ mv iMAP-master iMAP
 rm -rf master.zip
 
 ```
-More nstructions: [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master).
+More instructions: [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master).
 
 
 <br>
