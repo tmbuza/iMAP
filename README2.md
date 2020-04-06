@@ -1,9 +1,13 @@
 [GH-Page](https://tmbuza.github.io/iMAP/)
+>This README2 describes a work under active development. Visit this page regularly for more updates.
 
 <br>
 
->This README2 describes a work under active development. Visit this page regularly for more updates.
+## Version: iMAP v1.0 (Pre-Release)
+The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
 
+## Citation
+Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Link](https://rdcu.be/bIxrg).
 <br>
 
 ## Running Analysis within Docker Container (Default)
