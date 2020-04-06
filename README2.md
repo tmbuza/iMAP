@@ -20,6 +20,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 * The output is stored in the working directory which mean it can be accessed ouside the container.
 
 > Important: Graphical applications don't work well in Docker containers. 
+
 > Some R-packages that may install perfectly in RStudio may not work in docker images.
 
 ```{}
