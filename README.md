@@ -79,7 +79,6 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *EzBioCloud*     | Mothur-formatted classifiers |   data/references   | [Link](https://www.ezbiocloud.net/resources)  ||
 | *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references |Manually-built|
 
-G
 <br>
 
 ## Getting Started
