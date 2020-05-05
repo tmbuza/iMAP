@@ -1,9 +1,7 @@
 
 # iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis
 
-<center>
 <img src="https://www.microbiome-bioinfo.com/wp-content/uploads/elementor/thumbs/cover-ookkjfzd9eshnkqk8034sczbqzghnq9lgq519st99c.png">
-</center>
 
 <br>
 
