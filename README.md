@@ -1,8 +1,10 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
-[GH-Page](https://tmbuza.github.io/iMAP/)
+>Please be informed that financial support to develop this repo ended in October 2018. Volunteer work to make it more user-friendly is progressing slowly. Thank you for your patience. 
 
 <!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
+
+[GH-Page](https://tmbuza.github.io/iMAP/)
 
 ## Version: iMAP v1.0 (Pre-Release)
 The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
