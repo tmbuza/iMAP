@@ -179,3 +179,82 @@ img {
 .kable-table table>thead {
   background-color: #fff;
 }
+.tmbcomment:before {
+    content: "\f14d";
+  font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbalert:before {
+    content: "\f06a";
+  font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbinfo:before {
+    content: "\f05a";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbinfo2:before {
+    content: "\10f129";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmbarrowF:before {
+    content: "\f0a9";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmb2arrowsF:before {
+    content: "\f101";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmbshare:before {
+    content: "\f064";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 35px;
+ }
+ 
+.tmbqns:before {
+    content: "\f059";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbcheck1:before {
+    content: "\f14a";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmbcheck2:before {
+    content: "\f058";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
