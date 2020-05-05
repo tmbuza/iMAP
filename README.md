@@ -1,6 +1,6 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
->Please be informed that financial support to develop this repo ended in October 2018. Volunteer work to make it more user-friendly is progressing slowly. Thank you for your patience. 
+>Financial support to develop this repo ended in October 2018. Volunteer work to improve iMAP repo and make it more user-friendly is progressing slowly. Thanks for your patience. 
 
 <!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
 <br>
