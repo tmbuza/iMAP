@@ -3,6 +3,7 @@
 >Please be informed that financial support to develop this repo ended in October 2018. Volunteer work to make it more user-friendly is progressing slowly. Thank you for your patience. 
 
 <!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
+<br>
 
 [GH-Page](https://tmbuza.github.io/iMAP/)
 
