@@ -648,7 +648,7 @@ Figure x: Species richness (observed species) displayed by boxplot (A), density 
 
 
 ### Species richness plots
-Include are:
+Included are:
 
 * Line plots: Points joined by straight lines
 * Scatter plot with correlation coefficient
