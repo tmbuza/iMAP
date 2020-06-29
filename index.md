@@ -1,10 +1,4 @@
 
-# iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis
-
-<img src="https://www.microbiome-bioinfo.com/wp-content/uploads/elementor/thumbs/cover-ookkjfzd9eshnkqk8034sczbqzghnq9lgq519st99c.png">
-
-<br>
-
 | URLs | Description | Status |
 |-------|--------------------| --------- |
 |[Manuscript](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4) | published in BMC Bioinformatics | Software |
