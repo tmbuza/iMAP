@@ -8,5 +8,5 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 |-------|--------------------| --------- |
 |[Manuscript](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4) | In BMC Bioinformatics | Software |
 |[README](https://github.com/tmbuza/iMAP/blob/master/README2.md/) | Guidelines | Quick user's guide ||
-[Practical guide]() | Electronic Book | In Progress |
+[Practical guide]() | Systematic analysis eBook  | In Progress, coming 2021 |
 |[Useful link](https://https://www.microbiome-bioinfo.com//) | Consulting Services | In Progress |
