@@ -175,24 +175,24 @@ time qiime emperor plot \
 
 
 ## TAXONOMY ANALYSIS
-### Greengenes classifier
+### Classifier
 
 time qiime feature-classifier classify-sklearn \
   --i-classifier $PWD/data/references/gg-13-8-99-515-806-nb-classifier.qza \
   --i-reads $PWD/data/qiime2/results/rep-seqs.qza \
-  --o-classification $PWD/data/qiime2/results/greengenes-taxonomy.qza
+  --o-classification $PWD/data/qiime2/results/taxonomy.qza
 
-### View greengenes Taxonomy classification
+### View Taxonomy classification
 qiime metadata tabulate \
-  --m-input-file $PWD/data/qiime2/results/greengenes-taxonomy.qza \
-  --o-visualization $PWD/data/qiime2/results/greengenes-taxonomy.qzv
+  --m-input-file $PWD/data/qiime2/results/taxonomy.qza \
+  --o-visualization $PWD/data/qiime2/results/taxonomy.qzv
   
-### Greengenes Barplots
+### Barplots
 qiime taxa barplot \
   --i-table $PWD/data/qiime2/results/feature-table.qza \
-  --i-taxonomy $PWD/data/qiime2/results/greengenes-taxonomy.qza \
+  --i-taxonomy $PWD/data/qiime2/results/taxonomy.qza \
   --m-metadata-file $PWD/data/metadata/samplemetadata.tsv \
-  --o-visualization $PWD/data/qiime2/results/greengenes-taxa-bar-plots.qzv
+  --o-visualization $PWD/data/qiime2/results/taxa-bar-plots.qzv
   
 
 ## EXPORTED FILES: DATA TRANSFORMATION
@@ -208,7 +208,7 @@ biom convert \
   -o $PWD/data/qiime2/results/exported-feature-table/feature-table.tsv --to-tsv
   
 qiime tools export \
-  --input-path $PWD/data/qiime2/results/greengenes-taxonomy.qza \
+  --input-path $PWD/data/qiime2/results/taxonomy.qza \
   --output-path $PWD/data/qiime2/results/exported-taxonomy-table # Output taxonomy.tsv
 
 ## COMBINE FEATURE TSV with TAXONOMY.TSV
@@ -226,7 +226,4 @@ qiime tools export \
 qiime tools export \
   --input-path $PWD/data/qiime2/results/unrooted-tree.qza \
   --output-path $PWD/data/qiime2/results/exported-unrooted-tree
-
-
-
 
