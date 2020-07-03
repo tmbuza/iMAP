@@ -421,10 +421,15 @@ bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 ```{}
 containerName=qiime2classification
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
-
-bash code/qiime2/qiime2.bash
-exit
 ```
+
+### Start the analysis
+```{}
+bash code/qiime2/qiime2.bash
+exit qiime2classification
+```
+<br><hr>
+
 ### View QIIME 2 results
 Output path: iMAP/data/qiime2/results/
 
