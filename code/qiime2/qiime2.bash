@@ -177,8 +177,12 @@ time qiime emperor plot \
 ## TAXONOMY ANALYSIS
 ### Classifier
 
+# time qiime feature-classifier classify-sklearn \
+#   --i-classifier $PWD/data/references/gg-13-8-99-515-806-nb-classifier.qza \
+#   --i-reads $PWD/data/qiime2/results/rep-seqs.qza \
+#   --o-classification $PWD/data/qiime2/results/taxonomy.qza
+
 time qiime feature-classifier classify-sklearn \
-  # --i-classifier $PWD/data/references/gg-13-8-99-515-806-nb-classifier.qza \
   --i-classifier $PWD/data/references/silva-132-99-515-806-nb-classifier.qza \
   --i-reads $PWD/data/qiime2/results/rep-seqs.qza \
   --o-classification $PWD/data/qiime2/results/taxonomy.qza
@@ -229,5 +233,5 @@ qiime tools export \
   --output-path $PWD/data/qiime2/results/exported-unrooted-tree
 
 
-
+exit
 
