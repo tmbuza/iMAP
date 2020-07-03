@@ -384,6 +384,7 @@ exit
 <br>
 
 ## Get reference classifier
+* Default: Greengenes 515-806 conservative fragments
 
 **Download 515-806 conservative fragments**
 
