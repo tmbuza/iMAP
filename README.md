@@ -383,9 +383,10 @@ exit
 	
 <br>
 
-## Testing iMAP with QIIME2
+## Get reference classifier
 
 **Download 515-806 conservative fragments**
+
 ```{}
 # bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
