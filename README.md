@@ -382,6 +382,7 @@ exit
 	*  Alternative pretrained classifiers are available including, full length greengenes and SILVA (see links on Table 1).
 	
 <br>
+
 ## Testing iMAP with QIIME2
 
 **Download 515-806 conservative fragments**
