@@ -383,6 +383,7 @@ exit
 	
 <br>
 ## Testing iMAP with QIIME2
+
 **Download 515-806 conservative fragments**
 ```{}
 # bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
