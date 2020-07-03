@@ -373,31 +373,25 @@ exit
 # QIIME2: Sequence Processing and Classification
 * Requires a QIIME2 trained classifer. 
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
-* Classifier: Naive Bayes classifiers trained on GreenGenes database with 99% OTUs. 
+* Classifier: Naive Bayes classifiers trained on GreenGenes or SILVA database with 99% OTUs. 
 
 * Download pretrained classifiers for QIIME2 sequence classification:
 	* The 515-806 conservative fragments
 		* iMAP default due to its small size.
 		* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
-	*  Alternative pretrained classifiers are available including SILVA and Full length greengenes (see link on Table 1).
+	*  Alternative pretrained classifiers are available including, full length greengenes and SILVA (see links on Table 1).
 	
 <br>
-
+## Testing iMAP with QIIME2
 **Download 515-806 conservative fragments**
 ```{}
-bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
+# bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
+bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 ```
 	
 <br>
 
-**Download full length greengenes classifier**
-
-If using full length greengenes or any other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file (see details below).
-
-```{}
-bash iMAP/code/qiime2/qiime2_gg_classifier_fulllength.bash
-```
->Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the name of your favorable classifier.
+>If using other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file. Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the name of your favorable classifier.
 
 <table>
 <thead>
