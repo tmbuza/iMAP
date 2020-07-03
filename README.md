@@ -426,7 +426,7 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 ### Start the analysis
 ```{}
 bash code/qiime2/qiime2.bash
-exit qiime2classification
+echo "Completed QIIME2 pipeline"
 ```
 <br><hr>
 
