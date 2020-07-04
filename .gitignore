@@ -94,4 +94,5 @@ code/Rmd/*Casestudy.Rmd
 .~*
 ._*
 *.swp
+!.git*
 
