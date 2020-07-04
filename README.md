@@ -275,12 +275,14 @@ exit
 ```
 <br>
 <hr>
+
 # Sequence Processing and classification
+
 <hr>
 <br>
 
 
-# A: MOTHUR-BASED PIPELINE 
+## A: MOTHUR-BASED PIPELINE 
 
 1. Create a mothur container for sequence processing and classification.
 
@@ -384,7 +386,7 @@ exit
 <hr>
 <br>
 
-# B: QIIME2-BASED PIPELINE
+## B: QIIME2-BASED PIPELINE
 
 * Must install iMAP repo first which will automatically create a directory named **iMAP**.
 * Requires a QIIME2 trained classifer. Default: Greengenes 515-806 conservative fragments
