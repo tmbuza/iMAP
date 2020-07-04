@@ -210,6 +210,7 @@ Includes:
 2. [readqctools:v1.0.0](https://hub.docker.com/r/tmbuza/readqctools) for quality control of the reads.
 3. [mothur:v1.41.3](https://hub.docker.com/r/tmbuza/mothur) for sequence classification and for generating mothur-based OTU tables.
 4. [qiime2core:v2019.1](https://hub.docker.com/r/tmbuza/qiime2core) for sequence classification and for generating qiime2-based OTU table.
+4. [qiime2core:v2020.2](https://hub.docker.com/r/tmbuza/qiime2core) (latest) for sequence classification and for generating qiime2-based OTU table.
 
 Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`.
 
