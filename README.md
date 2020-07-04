@@ -360,7 +360,7 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 bash code/progressreport4.bash
 exit
 ```
-<br><hr><br>
+<br><br>
 
 ### Statistical analysis
 > Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to most important statistical analyses in microbiome studies:
@@ -375,7 +375,7 @@ exit
 
 <br>
 
-*End of Mothur-based classification!*
+*End of Mothur-based analyses!*
 
 <br>
 <hr>
@@ -383,7 +383,7 @@ exit
 <br>
 
 # QIIME2: Sequence Processing and Classification
-* Must install iMAP repo first which will automatically create a working dictory named **iMAP**.
+* Must install iMAP repo first which will automatically create a directory named **iMAP**.
 * Requires a QIIME2 trained classifer. Default: Greengenes 515-806 conservative fragments
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
 * Classifier: Naive Bayes classifiers trained on GreenGenes or SILVA database with 99% OTUs. 
@@ -401,7 +401,7 @@ rm -rf master.zip
 bash iMAP/code/demo_data.bash
 ```
 
-###Download 515-806 conservative fragments
+### Download 515-806 conservative fragments
   * This is iMAP default classifier due to its small size.
   * Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
 
