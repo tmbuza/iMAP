@@ -275,10 +275,12 @@ exit
 ```
 <br>
 <hr>
+# Sequence Processing and classification
 <hr>
 <br>
 
-# MOTHUR: Sequence Processing and classification
+
+# A: MOTHUR-BASED PIPELINE 
 
 1. Create a mothur container for sequence processing and classification.
 
@@ -375,14 +377,15 @@ exit
 
 <br>
 
-*End of Mothur-based analyses!*
+*End of Mothur-based pipeline!*
 
 <br>
 <hr>
 <hr>
 <br>
 
-# QIIME2: Sequence Processing and Classification
+# B: QIIME2-BASED PIPELINE
+
 * Must install iMAP repo first which will automatically create a directory named **iMAP**.
 * Requires a QIIME2 trained classifer. Default: Greengenes 515-806 conservative fragments
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
@@ -454,7 +457,6 @@ bash code/qiime2/qiime2.bash
 exit
 ```
 
-<br><hr>
 
 ### View QIIME 2 results
 Output path: iMAP/data/qiime2/results/
@@ -465,6 +467,11 @@ Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.
 
 For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
+<br>
+
+*End of QIIME2-based pipeline!*
+
+<br>
 <br>
 <hr>
 <hr>
