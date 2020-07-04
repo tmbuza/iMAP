@@ -438,6 +438,8 @@ bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 <br>
 
 ### Download QIIME2 images
+> Credit goes to QIIME2 team for developing the qiime2core images. If you want you can pull the qiime2/core image directly from the [docker hub](https://hub.docker.com/layers/qiime2/core/2020.2/images/sha256-1e10d9831f08cbb65f4ad0018f83bf6ae180012afe2d05c86f727a99c7f91634?context=explore). Here we tagged the image to avoid messing up the original. 
+
 ```{}
 docker pull tmbuza/qiime2core:v2020.2
 # docker pull tmbuza/qiime2core:v2019.1
