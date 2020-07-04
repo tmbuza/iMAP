@@ -56,33 +56,34 @@ The first step is to gather all the materials needed for implementing the iMAP p
 
 
 **Table 1: List of required materials for running iMAP pipeline**
+**Table 1: List of required materials for running iMAP pipeline**
 
-| **Requirement**    | **Description**   |  **Location** | **Remarks**          |
-| :--------------------------   | :-----------------------------------------------------  |  :---------------: | :--------------:   |
-| **Raw data**      | Demultiplexed reads in FASTQ format (.gz) with primers and barcodes removed        |  data/raw   |    fastq.gz   |
-| **Sample metadata**      | File name: samplemetadata.tsv. A tab-separated file linking sample identifiers to the variables    |  data/metadata    |   Format: mothur or QIIME2    |
-| **Mapping files**      | For linking sample IDs to the data files   |  data/metadata   |  Mothur-formatted & QIIME2-formatted    |
+| **Requirement** | **Description** | **Location** | **Remarks** |
+| :-------------------------- | :----------------------------------------------------- | :---------------: | :--------------: |
+| **Raw data** | Demultiplexed reads in FASTQ format (.gz) with primers and barcodes removed | data/raw | fastq.gz |
+| **Sample metadata** | File name: samplemetadata.tsv. A tab-separated file linking sample identifiers to the variables |  data/metadata | Format: mothur or QIIME2 |
+| **Mapping files** | For linking sample IDs to the data files |  data/metadata |  Mothur-formatted & QIIME2-formatted |
 | <tr><td align="left" colspan="4"><strong>Software</strong> (Mostly available via pre-built docker images)</td></tr> |
-| *Docker*       | For creating Docker containers that wrap up iMAP dependencies.    | Docker Community Edition (CE) | [Link](https://docs.docker.com/v17.12/install)  |
-| *Seqkit*       | For inspecting rawdata format and simple statistics.    |  docker images: readqctools  | [Link](https://hub.docker.com/r/tmbuza/readqctools)    |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list)  |
-| *BBduk.sh via BBMap*   | For trimming poor quality reads and removing phiX contamination    |  Auto-loaded at preprocessing step  | [Link](https://sourceforge.net/projects/bbmap/files/)  |
-| *MultiQC*      | For summarizing FASTQc output    | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools)  |
-| *Mothur*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
-| *QIIME2*      | For sequence processing, taxonomy assignment and preliminary analysis    |  docker images: qiime2core:v2019.1 | [Link]( https://hub.docker.com/r/tmbuza/qiime2core:v2019.1) |
-| *R*      | For statistical analysis and visualization    | docker image:rpackages:v3.5.2  | [Link](https://cloud.docker.com/repository/docker/tmbuza/rpackages)  |
-| *iTOL*      | For displaying, annotating and managing phylogenetic trees   | Onlline |   [Link](http://itol.embl.de/)  | 
+| *Docker* | For creating Docker containers that wrap up iMAP dependencies. | Docker Community Edition (CE) | [Link](https://docs.docker.com/v17.12/install) |
+| *Seqkit* | For inspecting rawdata format and simple statistics. |  docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools) |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list) |
+| *BBduk.sh via BBMap* | For trimming poor quality reads and removing phiX contamination |  Auto-loaded at preprocessing step | [Link](https://sourceforge.net/projects/bbmap/files/) |
+| *MultiQC* | For summarizing FASTQc output | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools) |
+| *Mothur* | For sequence processing, taxonomy assignment and preliminary analysis |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
+| *QIIME2* | For sequence processing, taxonomy assignment and preliminary analysis |  docker images: qiime2core:v2020.2 | [Link]( https://hub.docker.com/r/tmbuza/qiime2core:v2020.2) |
+| *R* | For statistical analysis and visualization | docker image:rpackages:v3.5.2 | [Link](https://cloud.docker.com/repository/docker/tmbuza/rpackages) |
+| *iTOL* | For displaying, annotating and managing phylogenetic trees | Onlline | [Link](http://itol.embl.de/) | 
 | <tr><td align="left" colspan="4"><strong>Reference databases:</strong> Any of the following databases can be used.</td></tr> |
-| *SILVA NR* (mothur)   | Mothur-formatted rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/3/32/)  |
-| *SILVA NR* (QIIME2)    | QIIME2-formatted classifiers 515-806 fragments   data/qiime2   | [Link](https://data.qiime2.org/2020.2/common/silva-132-99-515-806-nb-classifier.qza) |
-| *SILVA NR* (QIIME2)    | QIIME2-formatted classifiers full length |   data/qiime2   | [Link](https://data.qiime2.org/2020.2/common/silva-132-99-nb-classifier.qza) |
-| *SILVA* (seed)   | Mothur-formatted rRNA alignments    |   data/references  | [Link](https://www.mothur.org/w/images/7/71/)  |
-| *SILVA*(de-gapped)     | mothur-formatted classifiers |   data/references   | Auto-Generated|
-| *RDP*      | Mothur-formatted classifiers |   data/references   | [Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
-| *Greengenes*     | Mothur-formatted classifiers |   data/references   | [Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
-| *Greengenes*     | QIIME2-formatted classifiers 515-806 fragments |   data/references   | [Link](https://data.qiime2.org/2020.2/common/gg-13-8-99-515-806-nb-classifier.qza) |
-| *Greengenes*     | QIIME2-formatted classifiers full length|   data/references   | [Link](https://data.qiime2.org/2020.2/common/gg-13-8-99-nb-classifier.qza) |
-| *EzBioCloud*     | Mothur-formatted classifiers |   data/references   | [Link](https://www.ezbiocloud.net/resources)  ||
-| *Custom classifiesr*     | Any manually built classifiers. Highly recommended when studying a specific group of known microbes.  | data/references |Manually-built|
+| *SILVA NR* (mothur) | Mothur-formatted rRNA alignments | data/references | [Link](https://www.mothur.org/w/images/3/32/) |
+| *SILVA NR* (QIIME2) | QIIME2-formatted classifiers 515-806 fragments | data/references | [Link](https://data.qiime2.org/2020.2/common/silva-132-99-515-806-nb-classifier.qza) |
+| *SILVA NR* (QIIME2) | QIIME2-formatted classifiers full length | data/references | [Link](https://data.qiime2.org/2020.2/common/silva-132-99-nb-classifier.qza) |
+| *SILVA* (seed) | Mothur-formatted rRNA alignments | data/references | [Link](https://www.mothur.org/w/images/7/71/) |
+| *SILVA*(de-gapped) | mothur-formatted classifiers | data/references | Auto-Generated|
+| *RDP* | Mothur-formatted classifiers | data/references | [Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
+| *Greengenes* | Mothur-formatted classifiers | data/references | [Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
+| *Greengenes* | QIIME2-formatted classifiers 515-806 fragments | data/references | [Link](https://data.qiime2.org/2020.2/common/gg-13-8-99-515-806-nb-classifier.qza) |
+| *Greengenes* | QIIME2-formatted classifiers full length| data/references | [Link](https://data.qiime2.org/2020.2/common/gg-13-8-99-nb-classifier.qza) |
+| *EzBioCloud* | Mothur-formatted classifiers | data/references | [Link](https://www.ezbiocloud.net/resources) ||
+| *Custom classifiesr* | Any manually built classifiers. Highly recommended when studying a specific group of known microbes. | data/references |Manually-built|
 
 <br>
 
