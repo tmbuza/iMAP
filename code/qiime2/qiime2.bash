@@ -1,9 +1,23 @@
 # QIIME2 Pipeline for profiling microbial communities
 
+#!/usr/bin/env bash
+
 ## Inspect metadata
 
 mkdir data/qiime2
 mkdir data/qiime2/results
+
+exec 1> $PWD/LOG/qiime2logfile.txt 2>&1
+
+echo ""
+echo "QIIME2 analysis started at: `date +'%Y-%m-%d_%H-%M-%S'`"
+echo ""
+
+
+echo ""
+echo "METADATA INSPECTION "
+echo ""
+
 
 qiime tools inspect-metadata \
   $PWD/data/metadata/samplemetadata.tsv 
@@ -34,7 +48,11 @@ time qiime demux summarize \
 
 # ## Review the quality plots then pick truncate parameters
 
-# ## Quality control using DADA2 
+
+echo ""
+echo "QUALITY CONTROL WITH DADA2 "
+echo ""
+
 time qiime dada2 denoise-paired \
   --i-demultiplexed-seqs $PWD/data/qiime2/results/demux.qza \
   --p-trim-left-f 0 \
@@ -61,6 +79,10 @@ qiime feature-table tabulate-seqs \
   --i-data $PWD/data/qiime2/results/rep-seqs.qza \
   --o-visualization $PWD/data/qiime2/results/rep-seqs.qzv
 
+echo ""
+echo "SEQUENCE ALIGNMENT" 
+echo ""
+
 ## Multiple alignment of representative sequences
 qiime alignment mafft \
   --i-sequences $PWD/data/qiime2/results/rep-seqs.qza \
@@ -71,7 +93,9 @@ qiime alignment mask \
   --i-alignment $PWD/data/qiime2/results/aligned-rep-seqs.qza \
   --o-masked-alignment $PWD/data/qiime2/results/masked-aligned-rep-seqs.qza
 
-##  PHYLOGENETIC SEQUENCE CLUSTERING 
+echo ""
+echo "PHYLOGENETIC SEQUENCE CLUSTERING" 
+echo ""
 
 ## Unrooted tree
 qiime phylogeny fasttree \
@@ -99,7 +123,10 @@ time qiime diversity core-metrics-phylogenetic \
   --m-metadata-file $PWD/data/metadata/samplemetadata.tsv \
   --output-dir $PWD/data/qiime2/results/core-metrics-results
 
-## Statistical analysis
+echo ""
+echo "STATISTICAL ANALYSIS"
+echo ""
+
 ### Alpha diversity: Evenness
 time qiime diversity alpha-group-significance \
   --i-alpha-diversity $PWD/data/qiime2/results/core-metrics-results/evenness_vector.qza \
@@ -173,8 +200,10 @@ time qiime emperor plot \
   
 
 
+echo ""
+echo "TAXONOMY ASSIGNMENT"
+echo ""
 
-## TAXONOMY ANALYSIS
 ### Classifier
 
 time qiime feature-classifier classify-sklearn \
@@ -206,8 +235,10 @@ qiime tools export \
   --input-path $PWD/data/qiime2/results/feature-table.qza \
   --output-path $PWD/data/qiime2/results/exported-feature-table # Output feature-table.biom 
 
-## CONVERT BIOM TO TSV
-  
+echo ""
+echo "CONVERT BIOM TO TSV"
+echo ""
+
 biom convert \
   -i $PWD/data/qiime2/results/exported-feature-table/feature-table.biom \
   -o $PWD/data/qiime2/results/exported-feature-table/feature-table.tsv --to-tsv
@@ -233,5 +264,6 @@ qiime tools export \
   --output-path $PWD/data/qiime2/results/exported-unrooted-tree
 
 
-exit
+echo "DONE!"
+
 
