@@ -215,7 +215,7 @@ Includes:
 Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`.
 
 ```{}
-# All images at once
+# All latest images at once
 
 bash iMAP/code/dockerImages.sh
 
