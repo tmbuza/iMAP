@@ -273,7 +273,9 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 bash code/progressreport2.bash
 exit
 ```
-
+<br>
+<hr>
+<hr>
 <br>
 
 # MOTHUR: Sequence Processing and classification
@@ -371,35 +373,44 @@ exit
 * [Metastats](https://mothur.org/wiki/Metastats)
 * [More...](https://mothur.org/wiki/Category:Commands)
 
+<br>
 
-<hr><hr><br>
+*End of Mothur-based classification!*
+
+<br>
+<hr>
+<hr>
+<br>
 
 # QIIME2: Sequence Processing and Classification
-* Requires a QIIME2 trained classifer. 
+* Must install iMAP repo first which will automatically create a working dictory named **iMAP**.
+* Requires a QIIME2 trained classifer. Default: Greengenes 515-806 conservative fragments
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
 * Classifier: Naive Bayes classifiers trained on GreenGenes or SILVA database with 99% OTUs. 
 
-* Download pretrained classifiers for QIIME2 sequence classification:
-	* The 515-806 conservative fragments
-		* iMAP default due to its small size.
-		* Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
-	*  Alternative pretrained classifiers are available including, full length greengenes and SILVA (see links on Table 1).
-	
-<br>
+### Install iMAP repo (if not installed)
+```{}
+wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
+unzip master.zip
+mv iMAP-master iMAP
+rm -rf master.zip
+```
 
-## Get reference classifier
-* Default: Greengenes 515-806 conservative fragments
+### Load demo data
+```{}
+bash iMAP/code/demo_data.bash
+```
 
-**Download 515-806 conservative fragments**
+###Download 515-806 conservative fragments
+  * This is iMAP default classifier due to its small size.
+  * Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
+
+  > Larger classifiers can cause memory issues which can ultimately kill a running instance.
 
 ```{}
-# bash iMAP/code/qiime2/qiime2_gg_classifier_fragments.bash
 bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 ```
-	
-<br>
-
->If using other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file. Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the name of your favorable classifier.
+>If using other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file. Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the filename containing your favorable classifier.
 
 <table>
 <thead>
@@ -419,8 +430,14 @@ bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 </tbody>
 </table>
 
-
 <br>
+
+### Download QIIME2 images
+```{}
+docker pull tmbuza/qiime2core:v2020.2
+# docker pull tmbuza/qiime2core:v2019.1
+```
+
 
 ### Create QIIME2 container
 ```{}
@@ -431,8 +448,12 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 ### Start the analysis
 ```{}
 bash code/qiime2/qiime2.bash
-echo "Completed QIIME2 pipeline"
 ```
+### Exit the QIIME2 container
+```{}
+exit
+```
+
 <br><hr>
 
 ### View QIIME 2 results
@@ -444,11 +465,14 @@ Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.
 
 For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
-<br><hr><br>
+<br>
+<hr>
+<hr>
+<br>
 
 ## Useful commands
 
-### 1. Convert mothur biom file within QIIME2
+### 1. Convert biom file to TSV within QIIME2 container
 
 The output is a file containing OTUs and taxonomy
 ```{}
@@ -456,5 +480,6 @@ containerName=biomconvertmothur
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
 
 bash code/qiime2/convertmothur_biom.bash
+
 exit
 ```
