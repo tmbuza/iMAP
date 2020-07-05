@@ -31,7 +31,7 @@ REQUIRED_README_FILE=(
 REQUIRED_CODE_FOLDERS_OR_FILES=(
 "01_metadataProfiling_driver.bash"
 "02_readPreprocess_driver.bash"
-"03_imapClassifyOTU_driver.bash"
+"03_imapClassifySEQ_driver.bash"
 "04_OTUanalysis_driver.bash"
 "bbmap"
 "css"
