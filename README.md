@@ -294,21 +294,36 @@ exit
 <hr>
 <br>
 
+## A: MOTHUR-BASED PIPELINE
+* Requires a Mothur-formatted classifer. 
+* Default classifier is a recreated seed from [Silva database](https://mothur.org/wiki/silva_reference_files/).
+* You can use different classifiers from [other Mothur taxonomy outlines](https://mothur.org/wiki/taxonomy_outline/).
 
-## A: MOTHUR-BASED PIPELINE 
+### Download reference databases (Silva seed alignment & classifier)
+```{}
+bash iMAP/code/refdatabase/iMAP_download_driver.bash
+```
 
-1. Create a mothur container for sequence processing and classification.
+### Check files
+```{}
+bash iMAP/code/00_checkFiles_driver.bash
+```
 
+### Download Mothur images
+```{}
+docker pull tmbuza/mothur:v1.41.3
+```
+
+### Create a container for bash CLI
 ```{}
 containerName=mothurseqprocessing
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 ```
 
-2. Run the sequence processing and classification command which implements the folllowing:
-    * Download reference alignments
-      * Default: [SILVA seed](https://www.mothur.org/w/images/7/71/)    
+### Start analysis
+Next we will run the sequence processing and classification command which implements the folllowing:   
     * Assemble the forward and reverse reads, screen by length and create representative sequences
-    * Align representative sequences with reference alignments. Default [SILVA seed](https://www.mothur.org/w/images/7/71/).
+    * Align representative sequences with reference alignments..
     * Denoise to remove poor alignments
     * Remove Chimeric sequences.
     * Classify the sequences and do post-classification QC.
@@ -317,9 +332,8 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
 ```{}
 bash ./code/03_imapClassifySEQ_driver.bash 
 ```
-> You may see a lot of WARNINGS, It is safe to ignore them.
+> You may see a lot of WARNINGS, It is safe to ignore them. Also, the program is set to remove all temporary files after processing the sequences. If no any temporary file found you will see an error message that reads: *rm: cannot remove '*.temp': No such file or directory*. Just ignore it.
 
-> The program is set to remove all temporary files after completeing processing the sequences. If no file found you may see an error message that reads: *rm: cannot remove '*.temp': No such file or directory*
 <br>
 
 ### OTU clustering, Taxonomy assignement and preliminary analysis (Mothur)
