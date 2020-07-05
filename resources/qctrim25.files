@@ -1,0 +1,10 @@
+F3D001	data/raw/qctrim25/F3D1_S189_L001_R1_001.fastq.gz	data/raw/qctrim25/F3D1_S189_L001_R2_001.fastq.gz
+F3D006	data/raw/qctrim25/F3D6_S194_L001_R1_001.fastq.gz	data/raw/qctrim25/F3D6_S194_L001_R2_001.fastq.gz
+F3D142	data/raw/qctrim25/F3D142_S208_L001_R1_001.fastq.gz	data/raw/qctrim25/F3D142_S208_L001_R2_001.fastq.gz
+F3D143	data/raw/qctrim25/F3D143_S209_L001_R1_001.fastq.gz	data/raw/qctrim25/F3D143_S209_L001_R2_001.fastq.gz
+M1D001	data/raw/qctrim25/M1D1_S2_L001_R1_001.fastq.gz	data/raw/qctrim25/M1D1_S2_L001_R2_001.fastq.gz
+M1D006	data/raw/qctrim25/M1D6_S7_L001_R1_001.fastq.gz	data/raw/qctrim25/M1D6_S7_L001_R2_001.fastq.gz
+M1D142	data/raw/qctrim25/M1D142_S21_L001_R1_001.fastq.gz	data/raw/qctrim25/M1D142_S21_L001_R2_001.fastq.gz
+M1D143	data/raw/qctrim25/M1D143_S22_L001_R1_001.fastq.gz	data/raw/qctrim25/M1D143_S22_L001_R2_001.fastq.gz
+Mock2	data/raw/qctrim25/Mock2_S366_L001_R1_001.fastq.gz	data/raw/qctrim25/Mock2_S366_L001_R2_001.fastq.gz
+Mock	data/raw/qctrim25/Mock_S280_L001_R1_001.fastq.gz	data/raw/qctrim25/Mock_S280_L001_R2_001.fastq.gz
