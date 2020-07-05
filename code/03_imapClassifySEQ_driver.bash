@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-## Mothur-based Sequence Processing and classification
 bash ./code/refdatabase/iMAP_download_driver.bash
 
 if [ "$?" != "0" ]; then
@@ -12,7 +11,7 @@ mv mothur.*.logfile LOG
 
 rm *.temp
 
-
+## Mothur-based Sequence Processing and classification
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 
 if [ "$?" != "0" ]; then
