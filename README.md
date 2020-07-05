@@ -428,23 +428,23 @@ exit
 ```
 
 
+
 ### View QIIME 2 results
-Output path: iMAP/data/qiime2/results/
-
-Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results.
-
-Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
-
-For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
+* Output path: iMAP/data/qiime2/results/
+* Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results (see image below).
+* Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
+* For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
 <br>
 
-*End of QIIME2-based pipeline!*
+![Screenshot](img/qiime2view.png)
 
-<br>
-<br>
 <hr>
+
+*End of QIIME2-based bioinformatics pipeline!*
+
 <hr>
+<br>
 <br>
 
 ## Useful commands
