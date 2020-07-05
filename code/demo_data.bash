@@ -46,3 +46,16 @@ if [ "$?" != "0" ]; then
     echo "[Error] Sorry, var2.design not found, exiting...,!" 1>&2
     exit 1
 fi
+
+bash iMAP/code/refdatabase/iMAP_download_driver.bash
+
+if [ "$?" != "0" ]; then
+    echo "[Error] Sorry, missing one or more required reference database, exiting...!" 1>&2
+    exit 1
+fi
+
+mv mothur.*.logfile LOG
+
+rm *.temp
+
+
