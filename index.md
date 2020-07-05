@@ -188,8 +188,11 @@ bash ./code/04_3_phylogeny_driver.bash
 ```
 
 <br>
+
 ### ############################
+
 *End of Mothur-based bioinformatics pipeline!*
+
 ### ############################
 
 <br>
@@ -286,8 +289,11 @@ For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/abou
 *End of QIIME2-based pipeline!*
 
 <br>
+
 ### ############################
-*End of Mothur-based bioinformatics pipeline!*
+
+*End of QIIME2-based bioinformatics pipeline!*
+
 ### ############################
 
 <br>
