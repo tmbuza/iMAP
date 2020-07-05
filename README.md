@@ -163,94 +163,31 @@ bash iMAP/code/demo_data.bash
 bash iMAP/code/00_checkFiles_driver.bash 
 ```
 
-<br>
-
-## User Options
-Users who want to change the default settings may do so using any text editor. The table below shows the location of default parameters that may be altered. 
-
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Parameter to change</strong></th>
-<th align="left"><strong>File Path</strong></th>
-<th align="left"><strong>Filename</strong></th>
-<th><strong>Default</strong></th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td align="left">Phred score</td><td align="left">iMAP/code/preprocessing</td><td align="left">04_get_highscore_reads.bash</td><td>trimq=25</td>
-</tr>
-
-<tr>
-<td align="left">Min Contig length</td><td align="left">iMAP/code/seqprocessing</td><td align="left">01_assemble_paired_reads.batch</td><td>minlength=100</td>
-</tr>
-<tr>
-<td align="left">Max Contig length</td><td align="left">iMAP/code/seqprocessing</td><td align="left">01_assemble_paired_reads.batch</td><td>maxlength=300</td>
-</tr>
-<tr>
-<td align="left">Min alignment length</td><td align="left">iMAP/code/seqprocessing</td><td align="left">02_align_for_16S_consensus.batch</td><td>minlength=100</td>
-</tr>
-<tr>
-<td align="left">Max alignment length</td><td align="left">iMAP/code/seqprocessing</td><td align="left">02_align_for_16S_consensus.batch</td><td>maxlength=300</td>
-</tr>
-<tr>
-<td align="left">Reference</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>silva.seed.ng.fasta</td>
-</tr>
-<tr>
-<td align="left">Taxonomy</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>silva.seed.tax</td>
-</tr>
-</tr>
-<tr>
-<td align="left">Classification cutoff</td><td align="left">iMAP/code/seqclassification</td><td align="left">01_classify_seqs.batch</td><td>cutoff=80</td>
-<tr>
-<td align="left">QIIME2 settings</td><td align="left">iMAP/code/qiime2</td><td align="left">qiime2.bash</td><td>DADA2 QC parameters are set at 0</td>
-</tr>
-</tr>
-</tbody>
-</table>
-
 
 <br>
 
+### User Options
+Users who want to change the default settings may do so using any text editor. Use [this table](http://microbiome-bioinfo.com/iMAP/Resources/useroptions.html) to locate files with default parameters that may be altered. 
 
+<br>
 
-## Set up Docker
-Link: https://docs.docker.com/install/
-Register for a Docker ID. Link: https://docs.docker.com/docker-id/
+### Install Docker
+Link: [https://docs.docker.com/install/](https://docs.docker.com/install/).
 
-### Download dependencies images
-Includes:
-1. [rpackages:v3.5.2](https://hub.docker.com/r/tmbuza/rpackages) for R version 3.5.2 and several packages.
-2. [readqctools:v1.0.0](https://hub.docker.com/r/tmbuza/readqctools) for quality control of the reads.
-3. [mothur:v1.41.3](https://hub.docker.com/r/tmbuza/mothur) for sequence classification and for generating mothur-based OTU tables.
-4. [qiime2core:v2019.1](https://hub.docker.com/r/tmbuza/qiime2core) for sequence classification and for generating qiime2-based OTU table.
-4. [qiime2core:v2020.2](https://hub.docker.com/r/tmbuza/qiime2core) (latest) for sequence classification and for generating qiime2-based OTU table.
-
-Run the following to install the images. Alternatively, to install individual image use `docker pull tmbuza/imagename`.
-
-```{}
-# All latest images at once
-
-bash iMAP/code/dockerImages.sh
-
-# Individual image
-
-docker pull tmbuza/imagename
-
-```
+### Set up Docker Account
+Register for a Docker ID at [https://docs.docker.com/docker-id/](https://docs.docker.com/docker-id/).
 
 ### Confirm the installation
+* You must be logged in to run docker commands.
+* If the command below work, then you are all set up.
 ```{}
-docker images
+docker login
+docker info
 ```
-
-## Start the analysis
 
 <br>
 
-### Metadata profiling
+## Metadata profiling
 ```{}
 containerName=report1
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
@@ -261,7 +198,7 @@ exit
 
 <br>
 
-### Read Preprocessing
+## Read Quality Check
 ```{}
 containerName=readpreprocess
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
