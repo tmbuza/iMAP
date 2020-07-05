@@ -5,7 +5,7 @@
 <!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
 <br>
 
-<!-- [GH-Page](https://tmbuza.github.io/iMAP/) -->
+[GH-Page](https://tmbuza.github.io/iMAP/)
 
 ## Version: iMAP v1.0 (Pre-Release)
 The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
@@ -15,7 +15,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 <br>
 
-## Supported Analyses
+<!-- ## Supported Analyses
 1. Profiling of sample metadata
 2. Pre-processing and quality control of paired-reads
 3. Sequence processing and classification
@@ -37,6 +37,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 ![](img/structureOfiMAP2.png)
 
+<br> -->
 <br>
 
 ## Requirements
