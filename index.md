@@ -11,7 +11,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 |[Manuscript](https://rdcu.be/b5iVj) | In BMC Bioinformatics | Software |
 |[README](https://github.com/tmbuza/iMAP/blob/master/README2.md/) | Guidelines | Quick user's guide ||
 [Practical guide](https://www.microbiome-bioinfo.com/microbiomeanalysis/) | Systematic Microbiome data analysis  | eBook, coming in 2021 |
-|[Useful link](https://https://www.microbiome-bioinfo.com/) | Consulting Services | In Progress |
+|[Useful link](https://www.microbiome-bioinfo.com/) | Consulting Services | In Progress |
 
 
 <br>
