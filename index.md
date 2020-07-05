@@ -12,9 +12,13 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 |[Useful link](https://https://www.microbiome-bioinfo.com//) | Consulting Services | In Progress |
 
 
-## Getting Started with iMAP
+<br>
+<hr>
 
-### Download iMAP repository
+# Getting Started with iMAP
+
+<hr>
+<br>### Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
 
@@ -116,7 +120,7 @@ exit
 <br>
 <hr>
 
-# Sequence Processing and classification
+# Sequence Processing and Classification
 
 <hr>
 <br>
@@ -285,7 +289,16 @@ For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/abou
 
 <hr>
 <br>
+
+
 <br>
+<hr>
+
+# Post-Classification Analysis
+
+<hr>
+<br>
+
 
 
 ## Useful Links
