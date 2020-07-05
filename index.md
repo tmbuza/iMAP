@@ -187,7 +187,6 @@ bash ./code/04_2_otucluster_driver.bash
 bash ./code/04_3_phylogeny_driver.bash
 ```
 
-<br>
 <hr>
 
 *End of Mothur-based bioinformatics pipeline!*
@@ -280,7 +279,6 @@ Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.
 
 For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
-<br>
 <hr>
 
 *End of QIIME2-based bioinformatics pipeline!*
