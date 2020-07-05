@@ -258,16 +258,15 @@ bash code/qiime2/qiime2.bash
 exit
 ```
 
-
 ### View QIIME 2 results
-Output path: iMAP/data/qiime2/results/
+* Output path: iMAP/data/qiime2/results/
+* Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results (see image below).
+* Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
+* For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
-Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results (see image below).
+<br>
+
 ![Screenshot](img/qiime2view.png)
-
-Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
-
-For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
 <hr>
 
@@ -281,7 +280,7 @@ For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/abou
 <hr>
 
 # Post-Classification Analysis
-<maroon><h3>In Process</h3></maroon>
+<h3><maroon>In Process</maroon></h3>
 
 <hr>
 <br>
