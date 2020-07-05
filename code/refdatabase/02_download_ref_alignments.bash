@@ -18,10 +18,9 @@ mkdir data/references
 wget --no-check-certificate https://mothur.s3.us-east-2.amazonaws.com/wiki/silva.seed_v138.tgz
 tar xvzf silva.seed_v138.tgz silva.seed_v138.align silva.seed_v138.tax
 mothur "#get.lineage(fasta=silva.seed_v138.align, taxonomy=silva.seed_v138.tax, taxon=Bacteria);degap.seqs(fasta=silva.seed_v138.pick.align, processors=8)"
-mv silva.seed_v138.pick.align data/references/silva.seed.align
-mv silva.seed_v138.pick.tax data/references/silva.seed.tax
+mv silva.seed_v138.pick.align iMAP/data/references/silva.seed.align
+mv silva.seed_v138.pick.tax iMAP/data/references/silva.seed.tax
 rm *ilva*
-# rm silv*
 
 if [ "$?" != "0" ]; then
     echo "[Error] Sorry, missing required reference alignment, exiting...!" 1>&2
