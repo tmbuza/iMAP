@@ -321,7 +321,8 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap t
 ```
 
 ### Start analysis
-Next we will run the sequence processing and classification command which implements the folllowing:   
+Next we will run the sequence processing and classification command which implements the folllowing:  
+
     * Assemble the forward and reverse reads, screen by length and create representative sequences
     * Align representative sequences with reference alignments..
     * Denoise to remove poor alignments
