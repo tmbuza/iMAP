@@ -188,16 +188,12 @@ bash ./code/04_3_phylogeny_driver.bash
 ```
 
 <br>
-
-<h5>############################</h5>
+<hr>
 
 *End of Mothur-based bioinformatics pipeline!*
 
-<h5>############################</h5>
-
+<hr>
 <br>
-<hr>
-<hr>
 <br>
 
 ## B: QIIME2-BASED PIPELINE
@@ -285,20 +281,12 @@ Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.
 For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
 
 <br>
-
-*End of QIIME2-based pipeline!*
-
-<br>
-
-<h5>############################</h5>
+<hr>
 
 *End of QIIME2-based bioinformatics pipeline!*
 
-<h5>############################</h5>
-
+<hr>
 <br>
-<hr>
-<hr>
 <br>
 
 
