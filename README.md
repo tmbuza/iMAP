@@ -320,8 +320,8 @@ containerName=mothurseqprocessing
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
 ```
 
-### Start analysis
-Next we will run the sequence processing and classification command which implements the folllowing:
+### Start sequence processing and classification 
+The sequence processing and classification command will implement the folllowing:
 
 * Assemble the forward and reverse reads, screen by length and create representative sequences
 * Align representative sequences with reference alignments..
@@ -330,23 +330,23 @@ Next we will run the sequence processing and classification command which implem
 * Classify the sequences and do post-classification QC.
 * Estimates the sequencing error rate.
 
-
 ```{}
 bash ./code/03_imapClassifySEQ_driver.bash 
 ```
-> You may see a lot of WARNINGS, It is safe to ignore them. Also, the program is set to remove all temporary files after processing the sequences. If no any temporary file found you will see an error message that reads: *rm: cannot remove '*.temp': No such file or directory*. Just ignore it.
+> You may see a lot of WARNINGS. It is safe to ignore them. Also, the program is set to remove all temporary files after processing the sequences. If no any temporary file found you will see an error message that reads: *rm: cannot remove '*.temp': No such file or directory*. Just ignore it.
 
 <br>
 
-### OTU clustering, Taxonomy assignement and preliminary analysis (Mothur)
-1. Phylotype-based method  (works for any dataset size).
+### Pick a method for OTU clustering and taxonomy assignement
+
+**Method 1**: Phylotype-based method (works for large and small dataset).
     
 ```{}
 bash ./code/04_1_phylotype_driver.bash
 ```
 <br>
 
-2. OTU-cluster method (works best for small dataset).
+**Method 2**: OTU-cluster method (works best for small dataset).
     
 ```{}
 bash ./code/04_2_otucluster_driver.bash
@@ -354,7 +354,7 @@ bash ./code/04_2_otucluster_driver.bash
 
 <br>
 
-3. Phylogeny-based method (works best for small dataset).
+**Method 3**: Phylogeny-based method (works best for small dataset).
     
 ```{}
 bash ./code/04_3_phylogeny_driver.bash
