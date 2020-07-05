@@ -15,7 +15,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 <br>
 
-## Supported Analyses
+<!-- ## Supported Analyses
 1. Profiling of sample metadata
 2. Pre-processing and quality control of paired-reads
 3. Sequence processing and classification
@@ -37,6 +37,7 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 ![](img/structureOfiMAP2.png)
 
+<br> -->
 <br>
 
 ## Requirements
