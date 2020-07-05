@@ -47,10 +47,8 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-
 ## Install bbmap tools (didn't work in docker image)
-# bash iMAP/code/requirements/iMAP_additional_software_driver.bash
-bash iMAP/code/requirements/01_install_bbmap_software.bash
+bash iMAP/code/requirements/iMAP_additional_software_driver.bash
 
 if [ "$?" != "0" ]; then
     echo "[Error] Sorry, the bbmap tool is required, please make sure that it is installed properly. !" 1>&2
