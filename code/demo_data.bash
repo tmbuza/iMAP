@@ -47,21 +47,22 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-## Install bbmap tools (didn't work in docker image)
-bash iMAP/code/requirements/iMAP_additional_software_driver.bash
 
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, the bbmap tool is required, please make sure that it is installed properly. !" 1>&2
-    exit 1
-fi
+# ## Install bbmap tools (didn't work in docker image)
+# bash iMAP/code/requirements/iMAP_additional_software_driver.bash
 
-## Download reference databases
-bash iMAP/code/refdatabase/iMAP_download_driver.bash
+# if [ "$?" != "0" ]; then
+#     echo "[Error] Sorry, the bbmap tool is required, please make sure that it is installed properly. !" 1>&2
+#     exit 1
+# fi
 
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, missing one or more required reference database, exiting...!" 1>&2
-    exit 1
-fi
+# ## Download reference databases
+# bash iMAP/code/refdatabase/iMAP_download_driver.bash
+
+# if [ "$?" != "0" ]; then
+#     echo "[Error] Sorry, missing one or more required reference database, exiting...!" 1>&2
+#     exit 1
+# fi
 
 
 
