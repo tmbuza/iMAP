@@ -94,5 +94,8 @@ code/Rmd/*Casestudy.Rmd
 .~*
 ._*
 *.swp
+
+.dockerignore
+docker-*.yml
 !.git*
 
