@@ -18,7 +18,9 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 # Getting Started with iMAP
 
 <hr>
-<br>### Download iMAP repository
+<br>
+
+### Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
 
