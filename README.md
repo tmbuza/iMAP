@@ -119,8 +119,9 @@ rm -rf master.zip
 
 <br>
 
-### Add data to designated folders
-#### File formats
+### Add data to designated folders 
+
+**Accepted file formats**
 
 1. Metadata: 
 
@@ -134,7 +135,7 @@ rm -rf master.zip
     * QIIME2-format:
  [manifest.txt](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
  
-3. Variable files (Mothur-based preliminary analysis).
+3. Variable files (for Mothur-based preliminary analysis).
 
     * Variable 1: 
  [var1.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
@@ -142,12 +143,24 @@ rm -rf master.zip
     * Variable 2: 
  [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var2.design)
 
-<br>
+* etc...
 
-## Data for optional testing of iMAP
-The following command copy the required data files located in the iMAP/resources/ and place them in their respective folders, as shown on Table 1 above.
+## Data for testing of iMAP
+>The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations. It also download Silva seed database (default DB) and add it in the data/reference folder.
 ```{}
 bash iMAP/code/demo_data.bash
+```
+
+<br>
+
+
+### Check missing folders or files
+> Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
+
+<br>
+
+```{}
+bash iMAP/code/00_checkFiles_driver.bash 
 ```
 
 <br>
@@ -257,10 +270,10 @@ bash code/02_readPreprocess_driver.bash
 
 exit
 ```
-> The HTML files summarizing the Read FastQC reports are stored in the **results/multiqc/ folder**. Open the files in your favorite browser or try to open it using CLI like:
+> Make sure you exited the container which is done by running *exit* command above. That will bring you back to your normal CLI. The HTML QC-summary report (multiqc_report.html) is stored in the **iMAP/results/multiqc/ folder** and you can open them using your favorite browser or try to open it using CLI like:
 
 ```{}
-open results/multiqc/qced/R1/multiqc_report.html
+open iMAP/results/multiqc/qced/R1/multiqc_report.html
 ```
 
 <br>
