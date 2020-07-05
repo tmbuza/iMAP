@@ -37,26 +37,25 @@ Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, 
 
 ![](img/structureOfiMAP2.png)
 
-<br> -->
 <br>
+<br>
+-->
 
 ## Requirements
+List of required materials for running iMAP pipeline is available [here]().
 
-The first step is to gather all the materials needed for implementing the iMAP pipeline as described in Table 1. Most iMAP dependencies are executable and are already placed in the PATH using docker, so users should be able to launch them directly from the command line of the specified container. 
-
+The first step is to gather all the materials needed for implementing the iMAP pipeline. Most iMAP dependencies are executable and are already placed in the PATH using docker. Users should be able to launch analysis directly from the command line of the corresponding container. 
 
 <br>
-<hr>
 
-### Non-Docker Image Users
+### Using specific platform
 
-> Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md): README2 guides the implementation of iMAP directly on a specific platform, including Unix-Linux, Mac OS X, and Windows 10. Please note that this is work-in-progress.
+> Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) if you prefer to use a specific platform. README2 guides the implementation of iMAP directly on a specific platform, including Unix-Linux, Mac OS X, and Windows 10. Please note that this is work-in-progress.
 
 <hr>
 <br>
 
-
-**Table 1: List of required materials for running iMAP pipeline**
+<!--
 **Table 1: List of required materials for running iMAP pipeline**
 
 | **Requirement** | **Description** | **Location** | **Remarks** |
@@ -87,16 +86,9 @@ The first step is to gather all the materials needed for implementing the iMAP p
 | *Custom classifiesr* | Any manually built classifiers. Highly recommended when studying a specific group of known microbes. | data/references |Manually-built|
 
 <br>
-
-## Getting Started
-
-### Running a shell command as root or system administrator
- It is likely that some systems, including Ubuntu, Linux, ... may require users to have administrative right, and in such cases:
+-->
  
-* Put `sudo` in front of the command, and enter your password when prompted.
-* Note that the system is often configured to not ask again for a few minutes allowing you to run several commands in succession.
-
-<br>
+## Getting Started
 
 ### Download iMAP repository
 ```{}
