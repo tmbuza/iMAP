@@ -1,22 +1,3 @@
-## Citation
-Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Free Full Text](https://rdcu.be/b5iVj).
-
-<hr>
-<br>
-
-## Related Links
-
-| URLs | Description | Status |
-|-------|--------------------| --------- |
-|[Manuscript](https://rdcu.be/b5iVj) | In BMC Bioinformatics | Software |
-|[README](https://github.com/tmbuza/iMAP/blob/master/README2.md/) | Guidelines | Quick user's guide ||
-[Practical guide](https://www.microbiome-bioinfo.com/microbiomeanalysis/) | Systematic Microbiome data analysis  | eBook, coming in 2021 |
-|[Useful link](https://www.microbiome-bioinfo.com/) | Consulting Services | In Progress |
-
-
-<br>
-<hr>
-
 # Getting Started with iMAP
 
 <hr>
@@ -299,11 +280,29 @@ For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/abou
 <hr>
 
 # Post-Classification Analysis
+<maroon><h3>In Process</h3></maroon>
+
+<hr>
+<br>
+
+## Related Links
+
+| URLs | Description | Status |
+|-------|--------------------| --------- |
+|[Manuscript](https://rdcu.be/b5iVj) | In BMC Bioinformatics | Software |
+|[README](https://github.com/tmbuza/iMAP/blob/master/README2.md/) | Guidelines | Quick user's guide ||
+[Practical guide](https://www.microbiome-bioinfo.com/microbiomeanalysis/) | Systematic Microbiome data analysis  | eBook, coming in 2021 |
+|[Useful link](https://www.microbiome-bioinfo.com/) | Consulting Services | In Progress |
 
 <hr>
 <br>
 
 
+## Citation
+Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Free Full Text](https://rdcu.be/b5iVj).
+
+<br>
+<hr>
 
 ## Useful Links
 <oL>
