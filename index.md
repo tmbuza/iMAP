@@ -262,8 +262,8 @@ exit
 ### View QIIME 2 results
 Output path: iMAP/data/qiime2/results/
 
-Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results.
-![](img/qiime2view.png)
+Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results (see image below).
+![Screenshot](img/qiime2view.png)
 
 Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
 
