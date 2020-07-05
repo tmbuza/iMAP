@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
 
-bash ./code/refdatabase/iMAP_download_driver.bash
-
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, missing one or more required reference database, exiting...!" 1>&2
-    exit 1
-fi
-
-mv mothur.*.logfile LOG
-
-rm *.temp
-
 ## Mothur-based Sequence Processing and classification
 bash ./code/seqprocessing/iMAP_seqprocessing_driver.bash
 
