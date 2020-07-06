@@ -94,11 +94,25 @@ docker info
 <br>
 
 ## Metadata profiling
-```{}
-containerName=report1
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
 
+### Download read QC image
+```{}
+docker pull tmbuza/rpackages:v3.5.2
+```
+
+### Create a container for bash CLI<br>
+```{}
+containerName=metadataprofile
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
+```
+
+### Start profiling metadata
+```{}
 bash code/01_metadataProfiling_driver.bash
+```
+
+### Exit the container
+```{}
 exit
 ```
 
