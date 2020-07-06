@@ -141,7 +141,7 @@ rm -rf master.zip
 ## Data for testing iMAP
 >The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations. It also download Silva seed database (default DB) and add it to the data/reference folder.
 ```{}
-bash iMAP/code/demo_data.bash
+bash iMAP/code/00_allDemo_data.bash
 ```
 
 <br>
