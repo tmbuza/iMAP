@@ -10,14 +10,14 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-cp iMAP/resources/qc*.files iMAP/data/metadata/
+cp iMAP/resources/metadata/qc*.files iMAP/data/metadata/
 
 if [ "$?" != "0" ]; then
     echo "[Error] Sorry, some mapping files not found, exiting...,!" 1>&2
     exit 1
 fi
 
-cp iMAP/resources/manifest.txt iMAP/data/metadata/
+cp iMAP/resources/metadata/manifest.txt iMAP/data/metadata/
 
 if [ "$?" != "0" ]; then
     echo "[Error] Sorry, manifest.txt not found, exiting...,!" 1>&2
