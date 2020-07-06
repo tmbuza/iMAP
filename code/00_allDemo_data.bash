@@ -29,7 +29,7 @@ unzip -oj iMAP/resources/raw.zip -d iMAP/data/raw/
 
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, zipped file not found, exiting...,!" 1>&2
+    echo "[Error] Sorry, bbmap zipped file not found, exiting...,!" 1>&2
     exit 1
 fi
 
