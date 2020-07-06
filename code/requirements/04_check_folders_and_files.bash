@@ -86,7 +86,9 @@ REQUIRED_METADATA_FILES=(
   # "var4.design"
   "samplemetadata.tsv"
   # "samplemetadata_casestudy.txt"
-  "qced.files"
+  "qc0.files"
+  "qctrim25.files"
+  "qcphix.files"
   "manifest.txt"
   # "186samples.metadata"
 )
