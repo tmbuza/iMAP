@@ -4,9 +4,6 @@
 
 ## Prepare project folders
 
-mkdir data
-mkdir data/references 
-
 # <br>
 
 # # Reference alignments.
