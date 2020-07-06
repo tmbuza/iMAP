@@ -70,9 +70,8 @@ bash iMAP/code/00_checkFiles_driver.bash
 
 <br>
 
-### User Options
-Users who want to change the default settings may do so using any text editor. Use [this table](http://microbiome-bioinfo.com/iMAP/Resources/useroptions.html) to locate files with default parameters that may be altered. 
-
+### User's Options
+Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
 <br>
 <hr>
 
