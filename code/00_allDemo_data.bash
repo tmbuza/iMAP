@@ -45,10 +45,10 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-unzip -oj iMAP/resources/bbmap.zip -d iMAP/data/code/
+unzip -o iMAP/resources/bbmap.zip -d iMAP/code/
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, bbmap zipped file not found, exiting...,!" 1>&2
+    echo "[Error] Sorry, the bbmap tool is required, please make sure that it is installed properly. !" 1>&2
     exit 1
 fi
 
