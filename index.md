@@ -1,6 +1,6 @@
 # Getting Started with iMAP
 
-## Requirements (for reference)
+### Requirements (for reference)
 List of required materials for running iMAP pipeline is available [here](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html).
 
 The first step is to gather all the materials needed for implementing the iMAP pipeline. Most iMAP dependencies are executable and are already placed in the PATH using docker. Users should be able to launch analysis directly from the command line of the corresponding container. 
@@ -75,7 +75,7 @@ Users who want to change the default settings may do so using any text editor. U
 <br>
 <hr>
 
-### Install Docker Desktop
+## Install Docker Desktop
 Link: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
 
 ### Set up Docker Account
@@ -93,9 +93,9 @@ docker info
 <hr>
 <br>
 
-## Metadata profiling
+# Metadata profiling
 
-### Download read QC image
+### Download rpackage image
 ```{}
 docker pull tmbuza/rpackages:v3.5.2
 ```
@@ -118,16 +118,31 @@ exit
 
 <br>
 
-## Read Quality Control
+# Read Quality Control
+
+### Download reaad QC image
+```{}
+docker pull tmbuza/readqctools:v1.0.0
+```
+
+### Create a container for  bash CLI
 ```{}
 containerName=readpreprocess
 docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
+```
 
+### Start read preprocessing
+```{}
 bash code/02_readPreprocess_driver.bash
+```
 
+### Exit the container
+```{}
 exit
 ```
-> Make sure you exited the container which is done by running *exit* command above. That will bring you back to your normal CLI. The HTML QC-summary report (multiqc_report.html) is stored in the **iMAP/results/multiqc/ folder** and you can open them using your favorite browser or try to open it using CLI like:
+
+### View MultiQC report
+> Make sure you exited the container which is done by running *exit* command above. That will bring you back to your normal CLI. The HTML QC-summary report (multiqc_report.html) is stored in the **iMAP/results/multiqc/ folder**. You can open the HTML report(s) using your favorite browser or try to open it using CLI like:
 
 ```{}
 open iMAP/results/multiqc/qced/R1/multiqc_report.html
@@ -137,11 +152,7 @@ open iMAP/results/multiqc/qced/R1/multiqc_report.html
 
 ### Read QC progress report
 ```{}
-containerName=report2
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/progressreport2.bash
-exit
+In Progress
 ```
 <br>
 <hr>
