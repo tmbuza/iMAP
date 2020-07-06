@@ -23,12 +23,6 @@ if [ "$?" != "0" ]; then
     echo "[Error] Sorry, manifest.txt not found, exiting...,!" 1>&2
     exit 1
 fi
-
-unzip -o iMAP/resources/bbmap.zip -d iMAP/code/
-
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, bbmap zipped file not found, exiting...,!" 1>&2
-    exit 1
     
 unzip -oj iMAP/resources/raw.zip -d iMAP/data/raw/
 
