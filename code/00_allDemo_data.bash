@@ -10,10 +10,10 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-cp iMAP/resources/qced.files iMAP/data/metadata/
+cp iMAP/resources/qc*.files iMAP/data/metadata/
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, qced.files not found, exiting...,!" 1>&2
+    echo "[Error] Sorry, some mapping files not found, exiting...,!" 1>&2
     exit 1
 fi
 
