@@ -1,6 +1,21 @@
 # Getting Started with iMAP
 
+## Requirements
+List of required materials for running iMAP pipeline is available [here](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html).
+
+The first step is to gather all the materials needed for implementing the iMAP pipeline. Most iMAP dependencies are executable and are already placed in the PATH using docker. Users should be able to launch analysis directly from the command line of the corresponding container. 
+
+<br>
+
+<!--
+### Using specific platform
+
+> Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) if you prefer to use a specific platform. README2 guides the implementation of iMAP directly on a specific platform, including Unix-Linux, Mac OS X, and Windows 10. Please note that this is work-in-progress.
+
 <hr>
+<br><
+-->
+
 <br>
 
 ### Download iMAP repository
