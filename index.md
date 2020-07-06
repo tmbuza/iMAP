@@ -34,10 +34,18 @@ bash iMAP/code/demo_data.bash
 
 <br>
 
-### Check missing folders or files
-> Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
+### Download reference databases (for mothur-based pipeline only)
+bash iMAP/code/refdatabase/iMAP_download_driver.bash
 
 <br>
+
+### Download reference database (QIIME2-based pipeline only)
+bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
+
+<br>
+
+### Check missing folders or files
+> Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
 
 ```{}
 bash iMAP/code/00_checkFiles_driver.bash 
@@ -49,21 +57,24 @@ bash iMAP/code/00_checkFiles_driver.bash
 Users who want to change the default settings may do so using any text editor. Use [this table](http://microbiome-bioinfo.com/iMAP/Resources/useroptions.html) to locate files with default parameters that may be altered. 
 
 <br>
+<hr>
 
-### Install Docker
-Link: [https://docs.docker.com/install/](https://docs.docker.com/install/).
+### Install Docker Desktop
+Link: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
 
 ### Set up Docker Account
-Register for a Docker ID at [https://docs.docker.com/docker-id/](https://docs.docker.com/docker-id/).
+* Docker ID grants you access to Docker Hub repositories. All you need is an email address.
+* Register for a Docker ID at [https://docs.docker.com/docker-id/](https://docs.docker.com/docker-id/).
 
 ### Confirm the installation
-* You must be logged in to run docker commands.
-* If the command below work, then you are all set up.
+* If the commands below work, then you are all set.
 ```{}
 docker login
 docker info
 ```
 
+<br>
+<hr>
 <br>
 
 ## Metadata profiling
