@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_37.90.tar.gz
-tar -xvzf BBMap_37.90.tar.gz
+wget --no-check-certificate https://sourceforge.net/projects/bbmap/files/BBMap_38.86.tar.gz
+tar -xvzf BBMap_38.86.tar.gz
 mv -v bbmap /imap/code/
-rm BBMap_37.90.tar.gz
+rm *.tar.gz
 
 # unzip -o iMAP/resources/bbmap.zip -d iMAP/code
 
