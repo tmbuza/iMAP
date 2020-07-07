@@ -73,7 +73,7 @@ bash iMAP/code/00_checkFiles_driver.bash
 * Metadata: iMAP/data/metadata/
 * Mapping files: iMAP/data/metadata/
 
-Run checkFiles command everytime you want to verify any missing files.
+Re-run checkFiles command everytime you change the original data files.
 
 ```{}
 bash iMAP/code/00_checkFiles_driver.bash
