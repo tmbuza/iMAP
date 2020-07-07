@@ -12,7 +12,7 @@
 	* The iMAP folder is by default the working directory and is readable from the container.
 	* The output is stored in the working directory which mean it can be accessed ouside the container.
 * Important: Graphical applications don't work well in Docker containers. 
-* Some R-packages that may install perfectly in RStudio may not work in docker images.
+* Some R-packages that install perfectly in RStudio may not install correctly in docker images.
 
 <br>
 <hr>
