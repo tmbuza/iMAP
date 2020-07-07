@@ -39,7 +39,7 @@ This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html
 
 **Using demo data**
 
->The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations. It also download Silva seed database (default DB) and add it to the data/reference folder.
+>The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations.
 
 ```{}
 bash iMAP/code/00_allDemo_data.bash
@@ -68,8 +68,15 @@ bash iMAP/code/00_checkFiles_driver.bash
 
 <br>
 
-### User's Options
-Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
+### What to replace
+* Rawdata: iMAP/data/raw/
+* Metadata: iMAP/data/metadata/
+* Mapping files: iMAP/data/metadata/
+
+```{block, type=tmbinfo}
+>Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
+```
+
 <br>
 <hr>
 
