@@ -6,12 +6,11 @@
 
 ## Running Analysis within Docker Container (Default)
 * See [GH-Page](https://tmbuza.github.io/iMAP/) for step-by-step instructions.
-	* Requires Docker Images.
+	* Requires Docker Images and Docker containers CLI.
 	* Uses less resources but memory-intensive computing may sometimes fail.
 	* All analyses are run interactively on container’s Command-line.
 	* The iMAP folder is by default the working directory and is readable from the container.
 	* The output is stored in the working directory which mean it can be accessed ouside the container.
-
 * Important: Graphical applications don't work well in Docker containers. 
 * Some R-packages that may install perfectly in RStudio may not work in docker images.
 
