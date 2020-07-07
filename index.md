@@ -33,13 +33,14 @@ rm -rf master.zip
 <br>
 
 ### Add data to designated folders 
-
-### Requirements (for reference)
 This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders.
 
 <br>
 
+**Using demo data**
+
 >The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations. It also download Silva seed database (default DB) and add it to the data/reference folder.
+
 ```{}
 bash iMAP/code/00_allDemo_data.bash
 ```
