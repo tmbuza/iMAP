@@ -73,9 +73,9 @@ bash iMAP/code/00_checkFiles_driver.bash
 * Metadata: iMAP/data/metadata/
 * Mapping files: iMAP/data/metadata/
 
-```{block, type=tmbinfo}
+
 >Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
-```
+
 
 <br>
 <hr>
