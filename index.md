@@ -10,8 +10,6 @@
 <br><
 -->
 
-<br>
-
 ### Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
