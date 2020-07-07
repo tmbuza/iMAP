@@ -1,11 +1,5 @@
 # Getting Started with iMAP
 
-### Requirements (for reference)
-List of required materials for running iMAP pipeline is available [here](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html).
-
-The first step is to gather all the materials needed for implementing the iMAP pipeline. Most iMAP dependencies are executable and are already placed in the PATH using docker. Users should be able to launch analysis directly from the command line of the corresponding container. 
-
-<br>
 
 <!--
 ### Using specific platform
@@ -42,6 +36,11 @@ rm -rf master.zip
 
 ### Add data to designated folders 
 
+### Requirements (for reference)
+This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders.
+
+<br>
+
 >The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations. It also download Silva seed database (default DB) and add it to the data/reference folder.
 ```{}
 bash iMAP/code/00_allDemo_data.bash
@@ -74,6 +73,8 @@ bash iMAP/code/00_checkFiles_driver.bash
 Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
 <br>
 <hr>
+
+# Using Docker Images
 
 ## Install Docker Desktop
 Link: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
