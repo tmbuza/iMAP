@@ -73,7 +73,7 @@ bash iMAP/code/00_checkFiles_driver.bash
 * Metadata: iMAP/data/metadata/
 * Mapping files: iMAP/data/metadata/
 
-Re-run checkFiles command everytime you change the original data files.
+Re-run checkFiles command everytime you change the original data files. It is important to maintain the format presented by the demo data.
 
 ```{}
 bash iMAP/code/00_checkFiles_driver.bash
