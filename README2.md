@@ -2,34 +2,25 @@
 
 >Please be informed that financial support to develop this repo ended in October 2018. Volunteer work to make it more user-friendly is progressing slowly. Thank you for your patience. 
 
-<!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
 <br>
-
-[GH-Page](https://tmbuza.github.io/iMAP/)
-
->This README2 describes a work under active development. Visit this page regularly for more updates.
-
-<br>
-
-## Version: iMAP v1.0 (Pre-Release)
-The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
-
-## Citation
-Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Link](https://rdcu.be/bIxrg).
-
-<br><br>
 
 ## Running Analysis within Docker Container (Default)
-* Requires Docker Images.
-* Runs on both Windows and Linux applications.
-* Uses less resources but memory-intensive computing may sometimes fail.
-* All analyses are run interactively on container’s Command-line.
-* The iMAP folder is by default the working directory and is readable from the container.
-* The output is stored in the working directory which mean it can be accessed ouside the container.
+* See [GH-Page](https://tmbuza.github.io/iMAP/) for step-by-step instructions.
+	* Requires Docker Images.
+	* Uses less resources but memory-intensive computing may sometimes fail.
+	* All analyses are run interactively on container’s Command-line.
+	* The iMAP folder is by default the working directory and is readable from the container.
+	* The output is stored in the working directory which mean it can be accessed ouside the container.
 
 > Important: Graphical applications don't work well in Docker containers. 
 
 > Some R-packages that may install perfectly in RStudio may not work in docker images.
+
+
+
+>This README2 describes a work under active development. Visit this page regularly for more updates.
+
+<br><br>
 
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
