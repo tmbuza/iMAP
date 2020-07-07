@@ -12,36 +12,8 @@
 	* The iMAP folder is by default the working directory and is readable from the container.
 	* The output is stored in the working directory which mean it can be accessed ouside the container.
 
-> Important: Graphical applications don't work well in Docker containers. 
-
-> Some R-packages that may install perfectly in RStudio may not work in docker images.
-
-
-
->This README2 describes a work under active development. Visit this page regularly for more updates.
-
-<br><br>
-
-```{}
-git clone https://github.com/tmbuza/iMAP.git
-
-# OR
-
-curl -LOk https://github.com/tmbuza/iMAP/archive/master.zip
-unzip master.zip
-mv iMAP-master iMAP
-rm -rf master.zip
-
-# OR
-
-wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
-unzip master.zip
-mv iMAP-master iMAP
-rm -rf master.zip
-
-```
-More instructions: [README](https://github.com/tmbuza/iMAP/blob/master/README.md) (iMAP-master).
-
+* Important: Graphical applications don't work well in Docker containers. 
+* Some R-packages that may install perfectly in RStudio may not work in docker images.
 
 <br>
 <hr>
@@ -50,7 +22,7 @@ More instructions: [README](https://github.com/tmbuza/iMAP/blob/master/README.md
 ## Running Analysis On Specific Platforms (Best option)
 
 [README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
-
+* This is work under active development. Please visit this page regularly for more updates.
 * Best option for integrating most applications
 * Uses RStudio to install R-packages (recommended)
 * No Docker images are required.
