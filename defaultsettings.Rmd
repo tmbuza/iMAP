@@ -1,0 +1,84 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+# iMAP Default Settings {#defaultsettings}
+
+>iMAP users who want to change the default settings may do so using any text editor. The table below shows the location of default parameters that may be altered</h3>
+
+
+<table class="table table-condensed", border="1">
+<colgroup>
+<col width="15%">
+<col width="25%">
+<col width="40%">
+<col width="20%">
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Parameter to change</strong></th>
+<th align="left"><strong>File Path</strong></th>
+<th align="left"><strong>Filename</strong></th>
+<th align="left"><strong>Default setting</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Phred score</td>
+<td align="left">iMAP/code/preprocessing</td>
+<td align="left">04_get_highscore_reads.bash</td>
+<td>trimq=25</td>
+</tr>
+<tr>
+<td align="left">Min Contig length</td>
+<td align="left">iMAP/code/seqprocessing</td>
+<td align="left">01_assemble_paired_reads.batch</td>
+<td>minlength=100</td>
+</tr>
+<tr>
+<td align="left">Max Contig length</td>
+<td align="left">iMAP/code/seqprocessing</td>
+<td align="left">01_assemble_paired_reads.batch</td>
+<td>maxlength=300</td>
+</tr>
+<tr>
+<td align="left">Min alignment length</td>
+<td align="left">iMAP/code/seqprocessing</td>
+<td align="left">02_align_for_16S_consensus.batch</td>
+<td>minlength=100</td>
+</tr>
+<tr>
+<td align="left">Max alignment length</td>
+<td align="left">iMAP/code/seqprocessing</td>
+<td align="left">02_align_for_16S_consensus.batch</td>
+<td>maxlength=300</td>
+</tr>
+<tr>
+<td align="left">Reference</td>
+<td align="left">iMAP/code/seqclassification</td>
+<td align="left">01_classify_seqs.batch</td>
+<td>silva.seed.ng.fasta</td>
+</tr>
+<tr>
+<td align="left">Taxonomy</td>
+<td align="left">iMAP/code/seqclassification</td>
+<td align="left">01_classify_seqs.batch</td>
+<td>silva.seed.tax</td>
+</tr>
+<tr>
+<td align="left">Classification cutoff</td>
+<td align="left">iMAP/code/seqclassification</td>
+<td align="left">01_classify_seqs.batch</td>
+<td>cutoff=80</td>
+<tr>
+<td align="left">QIIME2 settings</td>
+<td align="left">iMAP/code/qiime2</td>
+<td align="left">qiime2.bash</td>
+<td>DADA2 QC parameters are set at 0</td>
+</tr>
+</tbody>
+</table>
+
+

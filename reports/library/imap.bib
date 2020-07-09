@@ -1,0 +1,1486 @@
+@misc{Wei2017,
+abstract = {A graphical display of a correlation matrix or general matrix. It also contains some algorithms to do matrix reordering.},
+author = {Wei, Taiyun and Simko, Viliam},
+booktitle = {URL https://cran.r-project.org/web/packages/corrplot/corrplot.pdf},
+title = {{Package 'corrplot: visualization of a correlation matrix' (v.0.84)}},
+year = {2017}
+}
+@article{Fellows2012,
+abstract = {Ian Fellows (2014). wordcloud: Word Clouds. R package version 2.5. https://CRAN.R-project.org/package=wordcloud},
+author = {Fellows, I.},
+journal = {R package version},
+title = {{Wordcloud: Word clouds}},
+year = {2012}
+}
+@article{Bokulich2018,
+abstract = {We present q2-feature-classifier (https://github.com/qiime2/q2-feature-classifier), a QIIME 2 plugin containing several novel machine-learning and alignment-based methods for taxonomy classification. We evaluated and optimized several commonly used classification methods implemented in QIIME 1 (RDP, BLAST, UCLUST, and SortMeRNA) and several new methods implemented in QIIME 2 (a scikit-learn naive Bayes machine-learning classifier, and alignment-based taxonomy consensus methods based on VSEARCH, and BLAST+) for classification of bacterial 16S rRNA and fungal ITS marker-gene amplicon sequence data. The naive-Bayes, BLAST+-based, and VSEARCH-based classifiers implemented in QIIME 2 meet or exceed the species-level accuracy of other commonly used methods designed for classification of marker gene sequences that were evaluated in this work. These evaluations, based on 19 mock communities and error-free sequence simulations, including classification of simulated “novel” marker-gene sequences, are available in our extensible benchmarking framework, tax-credit (https://github.com/caporaso-lab/tax-credit-data).},
+author = {Bokulich, Nicholas A. and Kaehler, Benjamin D. and Rideout, Jai Ram and Dillon, Matthew and Bolyen, Evan and Knight, Rob and Huttley, Gavin A. and {Gregory Caporaso}, J.},
+doi = {10.1186/s40168-018-0470-z},
+issn = {20492618},
+journal = {Microbiome},
+pmid = {29773078},
+title = {{Optimizing taxonomic classification of marker-gene amplicon sequences with QIIME 2's q2-feature-classifier plugin}},
+year = {2018}
+}
+@article{Bokulich2017,
+abstract = {Studies of host-associated and environmental microbiomes often incorporate longitudinal sampling or paired samples in their experimental design. Longitudinal sampling provides valuable information about temporal trends and subject/population heterogeneity, offering advantages over cross-sectional and pre/post study designs. To support the needs of microbiome researchers performing longitudinal studies, we developed q2-longitudinal, a software plugin for the QIIME 2 microbiome analysis platform (https://qiime2.org). The q2-longitudinal plugin incorporates multiple methods for analysis of longitudinal and paired-sample data, including paired differences and distances, linear mixed effects models, microbial interdependence test, first differencing, and volatility analyses. The q2-longitudinal package (https://github.com/qiime2/q2-longitudinal) is open source software released under a BSD-3-Clause license and is freely available, including for commercial use.},
+author = {Bokulich, Nicholas and Zhang, Yilong and Dillon, Matthew and Rideout, Jai Ram and Bolyen, Evan and Li, Huilin and Albert, Paul and Caporaso, James Gregory},
+doi = {10.1101/223974},
+journal = {bioRxiv},
+title = {{q2-longitudinal: a QIIME 2 plugin for longitudinal and paired-sample analyses of microbiome data}},
+year = {2017}
+}
+@article{Bokulich2018a,
+abstract = {Microbiome studies often aim to predict outcomes or differentiate samples based on their microbial compositions, tasks that can be efficiently performed by supervised learning methods. Here we present a benchmark comparison of supervised learning classifiers and regressors implemented in scikit-learn, a Python-based machine-learning library. We additionally present q2-sample-classifier, a plugin for the QIIME 2 microbiome bioinformatics framework, that facilitates application of the scikit-learn classifiers to microbiome data. Random forest, extra trees, and gradient boosting models demonstrate the highest performance for both supervised classification and regression of microbiome data. Automated feature selection and hyperparameter tuning enhance performance of most methods but may not be necessary under all circumstances. The q2-sample-classifier plugin makes these methods more accessible and interpretable to a broad audience of microbiologists, clinicians, and others who wish to utilize supervised learning methods for predicting sample characteristics based on microbiome composition. The q2-sample-classifier source code is available at https://github.com/qiime2/q2-sample-classifier. It is released under a BSD-3-Clause license, and is freely available including for commercial use.},
+author = {Bokulich, Nicholas and Dillon, Matthew and Bolyen, Evan and Kaehler, Benjamin D and Huttley, Gavin A and Caporaso, J Gregory},
+doi = {10.1101/306167},
+journal = {bioRxiv},
+title = {q2-sample-classifier: machine-learning tools for microbiome classification and regression},
+year = {2018}
+}
+@misc{QIIME22018,
+author = {QIIME2},
+booktitle = {QIIME2 documents: Data resources},
+title = {{Taxonomy classifiers for use with q2-feature-classifier}},
+url = {https://docs.qiime2.org/2018.8/data-resources/},
+year = {2018}
+}
+@misc{Mothur2018,
+author = {Mothur},
+booktitle = {Mothur Wikipedia},
+title = {{Silva Reference Files}},
+url = {https://www.mothur.org/wiki/Silva_reference_files},
+year = {2018}
+}
+@article{Hsieh2016,
+abstract = {Hill numbers (or the effective number of species) have been increasingly used to quantify the species/taxonomic diversity of an assemblage. The sample-size- and coverage-based integrations of rarefaction (interpolation) and extrapolation (prediction) of Hill numbers represent a unified standardization method for quantifying and comparing species diversity across multiple assemblages. We briefly review the conceptual background of Hill numbers along with two approaches to standardization. We present an R package iNEXT (iNterpolation/EXTrapolation) which provides simple functions to compute and plot the seamless rarefaction and extrapolation sampling curves for the three most widely used members of the Hill number family (species richness, Shannon diversity and Simpson diversity). Two types of biodiversity data are allowed: individual-based abundance data and sampling-unit-based incidence data. Several applications of the iNEXT packages are reviewed: (i) Non-asymptotic analysis: comparison of diversity estimates for equally large or equally complete samples. (ii) Asymptotic analysis: comparison of estimated asymptotic or true diversities. (iii) Assessment of sample completeness (sample coverage) across multiple samples. (iv) Comparison of estimated point diversities for a specified sample size or a specified level of sample coverage. Two examples are demonstrated, using the data (one for abundance data and the other for incidence data) included in the package, to illustrate all R functions and graphical displays.},
+author = {Hsieh, T C and Ma, K H and Chao, Anne},
+doi = {10.1111/2041-210X.12613},
+isbn = {2041-210X},
+issn = {2041210X},
+journal = {Methods in Ecology and Evolution},
+title = {{iNEXT: An R package for interpolation and extrapolation in measuring species diversity}},
+year = {2016}
+}
+@article{Chao2016,
+abstract = {Overview iNEXT (iNterpolation and EXTrapolation) Online is the R-based interactive online version of iNEXT available via the link https://chao.shinyapps.io/iNEXTOnline/ or http://chao.stat.nthu.edu.tw/wordpress/software{\_}download/. Clicking these links, you will be directed to the online interface window. Users do not need to learn/understand R to run iNEXT Online. The interactive web application was built using the Shiny (a web application framework). iNEXT features two statistical analyses (non-asymptotic and asymptotic) for species diversity based on Hill numbers: (1) A non-asymptotic approach based on interpolation and extrapolation iNEXT computes the estimated diversities for standardized samples with a common sample size or sample completeness. This approach aims to compare diversity estimates for equally-large (with a common sample size) or equally-complete (with a common sample coverage) samples; it is based on the seamless rarefaction and extrapolation sampling curves of Hill numbers for q = 0, 1 and 2. See Colwell et al. (2012), Chao and Jost (2012) and Chao et al. (2014) for pertinent background and methods. (2) An asymptotic approach to infer asymptotic diversity},
+author = {Chao, Anne and Ma, K H and Hsieh, T C},
+doi = {10.13140/RG.2.2.25777.79200},
+journal = {Code},
+title = {{User's Guide for iNEXT Online: Software for Interpolation and Extrapolation of Species Diversity}},
+year = {2016}
+}
+@article{Hsieh2016a,
+abstract = {T. C. Hsieh, K. H. Ma and Anne Chao. 2016. iNEXT: iNterpolation and EXTrapolation for species diversity. R package version 2.0.8, URL: http://chao.stat.nthu.edu.tw/blog/software-download},
+author = {Hsieh, T. C. and Ma, K. H. and Chao, Anne},
+doi = {10.1111/2041-210X.12613},
+isbn = {2041-210X},
+issn = {2041210X},
+journal = {R-project},
+title = {{iNEXT: interpolation and extrapolation for species diversity. R package version 2.0.8}},
+year = {2016}
+}
+@article{Hsieh2016b,
+abstract = {1.Hill numbers (or the effective number of species) have been increasingly used to quantify the species/taxonomic diversity of an assemblage. The sample-size- and coverage-based integration of rarefaction (interpolation) and extrapolation (prediction) of Hill numbers represent a unified standardization method for quantifying and comparing species diversity across multiple assemblages. 2.We briefly review the conceptual background of Hill numbers along with two approaches to standardization. We present an R package iNEXT (iNterpolation/EXTrapolation) which provides simple functions to compute and plot the seamless rarefaction and extrapolation sampling curves for the three most widely used members of the Hill number family (species richness, Shannon diversity and Simpson diversity). Two types of biodiversity data are allowed: individual-based abundance data and sampling-unit-based incidence data. 3.Several applications of the iNEXT packages are reviewed: (1) Non-asymptotic analysis: comparison of diversity estimates for equally-large or equally-complete samples. (2) Asymptotic analysis: comparison of estimated asymptotic or true diversities. (3) Assessment of sample completeness (sample coverage) across multiple samples. (4) Comparison of estimated point diversities for a specified sample size or a specified level of sample coverage. 4.Two examples are demonstrated, using the data (one for abundance data and the other for incidence data) included in the package, to illustrate all R functions and graphical displays. This article is protected by copyright. All rights reserved.},
+author = {Hsieh, T. C. and Ma, K. H. and Chao, Anne},
+doi = {10.1111/2041-210X.12613},
+isbn = {2041-210X},
+issn = {2041210X},
+journal = {Methods in Ecology and Evolution},
+keywords = {Shannon diversity,Simpson diversity,abundance data,incidence data,sample coverage,species richness},
+title = {{iNEXT: an R package for rarefaction and extrapolation of species diversity (Hill numbers)}},
+year = {2016}
+}
+@article{Oksanen2018,
+author = {Oksanen, Jari and Blanchet, Guillaume and Friendly, Michael and Kindt, Roeland and Legendre, Pierre and McGlinn, Dan and Minchin, Peter R. and O'Hara, R. B. and Simpson, Gavin L. and Solymos, Peter M. and Stevens, Henry H. and Szoecs, Eduard and Wagner, Helene},
+journal = {R Package},
+number = {2.5-2},
+title = {{Vegan: Community Ecology Package}},
+url = {https://cran.r-project.org/web/packages/vegan/vegan.pdf},
+year = {2018}
+}
+@article{Chao2003,
+abstract = {The Program SPADE (Species Prediction And Diversity Estimation), written in C language, estimates various biodiversity indices based on different types of sample data from one or multiple communities. It is a free software, and the user guide contains numerical examples and explanations. The program is divided into seven parts: .. Part I: Species (estimating species richness for one community based on the observed species frequencies or presence/absence data) .. Part II: Shared Species (estimating the number of shared species for two communities based on frequency data or multiple incidence data) .. Part III: Prediction (predicting the number of new species that would be discovered in a second survey, based on frequency data from an initial survey) .. Part IV: Diversity Index (estimating various diversity indices including species richness, Fisher's alpha index, Shannon's entropy and Simpson's index as well as their effective numbers of species based on sample abundance or frequency data) .. Part V: Two-Community Similarity Index (estimating various similarity indices for two assemblages based on abundance data or multiple incidence data. The incidence-based indices include the classic Jaccard, S{\o}rensen and Lennon et al. (2001) indices; the abundance-based indices include the Bray-Curtis, Morisita-Horn and two newly developed abundance-based Jaccard and S{\o}rensen indices) .. Part VI: Multiple-Community Diversity Measure (estimating a class of generalized Morisita similarity/dissimilarity indices for more than two communities) .. Part VII: Genetics (applying Part VI to estimate allele similarity and differentiation for multiple-subpopulation genetic data)},
+author = {Chao, Anne and Shen, Tj},
+journal = {National Tsing Hua University},
+title = {{User's guide for program SPADE (species prediction and diversity estimation)}},
+year = {2003}
+}
+@article{Colwell2009,
+abstract = {EstimateS: Statistical estimation of species richness and shared species from samples. Version 8.2. User's Guide and application published at: http://purl.oclc.org/estimates.},
+author = {Colwell, Robert},
+journal = {Diversity},
+title = {{EstimateS : Biodiversity Estimation}},
+year = {2009}
+}
+@misc{MothurCalculators2018,
+author = {MothurCalculators},
+booktitle = {Online web-based pages},
+title = {{Calculators for OTU-based analyses}},
+url = {https://www.mothur.org/wiki/Calculators},
+urldate = {09/09/2018},
+year = {2018}
+}
+@misc{VandePeer2018,
+author = {{Van de Peer}},
+booktitle = {Online web-based tool},
+title = {{Calculate and draw custom Venn diagrams}},
+url = {http://bioinformatics.psb.ugent.be/webtools/Venn/},
+urldate = {2018-09-09},
+year = {2018}
+}
+@article{Edgar2018,
+abstract = {The 16S ribosomal RNA (rRNA) gene is widely used to survey microbial communities. Sequences are often clustered into Operational Taxonomic Units (OTUs) as proxies for species. The canonical clustering threshold is 97{\%} identity, which was proposed in 1994 when few 16S rRNA sequences were available, motivating a reassessment on current data. Using a large set of high-quality 16S rRNA sequences from finished genomes, I assessed the correspondence of OTUs to species for five representative clustering algorithms using four accuracy metrics. All algorithms had comparable accuracy when tuned to a given metric. Optimal identity thresholds that best approximated species were {\~{}}99{\%} for full-length sequences and {\~{}}100{\%} for the V4 hypervariable region.},
+archivePrefix = {arXiv},
+arxivId = {103549},
+author = {Edgar, Robert C},
+doi = {10.1093/bioinformatics/bty113},
+eprint = {103549},
+isbn = {1367-4803},
+issn = {1367-4803},
+journal = {Bioinformatics},
+pmid = {28407034},
+title = {{Updating the 97{\%} identity threshold for 16S ribosomal RNA OTUs}},
+url = {https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty113/4913809},
+year = {2018}
+}
+@article{Yilmaz2014,
+abstract = {SILVA (from Latin silva, forest, http://www.arb-silva.de) is a comprehensive resource for up-to-date quality-controlled databases of aligned ribosomal RNA (rRNA) gene sequences from the Bacteria, Archaea and Eukaryota domains and supplementary online services. SILVA provides a manually curated taxonomy for all three domains of life, based on representative phylogenetic trees for the small- and large-subunit rRNA genes. This article describes the improvements the SILVA taxonomy has undergone in the last 3 years. Specifically we are focusing on the curation process, the various resources used for curation and the comparison of the SILVA taxonomy with Greengenes and RDP-II taxonomies. Our comparisons not only revealed a reasonable overlap between the taxa names, but also points to significant differences in both names and numbers of taxa between the three resources.},
+author = {Yilmaz, Pelin and Parfrey, Laura Wegener and Yarza, Pablo and Gerken, Jan and Pruesse, Elmar and Quast, Christian and Schweer, Timmy and Peplies, J{\"{o}}rg and Ludwig, Wolfgang and Gl{\"{o}}ckner, Frank Oliver},
+doi = {10.1093/nar/gkt1209},
+isbn = {1362-4962 (Electronic)$\backslash$r0305-1048 (Linking)},
+issn = {03051048},
+journal = {Nucleic Acids Research},
+number = {D1},
+pmid = {24293649},
+title = {{The SILVA and "all-species Living Tree Project (LTP)" taxonomic frameworks}},
+volume = {42},
+year = {2014}
+}
+@article{Bardou2014,
+abstract = {BACKGROUND: Venn diagrams are commonly used to display list comparison. In biology, they are widely used to show the differences between gene lists originating from different differential analyses, for instance. They thus allow the comparison between different experimental conditions or between different methods. However, when the number of input lists exceeds four, the diagram becomes difficult to read. Alternative layouts and dynamic display features can improve its use and its readability.$\backslash$n$\backslash$nRESULTS: jvenn is a new JavaScript library. It processes lists and produces Venn diagrams. It handles up to six input lists and presents results using classical or Edwards-Venn layouts. User interactions can be controlled and customized. Finally, jvenn can easily be embeded in a web page, allowing to have dynamic Venn diagrams.$\backslash$n$\backslash$nCONCLUSIONS: jvenn is an open source component for web environments helping scientists to analyze their data. The library package, which comes with full documentation and an example, is freely available at http://bioinfo.genotoul.fr/jvenn.},
+author = {Bardou, Philippe and Mariette, J{\'{e}}r{\^{o}}me and Escudi{\'{e}}, Fr{\'{e}}d{\'{e}}ric and Djemiel, Christophe and Klopp, Christophe},
+doi = {10.1186/1471-2105-15-293},
+isbn = {1471-2105},
+issn = {14712105},
+journal = {BMC Bioinformatics},
+keywords = {Edward-Venn,JavaScript,Venn,Vizualisation,jquery},
+number = {1},
+pmid = {25176396},
+title = {{Jvenn: An interactive Venn diagram viewer}},
+volume = {15},
+year = {2014}
+}
+@misc{Schloss2017,
+author = {Schloss, Patrick},
+booktitle = {Online publicly available data},
+title = {{Mouse fecal samples: StabilityNoMetaG.tar}},
+url = {http://www.mothur.org/MiSeqDevelopmentData/},
+urldate = {2017-12-12},
+year = {2017}
+}
+@article{Schloss2012,
+abstract = {Ecologists hypothesize that community structure and stability affect productivity, sensitivity to invasion and extinction, and resilience and resistance to perturbations. Viewed in the context of the gut microbiome, the stability of the gut community is important for understanding the effects of antibiotics, diet change and other perturbations on host health and colonization resistance. Here we describe the dynamics of a self-contained community, the murine gut microbiome. Using 16S rRNA gene sequencing of fecal samples collected daily from individual mice, we characterized the community membership and structure to determine whether there were significant changes in the gut community during the first year of life. Based on analysis of molecular variance, we observed two community states. The first was observed in the 10 days following weaning and the second was observed by 15 days following weaning. Interestingly, these two states had the same bacterial populations, but those populations had different relative abundances in the two states. By calculating the root mean squared distances between samples collected in the early and late states for each mouse, we observed that the late state was more stable than the early state. This increase in stability was not correlated with increased taxonomic richness, taxonomic diversity, or phylogenetic diversity. In the absence of an experimentally induced perturbation, the second community state was relatively constant through 364 days post weaning. These results suggest a high degree of stability in the microbiome once the community reached the second state.},
+annote = {Schloss, Patrick D
+Schubert, Alyxandria M
+Zackular, Joseph P
+Iverson, Kathryn D
+Young, Vincent B
+Petrosino, Joseph F
+eng
+U54 HG004973/HG/NHGRI NIH HHS/
+U19AI090871/AI/NIAID NIH HHS/
+T32 AI007528/AI/NIAID NIH HHS/
+U19 AI090871/AI/NIAID NIH HHS/
+P30DK034933/DK/NIDDK NIH HHS/
+R01 GM099514/GM/NIGMS NIH HHS/
+R01 DK070875/DK/NIDDK NIH HHS/
+R01DK070875/DK/NIDDK NIH HHS/
+R01 HG005975/HG/NHGRI NIH HHS/
+U54HG004973/HG/NHGRI NIH HHS/
+P30 DK034933/DK/NIDDK NIH HHS/
+R01HG005975/HG/NHGRI NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+Research Support, U.S. Gov't, Non-P.H.S.
+2012/06/13 06:00
+Gut Microbes. 2012 Jul-Aug;3(4):383-93. doi: 10.4161/gmic.21008. Epub 2012 Jun 12.},
+author = {Schloss, P D and Schubert, A M and Zackular, J P and Iverson, K D and Young, V B and Petrosino, J F},
+doi = {10.4161/gmic.21008},
+isbn = {1949-0984 (Electronic)
+1949-0976 (Linking)},
+journal = {Gut Microbes},
+keywords = {*Biota,*Metagenome,*Weaning,Animals,DNA, Bacterial/chemistry/genetics,DNA, Ribosomal/chemistry/genetics,Female,Gastrointestinal Tract/*microbiology,Male,Mice,Mice, Inbred C57BL,RNA, Ribosomal, 16S/genetics,Sequence Analysis, DNA},
+number = {4},
+pages = {383--393},
+pmid = {22688727},
+title = {{Stabilization of the murine gut microbiome following weaning}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/22688727},
+volume = {3},
+year = {2012}
+}
+@article{Dabdoub2016,
+abstract = {The 16S rRNA gene is widely used for taxonomic profiling of microbial ecosystems; and recent advances in sequencing chemistry have allowed extremely large numbers of sequences to be generated from minimal amounts of biological samples. Analysis speed and resolution of data to species-level taxa are two important factors in large-scale explorations of complex microbiomes using 16S sequencing. We present here new software, Phylogenetic Tools for Analysis of Species-level Taxa (PhyloToAST), that completely integrates with the QIIME pipeline to improve analysis speed, reduce primer bias (requiring two sequencing primers), enhance species-level analysis, and add new visualization tools. The code is free and open source, and can be accessed at http://phylotoast.org.},
+annote = {Dabdoub, Shareef M
+Fellows, Megan L
+Paropkari, Akshay D
+Mason, Matthew R
+Huja, Sarandeep S
+Tsigarida, Alexandra A
+Kumar, Purnima S
+eng
+P30 GM110788/GM/NIGMS NIH HHS/
+R01 DE022579/DE/NIDCR NIH HHS/
+T32 DE014320/DE/NIDCR NIH HHS/
+Research Support, N.I.H., Extramural
+England
+2016/07/01 06:00
+Sci Rep. 2016 Jun 30;6:29123. doi: 10.1038/srep29123.},
+author = {Dabdoub, S M and Fellows, M L and Paropkari, A D and Mason, M R and Huja, S S and Tsigarida, A A and Kumar, P S},
+doi = {10.1038/srep29123},
+isbn = {2045-2322 (Electronic)
+2045-2322 (Linking)},
+journal = {Sci Rep},
+keywords = {*Computational Biology,*Software,Bacteria/classification/*genetics,Biodiversity,High-Throughput Nucleotide Sequencing,Microbiota/*genetics,Phylogeny,RNA, Ribosomal, 16S/genetics},
+pages = {29123},
+pmid = {27357721},
+title = {{PhyloToAST: Bioinformatics tools for species-level analysis and visualization of complex microbial datasets}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27357721},
+volume = {6},
+year = {2016}
+}
+@article{Vazquez-Baeza2013,
+abstract = {BACKGROUND: As microbial ecologists take advantage of high-throughput sequencing technologies to describe microbial communities across ever-increasing numbers of samples, new analysis tools are required to relate the distribution of microbes among larger numbers of communities, and to use increasingly rich and standards-compliant metadata to understand the biological factors driving these relationships. In particular, the Earth Microbiome Project drives these needs by profiling the genomic content of tens of thousands of samples across multiple environment types. FINDINGS: Features of EMPeror include: ability to visualize gradients and categorical data, visualize different principal coordinates axes, present the data in the form of parallel coordinates, show taxa as well as environmental samples, dynamically adjust the size and transparency of the spheres representing the communities on a per-category basis, dynamically scale the axes according to the fraction of variance each explains, show, hide or recolor points according to arbitrary metadata including that compliant with the MIxS family of standards developed by the Genomic Standards Consortium, display jackknifed-resampled data to assess statistical confidence in clustering, perform coordinate comparisons (useful for procrustes analysis plots), and greatly reduce loading times and overall memory footprint compared with existing approaches. Additionally, ease of sharing, given EMPeror's small output file size, enables agile collaboration by allowing users to embed these visualizations via emails or web pages without the need for extra plugins. CONCLUSIONS: Here we present EMPeror, an open source and web browser enabled tool with a versatile command line interface that allows researchers to perform rapid exploratory investigations of 3D visualizations of microbial community data, such as the widely used principal coordinates plots. EMPeror includes a rich set of controllers to modify features as a function of the metadata. By being specifically tailored to the requirements of microbial ecologists, EMPeror thus increases the speed with which insight can be gained from large microbiome datasets.},
+annote = {Vazquez-Baeza, Yoshiki
+Pirrung, Meg
+Gonzalez, Antonio
+Knight, Rob
+eng
+2013/11/28 06:00
+Gigascience. 2013 Nov 26;2(1):16. doi: 10.1186/2047-217X-2-16.},
+author = {Vazquez-Baeza, Y and Pirrung, M and Gonzalez, A and Knight, R},
+doi = {10.1186/2047-217X-2-16},
+isbn = {2047-217X (Print)
+2047-217X (Linking)},
+journal = {Gigascience},
+number = {1},
+pages = {16},
+pmid = {24280061},
+title = {{EMPeror: a tool for visualizing high-throughput microbial community data}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/24280061},
+volume = {2},
+year = {2013}
+}
+@article{Salzman2002,
+abstract = {Total genomic DNA from samples of intact mouse small intestine, large intestine, caecum and faeces was used as template for PCR amplification of 16S rRNA gene sequences with conserved bacterial primers. Phylogenetic analysis of the amplification products revealed 40 unique 16S rDNA sequences. Of these sequences, 25{\%} (10/40) corresponded to described intestinal organisms of the mouse, including Lactobacillus spp., Helicobacter spp., segmented filamentous bacteria and members of the altered Schaedler flora (ASF360, ASF361, ASF502 and ASF519); 75{\%} (30/40) represented novel sequences. A large number (11/40) of the novel sequences revealed a new operational taxonomic unit (OTU) belonging to the Cytophaga-Flavobacter-Bacteroides phylum, which the authors named 'mouse intestinal bacteria'. 16S rRNA probes were developed for this new OTU. Upon analysis of the novel sequences, eight were found to cluster within the Eubacterium rectale-Clostridium coccoides group and three clustered within the Bacteroides group. One of the novel sequences was distantly related to Verrucomicrobium spinosum and one was distantly related to Bacillus mycoides. Oligonucleotide probes specific for the 16S rRNA of these novel clones were generated. Using a combination of four previously described and four newly designed probes, approximately 80{\%} of bacteria recovered from the murine large intestine and 71{\%} of bacteria recovered from the murine caecum could be identified by fluorescence in situ hybridization (FISH).},
+annote = {Salzman, Nita H
+de Jong, Hendrik
+Paterson, Yvonne
+Harmsen, Hermie J M
+Welling, Gjalt W
+Bos, Nicolaas A
+eng
+K08 AI001525/AI/NIAID NIH HHS/
+K08 AI001525-03/AI/NIAID NIH HHS/
+K08-AI01525/AI/NIAID NIH HHS/
+AI36657/AI/NIAID NIH HHS/
+Research Support, Non-U.S. Gov't
+Research Support, U.S. Gov't, P.H.S.
+England
+2002/11/13 04:00
+Microbiology. 2002 Nov;148(Pt 11):3651-60. doi: 10.1099/00221287-148-11-3651.},
+author = {Salzman, N H and de Jong, H and Paterson, Y and Harmsen, H J and Welling, G W and Bos, N A},
+doi = {10.1099/00221287-148-11-3651},
+isbn = {1350-0872 (Print)
+1350-0872 (Linking)},
+journal = {Microbiology},
+keywords = {Animals,Bacteria/*classification/genetics,Cloning, Molecular,In Situ Hybridization,Intestines/*microbiology,Mice,Molecular Sequence Data,Phylogeny,RNA, Ribosomal, 16S/analysis/*genetics},
+number = {Pt 11},
+pages = {3651--3660},
+pmid = {12427955},
+title = {{Analysis of 16S libraries of mouse gastrointestinal microflora reveals a large new group of mouse intestinal bacteria}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/12427955},
+volume = {148},
+year = {2002}
+}
+@article{Ormerod2016,
+abstract = {BACKGROUND: Our view of host-associated microbiota remains incomplete due to the presence of as yet uncultured constituents. The Bacteroidales family S24-7 is a prominent example of one of these groups. Marker gene surveys indicate that members of this family are highly localized to the gastrointestinal tracts of homeothermic animals and are increasingly being recognized as a numerically predominant member of the gut microbiota; however, little is known about the nature of their interactions with the host. RESULTS: Here, we provide the first whole genome exploration of this family, for which we propose the name "Candidatus Homeothermaceae," using 30 population genomes extracted from fecal samples of four different animal hosts: human, mouse, koala, and guinea pig. We infer the core metabolism of "Ca. Homeothermaceae" to be that of fermentative or nanaerobic bacteria, resembling that of related Bacteroidales families. In addition, we describe three trophic guilds within the family, plant glycan (hemicellulose and pectin), host glycan, and alpha-glucan, each broadly defined by increased abundance of enzymes involved in the degradation of particular carbohydrates. CONCLUSIONS: "Ca. Homeothermaceae" representatives constitute a substantial component of the murine gut microbiota, as well as being present within the human gut, and this study provides important first insights into the nature of their residency. The presence of trophic guilds within the family indicates the potential for niche partitioning and specific roles for each guild in gut health and dysbiosis.},
+annote = {Ormerod, Kate L
+Wood, David L A
+Lachner, Nancy
+Gellatly, Shaan L
+Daly, Joshua N
+Parsons, Jeremy D
+Dal'Molin, Cristiana G O
+Palfreyman, Robin W
+Nielsen, Lars K
+Cooper, Matthew A
+Morrison, Mark
+Hansbro, Philip M
+Hugenholtz, Philip
+eng
+Research Support, Non-U.S. Gov't
+England
+2016/07/09 06:00
+Microbiome. 2016 Jul 7;4(1):36. doi: 10.1186/s40168-016-0181-2.},
+author = {Ormerod, K L and Wood, D L and Lachner, N and Gellatly, S L and Daly, J N and Parsons, J D and Dal'Molin, C G and Palfreyman, R W and Nielsen, L K and Cooper, M A and Morrison, M and Hansbro, P M and Hugenholtz, P},
+doi = {10.1186/s40168-016-0181-2},
+isbn = {2049-2618 (Electronic)
+2049-2618 (Linking)},
+journal = {Microbiome},
+keywords = {*Comparative genomics,*Gut microbiome,*Homeothermaceae,*Metagenomics,*Population genomes,*S24-7,Animals,Bacteroidetes/genetics/isolation {\&} purification/*physiology,Feces/*microbiology,Gastrointestinal Tract/microbiology,Genome, Bacterial,Guinea Pigs,Host-Pathogen Interactions,Humans,Metagenomics/*methods,Mice,Microbiota,Phascolarctidae/microbiology,Phylogeny,Polysaccharides/metabolism},
+number = {1},
+pages = {36},
+pmid = {27388460},
+title = {{Genomic characterization of the uncultured Bacteroidales family S24-7 inhabiting the guts of homeothermic animals}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27388460},
+volume = {4},
+year = {2016}
+}
+@article{Lagkouvardos2016,
+abstract = {Intestinal bacteria influence mammalian physiology, but many types of bacteria are still uncharacterized. Moreover, reference strains of mouse gut bacteria are not easily available, although mouse models are extensively used in medical research. These are major limitations for the investigation of intestinal microbiomes and their interactions with diet and host. It is thus important to study in detail the diversity and functions of gut microbiota members, including those colonizing the mouse intestine. To address these issues, we aimed at establishing the Mouse Intestinal Bacterial Collection (miBC), a public repository of bacterial strains and associated genomes from the mouse gut, and studied host-specificity of colonization and sequence-based relevance of the resource. The collection includes several strains representing novel species, genera and even one family. Genomic analyses showed that certain species are specific to the mouse intestine and that a minimal consortium of 18 strains covered 50-75{\%} of the known functional potential of metagenomes. The present work will sustain future research on microbiota-host interactions in health and disease, as it will facilitate targeted colonization and molecular studies. The resource is available at www.dsmz.de/miBC.},
+annote = {Lagkouvardos, Ilias
+Pukall, Rudiger
+Abt, Birte
+Foesel, Barbel U
+Meier-Kolthoff, Jan P
+Kumar, Neeraj
+Bresciani, Anne
+Martinez, Ines
+Just, Sarah
+Ziegler, Caroline
+Brugiroux, Sandrine
+Garzetti, Debora
+Wenning, Mareike
+Bui, Thi P N
+Wang, Jun
+Hugenholtz, Floor
+Plugge, Caroline M
+Peterson, Daniel A
+Hornef, Mathias W
+Baines, John F
+Smidt, Hauke
+Walter, Jens
+Kristiansen, Karsten
+Nielsen, Henrik B
+Haller, Dirk
+Overmann, Jorg
+Stecher, Barbel
+Clavel, Thomas
+eng
+R01 GM099525/GM/NIGMS NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+England
+2016/09/28 06:00
+Nat Microbiol. 2016 Aug 8;1(10):16131. doi: 10.1038/nmicrobiol.2016.131.},
+author = {Lagkouvardos, I and Pukall, R and Abt, B and Foesel, B U and Meier-Kolthoff, J P and Kumar, N and Bresciani, A and Martinez, I and Just, S and Ziegler, C and Brugiroux, S and Garzetti, D and Wenning, M and Bui, T P and Wang, J and Hugenholtz, F and Plugge, C M and Peterson, D A and Hornef, M W and Baines, J F and Smidt, H and Walter, J and Kristiansen, K and Nielsen, H B and Haller, D and Overmann, J and Stecher, B and Clavel, T},
+doi = {10.1038/nmicrobiol.2016.131},
+isbn = {2058-5276 (Electronic)
+2058-5276 (Linking)},
+journal = {Nat Microbiol},
+keywords = {*Biodiversity,*Biological Specimen Banks,*Host Specificity,Animals,Bacteria/classification/genetics/*isolation {\&} purification,Gastrointestinal Microbiome/genetics/*physiology,Genome, Bacterial,Intestines/*microbiology,Mice},
+number = {10},
+pages = {16131},
+pmid = {27670113},
+title = {{The Mouse Intestinal Bacterial Collection (miBC) provides host-specific insight into cultured diversity and functional potential of the gut microbiota}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27670113},
+volume = {1},
+year = {2016}
+}
+@article{Letunic2016,
+abstract = {Interactive Tree Of Life (http://itol.embl.de) is a web-based tool for the display, manipulation and annotation of phylogenetic trees. It is freely available and open to everyone. The current version was completely redesigned and rewritten, utilizing current web technologies for speedy and streamlined processing. Numerous new features were introduced and several new data types are now supported. Trees with up to 100,000 leaves can now be efficiently displayed. Full interactive control over precise positioning of various annotation features and an unlimited number of datasets allow the easy creation of complex tree visualizations. iTOL 3 is the first tool which supports direct visualization of the recently proposed phylogenetic placements format. Finally, iTOL's account system has been redesigned to simplify the management of trees in user-defined workspaces and projects, as it is heavily used and currently handles already more than 500,000 trees from more than 10,000 individual users.},
+annote = {Letunic, Ivica
+Bork, Peer
+eng
+Research Support, Non-U.S. Gov't
+England
+2016/04/21 06:00
+Nucleic Acids Res. 2016 Jul 8;44(W1):W242-5. doi: 10.1093/nar/gkw290. Epub 2016 Apr 19.},
+author = {Letunic, I and Bork, P},
+doi = {10.1093/nar/gkw290},
+isbn = {1362-4962 (Electronic)
+0305-1048 (Linking)},
+journal = {Nucleic Acids Res},
+keywords = {*Biological Evolution,*Phylogeny,*User-Computer Interface,Algorithms,Animals,Archaea/classification/genetics,Bacteria/classification/genetics,Computer Graphics,Datasets as Topic,Eukaryota/classification/genetics,Humans,Information Storage and Retrieval,Internet},
+number = {W1},
+pages = {W242--5},
+pmid = {27095192},
+title = {{Interactive tree of life (iTOL) v3: an online tool for the display and annotation of phylogenetic and other trees}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27095192},
+volume = {44},
+year = {2016}
+}
+@article{Kozich2013,
+abstract = {Rapid advances in sequencing technology have changed the experimental landscape of microbial ecology. In the last 10 years, the field has moved from sequencing hundreds of 16S rRNA gene fragments per study using clone libraries to the sequencing of millions of fragments per study using next-generation sequencing technologies from 454 and Illumina. As these technologies advance, it is critical to assess the strengths, weaknesses, and overall suitability of these platforms for the interrogation of microbial communities. Here, we present an improved method for sequencing variable regions within the 16S rRNA gene using Illumina's MiSeq platform, which is currently capable of producing paired 250-nucleotide reads. We evaluated three overlapping regions of the 16S rRNA gene that vary in length (i.e., V34, V4, and V45) by resequencing a mock community and natural samples from human feces, mouse feces, and soil. By titrating the concentration of 16S rRNA gene amplicons applied to the flow cell and using a quality score-based approach to correct discrepancies between reads used to construct contigs, we were able to reduce error rates by as much as two orders of magnitude. Finally, we reprocessed samples from a previous study to demonstrate that large numbers of samples could be multiplexed and sequenced in parallel with shotgun metagenomes. These analyses demonstrate that our approach can provide data that are at least as good as that generated by the 454 platform while providing considerably higher sequencing coverage for a fraction of the cost.},
+annote = {Kozich, James J
+Westcott, Sarah L
+Baxter, Nielson T
+Highlander, Sarah K
+Schloss, Patrick D
+eng
+U54 HG004973/HG/NHGRI NIH HHS/
+5R01GM099514/GM/NIGMS NIH HHS/
+P30DK034933/DK/NIDDK NIH HHS/
+R01 GM099514/GM/NIGMS NIH HHS/
+R01 HG005975/HG/NHGRI NIH HHS/
+U54HG004973/HG/NHGRI NIH HHS/
+P30 DK034933/DK/NIDDK NIH HHS/
+R01HG005975/HG/NHGRI NIH HHS/
+Research Support, N.I.H., Extramural
+2013/06/25 06:00
+Appl Environ Microbiol. 2013 Sep;79(17):5112-20. doi: 10.1128/AEM.01043-13. Epub 2013 Jun 21.},
+author = {Kozich, J J and Westcott, S L and Baxter, N T and Highlander, S K and Schloss, P D},
+doi = {10.1128/AEM.01043-13},
+isbn = {1098-5336 (Electronic)
+0099-2240 (Linking)},
+journal = {Appl Environ Microbiol},
+keywords = {*Biota,*Metagenome,Animals,Computational Biology/*methods,Feces/microbiology,High-Throughput Nucleotide Sequencing/*methods/*st,Humans,Mice,Soil Microbiology},
+number = {17},
+pages = {5112--5120},
+pmid = {23793624},
+title = {{Development of a dual-index sequencing strategy and curation pipeline for analyzing amplicon sequence data on the MiSeq Illumina sequencing platform}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/23793624},
+volume = {79},
+year = {2013}
+}
+@misc{Schloss2018,
+author = {Schloss, P D},
+title = {{MiSeq SOP}},
+url = {https://www.mothur.org/wiki/MiSeq{\_}SOP},
+volume = {2018},
+year = {2018}
+}
+@misc{QIIME2community2018,
+abstract = {QIIME 2™ is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.},
+author = {{QIIME 2 community}},
+title = {{QIIME 2}},
+url = {https://qiime2.org/},
+year = {2018}
+}
+@article{Weber2018,
+abstract = {Motivation: Widespread interest in the study of the microbiome has resulted in data proliferation and the development of powerful computational tools. However, many scientific researchers lack the time, training, or infrastructure to work with large datasets or to install and use command line tools. Results: The National Institute of Allergy and Infectious Diseases (NIAID) has created Nephele, a cloud-based microbiome data analysis platform with standardized pipelines and a simple web interface for transforming raw data into biological insights. Nephele integrates common microbiome analysis tools as well as valuable reference datasets like the healthy human subjects cohort of the Human Microbiome Project (HMP). Nephele is built on the Amazon Web Services cloud, which provides centralized and automated storage and compute capacity, thereby reducing the burden on researchers and their institutions. Availability and implementation: https://nephele.niaid.nih.gov and https://github.com/niaid/Nephele. Contact: darrell.hurt@nih.gov.},
+annote = {Weber, Nick
+Liou, David
+Dommer, Jennifer
+MacMenamin, Philip
+Quinones, Mariam
+Misner, Ian
+Oler, Andrew J
+Wan, Joe
+Kim, Lewis
+Coakley McCarthy, Meghan
+Ezeji, Samuel
+Noble, Karlynn
+Hurt, Darrell E
+eng
+England
+2017/10/14 06:00
+Bioinformatics. 2018 Apr 15;34(8):1411-1413. doi: 10.1093/bioinformatics/btx617.},
+author = {Weber, N and Liou, D and Dommer, J and MacMenamin, P and Quinones, M and Misner, I and Oler, A J and Wan, J and Kim, L and {Coakley McCarthy}, M and Ezeji, S and Noble, K and Hurt, D E},
+doi = {10.1093/bioinformatics/btx617},
+isbn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+number = {8},
+pages = {1411--1413},
+pmid = {29028892},
+title = {{Nephele: a cloud platform for simplified, standardized and reproducible microbiome data analysis}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/29028892},
+volume = {34},
+year = {2018}
+}
+@article{Evans2006,
+abstract = {Our ability to construct very large phylogenetic trees is becoming more important as vast amounts of sequence data are becoming readily available. Neighbor joining (NJ) is a widely used distance-based phylogenetic tree construction method that has historically been considered fast, but it is prohibitively slow for building trees from increasingly large datasets. We developed a fast variant of NJ called relaxed neighbor joining (RNJ) and performed experiments to measure the speed improvement over NJ. Since repeated runs of the RNJ algorithm generate a superset of the trees that repeated NJ runs generate, we also assessed tree quality. RNJ is dramatically faster than NJ, and the quality of resulting trees is very similar for the two algorithms. The results indicate that RNJ is a reasonable alternative to NJ and that it is especially well suited for uses that involve large numbers of taxa or highly repetitive procedures such as bootstrapping.},
+annote = {Evans, Jason
+Sheneman, Luke
+Foster, James
+eng
+1P20 RR16448/RR/NCRR NIH HHS/
+1P20 RR16454/RR/NCRR NIH HHS/
+P20 RR16454/RR/NCRR NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, U.S. Gov't, Non-P.H.S.
+Germany
+2006/06/06 09:00
+J Mol Evol. 2006 Jun;62(6):785-92. doi: 10.1007/s00239-005-0176-2. Epub 2006 Apr 28.},
+author = {Evans, J and Sheneman, L and Foster, J},
+doi = {10.1007/s00239-005-0176-2},
+isbn = {0022-2844 (Print)
+0022-2844 (Linking)},
+journal = {J Mol Evol},
+keywords = {*Algorithms,*Evolution, Molecular,*Models, Genetic,*Phylogeny,Computational Biology/*methods},
+number = {6},
+pages = {785--792},
+pmid = {16752216},
+title = {{Relaxed neighbor joining: a fast distance-based phylogenetic tree construction method}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/16752216},
+volume = {62},
+year = {2006}
+}
+@article{Katoh2013,
+abstract = {We report a major update of the MAFFT multiple sequence alignment program. This version has several new features, including options for adding unaligned sequences into an existing alignment, adjustment of direction in nucleotide alignment, constrained alignment and parallel processing, which were implemented after the previous major update. This report shows actual examples to explain how these features work, alone and in combination. Some examples incorrectly aligned by MAFFT are also shown to clarify its limitations. We discuss how to avoid misalignments, and our ongoing efforts to overcome such limitations.},
+annote = {Katoh, Kazutaka
+Standley, Daron M
+eng
+Research Support, Non-U.S. Gov't
+2013/01/19 06:00
+Mol Biol Evol. 2013 Apr;30(4):772-80. doi: 10.1093/molbev/mst010. Epub 2013 Jan 16.},
+author = {Katoh, K and Standley, D M},
+doi = {10.1093/molbev/mst010},
+isbn = {1537-1719 (Electronic)
+0737-4038 (Linking)},
+journal = {Mol Biol Evol},
+keywords = {*Software,Algorithms,Amino Acid Sequence,Base Sequence,DNA, Fungal/genetics,DNA, Ribosomal Spacer/genetics,DNA, Ribosomal/genetics,Fungi/genetics,Humans,Models, Genetic,Molecular Sequence Data,Phylogeny,Protein Structure, Tertiary,Quality Improvement,RNA, Bacterial/genetics,Ribonucleases/chemistry/genetics,Ribosome Subunits, Small, Bacterial/genetics,Sequence Alignment/*methods},
+number = {4},
+pages = {772--780},
+pmid = {23329690},
+title = {{MAFFT multiple sequence alignment software version 7: improvements in performance and usability}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/23329690},
+volume = {30},
+year = {2013}
+}
+@article{Theodorsson-Norheim1986,
+abstract = {Multiple t tests at a fixed p level are frequently used to analyse biomedical data where analysis of variance followed by multiple comparisons or the adjustment of the p values according to Bonferroni would be more appropriate. The Kruskal-Wallis test is a nonparametric 'analysis of variance' which may be used to compare several independent samples. The present program is written in an elementary subset of BASIC and will perform Kruskal-Wallis test followed by multiple comparisons between the groups on practically any computer programmable in BASIC.},
+annote = {Theodorsson-Norheim, E
+eng
+Research Support, Non-U.S. Gov't
+Ireland
+1986/08/01 00:00
+Comput Methods Programs Biomed. 1986 Aug;23(1):57-62.},
+author = {Theodorsson-Norheim, E},
+isbn = {0169-2607 (Print)
+0169-2607 (Linking)},
+journal = {Comput Methods Programs Biomed},
+keywords = {*Analysis of Variance,*Biometry,*Computers,*Software},
+number = {1},
+pages = {57--62},
+pmid = {3638187},
+title = {{Kruskal-Wallis test: BASIC computer program to perform nonparametric one-way analysis of variance and multiple comparisons on ranks of several independent samples}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/3638187},
+volume = {23},
+year = {1986}
+}
+@article{Katz1980,
+abstract = {An explicit statement of a statistic which is a nonparametric analogue to one-way MANOVA is presented. The statistic is a multivariate extension of the nonparametric Kruskal-Wallis test (1952). The large sample reference distribution of the test statistic is derived together with a set of computational formulas for the test statistic. In addition two post hoc procedures are developed and compared. The statistic and its post hoc procedures are illustrated with a data example from the behavioral sciences.},
+annote = {Katz, B M
+McSweeney, M
+eng
+1980/07/01 00:00
+Multivariate Behav Res. 1980 Jul 1;15(3):281-97. doi: 10.1207/s15327906mbr1503{\_}4.},
+author = {Katz, B M and McSweeney, M},
+doi = {10.1207/s15327906mbr1503_4},
+isbn = {0027-3171 (Print)
+0027-3171 (Linking)},
+journal = {Multivariate Behav Res},
+number = {3},
+pages = {281--297},
+pmid = {26794183},
+title = {{A Multivariate Kruskal-Wallis Test With Post Hoc Procedures}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/26794183},
+volume = {15},
+year = {1980}
+}
+@article{Mandal2015,
+abstract = {BACKGROUND: Understanding the factors regulating our microbiota is important but requires appropriate statistical methodology. When comparing two or more populations most existing approaches either discount the underlying compositional structure in the microbiome data or use probability models such as the multinomial and Dirichlet-multinomial distributions, which may impose a correlation structure not suitable for microbiome data. OBJECTIVE: To develop a methodology that accounts for compositional constraints to reduce false discoveries in detecting differentially abundant taxa at an ecosystem level, while maintaining high statistical power. METHODS: We introduced a novel statistical framework called analysis of composition of microbiomes (ANCOM). ANCOM accounts for the underlying structure in the data and can be used for comparing the composition of microbiomes in two or more populations. ANCOM makes no distributional assumptions and can be implemented in a linear model framework to adjust for covariates as well as model longitudinal data. ANCOM also scales well to compare samples involving thousands of taxa. RESULTS: We compared the performance of ANCOM to the standard t-test and a recently published methodology called Zero Inflated Gaussian (ZIG) methodology (1) for drawing inferences on the mean taxa abundance in two or more populations. ANCOM controlled the false discovery rate (FDR) at the desired nominal level while also improving power, whereas the t-test and ZIG had inflated FDRs, in some instances as high as 68{\%} for the t-test and 60{\%} for ZIG. We illustrate the performance of ANCOM using two publicly available microbial datasets in the human gut, demonstrating its general applicability to testing hypotheses about compositional differences in microbial communities. CONCLUSION: Accounting for compositionality using log-ratio analysis results in significantly improved inference in microbiota survey data.},
+annote = {Mandal, Siddhartha
+Van Treuren, Will
+White, Richard A
+Eggesbo, Merete
+Knight, Rob
+Peddada, Shyamal D
+eng
+Sweden
+2015/06/02 06:00
+Microb Ecol Health Dis. 2015 May 29;26:27663. eCollection 2015.},
+author = {Mandal, S and {Van Treuren}, W and White, R A and Eggesbo, M and Knight, R and Peddada, S D},
+doi = {10.3402/mehd.v26.27663},
+isbn = {0891-060X (Print)
+0891-060X (Linking)},
+journal = {Microb Ecol Health Dis},
+keywords = {constrained,log-ratio,relative abundance},
+pages = {27663},
+pmid = {26028277},
+title = {{Analysis of composition of microbiomes: a novel method for studying microbial composition}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/26028277},
+volume = {26},
+year = {2015}
+}
+@misc{Illumina,
+author = {Illumina},
+title = {{Sequencing Data Analysis {\&} Management: BaseSpace Genomics Computing - BaseSpace Cloud and Onsite Bioinformatics; Accessed on February 04, 2016}},
+url = {http://www.illumina.com/informatics/research/sequencing-data-analysis-management/basespace.html}
+}
+@misc{Andrews2018,
+author = {Andrews, S},
+title = {{FastQC: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/}},
+url = {https://www.bioinformatics.babraham.ac.uk/projects/fastqc/},
+year = {2018}
+}
+@misc{Schloss2018a,
+author = {et al. Schloss, P D},
+number = {March 16, 2018},
+title = {{Category commands: An exhaustive list of the commands found in mothur. Accessed on March 16, 2018.}},
+url = {https://www.mothur.org/wiki/Category:Commands},
+year = {2018}
+}
+@misc{Buza2018,
+author = {Buza, Teresia},
+title = {{iMAP: Integrative Microbiome Analysis Pipeline}},
+url = {https://github.com/tmbuza/iMAP},
+urldate = {2018-05-25},
+year = {2018}
+}
+@article{Sperling2017,
+abstract = {Ticks vector diverse pathogenic bacteria that are important to identify in public health and veterinary contexts. Technological advances in high throughput sequencing have given an unprecedented opportunity to comprehensively characterize bacterial associates of ticks, but recent studies have used different 16S rRNA variable regions and sequence read lengths with little consideration of whether they reveal the same bacterial diversity. We compare the effectiveness of bacterial surveys using three library preparations across nine 16S variable regions and a set of 12 tick specimens (Acari: Ixodidae). We identify the bacterial assemblages present in extractions from wild-collected Ixodes scapularis from two regions of Canada, and provide the first microbiome survey for Ixodes angustus. Four bacterial families accounted for most diversity, with Rickettsiaceae being replaced as most common by Enterobacteriaceae or Pseudomonadaceae in some I. scapularis, and Francisellaceae being most abundant in I. angustus. The commercially available Ion 16S kit, based on 6 amplicons representing 16S regions V2, V3, V4, V67, V8 and V9, gave the most comprehensive estimates of bacterial families, with the Ion V4 amplicon generally giving the highest estimated diversity. Sequencing of the V4 amplicon by the MR DNA commercial service also provided cost effective assays of tick microbiomes that were within the range of results from the Ion 16S kit. Subtraction of the number of reads found in an extraction control sample lowered estimates of the number of bacterial families by approximately half. Our study shows that diversity patterns obtained from 16S microbiome surveys depend on the amplicon and protocol used, demonstrating that more than one marker region is needed to provide reliable inferences.},
+annote = {Sperling, Janet L
+Silva-Brandao, K L
+Brandao, M M
+Lloyd, V K
+Dang, S
+Davis, C S
+Sperling, F A H
+Magor, K E
+eng
+Netherlands
+2017/02/27 06:00
+Ticks Tick Borne Dis. 2017 Jun;8(4):453-461. doi: 10.1016/j.ttbdis.2017.02.002. Epub 2017 Feb 9.},
+author = {Sperling, J L and Silva-Brandao, K L and Brandao, M M and Lloyd, V K and Dang, S and Davis, C S and Sperling, F A H and Magor, K E},
+doi = {10.1016/j.ttbdis.2017.02.002},
+issn = {1877-9603 (Electronic)
+1877-959X (Linking)},
+journal = {Ticks Tick Borne Dis},
+number = {4},
+pages = {453--461},
+pmid = {28236572},
+title = {{Comparison of bacterial 16S rRNA variable regions for microbiome surveys of ticks}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28236572},
+volume = {8},
+year = {2017}
+}
+@article{Liland2017,
+abstract = {BACKGROUND: Taxonomic classification based on the 16S rRNA gene sequence is important for the profiling of microbial communities. In addition to giving the best possible accuracy, it is also important to quantify uncertainties in the classifications. RESULTS: We present an R package with tools for making such classifications, where the heavy computations are implemented in C++ but operated through the standard R interface. The user may train classifiers based on specialized data sets, but we also supply a ready-to-use function trained on a comprehensive training data set designed specifically for this purpose. This tool also includes some novel ways to quantify uncertainties in the classifications. CONCLUSIONS: Based on input sequences of varying length and quality, we demonstrate how the output from the classifications can be used to obtain high quality taxonomic assignments from 16S sequences within the R computing environment. The package is publicly available at the Comprehensive R Archive Network.},
+annote = {Liland, Kristian Hovde Vinje, Hilde Snipen, Lars eng England 2017/03/18 06:00 BMC Bioinformatics. 2017 Mar 16;18(1):172. doi: 10.1186/s12859-017-1583-2.},
+author = {Liland, K H and Vinje, H and Snipen, L},
+doi = {10.1186/s12859-017-1583-2},
+issn = {1471-2105 (Electronic)
+1471-2105 (Linking)},
+journal = {BMC Bioinformatics},
+keywords = {16s,R,Taxonomy},
+number = {1},
+pages = {172},
+pmid = {28302051},
+title = {{microclass: an R-package for 16S taxonomy classification}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28302051},
+volume = {18},
+year = {2017}
+}
+@article{Lawley2017,
+abstract = {The study of microbial ecology has undergone a paradigm shift in recent years, with rapid advances in molecular and bioinformatic tools allowing researchers with wide-ranging interests and backgrounds access to community profiling methods. While these advances have undoubtedly led to exciting new understanding of many systems, the array of protocols available and the idiosyncrasies of particular approaches can lead to confusion or, at worst, erroneous interpretation of results. Here, we describe a workflow from raw 16S rRNA gene amplicon sequence data, generated on an Illumina MiSeq instrument, to microbial community taxonomy profiles and basic diversity measures. The workflow can be adapted to input from major sequence platforms and uses freely available open source software that can be implemented on a range of operating systems.},
+annote = {Lawley, Blair Tannock, Gerald W eng 2016/12/08 06:00 Methods Mol Biol. 2017;1537:153-163.},
+author = {Lawley, B and Tannock, G W},
+doi = {10.1007/978-1-4939-6685-1_9},
+issn = {1940-6029 (Electronic)
+1064-3745 (Linking)},
+journal = {Methods Mol Biol},
+keywords = {16S rRNA gene,Bioinformatics,High-throughput sequencing,Microbial ecology,Operational taxonomic unit (OTU),Qiime,Sequence analysis},
+pages = {153--163},
+pmid = {27924593},
+title = {{Analysis of 16S rRNA Gene Amplicon Sequences Using the QIIME Software Package}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27924593},
+volume = {1537},
+year = {2017}
+}
+@article{Gao2017,
+abstract = {BACKGROUND: Species-level classification for 16S rRNA gene sequences remains a serious challenge for microbiome researchers, because existing taxonomic classification tools for 16S rRNA gene sequences either do not provide species-level classification, or their classification results are unreliable. The unreliable results are due to the limitations in the existing methods which either lack solid probabilistic-based criteria to evaluate the confidence of their taxonomic assignments, or use nucleotide k-mer frequency as the proxy for sequence similarity measurement. RESULTS: We have developed a method that shows significantly improved species-level classification results over existing methods. Our method calculates true sequence similarity between query sequences and database hits using pairwise sequence alignment. Taxonomic classifications are assigned from the species to the phylum levels based on the lowest common ancestors of multiple database hits for each query sequence, and further classification reliabilities are evaluated by bootstrap confidence scores. The novelty of our method is that the contribution of each database hit to the taxonomic assignment of the query sequence is weighted by a Bayesian posterior probability based upon the degree of sequence similarity of the database hit to the query sequence. Our method does not need any training datasets specific for different taxonomic groups. Instead only a reference database is required for aligning to the query sequences, making our method easily applicable for different regions of the 16S rRNA gene or other phylogenetic marker genes. CONCLUSIONS: Reliable species-level classification for 16S rRNA or other phylogenetic marker genes is critical for microbiome research. Our software shows significantly higher classification accuracy than the existing tools and we provide probabilistic-based confidence scores to evaluate the reliability of our taxonomic classification assignments based on multiple database matches to query sequences. Despite its higher computational costs, our method is still suitable for analyzing large-scale microbiome datasets for practical purposes. Furthermore, our method can be applied for taxonomic classification of any phylogenetic marker gene sequences. Our software, called BLCA, is freely available at https://github.com/qunfengdong/BLCA .},
+annote = {Gao, Xiang
+Lin, Huaiying
+Revanna, Kashi
+Dong, Qunfeng
+eng
+P20 DK108268/DK/NIDDK NIH HHS/
+R01 AI116706/AI/NIAID NIH HHS/
+U01 HL121831/HL/NHLBI NIH HHS/
+England
+2017/05/11 06:00
+BMC Bioinformatics. 2017 May 10;18(1):247. doi: 10.1186/s12859-017-1670-4.},
+author = {Gao, X and Lin, H and Revanna, K and Dong, Q},
+doi = {10.1186/s12859-017-1670-4},
+issn = {1471-2105 (Electronic)
+1471-2105 (Linking)},
+journal = {BMC Bioinformatics},
+keywords = {16S rRNA gene,Taxonomic classification},
+number = {1},
+pages = {247},
+pmid = {28486927},
+title = {{A Bayesian taxonomic classification method for 16S rRNA gene sequences with improved species-level accuracy}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28486927},
+volume = {18},
+year = {2017}
+}
+@article{Kuntal2017,
+abstract = {Motivation: The majority of data generated routinely from various experiments are essentially multivariate, often categorized with multiple experimental metadata. Analyzing such results with interactive visualizations often yields interesting and intuitive results which otherwise remains undisclosed. Results: In this paper, we present Web-Igloo-a GUI based interactive 'feature decomposition independent' multivariate data visualization platform. Web-Igloo is likely to be a valuable contribution in the field of visual data mining, especially for researchers working with but not limited to multi-omics data. To demonstrate its utility, we have used a metagenomic dataset pertaining to the effect of multiple doses of antibiotic treatment on the human gut microbiome. Availability and Implementation: http://metagenomics.atc.tcs.com/webigloo and http://121.241.184.233/webigloo [Freely available for academic use]. Contact: sharmila@atc.tcs.com. Supplementary information: Supplementary data are available at Bioinformatics online.},
+annote = {Kuntal, Bhusan K
+Mande, Sharmila S
+eng
+England
+2016/11/01 06:00
+Bioinformatics. 2017 Feb 15;33(4):615-617. doi: 10.1093/bioinformatics/btw669.},
+author = {Kuntal, B K and Mande, S S},
+doi = {10.1093/bioinformatics/btw669},
+issn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+number = {4},
+pages = {615--617},
+pmid = {27797774},
+title = {{Web-igloo: a web based platform for multivariate data visualization}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27797774},
+volume = {33},
+year = {2017}
+}
+@article{Lakhujani2017,
+abstract = {QIIME (Quantitative Insights Into Microbial Ecology) is one of the most popular open-source bioinformatics suite for performing metagenome, 16S rRNA amplicon and Internal Transcribed Spacer (ITS) data analysis. Although, it is very comprehensive and powerful tool, it lacks a method to provide publication ready taxonomic pie charts. The script plot{\_}taxa{\_}summary.py bundled with QIIME generate a html file and a folder containing taxonomic pie chart and legend as separate images. The images have randomly generated alphanumeric names. Therefore, it is difficult to associate the pie chart with the legend and the corresponding sample identifier. Even if the option to have the legend within the html file is selected while executing plot{\_}taxa{\_}summary.py, it is very tedious to crop a complete image (having both the pie chart and the legend) due to unequal image sizes. It requires a lot of time to manually prepare the pie charts for multiple samples for publication purpose. Moreover, there are chances of error while identifying the pie chart and legend pair due to random alphanumeric names of the images. To bypass all these bottlenecks and make this process efficient, we have developed a python based program, prepare{\_}taxa{\_}charts.py, to automate the renaming, cropping and merging of taxonomic pie chart and corresponding legend image into a single, good quality publication ready image. This program not only augments the functionality of plot{\_}taxa{\_}summary.py but is also very fast in terms of CPU time and user friendly.},
+annote = {Lakhujani, Vijay
+Badapanda, Chandan
+eng
+2017/04/15 06:00
+Genom Data. 2017 Mar 29;12:97-101. doi: 10.1016/j.gdata.2017.03.009. eCollection 2017 Jun.},
+author = {Lakhujani, V and Badapanda, C},
+doi = {10.1016/j.gdata.2017.03.009},
+issn = {2213-5960 (Print)
+2213-5960 (Linking)},
+journal = {Genom Data},
+keywords = {16S rRNA amplicon/ITS analysis,Metagenome,Pie chart,Python,Qiime,Taxonomy},
+pages = {97--101},
+pmid = {28409116},
+title = {{prepare{\_}taxa{\_}charts.py: A Python program to automate generation of publication ready taxonomic pie chart images from QIIME}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28409116},
+volume = {12},
+year = {2017}
+}
+@article{Glockner2017,
+author = {Glockner, F O and Yilmaz, P and Quast, C and Gerken, J and Beccati, A and Ciuprina, A and Bruns, G and Yarza, P and Peplies, J and Westram, R and Ludwig, W},
+doi = {10.1016/j.jbiotec.2017.06.1198},
+isbn = {1873-4863 (Electronic)
+0168-1656 (Linking)},
+journal = {J Biotechnol},
+keywords = {Alignments,Biodiversity,Databases,Phylogeny,Ribosomal RNA,Taxonomy},
+pages = {169--176},
+pmid = {28648396},
+title = {{25 years of serving the community with ribosomal RNA gene reference databases and tools}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28648396},
+volume = {261},
+year = {2017}
+}
+@article{Foster2017,
+abstract = {Community-level data, the type generated by an increasing number of metabarcoding studies, is often graphed as stacked bar charts or pie graphs that use color to represent taxa. These graph types do not convey the hierarchical structure of taxonomic classifications and are limited by the use of color for categories. As an alternative, we developed metacoder, an R package for easily parsing, manipulating, and graphing publication-ready plots of hierarchical data. Metacoder includes a dynamic and flexible function that can parse most text-based formats that contain taxonomic classifications, taxon names, taxon identifiers, or sequence identifiers. Metacoder can then subset, sample, and order this parsed data using a set of intuitive functions that take into account the hierarchical nature of the data. Finally, an extremely flexible plotting function enables quantitative representation of up to 4 arbitrary statistics simultaneously in a tree format by mapping statistics to the color and size of tree nodes and edges. Metacoder also allows exploration of barcode primer bias by integrating functions to run digital PCR. Although it has been designed for data from metabarcoding research, metacoder can easily be applied to any data that has a hierarchical component such as gene ontology or geographic location data. Our package complements currently available tools for community analysis and is provided open source with an extensive online user manual.},
+annote = {Foster, Zachary S L
+Sharpton, Thomas J
+Grunwald, Niklaus J
+eng
+2017/02/22 06:00
+PLoS Comput Biol. 2017 Feb 21;13(2):e1005404. doi: 10.1371/journal.pcbi.1005404. eCollection 2017 Feb.},
+author = {Foster, Z S and Sharpton, T J and Grunwald, N J},
+doi = {10.1371/journal.pcbi.1005404},
+isbn = {1553-7358 (Electronic)
+1553-734X (Linking)},
+journal = {PLoS Comput Biol},
+keywords = {*Algorithms,*Computer Graphics,*Programming Languages,*User-Computer Interface,DNA Barcoding, Taxonomic/*methods,DNA/*genetics,Genetic Variation/genetics,High-Throughput Nucleotide Sequencing},
+number = {2},
+pages = {e1005404},
+pmid = {28222096},
+title = {{Metacoder: An R package for visualization and manipulation of community taxonomic diversity data}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28222096},
+volume = {13},
+year = {2017}
+}
+@article{Wang2016,
+abstract = {MOTIVATION: A key component of the analysis of microbiome datasets is the identification of OTUs shared between multiple experimental conditions, commonly referred to as the core microbiome. RESULTS: We present a web platform named MetaCoMET that enables the discovery and visualization of the core microbiome and provides a comparison of the relative abundance and diversity patterns between subsets of samples within a microbiome dataset. MetaCoMET provides an efficient and interactive graphical interface for analyzing each subset defined by the union or disjunction of groups within the Venn diagram, and includes a graphical taxonomy summary, alpha diversity metrics, Principal Coordinate analysis, abundance-based heatmaps, and a chart indicating the geographic distribution of each sample. AVAILABILITY AND IMPLEMENTATION: MetaCoMET is a user-friendly and efficient web platform freely accessible at http://probes.pw.usda.gov/MetaCoMET or http://aegilops.wheat.ucdavis.edu/MetaCoMET CONTACT: devin.coleman-derr@ars.usda.govSupplementary information: Supplementary data are available at Bioinformatics online.},
+annote = {Wang, Yi
+Xu, Ling
+Gu, Yong Q
+Coleman-Derr, Devin
+eng
+England
+2016/08/04 06:00
+Bioinformatics. 2016 Nov 15;32(22):3469-3470. Epub 2016 Aug 2.},
+author = {Wang, Y and Xu, L and Gu, Y Q and Coleman-Derr, D},
+doi = {10.1093/bioinformatics/btw507},
+issn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+keywords = {*Microbiota,*Software,Internet},
+number = {22},
+pages = {3469--3470},
+pmid = {27485442},
+title = {{MetaCoMET: a web platform for discovery and visualization of the core microbiome}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27485442},
+volume = {32},
+year = {2016}
+}
+@article{Mitchell2016,
+author = {Mitchell, A and Bucchini, F and Cochrane, G and Denise, H and Hoopen, P T and Fraser, M and Pesseat, S and Potter, S and Scheremetjew, M and Sterk, P and Finn, R D},
+doi = {10.1093/nar/gkv1195},
+issn = {1362-4962 (Electronic)
+0305-1048 (Linking)},
+journal = {Nucleic Acids Res},
+number = {D1},
+pages = {D595--603},
+pmid = {26582919},
+title = {{EBI metagenomics in 2016 - an expanding and evolving resource for the analysis and archiving of metagenomic data}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/26582919},
+volume = {44},
+year = {2016}
+}
+@article{Shen2016,
+author = {Shen, W and Le, S and Li, Y and Hu, F},
+doi = {10.1371/journal.pone.0163962},
+isbn = {1932-6203 (Electronic)
+1932-6203 (Linking)},
+journal = {PLoS One},
+keywords = {*Software,Amino Acid Sequence,Base Sequence,Data Mining/*methods,Sequence Alignment,Web Browser},
+number = {10},
+pages = {e0163962},
+pmid = {27706213},
+title = {{SeqKit: A Cross-Platform and Ultrafast Toolkit for FASTA/Q File Manipulation}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27706213},
+volume = {11},
+year = {2016}
+}
+@misc{Bushnell2016,
+author = {Bushnell, B},
+title = {{BBMap short-read aligner, and other bioinformatics tools}},
+url = {http://sourceforge.net/projects/bbmap/},
+year = {2016}
+}
+@article{Ewels2016,
+author = {Ewels, P and Magnusson, M and Lundin, S and Kaller, M},
+doi = {10.1093/bioinformatics/btw354},
+isbn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+keywords = {*High-Throughput Nucleotide Sequencing,*Quality Control,Computational Biology,Software},
+number = {19},
+pages = {3047--3048},
+pmid = {27312411},
+title = {{MultiQC: summarize analysis results for multiple tools and samples in a single report}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27312411},
+volume = {32},
+year = {2016}
+}
+@article{Blischak2016,
+author = {Blischak, J D and Davenport, E R and Wilson, G},
+doi = {10.1371/journal.pcbi.1004668},
+issn = {1553-7358 (Electronic)
+1553-734X (Linking)},
+journal = {PLoS Comput Biol},
+number = {1},
+pages = {e1004668},
+pmid = {26785377},
+title = {{A Quick Introduction to Version Control with Git and GitHub}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/26785377},
+volume = {12},
+year = {2016}
+}
+@article{Keegan2016,
+author = {Keegan, K P and Glass, E M and Meyer, F},
+doi = {10.1007/978-1-4939-3369-3_13},
+isbn = {1940-6029 (Electronic)
+1064-3745 (Linking)},
+journal = {Methods Mol Biol},
+keywords = {Automated pipeline,Comparative analysis,High-throughput,Metagenomics,Sequence quality,matR},
+pages = {207--233},
+pmid = {26791506},
+title = {{MG-RAST, a Metagenomics Service for Analysis of Microbial Community Structure and Function}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/26791506},
+volume = {1399},
+year = {2016}
+}
+@article{Flygare2016,
+abstract = {BACKGROUND: High-throughput sequencing enables unbiased profiling of microbial communities, universal pathogen detection, and host response to infectious diseases. However, computation times and algorithmic inaccuracies have hindered adoption. RESULTS: We present Taxonomer, an ultrafast, web-tool for comprehensive metagenomics data analysis and interactive results visualization. Taxonomer is unique in providing integrated nucleotide and protein-based classification and simultaneous host messenger RNA (mRNA) transcript profiling. Using real-world case-studies, we show that Taxonomer detects previously unrecognized infections and reveals antiviral host mRNA expression profiles. To facilitate data-sharing across geographic distances in outbreak settings, Taxonomer is publicly available through a web-based user interface. CONCLUSIONS: Taxonomer enables rapid, accurate, and interactive analyses of metagenomics data on personal computers and mobile devices.},
+annote = {Flygare, Steven
+Simmon, Keith
+Miller, Chase
+Qiao, Yi
+Kennedy, Brett
+Di Sera, Tonya
+Graf, Erin H
+Tardif, Keith D
+Kapusta, Aurelie
+Rynearson, Shawn
+Stockmann, Chris
+Queen, Krista
+Tong, Suxiang
+Voelkerding, Karl V
+Blaschke, Anne
+Byington, Carrie L
+Jain, Seema
+Pavia, Andrew
+Ampofo, Krow
+Eilbeck, Karen
+Marth, Gabor
+Yandell, Mark
+Schlaberg, Robert
+eng
+KL2 TR001065/TR/NCATS NIH HHS/
+T32 HL007576/HL/NHLBI NIH HHS/
+TL1 TR001066/TR/NCATS NIH HHS/
+UL1 TR001067/TR/NCATS NIH HHS/
+England
+2016/05/27 06:00
+Genome Biol. 2016 May 26;17(1):111. doi: 10.1186/s13059-016-0969-1.},
+author = {Flygare, S and Simmon, K and Miller, C and Qiao, Y and Kennedy, B and {Di Sera}, T and Graf, E H and Tardif, K D and Kapusta, A and Rynearson, S and Stockmann, C and Queen, K and Tong, S and Voelkerding, K V and Blaschke, A and Byington, C L and Jain, S and Pavia, A and Ampofo, K and Eilbeck, K and Marth, G and Yandell, M and Schlaberg, R},
+doi = {10.1186/s13059-016-0969-1},
+isbn = {1474-760X (Electronic)
+1474-7596 (Linking)},
+journal = {Genome Biol},
+keywords = {*Gene Expression Profiling,*Software,*Transcriptome,Algorithms,Bacteria/classification/genetics,Databases, Nucleic Acid,Fungi/classification/genetics,High-Throughput Nucleotide Sequencing,Host-Pathogen Interactions/*genetics,Infectious disease diagnostics,Metagenomics,Metagenomics/*methods,Microbiome,Pathogen detection,User-Computer Interface,Viruses/classification/genetics,Web Browser},
+number = {1},
+pages = {111},
+pmid = {27224977},
+title = {{Taxonomer: an interactive metagenomics analysis portal for universal pathogen detection and host mRNA expression profiling}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27224977},
+volume = {17},
+year = {2016}
+}
+@article{Zhbannikov2015,
+author = {Zhbannikov, I Y and Foster, J A},
+doi = {10.1093/bioinformatics/btv049},
+issn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+keywords = {*Software,Algorithms,Classification/methods,Genetic Markers,Humans,Metagenomics/*methods,Microbiota,RNA, Ribosomal, 16S/genetics},
+number = {11},
+pages = {1830--1832},
+pmid = {25630378},
+title = {{MetAmp: combining amplicon data from multiple markers for OTU analysis}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/25630378},
+volume = {31},
+year = {2015}
+}
+@article{Wu2015,
+author = {Wu, Y W and Simmons, B A and Singer, S W},
+doi = {10.1093/bioinformatics/btv638},
+issn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+pmid = {26515820},
+title = {{MaxBin 2.0: an automated binning algorithm to recover genomes from multiple metagenomic datasets}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/26515820},
+year = {2015}
+}
+@article{Westcott2015,
+author = {Westcott, S L and Schloss, P D},
+doi = {10.7717/peerj.1487},
+issn = {2167-8359 (Electronic)},
+journal = {PeerJ},
+keywords = {16S rRNA gene sequences,Bioinformatics,Culture-independent,Microbial ecology,Microbiome,Next generation sequencing,Otu,Qiime,mothur},
+pages = {e1487},
+pmid = {26664811},
+title = {{De novo clustering methods outperform reference-based methods for assigning 16S rRNA gene sequences to operational taxonomic units}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/26664811},
+volume = {3},
+year = {2015}
+}
+@article{Chaudhary2015,
+abstract = {The diversity of microbial species in a metagenomic study is commonly assessed using 16S rRNA gene sequencing. With the rapid developments in genome sequencing technologies, the focus has shifted towards the sequencing of hypervariable regions of 16S rRNA gene instead of full length gene sequencing. Therefore, 16S Classifier is developed using a machine learning method, Random Forest, for faster and accurate taxonomic classification of short hypervariable regions of 16S rRNA sequence. It displayed precision values of up to 0.91 on training datasets and the precision values of up to 0.98 on the test dataset. On real metagenomic datasets, it showed up to 99.7{\%} accuracy at the phylum level and up to 99.0{\%} accuracy at the genus level. 16S Classifier is available freely at http://metagenomics.iiserb.ac.in/16Sclassifier and http://metabiosys.iiserb.ac.in/16Sclassifier.},
+annote = {Chaudhary, Nikhil
+Sharma, Ashok K
+Agarwal, Piyush
+Gupta, Ankit
+Sharma, Vineet K
+eng
+Research Support, Non-U.S. Gov't
+2015/02/04 06:00
+PLoS One. 2015 Feb 3;10(2):e0116106. doi: 10.1371/journal.pone.0116106. eCollection 2015.},
+author = {Chaudhary, N and Sharma, A K and Agarwal, P and Gupta, A and Sharma, V K},
+doi = {10.1371/journal.pone.0116106},
+issn = {1932-6203 (Electronic)
+1932-6203 (Linking)},
+journal = {PLoS One},
+keywords = {*Genetic Variation,*Machine Learning,*Metagenomics,Classification/*methods,Databases, Genetic,RNA, Ribosomal, 16S/*genetics,Time Factors},
+number = {2},
+pages = {e0116106},
+pmid = {25646627},
+title = {{16S classifier: a tool for fast and accurate taxonomic classification of 16S rRNA hypervariable regions in metagenomic datasets}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/25646627},
+volume = {10},
+year = {2015}
+}
+@article{Bushnell2015,
+author = {Bushnell, B},
+journal = {Available from: sourceforge. net/projects/bbmap},
+title = {{BBMap short-read aligner, and other bioinformatics tools}},
+year = {2015}
+}
+@article{Wang2014,
+author = {Wang, Y and Leung, H and Yiu, S and Chin, F},
+doi = {10.1186/1471-2164-15-S1-S12},
+issn = {1471-2164 (Electronic)
+1471-2164 (Linking)},
+journal = {BMC Genomics},
+keywords = {Cluster Analysis,DNA Barcoding, Taxonomic/*methods,Metagenome,Metagenomics/methods,Microbiota/*genetics,Molecular Sequence Annotation/*methods,Phylogeny,Sequence Analysis, DNA,Software},
+pages = {S12},
+pmid = {24564377},
+title = {{MetaCluster-TA: taxonomic annotation for metagenomic data based on assembly-assisted binning}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/24564377},
+volume = {15 Suppl 1},
+year = {2014}
+}
+@article{Alonso-Alemany2014,
+author = {Alonso-Alemany, D and Barre, A and Beretta, S and Bonizzoni, P and Nikolski, M and Valiente, G},
+doi = {10.1093/bioinformatics/btt256},
+isbn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+keywords = {*Software,Algorithms,Metagenomics/classification/*methods},
+number = {1},
+pages = {17--23},
+pmid = {23645816},
+title = {{Further steps in TANGO: improved taxonomic assignment in metagenomics}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/23645816},
+volume = {30},
+year = {2014}
+}
+@article{Edgar2013,
+abstract = {Amplified marker-gene sequences can be used to understand microbial community structure, but they suffer from a high level of sequencing and amplification artifacts. The UPARSE pipeline reports operational taxonomic unit (OTU) sequences with {\textless}/=1{\%} incorrect bases in artificial microbial community tests, compared with {\textgreater}3{\%} incorrect bases commonly reported by other methods. The improved accuracy results in far fewer OTUs, consistently closer to the expected number of species in a community.},
+annote = {Edgar, Robert C
+eng
+2013/08/21 06:00
+Nat Methods. 2013 Oct;10(10):996-8. doi: 10.1038/nmeth.2604. Epub 2013 Aug 18.},
+author = {Edgar, R C},
+doi = {10.1038/nmeth.2604},
+issn = {1548-7105 (Electronic)
+1548-7091 (Linking)},
+journal = {Nat Methods},
+keywords = {*Phylogeny,Algorithms,Databases, Genetic,Humans,Metagenomics,Microbiota/*genetics,RNA, Ribosomal, 16S/*genetics,Research Design,Sensitivity and Specificity,Software},
+number = {10},
+pages = {996--998},
+pmid = {23955772},
+title = {{UPARSE: highly accurate OTU sequences from microbial amplicon reads}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/23955772},
+volume = {10},
+year = {2013}
+}
+@article{Kuczynski2012,
+abstract = {QIIME (canonically pronounced "chime") is a software application that performs microbial community analysis. It is an acronym for Quantitative Insights Into Microbial Ecology, and has been used to analyze and interpret nucleic acid sequence data from fungal, viral, bacterial, and archaeal communities. The following protocols describe how to install QIIME on a single computer and use it to analyze microbial 16S sequence data from nine distinct microbial communities.},
+annote = {Kuczynski, Justin
+Stombaugh, Jesse
+Walters, William Anton
+Gonzalez, Antonio
+Caporaso, J Gregory
+Knight, Rob
+eng
+DK83981/DK/NIDDK NIH HHS/
+UH2 DK083981/DK/NIDDK NIH HHS/
+P01 DK078669/DK/NIDDK NIH HHS/
+UH3 DK083981/DK/NIDDK NIH HHS/
+T15 LM009451/LM/NLM NIH HHS/
+HG4872/HG/NHGRI NIH HHS/
+T32 GM008759/GM/NIGMS NIH HHS/
+U01 HG004866/HG/NHGRI NIH HHS/
+GM65103/GM/NIGMS NIH HHS/
+R01 HG004872/HG/NHGRI NIH HHS/
+GM8759/GM/NIGMS NIH HHS/
+Howard Hughes Medical Institute/
+HG4866/HG/NHGRI NIH HHS/
+LM9451/LM/NLM NIH HHS/
+DK78669/DK/NIDDK NIH HHS/
+T32 GM065103/GM/NIGMS NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+2012/11/28 06:00
+Curr Protoc Microbiol. 2012 Nov;Chapter 1:Unit 1E.5.. doi: 10.1002/9780471729259.mc01e05s27.},
+author = {Kuczynski, J and Stombaugh, J and Walters, W A and Gonzalez, A and Caporaso, J G and Knight, R},
+doi = {10.1002/9780471729259.mc01e05s27},
+issn = {1934-8533 (Electronic)},
+journal = {Curr Protoc Microbiol},
+keywords = {*Software,Bacteria/classification/*genetics/isolation {\&} purification,Biodiversity,Computational Biology/instrumentation/*methods,DNA, Bacterial/genetics,Phylogeny,RNA, Ribosomal, 16S/*genetics,Sequence Analysis, DNA/instrumentation/*methods},
+pages = {Unit 1E 5},
+pmid = {23184592},
+title = {{Using QIIME to analyze 16S rRNA gene sequences from microbial communities}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/23184592},
+volume = {Chapter 1},
+year = {2012}
+}
+@article{Edgar2011,
+author = {Edgar, R C and Haas, B J and Clemente, J C and Quince, C and Knight, R},
+doi = {10.1093/bioinformatics/btr381},
+issn = {1367-4811 (Electronic)
+1367-4803 (Linking)},
+journal = {Bioinformatics},
+keywords = {*Artifacts,*Software,Algorithms,Computational Biology,Polymerase Chain Reaction,Sequence Analysis, DNA/*methods},
+number = {16},
+pages = {2194--2200},
+pmid = {21700674},
+title = {{UCHIME improves sensitivity and speed of chimera detection}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/21700674},
+volume = {27},
+year = {2011}
+}
+@article{Schloss2009,
+abstract = {mothur aims to be a comprehensive software package that allows users to use a single piece of software to analyze community sequence data. It builds upon previous tools to provide a flexible and powerful software package for analyzing sequencing data. As a case study, we used mothur to trim, screen, and align sequences; calculate distances; assign sequences to operational taxonomic units; and describe the alpha and beta diversity of eight marine samples previously characterized by pyrosequencing of 16S rRNA gene fragments. This analysis of more than 222,000 sequences was completed in less than 2 h with a laptop computer.},
+annote = {Schloss, Patrick D
+Westcott, Sarah L
+Ryabin, Thomas
+Hall, Justine R
+Hartmann, Martin
+Hollister, Emily B
+Lesniewski, Ryan A
+Oakley, Brian B
+Parks, Donovan H
+Robinson, Courtney J
+Sahl, Jason W
+Stres, Blaz
+Thallinger, Gerhard G
+Van Horn, David J
+Weber, Carolyn F
+eng
+Research Support, Non-U.S. Gov't
+2009/10/06 06:00
+Appl Environ Microbiol. 2009 Dec;75(23):7537-41. doi: 10.1128/AEM.01541-09. Epub 2009 Oct 2.},
+author = {Schloss, P D and Westcott, S L and Ryabin, T and Hall, J R and Hartmann, M and Hollister, E B and Lesniewski, R A and Oakley, B B and Parks, D H and Robinson, C J and Sahl, J W and Stres, B and Thallinger, G G and {Van Horn}, D J and Weber, C F},
+doi = {10.1128/AEM.01541-09},
+issn = {1098-5336 (Electronic)
+0099-2240 (Linking)},
+journal = {Appl Environ Microbiol},
+keywords = {*Biodiversity,*Software,Computational Biology/*methods,Environmental Microbiology,Metagenomics/*methods,Sequence Analysis, DNA},
+number = {23},
+pages = {7537--7541},
+pmid = {19801464},
+title = {{Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/19801464},
+volume = {75},
+year = {2009}
+}
+@article{DeSantis2006,
+author = {DeSantis, T Z and Hugenholtz, P and Larsen, N and Rojas, M and Brodie, E L and Keller, K and Huber, T and Dalevi, D and Hu, P and Andersen, G L},
+doi = {10.1128/AEM.03006-05},
+issn = {0099-2240 (Print)
+0099-2240 (Linking)},
+journal = {Appl Environ Microbiol},
+keywords = {*Genes, rRNA,*Recombination, Genetic,*Sequence Alignment,*Software,Archaea/classification/genetics,Bacteria/classification/genetics,Databases, Nucleic Acid/*standards,Polymerase Chain Reaction,RNA, Ribosomal, 16S/*genetics,Reproducibility of Results},
+number = {7},
+pages = {5069--5072},
+pmid = {16820507},
+title = {{Greengenes, a chimera-checked 16S rRNA gene database and workbench compatible with ARB}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/16820507},
+volume = {72},
+year = {2006}
+}
+@article{Cole2005,
+author = {Cole, J R and Chai, B and Farris, R J and Wang, Q and Kulam, S A and McGarrell, D M and Garrity, G M and Tiedje, J M},
+doi = {10.1093/nar/gki038},
+issn = {1362-4962 (Electronic)
+0305-1048 (Linking)},
+journal = {Nucleic Acids Res},
+keywords = {*Databases, Nucleic Acid,*Genes, rRNA,*Sequence Analysis, DNA,*Software,DNA Probes,DNA, Ribosomal/*chemistry/classification,RNA, Bacterial/genetics,RNA, Ribosomal/chemistry/classification,Sequence Alignment},
+number = {Database issue},
+pages = {D294--6},
+pmid = {15608200},
+title = {{The Ribosomal Database Project (RDP-II): sequences and tools for high-throughput rRNA analysis}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/15608200},
+volume = {33},
+year = {2005}
+}
+@article{Ewing1998,
+abstract = {Elimination of the data processing bottleneck in high-throughput sequencing will require both improved accuracy of data processing software and reliable measures of that accuracy. We have developed and implemented in our base-calling program phred the ability to estimate a probability of error for each base-call, as a function of certain parameters computed from the trace data. These error probabilities are shown here to be valid (correspond to actual error rates) and to have high power to discriminate correct base-calls from incorrect ones, for read data collected under several different chemistries and electrophoretic conditions. They play a critical role in our assembly program phrap and our finishing program consed.},
+annote = {Ewing, B
+Green, P
+eng
+Research Support, U.S. Gov't, P.H.S.
+1998/05/16 00:00
+Genome Res. 1998 Mar;8(3):186-94.},
+author = {Ewing, B and Green, P},
+isbn = {1088-9051 (Print)
+1088-9051 (Linking)},
+journal = {Genome Res},
+keywords = {*Software,Base Sequence,Chimera,Cloning, Molecular/methods,Data Interpretation, Statistical,Discriminant Analysis,Genetic Vectors,Human Genome Project,Humans,Probability,Quality Control,Reproducibility of Results,Sequence Analysis, DNA/*methods/standards/*statistics {\&} numerical data},
+number = {3},
+pages = {186--194},
+pmid = {9521922},
+title = {{Base-calling of automated sequencer traces using phred. II. Error probabilities}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/9521922},
+volume = {8},
+year = {1998}
+}
+@article{Rognes2016,
+author = {Rognes, T and Flouri, T and Nichols, B and Quince, C and Mahe, F},
+doi = {10.7717/peerj.2584},
+isbn = {2167-8359 (Print)},
+journal = {PeerJ},
+keywords = {Alignment,Chimera detection,Clustering,Dereplication,Masking,Metagenomics,Parallellization,Searching,Sequences,Shuffling},
+pages = {e2584},
+pmid = {27781170},
+title = {{VSEARCH: a versatile open source tool for metagenomics}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27781170},
+volume = {4},
+year = {2016}
+}
+@article{Caporaso2012,
+abstract = {DNA sequencing continues to decrease in cost with the Illumina HiSeq2000 generating up to 600 Gb of paired-end 100 base reads in a ten-day run. Here we present a protocol for community amplicon sequencing on the HiSeq2000 and MiSeq Illumina platforms, and apply that protocol to sequence 24 microbial communities from host-associated and free-living environments. A critical question as more sequencing platforms become available is whether biological conclusions derived on one platform are consistent with what would be derived on a different platform. We show that the protocol developed for these instruments successfully recaptures known biological results, and additionally that biological conclusions are consistent across sequencing platforms (the HiSeq2000 versus the MiSeq) and across the sequenced regions of amplicons.},
+annote = {Caporaso, J Gregory
+Lauber, Christian L
+Walters, William A
+Berg-Lyons, Donna
+Huntley, James
+Fierer, Noah
+Owens, Sarah M
+Betley, Jason
+Fraser, Louise
+Bauer, Markus
+Gormley, Niall
+Gilbert, Jack A
+Smith, Geoff
+Knight, Rob
+eng
+P01 DK078669/DK/NIDDK NIH HHS/
+T32 GM008759/GM/NIGMS NIH HHS/
+U01 HG006537/HG/NHGRI NIH HHS/
+U01 HG004866/HG/NHGRI NIH HHS/
+Intramural NIH HHS/
+Howard Hughes Medical Institute/
+R01 HG004872/HG/NHGRI NIH HHS/
+Research Support, N.I.H., Intramural
+Research Support, Non-U.S. Gov't
+Research Support, U.S. Gov't, Non-P.H.S.
+England
+2012/03/10 06:00
+ISME J. 2012 Aug;6(8):1621-4. doi: 10.1038/ismej.2012.8. Epub 2012 Mar 8.},
+author = {Caporaso, J G and Lauber, C L and Walters, W A and Berg-Lyons, D and Huntley, J and Fierer, N and Owens, S M and Betley, J and Fraser, L and Bauer, M and Gormley, N and Gilbert, J A and Smith, G and Knight, R},
+doi = {10.1038/ismej.2012.8},
+isbn = {1751-7370 (Electronic)
+1751-7362 (Linking)},
+journal = {ISME J},
+keywords = {*Environmental Microbiology,Bacteria/*genetics,Ecosystem,High-Throughput Nucleotide Sequencing/economics/*instrumentation/*methods,Reproducibility of Results},
+number = {8},
+pages = {1621--1624},
+pmid = {22402401},
+title = {{Ultra-high-throughput microbial community analysis on the Illumina HiSeq and MiSeq platforms}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/22402401},
+volume = {6},
+year = {2012}
+}
+@article{Balvociute2017,
+abstract = {BACKGROUND: A key step in microbiome sequencing analysis is read assignment to taxonomic units. This is often performed using one of four taxonomic classifications, namely SILVA, RDP, Greengenes or NCBI. It is unclear how similar these are and how to compare analysis results that are based on different taxonomies. RESULTS: We provide a method and software for mapping taxonomic entities from one taxonomy onto another. We use it to compare the four taxonomies and the Open Tree of life Taxonomy (OTT). CONCLUSIONS: While we find that SILVA, RDP and Greengenes map well into NCBI, and all four map well into the OTT, mapping the two larger taxonomies on to the smaller ones is problematic.},
+annote = {Balvociute, Monika
+Huson, Daniel H
+eng
+Comparative Study
+Research Support, Non-U.S. Gov't
+England
+2017/04/01 06:00
+BMC Genomics. 2017 Mar 14;18(Suppl 2):114. doi: 10.1186/s12864-017-3501-4.},
+author = {Balvociute, M and Huson, D H},
+doi = {10.1186/s12864-017-3501-4},
+isbn = {1471-2164 (Electronic)
+1471-2164 (Linking)},
+journal = {BMC Genomics},
+keywords = {*Algorithms,*Greengenes,*Metagenomics,*Ncbi,*OTU assignment,*Open tree of life,*Phylogeny,*Rdp,*Silva,*Taxonomic classification,Archaea/*classification/genetics,Bacteria/*classification/genetics,Databases, Genetic,Gene Ontology/*statistics {\&} numerical data,Metagenomics/methods/statistics {\&} numerical data,Microbiota/genetics,RNA, Ribosomal, 16S/genetics},
+number = {Suppl 2},
+pages = {114},
+pmid = {28361695},
+title = {{SILVA, RDP, Greengenes, NCBI and OTT - how do these taxonomies compare?}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28361695},
+volume = {18},
+year = {2017}
+}
+@article{Holmes2012,
+abstract = {We introduce Dirichlet multinomial mixtures (DMM) for the probabilistic modelling of microbial metagenomics data. This data can be represented as a frequency matrix giving the number of times each taxa is observed in each sample. The samples have different size, and the matrix is sparse, as communities are diverse and skewed to rare taxa. Most methods used previously to classify or cluster samples have ignored these features. We describe each community by a vector of taxa probabilities. These vectors are generated from one of a finite number of Dirichlet mixture components each with different hyperparameters. Observed samples are generated through multinomial sampling. The mixture components cluster communities into distinct 'metacommunities', and, hence, determine envirotypes or enterotypes, groups of communities with a similar composition. The model can also deduce the impact of a treatment and be used for classification. We wrote software for the fitting of DMM models using the 'evidence framework' (http://code.google.com/p/microbedmm/). This includes the Laplace approximation of the model evidence. We applied the DMM model to human gut microbe genera frequencies from Obese and Lean twins. From the model evidence four clusters fit this data best. Two clusters were dominated by Bacteroides and were homogenous; two had a more variable community composition. We could not find a significant impact of body mass on community structure. However, Obese twins were more likely to derive from the high variance clusters. We propose that obesity is not associated with a distinct microbiota but increases the chance that an individual derives from a disturbed enterotype. This is an example of the 'Anna Karenina principle (AKP)' applied to microbial communities: disturbed states having many more configurations than undisturbed. We verify this by showing that in a study of inflammatory bowel disease (IBD) phenotypes, ileal Crohn's disease (ICD) is associated with a more variable community.},
+annote = {Holmes, Ian
+Harris, Keith
+Quince, Christopher
+eng
+R01 GM076705/GM/NIGMS NIH HHS/
+R01-GM076705/GM/NIGMS NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+2012/02/10 06:00
+PLoS One. 2012;7(2):e30126. doi: 10.1371/journal.pone.0030126. Epub 2012 Feb 3.},
+author = {Holmes, I and Harris, K and Quince, C},
+doi = {10.1371/journal.pone.0030126},
+isbn = {1932-6203 (Electronic)
+1932-6203 (Linking)},
+journal = {PLoS One},
+keywords = {*Models, Biological,Crohn Disease/microbiology,Gastrointestinal Tract/microbiology,Humans,Inflammatory Bowel Diseases/*microbiology,Metagenomics/*methods,Models, Theoretical,Software},
+number = {2},
+pages = {e30126},
+pmid = {22319561},
+title = {{Dirichlet multinomial mixtures: generative models for microbial metagenomics}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/22319561},
+volume = {7},
+year = {2012}
+}
+@article{Kremen1992,
+abstract = {The diversity of organisms and complexity of ecosystems prevent through inventory and monitoring of protected areas, yet sound databases are needed to manage ecosystems for long-term persistence. One strategy is therefore to focus monitoring on indicator organisms, but guidelines are lacking for selecting appropriate species or groups. This paper presents a simple protocol based on ordination techniques for establishing the indicator properties of a group of organisms and for selecting an indicator species subset for more intensive monitoring. Use of ordination allows inclusion of many more taxa than have been traditionally used for natural areas monitoring, and need not rely on detailed knowledge of species biology. As an example, I studied the indicator properties of a butterfly taxocene in a rain forest in Madagascar. Butterflies have been suggested as particularly good environmental indicators due to their sensitivity to micro-climate and light level changes, and their interactions as larvae and adults with different sets of host plants. The indicator properties of butterfly assemblages were evaluated in this study with respect to a known pattern of environmental heterogeneity along topographic/moisture and disturbance gradients. Butterfly assemblages were found to be excellent indicators of heterogeneity due to the topographic/moisture gradient, limited indicators of heterogeneity due to anthropogenic disturbance, and poor indicators of plant diversity. The protocol defined in this study is widely applicable to other groups of organisms, spatial scales, and environmental gradients. By examining the environmental correlates of the distribution of species assemblages, this protocol can assess the indicator properties of target species groups.},
+annote = {Kremen, Claire
+eng
+1992/05/01 00:00
+Ecol Appl. 1992 May;2(2):203-217. doi: 10.2307/1941776.},
+author = {Kremen, C},
+doi = {10.2307/1941776},
+isbn = {1051-0761 (Print)
+1051-0761 (Linking)},
+journal = {Ecol Appl},
+number = {2},
+pages = {203--217},
+pmid = {27759199},
+title = {{Assessing the Indicator Properties of Species Assemblages for Natural Areas Monitoring}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27759199},
+volume = {2},
+year = {1992}
+}
+@article{Segata2011,
+abstract = {This study describes and validates a new method for metagenomic biomarker discovery by way of class comparison, tests of biological consistency and effect size estimation. This addresses the challenge of finding organisms, genes, or pathways that consistently explain the differences between two or more microbial communities, which is a central problem to the study of metagenomics. We extensively validate our method on several microbiomes and a convenient online interface for the method is provided at http://huttenhower.sph.harvard.edu/lefse/.},
+annote = {Segata, Nicola
+Izard, Jacques
+Waldron, Levi
+Gevers, Dirk
+Miropolsky, Larisa
+Garrett, Wendy S
+Huttenhower, Curtis
+eng
+AI078942/AI/NIAID NIH HHS/
+K08 AI078942/AI/NIAID NIH HHS/
+R01 CA154426/CA/NCI NIH HHS/
+R21 DE017106-02/DE/NIDCR NIH HHS/
+1R01HG005969/HG/NHGRI NIH HHS/
+R01 HG005969/HG/NHGRI NIH HHS/
+R21 DE017106/DE/NIDCR NIH HHS/
+DE017106/DE/NIDCR NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+Validation Studies
+England
+2011/06/28 06:00
+Genome Biol. 2011 Jun 24;12(6):R60. doi: 10.1186/gb-2011-12-6-r60.},
+author = {Segata, N and Izard, J and Waldron, L and Gevers, D and Miropolsky, L and Garrett, W S and Huttenhower, C},
+doi = {10.1186/gb-2011-12-6-r60},
+isbn = {1474-760X (Electronic)
+1474-7596 (Linking)},
+journal = {Genome Biol},
+keywords = {*Biomarkers,*Metagenome,*Software,Adult,Animals,Bacteria/classification,Colitis, Ulcerative/microbiology,Data Mining,Humans,Infant,Metagenomics/*methods,Mice,Mice, Inbred BALB C,Mice, Knockout,Mucous Membrane/microbiology,Sensitivity and Specificity,Viruses/classification},
+number = {6},
+pages = {R60},
+pmid = {21702898},
+title = {{Metagenomic biomarker discovery and explanation}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/21702898},
+volume = {12},
+year = {2011}
+}
+@article{White2009,
+abstract = {Numerous studies are currently underway to characterize the microbial communities inhabiting our world. These studies aim to dramatically expand our understanding of the microbial biosphere and, more importantly, hope to reveal the secrets of the complex symbiotic relationship between us and our commensal bacterial microflora. An important prerequisite for such discoveries are computational tools that are able to rapidly and accurately compare large datasets generated from complex bacterial communities to identify features that distinguish them.We present a statistical method for comparing clinical metagenomic samples from two treatment populations on the basis of count data (e.g. as obtained through sequencing) to detect differentially abundant features. Our method, Metastats, employs the false discovery rate to improve specificity in high-complexity environments, and separately handles sparsely-sampled features using Fisher's exact test. Under a variety of simulations, we show that Metastats performs well compared to previously used methods, and significantly outperforms other methods for features with sparse counts. We demonstrate the utility of our method on several datasets including a 16S rRNA survey of obese and lean human gut microbiomes, COG functional profiles of infant and mature gut microbiomes, and bacterial and viral metabolic subsystem data inferred from random sequencing of 85 metagenomes. The application of our method to the obesity dataset reveals differences between obese and lean subjects not reported in the original study. For the COG and subsystem datasets, we provide the first statistically rigorous assessment of the differences between these populations. The methods described in this paper are the first to address clinical metagenomic datasets comprising samples from multiple subjects. Our methods are robust across datasets of varied complexity and sampling level. While designed for metagenomic applications, our software can also be applied to digital gene expression studies (e.g. SAGE). A web server implementation of our methods and freely available source code can be found at http://metastats.cbcb.umd.edu/.},
+annote = {White, James Robert
+Nagarajan, Niranjan
+Pop, Mihai
+eng
+R01 HG004885/HG/NHGRI NIH HHS/
+Research Support, Non-U.S. Gov't
+2009/04/11 09:00
+PLoS Comput Biol. 2009 Apr;5(4):e1000352. doi: 10.1371/journal.pcbi.1000352. Epub 2009 Apr 10.},
+author = {White, J R and Nagarajan, N and Pop, M},
+doi = {10.1371/journal.pcbi.1000352},
+isbn = {1553-7358 (Electronic)
+1553-734X (Linking)},
+journal = {PLoS Comput Biol},
+keywords = {Bacteria/*classification/*genetics/isolation {\&} purification,Chromosome Mapping/*methods,DNA, Bacterial/*genetics,Gene Expression Profiling/*methods,Humans,Intestines/*microbiology,Obesity/*microbiology},
+number = {4},
+pages = {e1000352},
+pmid = {19360128},
+title = {{Statistical methods for detecting differentially abundant features in clinical metagenomic samples}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/19360128},
+volume = {5},
+year = {2009}
+}
+@article{Amir2017,
+abstract = {High-throughput sequencing of 16S ribosomal RNA gene amplicons has facilitated understanding of complex microbial communities, but the inherent noise in PCR and DNA sequencing limits differentiation of closely related bacteria. Although many scientific questions can be addressed with broad taxonomic profiles, clinical, food safety, and some ecological applications require higher specificity. Here we introduce a novel sub-operational-taxonomic-unit (sOTU) approach, Deblur, that uses error profiles to obtain putative error-free sequences from Illumina MiSeq and HiSeq sequencing platforms. Deblur substantially reduces computational demands relative to similar sOTU methods and does so with similar or better sensitivity and specificity. Using simulations, mock mixtures, and real data sets, we detected closely related bacterial sequences with single nucleotide differences while removing false positives and maintaining stability in detection, suggesting that Deblur is limited only by read length and diversity within the amplicon sequences. Because Deblur operates on a per-sample level, it scales to modern data sets and meta-analyses. To highlight Deblur's ability to integrate data sets, we include an interactive exploration of its application to multiple distinct sequencing rounds of the American Gut Project. Deblur is open source under the Berkeley Software Distribution (BSD) license, easily installable, and downloadable from https://github.com/biocore/deblur. IMPORTANCE Deblur provides a rapid and sensitive means to assess ecological patterns driven by differentiation of closely related taxa. This algorithm provides a solution to the problem of identifying real ecological differences between taxa whose amplicons differ by a single base pair, is applicable in an automated fashion to large-scale sequencing data sets, and can integrate sequencing runs collected over time.},
+annote = {Amir, Amnon
+McDonald, Daniel
+Navas-Molina, Jose A
+Kopylova, Evguenia
+Morton, James T
+Zech Xu, Zhenjiang
+Kightley, Eric P
+Thompson, Luke R
+Hyde, Embriette R
+Gonzalez, Antonio
+Knight, Rob
+eng
+P01 DK078669/DK/NIDDK NIH HHS/
+2017/03/16 06:00
+mSystems. 2017 Mar 7;2(2). pii: mSystems00191-16. doi: 10.1128/mSystems.00191-16. eCollection 2017 Mar-Apr.},
+author = {Amir, A and McDonald, D and Navas-Molina, J A and Kopylova, E and Morton, J T and {Zech Xu}, Z and Kightley, E P and Thompson, L R and Hyde, E R and Gonzalez, A and Knight, R},
+doi = {10.1128/mSystems.00191-16},
+isbn = {2379-5077 (Print)
+2379-5077 (Linking)},
+journal = {mSystems},
+keywords = {DNA sequencing,microbiome},
+number = {2},
+pmid = {28289731},
+title = {{Deblur Rapidly Resolves Single-Nucleotide Community Sequence Patterns}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/28289731},
+volume = {2},
+year = {2017}
+}
+@article{Callahan2016,
+abstract = {We present the open-source software package DADA2 for modeling and correcting Illumina-sequenced amplicon errors (https://github.com/benjjneb/dada2). DADA2 infers sample sequences exactly and resolves differences of as little as 1 nucleotide. In several mock communities, DADA2 identified more real variants and output fewer spurious sequences than other methods. We applied DADA2 to vaginal samples from a cohort of pregnant women, revealing a diversity of previously undetected Lactobacillus crispatus variants.},
+annote = {Callahan, Benjamin J
+McMurdie, Paul J
+Rosen, Michael J
+Han, Andrew W
+Johnson, Amy Jo A
+Holmes, Susan P
+eng
+R01 AI112401/AI/NIAID NIH HHS/
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+Research Support, U.S. Gov't, Non-P.H.S.
+2016/05/24 06:00
+Nat Methods. 2016 Jul;13(7):581-3. doi: 10.1038/nmeth.3869. Epub 2016 May 23.},
+author = {Callahan, B J and McMurdie, P J and Rosen, M J and Han, A W and Johnson, A J and Holmes, S P},
+doi = {10.1038/nmeth.3869},
+isbn = {1548-7105 (Electronic)
+1548-7091 (Linking)},
+journal = {Nat Methods},
+keywords = {*Software,Animals,Cohort Studies,Computational Biology/*methods,DNA, Bacterial/genetics,False Positive Reactions,Feces/microbiology,Female,High-Throughput Nucleotide Sequencing/*methods,Humans,Lactobacillus/classification/genetics/*isolation {\&} purification,Mice,Microbiota/*genetics,Pregnancy,RNA, Ribosomal, 16S/genetics,Reproducibility of Results,Sequence Analysis, DNA/*methods,Vagina/microbiology},
+number = {7},
+pages = {581--583},
+pmid = {27214047},
+title = {{DADA2: High-resolution sample inference from Illumina amplicon data}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/27214047},
+volume = {13},
+year = {2016}
+}
+@article{McMurdie2012,
+abstract = {We present a detailed description of a new Bioconductor package, phyloseq, for integrated data and analysis of taxonomically-clustered phylogenetic sequencing data in conjunction with related data types. The phyloseq package integrates abundance data, phylogenetic information and covariates so that exploratory transformations, plots, and confirmatory testing and diagnostic plots can be carried out seamlessly. The package is built following the S4 object-oriented framework of the R language so that once the data have been input the user can easily transform, plot and analyze the data. We present some examples that highlight the methods and the ease with which we can leverage existing packages.},
+annote = {McMurdie, Paul J
+Holmes, Susan
+eng
+R01 GM086884/GM/NIGMS NIH HHS/
+R01GM086884/GM/NIGMS NIH HHS/
+Research Support, N.I.H., Extramural
+2011/12/17 06:00
+Pac Symp Biocomput. 2012:235-46.},
+author = {McMurdie, P J and Holmes, S},
+isbn = {2335-6936 (Print)},
+journal = {Pac Symp Biocomput},
+keywords = {*Phylogeny,*Software,Computational Biology,Data Interpretation, Statistical,Databases, Genetic/statistics {\&} numerical data,High-Throughput Nucleotide Sequencing/*statistics,Microbiota/*genetics},
+pages = {235--246},
+pmid = {22174279},
+title = {{Phyloseq: a bioconductor package for handling and analysis of high-throughput phylogenetic sequence data}},
+url = {https://www.ncbi.nlm.nih.gov/pubmed/22174279},
+year = {2012}
+}
+@article{Yoon2017,
+abstract = {The recent advent of DNA sequencing technologies facilitates the use of genome sequencing data that provide means for more informative and precise classification and identification of members of the Bacteria and Archaea. Because the current species definition is based on the comparison of genome sequences between type and other strains in a given species, building a genome database with correct taxonomic information is of paramount need to enhance our efforts in exploring prokaryotic diversity and discovering novel species as well as for routine identifications. Here we introduce an integrated database, called EzBioCloud, that holds the taxonomic hierarchy of the Bacteria and Archaea, which is represented by quality-controlled 16S rRNA gene and genome sequences. Whole-genome assemblies in the NCBI Assembly Database were screened for low quality and subjected to a composite identification bioinformatics pipeline that employs gene-based searches followed by the calculation of average nucleotide identity. As a result, the database is made of 61 700 species/phylotypes, including 13 132 with validly published names, and 62 362 whole-genome assemblies that were identified taxonomically at the genus, species and subspecies levels. Genomic properties, such as genome size and DNA G+C content, and the occurrence in human microbiome data were calculated for each genus or higher taxa. This united database of taxonomy, 16S rRNA gene and genome sequences, with accompanying bioinformatics tools, should accelerate genome-based classification and identification of members of the Bacteria and Archaea. The database and related search tools are available at www.ezbiocloud.net/.},
+author = {Yoon, Seok Hwan and Ha, Sung Min and Kwon, Soonjae and Lim, Jeongmin and Kim, Yeseul and Seo, Hyungseok and Chun, Jongsik},
+doi = {10.1099/ijsem.0.001755},
+isbn = {129.132.208.2},
+issn = {14665026},
+journal = {International Journal of Systematic and Evolutionary Microbiology},
+keywords = {16S rRNA gene,Average nucleotide identity,Database,Genome,Identification},
+pmid = {28005526},
+title = {{Introducing EzBioCloud: A taxonomically united database of 16S rRNA gene sequences and whole-genome assemblies}},
+year = {2017}
+}

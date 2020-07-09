@@ -1,454 +1,435 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
->The financial support for developing the iMAP repository ended in October 2018. The maintainer volunteers to be contributing to this repo as a support to the microbiome research community. The primary focus is to make it highly reproducible and more user-friendly. Thank you for your patience. 
-
-<!--Future plans: Making Rmd/Shiny apps for guiding users to create elegant images.-->
-<br>
-
-Guidelines on [GH-Page](https://tmbuza.github.io/iMAP/).
-
-## Version: iMAP v1.0 (Pre-Release)
-The iMAP v1.0 is at the preliminary phase. It currently lacks significant aspects of reproducibility compared to the existing modern bioinformatics workflow management systems. Our future plan is to integrate iMAP with a code that defines rules to enable it to be deployed across multiple platforms without any major modifications.
-
-## Citation
-Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Link](https://rdcu.be/bIxrg).
+>Please be informed that financial support to develop this repo ended in October 2018. Volunteer work to make it more user-friendly is progressing slowly. Thank you for your patience. 
 
 <br>
 
-<!-- ## Supported Analyses
-1. Profiling of sample metadata
-2. Pre-processing and quality control of paired-reads
-3. Sequence processing and classification
-* mothur (default)
-   * Phylotype-based method (works for any dataset size).
-   * OTU-based method (works best for small dataset).
-   * Phylogeny-based method (works best for small dataset).
-* QIIME2
-4. Transformation of OTU and taxa results into data structure. 
-5. Diversity and statistical analysis, and visualization.
-6. Phylogenetic analysis and interactive tree annotation 
-7. Generating web-based progress reports
-8. and more...
-
+## Running Analysis within Docker Container (Default)
+* See [GH-Page](https://tmbuza.github.io/iMAP/) for step-by-step instructions.
+	* Requires Docker Images and Docker containers CLI.
+	* Uses less resources but memory-intensive computing may sometimes fail.
+	* All analyses are run interactively on container’s Command-line.
+	* The iMAP folder is by default the working directory and is readable from the container.
+	* The output is stored in the working directory which mean it can be accessed ouside the container.
+* Important: Graphical applications don't work well in Docker containers. 
+* Some R-packages that install perfectly in RStudio may not install correctly in docker images.
 
 <br>
-
-## Primary iMAP file folders
-
-![](img/structureOfiMAP2.png)
-
-<br>
-<br>
--->
-
-## Requirements
-List of required materials for running iMAP pipeline is available [here](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html).
-
-The first step is to gather all the materials needed for implementing the iMAP pipeline. Most iMAP dependencies are executable and are already placed in the PATH using docker. Users should be able to launch analysis directly from the command line of the corresponding container. 
-
-<br>
-
-### Using specific platform
-
-> Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) if you prefer to use a specific platform. README2 guides the implementation of iMAP directly on a specific platform, including Unix-Linux, Mac OS X, and Windows 10. Please note that this is work-in-progress.
-
 <hr>
 <br>
 
-<!--
-**Table 1: List of required materials for running iMAP pipeline**
+## Running Analysis On Specific Platforms (Best option)
 
-| **Requirement** | **Description** | **Location** | **Remarks** |
-| :-------------------------- | :----------------------------------------------------- | :---------------: | :--------------: |
-| **Raw data** | Demultiplexed reads in FASTQ format (.gz) with primers and barcodes removed | data/raw | fastq.gz |
-| **Sample metadata** | File name: samplemetadata.tsv. A tab-separated file linking sample identifiers to the variables |  data/metadata | Format: mothur or QIIME2 |
-| **Mapping files** | For linking sample IDs to the data files |  data/metadata |  Mothur-formatted & QIIME2-formatted |
-| <tr><td align="left" colspan="4"><strong>Software</strong> (Mostly available via pre-built docker images)</td></tr> |
-| *Docker* | For creating Docker containers that wrap up iMAP dependencies. | Docker Community Edition (CE) | [Link](https://docs.docker.com/v17.12/install) |
-| *Seqkit* | For inspecting rawdata format and simple statistics. |  docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools) |  docker images: readqctools | [Link](https://cloud.docker.com/u/tmbuza/repository/list) |
-| *BBduk.sh via BBMap* | For trimming poor quality reads and removing phiX contamination |  Auto-loaded at preprocessing step | [Link](https://sourceforge.net/projects/bbmap/files/) |
-| *MultiQC* | For summarizing FASTQc output | docker images: readqctools | [Link](https://hub.docker.com/r/tmbuza/readqctools) |
-| *Mothur* | For sequence processing, taxonomy assignment and preliminary analysis |  docker images: mothur:v1.41.3 | [Link](https://cloud.docker.com/repository/docker/tmbuza/mothur ) |
-| *QIIME2* | For sequence processing, taxonomy assignment and preliminary analysis |  docker images: qiime2core:v2020.2 | [Link]( https://hub.docker.com/r/tmbuza/qiime2core:v2020.2) |
-| *R* | For statistical analysis and visualization | docker image:rpackages:v3.5.2 | [Link](https://cloud.docker.com/repository/docker/tmbuza/rpackages) |
-| *iTOL* | For displaying, annotating and managing phylogenetic trees | Onlline | [Link](http://itol.embl.de/) | 
-| <tr><td align="left" colspan="4"><strong>Reference databases:</strong> Any of the following databases can be used.</td></tr> |
-| *SILVA NR* (mothur) | Mothur-formatted rRNA alignments | data/references | [Link](https://www.mothur.org/w/images/3/32/) |
-| *SILVA NR* (QIIME2) | QIIME2-formatted classifiers 515-806 fragments | data/references | [Link](https://data.qiime2.org/2020.2/common/silva-132-99-515-806-nb-classifier.qza) |
-| *SILVA NR* (QIIME2) | QIIME2-formatted classifiers full length | data/references | [Link](https://data.qiime2.org/2020.2/common/silva-132-99-nb-classifier.qza) |
-| *SILVA* (seed) | Mothur-formatted rRNA alignments | data/references | [Link](https://www.mothur.org/w/images/7/71/) |
-| *SILVA*(de-gapped) | mothur-formatted classifiers | data/references | Auto-Generated|
-| *RDP* | Mothur-formatted classifiers | data/references | [Link](https://www.Mothur.org/wiki/RDP_reference_files ) |
-| *Greengenes* | Mothur-formatted classifiers | data/references | [Link](https://www.Mothur.org/wiki/Greengenes-formatted_databases) |
-| *Greengenes* | QIIME2-formatted classifiers 515-806 fragments | data/references | [Link](https://data.qiime2.org/2020.2/common/gg-13-8-99-515-806-nb-classifier.qza) |
-| *Greengenes* | QIIME2-formatted classifiers full length| data/references | [Link](https://data.qiime2.org/2020.2/common/gg-13-8-99-nb-classifier.qza) |
-| *EzBioCloud* | Mothur-formatted classifiers | data/references | [Link](https://www.ezbiocloud.net/resources) ||
-| *Custom classifiesr* | Any manually built classifiers. Highly recommended when studying a specific group of known microbes. | data/references |Manually-built|
+[README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
+* This is work under active development. Please visit this page regularly for more updates.
+* Best option for integrating most applications
+* Uses RStudio to install R-packages (recommended)
+* No Docker images are required.
+* May probably require manual installation of some tools.
 
 <br>
--->
- 
-## Getting Started
+<br>
 
-### Download iMAP repository
+
+### Step 1: Set-up the configuration file
+
+By default most of the executable files are saved or soft-linked to the $HOME/bin directory. 
+
 ```{}
-git clone https://github.com/tmbuza/iMAP.git
+# If bin folder does not exist please create it
+
+cd ~/
+ls -al
+mkdir bin
+```
+
+<br>
+
+#### Required configuration files:
+
+* *.bash_profile*: A hidden file executed for login shells before running any command argument. Is more common in Mac OS X. 
+
+* *.bashrc*: A hidden file executed for interactive non-login shells before running any command argument. Is more common in Unix-Linux. 
+
+>In MAC we will set the PATHs in the *.bashrc* file, then source it from the *.bash_profile* file. 
+
+```{}
+cd ~/
+ls -al
+
+# If the two config files do not exist please create them.
+
+touch ~/.bashrc
+
+# See if the $HOME/bin is in the $PATH.
+
+echo $PATH
+
+# If not add $HOME/bin line to the *.bashrc* file. 
+
+export PATH=$PATH:$HOME/bin
+
+touch ~/.bash_profile
+
+# Add the following line to the *.bash_profile* file. 
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+```
+
+<br>
+<br>
+
+### Step 2: Dowload the pre-built binary suitable for your platform
+
+<br>
+<br>
+
+#### iMAP for MAC OS X (Updated July 8, 2020)
+```{}
+
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
+unzip iMAP-Mac-OSX.v1.0.zip
+mv iMAP-Mac-OSX.v1.0 iMAP
+rm -f iMAP-Mac-OSX.v1.0.zip
+cd iMAP
+
 
 # OR
 
-curl -LOk https://github.com/tmbuza/iMAP/archive/master.zip
-unzip master.zip
-mv iMAP-master iMAP
-rm -rf master.zip
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Mac-OSX.v1.0.zip
+unzip iMAP-Mac-OSX.v1.0.zip
+mv iMAP-Mac-OSX.v1.0 iMAP
+rm -f iMAP-Mac-OSX.v1.0.zip
+cd iMAP
+```
+
+<br>
+<br>
+
+#### iMAP for Unix-Linux environments (in progress)
+```{}
+
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
+unzip iMAP-UnixLinux.v1.0.zip
+mv iMAP-UnixLinux.v1.0 iMAP
+rm -f iMAP-UnixLinux.v1.0.zip
+cd iMAP
+
 
 # OR
 
-wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
-unzip master.zip
-mv iMAP-master iMAP
-rm -rf master.zip
-
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-UnixLinux.v1.0.zip
+unzip iMAP-UnixLinux.v1.0.zip
+mv iMAP-UnixLinux.v1.0 iMAP
+rm -f iMAP-UnixLinux.v1.0.zip
+cd iMAP
 ```
 
-<br>
-
-### Add data to designated folders 
-
-**Accepted file formats**
-
-1. Metadata: 
-
-    * [Samplemetadata.tsv](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/samplemetadata.tsv)
-
-2. Mapping files:
-
-    * Mothur-format:
- [qced.files](https://github.com/tmbuza/iMAP/blob/master/resources/qced.files)
- 
-    * QIIME2-format:
- [manifest.txt](https://github.com/tmbuza/iMAP/blob/master/resources/manifest.txt)
- 
-3. Variable files (for Mothur-based preliminary analysis).
-
-    * Variable 1: 
- [var1.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var1.design)
- 
-    * Variable 2: 
- [var2.design](https://github.com/tmbuza/iMAP/blob/master/resources/metadata/var2.design)
-
-* etc...
-
-## Data for testing iMAP
->The following command copy the required data files located in the iMAP/resources/ and place them in their respective locations. It also download Silva seed database (default DB) and add it to the data/reference folder.
-```{}
-bash iMAP/code/00_allDemo_data.bash
-```
 
 <br>
-
-
-### Check missing folders or files
-> Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
-
 <br>
+
+#### iMAP for Windows 10 with linux WSL-bash (in progress)
 
 ```{}
-bash iMAP/code/00_checkFiles_driver.bash 
-```
 
+curl -LOk https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows-10-WSL.v1.0.zip
+unzip iMAP-Windows-10-WSL.v1.0.zip
+mv iMAP-Windows-10-WSL.v1.0 iMAP
+rm -f Windows-10-WSL.v1.0.zip
+cd iMAP
+
+
+# OR
+
+wget --no-check-certificate https://github.com/tmbuza/iMAP/releases/download/v1.0/iMAP-Windows-10-WSL.v1.0.zip
+unzip iMAP-Windows-10-WSL.v1.0.zip
+mv iMAP-Windows-10.v1.0 iMAP
+rm -f Windows-10-WSL.v1.0.zip
+cd iMAP
+```
+<br>
+<br>
+
+
+### Step 3: Install iMAP dependencies
+
+The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be installed manually by the user.
+
+> Users who prefer to use Portable Batch System (PBS) or similar methods may seek advices from their system administrators.
+
+```{}
+bash ./code/00_1_InstallSoftwareDriver.bash
+```
+<br>
+
+**Confirm the installation**
+
+Make sure that all executable tools are being discovered by the system. Simply use *which* or *type -p* function to see the location.
+
+```{}
+which seqkit # must show the location of seqkit
+which fastqc # must show the location of fastqc
+which bbduk.sh # must show the location of bbduk.sh
+which multiqc # must show the location of multiqc
+which mothur # must show the location of fastqc
+which vsearch # must show the location of vsearch
+which uchime # must show the location of uchime
+``` 
 
 <br>
 
-### User Options
-Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
+>If the auto-install failed, please try to do it manually. Each of the tools below is hyperlinked to lead you to its download site. Please install the latest stable version.
+
+* [Install seqkit](https://github.com/shenwei356/seqkit/releases/tag/v0.11.0). 
+* [Install fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+* [Install bbmap](https://sourceforge.net/projects/bbmap/).
+* [Install multiqc](https://multiqc.info/docs/#manual-installation).
+* [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
+* QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
 
 <br>
 
-### Install Docker
-Link: [https://docs.docker.com/install/](https://docs.docker.com/install/).
+**Additional installation for future analyses**
 
-### Set up Docker Account
-Register for a Docker ID at [https://docs.docker.com/docker-id/](https://docs.docker.com/docker-id/).
+* [Anaconda](https://docs.anaconda.com/anaconda/install/): We recommend to install Anaconda for the local user as no administrator permissions are required.
 
-### Confirm the installation
-* You must be logged in to run docker commands.
-* If the command below work, then you are all set up.
+<br>
+<br>
+
+**Install R & RStudio (Required)**
+
+* [Install R](https://cran.r-project.org/)
+* [Install RStudio](https://rstudio.com/products/rstudio/download/)
+
+<br>
+<br>
+
+### Step 4: Add required files to designated folders
+* Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders. See Table 1 in the [README](https://github.com/tmbuza/iMAP/blob/master/README.md) file.
+* Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
-docker login
-docker info
+bash ./code/00_2_GetDemoDataDriver.bash
 ```
 
 <br>
+<br>
 
-## Metadata profiling
+### Step 5: Check folders and files to be certain
+> important!. Do not start the next step unless all the requirements are met. Make sure that you don’t have any missing file required for the downstream analysis. Repeat this step as necessary.
+
 ```{}
-containerName=report1
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/01_metadataProfiling_driver.bash
-exit
+bash ./code/00_3_CheckFilesDriver.bash
 ```
 
 <br>
-
-## Read Quality Check
-```{}
-containerName=readpreprocess
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap tmbuza/readqctools:v1.0.0 /bin/bash
-
-bash code/02_readPreprocess_driver.bash
-
-exit
-```
-> Make sure you exited the container which is done by running *exit* command above. That will bring you back to your normal CLI. The HTML QC-summary report (multiqc_report.html) is stored in the **iMAP/results/multiqc/ folder** and you can open them using your favorite browser or try to open it using CLI like:
-
-```{}
-open iMAP/results/multiqc/qced/R1/multiqc_report.html
-```
-
-<br>
-
-### Preprocessing progress report
-```{}
-containerName=report2
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/progressreport2.bash
-exit
-```
 <br>
 <hr>
 
-# Sequence Processing and classification
+## METADATA EXPLORATORY ANALYSIS
 
+<br>
+
+### Step 6: Metadata profiling
+This step helps you to: 
+
+* Discover if data is suitable for analysis.
+* Identify and correct issues.
+* Uncover if additional formatting is needed.
+* Make decision on whether to change anything before proceeding with the analysis.
+
+<br>
+
+
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 1: Metadata profiling
+```
+
+<br>
+<br>
+<hr>
+
+
+## READ QUALITY CONTROL
+
+### Step 7: Read Preprocessing
+- Computing simple statistics of the raw reads 
+- Inspecting base quality scores of original reads (qc0)
+- Filtering and trimming poor reads. Phred Score = 25 or more (qctrim25: default)
+- Removing phiX contamination (qced)
+- Summarizing Base Call Phred scores graphically
+  
+```{}
+bash ./code/01_1_ReadPreprocessDriver.bash
+```
+
+<br>
+
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 2: Read Preprocessing
+```
+
+<br>
+<br>
+
+## BIOINFORMATICS ANALYSIS
+
+## Interactively on CLI
+* Users sequentially run individual script or the bundled scripts on CLI (Command-Line-Interface). 
+* Interactive mode allows investigators to review the results and make well-informed decisions, progressively.
+
+<br>
+
+### Step 8: Microbial Profiling
+
+**Sequence processing**
+
+* Assembling of the forward and reverse reads, screen by length and create representative sequences.
+* Aligning the representative sequences with reference alignments. Default SILVA seed.
+* Denoising to remove poor alignments.
+* Removing Chimeric sequences.
+
+```{}
+bash ./code/01_2_SeqProcessingDriver.bash
+```
+
+
+**Sequence classification**
+
+* Classifying the sequences and performing post-classification quality control.
+
+```{}
+bash ./code/01_3_ClassifySeqDriver.bash
+```
+
+<br>
+
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 3: Sequence Processing
+```
+
+<br>
+<br>
+
+### Step 9: Preliminary Analysis
+
+* Clustering the OTUs (97% identity).
+* Assigning taxonomy names to observed OTUs.
+* Useful link: [Mothur MiSeq SOP: Preparing for analysis](https://www.mothur.org/wiki/MiSeq_SOP#Preparing_for_analysis).
+
+<br>
+
+**Phylotype method** (Recommended) 
+
+```{}
+bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
+```
+
+<br>
+
+**Cluster-based method** (Memory-intensive)
+
+```{}
+bash ./code/01_5_ClusterBasedTaxaDriver.bash
+```
+
+<br>
+
+**Phylogeny method** (Memory-intensive)
+
+```{}
+bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
+```
+
+<br>
+
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 4: Preliminary Analysis 
+```
+<br>
+<br>
+<hr>
+
+## Remotely on HPC
+* Requires a job scheduling script for:
+	* submitting a job to the HPC queue
+	* allocating the available computing resources, and 
+	* requesting additional resources.
+* The Portable Batch System (PBS) is the most used workload management solution for HPC systems and Linux clusters. 
+* The **qsub** command scans the lines of the PBS job scheduling script for directives or instructions.
+
+**Sample PBS script**
+
+>Replace the parameters in the script to match your systems.
+
+```{}
+#!/bin/bash -f
+#PBS -N [JobID]
+#PBS -A [group allocation name]
+#PBS -l nodes=1:ppn=10
+#PBS -l walltime=3:00:00
+#PBS -l pmem=10gb
+#PBS -j oe
+#PBS -o [Output file]
+#PBS -M [Email address]
+#PBS -m bea
+
+cd $PBS_O_WORKDIR
+
+bash ./code/01_1_ReadPreprocessDriver.bash
+bash ./code/01_2_SeqProcessingDriver.bash
+bash ./code/01_3_ClassifySeqDriver.bash
+bash ./code/01_4_PhylotypeBasedTaxaDriver.bash
+bash ./code/01_5_ClusterBasedTaxaDriver.bash
+bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
+
+exit 0
+```
+
+**Description of the PBS code**
+
+The above PBS script specifies:  
+
+* The environment to use (#!/bin/bash -f)
+* The name of the job (#PBS -N JobID)
+* The group allocation name (#PBS -A group allocation name)
+* Ten processors to run on a single node (#PBS -l nodes=1:ppn=10)
+* Three walltime hours (#PBS -l walltime=3:00:00)
+* Ten gigabytes of memory (#PBS -l pmem=10gb)
+* Joins the error and output in a single file (#PBS -j oe)
+* Writes the output in a text file named iMAPtutorial.txt (#PBS -o iMAPtutorial.txt)
+* Instructs the PBS manager to send message to a specified email address when the job (b)egins, (e)xits or (a)borts (bea) (#PBS -m bea). 
+* Instructs the PBS manager to send the notification emails to the specified email.
+* The working directory (cd $PBS_O_WORKDIR)
+* The code or individual scripts to be executed
+* Finally, the PBS manager will instruct the system to exit once the execution is done (exit 0).
+
+
+<br>
+<br>
+<hr>
+
+## IN-DEPTH ANALYSIS, VISUALIZATION & REPORTING (In progress)
+The output from preprocessing and bioinformatics analysis is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
+
+<br>
 <hr>
 <br>
 
-## A: MOTHUR-BASED PIPELINE
-* Requires a Mothur-formatted classifer. 
-* Default classifier is a recreated seed from [Silva database](https://mothur.org/wiki/silva_reference_files/).
-* You can use different classifiers from [other Mothur taxonomy outlines](https://mothur.org/wiki/taxonomy_outline/).
+## Useful links
 
-### Download reference databases (Silva seed alignment & classifier)
-```{}
-bash iMAP/code/refdatabase/iMAP_download_driver.bash
-```
-
-### Check files
-```{}
-bash iMAP/code/00_checkFiles_driver.bash
-```
-
-### Download Mothur images
-```{}
-docker pull tmbuza/mothur:v1.41.3
-```
-
-### Create a container for bash CLI
-```{}
-containerName=mothurseqprocessing
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap tmbuza/mothur:v1.41.3 /bin/bash
-```
-
-### Start sequence processing and classification 
-The sequence processing and classification command will implement the folllowing:
-
-* Assemble the forward and reverse reads, screen by length and create representative sequences
-* Align representative sequences with reference alignments..
-* Denoise to remove poor alignments
-* Remove Chimeric sequences.
-* Classify the sequences and do post-classification QC.
-* Estimates the sequencing error rate.
-
-```{}
-bash ./code/03_imapClassifySEQ_driver.bash 
-```
-> You may see a lot of WARNINGS. It is safe to ignore them. Also, the program is set to remove all temporary files after processing the sequences. If no any temporary file found you will see an error message that reads: *rm: cannot remove '*.temp': No such file or directory*. Just ignore it.
+<ol>
+<li> RStudio Community Q&A: https://community.rstudio.com/</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>	
 
 <br>
-
-### Pick a method for OTU clustering and taxonomy assignement
-
-**Method 1**: Phylotype-based method (works for large and small dataset).
-    
-```{}
-bash ./code/04_1_phylotype_driver.bash
-```
 <br>
-
-**Method 2**: OTU-cluster method (works best for small dataset).
-    
-```{}
-bash ./code/04_2_otucluster_driver.bash
-```
-
-<br>
-
-**Method 3**: Phylogeny-based method (works best for small dataset).
-    
-```{}
-bash ./code/04_3_phylogeny_driver.bash
-```
-
-<br>
-
-### Sequence processing progress report
-```{}
-containerName=report3
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/progressreport3.bash
-exit
-```
-
-<br>
-
-### Data Transformation
-```{}
-containerName=datatransformation
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/datatransformation.bash
-exit
-```
-
-<br>
-
-
-### OTU analysis progress report
-```{}
-containerName=report4
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/rpackages:v3.5.2 /bin/bash
-
-bash code/progressreport4.bash
-exit
-```
-<br><br>
-
-### Statistical analysis
-> Statistical analysis compares the variables, and variables are very specific and unique in different studies. Below are links to most important statistical analyses in microbiome studies:
-
-* [AMOVA](https://mothur.org/wiki/Amova)
-* [HOMOVA](https://mothur.org/wiki/Homova)
-* [ANOSIM](https://mothur.org/wiki/Anosim)
-* [Kruska-Walis](https://mothur.org/wiki/Kruskal.wallis)
-* [Lefse](https://mothur.org/wiki/Lefse)
-* [Metastats](https://mothur.org/wiki/Metastats)
-* [More...](https://mothur.org/wiki/Category:Commands)
-
-<br>
-
-*End of Mothur-based pipeline!*
-
-<br>
-<hr>
-<hr>
-<br>
-
-## B: QIIME2-BASED PIPELINE
-
-* Must install iMAP repo first which will automatically create a directory named **iMAP**.
-* Requires a QIIME2 trained classifer. Default: Greengenes 515-806 conservative fragments
-* You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
-* Classifier: Naive Bayes classifiers trained on GreenGenes or SILVA database with 99% OTUs. 
-
-### Install iMAP repo (if not installed)
-```{}
-wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
-unzip master.zip
-mv iMAP-master iMAP
-rm -rf master.zip
-```
-
-### Load demo data
-```{}
-bash iMAP/code/demo_data.bash
-```
-
-### Download 515-806 conservative fragments
-  * This is iMAP default classifier due to its small size.
-  * Can be spanned by sequencing 200–300 nt from both ends using Illumina MiSeq.
-
-  > Larger classifiers can cause memory issues which can ultimately kill a running instance.
-
-```{}
-bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
-```
->If using other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file. Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the filename containing your favorable classifier.
-
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Parameter to change</strong></th>
-<th align="left"><strong>Filename</strong></th>
-<th><strong>Default</strong></th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td align="left">Classifier</td><td align="left">iMAP/code/qiime2/qiime2.bash</td><td>gg-13-8-99-515-806-nb-classifier.qza</td>
-</tr>
-
-</tr>
-</tbody>
-</table>
-
-<br>
-
-### Download QIIME2 images
-> Credit goes to QIIME2 team for developing the qiime2core images. If you want you can pull the qiime2/core image directly from the [docker hub](https://hub.docker.com/layers/qiime2/core/2020.2/images/sha256-1e10d9831f08cbb65f4ad0018f83bf6ae180012afe2d05c86f727a99c7f91634?context=explore). Here we slightly modify the tag name to avoid messing up the original tag. Also note that, pulling a different image tag may require version-compartible trained OTU classifier.
-```{}
-docker pull tmbuza/qiime2core:v2020.2
-# docker pull tmbuza/qiime2core:v2019.1
-```
-
-
-### Create QIIME2 container
-```{}
-containerName=qiime2classification
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
-```
-
-### Start the analysis
-```{}
-bash code/qiime2/qiime2.bash
-```
-### Exit the QIIME2 container
-```{}
-exit
-```
-
-
-
-### View QIIME 2 results
-* Output path: iMAP/data/qiime2/results/
-* Use client-side interface: [https://view.qiime2.org/](https://view.qiime2.org/) to view the results (see image below).
-* Simply drag and drop the QIIME 2 artifacts (.qza files) or the visualizations (.qzv files). 
-* For more help visit [https://view.qiime2.org/about](https://view.qiime2.org/about).
-
-<br>
-
-![Screenshot](img/qiime2view.png)
-
-<hr>
-
-*End of QIIME2-based bioinformatics pipeline!*
-
-<hr>
-<br>
-<br>
-
-## Useful commands
-
-### 1. Convert biom file to TSV within QIIME2 container
-
-The output is a file containing OTUs and taxonomy
-```{}
-containerName=biomconvertmothur
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
-
-bash code/qiime2/convertmothur_biom.bash
-
-exit
-```

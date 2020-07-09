@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:700');
+
+a[href*="https://www.microbiome-bioinfo.com/"] {
+background:url(https://www.microbiome-bioinfo.com/wp-content/uploads/2020/02/MBDIicon.png) no-repeat left center;
+padding-left:19px;
+}
+.book .book-body .page-wrapper .page-inner section.normal h1 {
+    font-size: 3.4em;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h2 th{
+    font-size: 2.2em;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table {
+    overflow: scroll;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table th {
+  white-space:nowrap;
+  width:237px;
+  vertical-align:top;
+}
+.book .book-body .page-wrapper .page-inner section.normal table td {
+    font-size: 1em;
+    padding: 6px 6px 6px 6px;
+    min-width: 40px;
+}
+#useroptions table th, td {
+    font-size: 1em;
+    padding: 6px 6px 6px 6px;
+    min-width: 40px;
+    word-break: break-all;
+}
+
+
+#welcome h3, #license h3, #citation h3 {
+    font-size: 2em;
+}
+.book .book-body .page-wrapper .page-inner section.normal blockquote {
+    border-left: 4px solid #add8e6;;
+}
+
+.book .book-body img {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+h1, h2, .book-summary {
+  font-family: 'Lato', sans-serif;
+  /*color: #277DB0;*/
+ color: #0473aa;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h1 {
+    font-size: 2em;
+    background: #D9EDF7;
+    background-image: linear-gradient(90deg, #eaee44, #33d0ff);
+    color: black;
+    padding: 10px;
+    font-size: 36px;
+}
+
+#status h1 {
+  color: red;
+  background-image: linear-gradient(90deg,#ffffff,#ffffff);
+}
+#status h2 {
+  color: green;
+  background: #00ff00;
+  background-image: linear-gradient(90deg,#ffffff,#ffffff);
+  font-size: 40px;
+}
+#coverpage h1 {
+    font-size: 2em;
+    background: #D9EDF7;
+    background-image: linear-gradient(90deg, #ffffff, #ffffff);
+    color: black;
+    padding: 10px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h2 {
+    font-size: 2em;
+    background: #D9EDF7;
+/*    background-image: linear-gradient(90deg, #eaee44, #33d0ff);*/
+    color: black;
+    padding-left: 10px;
+}
+
+#status img {
+  text-wrap: normal;
+    float: left;
+    padding-right: 10px;
+}
+
+h3 .book-summary {
+  font-family: 'Lato', sans-serif;
+  color: #4daad8;
+  padding-left: 10px;
+}
+
+h4, h5, h6, .book-summary {
+  font-family: 'Lato', sans-serif;
+  color: #000000;
+  padding-left: 10px;
+}
+
+/*ul h4, h5, h6 {
+  list-style: none;
+  list-style-type: none;
+}*/
+
+.book .book-body .page-wrapper .page-inner section.normal hr {
+    height: 4px;
+    padding: 0;
+    margin: 1.7em 0;
+    overflow: hidden;
+    background-color: #000000;
+    border: none;
+    padding-top: -40px;
+}
+
+#R img, #rstudio img, #saveobjects img, #loadobjects img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: right;
+  float: left;
+  padding-right: 10px;
+}
+
+#license img {
+  width: 20%;
+}
+
+#footerbanner, #coverimg img {
+  width: 100%;
+}
+
+#titlepage h2 {
+  font-size: 2em;
+  color: #716c6c;
+}
+#header .author em {
+  font-size: 1.5em;
+  font-style: normal;
+}
+#header, #titlepage h1, .titlepage {
+font-weight: bold;
+text-align: center;
+}
+#header .title, #titlepage h1 em{
+  font-size: 3em;
+
+}
+#header .subtitle, #titlepage .titlepage h2  em {
+  font-style: normal;
+  font-size: 1em;
+}
+
+#titlepage .titlepage h3 em {
+  font-size: 1.5em;
+}
+#header .date em {
+  font-size: 1em;
+  font-style: normal;
+}
+
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+.tmbcomment, .tmbalert, .tmbinfo, .tmbqns, .tmbcheck1, .tmbcheck2, .tmbshare, .tmbarrowF, .tmb2arrowsF {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  position:relative;
+}
+
+.tmbcomment:before {
+    content: "\f14d";
+  font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbalert:before {
+    content: "\f06a";
+  font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbinfo:before {
+    content: "\f05a";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbinfo2:before {
+    content: "\10f129";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmbarrowF:before {
+    content: "\f0a9";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmb2arrowsF:before {
+    content: "\f101";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmbshare:before {
+    content: "\f064";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 35px;
+ }
+ 
+.tmbqns:before {
+    content: "\f059";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+
+.tmbcheck1:before {
+    content: "\f14a";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+.tmbcheck2:before {
+    content: "\f058";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    font-size: 45px;
+ }
+ 
+div.sourceCode {
+  position: relative;
+}
+
+.copy-to-clipboard-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.copy-to-clipboard-button:focus {
+  outline: 0;
+}
+
+div.sourceCode:hover > .copy-to-clipboard-button {
+  visibility: visible;
+}
+
+.leaflet-contaioner {
+  background: red;
+} 
+/* Large rounded green border */
+
+
