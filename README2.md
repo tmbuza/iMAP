@@ -247,17 +247,8 @@ This step helps you to:
 <br>
 <hr>
 
-## BIOINFORMATICS ANALYSIS
-* **Mode 1: Interactively on CLI**
-   * Users sequentially run individual or the bundled scripts on CLI (Command-Line-Interface). 
 
-> Interactive mode allows investigators to review the results progressively and make well-informed decisions.
-
-* **Mode 2: Remotely on HPC (in-progress)**
-   * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources.
-
-<br>
-<br>
+## READ QUALITY CONTROL
 
 ### Step 7: Read Preprocessing
 - Computing simple statistics of the raw reads 
@@ -274,6 +265,18 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 #### Progress report 2: Read Preprocessing 
 --- Details: In-progress ---
+
+<br>
+<br>
+
+## BIOINFORMATICS ANALYSIS
+* **Mode 1: Interactively on CLI**
+   * Users sequentially run individual or the bundled scripts on CLI (Command-Line-Interface). 
+
+> Interactive mode allows investigators to review the results progressively and make well-informed decisions.
+
+* **Mode 2: Remotely on HPC (in-progress)**
+   * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources.
 
 <br>
 <br>
