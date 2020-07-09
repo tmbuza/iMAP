@@ -156,7 +156,9 @@ cd iMAP
 
 ### Step 3: Install iMAP dependencies
 
-The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be intalled manually by the user. QIIME2 will be added in the later version.
+The following script installs the executable tools integrated in the pipeline, including seqkit, fastqc, bbmap, multiqc and mothur. The script does not include R or RStudio which must be installed manually by the user.
+
+> Users who prefer to use Portable Batch System (PBS) or similar methods may seek advices from their system administrators.
 
 ```{}
 bash ./code/00_1_InstallSoftwareDriver.bash
