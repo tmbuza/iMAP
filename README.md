@@ -19,9 +19,7 @@
 <br>
 
 ## Running Analysis On Specific Platforms (Best option)
-
-[README](https://github.com/tmbuza/iMAP/blob/master/README2.md) for all platforms (this document).
-* This is work under active development. Please visit this page regularly for more updates.
+* This README is work in progress. Please visit this page regularly for more updates.
 * Best option for integrating most applications
 * Uses RStudio to install R-packages (recommended)
 * No Docker images are required.
