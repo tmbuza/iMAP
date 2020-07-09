@@ -421,7 +421,7 @@ The output from preprocessing and bioinformatics analysis is analyzed and visual
 ## Useful link
 
 <ol>
-<li>https://community.rstudio.com/</li>
+<li> RStudio Community Q&A: https://community.rstudio.com/</li>
 <li></li>
 <li></li>
 <li></li>
