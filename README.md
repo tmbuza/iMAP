@@ -20,10 +20,9 @@
 
 ## Running Analysis On Specific Platforms (Best option)
 * This README is work in progress. Please visit this page regularly for more updates.
-* Best option for integrating most applications
-* Uses RStudio to install R-packages (recommended)
 * No Docker images are required.
 * May probably require manual installation of some tools.
+* Uses RStudio to install required R-packages.
 
 <br>
 <br>
@@ -31,11 +30,9 @@
 
 ### Step 1: Set-up the configuration file
 
-By default most of the executable files are saved or soft-linked to the $HOME/bin directory. 
+By default most of the executable files are saved or soft-linked to the $HOME/bin directory. If bin folder does not exist please create it 
 
 ```{}
-# If bin folder does not exist please create it
-
 cd ~/
 ls -al
 mkdir bin
