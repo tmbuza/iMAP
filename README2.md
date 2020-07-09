@@ -242,8 +242,9 @@ This step helps you to:
 
 <br>
 
-#### Progress report 1: Metadata profiling
+
 ```{block}
+#### Progress report 1: Metadata profiling
 Skip for now!
 This chunk will hold an R script that plots metadata information
 ```
