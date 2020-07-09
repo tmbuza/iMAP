@@ -351,11 +351,17 @@ bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 <br>
 <hr>
 
-## Running Analysis Remotely on HPC
-* Requires a job scheduling script.
+## Remotely on HPC
+* Requires a job scheduling script for:
+	* submitting a job to the HPC queue
+	* allocating the available computing resources, and 
+	* requesting additional resources.
 * The Portable Batch System (PBS) is the most used workload management solution for HPC systems and Linux clusters. 
 * The **qsub** command scans the lines of the PBS job scheduling script for directives or instructions.
-* Below is a sample PBS script. Replace the parameters in the script to match your systems.
+
+**Sample PBS script**
+
+>Replace the parameters in the script to match your systems.
 
 ```{}
 #!/bin/bash -f
@@ -383,7 +389,7 @@ exit 0
 
 **Description of the PBS code**
 
-The above PBS submit script specifies:  
+The above PBS script specifies:  
 
 * The environment to use (#!/bin/bash -f)
 * The name of the job (#PBS -N JobID)
