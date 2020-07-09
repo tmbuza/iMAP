@@ -244,9 +244,8 @@ This step helps you to:
 
 
 ```{block}
-#### Progress report 1: Metadata profiling
 Skip for now!
-This chunk will hold an R script that plots metadata information
+This chunk will hold an R script that generates Progress report 1: Metadata profiling
 ```
 
 <br>
@@ -269,22 +268,20 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 <br>
 
-#### Progress report 2: Read Preprocessing 
---- Details: In-progress ---
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 2: Read Preprocessing
+```
 
 <br>
 <br>
 
 ## BIOINFORMATICS ANALYSIS
-* **Mode 1: Interactively on CLI**
-   * Users sequentially run individual or the bundled scripts on CLI (Command-Line-Interface). 
 
-> Interactive mode allows investigators to review the results progressively and make well-informed decisions.
+## Interactively on CLI
+* Users sequentially run individual script or the bundled scripts on CLI (Command-Line-Interface). 
+* Interactive mode allows investigators to review the results and make well-informed decisions, progressively.
 
-* **Mode 2: Remotely on HPC (in-progress)**
-   * Requires a job scheduling script to submit to the HPC queue, to allocate the available computing resources, and to request additional resources.
-
-<br>
 <br>
 
 ### Step 8: Microbial Profiling
@@ -311,8 +308,10 @@ bash ./code/01_3_ClassifySeqDriver.bash
 
 <br>
 
-#### Progress report 3: Sequence Processing 
---- Details: In-progress ---
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 3: Sequence Processing
+```
 
 <br>
 <br>
@@ -349,10 +348,10 @@ bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 
 <br>
 
-#### Progress report 4: Preliminary Analysis 
---- Details: In-progress ---
-
-
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 4: Preliminary Analysis 
+```
 <br>
 <br>
 <hr>
