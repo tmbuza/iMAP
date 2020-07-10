@@ -237,7 +237,7 @@ This step helps you to:
 
 <br>
 
-
+**Progress report 1: Metadata profiling**
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 1: Metadata profiling
@@ -263,6 +263,7 @@ bash ./code/01_1_ReadPreprocessDriver.bash
 
 <br>
 
+**Progress report 2: Read Preprocessing**
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 2: Read Preprocessing
@@ -303,6 +304,7 @@ bash ./code/01_3_ClassifySeqDriver.bash
 
 <br>
 
+**Progress report 3: Sequence Processing**
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 3: Sequence Processing
@@ -343,6 +345,7 @@ bash ./code/01_6_PhylogenyBasedTaxaDriver.bash
 
 <br>
 
+**Progress report 4: Preliminary Analysis**
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 4: Preliminary Analysis 
