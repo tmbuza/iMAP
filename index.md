@@ -47,21 +47,6 @@ bash iMAP/code/00_allDemo_data.bash
 
 <br>
 
-<!-- <br>
-
-### Download reference databases (for mothur-based pipeline only)
-```{}
-bash iMAP/code/refdatabase/iMAP_download_driver.bash
-```
-<br>
-
-### Download reference database (QIIME2-based pipeline only)
-```{}
-bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
-``` -->
-
-<br>
-
 ### Check missing folders or files
 > Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
 
