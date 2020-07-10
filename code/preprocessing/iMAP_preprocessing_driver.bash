@@ -21,5 +21,5 @@ mkdir results/figures
 bash code/preprocessing/02_get_read_statistics.bash
 bash code/preprocessing/03_get_basecall_scores.bash
 bash code/preprocessing/04_get_highscore_reads.bash
-bash code/preprocessing/05_get_qced_reads.bash
+bash code/preprocessing/05_get_qcphix_reads.bash
 bash code/preprocessing/06_final_seqkit.bash
