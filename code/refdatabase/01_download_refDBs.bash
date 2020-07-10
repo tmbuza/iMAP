@@ -4,101 +4,63 @@
 
 ## Reference data folders folders
 
-mkdir data \
-	data/references 
+mkdir iMAP/data \
+    iMAP/data/references 
 
-## SILVA seed alignment (default)
+## sILVA seed alignment (default)
 
-# sudo wget --no-check-certificate https://www.mothur.org/w/images/7/71/Silva.seed_v132.tgz 
-sudo wget --no-check-certificate https://mothur.s3.us-east-2.amazonaws.com/wiki/silva.seed_v138.tgz
+wget --no-check-certificate https://mothur.s3.us-east-2.amazonaws.com/wiki/silva.seed_v138.tgz
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, downloading Silva.seed akignments aborted, exiting...!" 1>&2
+    echo "[Error] Sorry, downloading silva.seed alignments aborted, exiting...!" 1>&2
     exit 1
 fi
 
 
-sudo tar -xvzf Silva.seed_v138.tgz -C data/references/
+tar -xvzf silva.seed_v138.tgz -C iMAP/data/references/
 
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, cannot untar the Silva.seed_v138.tgz file, exiting...!" 1>&2
+    echo "[Error] Sorry, cannot untar the silva.seed_v138.tgz file, exiting...!" 1>&2
     exit 1
 fi
 
+# # Bacteria subset
+# mothur "#get.lineage(fasta=iMAP/data/references/silva.seed_v138.align, taxonomy=iMAP/data/references/silva.seed_v138.tax, taxon=Bacteria)"
 
-mothur "#get.lineage(fasta=data/references/silva.seed_v138.align, taxonomy=data/references/silva.seed_v138.tax, taxon=Bacteria);degap.seqs(fasta=data/references/silva.seed_v138.pick.align, processors=8)"
-
-
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, getting bacteria lineage and degapping aborted, exiting...!" 1>&2
-    exit 1
-fi
+# if [ "$?" != "0" ]; then
+#     echo "[Error] Sorry, getting bacteria lineagedid not finish, exiting...!" 1>&2
+#     exit 1
+# fi
 
 ## Optional renaming of the files
-sudo mv data/references/silva.seed_v138.pick.align data/references/silva.seed.align
-# sudo mv data/references/silva.seed_v132.pick.tax  data/references/silva.seed.tax
-
+mv iMAP/data/references/silva.seed_*.tax iMAP/data/references/silva.seed.tax
+# mv iMAP/data/references/silva.seed_*.tax.accnos iMAP/data/references/silva.seed.accnos
+mv iMAP/data/references/silva.seed_*.align iMAP/data/references/silva.seed.align
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, moving files renaming the files failed, exiting...!" 1>&2
+    echo "[Error] Sorry, renaming the files failed, exiting...!" 1>&2
     exit 1
 fi
-
-sudo rm Silva.seed_v138.tgz*
-
 
 ## Get taxonomy classifiers
+mothur "#degap.seqs(fasta=iMAP/data/references/silva.seed.align, processors=4)"
 
-##############################################################
-# # Taxonomy references
-##############################################################
-
-##############################################################
-# Silva nr
-## Make a taxonomy references fasta file from silva.nr.align. This will output silva.nr.fasta which automatically is placed in the data/references
-
-# mothur/mothur "#degap.seqs(fasta=data/references/silva.nr.align)"
-# ```
-
-##############################################################
-# Silva seed
-## Make a taxonomy references fasta file from silva.seed.align . This will output silva.seed.fasta which automatically is placed in the data/references
-# * Clean up the directories to remove the extra files
-
-mothur "#degap.seqs(fasta=./data/references/silva.seed.align)"
-# ```
 
 if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, degapping silva.seed.align aborted, exiting...!. Do you have executable mothur function?" 1>&2
+    echo "[Error] Sorry, degapping for sila classifier (fasta) did not finish, exiting...!" 1>&2
     exit 1
 fi
 
 
-# ##############################################################
-# ### RDP
-# # ```{}
-# wget --no-check-certificate -N https://www.mothur.org/w/images/c/c3/Trainset16_022016.pds.tgz
-# tar xvzf Trainset16_022016.pds.tgz
-# mv trainset16_022016.pds/train* data/references/
-# rm -rf trainset16_022016.pds
-# rm Trainset16_022016.pds.tgz
-# # ```
+
 
 # ##############################################################
-# ### Greengenes
-# # ```{}
-# wget --no-check-certificate http://www.mothur.org/w/images/6/68/Gg_13_8_99.taxonomy.tgz
-# tar xvzf Gg_13_8_99.taxonomy.tgz gg_13_8_99.fasta gg_13_8_99.gg.tax
-# mv gg* data/references/
-# rm Gg_13_8_99.taxonomy.tgz
-# # ```
 
-# ##############################################################
 # Get HMP_MOCK.fasta - an unaligned fasta sequence file that contains sequences in the mock community
 
-sudo wget --no-check-certificate https://www.mothur.org/MiSeqDevelopmentData/HMP_MOCK.fasta && \
-sudo mv HMP_MOCK.fasta data/references
+wget --no-check-certificate https://www.mothur.org/MiSeqDevelopmentData/HMP_MOCK.fasta && \
+mv HMP_MOCK.fasta iMAP/data/references
 
 
 if [ "$?" != "0" ]; then
@@ -108,5 +70,10 @@ fi
 
 
 # #```{}
-sudo mv mothur.*.logfile LOG
+mv mothur.*.logfile iMAP/LOG
 #```
+
+rm silva.seed_v138.tgz*
+
+echo " Downloading reference databases completed successfully!" 1>&2
+
