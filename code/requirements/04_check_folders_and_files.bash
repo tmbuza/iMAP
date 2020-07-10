@@ -87,8 +87,8 @@ REQUIRED_METADATA_FILES=(
   "samplemetadata.tsv"
   # "samplemetadata_casestudy.txt"
   "qced.files"
-  "qctrim25.files"
-  "qcphix.files"
+  # "qctrim25.files"
+  # "qcphix.files"
   "manifest.txt"
   # "186samples.metadata"
 )
