@@ -1,8 +1,9 @@
 set.dir(input=data/mothur/, output=data/mothur/)
 set.current(processors=4)
 # make.file(inputdir=data/raw/qced, type=gz, prefix=qced)
-# make.contigs(file=data/metadata/qced.files, inputdir=data/raw/qced, outputdir=data/mothur/)
 make.contigs(file=data/metadata/qced.files, inputdir=data/raw, outputdir=data/mothur/)
+# make.contigs(file=data/metadata/qced.files, inputdir=data/raw/qctrim25, outputdir=data/mothur/)
+# make.contigs(file=data/metadata/qced.files, inputdir=data/raw/qcphix, outputdir=data/mothur/)
 
 summary.seqs(fasta=current)
 screen.seqs(fasta=current, group=current, maxambig=0, minlength=100, maxlength=300)
