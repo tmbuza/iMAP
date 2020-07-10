@@ -274,7 +274,7 @@ This chunk will hold an R script that generates Progress report 2: Read Preproce
 
 ## BIOINFORMATICS ANALYSIS
 
-## Interactively on CLI
+## A: Interactively on CLI
 * Users sequentially run individual script or the bundled scripts on CLI (Command-Line-Interface). 
 * Interactive mode allows investigators to review the results and make well-informed decisions, progressively.
 
@@ -296,7 +296,9 @@ bash ./code/01_2_SeqProcessingDriver.bash
 
 **Sequence classification**
 
-* Classifying the sequences and performing post-classification quality control.
+* Taxonomic classification of the sequences
+* Post-classification quality control.
+
 
 ```{}
 bash ./code/01_3_ClassifySeqDriver.bash
@@ -304,7 +306,7 @@ bash ./code/01_3_ClassifySeqDriver.bash
 
 <br>
 
-**Progress report 3: Sequence Processing**
+**Progress report 3: Microbial Profiling**
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 3: Sequence Processing
@@ -354,13 +356,14 @@ This chunk will hold an R script that generates Progress report 4: Preliminary A
 <br>
 <hr>
 
-## Remotely on HPC
-* Requires a job scheduling script for:
+## B: Remotely on HPC
+* Complete step 1-4 above
+* FYI the Portable Batch System (PBS) is the most used workload management solution for HPC systems and Linux clusters. To certain, check with your system administrator.
+* Create a job scheduling i.e. PBS script (or similar) for:
 	* submitting a job to the HPC queue
 	* allocating the available computing resources, and 
 	* requesting additional resources.
-* The Portable Batch System (PBS) is the most used workload management solution for HPC systems and Linux clusters. 
-* The **qsub** command scans the lines of the PBS job scheduling script for directives or instructions.
+* Submit the job using a **qsub** command. This command scans the lines of the PBS job scheduling script for directives or instructions.
 
 **Sample PBS script**
 
