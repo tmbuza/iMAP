@@ -23,3 +23,5 @@ cd ../../
 
 fastqc /imap/data/raw/qctrim25/*fastq.gz -o ./results/fastqc/qctrim25
 
+cp /imap/data/raw/qced.files /imap/data/raw/qctrim25/qced.files
+
