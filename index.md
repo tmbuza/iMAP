@@ -175,8 +175,7 @@ bash 02_readPreprocess_driver.bash  (Being updated to run outside Docker contain
 <br>
 <hr>
 
-# Sequence Processing and Classification
-
+# Microbial Profiling
 <hr>
 <br>
 
