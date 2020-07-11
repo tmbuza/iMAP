@@ -203,7 +203,7 @@ which uchime # must show the location of uchime
 <br>
 
 ### Step 4: Add data to designated folders 
-This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders.
+This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders. Use the new versions if available.
 
 <br>
 
