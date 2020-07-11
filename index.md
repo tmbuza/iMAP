@@ -284,25 +284,7 @@ bash iMAP/code/demo_data.bash
 bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 ``` -->
 
->If using other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file. Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the filename containing your favorable classifier.
-
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Parameter to change</strong></th>
-<th align="left"><strong>Filename</strong></th>
-<th><strong>Default</strong></th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td align="left">Classifier</td><td align="left">iMAP/code/qiime2/qiime2.bash</td><td>gg-13-8-99-515-806-nb-classifier.qza</td>
-</tr>
-
-</tr>
-</tbody>
-</table>
+>If using other pretrained QIIME2-formatted classifiers you must replace the default file with the filename containing your favorable classifier. It is safe to do so when outside the container. Path: iMAP/code/qiime2/gg-13-8-99-515-806-nb-classifier.qza.
 
 <br>
 
