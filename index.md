@@ -128,7 +128,7 @@ exit
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 2: Read Preprocessing
-bash code/01_metadataProfiling_driver.bash (Being updated)
+bash code/01_metadataProfiling_driver.bash (Being updated to run outside Docker container)
 ```
 
 <br>
@@ -169,7 +169,7 @@ open iMAP/results/multiqc/qced/R1/multiqc_report.html
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 2: Read Preprocessing
-02_readPreprocess_driver.bash (Being updated)
+bash 02_readPreprocess_driver.bash  (Being updated to run outside Docker container)
 ```
 
 <br>
