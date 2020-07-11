@@ -183,7 +183,7 @@ which uchime # must show the location of uchime
 * [Install bbmap](https://sourceforge.net/projects/bbmap/).
 * [Install multiqc](https://multiqc.info/docs/#manual-installation).
 * [Install mothur](https://github.com/mothur/mothur/releases/tag/v.1.43.0).
-* QIIME2: In progress. Docker image is available [here](https://hub.docker.com/r/tmbuza/qiime2core).
+* QIIME2: In progress. Docker image tags are available [here](https://hub.docker.com/r/tmbuza/qiime2core/tags).
 
 <br>
 
