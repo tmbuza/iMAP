@@ -420,8 +420,9 @@ The above PBS script specifies:
 ## IN-DEPTH ANALYSIS, VISUALIZATION & REPORTING (In progress)
 The output from preprocessing and bioinformatics analysis is analyzed and visualized via the RStudio IDE (Integrated Development Environment). The entire analysis is summarized in a single HTML report or in a pre-specified format using Rmarkdown.
 
-<hr>
 <br>
+<hr>
+
 
 ## Related Links
 
