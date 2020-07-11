@@ -202,39 +202,24 @@ which uchime # must show the location of uchime
 <br>
 <br>
 
-### Step 4: Add data to designated folders 
-This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders.
-
+### Step 4: Add required files to designated folders
+* Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders. See [this Table]() for file location.
+* Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
 ```
 
 <br>
-
-### Step 5: Check missing folders or files
-> Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
-
-```{}
-bash ./code/00_3_CheckFilesDriver.bash 
-```
-
 <br>
-**What to replace**
 
-* Rawdata: iMAP/data/raw/
-* Metadata: iMAP/data/metadata/
-* Mapping files: iMAP/data/metadata/
-
->Re-run checkFiles command everytime you change the original data files. It is important to maintain the format presented by the demo data.
+### Step 5: Check folders and files to be certain
+> important!. Do not start the next step unless all the requirements are met. Make sure that you don’t have any missing file required for the downstream analysis. Repeat this step as necessary.
 
 ```{}
 bash ./code/00_3_CheckFilesDriver.bash
 ```
 
-**Changing default settings**
-
->Users who want to change the default settings may do so using any text editor. Use **[this table]**(https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
-
+<br>
 <br>
 <hr>
 
