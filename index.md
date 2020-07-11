@@ -33,7 +33,7 @@ rm -rf master.zip
 <br>
 
 ### Add data to designated folders 
-This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders.
+This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders. Use the new versions if available.
 
 <br>
 
