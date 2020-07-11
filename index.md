@@ -289,7 +289,7 @@ bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 <br>
 
 ### Download QIIME2 images
-> Credit goes to QIIME2 team for developing the qiime2core images. If you want you can pull the qiime2/core image directly from the QIIME2 [docker hub](https://hub.docker.com/layers/qiime2/core/2020.2/images/sha256-1e10d9831f08cbb65f4ad0018f83bf6ae180012afe2d05c86f727a99c7f91634?context=explore). 
+> Credit goes to the QIIME2 team for developing the qiime2core images. If you want you can pull the qiime2/core image directly from the QIIME2 [docker hub](https://hub.docker.com/r/qiime2/core/tags). 
 
 <!-- Here we slightly modify the tag name to avoid messing up the original tag. Please note that, pulling a different tag from docker hub may require version-compartible trained OTU classifier. If version and classifier are not compartible the pipeline will exit and display an error.
 
