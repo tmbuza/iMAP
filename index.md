@@ -305,7 +305,7 @@ docker pull qiime2/core:2020.6
 ### Create QIIME2 container
 ```{}
 containerName=qiime2classification
-docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  tmbuza/qiime2core:v2019.1 /bin/bash
+docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  qiime2/core:2020.6 /bin/bash
 ```
 
 ### Start the analysis
