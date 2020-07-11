@@ -310,6 +310,18 @@ docker run --rm --name=$containerName -it -v $(pwd)/iMAP:/imap --workdir=/imap  
 ```{}
 bash code/qiime2/qiime2.bash
 ```
+
+### View Progress
+```{}
+# While inside the container
+cat LOG/qiime2logfile.txt
+
+# While outside the container
+cat iMAP/LOG/qiime2logfile.txt
+
+# or locate the text file named *qiime2logfile.txt* in the iMAP/LOG folder and open it manually.
+```
+
 ### Exit the QIIME2 container
 ```{}
 exit
