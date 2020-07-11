@@ -203,7 +203,7 @@ which uchime # must show the location of uchime
 <br>
 
 ### Step 4: Add required files to designated folders
-* Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders. See [this Table]() for file location.
+* Place the rawdata, metadata, mapping files, reference alignments, and classifiers in the designated folders. See **[this Table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html)** for file location.
 * Highly recommended testing your system with the demo data loaded into the designated folders using the following command:
 ```{}
 bash ./code/00_2_GetDemoDataDriver.bash
