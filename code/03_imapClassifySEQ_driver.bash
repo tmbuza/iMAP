@@ -22,14 +22,14 @@ if [ "$?" != "0" ]; then
 fi
 
 
-bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash
+# bash ./code/seqerrorrate/iMAP_seqerrorrate_driver.bash
 
-if [ "$?" != "0" ]; then
-    echo "[Error] Sorry, error estimation did not finish, exiting...,!" 1>&2
-    exit 1
-fi
+# if [ "$?" != "0" ]; then
+#     echo "[Error] Sorry, error estimation did not finish, exiting...,!" 1>&2
+#     exit 1
+# fi
 
-mv mothur.*.logfile LOG
+# mv mothur.*.logfile LOG
 
 rm *.temp
 

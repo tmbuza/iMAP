@@ -1,1 +1,149 @@
 
+QIIME2 analysis started at: 2020-07-11_05-26-05
+
+
+METADATA INSPECTION 
+
+          COLUMN NAME  TYPE       
+=====================  ===========
+      BarcodeSequence  categorical
+ForwardPrimerSequence  categorical
+ReversePrimerSequence  categorical
+          ForwardRead  categorical
+          ReverseRead  categorical
+                 Var1  categorical
+                 Var2  categorical
+                 Var3  categorical
+                 Var4  numeric    
+          Description  categorical
+=====================  ===========
+                 IDS:  8
+             COLUMNS:  10
+Saved Visualization to: /imap/data/qiime2/results/tabulated-sample-metadata.qzv
+Imported /imap/data/metadata/manifest.txt as PairedEndFastqManifestPhred33 to /imap/data/qiime2/results/demux.qza
+Saved Visualization to: /imap/data/qiime2/results/demux.qzv
+
+real	0m12.674s
+user	0m12.011s
+sys	0m0.574s
+
+QUALITY CONTROL WITH DADA2 
+
+Saved FeatureTable[Frequency] to: /imap/data/qiime2/results/feature-table.qza
+Saved FeatureData[Sequence] to: /imap/data/qiime2/results/rep-seqs.qza
+Saved SampleData[DADA2Stats] to: /imap/data/qiime2/results/stats.qza
+
+real	2m1.092s
+user	1m59.698s
+sys	0m1.565s
+Saved Visualization to: /imap/data/qiime2/results/stats.qzv
+Saved Visualization to: /imap/data/qiime2/results/feature-table.qzv
+Saved Visualization to: /imap/data/qiime2/results/rep-seqs.qzv
+
+SEQUENCE ALIGNMENT
+
+Saved FeatureData[AlignedSequence] to: /imap/data/qiime2/results/aligned-rep-seqs.qza
+Saved FeatureData[AlignedSequence] to: /imap/data/qiime2/results/masked-aligned-rep-seqs.qza
+
+PHYLOGENETIC SEQUENCE CLUSTERING
+
+Saved Phylogeny[Unrooted] to: /imap/data/qiime2/results/unrooted-tree.qza
+Saved Phylogeny[Rooted] to: /imap/data/qiime2/results/rooted-tree.qza
+Saved Visualization to: /imap/data/qiime2/results/alpha-rarefaction.qzv
+
+real	0m10.683s
+user	0m10.008s
+sys	0m0.538s
+Saved FeatureTable[Frequency] to: /imap/data/qiime2/results/core-metrics-results/rarefied_table.qza
+Saved SampleData[AlphaDiversity] to: /imap/data/qiime2/results/core-metrics-results/faith_pd_vector.qza
+Saved SampleData[AlphaDiversity] to: /imap/data/qiime2/results/core-metrics-results/observed_features_vector.qza
+Saved SampleData[AlphaDiversity] to: /imap/data/qiime2/results/core-metrics-results/shannon_vector.qza
+Saved SampleData[AlphaDiversity] to: /imap/data/qiime2/results/core-metrics-results/evenness_vector.qza
+Saved DistanceMatrix to: /imap/data/qiime2/results/core-metrics-results/unweighted_unifrac_distance_matrix.qza
+Saved DistanceMatrix to: /imap/data/qiime2/results/core-metrics-results/weighted_unifrac_distance_matrix.qza
+Saved DistanceMatrix to: /imap/data/qiime2/results/core-metrics-results/jaccard_distance_matrix.qza
+Saved DistanceMatrix to: /imap/data/qiime2/results/core-metrics-results/bray_curtis_distance_matrix.qza
+Saved PCoAResults to: /imap/data/qiime2/results/core-metrics-results/unweighted_unifrac_pcoa_results.qza
+Saved PCoAResults to: /imap/data/qiime2/results/core-metrics-results/weighted_unifrac_pcoa_results.qza
+Saved PCoAResults to: /imap/data/qiime2/results/core-metrics-results/jaccard_pcoa_results.qza
+Saved PCoAResults to: /imap/data/qiime2/results/core-metrics-results/bray_curtis_pcoa_results.qza
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/unweighted_unifrac_emperor.qzv
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/weighted_unifrac_emperor.qzv
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/jaccard_emperor.qzv
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/bray_curtis_emperor.qzv
+
+real	0m9.247s
+user	0m8.514s
+sys	0m1.235s
+
+STATISTICAL ANALYSIS
+
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/evenness-group-significance.qzv
+
+real	0m5.058s
+user	0m4.541s
+sys	0m0.406s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/faith-pd-group-significance.qzv
+
+real	0m5.048s
+user	0m4.513s
+sys	0m0.429s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/unweighted-unifrac-Var1-significance.qzv
+
+real	0m5.490s
+user	0m6.031s
+sys	0m0.554s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/unweighted-unifrac-Var2-significance.qzv
+
+real	0m5.529s
+user	0m6.038s
+sys	0m0.556s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/unweighted-unifrac-anosim-Var1-significance.qzv
+
+real	0m5.415s
+user	0m5.892s
+sys	0m0.588s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/unweighted-unifrac-anosim-Var2-significance.qzv
+
+real	0m5.465s
+user	0m5.966s
+sys	0m0.552s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/unweighted-unifrac-emperor.qzv
+
+real	0m5.209s
+user	0m4.592s
+sys	0m0.472s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/weighted-unifrac-emperor.qzv
+
+real	0m5.115s
+user	0m4.528s
+sys	0m0.445s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/bray-curtis-emperor.qzv
+
+real	0m5.097s
+user	0m4.548s
+sys	0m0.422s
+Saved Visualization to: /imap/data/qiime2/results/core-metrics-results/jaccard-emperor.qzv
+
+real	0m5.333s
+user	0m4.653s
+sys	0m0.514s
+
+TAXONOMY ASSIGNMENT
+
+Saved FeatureData[Taxonomy] to: /imap/data/qiime2/results/taxonomy.qza
+
+real	0m38.813s
+user	0m33.855s
+sys	0m4.285s
+Saved Visualization to: /imap/data/qiime2/results/taxonomy.qzv
+Saved Visualization to: /imap/data/qiime2/results/taxa-bar-plots.qzv
+Exported /imap/data/qiime2/results/feature-table.qza as BIOMV210DirFmt to directory /imap/data/qiime2/results/exported-feature-table
+
+CONVERT BIOM TO TSV
+
+Exported /imap/data/qiime2/results/taxonomy.qza as TSVTaxonomyDirectoryFormat to directory /imap/data/qiime2/results/exported-taxonomy-table
+Saved Visualization to: /imap/data/qiime2/results/exported-feature-table/feature-taxonomy-table.qzv
+Exported /imap/data/qiime2/results/rooted-tree.qza as NewickDirectoryFormat to directory /imap/data/qiime2/results/exported-rooted-tree
+Exported /imap/data/qiime2/results/unrooted-tree.qza as NewickDirectoryFormat to directory /imap/data/qiime2/results/exported-unrooted-tree
+DONE!

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-fastqc ./data/raw/*fastq.gz -o ./results/fastqc/qc0
+mkdir results/fastqc
+mkdir results/fastqc/qced
+
+fastqc ./data/raw/*fastq.gz -o ./results/fastqc/qced
 
 
