@@ -359,7 +359,7 @@ exit
 | URLs | Description | Status |
 |-------|--------------------| --------- |
 |[Manuscript](https://rdcu.be/b5iVj) | In BMC Bioinformatics | Software |
-|[README](https://github.com/tmbuza/iMAP/blob/master/README2.md/) | Guidelines | Quick user's guide ||
+|[README](https://github.com/tmbuza/iMAP/blob/master/README.md/) | Guidelines | iMAP README |
 [Practical guide](https://www.microbiome-bioinfo.com/microbiomeanalysis/) | Systematic Microbiome data analysis  | eBook, coming in 2021 |
 |[Useful link](https://www.microbiome-bioinfo.com/) | Consulting Services | In Progress |
 
