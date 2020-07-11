@@ -91,6 +91,11 @@ docker login
 docker info
 ```
 
+<!-- ### Starting the Docker in daemon mode
+```{}
+choose Application > Start "Docker Daemon"
+``` -->
+
 <br>
 <hr>
 <br>
