@@ -260,7 +260,8 @@ bash ./code/04_3_phylogeny_driver.bash
 * You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
 * Classifier: Naive Bayes classifiers trained on GreenGenes or SILVA database with 99% OTUs. 
 
-### Install iMAP repo (if not installed)
+
+<!-- ### Install iMAP repo (if not installed)
 ```{}
 wget --no-check-certificate https://github.com/tmbuza/iMAP/archive/master.zip 
 unzip master.zip
@@ -281,7 +282,8 @@ bash iMAP/code/demo_data.bash
 
 ```{}
 bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
-```
+``` -->
+
 >If using other pretrained QIIME2-formatted classifiers you must replace the default settings in the executable file. Below is a location and the file to be altered. Find and replace "gg-13-8-99-515-806-nb-classifier.qza" string with the filename containing your favorable classifier.
 
 <table>
@@ -305,10 +307,10 @@ bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 <br>
 
 ### Download QIIME2 images
-> Credit goes to QIIME2 team for developing the qiime2core images. If you want you can pull the qiime2/core image directly from the [docker hub](https://hub.docker.com/layers/qiime2/core/2020.2/images/sha256-1e10d9831f08cbb65f4ad0018f83bf6ae180012afe2d05c86f727a99c7f91634?context=explore). Here we slightly modify the tag name to avoid messing up the original tag. Also note that, pulling a different image tag may require version-compartible trained OTU classifier.
+> Credit goes to QIIME2 team for developing the qiime2core images. If you want you can pull the qiime2/core image directly from the QIIME2 [docker hub](https://hub.docker.com/layers/qiime2/core/2020.2/images/sha256-1e10d9831f08cbb65f4ad0018f83bf6ae180012afe2d05c86f727a99c7f91634?context=explore). Here we slightly modify the tag name to avoid messing up the original tag. Please note that, pulling a different tag from docker hub may require version-compartible trained OTU classifier. If version and classifier are not compartible the pipeline will exit and display an error.
+
 ```{}
 docker pull tmbuza/qiime2core:v2020.2
-# docker pull tmbuza/qiime2core:v2019.1
 ```
 
 
