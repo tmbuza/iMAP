@@ -123,6 +123,14 @@ bash code/01_metadataProfiling_driver.bash
 exit
 ```
 
+
+**Progress report 1: Metadata profiling**
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 2: Read Preprocessing
+bash code/01_metadataProfiling_driver.bash (Being updated)
+```
+
 <br>
 
 # Read Quality Control
@@ -157,10 +165,13 @@ open iMAP/results/multiqc/qced/R1/multiqc_report.html
 
 <br>
 
-### Read QC progress report
-```{}
-In Progress
+**Progress report 2: Read Preprocessing**
+```{block}
+Skip for now!
+This chunk will hold an R script that generates Progress report 2: Read Preprocessing
+02_readPreprocess_driver.bash (Being updated)
 ```
+
 <br>
 <hr>
 
@@ -174,16 +185,16 @@ In Progress
 * Default classifier is a recreated seed from [Silva database](https://mothur.org/wiki/silva_reference_files/).
 * You can use different classifiers from [other Mothur taxonomy outlines](https://mothur.org/wiki/taxonomy_outline/).
 
-### Download reference databases (Silva seed alignment & classifier)
-```{}
-bash iMAP/code/refdatabase/iMAP_download_driver.bash
-```
+<!-- # ### Download reference databases (Silva seed alignment & classifier)
+# ```{}
+# bash iMAP/code/refdatabase/iMAP_download_driver.bash
+# ```
 
-### Check files
-```{}
-bash iMAP/code/00_checkFiles_driver.bash
-```
-
+# ### Check files
+# ```{}
+# bash iMAP/code/00_checkFiles_driver.bash
+# ```-->
+ 
 ### Download Mothur images
 ```{}
 docker pull tmbuza/mothur:v1.41.3
