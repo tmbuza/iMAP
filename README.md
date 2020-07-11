@@ -241,6 +241,7 @@ This step helps you to:
 ```{block}
 Skip for now!
 This chunk will hold an R script that generates Progress report 1: Metadata profiling
+bash code/01_metadataProfiling_driver.bash
 ```
 
 <br>
