@@ -196,7 +196,7 @@ bash 02_readPreprocess_driver.bash  (Being updated to run outside Docker contain
  
 ### Download Mothur images
 ```{}
-docker pull tmbuza/mothur:v1.41.3
+docker pull tmbuza/mothur:v1.43.0
 ```
 
 ### Create a container for bash CLI
