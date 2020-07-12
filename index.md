@@ -33,7 +33,7 @@ rm -rf master.zip
 <br>
 
 ### Add data to designated folders 
-This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders.
+This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders. Use the new versions if available.
 
 <br>
 
@@ -289,15 +289,10 @@ bash iMAP/code/qiime2/qiime2-99-515-806-nb-classifier.bash
 <br>
 
 ### Download QIIME2 images
-> Credit goes to the QIIME2 team for developing the qiime2core images. If you want you can pull different tag of the qiime2/core image directly from [QIIME2 docker repository](https://hub.docker.com/r/qiime2/core/tags). Please note that, pulling a different tag from docker hub may require version-compartible trained OTU classifier.
-
-<!--
-```{}
-docker pull tmbuza/qiime2core:v2020.2
-``` -->
+> We will use a QIIME2 version 2020.6 Docker image. Credit goes to the QIIME2 team for developing the qiime2core images. We renamed the image to enable us to commit changes to the image. Optionally, you can pull different tag of the qiime2/core image directly from [QIIME2 docker repository](https://hub.docker.com/r/qiime2/core/tags). Please note that, using a different tag may require a version-compartible trained OTU classifier. 
 
 ```{}
-docker pull qiime2/core:2020.6
+docker pull tmbuza/qiime2core:v2020.6
 ```
 
 ### Create QIIME2 container
