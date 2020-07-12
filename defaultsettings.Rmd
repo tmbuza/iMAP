@@ -59,7 +59,7 @@ output:
 <td align="left">Reference</td>
 <td align="left">iMAP/code/seqclassification</td>
 <td align="left">01_classify_seqs.batch</td>
-<td>silva.seed.ng.fasta</td>
+<td>silva.seed.ng.fasta; QIIME2</td>
 </tr>
 <tr>
 <td align="left">Taxonomy</td>
@@ -73,10 +73,16 @@ output:
 <td align="left">01_classify_seqs.batch</td>
 <td>cutoff=80</td>
 <tr>
-<td align="left">QIIME2 settings</td>
+<td align="left">QIIME2 DADA2 settings</td>
 <td align="left">iMAP/code/qiime2</td>
 <td align="left">qiime2.bash</td>
 <td>DADA2 QC parameters are set at 0</td>
+</tr>
+<tr>
+<td align="left">QIIME2 Taxonomy classifier</td>
+<td align="left">iMAP/code/qiime2</td>
+<td align="left">qiime2.bash</td>
+<td>gg-13-8-99-515-806-nb-classifier.qza</td>
 </tr>
 </tbody>
 </table>
