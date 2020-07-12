@@ -257,10 +257,9 @@ bash ./code/04_3_phylogeny_driver.bash
 
 * Must install iMAP repo first which will automatically create a directory named **iMAP**.
 * Requires a QIIME2 trained classifer.
-* You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
 * You can use Naive Bayes (nb) classifiers trained on GreenGenes or SILVA database with 99% OTUs.
 * Default: Greengenes 515-806 conservative fragments.
-
+* You can train your own classifier using the [q2-feature-classifier](https://github.com/qiime2/q2-feature-classifier).
 
 <!-- ### Install iMAP repo (if not installed)
 ```{}
