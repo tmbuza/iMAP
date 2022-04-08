@@ -1,0 +1,134 @@
+#SampleID	ForwardFastqFile	ReverseFastqFile	TreatmentGroup	ecosystem	isolate	latitude	longitude	season	condition	description
+SRR10245278	SRR10245278_1.fastq	SRR10245278_2.fastq	Pig	Serengeti	Pig	2.1540	34.6857	Dry	Processed	Suidae
+SRR10245280	SRR10245280_1.fastq	SRR10245280_2.fastq	Gazelle	Selous	Gazelle	9.0000	37.5000	Rainy	Fresh	Gazella
+SRR10245282	SRR10245282_1.fastq	SRR10245282_2.fastq	Zebra	Selous	Zebra	9.0000	37.5000	Rainy	Fresh	Equus burchellii quagga
+SRR10245284	SRR10245284_1.fastq	SRR10245284_2.fastq	Pig	Selous	Pig	9.0000	37.5000	Rainy	Fresh	Suidae
+SRR10245286	SRR10245286_1.fastq	SRR10245286_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245287	SRR10245287_1.fastq	SRR10245287_2.fastq	Hippo	Selous	Hippo	9.0000	37.5000	Rainy	Fresh	Hippopotamus amphibius
+SRR10245288	SRR10245288_1.fastq	SRR10245288_2.fastq	Impala	Selous	Impala	9.0000	37.5000	Dry	Fresh	Aepyceros melampus
+SRR10245291	SRR10245291_1.fastq	SRR10245291_2.fastq	Buffalo	Selous	Buffalo	9.0000	37.5000	Rainy	Fresh	Syncerus caffer
+SRR10245292	SRR10245292_1.fastq	SRR10245292_2.fastq	Cane Rat	Selous	Cane Rat	9.0000	37.5000	Rainy	Fresh	Thryonomys
+SRR10245294	SRR10245294_1.fastq	SRR10245294_2.fastq	Gazelle	Selous	Gazelle	9.0000	37.5000	Rainy	Fresh	Gazella
+SRR10245295	SRR10245295_1.fastq	SRR10245295_2.fastq	Zebra	Selous	Zebra	9.0000	37.5000	Rainy	Fresh	Equus burchellii quagga
+SRR10245298	SRR10245298_1.fastq	SRR10245298_2.fastq	Impala	Selous	Impala	9.0000	37.5000	Dry	Fresh	Aepyceros melampus
+SRR10245301	SRR10245301_1.fastq	SRR10245301_2.fastq	Wildebeest	Ruaha	Wildebeest	7.3860	34.9563	Rainy	Fresh	Connochaetes taurinus
+SRR10245303	SRR10245303_1.fastq	SRR10245303_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245305	SRR10245305_1.fastq	SRR10245305_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Processed	Madoqua
+SRR10245307	SRR10245307_1.fastq	SRR10245307_2.fastq	Topi	Serengeti	Topi	2.1540	34.6857	Rainy	Processed	Damaliscus lunatus korrigum
+SRR10245309	SRR10245309_1.fastq	SRR10245309_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245310	SRR10245310_1.fastq	SRR10245310_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245311	SRR10245311_1.fastq	SRR10245311_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245313	SRR10245313_1.fastq	SRR10245313_2.fastq	Hare	Selous	Hare	9.0000	37.5000	Rainy	Fresh	Lepus
+SRR10245314	SRR10245314_1.fastq	SRR10245314_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245317	SRR10245317_1.fastq	SRR10245317_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245320	SRR10245320_1.fastq	SRR10245320_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245323	SRR10245323_1.fastq	SRR10245323_2.fastq	Wildebeest	Selous	Wildebeest	9.0000	37.5000	Rainy	Processed	Connochaetes taurinus
+SRR10245324	SRR10245324_1.fastq	SRR10245324_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245326	SRR10245326_1.fastq	SRR10245326_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245328	SRR10245328_1.fastq	SRR10245328_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245330	SRR10245330_1.fastq	SRR10245330_2.fastq	Impala	Selous	Impala	9.0000	37.5000	Dry	Processed	Aepyceros melampus
+SRR10245332	SRR10245332_1.fastq	SRR10245332_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245333	SRR10245333_1.fastq	SRR10245333_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245335	SRR10245335_1.fastq	SRR10245335_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245336	SRR10245336_1.fastq	SRR10245336_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245337	SRR10245337_1.fastq	SRR10245337_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245338	SRR10245338_1.fastq	SRR10245338_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245339	SRR10245339_1.fastq	SRR10245339_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245341	SRR10245341_1.fastq	SRR10245341_2.fastq	Hippo	Selous	Hippo	9.0000	37.5000	Rainy	Fresh	Hippopotamus amphibius
+SRR10245344	SRR10245344_1.fastq	SRR10245344_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245346	SRR10245346_1.fastq	SRR10245346_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245349	SRR10245349_1.fastq	SRR10245349_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245353	SRR10245353_1.fastq	SRR10245353_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245277	SRR10245277_1.fastq	SRR10245277_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245279	SRR10245279_1.fastq	SRR10245279_2.fastq	Eland	Serengeti	Eland	2.1540	34.6857	Rainy	Fresh	Tragelaphus oryx
+SRR10245281	SRR10245281_1.fastq	SRR10245281_2.fastq	Dikdik	Selous	Dikdik	9.0000	37.5000	Rainy	Fresh	Madoqua
+SRR10245283	SRR10245283_1.fastq	SRR10245283_2.fastq	Buffalo	Selous	Buffalo	9.0000	37.5000	Rainy	Fresh	Syncerus caffer
+SRR10245285	SRR10245285_1.fastq	SRR10245285_2.fastq	Zebra	Selous	Zebra	9.0000	37.5000	Rainy	Fresh	Equus burchellii quagga
+SRR10245289	SRR10245289_1.fastq	SRR10245289_2.fastq	Impala	Selous	Impala	9.0000	37.5000	Dry	Fresh	Aepyceros melampus
+SRR10245290	SRR10245290_1.fastq	SRR10245290_2.fastq	Hare	Selous	Hare	9.0000	37.5000	Dry	Fresh	Lepus
+SRR10245293	SRR10245293_1.fastq	SRR10245293_2.fastq	Pig	Selous	Pig	9.0000	37.5000	Rainy	Fresh	Suidae
+SRR10245296	SRR10245296_1.fastq	SRR10245296_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245297	SRR10245297_1.fastq	SRR10245297_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245299	SRR10245299_1.fastq	SRR10245299_2.fastq	Impala	Selous	Impala	9.0000	37.5000	Dry	Fresh	Aepyceros melampus
+SRR10245300	SRR10245300_1.fastq	SRR10245300_2.fastq	Impala	Selous	Impala	9.0000	37.5000	Dry	Fresh	Aepyceros melampus
+SRR10245302	SRR10245302_1.fastq	SRR10245302_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Rainy	Processed	Madoqua
+SRR10245304	SRR10245304_1.fastq	SRR10245304_2.fastq	Impala	Ruaha	Impala	7.3860	34.9563	Dry	Fresh	Aepyceros melampus
+SRR10245306	SRR10245306_1.fastq	SRR10245306_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245308	SRR10245308_1.fastq	SRR10245308_2.fastq	Zebra	Serengeti	Zebra	2.1540	34.6857	Rainy	Processed	Equus burchellii quagga
+SRR10245312	SRR10245312_1.fastq	SRR10245312_2.fastq	Impala	Serengeti	Impala	2.1540	34.6857	Rainy	Processed	Aepyceros melampus
+SRR10245315	SRR10245315_1.fastq	SRR10245315_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245316	SRR10245316_1.fastq	SRR10245316_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245318	SRR10245318_1.fastq	SRR10245318_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245319	SRR10245319_1.fastq	SRR10245319_2.fastq	Zebra	Serengeti	Zebra	2.1540	34.6857	Rainy	Processed	Equus burchellii quagga
+SRR10245321	SRR10245321_1.fastq	SRR10245321_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245322	SRR10245322_1.fastq	SRR10245322_2.fastq	Cattle	Selous	Cattle	9.0000	37.5000	Dry	Fresh	Bos
+SRR10245325	SRR10245325_1.fastq	SRR10245325_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245327	SRR10245327_1.fastq	SRR10245327_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245329	SRR10245329_1.fastq	SRR10245329_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245331	SRR10245331_1.fastq	SRR10245331_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245334	SRR10245334_1.fastq	SRR10245334_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245340	SRR10245340_1.fastq	SRR10245340_2.fastq	Buffalo	Ruaha	Buffalo	7.3860	34.9563	Dry	Fresh	Syncerus caffer
+SRR10245342	SRR10245342_1.fastq	SRR10245342_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245343	SRR10245343_1.fastq	SRR10245343_2.fastq	Dikdik	Ruaha	Dikdik	7.3860	34.9563	Dry	Fresh	Madoqua
+SRR10245345	SRR10245345_1.fastq	SRR10245345_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245347	SRR10245347_1.fastq	SRR10245347_2.fastq	Buffalo	Serengeti	Buffalo	2.1540	34.6857	Rainy	Fresh	Syncerus caffer
+SRR10245348	SRR10245348_1.fastq	SRR10245348_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245350	SRR10245350_1.fastq	SRR10245350_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245351	SRR10245351_1.fastq	SRR10245351_2.fastq	Wildebeest	Serengeti	Wildebeest	2.1540	34.6857	Rainy	Fresh	Connochaetes taurinus
+SRR10245352	SRR10245352_1.fastq	SRR10245352_2.fastq	Hare	Selous	Hare	9.0000	37.5000	Rainy	Fresh	Lepus
+SRR7450706	SRR7450706_1.fastq	SRR7450706_2.fastq	Wildebeest	Serengeti	Wildebeest	1.7898	34.7548			Connochaetes taurinus
+SRR7450707	SRR7450707_1.fastq	SRR7450707_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0509	33.963			Connochaetes taurinus
+SRR7450708	SRR7450708_1.fastq	SRR7450708_2.fastq	Buffalo	Serengeti	Buffalo	2.0209	34.4479			Syncerus caffer
+SRR7450709	SRR7450709_1.fastq	SRR7450709_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0028	34.563			Connochaetes taurinus
+SRR7450710	SRR7450710_1.fastq	SRR7450710_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0028	34.563			Connochaetes taurinus
+SRR7450711	SRR7450711_1.fastq	SRR7450711_2.fastq	Wildebeest	Serengeti	Wildebeest	1.7898	34.7548			Connochaetes taurinus
+SRR7450712	SRR7450712_1.fastq	SRR7450712_2.fastq	Wildebeest	Serengeti	Wildebeest	1.7898	34.7548			Connochaetes taurinus
+SRR7450713	SRR7450713_1.fastq	SRR7450713_2.fastq	Topi	Serengeti	Topi	1.9798	34.1463			Damaliscus lunatus
+SRR7450714	SRR7450714_1.fastq	SRR7450714_2.fastq	Wildebeest	Serengeti	Wildebeest	1.8791	34.7836			Connochaetes taurinus
+SRR7450715	SRR7450715_1.fastq	SRR7450715_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0028	34.563			Connochaetes taurinus
+SRR7450716	SRR7450716_1.fastq	SRR7450716_2.fastq	Wildebeest	Serengeti	Wildebeest	1.9939	34.5189			Connochaetes taurinus
+SRR7450717	SRR7450717_1.fastq	SRR7450717_2.fastq	Wildebeest	Serengeti	Wildebeest	1.8791	34.7836			Connochaetes taurinus
+SRR7450718	SRR7450718_1.fastq	SRR7450718_2.fastq	Sheep	Serengeti	Sheep	1.9986	34.3729			Ovis aries
+SRR7450719	SRR7450719_1.fastq	SRR7450719_2.fastq	Buffalo	Serengeti	Buffalo	2.0209	34.4479			Syncerus caffer
+SRR7450720	SRR7450720_1.fastq	SRR7450720_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0751	34.4984			Connochaetes taurinus
+SRR7450721	SRR7450721_1.fastq	SRR7450721_2.fastq	Giraffe	Serengeti	Giraffe	2.0028	34.563			Giraffa camelopardalis
+SRR7450722	SRR7450722_1.fastq	SRR7450722_2.fastq	Eland	Serengeti	Eland	2.0189	34.4164			Tragelaphus oryx
+SRR7450723	SRR7450723_1.fastq	SRR7450723_2.fastq	Wildebeest	Serengeti	Wildebeest	1.9291	34.2791			Connochaetes taurinus
+SRR7450724	SRR7450724_1.fastq	SRR7450724_2.fastq	Eland	Serengeti	Eland	2.0471	34.467			Tragelaphus oryx
+SRR7450725	SRR7450725_1.fastq	SRR7450725_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0751	34.4984			Connochaetes taurinus
+SRR7450726	SRR7450726_1.fastq	SRR7450726_2.fastq	Eland	Serengeti	Eland	1.8791	34.7836			Tragelaphus oryx
+SRR7450727	SRR7450727_1.fastq	SRR7450727_2.fastq	Buffalo	Serengeti	Buffalo	2.0509	33.963			Syncerus caffer
+SRR7450728	SRR7450728_1.fastq	SRR7450728_2.fastq	Buffalo	Serengeti	Buffalo	2.0509	33.963			Syncerus caffer
+SRR7450729	SRR7450729_1.fastq	SRR7450729_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0509	33.963			Connochaetes taurinus
+SRR7450730	SRR7450730_1.fastq	SRR7450730_2.fastq	Eland	Serengeti	Eland	2.0509	33.963			Tragelaphus oryx
+SRR7450731	SRR7450731_1.fastq	SRR7450731_2.fastq	Buffalo	Serengeti	Buffalo	2.0509	33.963			Syncerus caffer
+SRR7450732	SRR7450732_1.fastq	SRR7450732_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0509	33.963			Connochaetes taurinus
+SRR7450733	SRR7450733_1.fastq	SRR7450733_2.fastq	Buffalo	Serengeti	Buffalo	2.0509	33.963			Syncerus caffer
+SRR7450734	SRR7450734_1.fastq	SRR7450734_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0509	33.963			Connochaetes taurinus
+SRR7450735	SRR7450735_1.fastq	SRR7450735_2.fastq	Topi	Serengeti	Topi	2.0509	33.963			Damaliscus lunatus
+SRR7450736	SRR7450736_1.fastq	SRR7450736_2.fastq	Wildebeest	Serengeti	Wildebeest	1.8791	34.7836			Connochaetes taurinus
+SRR7450737	SRR7450737_1.fastq	SRR7450737_2.fastq	Wildebeest	Serengeti	Wildebeest	1.98	34.146			Connochaetes taurinus
+SRR7450738	SRR7450738_1.fastq	SRR7450738_2.fastq	Buffalo	Serengeti	Buffalo	2.0318	33.8599			Syncerus caffer
+SRR7450739	SRR7450739_1.fastq	SRR7450739_2.fastq	Buffalo	Serengeti	Buffalo	2.0189	34.4164			Syncerus caffer
+SRR7450740	SRR7450740_1.fastq	SRR7450740_2.fastq	Buffalo	Serengeti	Buffalo	2.0318	33.8599			Syncerus caffer
+SRR7450741	SRR7450741_1.fastq	SRR7450741_2.fastq	Buffalo	Serengeti	Buffalo	2.0318	33.8599			Syncerus caffer
+SRR7450742	SRR7450742_1.fastq	SRR7450742_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0318	33.8599			Connochaetes taurinus
+SRR7450743	SRR7450743_1.fastq	SRR7450743_2.fastq	Wildebeest	Serengeti	Wildebeest	1.4197	34.7475			Connochaetes taurinus
+SRR7450744	SRR7450744_1.fastq	SRR7450744_2.fastq	Porcupine	Serengeti	Porcupine	2.0531	33.9437			Hystrix cristata
+SRR7450745	SRR7450745_1.fastq	SRR7450745_2.fastq	Wildebeest	Serengeti	Wildebeest	2.0318	33.8599			Connochaetes taurinus
+SRR7450746	SRR7450746_1.fastq	SRR7450746_2.fastq	Buffalo	Serengeti	Buffalo	2.0189	34.4164			Syncerus caffer
+SRR7450747	SRR7450747_1.fastq	SRR7450747_2.fastq	Wildebeest	Serengeti	Wildebeest	1.5201	34.6631			Connochaetes taurinus
+SRR7450748	SRR7450748_1.fastq	SRR7450748_2.fastq	Gazelle	Serengeti	Gazelle	2.0509	33.963			Eudorcas thomsonii
+SRR7450749	SRR7450749_1.fastq	SRR7450749_2.fastq	Buffalo	Serengeti	Buffalo	2.0509	33.963			Syncerus caffer
+SRR7450750	SRR7450750_1.fastq	SRR7450750_2.fastq	Buffalo	Serengeti	Buffalo	1.8791	34.7836			Syncerus caffer
+SRR7450751	SRR7450751_1.fastq	SRR7450751_2.fastq	Rabbit	Serengeti	Rabbit	2.0509	33.963			Lepus microtis
+SRR7450752	SRR7450752_1.fastq	SRR7450752_2.fastq	Buffalo	Serengeti	Buffalo	1.9871	34.105			Syncerus caffer
+SRR7450753	SRR7450753_1.fastq	SRR7450753_2.fastq	Warthog	Serengeti	Warthog	1.4451	34.7022			Phacochoerus africanus
+SRR7450754	SRR7450754_1.fastq	SRR7450754_2.fastq	Wildebeest	Serengeti	Wildebeest	1.9871	34.105			Connochaetes taurinus
+SRR7450755	SRR7450755_1.fastq	SRR7450755_2.fastq	Wildebeest	Serengeti	Wildebeest	1.9871	34.105			Connochaetes taurinus
+SRR7450756	SRR7450756_1.fastq	SRR7450756_2.fastq	Buffalo	Serengeti	Buffalo	1.9986	34.3729			Syncerus caffer
+SRR7450757	SRR7450757_1.fastq	SRR7450757_2.fastq	Wildebeest	Serengeti	Wildebeest	1.7898	34.7548			Connochaetes taurinus
+SRR7450758	SRR7450758_1.fastq	SRR7450758_2.fastq	Zebra	Serengeti	Zebra	2.0318	33.8598			Equus burchellii quagga
+SRR7450759	SRR7450759_1.fastq	SRR7450759_2.fastq	Buffalo	Serengeti	Buffalo	2.0318	33.8599			Syncerus caffer
+SRR7450760	SRR7450760_1.fastq	SRR7450760_2.fastq	Wildebeest	Serengeti	Wildebeest	1.5201	34.6631			Connochaetes taurinus
+SRR7450761	SRR7450761_1.fastq	SRR7450761_2.fastq	Wildebeest	Serengeti	Wildebeest	1.5201	34.6631			Connochaetes taurinus
