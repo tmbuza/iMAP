@@ -2,8 +2,8 @@
 
 >Please be informed that financial support to develop this repo ended in October 2018. Volunteer work to make it more user-friendly is progressing slowly. Thank you for your patience. 
 
-## <mark>Coming soon in 2022!</mark>
-We are in the process of restructuring and updating iMAP with more improved workflows. The updated version will replace the existing pipeline.  
+## <i>Coming soon in 2022!
+We are in the process of restructuring and updating iMAP with more improved workflows. The updated version will replace the existing pipeline. </i> 
 
 <br>
 
