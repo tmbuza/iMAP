@@ -457,8 +457,6 @@ The output from preprocessing and bioinformatics analysis is analyzed and visual
 |-------|--------------------| --------- |
 |[Manuscript](https://rdcu.be/b5iVj) | In BMC Bioinformatics | Software |
 |[README](https://github.com/tmbuza/iMAP/blob/master/README.md/) | Guidelines | iMAP README |
-[Practical guide](https://www.microbiome-bioinfo.com/microbiomeanalysis/) | Systematic Microbiome data analysis  | eBook, coming in 2021 |
-|[Useful link](https://www.microbiome-bioinfo.com/) | Consulting Services | In Progress |
 
 <hr>
 <br>
