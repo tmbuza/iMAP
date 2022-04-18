@@ -465,18 +465,3 @@ The output from preprocessing and bioinformatics analysis is analyzed and visual
 ## Citation
 Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Free Full Text](https://rdcu.be/b5iVj).
 
-<br>
-<hr>
-<br>
-
-## Useful links
-
-<ol>
-<li> RStudio Community Q&A: https://community.rstudio.com/</li>
-<li></li>
-<li></li>
-<li></li>
-</ol>	
-
-<br>
-<br>
