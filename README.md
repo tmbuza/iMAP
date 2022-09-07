@@ -1,5 +1,7 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
+See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
+
 ## :tada: Improved iMAP in Four-Tiers!
 
 |Repo| Description| Repo Output|
