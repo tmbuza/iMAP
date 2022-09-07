@@ -1,7 +1,7 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
-## Improved iMAP!
-We are in the process of restructuring and updating iMAP with more improved workflows. The updated version will replace the existing pipeline.
+## Improved iMAP DEMOs!
+The original pipeline is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this as an on-going process of finding better and integrated solutions for microbiome data analysis.
 
 
 |Repo| Description| Repo Output|
