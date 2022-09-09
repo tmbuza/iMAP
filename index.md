@@ -1,16 +1,4 @@
-# Getting Started with iMAP
-
-
-<!--
-### Using specific platform
-
-> Read [README2.md](https://github.com/tmbuza/iMAP/blob/master/README2.md) if you prefer to use a specific platform. README2 guides the implementation of iMAP directly on a specific platform, including Unix-Linux, Mac OS X, and Windows 10. Please note that this is work-in-progress.
-
-<hr>
-<br><
--->
-
-### Download iMAP repository
+## Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
 
@@ -32,7 +20,7 @@ rm -rf master.zip
 
 <br>
 
-### Add data to designated folders 
+## Add data to designated folders 
 This [Table](https://www.microbiome-bioinfo.com/iMAP/Resources/imapmaterial.html) provide useful information to help you place data in correct folders. Use the new versions if available.
 
 <br>
@@ -47,7 +35,7 @@ bash iMAP/code/00_allDemo_data.bash
 
 <br>
 
-### Check missing folders or files
+## Check missing folders or files
 > Run checkFiles command everytime you want to verify any missing files. Add all missing files and check again untill everything looks ok.
 
 ```{}
@@ -56,7 +44,7 @@ bash iMAP/code/00_checkFiles_driver.bash
 
 <br>
 
-### What to replace
+## What to replace
 * Rawdata: iMAP/data/raw/
 * Metadata: iMAP/data/metadata/
 * Mapping files: iMAP/data/metadata/
@@ -67,7 +55,7 @@ bash iMAP/code/00_checkFiles_driver.bash
 bash iMAP/code/00_checkFiles_driver.bash
 ```
 
-### Changing default settings
+## Changing default settings
 
 >Users who want to change the default settings may do so using any text editor. Use [this table](https://www.microbiome-bioinfo.com/iMAP/Resources/defaultsettings.html) to locate files with default parameters that may be altered. 
 
