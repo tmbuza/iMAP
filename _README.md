@@ -13,7 +13,7 @@
 
 
 ## Running Analysis On Specific Platforms
-* See [Original README](https://github.com/tmbuza/iMAP/_README) for step-by-step instructions.
+* See [Original README](https://github.com/tmbuza/iMAP/blob/master/_README.md) for step-by-step instructions.
 * This README is work in progress. Please visit this page regularly for more updates.
 * No Docker images are required.
 * May probably require manual installation of some tools.
