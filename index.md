@@ -1,5 +1,4 @@
-# Microbial Profiling from <br> 16S rRNA Gene Amplicons
-
+# Microbial Profiling Using iMAP
 ## Download iMAP repository
 ```{}
 git clone https://github.com/tmbuza/iMAP.git
