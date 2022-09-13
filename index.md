@@ -1,4 +1,4 @@
-# Microbial Profiling from 16S rRNA Gene Amplicons
+# Microbial Profiling from <br> 16S rRNA Gene Amplicons
 
 ## Download iMAP repository
 ```{}
