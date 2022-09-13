@@ -40,7 +40,7 @@ See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details
 
 
 ### Running Analysis On Specific Platforms
-* See [Original README](https://github.com/tmbuza/iMAP/_README) for step-by-step instructions.
+* See [Original README](https://github.com/tmbuza/iMAP/_README.md) for step-by-step instructions.
 * This README is a work in progress. Please visit this page regularly for more updates.
 * No Docker images are required.
 * May probably require manual installation of some tools.
