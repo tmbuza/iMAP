@@ -21,12 +21,11 @@ Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.
 <i>Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Free Full Text](https://pubmed.ncbi.nlm.nih.gov/31269897/)</i>.
 
 
-<!--
 
 ## Original iMAP!
 
 ### Running Analysis within Docker Container (Default)
-* See this [README](https://github.com/tmbuza/iMAP/blob/master/README0.md) for step-by-step instructions.
+* See this [Docker README](https://github.com/tmbuza/iMAP/blob/master/README0.md) for step-by-step instructions.
 	* Requires Docker Images and Docker containers CLI.
 	* Uses fewer resources, but memory-intensive computing may sometimes fail.
 	* All analyses are run interactively on the container's Command-line.
@@ -36,11 +35,10 @@ Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.
 * Some R-packages installed perfectly in RStudio may not install correctly in docker images.
 
 
-
 ### Running Analysis On Specific Platforms
 * See [Original README](https://github.com/tmbuza/iMAP/blob/master/_README.md) for step-by-step instructions.
 * This README is a work in progress. Please visit this page regularly for more updates.
 * No Docker images are required.
 * May probably require manual installation of some tools.
 * Uses RStudio to install required R-packages.
--->
+
