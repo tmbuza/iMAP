@@ -28,7 +28,7 @@ Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.
 ## Original iMAP!
 
 ### Running Analysis within Docker Container (Default)
-* See [GH-Page](https://tmbuza.github.io/iMAP/) for step-by-step instructions.
+* See this [README](https://github.com/tmbuza/iMAP/blob/master/README0.md) for step-by-step instructions.
 	* Requires Docker Images and Docker containers CLI.
 	* Uses fewer resources, but memory-intensive computing may sometimes fail.
 	* All analyses are run interactively on the container's Command-line.
