@@ -21,9 +21,7 @@ Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.
 <i>Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Free Full Text](https://pubmed.ncbi.nlm.nih.gov/31269897/)</i>.
 
 
-<br>
-<br>
-<br>
+<!--
 
 ## Original iMAP!
 
@@ -45,4 +43,4 @@ Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.
 * No Docker images are required.
 * May probably require manual installation of some tools.
 * Uses RStudio to install required R-packages.
-
+-->
