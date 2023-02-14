@@ -1,25 +1,32 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
-Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
+## :tada: IMAP integration with Snakemake and GitHub actions
+Towards fostering better solutions and reproducible microbiome analysis!
 
-## :tada: iMAP Parts!
-
-|Repo| Description| Repo Output|
+| Repo | Description | Glimpse |
 |-------------------------|---------------------------------------------------|-----------------|
-| [iMAP-PART1](https://github.com/tmbuza/iMAP-part1/) | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
-| [iMAP-PART2](https://github.com/tmbuza/iMAP-part2/) | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
-| [iMAP-PART3](https://github.com/tmbuza/iMAP-part3/) | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
-| [iMAP-PART4](https://github.com/tmbuza/iMAP-part4/) | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
+| [IMAP-PART1](https://github.com/tmbuza/imap-requirements/) | Preparing for Microbiome Data Analysis | [GH-Page](https://tmbuza.github.io/imap-requirements/) |
+| [IMAP-PART2](https://github.com/tmbuza/imap-bioinformatics/) | Bioinformatics Analysis of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-bioinformatics/) |
+| [IMAP-PART3](https://github.com/tmbuza/imap-data-transformation/) | Microbiome Data Processing and Transformation | [..In Progress..](https://tmbuza.github.io/imap-data-transformation/) |
+| [IMAP-PART4](https://github.com/tmbuza/exploratory-analysis/) | Exploratory Analysis and Visualization of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-exploratory-analysis/) |
+| [iMAP-PART5](https://github.com/tmbuza/imap-machine-learning/) | Microbiome Machine Learning | [..In Progress..](https://tmbuza.github.io/imap-machine-learning/) |
 
-
-> The original pipeline is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
-
+<br>
 
 ## Citation
-> Please consider citing the [iMAP article](https://rdcu.be/b5iVj) if you find any part of the iMAP practical user guides helpful in your analysis:
+> Please consider citing the [iMAP article](https://rdcu.be/b5iVj) (see below) if you find any part of the IMAP practical user guides helpful in your microbiome data analysis.
 
-<i>Teresia M. Buza, Triza Tonui, Francesca Stomeo, Christian Tiambo, Robab Katani, Megan Schilling, Beatus Lyimo, Paul Gwakisa, Isabella M. Cattadori, Joram Buza and Vivek Kapur. iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics (2019) 20:374. [Free Full Text](https://pubmed.ncbi.nlm.nih.gov/31269897/)</i>.
+<br>
 
+**APA-like Style**
+
+Buza, T. M., Tonui, T., Stomeo, F., Tiambo, C., Katani, R., Schilling, M., … Kapur, V. (2019). iMAP: An integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics, 20. https://doi.org/10.1186/S12859-019-2965-4
+
+> Please, help to increase awareness of freely available microbiome data analysis tools.
+Current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
+
+
+<hr>
 
 
 ## Original iMAP!
