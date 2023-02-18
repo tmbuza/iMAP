@@ -1,15 +1,18 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
-## :tada: IMAP integration with Snakemake and GitHub actions
-Towards fostering better solutions and reproducible microbiome analysis!
+# Related work
+> Here we show the IMAP Repos integrated with Snakemake and GitHub Actions!
 
-| Repo | Description | Glimpse |
+| Repo | Description | Summary |
 |-------------------------|---------------------------------------------------|-----------------|
-| [IMAP-PART1](https://github.com/tmbuza/imap-requirements/) | Preparing for Microbiome Data Analysis | [GH-Page](https://tmbuza.github.io/imap-requirements/) |
+| Repo | Description | Summary |
+|-------------------------|---------------------------------------------------|-----------------|
+| [IMAP-PART1](https://github.com/tmbuza/imap-requirements/) | Preparing for Microbiome Data Analysis | [GH-Pages](https://tmbuza.github.io/imap-requirements/) |
 | [IMAP-PART2](https://github.com/tmbuza/imap-bioinformatics/) | Bioinformatics Analysis of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-bioinformatics/) |
-| [IMAP-PART3](https://github.com/tmbuza/imap-data-transformation/) | Microbiome Data Processing and Transformation | [..In Progress..](https://tmbuza.github.io/imap-data-transformation/) |
-| [IMAP-PART4](https://github.com/tmbuza/exploratory-analysis/) | Exploratory Analysis and Visualization of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-exploratory-analysis/) |
-| [iMAP-PART5](https://github.com/tmbuza/imap-machine-learning/) | Microbiome Machine Learning | [..In Progress..](https://tmbuza.github.io/imap-machine-learning/) |
+| [IMAP-PART3](https://github.com/tmbuza/imap-data-preprocessing/) | Microbiome Data Preprocessing | [..In Progress..](https://tmbuza.github.io/imap-data-preprocessing/) |
+| [IMAP-PART4](https://github.com/tmbuza/imap-exploratory-analysis/) | Exploratory Analysis of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-exploratory-analysis/) |
+| [IMAP-PART5](https://tmbuza.github.io/imap-machine-learning/) | Microbiome Machine Learning | [..In Progress..](https://tmbuza.github.io/imap-machine-learning/) |
+
 
 <br>
 
