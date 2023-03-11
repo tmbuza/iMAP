@@ -5,7 +5,7 @@
 | Repo | Description | Status |
 |:-----------------------|----------------------------------|--------------:|
 | [IMAP-PART 01](https://github.com/tmbuza/imap-software-requirements/) | Installing software to get started with microbiome data analysis with Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-software-requirements/) |
-| [IMAP-PART 02](https://github.com/tmbuza/imap-sample-metadata/) | How to download & explore microbiome sample metadata from NCBI-SRA Database | [In-progress](https://tmbuza.github.io/imap-sample-metadata/) |
+| [IMAP-PART 02](https://github.com/tmbuza/imap-sample-metadata/) | Exploring microbiome sample metadata downloaded from NCBI-SRA Database | [In-progress](https://tmbuza.github.io/imap-sample-metadata/) |
 | [IMAP-PART 03](https://github.com/tmbuza/imap-download-sra-reads/) | How to download microbiome sequencing reads from NCBI-SRA Database | [In-progress](https://tmbuza.github.io/imap-download-sra-reads/) |
 | [IMAP-PART 04](https://github.com/tmbuza/imap-read-quality-control/) | Quality Control of Microbiome Next Generation Sequencing Reads | [In-progress](https://tmbuza.github.io/imap-read-quality-control/) |
 | [IMAP-PART 05](https://github.com/tmbuza/imap-bioinformatics-analysis/) | Bioinformatics & classification of preprocessed microbiome sequencing data | [In-progress](https://tmbuza.github.io/imap-bioinformatics-analysis/) |
