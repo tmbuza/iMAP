@@ -1,27 +1,24 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
 ## Related work
-> Here we show the IMAP Repos integrated with Snakemake and GitHub Actions!
 
-| Repo | Description | Summary |
-|-------------------------|---------------------------------------------------|-----------------|
-| Repo | Description | Summary |
-|-------------------------|---------------------------------------------------|-----------------|
-| [IMAP-PART1](https://github.com/tmbuza/imap-requirements/) | Preparing for Microbiome Data Analysis | [GH-Pages](https://tmbuza.github.io/imap-requirements/) |
-| [IMAP-PART2](https://github.com/tmbuza/imap-bioinformatics/) | Bioinformatics Analysis of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-bioinformatics/) |
-| [IMAP-PART3](https://github.com/tmbuza/imap-data-preprocessing/) | Microbiome Data Preprocessing | [..In Progress..](https://tmbuza.github.io/imap-data-preprocessing/) |
-| [IMAP-PART4](https://github.com/tmbuza/imap-exploratory-analysis/) | Exploratory Analysis of Microbiome Data | [..In Progress..](https://tmbuza.github.io/imap-exploratory-analysis/) |
-| [IMAP-PART5](https://tmbuza.github.io/imap-machine-learning/) | Microbiome Machine Learning | [..In Progress..](https://tmbuza.github.io/imap-machine-learning/) |
+| Repo | Description | Status |
+|:-----------------------|----------------------------------|--------------:|
+| [IMAP-PART 01](https://github.com/tmbuza/imap-software-requirements/) | Installing software to get started with microbiome data analysis with Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-software-requirements/) |
+| [IMAP-PART 02](https://github.com/tmbuza/imap-sample-metadata/) | How to download & explore microbiome sample metadata from NCBI-SRA Database | [In-progress](https://tmbuza.github.io/imap-sample-metadata/) |
+| [IMAP-PART 03](https://github.com/tmbuza/imap-download-sra-reads/) | How to download microbiome sequencing reads from NCBI-SRA Database | [In-progress](https://tmbuza.github.io/imap-download-sra-reads/) |
+| [IMAP-PART 04](https://github.com/tmbuza/imap-read-quality-control/) | Quality Control of Microbiome Next Generation Sequencing Reads | [In-progress](https://tmbuza.github.io/imap-read-quality-control/) |
+| [IMAP-PART 05](https://github.com/tmbuza/imap-bioinformatics-analysis/) | Bioinformatics & classification of preprocessed microbiome sequencing data | [In-progress](https://tmbuza.github.io/imap-bioinformatics-analysis/) |
+| [IMAP-PART 06](https://github.com/tmbuza//) |  | [In-progress](https://tmbuza.github.io//) |
+| [IMAP-PART 07](https://github.com/tmbuza//) |  | [In-progress](https://tmbuza.github.io//) |
+| [IMAP-PART 08](https://github.com/tmbuza//) |  | [In-progress](https://tmbuza.github.io//) |
+
 
 
 <br>
 
 ## Citation
 > Please consider citing the [iMAP article](https://rdcu.be/b5iVj) (see below) if you find any part of the IMAP practical user guides helpful in your microbiome data analysis.
-
-<br>
-
-**APA-like citation style**
 
 Buza, T. M., Tonui, T., Stomeo, F., Tiambo, C., Katani, R., Schilling, M., … Kapur, V. (2019). iMAP: An integrated bioinformatics and visualization pipeline for microbiome data analysis. BMC Bioinformatics, 20. https://doi.org/10.1186/S12859-019-2965-4
 
