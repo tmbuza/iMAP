@@ -1,5 +1,8 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
+
+NOTE: The new iMAP repo is under reconstruction to make it more reproducible. For more details please refer to the `Related Work` section below.
+
 ## Related work
 
 
