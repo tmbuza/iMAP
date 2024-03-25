@@ -1,9 +1,11 @@
 # iMAP: Integrated Microbiome Analysis Pipeline
 
+NOTE: The new iMAP repo is being rebuilt to make it more reproducible. For more details, please refer to the Related Work section below. 
 
-NOTE: The new iMAP repo is being rebuilt to make it more reproducible. For more details, please refer to the `Related Work` section below.
+⚠️ WARNING: Some sections (Parts) of iMAP are currently incomplete. We are diligently working on data exploration, focusing particularly on various visualization and statistical analysis techniques. Our team is committed to assisting users in uncovering insights and trends within the microbiome datasets and developing data-driven hypotheses to facilitate well-informed decisions and actionable insights. Users are encouraged to visit the site more frequently for updates. 
 
-## Related work
+## Related Work
+
 
 | Repository | Description | Documentation Link |
 |------------|-------------|---------------------|
