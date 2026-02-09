@@ -1,8 +1,12 @@
-# iMAP: Integrated Microbiome Analysis Pipeline
+# iMAP — Integrated Microbiome Analysis Pipeline
 
-NOTE: The new iMAP repo is being rebuilt to make it more reproducible. For more details, please refer to the Related Work section below. 
+iMAP is an integrated framework for microbiome data analysis originally developed as part of academic research and published in *BMC Bioinformatics* (2019). The repository reflects the methodological structure and practical implementation of the pipeline at the time of publication.
 
-⚠️ WARNING: Some sections (Parts) of iMAP are currently incomplete. We are diligently working on data exploration, focusing particularly on various visualization and statistical analysis techniques. Our team is committed to assisting users in uncovering insights and trends within the microbiome datasets and developing data-driven hypotheses to facilitate well-informed decisions and actionable insights. Users are encouraged to visit the site more frequently for updates. 
+Following publication, iMAP was modularized into step-based components to improve reproducibility and clarity. Some parts remain incomplete or exploratory, particularly in visualization and statistical interpretation, reflecting the evolving nature of the work rather than a finalized software release.
+
+Current and future extensions of visualization, interpretation, and workflow design are being developed through **Complex Data Insights (CDI)**, with a stronger emphasis on result interpretation, reasoning, and reproducible analytical structure.
+
+This repository remains the canonical reference for the original iMAP methodology and its decomposition into pipeline stages. 
 
 ## Related Work
 
