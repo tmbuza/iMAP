@@ -21,7 +21,7 @@ This repository remains the canonical reference for the original iMAP methodolog
 | [PART 05](https://github.com/tmbuza/imap-bioinformatics-mothur/) | Microbial profiling using MOTHUR and Snakemake workflows | [Link](https://tmbuza.github.io/imap-mothur-bioinformatics/) |
 | [PART 06](https://github.com/tmbuza/imap-bioinformatics-qiime2/) | Microbial profiling using QIIME2 and Snakemake workflows | [Link](https://tmbuza.github.io/imap-qiime2-bioinformatics/) |
 | [PART 07](https://github.com/tmbuza/imap-data-processing/) | Processing output from 16S-based microbiome bioinformatics pipelines | [Link](https://tmbuza.github.io/imap-data-preparation/) |
-| [PART 08](https://github.com/tmbuza/imap-exploratory-analysis/) | Exploratory analysis of processed 16S-based microbiome data | [Link](https://tmbuza.github.io/imap-data-exploration/) |
+| [PART 08](https://github.com/tmbuza/imap-data-exploration//) | Exploratory analysis of processed 16S-based microbiome data | [Link](https://tmbuza.github.io/imap-data-exploration/) |
 | [PART 09](https://github.com/tmbuza/imap-statistical-analysis/) | Statistical analysis of processed 16S-based microbiome data | [Link](https://tmbuza.github.io/imap-statistical-analysis/) |
 | [PART 10](https://github.com/tmbuza/imap-machine-learning/) | Machine learning analysis of processed 16S-based microbiome data | [Link](https://tmbuza.github.io/imap-machine-learning/) |
 
